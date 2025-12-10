@@ -1,0 +1,6392 @@
+{
+  "_page-config_versions": [
+    {
+      "_id": {
+        "$oid": "67a508b14f66bd756117964c"
+      },
+      "version": {
+        "defaultMeta": {
+          "en": {
+            "title": "Payblocks Demopage",
+            "description": "Demopage for the payblocks project"
+          }
+        },
+        "openGraph": {
+          "backgroundImage": {
+            "$oid": "67a508af2ead0c7978f02359"
+          },
+          "textColor": "#000000",
+          "textPosition": "center"
+        },
+        "updatedAt": {
+          "$date": "2025-02-06T19:08:33.849Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-06T19:08:33.849Z"
+        }
+      },
+      "createdAt": {
+        "$date": "2025-02-06T19:08:33.858Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-06T19:08:33.858Z"
+      },
+      "__v": 0
+    }
+  ],
+  "media": [
+    {
+      "_id": {
+        "$oid": "67a508af2ead0c7978f02359"
+      },
+      "alt": "default open graph image",
+      "filename": "payblocks default open graph.png",
+      "mimeType": "image/png",
+      "filesize": 56804,
+      "width": 2400,
+      "height": 1260,
+      "focalX": 50,
+      "focalY": 50,
+      "createdAt": {
+        "$date": "2025-02-06T19:08:31.392Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-06T19:08:31.392Z"
+      },
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67a4ef201a65a839d43f7f64"
+      },
+      "alt": "admin panel",
+      "filename": "Dashboard-Payload-02-06-2025_06_17_PM.png",
+      "mimeType": "image/png",
+      "filesize": 183886,
+      "width": 1935,
+      "height": 1234,
+      "focalX": 50,
+      "focalY": 50,
+      "createdAt": {
+        "$date": "2025-02-06T17:19:28.341Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-06T17:19:28.341Z"
+      },
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67a4ee0ce8cbf90371db2813"
+      },
+      "alt": "test",
+      "filename": "Dashboard-Payload-02-06-2025_06_06_PM.png",
+      "mimeType": "image/png",
+      "filesize": 183988,
+      "width": 1935,
+      "height": 1234,
+      "focalX": 50,
+      "focalY": 50,
+      "createdAt": {
+        "$date": "2025-02-06T17:14:52.134Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-06T17:14:52.134Z"
+      },
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67a5e6529b197db1c248781b"
+      },
+      "alt": "avatar2",
+      "filename": "avatar-2.webp",
+      "mimeType": "image/webp",
+      "filesize": 3606,
+      "width": 288,
+      "height": 288,
+      "focalX": 50,
+      "focalY": 50,
+      "createdAt": {
+        "$date": "2025-02-07T10:54:10.720Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-07T10:54:10.720Z"
+      },
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67a4f2f45e6fbd66482a4783"
+      },
+      "alt": "payblocks demo logo",
+      "filename": "payblocks-demo.png",
+      "mimeType": "image/png",
+      "filesize": 23633,
+      "width": 903,
+      "height": 155,
+      "focalX": 50,
+      "focalY": 50,
+      "createdAt": {
+        "$date": "2025-02-06T17:35:48.658Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-06T17:35:48.658Z"
+      },
+      "__v": 0
+    }
+  ],
+  "forms": [
+    {
+      "_id": {
+        "$oid": "67aa2364882abe09ca22839f"
+      },
+      "title": "Contact Us",
+      "fields": [
+        {
+          "blockType": "text",
+          "name": "firstname",
+          "label": {
+            "en": "First Name"
+          },
+          "width": 50,
+          "defaultValue": {
+            "en": "Mark"
+          },
+          "required": true,
+          "id": "67aa2325b2cfdcfc335275ec"
+        },
+        {
+          "blockType": "text",
+          "name": "lastname",
+          "label": {
+            "en": "Last Name"
+          },
+          "width": 50,
+          "defaultValue": {
+            "en": "Twain"
+          },
+          "required": true,
+          "id": "67aa2336b2cfdcfc335275ed"
+        },
+        {
+          "blockType": "checkbox",
+          "name": "marketing",
+          "label": {
+            "en": "Allow us to contact you"
+          },
+          "id": "67aa2344b2cfdcfc335275ee"
+        }
+      ],
+      "confirmationType": "message",
+      "confirmationMessage": {
+        "en": {
+          "root": {
+            "children": [
+              {
+                "children": [
+                  {
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": "",
+                    "text": "Contact Request sent!",
+                    "type": "text",
+                    "version": 1
+                  }
+                ],
+                "direction": "ltr",
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "version": 1,
+                "textFormat": 0,
+                "textStyle": ""
+              }
+            ],
+            "direction": "ltr",
+            "format": "",
+            "indent": 0,
+            "type": "root",
+            "version": 1
+          }
+        }
+      },
+      "redirect": {},
+      "emails": [],
+      "createdAt": {
+        "$date": "2025-02-10T16:03:48.721Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-10T16:05:06.981Z"
+      },
+      "__v": 0,
+      "submitButtonLabel": {
+        "en": "Swoosh 🌪️"
+      }
+    }
+  ],
+  "_pages_versions": [
+    {
+      "_id": {
+        "$oid": "67a4e63c8c7ede7739c62d7d"
+      },
+      "parent": {
+        "$oid": "67a4e63c8c7ede7739c62d6e"
+      },
+      "version": {
+        "hero": {
+          "designVersion": "1",
+          "badgeLink": {
+            "type": "reference"
+          },
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [],
+        "meta": {},
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "url": "/undefined",
+              "id": "67a4e63c9efb650003f89c0f"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-06T16:41:32.086Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-06T16:41:32.086Z"
+        },
+        "_status": "draft"
+      },
+      "createdAt": {
+        "$date": "2025-02-06T16:41:32.122Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-06T16:41:32.122Z"
+      },
+      "autosave": false,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67a5f86c78c42805ab06fef2"
+      },
+      "parent": {
+        "$oid": "67a4e63c8c7ede7739c62d6e"
+      },
+      "version": {
+        "title": "Home",
+        "hero": {
+          "designVersion": "12",
+          "badge": {
+            "en": "✨Your Website Builder"
+          },
+          "badgeIcon": "Sparkles",
+          "tagline": {
+            "en": ""
+          },
+          "badgeLink": {
+            "type": "reference"
+          },
+          "richText": {
+            "en": {
+              "root": {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Blocks Built With Shadcn & Tailwind",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "heading",
+                    "version": 1,
+                    "tag": "h1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "paragraph",
+                    "version": 1,
+                    "textFormat": 0,
+                    "textStyle": ""
+                  }
+                ],
+                "direction": "ltr",
+                "format": "",
+                "indent": 0,
+                "type": "root",
+                "version": 1
+              }
+            }
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "feature",
+            "designVersion": "FEATURE1",
+            "badge": {
+              "en": ""
+            },
+            "icon": "Activity",
+            "richText": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Welcome to the Payblocks Demo",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "left",
+                      "indent": 0,
+                      "type": "heading",
+                      "version": 1,
+                      "tag": "h1"
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "links": [
+              {
+                "link": {
+                  "type": "custom",
+                  "url": {
+                    "en": "/admin"
+                  },
+                  "label": {
+                    "en": "Visit admin"
+                  },
+                  "iconAfter": "ArrowRightCircle",
+                  "appearance": "default"
+                },
+                "id": "67a4eb25775c992f65041255"
+              }
+            ],
+            "image": {
+              "$oid": "67a4ef201a65a839d43f7f64"
+            },
+            "USPs": [],
+            "id": "67a4ea7e51be23006a7145a5"
+          },
+          {
+            "blockType": "testimonial",
+            "designVersion": "TESTIMONIAL3",
+            "headline": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "See w",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "link": {
+              "type": "reference",
+              "appearance": "default"
+            },
+            "testimonial": [
+              {
+                "authorName": {
+                  "en": "John Doe"
+                },
+                "authorDescription": {
+                  "en": "CEO of Doe Industries"
+                },
+                "icon": {
+                  "$oid": "67a5e6529b197db1c248781b"
+                },
+                "text": {
+                  "en": {
+                    "root": {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "detail": 0,
+                              "format": 0,
+                              "mode": "normal",
+                              "style": "",
+                              "text": "I'm really satisfied with this template. It saved us hours of work!",
+                              "type": "text",
+                              "version": 1
+                            }
+                          ],
+                          "direction": "ltr",
+                          "format": "",
+                          "indent": 0,
+                          "type": "paragraph",
+                          "version": 1,
+                          "textFormat": 0,
+                          "textStyle": ""
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "root",
+                      "version": 1
+                    }
+                  }
+                },
+                "link": {
+                  "type": "reference",
+                  "appearance": "default"
+                },
+                "id": "67a5e3e78222a7c07a6666e6"
+              }
+            ],
+            "id": "67a5def342f8ce3677c9df6c",
+            "blockName": "John Doe Testimonial"
+          }
+        ],
+        "meta": {
+          "title": {
+            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+          }
+        },
+        "publishedAt": {
+          "$date": "2025-02-06T16:42:09.847Z"
+        },
+        "slug": "home",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67a4e63c8c7ede7739c62d6e"
+              },
+              "url": "/home",
+              "label": "Home",
+              "id": "67a5f86b4680f300036e0e2f"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-07T12:11:24.019Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-06T16:41:32.086Z"
+        },
+        "_status": "published"
+      },
+      "createdAt": {
+        "$date": "2025-02-07T12:11:24.062Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-07T12:11:24.062Z"
+      },
+      "autosave": false,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67a508c22ead0c7978f02368"
+      },
+      "parent": {
+        "$oid": "67a4e63c8c7ede7739c62d6e"
+      },
+      "version": {
+        "title": "Home",
+        "hero": {
+          "designVersion": "1",
+          "badge": {
+            "en": "Your Website Builder"
+          },
+          "badgeLink": {
+            "type": "reference"
+          },
+          "richText": {
+            "en": {
+              "root": {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Blocks Built With Shadcn & Tailwind",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "heading",
+                    "version": 1,
+                    "tag": "h1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "paragraph",
+                    "version": 1,
+                    "textFormat": 0,
+                    "textStyle": ""
+                  }
+                ],
+                "direction": "ltr",
+                "format": "",
+                "indent": 0,
+                "type": "root",
+                "version": 1
+              }
+            }
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "feature",
+            "designVersion": "FEATURE1",
+            "badge": {
+              "en": ""
+            },
+            "richText": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Welcome to Our Website",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "left",
+                      "indent": 0,
+                      "type": "heading",
+                      "version": 1,
+                      "tag": "h1"
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "links": [
+              {
+                "link": {
+                  "type": "custom",
+                  "url": {
+                    "en": "/admin"
+                  },
+                  "label": {
+                    "en": "Visit admin"
+                  },
+                  "iconAfter": "ArrowRightCircle",
+                  "appearance": "default"
+                },
+                "id": "67a4eb25775c992f65041255"
+              }
+            ],
+            "image": {
+              "$oid": "67a4ef201a65a839d43f7f64"
+            },
+            "USPs": [],
+            "id": "67a4ea7e51be23006a7145a5"
+          }
+        ],
+        "meta": {
+          "title": {
+            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+          }
+        },
+        "publishedAt": {
+          "$date": "2025-02-06T16:42:09.847Z"
+        },
+        "slug": "home",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67a4e63c8c7ede7739c62d6e"
+              },
+              "url": "/home",
+              "label": "Home",
+              "id": "67a508e48959b70003220ff1"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-06T19:09:24.169Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-06T16:41:32.086Z"
+        },
+        "_status": "draft"
+      },
+      "createdAt": {
+        "$date": "2025-02-06T19:08:50.681Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-06T19:09:24.169Z"
+      },
+      "autosave": true,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67a5e6a697bbe0a79a37416b"
+      },
+      "parent": {
+        "$oid": "67a4e63c8c7ede7739c62d6e"
+      },
+      "version": {
+        "title": "Home",
+        "hero": {
+          "designVersion": "1",
+          "badge": {
+            "en": "Your Website Builder"
+          },
+          "badgeIcon": "Sparkles",
+          "badgeLink": {
+            "type": "reference"
+          },
+          "richText": {
+            "en": {
+              "root": {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Blocks Built With Shadcn & Tailwind",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "heading",
+                    "version": 1,
+                    "tag": "h1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "paragraph",
+                    "version": 1,
+                    "textFormat": 0,
+                    "textStyle": ""
+                  }
+                ],
+                "direction": "ltr",
+                "format": "",
+                "indent": 0,
+                "type": "root",
+                "version": 1
+              }
+            }
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "feature",
+            "designVersion": "FEATURE1",
+            "badge": {
+              "en": ""
+            },
+            "icon": "Activity",
+            "richText": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Welcome to the Payblocks Demo",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "left",
+                      "indent": 0,
+                      "type": "heading",
+                      "version": 1,
+                      "tag": "h1"
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "links": [
+              {
+                "link": {
+                  "type": "custom",
+                  "url": {
+                    "en": "/admin"
+                  },
+                  "label": {
+                    "en": "Visit admin"
+                  },
+                  "iconAfter": "ArrowRightCircle",
+                  "appearance": "default"
+                },
+                "id": "67a4eb25775c992f65041255"
+              }
+            ],
+            "image": {
+              "$oid": "67a4ef201a65a839d43f7f64"
+            },
+            "USPs": [],
+            "id": "67a4ea7e51be23006a7145a5"
+          },
+          {
+            "blockType": "testimonial",
+            "designVersion": "TESTIMONIAL3",
+            "headline": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "See w",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "link": {
+              "type": "reference",
+              "appearance": "default"
+            },
+            "testimonial": [
+              {
+                "authorName": {
+                  "en": "John Doe"
+                },
+                "authorDescription": {
+                  "en": "CEO of Doe Industries"
+                },
+                "icon": {
+                  "$oid": "67a5e6529b197db1c248781b"
+                },
+                "text": {
+                  "en": {
+                    "root": {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "detail": 0,
+                              "format": 0,
+                              "mode": "normal",
+                              "style": "",
+                              "text": "I'm really satisfied with this template. It saved us hours of work!",
+                              "type": "text",
+                              "version": 1
+                            }
+                          ],
+                          "direction": "ltr",
+                          "format": "",
+                          "indent": 0,
+                          "type": "paragraph",
+                          "version": 1,
+                          "textFormat": 0,
+                          "textStyle": ""
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "root",
+                      "version": 1
+                    }
+                  }
+                },
+                "link": {
+                  "type": "reference",
+                  "appearance": "default"
+                },
+                "id": "67a5e3e78222a7c07a6666e6"
+              }
+            ],
+            "id": "67a5def342f8ce3677c9df6c"
+          }
+        ],
+        "meta": {
+          "title": {
+            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+          }
+        },
+        "publishedAt": {
+          "$date": "2025-02-06T16:42:09.847Z"
+        },
+        "slug": "home",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67a4e63c8c7ede7739c62d6e"
+              },
+              "url": "/home",
+              "label": "Home",
+              "id": "67a5e6aa4b004e00038d3b6a"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-07T10:55:38.777Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-06T16:41:32.086Z"
+        },
+        "_status": "draft"
+      },
+      "createdAt": {
+        "$date": "2025-02-07T10:55:34.316Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-07T10:55:38.777Z"
+      },
+      "autosave": true,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67a5deb5bc1d9491b62e5759"
+      },
+      "parent": {
+        "$oid": "67a4e63c8c7ede7739c62d6e"
+      },
+      "version": {
+        "title": "Home",
+        "hero": {
+          "designVersion": "1",
+          "badge": {
+            "en": "Your Website Builder"
+          },
+          "badgeIcon": "Sparkles",
+          "badgeLink": {
+            "type": "reference"
+          },
+          "richText": {
+            "en": {
+              "root": {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Blocks Built With Shadcn & Tailwind",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "heading",
+                    "version": 1,
+                    "tag": "h1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "paragraph",
+                    "version": 1,
+                    "textFormat": 0,
+                    "textStyle": ""
+                  }
+                ],
+                "direction": "ltr",
+                "format": "",
+                "indent": 0,
+                "type": "root",
+                "version": 1
+              }
+            }
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "feature",
+            "designVersion": "FEATURE1",
+            "badge": {
+              "en": ""
+            },
+            "richText": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Welcome to Our Website",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "left",
+                      "indent": 0,
+                      "type": "heading",
+                      "version": 1,
+                      "tag": "h1"
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "links": [
+              {
+                "link": {
+                  "type": "custom",
+                  "url": {
+                    "en": "/admin"
+                  },
+                  "label": {
+                    "en": "Visit admin"
+                  },
+                  "iconAfter": "ArrowRightCircle",
+                  "appearance": "default"
+                },
+                "id": "67a4eb25775c992f65041255"
+              }
+            ],
+            "image": {
+              "$oid": "67a4ef201a65a839d43f7f64"
+            },
+            "USPs": [],
+            "id": "67a4ea7e51be23006a7145a5"
+          }
+        ],
+        "meta": {
+          "title": {
+            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+          }
+        },
+        "publishedAt": {
+          "$date": "2025-02-06T16:42:09.847Z"
+        },
+        "slug": "home",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67a4e63c8c7ede7739c62d6e"
+              },
+              "url": "/home",
+              "label": "Home",
+              "id": "67a5deb5f84fda00035cc44e"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-07T10:21:41.618Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-06T16:41:32.086Z"
+        },
+        "_status": "published"
+      },
+      "createdAt": {
+        "$date": "2025-02-07T10:21:41.661Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-07T10:21:41.661Z"
+      },
+      "autosave": false,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67a4ee0ce8cbf90371db2822"
+      },
+      "parent": {
+        "$oid": "67a4e63c8c7ede7739c62d6e"
+      },
+      "version": {
+        "title": "Home",
+        "hero": {
+          "designVersion": "1",
+          "badge": {
+            "en": "Your Website Builder"
+          },
+          "badgeLink": {
+            "type": "reference"
+          },
+          "richText": {
+            "en": {
+              "root": {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Blocks Built With Shadcn & Tailwind",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "heading",
+                    "version": 1,
+                    "tag": "h1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "paragraph",
+                    "version": 1,
+                    "textFormat": 0,
+                    "textStyle": ""
+                  }
+                ],
+                "direction": "ltr",
+                "format": "",
+                "indent": 0,
+                "type": "root",
+                "version": 1
+              }
+            }
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "feature",
+            "designVersion": "FEATURE1",
+            "badge": {
+              "en": ""
+            },
+            "richText": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Welcome to Our Website",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "left",
+                      "indent": 0,
+                      "type": "heading",
+                      "version": 1,
+                      "tag": "h1"
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "links": [
+              {
+                "link": {
+                  "type": "custom",
+                  "url": {
+                    "en": "/admin"
+                  },
+                  "label": {
+                    "en": "Visit admin"
+                  },
+                  "iconAfter": "ArrowRightCircle",
+                  "appearance": "default"
+                },
+                "id": "67a4eb25775c992f65041255"
+              }
+            ],
+            "image": {
+              "$oid": "67a4ef201a65a839d43f7f64"
+            },
+            "USPs": [],
+            "id": "67a4ea7e51be23006a7145a5"
+          }
+        ],
+        "meta": {},
+        "publishedAt": {
+          "$date": "2025-02-06T16:42:09.847Z"
+        },
+        "slug": "home",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67a4e63c8c7ede7739c62d6e"
+              },
+              "url": "/home",
+              "label": "Home",
+              "id": "67a4ef20f4f2c20003a17b73"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-06T17:19:28.628Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-06T16:41:32.086Z"
+        },
+        "_status": "draft"
+      },
+      "createdAt": {
+        "$date": "2025-02-06T17:14:52.491Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-06T17:19:28.628Z"
+      },
+      "autosave": true,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67a63460aabee2d0442e63e3"
+      },
+      "parent": {
+        "$oid": "67a4e63c8c7ede7739c62d6e"
+      },
+      "version": {
+        "title": "Home",
+        "hero": {
+          "designVersion": "12",
+          "badge": {
+            "en": "✨Your Website Builder"
+          },
+          "badgeIcon": "Sparkles",
+          "tagline": {
+            "en": ""
+          },
+          "badgeLink": {
+            "type": "reference"
+          },
+          "richText": {
+            "en": {
+              "root": {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Blocks Built With Shadcn & Tailwind",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "heading",
+                    "version": 1,
+                    "tag": "h1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "paragraph",
+                    "version": 1,
+                    "textFormat": 0,
+                    "textStyle": ""
+                  }
+                ],
+                "direction": "ltr",
+                "format": "",
+                "indent": 0,
+                "type": "root",
+                "version": 1
+              }
+            }
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "feature",
+            "designVersion": "FEATURE1",
+            "badge": {
+              "en": ""
+            },
+            "icon": "Activity",
+            "richText": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Welcome to the Payblocks Demo",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "left",
+                      "indent": 0,
+                      "type": "heading",
+                      "version": 1,
+                      "tag": "h1"
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "links": [
+              {
+                "link": {
+                  "type": "custom",
+                  "url": {
+                    "en": "/admin"
+                  },
+                  "label": {
+                    "en": "Visit admin"
+                  },
+                  "iconAfter": "ArrowRightCircle",
+                  "appearance": "default"
+                },
+                "id": "67a4eb25775c992f65041255"
+              }
+            ],
+            "image": {
+              "$oid": "67a4ef201a65a839d43f7f64"
+            },
+            "USPs": [],
+            "id": "67a4ea7e51be23006a7145a5",
+            "blockName": "Main Feature "
+          },
+          {
+            "blockType": "testimonial",
+            "designVersion": "TESTIMONIAL3",
+            "headline": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "See w",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "link": {
+              "type": "reference",
+              "appearance": "default"
+            },
+            "testimonial": [
+              {
+                "authorName": {
+                  "en": "John Doe"
+                },
+                "authorDescription": {
+                  "en": "CEO of Doe Industries"
+                },
+                "icon": {
+                  "$oid": "67a5e6529b197db1c248781b"
+                },
+                "text": {
+                  "en": {
+                    "root": {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "detail": 0,
+                              "format": 0,
+                              "mode": "normal",
+                              "style": "",
+                              "text": "I'm really satisfied with this template. It saved us hours of work!",
+                              "type": "text",
+                              "version": 1
+                            }
+                          ],
+                          "direction": "ltr",
+                          "format": "",
+                          "indent": 0,
+                          "type": "paragraph",
+                          "version": 1,
+                          "textFormat": 0,
+                          "textStyle": ""
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "root",
+                      "version": 1
+                    }
+                  }
+                },
+                "link": {
+                  "type": "reference",
+                  "appearance": "default"
+                },
+                "id": "67a5e3e78222a7c07a6666e6"
+              }
+            ],
+            "id": "67a5def342f8ce3677c9df6c",
+            "blockName": "John Doe Testimonial"
+          }
+        ],
+        "meta": {
+          "title": {
+            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+          }
+        },
+        "publishedAt": {
+          "$date": "2025-02-06T16:42:09.847Z"
+        },
+        "slug": "home",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67a4e63c8c7ede7739c62d6e"
+              },
+              "url": "/home",
+              "label": "Home",
+              "id": "67a73c9908467500033ffb37"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-08T11:14:33.600Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-06T16:41:32.086Z"
+        },
+        "_status": "draft"
+      },
+      "createdAt": {
+        "$date": "2025-02-07T16:27:12.626Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-08T11:14:33.600Z"
+      },
+      "latest": true,
+      "autosave": true,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67a508e62ead0c7978f0270b"
+      },
+      "parent": {
+        "$oid": "67a4e63c8c7ede7739c62d6e"
+      },
+      "version": {
+        "title": "Home",
+        "hero": {
+          "designVersion": "1",
+          "badge": {
+            "en": "Your Website Builder"
+          },
+          "badgeLink": {
+            "type": "reference"
+          },
+          "richText": {
+            "en": {
+              "root": {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Blocks Built With Shadcn & Tailwind",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "heading",
+                    "version": 1,
+                    "tag": "h1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "paragraph",
+                    "version": 1,
+                    "textFormat": 0,
+                    "textStyle": ""
+                  }
+                ],
+                "direction": "ltr",
+                "format": "",
+                "indent": 0,
+                "type": "root",
+                "version": 1
+              }
+            }
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "feature",
+            "designVersion": "FEATURE1",
+            "badge": {
+              "en": ""
+            },
+            "richText": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Welcome to Our Website",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "left",
+                      "indent": 0,
+                      "type": "heading",
+                      "version": 1,
+                      "tag": "h1"
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "links": [
+              {
+                "link": {
+                  "type": "custom",
+                  "url": {
+                    "en": "/admin"
+                  },
+                  "label": {
+                    "en": "Visit admin"
+                  },
+                  "iconAfter": "ArrowRightCircle",
+                  "appearance": "default"
+                },
+                "id": "67a4eb25775c992f65041255"
+              }
+            ],
+            "image": {
+              "$oid": "67a4ef201a65a839d43f7f64"
+            },
+            "USPs": [],
+            "id": "67a4ea7e51be23006a7145a5"
+          }
+        ],
+        "meta": {
+          "title": {
+            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+          }
+        },
+        "publishedAt": {
+          "$date": "2025-02-06T16:42:09.847Z"
+        },
+        "slug": "home",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67a4e63c8c7ede7739c62d6e"
+              },
+              "url": "/home",
+              "label": "Home",
+              "id": "67a508e68959b70003220ff2"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-06T19:09:26.926Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-06T16:41:32.086Z"
+        },
+        "_status": "published"
+      },
+      "createdAt": {
+        "$date": "2025-02-06T19:09:26.959Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-06T19:09:26.959Z"
+      },
+      "autosave": false,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67a5deb4bc1d9491b62e5746"
+      },
+      "parent": {
+        "$oid": "67a4e63c8c7ede7739c62d6e"
+      },
+      "version": {
+        "title": "Home",
+        "hero": {
+          "designVersion": "1",
+          "badge": {
+            "en": "Your Website Builder"
+          },
+          "badgeIcon": "Sparkles",
+          "badgeLink": {
+            "type": "reference"
+          },
+          "richText": {
+            "en": {
+              "root": {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Blocks Built With Shadcn & Tailwind",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "heading",
+                    "version": 1,
+                    "tag": "h1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "paragraph",
+                    "version": 1,
+                    "textFormat": 0,
+                    "textStyle": ""
+                  }
+                ],
+                "direction": "ltr",
+                "format": "",
+                "indent": 0,
+                "type": "root",
+                "version": 1
+              }
+            }
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "feature",
+            "designVersion": "FEATURE1",
+            "badge": {
+              "en": ""
+            },
+            "richText": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Welcome to Our Website",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "left",
+                      "indent": 0,
+                      "type": "heading",
+                      "version": 1,
+                      "tag": "h1"
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "links": [
+              {
+                "link": {
+                  "type": "custom",
+                  "url": {
+                    "en": "/admin"
+                  },
+                  "label": {
+                    "en": "Visit admin"
+                  },
+                  "iconAfter": "ArrowRightCircle",
+                  "appearance": "default"
+                },
+                "id": "67a4eb25775c992f65041255"
+              }
+            ],
+            "image": {
+              "$oid": "67a4ef201a65a839d43f7f64"
+            },
+            "USPs": [],
+            "id": "67a4ea7e51be23006a7145a5"
+          }
+        ],
+        "meta": {
+          "title": {
+            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+          }
+        },
+        "publishedAt": {
+          "$date": "2025-02-06T16:42:09.847Z"
+        },
+        "slug": "home",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67a4e63c8c7ede7739c62d6e"
+              },
+              "url": "/home",
+              "label": "Home",
+              "id": "67a5deb4f84fda00035cc44d"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-07T10:21:40.371Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-06T16:41:32.086Z"
+        },
+        "_status": "draft"
+      },
+      "createdAt": {
+        "$date": "2025-02-07T10:21:40.371Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-07T10:21:40.371Z"
+      },
+      "autosave": true,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67a5e68f97bbe0a79a374152"
+      },
+      "parent": {
+        "$oid": "67a4e63c8c7ede7739c62d6e"
+      },
+      "version": {
+        "title": "Home",
+        "hero": {
+          "designVersion": "1",
+          "badge": {
+            "en": "Your Website Builder"
+          },
+          "badgeIcon": "Sparkles",
+          "badgeLink": {
+            "type": "reference"
+          },
+          "richText": {
+            "en": {
+              "root": {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Blocks Built With Shadcn & Tailwind",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "heading",
+                    "version": 1,
+                    "tag": "h1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "paragraph",
+                    "version": 1,
+                    "textFormat": 0,
+                    "textStyle": ""
+                  }
+                ],
+                "direction": "ltr",
+                "format": "",
+                "indent": 0,
+                "type": "root",
+                "version": 1
+              }
+            }
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "feature",
+            "designVersion": "FEATURE1",
+            "badge": {
+              "en": ""
+            },
+            "icon": "Activity",
+            "richText": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Welcome to the Payblocks Demo",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "left",
+                      "indent": 0,
+                      "type": "heading",
+                      "version": 1,
+                      "tag": "h1"
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "links": [
+              {
+                "link": {
+                  "type": "custom",
+                  "url": {
+                    "en": "/admin"
+                  },
+                  "label": {
+                    "en": "Visit admin"
+                  },
+                  "iconAfter": "ArrowRightCircle",
+                  "appearance": "default"
+                },
+                "id": "67a4eb25775c992f65041255"
+              }
+            ],
+            "image": {
+              "$oid": "67a4ef201a65a839d43f7f64"
+            },
+            "USPs": [],
+            "id": "67a4ea7e51be23006a7145a5"
+          },
+          {
+            "blockType": "testimonial",
+            "designVersion": "TESTIMONIAL3",
+            "headline": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "See w",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "link": {
+              "type": "reference",
+              "appearance": "default"
+            },
+            "testimonial": [
+              {
+                "authorName": {
+                  "en": "John Doe"
+                },
+                "authorDescription": {
+                  "en": "CEO of Doe Industries"
+                },
+                "icon": {
+                  "$oid": "67a5e6529b197db1c248781b"
+                },
+                "text": {
+                  "en": {
+                    "root": {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "detail": 0,
+                              "format": 0,
+                              "mode": "normal",
+                              "style": "",
+                              "text": "I'm really satisfied with this template. It saved us hours of work!",
+                              "type": "text",
+                              "version": 1
+                            }
+                          ],
+                          "direction": "ltr",
+                          "format": "",
+                          "indent": 0,
+                          "type": "paragraph",
+                          "version": 1,
+                          "textFormat": 0,
+                          "textStyle": ""
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "root",
+                      "version": 1
+                    }
+                  }
+                },
+                "link": {
+                  "type": "reference",
+                  "appearance": "default"
+                },
+                "id": "67a5e3e78222a7c07a6666e6"
+              }
+            ],
+            "id": "67a5def342f8ce3677c9df6c"
+          }
+        ],
+        "meta": {
+          "title": {
+            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+          }
+        },
+        "publishedAt": {
+          "$date": "2025-02-06T16:42:09.847Z"
+        },
+        "slug": "home",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67a4e63c8c7ede7739c62d6e"
+              },
+              "url": "/home",
+              "label": "Home",
+              "id": "67a5e68f4b004e00038d3b68"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-07T10:55:11.128Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-06T16:41:32.086Z"
+        },
+        "_status": "published"
+      },
+      "createdAt": {
+        "$date": "2025-02-07T10:55:11.138Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-07T10:55:11.138Z"
+      },
+      "autosave": false,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67a5f82f78c42805ab06fe07"
+      },
+      "parent": {
+        "$oid": "67a4e63c8c7ede7739c62d6e"
+      },
+      "version": {
+        "title": "Home",
+        "hero": {
+          "designVersion": "12",
+          "badge": {
+            "en": "✨Your Website Builder"
+          },
+          "badgeIcon": "Sparkles",
+          "tagline": {
+            "en": ""
+          },
+          "badgeLink": {
+            "type": "reference"
+          },
+          "richText": {
+            "en": {
+              "root": {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Blocks Built With Shadcn & Tailwind",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "heading",
+                    "version": 1,
+                    "tag": "h1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "paragraph",
+                    "version": 1,
+                    "textFormat": 0,
+                    "textStyle": ""
+                  }
+                ],
+                "direction": "ltr",
+                "format": "",
+                "indent": 0,
+                "type": "root",
+                "version": 1
+              }
+            }
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "feature",
+            "designVersion": "FEATURE1",
+            "badge": {
+              "en": ""
+            },
+            "icon": "Activity",
+            "richText": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Welcome to the Payblocks Demo",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "left",
+                      "indent": 0,
+                      "type": "heading",
+                      "version": 1,
+                      "tag": "h1"
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "links": [
+              {
+                "link": {
+                  "type": "custom",
+                  "url": {
+                    "en": "/admin"
+                  },
+                  "label": {
+                    "en": "Visit admin"
+                  },
+                  "iconAfter": "ArrowRightCircle",
+                  "appearance": "default"
+                },
+                "id": "67a4eb25775c992f65041255"
+              }
+            ],
+            "image": {
+              "$oid": "67a4ef201a65a839d43f7f64"
+            },
+            "USPs": [],
+            "id": "67a4ea7e51be23006a7145a5"
+          },
+          {
+            "blockType": "testimonial",
+            "designVersion": "TESTIMONIAL3",
+            "headline": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "See w",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "link": {
+              "type": "reference",
+              "appearance": "default"
+            },
+            "testimonial": [
+              {
+                "authorName": {
+                  "en": "John Doe"
+                },
+                "authorDescription": {
+                  "en": "CEO of Doe Industries"
+                },
+                "icon": {
+                  "$oid": "67a5e6529b197db1c248781b"
+                },
+                "text": {
+                  "en": {
+                    "root": {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "detail": 0,
+                              "format": 0,
+                              "mode": "normal",
+                              "style": "",
+                              "text": "I'm really satisfied with this template. It saved us hours of work!",
+                              "type": "text",
+                              "version": 1
+                            }
+                          ],
+                          "direction": "ltr",
+                          "format": "",
+                          "indent": 0,
+                          "type": "paragraph",
+                          "version": 1,
+                          "textFormat": 0,
+                          "textStyle": ""
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "root",
+                      "version": 1
+                    }
+                  }
+                },
+                "link": {
+                  "type": "reference",
+                  "appearance": "default"
+                },
+                "id": "67a5e3e78222a7c07a6666e6"
+              }
+            ],
+            "id": "67a5def342f8ce3677c9df6c",
+            "blockName": "John Doe Testimonial"
+          }
+        ],
+        "meta": {
+          "title": {
+            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+          }
+        },
+        "publishedAt": {
+          "$date": "2025-02-06T16:42:09.847Z"
+        },
+        "slug": "home",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67a4e63c8c7ede7739c62d6e"
+              },
+              "url": "/home",
+              "label": "Home",
+              "id": "67a5f86a4680f300036e0e2e"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-07T12:11:22.108Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-06T16:41:32.086Z"
+        },
+        "_status": "draft"
+      },
+      "createdAt": {
+        "$date": "2025-02-07T12:10:23.591Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-07T12:11:22.108Z"
+      },
+      "autosave": true,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67a4e63c8c7ede7739c62d8b"
+      },
+      "parent": {
+        "$oid": "67a4e63c8c7ede7739c62d6e"
+      },
+      "version": {
+        "hero": {
+          "designVersion": "1",
+          "badgeLink": {
+            "type": "reference"
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [],
+        "meta": {},
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67a4e63c8c7ede7739c62d6e"
+              },
+              "url": "/undefined",
+              "id": "67a4e63c9efb650003f89c10"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-06T16:41:32.549Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-06T16:41:32.086Z"
+        },
+        "_status": "draft"
+      },
+      "createdAt": {
+        "$date": "2025-02-06T16:41:32.549Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-06T16:41:32.549Z"
+      },
+      "autosave": false,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67a5e6ad97bbe0a79a37418a"
+      },
+      "parent": {
+        "$oid": "67a4e63c8c7ede7739c62d6e"
+      },
+      "version": {
+        "title": "Home",
+        "hero": {
+          "designVersion": "1",
+          "badge": {
+            "en": "Your Website Builder"
+          },
+          "badgeIcon": "Sparkles",
+          "badgeLink": {
+            "type": "reference"
+          },
+          "richText": {
+            "en": {
+              "root": {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Blocks Built With Shadcn & Tailwind",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "heading",
+                    "version": 1,
+                    "tag": "h1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "paragraph",
+                    "version": 1,
+                    "textFormat": 0,
+                    "textStyle": ""
+                  }
+                ],
+                "direction": "ltr",
+                "format": "",
+                "indent": 0,
+                "type": "root",
+                "version": 1
+              }
+            }
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "feature",
+            "designVersion": "FEATURE1",
+            "badge": {
+              "en": ""
+            },
+            "icon": "Activity",
+            "richText": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Welcome to the Payblocks Demo",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "left",
+                      "indent": 0,
+                      "type": "heading",
+                      "version": 1,
+                      "tag": "h1"
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "links": [
+              {
+                "link": {
+                  "type": "custom",
+                  "url": {
+                    "en": "/admin"
+                  },
+                  "label": {
+                    "en": "Visit admin"
+                  },
+                  "iconAfter": "ArrowRightCircle",
+                  "appearance": "default"
+                },
+                "id": "67a4eb25775c992f65041255"
+              }
+            ],
+            "image": {
+              "$oid": "67a4ef201a65a839d43f7f64"
+            },
+            "USPs": [],
+            "id": "67a4ea7e51be23006a7145a5"
+          },
+          {
+            "blockType": "testimonial",
+            "designVersion": "TESTIMONIAL3",
+            "headline": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "See w",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "link": {
+              "type": "reference",
+              "appearance": "default"
+            },
+            "testimonial": [
+              {
+                "authorName": {
+                  "en": "John Doe"
+                },
+                "authorDescription": {
+                  "en": "CEO of Doe Industries"
+                },
+                "icon": {
+                  "$oid": "67a5e6529b197db1c248781b"
+                },
+                "text": {
+                  "en": {
+                    "root": {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "detail": 0,
+                              "format": 0,
+                              "mode": "normal",
+                              "style": "",
+                              "text": "I'm really satisfied with this template. It saved us hours of work!",
+                              "type": "text",
+                              "version": 1
+                            }
+                          ],
+                          "direction": "ltr",
+                          "format": "",
+                          "indent": 0,
+                          "type": "paragraph",
+                          "version": 1,
+                          "textFormat": 0,
+                          "textStyle": ""
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "root",
+                      "version": 1
+                    }
+                  }
+                },
+                "link": {
+                  "type": "reference",
+                  "appearance": "default"
+                },
+                "id": "67a5e3e78222a7c07a6666e6"
+              }
+            ],
+            "id": "67a5def342f8ce3677c9df6c"
+          }
+        ],
+        "meta": {
+          "title": {
+            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+          }
+        },
+        "publishedAt": {
+          "$date": "2025-02-06T16:42:09.847Z"
+        },
+        "slug": "home",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67a4e63c8c7ede7739c62d6e"
+              },
+              "url": "/home",
+              "label": "Home",
+              "id": "67a5e6ad4b004e00038d3b6b"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-07T10:55:41.111Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-06T16:41:32.086Z"
+        },
+        "_status": "published"
+      },
+      "createdAt": {
+        "$date": "2025-02-07T10:55:41.134Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-07T10:55:41.134Z"
+      },
+      "autosave": false,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67a4e63f6c0517368dfcfb7b"
+      },
+      "parent": {
+        "$oid": "67a4e63c8c7ede7739c62d6e"
+      },
+      "version": {
+        "title": "Home",
+        "hero": {
+          "designVersion": "1",
+          "badge": {
+            "en": "Your Website Builder"
+          },
+          "badgeLink": {
+            "type": "reference"
+          },
+          "richText": {
+            "en": {
+              "root": {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Blocks Built With Shadcn & Tailwind",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "heading",
+                    "version": 1,
+                    "tag": "h1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "paragraph",
+                    "version": 1,
+                    "textFormat": 0,
+                    "textStyle": ""
+                  }
+                ],
+                "direction": "ltr",
+                "format": "",
+                "indent": 0,
+                "type": "root",
+                "version": 1
+              }
+            }
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "feature",
+            "designVersion": "FEATURE1",
+            "badge": {
+              "en": ""
+            },
+            "richText": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Welcome to Our Website",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "left",
+                      "indent": 0,
+                      "type": "heading",
+                      "version": 1,
+                      "tag": "h1"
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "links": [
+              {
+                "link": {
+                  "type": "custom",
+                  "url": {
+                    "en": "/admin"
+                  },
+                  "label": {
+                    "en": "Visit admin"
+                  },
+                  "iconAfter": "ArrowRightCircle",
+                  "appearance": "default"
+                },
+                "id": "67a4eb25775c992f65041255"
+              }
+            ],
+            "USPs": [],
+            "id": "67a4ea7e51be23006a7145a5"
+          }
+        ],
+        "meta": {},
+        "publishedAt": {
+          "$date": "2025-02-06T16:42:09.847Z"
+        },
+        "slug": "home",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67a4e63c8c7ede7739c62d6e"
+              },
+              "url": "/home",
+              "label": "Home",
+              "id": "67a4eb6f23c6a50003a56f9e"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-06T17:03:43.725Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-06T16:41:32.086Z"
+        },
+        "_status": "draft"
+      },
+      "createdAt": {
+        "$date": "2025-02-06T16:41:35.510Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-06T17:03:43.725Z"
+      },
+      "autosave": true,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67a4eb790f03a4a482c9773f"
+      },
+      "parent": {
+        "$oid": "67a4e63c8c7ede7739c62d6e"
+      },
+      "version": {
+        "title": "Home",
+        "hero": {
+          "designVersion": "1",
+          "badge": {
+            "en": "Your Website Builder"
+          },
+          "badgeLink": {
+            "type": "reference"
+          },
+          "richText": {
+            "en": {
+              "root": {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Blocks Built With Shadcn & Tailwind",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "heading",
+                    "version": 1,
+                    "tag": "h1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "paragraph",
+                    "version": 1,
+                    "textFormat": 0,
+                    "textStyle": ""
+                  }
+                ],
+                "direction": "ltr",
+                "format": "",
+                "indent": 0,
+                "type": "root",
+                "version": 1
+              }
+            }
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "feature",
+            "designVersion": "FEATURE1",
+            "badge": {
+              "en": ""
+            },
+            "richText": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Welcome to Our Website",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "left",
+                      "indent": 0,
+                      "type": "heading",
+                      "version": 1,
+                      "tag": "h1"
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "links": [
+              {
+                "link": {
+                  "type": "custom",
+                  "url": {
+                    "en": "/admin"
+                  },
+                  "label": {
+                    "en": "Visit admin"
+                  },
+                  "iconAfter": "ArrowRightCircle",
+                  "appearance": "default"
+                },
+                "id": "67a4eb25775c992f65041255"
+              }
+            ],
+            "USPs": [],
+            "id": "67a4ea7e51be23006a7145a5"
+          }
+        ],
+        "meta": {},
+        "publishedAt": {
+          "$date": "2025-02-06T16:42:09.847Z"
+        },
+        "slug": "home",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67a4e63c8c7ede7739c62d6e"
+              },
+              "url": "/home",
+              "label": "Home",
+              "id": "67a4eb7923c6a50003a56f9f"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-06T17:03:53.463Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-06T16:41:32.086Z"
+        },
+        "_status": "published"
+      },
+      "createdAt": {
+        "$date": "2025-02-06T17:03:53.483Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-06T17:03:53.483Z"
+      },
+      "autosave": false,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67a4ef271a65a839d43f7f7a"
+      },
+      "parent": {
+        "$oid": "67a4e63c8c7ede7739c62d6e"
+      },
+      "version": {
+        "title": "Home",
+        "hero": {
+          "designVersion": "1",
+          "badge": {
+            "en": "Your Website Builder"
+          },
+          "badgeLink": {
+            "type": "reference"
+          },
+          "richText": {
+            "en": {
+              "root": {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Blocks Built With Shadcn & Tailwind",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "heading",
+                    "version": 1,
+                    "tag": "h1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "paragraph",
+                    "version": 1,
+                    "textFormat": 0,
+                    "textStyle": ""
+                  }
+                ],
+                "direction": "ltr",
+                "format": "",
+                "indent": 0,
+                "type": "root",
+                "version": 1
+              }
+            }
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "feature",
+            "designVersion": "FEATURE1",
+            "badge": {
+              "en": ""
+            },
+            "richText": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Welcome to Our Website",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "left",
+                      "indent": 0,
+                      "type": "heading",
+                      "version": 1,
+                      "tag": "h1"
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "links": [
+              {
+                "link": {
+                  "type": "custom",
+                  "url": {
+                    "en": "/admin"
+                  },
+                  "label": {
+                    "en": "Visit admin"
+                  },
+                  "iconAfter": "ArrowRightCircle",
+                  "appearance": "default"
+                },
+                "id": "67a4eb25775c992f65041255"
+              }
+            ],
+            "image": {
+              "$oid": "67a4ef201a65a839d43f7f64"
+            },
+            "USPs": [],
+            "id": "67a4ea7e51be23006a7145a5"
+          }
+        ],
+        "meta": {},
+        "publishedAt": {
+          "$date": "2025-02-06T16:42:09.847Z"
+        },
+        "slug": "home",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67a4e63c8c7ede7739c62d6e"
+              },
+              "url": "/home",
+              "label": "Home",
+              "id": "67a4ef27f4f2c20003a17b74"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-06T17:19:35.602Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-06T16:41:32.086Z"
+        },
+        "_status": "published"
+      },
+      "createdAt": {
+        "$date": "2025-02-06T17:19:35.626Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-06T17:19:35.626Z"
+      },
+      "autosave": false,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67a5eb9fed4ec39eaa52af24"
+      },
+      "parent": {
+        "$oid": "67a4e63c8c7ede7739c62d6e"
+      },
+      "version": {
+        "title": "Home",
+        "hero": {
+          "designVersion": "1",
+          "badge": {
+            "en": "Your Website Builder"
+          },
+          "badgeIcon": "Sparkles",
+          "badgeLink": {
+            "type": "reference"
+          },
+          "richText": {
+            "en": {
+              "root": {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Blocks Built With Shadcn & Tailwind",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "heading",
+                    "version": 1,
+                    "tag": "h1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "paragraph",
+                    "version": 1,
+                    "textFormat": 0,
+                    "textStyle": ""
+                  }
+                ],
+                "direction": "ltr",
+                "format": "",
+                "indent": 0,
+                "type": "root",
+                "version": 1
+              }
+            }
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "feature",
+            "designVersion": "FEATURE1",
+            "badge": {
+              "en": ""
+            },
+            "icon": "Activity",
+            "richText": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Welcome to the Payblocks Demo",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "left",
+                      "indent": 0,
+                      "type": "heading",
+                      "version": 1,
+                      "tag": "h1"
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "links": [
+              {
+                "link": {
+                  "type": "custom",
+                  "url": {
+                    "en": "/admin"
+                  },
+                  "label": {
+                    "en": "Visit admin"
+                  },
+                  "iconAfter": "ArrowRightCircle",
+                  "appearance": "default"
+                },
+                "id": "67a4eb25775c992f65041255"
+              }
+            ],
+            "image": {
+              "$oid": "67a4ef201a65a839d43f7f64"
+            },
+            "USPs": [],
+            "id": "67a4ea7e51be23006a7145a5"
+          },
+          {
+            "blockType": "testimonial",
+            "designVersion": "TESTIMONIAL3",
+            "headline": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "See w",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "link": {
+              "type": "reference",
+              "appearance": "default"
+            },
+            "testimonial": [
+              {
+                "authorName": {
+                  "en": "John Doe"
+                },
+                "authorDescription": {
+                  "en": "CEO of Doe Industries"
+                },
+                "icon": {
+                  "$oid": "67a5e6529b197db1c248781b"
+                },
+                "text": {
+                  "en": {
+                    "root": {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "detail": 0,
+                              "format": 0,
+                              "mode": "normal",
+                              "style": "",
+                              "text": "I'm really satisfied with this template. It saved us hours of work!",
+                              "type": "text",
+                              "version": 1
+                            }
+                          ],
+                          "direction": "ltr",
+                          "format": "",
+                          "indent": 0,
+                          "type": "paragraph",
+                          "version": 1,
+                          "textFormat": 0,
+                          "textStyle": ""
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "root",
+                      "version": 1
+                    }
+                  }
+                },
+                "link": {
+                  "type": "reference",
+                  "appearance": "default"
+                },
+                "id": "67a5e3e78222a7c07a6666e6"
+              }
+            ],
+            "id": "67a5def342f8ce3677c9df6c",
+            "blockName": "John Doe Testimonial"
+          }
+        ],
+        "meta": {
+          "title": {
+            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+          }
+        },
+        "publishedAt": {
+          "$date": "2025-02-06T16:42:09.847Z"
+        },
+        "slug": "home",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67a4e63c8c7ede7739c62d6e"
+              },
+              "url": "/home",
+              "label": "Home",
+              "id": "67a5eb9fd3f56c0003d118c3"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-07T11:16:47.624Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-06T16:41:32.086Z"
+        },
+        "_status": "published"
+      },
+      "createdAt": {
+        "$date": "2025-02-07T11:16:47.687Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-07T11:16:47.687Z"
+      },
+      "autosave": false,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67a5deccd2d112d64ab1f2ba"
+      },
+      "parent": {
+        "$oid": "67a4e63c8c7ede7739c62d6e"
+      },
+      "version": {
+        "title": "Home",
+        "hero": {
+          "designVersion": "1",
+          "badge": {
+            "en": "Your Website Builder"
+          },
+          "badgeIcon": "Sparkles",
+          "badgeLink": {
+            "type": "reference"
+          },
+          "richText": {
+            "en": {
+              "root": {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Blocks Built With Shadcn & Tailwind",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "heading",
+                    "version": 1,
+                    "tag": "h1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "paragraph",
+                    "version": 1,
+                    "textFormat": 0,
+                    "textStyle": ""
+                  }
+                ],
+                "direction": "ltr",
+                "format": "",
+                "indent": 0,
+                "type": "root",
+                "version": 1
+              }
+            }
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "feature",
+            "designVersion": "FEATURE1",
+            "badge": {
+              "en": ""
+            },
+            "icon": "Activity",
+            "richText": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Welcome to the Payblocks Demo",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "left",
+                      "indent": 0,
+                      "type": "heading",
+                      "version": 1,
+                      "tag": "h1"
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "links": [
+              {
+                "link": {
+                  "type": "custom",
+                  "url": {
+                    "en": "/admin"
+                  },
+                  "label": {
+                    "en": "Visit admin"
+                  },
+                  "iconAfter": "ArrowRightCircle",
+                  "appearance": "default"
+                },
+                "id": "67a4eb25775c992f65041255"
+              }
+            ],
+            "image": {
+              "$oid": "67a4ef201a65a839d43f7f64"
+            },
+            "USPs": [],
+            "id": "67a4ea7e51be23006a7145a5"
+          },
+          {
+            "blockType": "testimonial",
+            "designVersion": "TESTIMONIAL3",
+            "headline": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "See w",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "link": {
+              "type": "reference",
+              "appearance": "default"
+            },
+            "testimonial": [
+              {
+                "authorName": {
+                  "en": "John Doe"
+                },
+                "authorDescription": {
+                  "en": "CEO of Doe Industries"
+                },
+                "icon": {
+                  "$oid": "67a5e6529b197db1c248781b"
+                },
+                "text": {
+                  "en": {
+                    "root": {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "detail": 0,
+                              "format": 0,
+                              "mode": "normal",
+                              "style": "",
+                              "text": "I'm really satisfied with this template. It saved us hours of work!",
+                              "type": "text",
+                              "version": 1
+                            }
+                          ],
+                          "direction": "ltr",
+                          "format": "",
+                          "indent": 0,
+                          "type": "paragraph",
+                          "version": 1,
+                          "textFormat": 0,
+                          "textStyle": ""
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "root",
+                      "version": 1
+                    }
+                  }
+                },
+                "link": {
+                  "type": "reference",
+                  "appearance": "default"
+                },
+                "id": "67a5e3e78222a7c07a6666e6"
+              }
+            ],
+            "id": "67a5def342f8ce3677c9df6c"
+          }
+        ],
+        "meta": {
+          "title": {
+            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+          }
+        },
+        "publishedAt": {
+          "$date": "2025-02-06T16:42:09.847Z"
+        },
+        "slug": "home",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67a4e63c8c7ede7739c62d6e"
+              },
+              "url": "/home",
+              "label": "Home",
+              "id": "67a5e68c4b004e00038d3b67"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-07T10:55:08.530Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-06T16:41:32.086Z"
+        },
+        "_status": "draft"
+      },
+      "createdAt": {
+        "$date": "2025-02-07T10:22:04.651Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-07T10:55:08.530Z"
+      },
+      "autosave": true,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67a5eb98ed4ec39eaa52add9"
+      },
+      "parent": {
+        "$oid": "67a4e63c8c7ede7739c62d6e"
+      },
+      "version": {
+        "title": "Home",
+        "hero": {
+          "designVersion": "1",
+          "badge": {
+            "en": "Your Website Builder"
+          },
+          "badgeIcon": "Sparkles",
+          "badgeLink": {
+            "type": "reference"
+          },
+          "richText": {
+            "en": {
+              "root": {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Blocks Built With Shadcn & Tailwind",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "heading",
+                    "version": 1,
+                    "tag": "h1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "paragraph",
+                    "version": 1,
+                    "textFormat": 0,
+                    "textStyle": ""
+                  }
+                ],
+                "direction": "ltr",
+                "format": "",
+                "indent": 0,
+                "type": "root",
+                "version": 1
+              }
+            }
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "feature",
+            "designVersion": "FEATURE1",
+            "badge": {
+              "en": ""
+            },
+            "icon": "Activity",
+            "richText": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Welcome to the Payblocks Demo",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "left",
+                      "indent": 0,
+                      "type": "heading",
+                      "version": 1,
+                      "tag": "h1"
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "links": [
+              {
+                "link": {
+                  "type": "custom",
+                  "url": {
+                    "en": "/admin"
+                  },
+                  "label": {
+                    "en": "Visit admin"
+                  },
+                  "iconAfter": "ArrowRightCircle",
+                  "appearance": "default"
+                },
+                "id": "67a4eb25775c992f65041255"
+              }
+            ],
+            "image": {
+              "$oid": "67a4ef201a65a839d43f7f64"
+            },
+            "USPs": [],
+            "id": "67a4ea7e51be23006a7145a5"
+          },
+          {
+            "blockType": "testimonial",
+            "designVersion": "TESTIMONIAL3",
+            "headline": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "See w",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "link": {
+              "type": "reference",
+              "appearance": "default"
+            },
+            "testimonial": [
+              {
+                "authorName": {
+                  "en": "John Doe"
+                },
+                "authorDescription": {
+                  "en": "CEO of Doe Industries"
+                },
+                "icon": {
+                  "$oid": "67a5e6529b197db1c248781b"
+                },
+                "text": {
+                  "en": {
+                    "root": {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "detail": 0,
+                              "format": 0,
+                              "mode": "normal",
+                              "style": "",
+                              "text": "I'm really satisfied with this template. It saved us hours of work!",
+                              "type": "text",
+                              "version": 1
+                            }
+                          ],
+                          "direction": "ltr",
+                          "format": "",
+                          "indent": 0,
+                          "type": "paragraph",
+                          "version": 1,
+                          "textFormat": 0,
+                          "textStyle": ""
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "root",
+                      "version": 1
+                    }
+                  }
+                },
+                "link": {
+                  "type": "reference",
+                  "appearance": "default"
+                },
+                "id": "67a5e3e78222a7c07a6666e6"
+              }
+            ],
+            "id": "67a5def342f8ce3677c9df6c",
+            "blockName": "John Doe Testimonial"
+          }
+        ],
+        "meta": {
+          "title": {
+            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+          }
+        },
+        "publishedAt": {
+          "$date": "2025-02-06T16:42:09.847Z"
+        },
+        "slug": "home",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67a4e63c8c7ede7739c62d6e"
+              },
+              "url": "/home",
+              "label": "Home",
+              "id": "67a5eb9ed3f56c0003d118c2"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-07T11:16:46.638Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-06T16:41:32.086Z"
+        },
+        "_status": "draft"
+      },
+      "createdAt": {
+        "$date": "2025-02-07T11:16:40.580Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-07T11:16:46.638Z"
+      },
+      "autosave": true,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67aa22fbf8e325e9565d95f0"
+      },
+      "parent": {
+        "$oid": "67aa22fbf8e325e9565d95e3"
+      },
+      "version": {
+        "hero": {
+          "designVersion": "1",
+          "badgeLink": {
+            "type": "reference"
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [],
+        "meta": {},
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67aa22fbf8e325e9565d95e3"
+              },
+              "url": "/undefined",
+              "id": "67aa22fb5489ec0003759df4"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-10T16:02:03.897Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-10T16:02:03.800Z"
+        },
+        "_status": "draft"
+      },
+      "createdAt": {
+        "$date": "2025-02-10T16:02:03.897Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-10T16:02:03.897Z"
+      },
+      "autosave": false,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67aa22fbf8e325e9565d95e9"
+      },
+      "parent": {
+        "$oid": "67aa22fbf8e325e9565d95e3"
+      },
+      "version": {
+        "hero": {
+          "designVersion": "1",
+          "badgeLink": {
+            "type": "reference"
+          },
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [],
+        "meta": {},
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "url": "/undefined",
+              "id": "67aa22fb5489ec0003759df3"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-10T16:02:03.800Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-10T16:02:03.800Z"
+        },
+        "_status": "draft"
+      },
+      "createdAt": {
+        "$date": "2025-02-10T16:02:03.825Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-10T16:02:03.825Z"
+      },
+      "autosave": false,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67aa22fc882abe09ca228286"
+      },
+      "parent": {
+        "$oid": "67aa22fbf8e325e9565d95e3"
+      },
+      "version": {
+        "title": "Example Contact Page",
+        "hero": {
+          "designVersion": "1",
+          "badgeLink": {
+            "type": "reference"
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "contact",
+            "designVersion": "CONTACT2",
+            "contactBlocks": [],
+            "maps": [],
+            "form": [
+              {
+                "blockType": "formBlock",
+                "form": {
+                  "$oid": "67aa2364882abe09ca22839f"
+                },
+                "id": "67aa2312b2cfdcfc335275eb"
+              }
+            ],
+            "id": "67aa2309b2cfdcfc335275ea"
+          }
+        ],
+        "meta": {},
+        "publishedAt": {
+          "$date": "2025-02-10T16:02:27.335Z"
+        },
+        "slug": "example-contact-page",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67aa22fbf8e325e9565d95e3"
+              },
+              "url": "/example-contact-page",
+              "label": "Example Contact Page",
+              "id": "67aa236b2643170009b84f06"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-10T16:03:55.503Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-10T16:02:03.800Z"
+        },
+        "_status": "draft"
+      },
+      "createdAt": {
+        "$date": "2025-02-10T16:02:04.360Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-10T16:03:55.503Z"
+      },
+      "autosave": true,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67aa236d882abe09ca2283ba"
+      },
+      "parent": {
+        "$oid": "67aa22fbf8e325e9565d95e3"
+      },
+      "version": {
+        "title": "Example Contact Page",
+        "hero": {
+          "designVersion": "1",
+          "badgeLink": {
+            "type": "reference"
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "contact",
+            "designVersion": "CONTACT2",
+            "contactBlocks": [],
+            "maps": [],
+            "form": [
+              {
+                "blockType": "formBlock",
+                "form": {
+                  "$oid": "67aa2364882abe09ca22839f"
+                },
+                "id": "67aa2312b2cfdcfc335275eb"
+              }
+            ],
+            "id": "67aa2309b2cfdcfc335275ea"
+          }
+        ],
+        "meta": {},
+        "publishedAt": {
+          "$date": "2025-02-10T16:02:27.335Z"
+        },
+        "slug": "example-contact-page",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67aa22fbf8e325e9565d95e3"
+              },
+              "url": "/example-contact-page",
+              "label": "Example Contact Page",
+              "id": "67aa236d2643170009b84f07"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-10T16:03:57.033Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-10T16:02:03.800Z"
+        },
+        "_status": "published"
+      },
+      "createdAt": {
+        "$date": "2025-02-10T16:03:57.061Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-10T16:03:57.061Z"
+      },
+      "autosave": false,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67aa2373882abe09ca2283d7"
+      },
+      "parent": {
+        "$oid": "67aa22fbf8e325e9565d95e3"
+      },
+      "version": {
+        "title": "Example Contact Page",
+        "hero": {
+          "designVersion": "1",
+          "badgeLink": {
+            "type": "reference"
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "contact",
+            "designVersion": "CONTACT2",
+            "richText": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Let's discuss your next project",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "heading",
+                      "version": 1,
+                      "tag": "h2"
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Send a contact request to our base",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "contactBlocks": [],
+            "maps": [],
+            "form": [
+              {
+                "blockType": "formBlock",
+                "form": {
+                  "$oid": "67aa2364882abe09ca22839f"
+                },
+                "id": "67aa2312b2cfdcfc335275eb"
+              }
+            ],
+            "id": "67aa2309b2cfdcfc335275ea"
+          }
+        ],
+        "meta": {},
+        "publishedAt": {
+          "$date": "2025-02-10T16:02:27.335Z"
+        },
+        "slug": "example-contact-page",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67aa22fbf8e325e9565d95e3"
+              },
+              "url": "/example-contact-page",
+              "label": "Example Contact Page",
+              "id": "67aa23932643170009b84f39"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-10T16:04:35.385Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-10T16:02:03.800Z"
+        },
+        "_status": "draft"
+      },
+      "createdAt": {
+        "$date": "2025-02-10T16:04:03.871Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-10T16:04:35.385Z"
+      },
+      "autosave": true,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67aa2393882abe09ca228639"
+      },
+      "parent": {
+        "$oid": "67aa22fbf8e325e9565d95e3"
+      },
+      "version": {
+        "title": "Example Contact Page",
+        "hero": {
+          "designVersion": "1",
+          "badgeLink": {
+            "type": "reference"
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "contact",
+            "designVersion": "CONTACT2",
+            "richText": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Let's discuss your next project",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "heading",
+                      "version": 1,
+                      "tag": "h2"
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Send a contact request to our base.",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "contactBlocks": [],
+            "maps": [],
+            "form": [
+              {
+                "blockType": "formBlock",
+                "form": {
+                  "$oid": "67aa2364882abe09ca22839f"
+                },
+                "id": "67aa2312b2cfdcfc335275eb"
+              }
+            ],
+            "id": "67aa2309b2cfdcfc335275ea"
+          }
+        ],
+        "meta": {},
+        "publishedAt": {
+          "$date": "2025-02-10T16:02:27.335Z"
+        },
+        "slug": "example-contact-page",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67aa22fbf8e325e9565d95e3"
+              },
+              "url": "/example-contact-page",
+              "label": "Example Contact Page",
+              "id": "67aa23932643170009b84f3a"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-10T16:04:35.454Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-10T16:02:03.800Z"
+        },
+        "_status": "draft"
+      },
+      "createdAt": {
+        "$date": "2025-02-10T16:04:35.454Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-10T16:04:35.454Z"
+      },
+      "autosave": false,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67aa23ba882abe09ca22867c"
+      },
+      "parent": {
+        "$oid": "67aa22fbf8e325e9565d95e3"
+      },
+      "version": {
+        "title": "Example Contact Page",
+        "hero": {
+          "designVersion": "1",
+          "badgeLink": {
+            "type": "reference"
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "contact",
+            "designVersion": "CONTACT2",
+            "richText": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Let's discuss your next project",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "heading",
+                      "version": 1,
+                      "tag": "h2"
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Send a contact request to our base.",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "contactBlocks": [],
+            "maps": [],
+            "form": [
+              {
+                "blockType": "formBlock",
+                "form": {
+                  "$oid": "67aa2364882abe09ca22839f"
+                },
+                "id": "67aa2312b2cfdcfc335275eb"
+              }
+            ],
+            "id": "67aa2309b2cfdcfc335275ea"
+          }
+        ],
+        "meta": {},
+        "publishedAt": {
+          "$date": "2025-02-10T16:02:27.335Z"
+        },
+        "slug": "example-contact-page",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67aa22fbf8e325e9565d95e3"
+              },
+              "url": "/example-contact-page",
+              "label": "Example Contact Page",
+              "id": "67aa23ba2643170009b84f3b"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-10T16:05:14.567Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-10T16:02:03.800Z"
+        },
+        "_status": "published"
+      },
+      "createdAt": {
+        "$date": "2025-02-10T16:05:14.572Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-10T16:05:14.572Z"
+      },
+      "autosave": false,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67aa23c4882abe09ca228695"
+      },
+      "parent": {
+        "$oid": "67aa22fbf8e325e9565d95e3"
+      },
+      "version": {
+        "title": "Example Contact Page",
+        "hero": {
+          "designVersion": "none",
+          "badgeLink": {
+            "type": "reference"
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "contact",
+            "designVersion": "CONTACT2",
+            "richText": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Let's discuss your next project",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "heading",
+                      "version": 1,
+                      "tag": "h1"
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Send a contact request to our base.",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "contactBlocks": [],
+            "maps": [],
+            "form": [
+              {
+                "blockType": "formBlock",
+                "form": {
+                  "$oid": "67aa2364882abe09ca22839f"
+                },
+                "id": "67aa2312b2cfdcfc335275eb"
+              }
+            ],
+            "id": "67aa2309b2cfdcfc335275ea"
+          }
+        ],
+        "meta": {},
+        "publishedAt": {
+          "$date": "2025-02-10T16:02:27.335Z"
+        },
+        "slug": "example-contact-page",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67aa22fbf8e325e9565d95e3"
+              },
+              "url": "/example-contact-page",
+              "label": "Example Contact Page",
+              "id": "67aa23cc2643170009b84f3d"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-10T16:05:32.943Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-10T16:02:03.800Z"
+        },
+        "_status": "draft"
+      },
+      "createdAt": {
+        "$date": "2025-02-10T16:05:24.844Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-10T16:05:32.943Z"
+      },
+      "autosave": true,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67aa23d0882abe09ca2286bb"
+      },
+      "parent": {
+        "$oid": "67aa22fbf8e325e9565d95e3"
+      },
+      "version": {
+        "title": "Example Contact Page",
+        "hero": {
+          "designVersion": "none",
+          "badgeLink": {
+            "type": "reference"
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "contact",
+            "designVersion": "CONTACT2",
+            "richText": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Let's discuss your next project",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "heading",
+                      "version": 1,
+                      "tag": "h1"
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Send a contact request to our base.",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "contactBlocks": [],
+            "maps": [],
+            "form": [
+              {
+                "blockType": "formBlock",
+                "form": {
+                  "$oid": "67aa2364882abe09ca22839f"
+                },
+                "id": "67aa2312b2cfdcfc335275eb"
+              }
+            ],
+            "id": "67aa2309b2cfdcfc335275ea"
+          }
+        ],
+        "meta": {},
+        "publishedAt": {
+          "$date": "2025-02-10T16:02:27.335Z"
+        },
+        "slug": "example-contact-page",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67aa22fbf8e325e9565d95e3"
+              },
+              "url": "/example-contact-page",
+              "label": "Example Contact Page",
+              "id": "67aa23d02643170009b84f3e"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-10T16:05:36.157Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-10T16:02:03.800Z"
+        },
+        "_status": "published"
+      },
+      "createdAt": {
+        "$date": "2025-02-10T16:05:36.163Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-10T16:05:36.163Z"
+      },
+      "autosave": false,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67aa72ab598e31c15b0483ba"
+      },
+      "parent": {
+        "$oid": "67aa22fbf8e325e9565d95e3"
+      },
+      "version": {
+        "title": "Example Contact Page",
+        "hero": {
+          "designVersion": "1",
+          "badgeLink": {
+            "type": "reference"
+          },
+          "richText": {
+            "en": {
+              "root": {
+                "children": [
+                  {
+                    "children": [],
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "paragraph",
+                    "version": 1,
+                    "textFormat": 0,
+                    "textStyle": ""
+                  }
+                ],
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "root",
+                "version": 1
+              }
+            }
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "contact",
+            "designVersion": "CONTACT2",
+            "richText": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Let's discuss your next project",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "heading",
+                      "version": 1,
+                      "tag": "h1"
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Send a contact request to our base.",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "contactBlocks": [],
+            "maps": [],
+            "form": [
+              {
+                "blockType": "formBlock",
+                "form": {
+                  "$oid": "67aa2364882abe09ca22839f"
+                },
+                "id": "67aa2312b2cfdcfc335275eb"
+              }
+            ],
+            "id": "67aa2309b2cfdcfc335275ea"
+          }
+        ],
+        "meta": {},
+        "publishedAt": {
+          "$date": "2025-02-10T16:02:27.335Z"
+        },
+        "slug": "example-contact-page",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67aa22fbf8e325e9565d95e3"
+              },
+              "url": "/example-contact-page",
+              "label": "Example Contact Page",
+              "id": "67aa72bae2856500035d4de6"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-10T21:42:18.390Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-10T16:02:03.800Z"
+        },
+        "_status": "draft"
+      },
+      "createdAt": {
+        "$date": "2025-02-10T21:42:03.178Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-10T21:42:18.390Z"
+      },
+      "autosave": true,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67aa72be598e31c15b04844b"
+      },
+      "parent": {
+        "$oid": "67aa22fbf8e325e9565d95e3"
+      },
+      "version": {
+        "title": "Example Contact Page",
+        "hero": {
+          "designVersion": "none",
+          "badgeLink": {
+            "type": "reference"
+          },
+          "richText": {
+            "en": {
+              "root": {
+                "children": [
+                  {
+                    "children": [],
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "paragraph",
+                    "version": 1,
+                    "textFormat": 0,
+                    "textStyle": ""
+                  }
+                ],
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "root",
+                "version": 1
+              }
+            }
+          },
+          "links": [],
+          "USPs": {},
+          "pricing": {}
+        },
+        "layout": [
+          {
+            "blockType": "contact",
+            "designVersion": "CONTACT2",
+            "richText": {
+              "en": {
+                "root": {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Let's discuss your next project",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "heading",
+                      "version": 1,
+                      "tag": "h1"
+                    },
+                    {
+                      "children": [
+                        {
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": "",
+                          "text": "Send a contact request to our base.",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "paragraph",
+                      "version": 1,
+                      "textFormat": 0,
+                      "textStyle": ""
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "type": "root",
+                  "version": 1
+                }
+              }
+            },
+            "contactBlocks": [],
+            "maps": [],
+            "form": [
+              {
+                "blockType": "formBlock",
+                "form": {
+                  "$oid": "67aa2364882abe09ca22839f"
+                },
+                "id": "67aa2312b2cfdcfc335275eb"
+              }
+            ],
+            "id": "67aa2309b2cfdcfc335275ea"
+          }
+        ],
+        "meta": {},
+        "publishedAt": {
+          "$date": "2025-02-10T16:02:27.335Z"
+        },
+        "slug": "example-contact-page",
+        "slugLock": true,
+        "enableBreadcrumbs": false,
+        "breadcrumbs": {
+          "en": [
+            {
+              "doc": {
+                "$oid": "67aa22fbf8e325e9565d95e3"
+              },
+              "url": "/example-contact-page",
+              "label": "Example Contact Page",
+              "id": "67aa72bee2856500035d4de7"
+            }
+          ]
+        },
+        "updatedAt": {
+          "$date": "2025-02-10T21:42:22.444Z"
+        },
+        "createdAt": {
+          "$date": "2025-02-10T16:02:03.800Z"
+        },
+        "_status": "published"
+      },
+      "createdAt": {
+        "$date": "2025-02-10T21:42:22.466Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-10T21:42:22.466Z"
+      },
+      "latest": true,
+      "autosave": false,
+      "__v": 0
+    }
+  ],
+  "pages": [
+    {
+      "_id": {
+        "$oid": "67a4e63c8c7ede7739c62d6e"
+      },
+      "hero": {
+        "designVersion": "12",
+        "badge": {
+          "en": "✨Your Website Builder"
+        },
+        "badgeIcon": "Sparkles",
+        "tagline": {
+          "en": ""
+        },
+        "badgeLink": {
+          "type": "reference"
+        },
+        "richText": {
+          "en": {
+            "root": {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "detail": 0,
+                      "format": 0,
+                      "mode": "normal",
+                      "style": "",
+                      "text": "Blocks Built With Shadcn & Tailwind",
+                      "type": "text",
+                      "version": 1
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "left",
+                  "indent": 0,
+                  "type": "heading",
+                  "version": 1,
+                  "tag": "h1"
+                },
+                {
+                  "children": [
+                    {
+                      "detail": 0,
+                      "format": 0,
+                      "mode": "normal",
+                      "style": "",
+                      "text": "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+                      "type": "text",
+                      "version": 1
+                    }
+                  ],
+                  "direction": "ltr",
+                  "format": "left",
+                  "indent": 0,
+                  "type": "paragraph",
+                  "version": 1,
+                  "textFormat": 0,
+                  "textStyle": ""
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "root",
+              "version": 1
+            }
+          }
+        },
+        "links": [],
+        "USPs": {},
+        "pricing": {}
+      },
+      "meta": {
+        "title": {
+          "en": "Payblocks demo  - the Payload & shadcn starter kit"
+        }
+      },
+      "slugLock": true,
+      "enableBreadcrumbs": false,
+      "breadcrumbs": {
+        "en": [
+          {
+            "doc": {
+              "$oid": "67a4e63c8c7ede7739c62d6e"
+            },
+            "url": "/home",
+            "label": "Home",
+            "id": "67a5f86b4680f300036e0e2f"
+          }
+        ]
+      },
+      "_status": "published",
+      "layout": [
+        {
+          "blockType": "feature",
+          "designVersion": "FEATURE1",
+          "badge": {
+            "en": ""
+          },
+          "icon": "Activity",
+          "richText": {
+            "en": {
+              "root": {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Welcome to the Payblocks Demo",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "left",
+                    "indent": 0,
+                    "type": "heading",
+                    "version": 1,
+                    "tag": "h1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "",
+                    "indent": 0,
+                    "type": "paragraph",
+                    "version": 1,
+                    "textFormat": 0,
+                    "textStyle": ""
+                  }
+                ],
+                "direction": "ltr",
+                "format": "",
+                "indent": 0,
+                "type": "root",
+                "version": 1
+              }
+            }
+          },
+          "links": [
+            {
+              "link": {
+                "type": "custom",
+                "url": {
+                  "en": "/admin"
+                },
+                "label": {
+                  "en": "Visit admin"
+                },
+                "iconAfter": "ArrowRightCircle",
+                "appearance": "default"
+              },
+              "id": "67a4eb25775c992f65041255"
+            }
+          ],
+          "image": {
+            "$oid": "67a4ef201a65a839d43f7f64"
+          },
+          "USPs": [],
+          "id": "67a4ea7e51be23006a7145a5"
+        },
+        {
+          "blockType": "testimonial",
+          "designVersion": "TESTIMONIAL3",
+          "headline": {
+            "en": {
+              "root": {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "See w",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "",
+                    "indent": 0,
+                    "type": "paragraph",
+                    "version": 1,
+                    "textFormat": 0,
+                    "textStyle": ""
+                  }
+                ],
+                "direction": "ltr",
+                "format": "",
+                "indent": 0,
+                "type": "root",
+                "version": 1
+              }
+            }
+          },
+          "link": {
+            "type": "reference",
+            "appearance": "default"
+          },
+          "testimonial": [
+            {
+              "authorName": {
+                "en": "John Doe"
+              },
+              "authorDescription": {
+                "en": "CEO of Doe Industries"
+              },
+              "icon": {
+                "$oid": "67a5e6529b197db1c248781b"
+              },
+              "text": {
+                "en": {
+                  "root": {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "detail": 0,
+                            "format": 0,
+                            "mode": "normal",
+                            "style": "",
+                            "text": "I'm really satisfied with this template. It saved us hours of work!",
+                            "type": "text",
+                            "version": 1
+                          }
+                        ],
+                        "direction": "ltr",
+                        "format": "",
+                        "indent": 0,
+                        "type": "paragraph",
+                        "version": 1,
+                        "textFormat": 0,
+                        "textStyle": ""
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "",
+                    "indent": 0,
+                    "type": "root",
+                    "version": 1
+                  }
+                }
+              },
+              "link": {
+                "type": "reference",
+                "appearance": "default"
+              },
+              "id": "67a5e3e78222a7c07a6666e6"
+            }
+          ],
+          "id": "67a5def342f8ce3677c9df6c",
+          "blockName": "John Doe Testimonial"
+        }
+      ],
+      "createdAt": {
+        "$date": "2025-02-06T16:41:32.086Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-07T12:11:24.019Z"
+      },
+      "__v": 0,
+      "publishedAt": {
+        "$date": "2025-02-06T16:42:09.847Z"
+      },
+      "slug": "home",
+      "title": "Home"
+    },
+    {
+      "_id": {
+        "$oid": "67aa22fbf8e325e9565d95e3"
+      },
+      "hero": {
+        "designVersion": "none",
+        "badgeLink": {
+          "type": "reference"
+        },
+        "richText": {
+          "en": {
+            "root": {
+              "children": [
+                {
+                  "children": [],
+                  "direction": null,
+                  "format": "",
+                  "indent": 0,
+                  "type": "paragraph",
+                  "version": 1,
+                  "textFormat": 0,
+                  "textStyle": ""
+                }
+              ],
+              "direction": null,
+              "format": "",
+              "indent": 0,
+              "type": "root",
+              "version": 1
+            }
+          }
+        },
+        "links": [],
+        "USPs": {},
+        "pricing": {}
+      },
+      "meta": {},
+      "slugLock": true,
+      "enableBreadcrumbs": false,
+      "breadcrumbs": {
+        "en": [
+          {
+            "doc": {
+              "$oid": "67aa22fbf8e325e9565d95e3"
+            },
+            "url": "/example-contact-page",
+            "label": "Example Contact Page",
+            "id": "67aa72bee2856500035d4de7"
+          }
+        ]
+      },
+      "_status": "published",
+      "layout": [
+        {
+          "blockType": "contact",
+          "designVersion": "CONTACT2",
+          "richText": {
+            "en": {
+              "root": {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Let's discuss your next project",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "",
+                    "indent": 0,
+                    "type": "heading",
+                    "version": 1,
+                    "tag": "h1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "Send a contact request to our base.",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ],
+                    "direction": "ltr",
+                    "format": "",
+                    "indent": 0,
+                    "type": "paragraph",
+                    "version": 1,
+                    "textFormat": 0,
+                    "textStyle": ""
+                  }
+                ],
+                "direction": "ltr",
+                "format": "",
+                "indent": 0,
+                "type": "root",
+                "version": 1
+              }
+            }
+          },
+          "contactBlocks": [],
+          "maps": [],
+          "form": [
+            {
+              "blockType": "formBlock",
+              "form": {
+                "$oid": "67aa2364882abe09ca22839f"
+              },
+              "id": "67aa2312b2cfdcfc335275eb"
+            }
+          ],
+          "id": "67aa2309b2cfdcfc335275ea"
+        }
+      ],
+      "createdAt": {
+        "$date": "2025-02-10T16:02:03.800Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-10T21:42:22.444Z"
+      },
+      "__v": 0,
+      "publishedAt": {
+        "$date": "2025-02-10T16:02:27.335Z"
+      },
+      "slug": "example-contact-page",
+      "title": "Example Contact Page"
+    }
+  ],
+  "globals": [
+    {
+      "_id": {
+        "$oid": "67a520a0515cc27de3b5339d"
+      },
+      "globalType": "footer",
+      "designVersion": "2",
+      "logo": {
+        "$oid": "67a4f2f45e6fbd66482a4783"
+      },
+      "copyright": {
+        "en": "Company Name. All rights reserved.",
+        "de": "Company Name. All rights reserved."
+      },
+      "subline": {
+        "en": "Components made easy. This cool starter template will save you hours of time with your next project.",
+        "de": "Components made easy. This cool starter template will help you get started with your next project."
+      },
+      "legalLinks": [],
+      "socialLinks": [],
+      "navItems": [
+        {
+          "title": {
+            "en": "Features"
+          },
+          "subNavItems": [
+            {
+              "link": {
+                "type": "reference",
+                "reference": {
+                  "relationTo": "pages",
+                  "value": {
+                    "$oid": "67a4e63c8c7ede7739c62d6e"
+                  }
+                },
+                "section": "67a4ea7e51be23006a7145a5",
+                "label": {
+                  "en": "Amazing Feature"
+                }
+              },
+              "id": "67a520e1c0e70584d9f00b31"
+            },
+            {
+              "link": {
+                "type": "reference",
+                "reference": {
+                  "relationTo": "pages",
+                  "value": {
+                    "$oid": "67a4e63c8c7ede7739c62d6e"
+                  }
+                },
+                "section": "67a4ea7e51be23006a7145a5",
+                "label": {
+                  "en": "Feature 2"
+                }
+              },
+              "id": "67a520e7c0e70584d9f00b32"
+            },
+            {
+              "link": {
+                "type": "custom",
+                "url": {
+                  "en": "/"
+                },
+                "label": {
+                  "en": "Feature 3"
+                },
+                "iconBefore": ""
+              },
+              "id": "67a52118c0e70584d9f00b33"
+            }
+          ],
+          "id": "67a520dcc0e70584d9f00b30"
+        }
+      ],
+      "createdAt": {
+        "$date": "2025-02-06T20:50:40.944Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-06T20:53:24.509Z"
+      },
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67a4ef2f1a65a839d43f7f95"
+      },
+      "globalType": "themeConfig",
+      "radius": "0.6rem",
+      "regularColors": {
+        "background": "hsl(0, 0%, 100%)",
+        "foreground": "hsl(222.2, 84%, 4.9%)",
+        "card": "hsl(240, 5%, 96%)",
+        "card-foreground": "hsl(222.2, 84%, 4.9%)",
+        "popover": "hsl(0, 0%, 100%)",
+        "popover-foreground": "hsl(222.2, 84%, 4.9%)",
+        "primary": "hsl(222.2, 47.4%, 11.2%)",
+        "primary-foreground": "hsl(210, 40%, 98%)",
+        "secondary": "hsl(210, 40%, 96.1%)",
+        "secondary-foreground": "hsl(222.2, 47.4%, 11.2%)",
+        "muted": "hsl(210, 40%, 96.1%)",
+        "muted-foreground": "hsl(215.4, 16.3%, 46.9%)",
+        "accent": "hsl(210, 40%, 96.1%)",
+        "accent-foreground": "hsl(222.2, 47.4%, 11.2%)",
+        "destructive": "hsl(0, 84.2%, 60.2%)",
+        "destructive-foreground": "hsl(210, 40%, 98%)",
+        "border": "hsl(240, 6%, 90%)",
+        "input": "hsl(214.3, 31.8%, 91.4%)",
+        "ring-3": "hsl(222.2, 84%, 4.9%)",
+        "success": "hsl(196, 52%, 74%)",
+        "warning": "hsl(34, 89%, 85%)",
+        "error": "hsl(10, 100%, 86%)",
+        "chart-1": "hsl(12, 76%, 61%)",
+        "chart-2": "hsl(173, 58%, 39%)",
+        "chart-3": "hsl(197, 37%, 24%)",
+        "chart-4": "hsl(43, 74%, 66%)",
+        "chart-5": "hsl(27, 87%, 67%)",
+        "muted2": "hsl(0, 0%, 91%)",
+        "muted2-foreground": "hsl(240, 3.8%, 46.1%)"
+      },
+      "darkmodeColors": {
+        "background": "hsl(0, 0%, 0%)",
+        "foreground": "hsl(210, 40%, 98%)",
+        "card": "hsl(240, 6%, 10%)",
+        "card-foreground": "hsl(210, 40%, 98%)",
+        "popover": "hsl(222.2 84%, 4.9%)",
+        "popover-foreground": "hsl(210, 40%, 98%)",
+        "primary": "hsl(210, 40%, 98%)",
+        "primary-foreground": "hsl(222.2 47.4%, 11.2%)",
+        "secondary": "hsl(217.2 32.6%, 17.5%)",
+        "secondary-foreground": "hsl(210, 40%, 98%)",
+        "muted": "hsl(217.2 32.6%, 17.5%)",
+        "muted-foreground": "hsl(215, 20.2%, 65.1%)",
+        "accent": "hsl(217.2 32.6%, 17.5%)",
+        "accent-foreground": "hsl(210, 40%, 98%)",
+        "destructive": "hsl(0, 62.8%, 30.6%)",
+        "destructive-foreground": "hsl(210, 40%, 98%)",
+        "border": "hsl(240, 4%, 16%)",
+        "input": "hsl(217.2 32.6%, 17.5%)",
+        "ring-3": "hsl(212,.7 26.8%, 83.9%)",
+        "success": "hsl(196, 100%, 14%)",
+        "warning": "hsl(34, 51%, 25%)",
+        "error": "hsl(10, 39%, 43%)"
+      },
+      "createdAt": {
+        "$date": "2025-02-06T17:19:43.926Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-06T17:19:43.926Z"
+      },
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67a508b14f66bd756117964a"
+      },
+      "globalType": "page-config",
+      "defaultMeta": {
+        "en": {
+          "title": "Payblocks Demopage",
+          "description": "Demopage for the payblocks project"
+        }
+      },
+      "openGraph": {
+        "backgroundImage": {
+          "$oid": "67a508af2ead0c7978f02359"
+        },
+        "textColor": "#000000",
+        "textPosition": "center"
+      },
+      "createdAt": {
+        "$date": "2025-02-06T19:08:33.849Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-06T19:08:33.849Z"
+      },
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "67a4f33158abc6b290cbde9e"
+      },
+      "globalType": "header",
+      "designVersion": "5",
+      "logo": {
+        "$oid": "67a4f2f45e6fbd66482a4783"
+      },
+      "items": [
+        {
+          "blockType": "sub",
+          "label": {
+            "en": "Sub Navigation"
+          },
+          "subitems": [
+            {
+              "link": {
+                "type": "custom",
+                "reference": {
+                  "relationTo": "pages",
+                  "value": {
+                    "$oid": "67a4e63c8c7ede7739c62d6e"
+                  }
+                },
+                "section": "",
+                "url": {
+                  "en": "/"
+                },
+                "label": {
+                  "en": "Item 1"
+                },
+                "iconBefore": "",
+                "iconAfter": ""
+              },
+              "Description": {
+                "en": "Get to know our features"
+              },
+              "id": "67a4f30788e0834be8e6af05"
+            },
+            {
+              "link": {
+                "type": "reference",
+                "reference": {
+                  "relationTo": "pages",
+                  "value": {
+                    "$oid": "67a4e63c8c7ede7739c62d6e"
+                  }
+                },
+                "section": "67a4ea7e51be23006a7145a5",
+                "label": {
+                  "en": "Item 2"
+                }
+              },
+              "Description": {
+                "en": "Item groups with dynamic descriptions"
+              },
+              "id": "67a4f31988e0834be8e6af06"
+            }
+          ],
+          "id": "67a4f2fd88e0834be8e6af04",
+          "blockName": "Sub navigation 1 no icons"
+        },
+        {
+          "blockType": "sub",
+          "label": {
+            "en": "Navigation 2"
+          },
+          "subitems": [
+            {
+              "link": {
+                "type": "custom",
+                "url": {
+                  "en": "/"
+                },
+                "label": {
+                  "en": "Features"
+                },
+                "iconBefore": "Activity"
+              },
+              "Description": {
+                "en": "These features make our template to amazing to work with"
+              },
+              "id": "67a502b80eacd20ba4e17fce"
+            },
+            {
+              "link": {
+                "type": "custom",
+                "url": {
+                  "en": "/"
+                },
+                "label": {
+                  "en": "Callout"
+                },
+                "iconBefore": "ArrowDownLeftSquare"
+              },
+              "Description": {
+                "en": "Try out our lorem ipsum"
+              },
+              "id": "67a502da0eacd20ba4e17fd0"
+            }
+          ],
+          "id": "67a502a20eacd20ba4e17fcc",
+          "blockName": "Sub navigation icons"
+        },
+        {
+          "blockType": "link",
+          "link": {
+            "type": "reference",
+            "reference": {
+              "relationTo": "pages",
+              "value": {
+                "$oid": "67a4e63c8c7ede7739c62d6e"
+              }
+            },
+            "section": "67a4ea7e51be23006a7145a5",
+            "label": {
+              "en": "A direct link"
+            }
+          },
+          "id": "67a4f34a88e0834be8e6af07",
+          "blockName": "direct link"
+        }
+      ],
+      "buttons": [
+        {
+          "link": {
+            "type": "custom",
+            "newTab": true,
+            "url": {
+              "en": "/admin"
+            },
+            "label": {
+              "en": "Visit Admin"
+            },
+            "iconAfter": "ArrowUpRight",
+            "appearance": "default",
+            "size": "sm"
+          },
+          "id": "67a4f35688e0834be8e6af08"
+        }
+      ],
+      "createdAt": {
+        "$date": "2025-02-06T17:36:49.210Z"
+      },
+      "updatedAt": {
+        "$date": "2025-02-08T17:34:07.427Z"
+      },
+      "__v": 0
+    }
+  ]
+}

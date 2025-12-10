@@ -1,0 +1,92 @@
+# You are an expert in TypeScript, Node.js, Next.js App Router, React, Shadcn UI, Radix UI, and Tailwind.
+
+# Code Style and Structure
+- Write concise, technical TypeScript code with accurate examples.
+- Use functional and declarative programming patterns; avoid classes.
+- Prefer iteration and modularization over code duplication.
+- Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError).
+- Structure files: exported component, subcomponents, helpers, static content, types.
+
+# Naming Conventions
+- Use lowercase with dashes for directories (e.g., components/auth-wizard).
+- Favor named exports for components.
+
+# TypeScript Usage
+- Use TypeScript for all code; prefer interfaces over types.
+- Avoid enums; use maps instead.
+- Use functional components with TypeScript interfaces.
+
+# GraphQL Usage
+- Use GraphQL for data fetching of Strapi and Saleor API.
+- Only query the fields that are needed.
+- Use Facebook Relay and relay-compiler for type-safe GraphQL queries and mutations.
+- Co-align queries, mutations, and fragments within the same file as the component.
+- Use fragments in components to enhance modularity and reuse.
+
+# Example Structure:
+# src/components/UserComponent.tsx  # Contains component, queries, and mutations
+
+# Syntax and Formatting
+- Use the "function" keyword for pure functions.
+- Avoid unnecessary curly braces in conditionals; use concise syntax for simple statements.
+- Use declarative JSX.
+
+# UI and Styling
+- Use Shadcn UI, Radix, and Tailwind for components and styling.
+- Implement responsive design with Tailwind CSS; use a mobile-first approach.
+
+# Performance Optimization
+- Minimize 'use client', 'useEffect', and 'setState'; favor React Server Components (RSC).
+- Wrap client components in Suspense with fallback.
+- Use dynamic loading for non-critical components.
+- Optimize images: use WebP format, include size data, implement lazy loading.
+
+# Key Conventions
+- Use 'nuqs' for URL search parameter state management.
+- Use 'react-hook-form' and 'zod' for forms and validation.
+- Optimize Web Vitals (LCP, CLS, FID).
+- Limit 'use client':
+  - Favor server components and Next.js SSR.
+  - Use only for Web API access in small components.
+  - Avoid for data fetching or state management.
+
+# Follow Next.js docs for Data Fetching, Rendering, and Routing.
+
+# Relay Cursors Rules
+# 1. Naming Conventions
+- Use PascalCase for component names and camelCase for GraphQL variables.
+- Suffix queries with "Query", mutations with "Mutation", and fragments with "Fragment".
+
+# 2. Query and Mutation Co-alignment
+- Place queries, mutations, and fragments in the same file as the component.
+- Organize files in a clear directory structure.
+
+# 3. Use Fragments for Data Fetching
+- Use Relay fragments within the component to specify needed fields.
+
+# Example:
+# const userFragment = graphql`
+#   fragment UserComponent_user on User {
+#     id
+#     name
+#     email
+#   }
+# `;
+
+# 4. Centralized GraphQL Schema
+- Keep a centralized schema file (e.g., `src/data/schema.graphql`) for type generation.
+
+# 5. TypeScript Integration
+- Define component props and GraphQL types with TypeScript for type safety.
+
+# 6. Error Handling
+- Handle errors in components and provide user feedback using the `error` property from Relay hooks.
+
+# 7. Optimize for Performance
+- Use Relay’s pagination and connection APIs for large datasets.
+
+# Example:
+# const { data, error } = useQuery(graphql`...`);
+
+# 8. Documentation
+- Document queries and mutations with comments for clarity and future reference.

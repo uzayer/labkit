@@ -1,0 +1,118 @@
+@import '~@payloadcms/ui/scss';
+
+.backup-dashboard {
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  .experimental {
+    color: #909090;
+    font-size: 12px;
+  }
+
+  margin-bottom: base(1.5);
+  display: flex;
+  flex-direction: column;
+  gap: base(0.2);
+
+  .backup-item {
+    margin-bottom: base(1);
+    display: flex;
+    flex-direction: row;
+    gap: base(0.5);
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #f5f5f5;
+    padding: 0 20px;
+    border-radius: base(0.2);
+    .right {
+      display: flex;
+      flex-direction: row;
+      gap: base(0.5);
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      padding-top: base(1);
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .btn-red {
+    background-color: red;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  .btn-right {
+    margin-left: auto;
+    align-self: flex-end;
+  }
+
+  .make-backup-container {
+    display: flex;
+    flex-direction: row;
+    gap: base(0.2);
+    align-items: center;
+
+    .text {
+      margin-left: 10px;
+    }
+  }
+
+  .backup-filter-group {
+    margin-bottom: base(1);
+    display: flex;
+    flex-direction: row;
+    gap: base(1);
+    align-items: center;
+
+    .field-type.checkbox {
+      display: flex;
+      align-items: center;
+      gap: base(0.5);
+
+      .checkbox-input__input {
+        appearance: none;
+        width: 14px;
+        height: 14px;
+        border: 1px solid var(--theme-elevation-300);
+        background: var(--theme-input-bg);
+        border-radius: 3px;
+        margin: 0;
+        cursor: pointer;
+        position: relative;
+
+        &:checked {
+          border-color: var(--theme-elevation-800);
+          background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.58333 7.5L0 3.91667L0.7 3.21667L3.58333 6.1L9.3 0.383333L10 1.08333L3.58333 7.5Z' fill='%23333333'/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 10px 8px;
+        }
+
+        &:hover {
+          border-color: var(--theme-elevation-400);
+        }
+
+        &:focus {
+          outline: none;
+          border-color: var(--theme-elevation-400);
+        }
+      }
+    }
+
+    .field-label {
+      font-size: 13px;
+      color: var(--theme-elevation-800);
+      cursor: pointer;
+    }
+  }
+}
+
+.red-text {
+  color: red;
+}

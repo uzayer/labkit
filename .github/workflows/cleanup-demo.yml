@@ -1,0 +1,32 @@
+name: Cleanup Demo Environment
+
+on:
+  schedule:
+    # Run at 12:00 and 00:00 UTC
+    - cron: '0 0,12 * * *'
+  # Allow manual triggering for testing
+  workflow_dispatch:
+
+jobs:
+  cleanup-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set demo token as environment variable
+        run: echo "DEMO_RESTORE_TOKEN=${{ secrets.DEMO_RESTORE_TOKEN }}" >> $GITHUB_ENV
+
+      - name: Set demo restore URL as environment variable
+        run: echo "DEMO_RESTORE_URL=${{ secrets.DEMO_RESTORE_URL }}" >> $GITHUB_ENV
+
+      - name: Debug restore URL
+        run: |
+          echo "Running cleanup-demo workflow with DEMO_RESTORE_URL: ${{ env.DEMO_RESTORE_URL }}"
+
+      - name: Restore Demo Environment
+        if: env.DEMO_RESTORE_TOKEN != ''
+        run: |
+          curl https://demo-payblocks.trieb.work/next/backup/restore \
+            -H "Authorization: Bearer ${{ env.DEMO_RESTORE_TOKEN }}" \
+            --data '{"url":"${{ env.DEMO_RESTORE_URL }}"}'

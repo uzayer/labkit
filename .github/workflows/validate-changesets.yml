@@ -1,0 +1,27 @@
+name: Validate Changeset
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-files:
+    name: Check files
+    runs-on: ubuntu-latest
+    if: ${{ !contains(github.event.pull_request.labels.*.name, 'no-changeset') }} # Skip job if label is present
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Ensure we have full history
+
+      - name: Check for new changeset
+        run: |
+          BASE_BRANCH=${{ github.event.pull_request.base.ref }}
+          if git diff --name-only origin/$BASE_BRANCH...HEAD | grep -q '^.changeset/.*\.md$'; then
+            echo "✅ A new changeset has been added."
+          else
+            echo "❌ No new changeset found in this PR. Please run 'pnpm changeset' and commit the file."
+            exit 1
+          fi

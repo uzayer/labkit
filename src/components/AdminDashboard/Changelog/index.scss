@@ -1,0 +1,22 @@
+@import '~@payloadcms/ui/scss';
+
+.changelog-fetch {
+  display: flex;
+  flex-direction: column;
+  gap: base(0.5);
+
+  &__button {
+    width: fit-content;
+    margin-top: base(0.5);
+  }
+
+  &__error {
+    color: var(--theme-error-500);
+    margin-top: base(0.25);
+  }
+
+  &__success {
+    color: var(--theme-success-500);
+    margin-top: base(0.25);
+  }
+}
