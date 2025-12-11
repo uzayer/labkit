@@ -390,9 +390,9 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                 </NavigationMenuContent>
               </NavigationMenuItem>
             </NavigationMenuList>
-            <div className="hidden items-center gap-4 lg:flex"> 
+            <div className="hidden items-center gap-4 lg:flex">
               {/* Search Button */}
-              {header.isSearchEnabled && <SearchButton className='hidden md:block'/>}
+              {header.isSearchEnabled && <SearchButton className="hidden md:block" />}
               <Button variant="ghost">Log in</Button>
               <Button variant="outline">
                 Start now

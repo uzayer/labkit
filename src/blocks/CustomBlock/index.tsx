@@ -3,15 +3,23 @@
 
 import { PublicContextProps } from '@/utilities/publicContextProps'
 import type { CustomBlock as CustomBlockType } from '@/payload-types'
+import TeamDial from './team-dial'
 
-export const CustomBlock: React.FC<CustomBlockType & { publicContext: PublicContextProps }> = (
-  props,
-) => {
-  const { customBlockType, publicContext } = props
-  // Add your custom blocks here
-  // example: ExampleBlock,
+const customBlockComponents: Record<string, React.FC<any>> = {
+  'team-dial': TeamDial,
+}
 
-  return null
+export const CustomBlock: React.FC<
+  CustomBlockType & { publicContext: PublicContextProps; disableContainer?: boolean }
+> = (props) => {
+  const { customBlockType } = props
+  if (!customBlockType) return null
+
+  const BlockComponent = customBlockComponents[customBlockType]
+
+  if (!BlockComponent) return null
+
+  return <BlockComponent {...props} />
 }
 
 export default CustomBlock

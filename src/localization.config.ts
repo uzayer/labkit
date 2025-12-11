@@ -1,7 +1,9 @@
 import { LocalizationConfig } from 'payload'
 
 // You need to restart the development server after changing this file
-export const locales = ['en', 'de'] as const
+// To enable German localization, uncomment the 'de' entries below
+export const locales = ['en'] as const
+// export const locales = ['en', 'de'] as const // Uncomment to enable German
 export type Locale = (typeof locales)[number]
 
 export const localization: LocalizationConfig = {
@@ -12,7 +14,7 @@ export const localization: LocalizationConfig = {
 
 export const localeLabels: Record<Locale, string> = {
   en: 'EN',
-  de: 'DE',
+  // de: 'DE', // Uncomment to enable German
 }
 
 export default localization

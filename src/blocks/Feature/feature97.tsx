@@ -1,4 +1,3 @@
-
 import { FeatureBlock } from '@/payload-types'
 import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'

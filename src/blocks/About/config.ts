@@ -2,6 +2,7 @@ import { backgroundColor } from '@/fields/color'
 import { link } from '@/fields/link'
 import { HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 import { Block } from 'payload'
+import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
 
 // About2: headline richText, text1 richText, text2 richText, 6 images, logos, counter: { value, title, optional description }
 // About4: headline richText, text1 richText, text2 richText, 6 images, link
@@ -9,14 +10,26 @@ import { Block } from 'payload'
 // About5: headline richText, text1 richText, text2 richText, 6 images, logos, counter: { value, title, optional description }
 
 export const allAboutDesignVersions = [
-  // 'ABOUT1',
-  // 'ABOUT2',
-  'ABOUT3',
-  'ABOUT4',
-  // 'ABOUT5',
+  { label: 'ABOUT1', value: 'ABOUT1', image: '/admin/previews/about/about1.webp' },
+  { label: 'ABOUT2', value: 'ABOUT2', image: '/admin/previews/about/about2.webp' },
+  { label: 'ABOUT3', value: 'ABOUT3', image: '/admin/previews/about/about3.webp' },
+  { label: 'ABOUT4', value: 'ABOUT4', image: '/admin/previews/about/about4.webp' },
+  { label: 'ABOUT5', value: 'ABOUT5', image: '/admin/previews/about/about5.webp' },
+  // { label: 'ABOUT6', value: 'ABOUT6', image: '/admin/previews/about/about6.webp' },
+  // { label: 'ABOUT7', value: 'ABOUT7', image: '/admin/previews/about/about7.webp' },
+  // { label: 'ABOUT8', value: 'ABOUT8', image: '/admin/previews/about/about8.webp' },
+  // { label: 'ABOUT9', value: 'ABOUT9', image: '/admin/previews/about/about9.webp' },
+  // { label: 'ABOUT10', value: 'ABOUT10', image: '/admin/previews/about/about10.webp' },
+  // { label: 'ABOUT13', value: 'ABOUT13', image: '/admin/previews/about/about13.webp' },
+  // { label: 'ABOUT14', value: 'ABOUT14', image: '/admin/previews/about/about14.webp' },
+  // { label: 'ABOUT15', value: 'ABOUT15', image: '/admin/previews/about/about15.webp' },
+  // { label: 'ABOUT16', value: 'ABOUT16', image: '/admin/previews/about/about16.webp' },
+  // { label: 'ABOUT17', value: 'ABOUT17', image: '/admin/previews/about/about17.webp' },
+  // { label: 'ABOUT18', value: 'ABOUT18', image: '/admin/previews/about/about18.webp' },
+  // { label: 'ABOUT19', value: 'ABOUT19', image: '/admin/previews/about/about19.webp' },
 ] as const
 
-export type AboutDesignVersion = (typeof allAboutDesignVersions)[number]
+export type AboutDesignVersion = (typeof allAboutDesignVersions)[number]['value']
 
 export const AboutBlock: Block = {
   slug: 'about',
@@ -27,12 +40,7 @@ export const AboutBlock: Block = {
   },
   fields: [
     backgroundColor,
-    {
-      name: 'designVersion',
-      type: 'select',
-      required: true,
-      options: allAboutDesignVersions.map((version) => ({ label: version, value: version })),
-    },
+    designVersionPreview(allAboutDesignVersions),
 
     {
       name: 'headline',

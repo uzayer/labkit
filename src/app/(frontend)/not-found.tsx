@@ -1,4 +1,3 @@
-
 import { Geist_Mono, Geist } from 'next/font/google'
 import React from 'react'
 import { cn } from 'src/utilities/cn'

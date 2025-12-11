@@ -2,12 +2,14 @@ import { Block } from 'payload'
 import { HeadingFeature, ParagraphFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
 import { linkGroup } from '@/fields/linkGroup'
+// import { link } from '@/fields/link'
+// import { backgroundColor } from '@/fields/color'
 
 export const allBlogDesignVersions = [
   {
     label: 'Blog 29 (Modern Card Layout)',
     value: 'BLOG29',
-    image: '/admin/previews/blog/blog29.jpeg',
+    image: '/admin/previews/blog/blog29.webp',
   },
 ] as const
 

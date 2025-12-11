@@ -3,7 +3,7 @@
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import { en } from '@payloadcms/translations/languages/en'
-import { de } from '@payloadcms/translations/languages/de'
+// import { de } from '@payloadcms/translations/languages/de' // Uncomment to enable German
 
 import { OAuth2Plugin } from 'payload-oauth2'
 
@@ -36,6 +36,15 @@ import { Pages } from './collections/Pages'
 import { Posts } from './collections/Posts'
 import Users from './collections/Users'
 import Roles from './collections/Roles'
+import ResearchThemes from './collections/ResearchThemes'
+import { Projects } from './collections/Projects'
+import Publications from './collections/Publications'
+import Team from './collections/Team'
+import Awards from './collections/Awards'
+import Organizations from './collections/Organizations'
+import Venues from './collections/Venues'
+import Grants from './collections/Grants'
+import Keywords from './collections/Keywords'
 import { Footer } from './globals/Footer/config'
 import { Header } from './globals/Header/config'
 import { ThemeConfig } from './globals/ThemeConfig/config'
@@ -51,6 +60,7 @@ import { initializeRoles } from './utilities/initRoles'
 import { isAdminHidden } from './access/isAdmin'
 import { hasPermission } from './utilities/checkPermission'
 import { PageConfig } from './globals/PageConfig/config'
+import { LabInfo } from './globals/LabInfo/config'
 import { Telephone } from './fields/formBuilder/telephone'
 
 const filename = fileURLToPath(import.meta.url)
@@ -122,7 +132,7 @@ export default buildConfig({
         ItalicFeature(),
         ParagraphFeature(),
         LinkFeature({
-          enabledCollections: ['pages', 'posts'],
+          enabledCollections: ['pages', 'posts', 'projects'],
           fields: ({ defaultFields }) => {
             const defaultFieldsWithoutUrl = defaultFields.filter((field) => {
               if ('name' in field && field.name === 'url') return false
@@ -163,14 +173,33 @@ export default buildConfig({
   }),
   db: mongooseAdapter({
     url: process.env.MONGODB_URI || '',
+    connectOptions: {
+      maxPoolSize: 10,
+    },
   }),
-  collections: [Pages, Posts, Media, Categories, Users, Roles],
+  collections: [
+    Pages,
+    Posts,
+    Media,
+    Categories,
+    Users,
+    Roles,
+    ResearchThemes,
+    Awards,
+    Projects,
+    Publications,
+    Team,
+    Organizations,
+    Venues,
+    Grants,
+    Keywords,
+  ],
   cors: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
   csrf: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
-  globals: [ThemeConfig, Header, Footer, PageConfig],
+  globals: [ThemeConfig, Header, Footer, PageConfig, LabInfo],
   plugins: [
     redirectsPlugin({
-      collections: ['pages', 'posts'],
+      collections: ['pages', 'posts', 'projects'],
       overrides: {
         // @ts-expect-error Type mismatch between redirects plugin field types and our runtime shape
         fields: ({ defaultFields }) => {
@@ -244,7 +273,7 @@ export default buildConfig({
       },
     }),
     searchPlugin({
-      collections: ['pages', 'posts'],
+      collections: ['pages', 'posts', 'projects'],
       beforeSync: beforeSyncWithSearch,
       searchOverrides: {
         admin: {
@@ -336,6 +365,7 @@ export default buildConfig({
   localization,
   // Enable localization for admin panel
   i18n: {
-    supportedLanguages: { en, de },
+    supportedLanguages: { en },
+    // supportedLanguages: { en, de }, // Uncomment to enable German
   },
 })

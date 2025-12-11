@@ -1,6 +1,6 @@
 import { cache } from 'react'
 import { draftMode } from 'next/headers'
-import { Config, Page, Post } from '@/payload-types'
+import { Config, Page, Post, Project } from '@/payload-types'
 import { LocalizationConfig, Payload } from 'payload'
 import { getPayload } from 'payload'
 import configPromise from '@payload-config'
@@ -8,14 +8,15 @@ import configPromise from '@payload-config'
 type CollectionReturnTypeMap = {
   pages: Page & { type: 'page' }
   posts: Post & { type: 'post' }
+  projects: Project & { type: 'project' }
 }
 /**
- * Select, in which collection we should search. Currently supported is 'pages' and 'posts'
+ * Select, in which collection we should search. Currently supported is 'pages', 'posts', and 'projects'
  * For slugs with /posts/XX we should search in 'posts'
+ * For slugs with /projects/XX we should search in 'projects'
  * For every other slug we should search in 'pages'.
- * This could be enhanced in the future to support for example also case studies seperately.
  *
- * We call queryPageBySlug if we search in 'pages' and queryPostBySlug if we search in 'posts'
+ * We call queryPageBySlug if we search in 'pages', queryPostBySlug if we search in 'posts', and queryProjectBySlug if we search in 'projects'
  */
 export const queryCollectionData = async <T extends keyof CollectionReturnTypeMap>({
   cleanSlugs,
@@ -37,12 +38,14 @@ export const queryCollectionData = async <T extends keyof CollectionReturnTypeMa
     return null
   }
 
-  let result: Page | Post | null = null
+  let result: Page | Post | Project | null = null
 
   if (collection === 'pages') {
     result = await queryPageBySlug({ cleanSlugs, locale, draft, payload })
-  } else {
+  } else if (collection === 'posts') {
     result = await queryPostBySlug({ cleanSlugs, locale, draft, payload })
+  } else if (collection === 'projects') {
+    result = await queryProjectBySlug({ cleanSlugs, locale, draft, payload })
   }
 
   return result as CollectionReturnTypeMap[T] | null
@@ -77,6 +80,41 @@ export const queryPostBySlug = cache(
 
     if (result.docs?.[0]) {
       return { ...result.docs?.[0], type: 'post' }
+    }
+    return null
+  },
+)
+
+export const queryProjectBySlug = cache(
+  async ({
+    cleanSlugs,
+    locale,
+    draft,
+    payload,
+  }: {
+    cleanSlugs: string[]
+    locale: string
+    draft: boolean
+    payload: Payload
+  }) => {
+    const result = await payload.find({
+      collection: 'projects',
+      draft,
+      limit: 1,
+      depth: 2,
+      overrideAccess: draft,
+      locale: locale as Config['locale'],
+      where: {
+        slug: {
+          // We query the project by the last slug as this is always unique.
+          // Even for different parent routes it would be unique
+          equals: cleanSlugs[cleanSlugs.length - 1],
+        },
+      },
+    })
+
+    if (result.docs?.[0]) {
+      return { ...result.docs?.[0], type: 'project' }
     }
     return null
   },

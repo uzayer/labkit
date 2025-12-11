@@ -58,17 +58,19 @@ const DesignVersionPreviewClient: React.FC<DesignVersionPreviewProps> = ({
       ? safeOptions.find((opt) => opt.value === value) || safeOptions[0]
       : { label: 'Default', value: '', image: undefined }
 
+  // Build a usable image URL for both SSR and client render.
+  // - Keep absolute URLs untouched.
+  // - Normalize relative paths to start with '/' so they work when served from /public.
+  // - Return the same value on server and client to avoid hydration mismatches.
   const getImageUrl = (imagePath: string | undefined): string | undefined => {
     if (!imagePath) return undefined
 
-    // If it's already an absolute URL, return as is
     if (imagePath.startsWith('http')) return imagePath
 
-    // For relative paths, ensure they start with a slash
     const path = imagePath.startsWith('/') ? imagePath : `/${imagePath}`
 
-    // Return the full URL for the image
-    return `${window.location.origin}${path}`
+    // Always return the normalized relative path to keep SSR/CSR output identical.
+    return path
   }
 
   const handleOpenDrawer = () => {

@@ -37,14 +37,18 @@ import { calculateReadTime } from './hooks/calculcateReadTime'
 
 export const allPostDesignVersions = [
   {
-    label: 'BLOG18',
-    value: 'BLOG18',
-    image: '/admin/previews/blog/blog18.jpeg',
+    label: 'BLOGPOST4',
+    value: 'BLOGPOST4',
+    image: '/admin/previews/blogpost/blogpost4.webp',
   },
   {
-    label: 'BLOG20',
-    value: 'BLOG20',
-    image: '/admin/previews/blog/blog20.jpeg',
+    label: 'BLOGPOST5',
+    value: 'BLOGPOST5',
+    image: '/admin/previews/blogpost/blogpost5.webp',
+  },
+  {
+    label: 'CASESTUDY3',
+    value: 'CASESTUDY3',
   },
 ]
 
@@ -59,13 +63,12 @@ export const Posts: CollectionConfig = {
   admin: {
     defaultColumns: ['title', 'slug', 'updatedAt'],
     livePreview: {
-      url: ({ data, locale, req }) => {
+      url: ({ data, locale }) => {
         const path = generatePreviewPath({
           slug: typeof data?.slug === 'string' ? data.slug : '',
           breadcrumbs: data?.breadcrumbs,
           collection: 'posts',
           locale: locale.code,
-          req,
         })
 
         return `${NEXT_PUBLIC_SERVER_URL}${path}`
@@ -77,7 +80,6 @@ export const Posts: CollectionConfig = {
         breadcrumbs: data?.breadcrumbs as Breadcrumb[],
         collection: 'posts',
         locale: options.locale,
-        req: options.req,
       })
 
       return `${NEXT_PUBLIC_SERVER_URL}${path}`
@@ -101,7 +103,7 @@ export const Posts: CollectionConfig = {
               relationTo: 'media',
               admin: {
                 description: 'Banner image displayed at the top of the blog post',
-                condition: (data) => data?.designVersion === 'BLOG20',
+                condition: (data) => data?.designVersion === 'BLOGPOST5',
                 position: 'sidebar',
               },
             },
@@ -133,6 +135,102 @@ export const Posts: CollectionConfig = {
               }),
               label: false,
               required: true,
+            },
+            {
+              name: 'caseStudy3',
+              type: 'group',
+              admin: {
+                condition: (data) => data?.designVersion === 'CASESTUDY3',
+              },
+              fields: [
+                {
+                  name: 'heroImage',
+                  type: 'upload',
+                  relationTo: 'media',
+                  admin: {
+                    description: 'Primary illustration displayed beside the intro content',
+                  },
+                },
+                {
+                  name: 'overview',
+                  type: 'textarea',
+                  admin: {
+                    description: 'Short overview copy shown in the sidebar',
+                    placeholder:
+                      'Describe the company or initiative this case study covers (e.g. “A modern platform…”)',
+                  },
+                },
+                {
+                  name: 'metaItems',
+                  type: 'array',
+                  label: 'Sidebar Metadata',
+                  labels: {
+                    singular: 'Meta item',
+                    plural: 'Meta items',
+                  },
+                  admin: {
+                    description:
+                      'Add sidebar metadata such as Sector, Team size, Location, Funding, etc.',
+                  },
+                  fields: [
+                    {
+                      name: 'label',
+                      type: 'text',
+                      required: true,
+                    },
+                    {
+                      name: 'value',
+                      type: 'text',
+                      required: true,
+                    },
+                  ],
+                },
+                {
+                  name: 'problem',
+                  type: 'textarea',
+                  label: 'Problem Statement',
+                  admin: {
+                    placeholder: 'Describe the challenge or friction this case study addresses',
+                  },
+                },
+                {
+                  name: 'approach',
+                  type: 'textarea',
+                  label: 'Approach Description',
+                  admin: {
+                    placeholder: 'Explain the solution, methodology, or strategy that was applied',
+                  },
+                },
+                {
+                  name: 'outcomes',
+                  type: 'array',
+                  labels: {
+                    singular: 'Outcome',
+                    plural: 'Outcomes',
+                  },
+                  admin: {
+                    description:
+                      'List impact statements or results (e.g. “Accelerated growth initiatives”).',
+                  },
+                  fields: [
+                    {
+                      name: 'headline',
+                      type: 'text',
+                      required: true,
+                      label: 'Outcome',
+                    },
+                  ],
+                },
+                {
+                  name: 'shareLabel',
+                  type: 'text',
+                  label: 'Share Label',
+                  admin: {
+                    placeholder: 'Share this content:',
+                  },
+                },
+              ],
+              label: 'Case Study 3 Settings',
             },
           ],
           label: 'Content',
@@ -273,7 +371,7 @@ export const Posts: CollectionConfig = {
   versions: {
     drafts: {
       autosave: {
-        interval: 100, // We set this interval for optimal live preview
+        interval: 2000, // We set this interval for optimal live preview
       },
     },
     maxPerDoc: 50,

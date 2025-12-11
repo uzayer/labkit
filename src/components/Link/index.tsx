@@ -1,4 +1,5 @@
-import { Button, type ButtonProps } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
+import { type VariantProps } from 'class-variance-authority'
 import { cn } from 'src/utilities/cn'
 import Link from 'next/link'
 import React from 'react'
@@ -8,8 +9,10 @@ import { Icon } from '@/components/Icon'
 import localization from '@/localization.config'
 import { PublicContextProps } from '@/utilities/publicContextProps'
 
+type ButtonVariantProps = VariantProps<typeof buttonVariants>
+
 type CMSLinkType = {
-  appearance?: 'inline' | ButtonProps['variant']
+  appearance?: 'inline' | ButtonVariantProps['variant']
   children?: React.ReactNode
   className?: string
   label?: string | null
@@ -19,7 +22,7 @@ type CMSLinkType = {
     value: Page | Post | string | number
   } | null
   section?: string | null
-  size?: ButtonProps['size'] | null
+  size?: ButtonVariantProps['size'] | 'clear' | null
   type?: 'custom' | 'reference' | null
   url?: string | null
   iconBefore?: string | null
@@ -114,25 +117,19 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
     )
   }
 
+  // When appearance is not 'link', size can't be 'clear' (it's only set to 'clear' when appearance === 'link')
+  const buttonSize = size === 'clear' ? 'default' : size || 'default'
+
   if (!withAnchor) {
     return (
-      <Button
-        className={className}
-        size={(size as typeof sizeFromProps) || 'default'}
-        variant={appearance}
-      >
+      <Button className={className} size={buttonSize} variant={appearance}>
         <span className="flex items-center">{content}</span>
       </Button>
     )
   }
 
   return (
-    <Button
-      asChild
-      className={className}
-      size={(size as typeof sizeFromProps) || 'default'}
-      variant={appearance}
-    >
+    <Button asChild className={className} size={buttonSize} variant={appearance}>
       <Link
         className={cn('flex items-center', className)}
         href={href || url || ''}

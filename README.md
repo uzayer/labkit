@@ -9,7 +9,6 @@ The docs for this repo are located here: [Payblocks Docs](https://docs.shadcnblo
 ## ✨ Key Features
 
 - 🎨 **Rich Component Library**
-
   - Extensive collection of pre-built blocks from shadcnblocks
   - Multiple variants for each component type:
     - 5+ FAQ layouts
@@ -19,14 +18,12 @@ The docs for this repo are located here: [Payblocks Docs](https://docs.shadcnblo
   - All components are fully customizable and responsive
 
 - 🔒 **Enhanced Security**
-
   - Cloudflare Turnstile integration for form protection
   - Secure authentication system
   - Login with Google
   - Role-based access control
 
 - 🚀 **Advanced Features**
-
   - Layout Builder with drag-and-drop functionality
   - Live Preview for real-time content editing
   - Draft Preview system

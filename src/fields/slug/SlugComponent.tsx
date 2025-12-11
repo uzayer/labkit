@@ -1,5 +1,5 @@
 'use client'
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { TextFieldClientProps } from 'payload'
 
 import { useField, Button, TextInput, FieldLabel, useFormFields, useForm } from '@payloadcms/ui'
@@ -32,6 +32,20 @@ export const SlugComponent: React.FC<SlugComponentProps> = ({
   const isLocked = useFormFields(([fields]) => {
     return fields[checkboxFieldPath]?.value as string
   })
+
+  // Auto-generate slug when target field changes and slug is unlocked
+  const targetFieldValue = useFormFields(([fields]) => {
+    return fields[fieldToUse]?.value as string
+  })
+
+  useEffect(() => {
+    if (!isLocked && targetFieldValue) {
+      const formattedSlug = formatSlug(targetFieldValue)
+      if (value !== formattedSlug) setValue(formattedSlug)
+    } else if (!isLocked && !targetFieldValue) {
+      if (value !== '') setValue('')
+    }
+  }, [targetFieldValue, isLocked, value, setValue])
 
   const handleGenerate = useCallback(
     (e: React.MouseEvent<Element>) => {

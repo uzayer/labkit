@@ -18,10 +18,8 @@ import Testimonial8 from '@/blocks/Testimonial/testimonial8'
 import Testimonial9 from '@/blocks/Testimonial/testimonial9'
 import Testimonial15 from '@/blocks/Testimonial/testimonial15'
 
-type TestimonialDesignVersionValue = TestimonialDesignVersion['value']
-
 type Testimonial<T extends string = string> = Required<
-  Record<TestimonialDesignVersionValue, React.FC<any>>
+  Record<TestimonialDesignVersion, React.FC<any>>
 > &
   Record<T, React.FC<any>>
 
@@ -53,7 +51,7 @@ export const TestimonialBlock: React.FC<any> = (props) => {
 
   if (!designVersion) return null
 
-  const TestimonialToRender = testimonial[designVersion as TestimonialDesignVersionValue]
+  const TestimonialToRender = testimonial[designVersion as TestimonialDesignVersion]
 
   if (!TestimonialToRender) return null
 

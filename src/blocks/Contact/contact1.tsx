@@ -1,6 +1,3 @@
-
-
-
 import { ContactBlock } from '@/payload-types'
 
 const Contact1: React.FC<ContactBlock> = ({ richText, form, contactBlocks, maps }) => {

@@ -2,15 +2,7 @@
 
 import { useEffect, useState, useMemo } from 'react'
 
-import {
-  ArrowUp,
-  Clock,
-  Facebook,
-  Home,
-  Instagram,
-  Linkedin,
-  Twitter,
-} from 'lucide-react'
+import { ArrowUp, Clock, Facebook, Home, Instagram, Linkedin, Twitter } from 'lucide-react'
 
 import { cn } from '@/utilities'
 import { DateFormatter } from '@/components/DateFormatter'

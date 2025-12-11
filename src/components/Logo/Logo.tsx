@@ -2,7 +2,6 @@ import React from 'react'
 
 export const Logo = () => {
   return (
-     
     <img
       alt="Payload Logo"
       className="max-w-37.5 invert dark:invert-0"

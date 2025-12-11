@@ -11,7 +11,6 @@ import { LogosBlock } from '@/blocks/Logos/config'
 import { Gallery } from '@/blocks/Gallery/config'
 import { TestimonialBlock } from '@/blocks/Testimonial/config'
 import { FaqBlock } from '@/blocks/Faq/config'
-import { StatBlock } from '@/blocks/Stat/config'
 import { SplitViewBlock } from '@/blocks/SplitView/config'
 import { TextBlock } from '@/blocks/TextBlock/config'
 import { MediaBlock } from '@/blocks/MediaBlock/config'
@@ -40,9 +39,17 @@ import { CasestudiesBlock } from '@/blocks/Casestudies/config'
 import { TimelineBlock } from '@/blocks/Timeline/config'
 import { LoginBlock } from '@/blocks/Login/config'
 import { SignupBlock } from '@/blocks/Signup/config'
+import { Archive } from '@/blocks/ArchiveBlock/config'
+import { TeamBlock } from '@/blocks/Team/config'
+import { AwardsBlock } from '@/blocks/Awards/config'
+import { ProjectsBlock } from '@/blocks/Projects/config'
+import { ResourcesBlock } from '@/blocks/Resources/config'
+import { PublicationsBlock } from '@/blocks/PublicationsBlock/config'
+import { StatsBlock } from '@/blocks/Stats/config'
 
 export const PageBlocks: Block[] = [
   FeatureBlock,
+  Archive,
   FormBlock,
   CtaBlock,
   LogosBlock,
@@ -51,7 +58,7 @@ export const PageBlocks: Block[] = [
   Gallery,
   TestimonialBlock,
   FaqBlock,
-  StatBlock,
+  StatsBlock,
   SplitViewBlock,
   TextBlock,
   MediaBlock,
@@ -63,6 +70,11 @@ export const PageBlocks: Block[] = [
   TimelineBlock,
   LoginBlock,
   SignupBlock,
+  TeamBlock,
+  AwardsBlock,
+  ProjectsBlock,
+  ResourcesBlock,
+  PublicationsBlock,
 ]
 
 export const Pages: CollectionConfig = {

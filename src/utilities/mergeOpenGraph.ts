@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+// import { serverUrl as NEXT_PUBLIC_SERVER_URL } from '@/config/server' // Unused import
 
 const defaultOpenGraph: Metadata['openGraph'] = {
   type: 'website',

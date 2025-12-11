@@ -10,7 +10,7 @@ export const allCasestudiesDesignVersions = [
   },
 ] as const
 
-export type CasestudiesDesignVersion = (typeof allCasestudiesDesignVersions)[number]
+export type CasestudiesDesignVersion = (typeof allCasestudiesDesignVersions)[number]['value']
 
 export const logoSizeOptions = [
   {
@@ -35,8 +35,8 @@ export const CasestudiesBlock: Block = {
   slug: 'casestudies',
   interfaceName: 'CasestudiesBlock',
   labels: {
-    singular: 'Case Study',
-    plural: 'Case Studies',
+    singular: 'Casestudies',
+    plural: 'Casestudies',
   },
   fields: [
     backgroundColor,

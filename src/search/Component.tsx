@@ -14,7 +14,8 @@ import {
 import { useDebounce } from '@/utilities/useDebounce'
 import { useRouter } from 'next/navigation'
 import { Input } from '@/components/ui/input'
-import { Button, ButtonProps } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
+import { type VariantProps } from 'class-variance-authority'
 import { useSearch } from '@/utilities/useSearch'
 import { Sheet, SheetContent, SheetTitle } from '@/components/ui/sheet'
 import { VisuallyHidden } from '@/components/ui/visually-hidden'
@@ -58,17 +59,18 @@ const translations: Record<Locale, SearchTranslations> = {
     foundResults: (count) => `Found ${count} result${count !== 1 ? 's' : ''}`,
     search: 'Search',
   },
-  de: {
-    placeholder: 'Wonach suchen Sie?',
-    esc: 'Esc',
-    searching: 'Suche...',
-    noResults: 'Keine Ergebnisse gefunden.',
-    startTyping: 'Beginnen Sie zu tippen, um zu suchen...',
-    recentItems: 'Kürzliche Elemente',
-    recentResults: 'Kürzliche Ergebnisse',
-    foundResults: (count) => `${count} Ergebnis${count !== 1 ? 'se' : ''} gefunden`,
-    search: 'Suchen',
-  },
+  // Uncomment to enable German
+  // de: {
+  //   placeholder: 'Wonach suchen Sie?',
+  //   esc: 'Esc',
+  //   searching: 'Suche...',
+  //   noResults: 'Keine Ergebnisse gefunden.',
+  //   startTyping: 'Beginnen Sie zu tippen, um zu suchen...',
+  //   recentItems: 'Kürzliche Elemente',
+  //   recentResults: 'Kürzliche Ergebnisse',
+  //   foundResults: (count) => `${count} Ergebnis${count !== 1 ? 'se' : ''} gefunden`,
+  //   search: 'Suchen',
+  // },
 }
 
 function SearchList({
@@ -181,7 +183,7 @@ export function SearchButton({
   publicContext,
 }: {
   className?: string
-  variant?: ButtonProps['variant']
+  variant?: VariantProps<typeof buttonVariants>['variant']
   publicContext?: PublicContextProps
 }) {
   const [open, setOpen] = React.useState(false)

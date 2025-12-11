@@ -18,8 +18,8 @@ export interface TimelineSection {
 }
 
 export const allTimelineDesignVersions = [
-  { label: 'TIMELINE2', value: 'TIMELINE2', image: '/admin/previews/timeline/timeline2.jpeg' },
-  { label: 'TIMELINE8', value: 'TIMELINE8', image: '/admin/previews/timeline/timeline8.jpeg' },
+  { label: 'TIMELINE2', value: 'TIMELINE2', image: '/admin/previews/timeline/timeline2.webp' },
+  { label: 'TIMELINE8', value: 'TIMELINE8', image: '/admin/previews/timeline/timeline8.webp' },
 ] as const
 
 export const TimelineBlock: Block = {

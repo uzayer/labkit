@@ -14,9 +14,7 @@ import Cta17 from '@/blocks/Cta/cta17'
 
 import { CtaDesignVersion } from './config'
 
-type CtaDesignVersionValue = CtaDesignVersion['value']
-
-type Cta<T extends string = string> = Required<Record<CtaDesignVersionValue, React.FC<any>>> &
+type Cta<T extends string = string> = Required<Record<CtaDesignVersion, React.FC<any>>> &
   Record<T, React.FC<any>>
 
 const ctas: Cta = {
@@ -42,7 +40,7 @@ export const CtaBlock: React.FC<any> = (props) => {
 
   if (!designVersion) return null
 
-  const CtaToRender = ctas[designVersion as CtaDesignVersionValue]
+  const CtaToRender = ctas[designVersion as CtaDesignVersion]
 
   if (!CtaToRender) return null
 

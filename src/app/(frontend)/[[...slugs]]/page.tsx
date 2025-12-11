@@ -5,7 +5,6 @@ import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 import React from 'react'
 
-
 import { RenderBlocks } from '@/blocks/RenderBlocks'
 import { RenderHero } from '@/heros/RenderHero'
 import { generateMeta } from '@/utilities/generateMeta'
@@ -18,6 +17,7 @@ import { PublicContextProps } from '@/utilities/publicContextProps'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { Breadcrumb } from '@payloadcms/plugin-nested-docs/types'
 import { RenderPostDetailPage } from '@/blocks/RenderPostDetailPage'
+import { RenderProjectDetailPage } from '@/blocks/RenderProjectDetailPage'
 
 type Params = {
   slugs?: Array<string>
@@ -92,7 +92,8 @@ export default async function Page(props: Args) {
 
   const url = generateUrl(locale, cleanSlugs)
 
-  const collection = cleanSlugs[0] === 'posts' ? 'posts' : 'pages'
+  const collection =
+    cleanSlugs[0] === 'posts' ? 'posts' : cleanSlugs[0] === 'projects' ? 'projects' : 'pages'
 
   const page = await queryCollectionData({
     cleanSlugs,
@@ -131,6 +132,15 @@ export default async function Page(props: Args) {
         <RenderPostDetailPage post={page} publicContext={publicContext} />
       </article>
     )
+  } else if (page.type === 'project') {
+    return (
+      <article className="project">
+        <PayloadRedirects disableNotFound url={url} />
+
+        {/* Render the project detail page */}
+        <RenderProjectDetailPage project={page} publicContext={publicContext} />
+      </article>
+    )
   }
 }
 
@@ -142,10 +152,12 @@ export async function generateMetadata(props: Args): Promise<Metadata> {
   }
   const { locale, cleanSlugs } = res
 
+  const collection =
+    cleanSlugs[0] === 'posts' ? 'posts' : cleanSlugs[0] === 'projects' ? 'projects' : 'pages'
   const page = await queryCollectionData({
     cleanSlugs,
     locale,
-    collection: 'pages',
+    collection,
   })
   const url = generateUrl(locale, cleanSlugs)
   if (page) {

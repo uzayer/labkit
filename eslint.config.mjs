@@ -28,7 +28,7 @@ export default defineConfig([
       '**/.next',
       '**/.vercel',
       'postcss.config.js',
-      '**/payload-types.ts'
+      '**/payload-types.ts',
     ],
   },
   ...compat.config({
@@ -41,7 +41,6 @@ export default defineConfig([
         tsconfigRootDir: __dirname,
       },
     },
-
 
     plugins: {
       'unused-imports': unusedImports,
@@ -61,7 +60,6 @@ export default defineConfig([
 
       // some libs like shadcn/ui have empty interfaces, just to name them differently.
       '@typescript-eslint/no-empty-object-type': 'off',
-
     },
   },
   {

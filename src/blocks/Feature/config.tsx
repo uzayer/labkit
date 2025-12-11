@@ -18,7 +18,7 @@ import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionP
 import { backgroundColor } from '@/fields/color'
 
 export const allFeatureDesignVersions = [
-  { label: 'FEATURE1', value: 'FEATURE1', image: '/admin/previews/feature/feature1.jpeg' },
+  { label: 'FEATURE1', value: 'FEATURE1', image: '/admin/previews/feature/feature1.webp' },
   // 'FEATURE2',
   // 'FEATURE3',
   // 'FEATURE4',
@@ -36,13 +36,13 @@ export const allFeatureDesignVersions = [
   // 'FEATURE16',
   // 'FEATURE17',
   // 'FEATURE18',
-  // 'FEATURE19',
+  { label: 'FEATURE19', value: 'FEATURE19', image: '/admin/previews/feature/feature19.webp' },
   // 'FEATURE20',
   // 'FEATURE21',
   // 'FEATURE22',
   // 'FEATURE23',
   // 'FEATURE24',
-  { label: 'FEATURE25', value: 'FEATURE25', image: '/admin/previews/feature/feature25.jpeg' },
+  { label: 'FEATURE25', value: 'FEATURE25', image: '/admin/previews/feature/feature25.webp' },
   // 'FEATURE26',
   // 'FEATURE27',
   // 'FEATURE28',
@@ -61,14 +61,14 @@ export const allFeatureDesignVersions = [
   // 'FEATURE42',
   // 'FEATURE43',
   // 'FEATURE44',
-  { label: 'FEATURE50', value: 'FEATURE50', image: '/admin/previews/feature/feature50.jpeg' },
+  { label: 'FEATURE50', value: 'FEATURE50', image: '/admin/previews/feature/feature50.webp' },
   // 'FEATURE51',
   // 'FEATURE52',
-  { label: 'FEATURE53', value: 'FEATURE53', image: '/admin/previews/feature/feature53.jpeg' },
+  { label: 'FEATURE53', value: 'FEATURE53', image: '/admin/previews/feature/feature53.webp' },
   // 'FEATURE54',
   // 'FEATURE55',
   // 'FEATURE56',
-  { label: 'FEATURE57', value: 'FEATURE57', image: '/admin/previews/feature/feature57.jpg' },
+  { label: 'FEATURE57', value: 'FEATURE57', image: '/admin/previews/feature/feature57.webp' },
   // 'FEATURE58',
   // 'FEATURE59',
   // 'FEATURE60',
@@ -81,9 +81,9 @@ export const allFeatureDesignVersions = [
   // 'FEATURE67',
   // 'FEATURE68',
   // 'FEATURE69',
-  { label: 'FEATURE70', value: 'FEATURE70', image: '/admin/previews/feature/feature70.jpeg' },
+  { label: 'FEATURE70', value: 'FEATURE70', image: '/admin/previews/feature/feature70.webp' },
   // 'FEATURE71',
-  { label: 'FEATURE72', value: 'FEATURE72', image: '/admin/previews/feature/feature72.jpeg' },
+  { label: 'FEATURE72', value: 'FEATURE72', image: '/admin/previews/feature/feature72.webp' },
   // 'FEATURE73',
   // 'FEATURE74',
   // 'FEATURE75',
@@ -100,31 +100,31 @@ export const allFeatureDesignVersions = [
   // 'FEATURE87',
   // 'FEATURE89',
   // 'FEATURE90',
-  { label: 'FEATURE91', value: 'FEATURE91', image: '/admin/previews/feature/feature91.jpeg' },
+  { label: 'FEATURE91', value: 'FEATURE91', image: '/admin/previews/feature/feature91.webp' },
   // 'FEATURE92',
   // 'FEATURE93',
   // 'FEATURE94',
   // 'FEATURE95',
-  { label: 'FEATURE97', value: 'FEATURE97', image: '/admin/previews/feature/feature97.jpeg' },
+  { label: 'FEATURE97', value: 'FEATURE97', image: '/admin/previews/feature/feature97.webp' },
   // 'FEATURE98',
-  { label: 'FEATURE99', value: 'FEATURE99', image: '/admin/previews/feature/feature99.jpeg' },
+  { label: 'FEATURE99', value: 'FEATURE99', image: '/admin/previews/feature/feature99.webp' },
   // 'FEATURE101',
-  { label: 'FEATURE102', value: 'FEATURE102', image: '/admin/previews/feature/feature102.jpeg' },
-  { label: 'FEATURE103', value: 'FEATURE103', image: '/admin/previews/feature/feature103.jpeg' },
+  { label: 'FEATURE102', value: 'FEATURE102', image: '/admin/previews/feature/feature102.webp' },
+  { label: 'FEATURE103', value: 'FEATURE103', image: '/admin/previews/feature/feature103.webp' },
   // 'FEATURE104',
   { label: 'FEATURE105', value: 'FEATURE105', image: '/admin/previews/feature/feature105.webp' },
   // 'FEATURE106',
   // 'FEATURE107',
   // 'FEATURE108',
   // 'FEATURE109',
-  { label: 'FEATURE114', value: 'FEATURE114', image: '/admin/previews/feature/feature114.jpeg' },
-  { label: 'FEATURE117', value: 'FEATURE117', image: '/admin/previews/feature/feature117.jpeg' },
-  { label: 'FEATURE126', value: 'FEATURE126', image: '/admin/previews/feature/feature126.jpeg' },
+  { label: 'FEATURE114', value: 'FEATURE114', image: '/admin/previews/feature/feature114.webp' },
+  { label: 'FEATURE117', value: 'FEATURE117', image: '/admin/previews/feature/feature117.webp' },
+  { label: 'FEATURE126', value: 'FEATURE126', image: '/admin/previews/feature/feature126.webp' },
   { label: 'FEATURE159', value: 'FEATURE159', image: '/admin/previews/feature/feature159.webp' },
   { label: 'FEATURE250', value: 'FEATURE250', image: '/admin/previews/feature/feature250.webp' },
 ] as const
 
-export type FeatureDesignVersion = (typeof allFeatureDesignVersions)[number]
+export type FeatureDesignVersion = (typeof allFeatureDesignVersions)[number]['value']
 
 /**
  * The Feature block is the shadcnblocks.com feature block integrated in payload.
@@ -335,6 +335,7 @@ export const FeatureBlock: Block = {
             'FEATURE6',
             'FEATURE7',
             'FEATURE11',
+            'FEATURE19',
             'FEATURE24',
             'FEATURE30',
             'FEATURE38',
@@ -350,39 +351,34 @@ export const FeatureBlock: Block = {
           label: 'Icon',
           name: 'uspIcon',
           admin: {
-            condition: (data, _) => {
-              const designVersion = data.layout.find(
-                (block) => block.blockType === 'feature',
-              ).designVersion
-              return [
-                'FEATURE4',
-                'FEATURE5',
-                'FEATURE15',
-                'FEATURE16',
-                'FEATURE26',
-                'FEATURE51',
-                'FEATURE52',
-                'FEATURE57',
-                'FEATURE58',
-                'FEATURE67',
-                'FEATURE76',
-                'FEATURE83',
-                'FEATURE85',
-                'FEATURE89',
-                'FEATURE93',
-                'FEATURE97',
-                'FEATURE101',
-                'FEATURE104',
-                'FEATURE105',
-                'FEATURE106',
-                'FEATURE107',
-                'FEATURE108',
-                'FEATURE114',
-                'FEATURE117',
-                'FEATURE159',
-                'FEATURE250',
-              ].includes(designVersion)
-            },
+            condition: createBlockItemCondition([
+              'FEATURE4',
+              'FEATURE5',
+              'FEATURE15',
+              'FEATURE16',
+              'FEATURE26',
+              'FEATURE51',
+              'FEATURE52',
+              'FEATURE57',
+              'FEATURE58',
+              'FEATURE67',
+              'FEATURE76',
+              'FEATURE83',
+              'FEATURE85',
+              'FEATURE89',
+              'FEATURE93',
+              'FEATURE97',
+              'FEATURE101',
+              'FEATURE104',
+              'FEATURE105',
+              'FEATURE106',
+              'FEATURE107',
+              'FEATURE108',
+              'FEATURE114',
+              'FEATURE117',
+              'FEATURE159',
+              'FEATURE250',
+            ]),
           },
         }),
         /**
@@ -455,58 +451,23 @@ export const FeatureBlock: Block = {
           label: false,
         },
         /**
-         * USPs can have 1 or many features, with icon and richText. only features 19, 22, 25, 91 have this
+         * USPs can have 1 or many nested features, with icon and richText.
+         * This is a whitelist condition - expand this list when adding new feature blocks
+         * that need nested USPFeatures functionality.
+         * Currently used by: FEATURE22, FEATURE25, FEATURE91
          */
         {
           name: 'USPFeatures',
           type: 'array',
           admin: {
             description: 'USPs can feature 1 or many features, with icon and richText',
-            condition: (data, siblingData) => {
-              // Get all feature blocks
-              const featureBlocks =
-                data.layout?.filter((block) => block.blockType === 'feature') || []
-
-              // Find the feature block that contains our current USP
-              const currentFeatureBlock = featureBlocks.find((block) =>
-                block.USPs?.some(
-                  (usp) =>
-                    // Compare USP fields to identify the current one
-                    usp.tagline === siblingData.tagline && usp.image === siblingData.image,
-                ),
-              )
-
-              return (
-                currentFeatureBlock &&
-                ['FEATURE19', 'FEATURE22', 'FEATURE25', 'FEATURE91'].includes(
-                  currentFeatureBlock.designVersion,
-                )
-              )
-            },
+            condition: createBlockItemCondition(['FEATURE22', 'FEATURE25', 'FEATURE91']),
           },
           fields: [
             icon({
               admin: {
-                condition: (data, siblingData) => {
-                  // Get all feature blocks
-                  const featureBlocks =
-                    data.layout?.filter((block) => block.blockType === 'feature') || []
-
-                  // Find the feature block that contains our current USP
-                  const currentFeatureBlock = featureBlocks.find((block) =>
-                    block.USPs?.some(
-                      (usp) =>
-                        // Compare USP fields to identify the current one
-                        usp.tagline === siblingData.tagline && usp.image === siblingData.image,
-                    ),
-                  )
-
-                  // Show icon for all features except feature25
-                  return (
-                    currentFeatureBlock &&
-                    !['FEATURE25'].includes(currentFeatureBlock.designVersion)
-                  )
-                },
+                // Show icon for all features except feature25
+                condition: createBlockItemCondition(['NOT FEATURE25']),
               },
             }),
             {
@@ -576,6 +537,66 @@ export const FeatureBlock: Block = {
         },
       ],
       minRows: 1,
+    },
+    {
+      name: 'slides',
+      label: 'Slides',
+      type: 'array',
+      minRows: 2,
+      admin: {
+        description: 'Configure the tabbed slides displayed for Feature19.',
+        condition: (_, { designVersion = '' } = {}) => designVersion === 'FEATURE19',
+      },
+      fields: [
+        {
+          name: 'tabName',
+          label: 'Tab label',
+          type: 'text',
+          localized: true,
+          required: true,
+        },
+        {
+          name: 'title',
+          type: 'text',
+          localized: true,
+          required: true,
+        },
+        {
+          name: 'description',
+          type: 'textarea',
+          localized: true,
+        },
+        {
+          name: 'features',
+          label: 'Bullet points',
+          type: 'array',
+          minRows: 1,
+          fields: [
+            {
+              name: 'text',
+              label: 'Text',
+              type: 'text',
+              localized: true,
+              required: true,
+            },
+          ],
+        },
+        link({
+          disableIcon: true,
+          appearances: ['default', 'outline', 'ghost'],
+          overrides: {
+            admin: {
+              description: 'Optional CTA link for this slide.',
+            },
+          },
+        }),
+        {
+          name: 'image',
+          type: 'upload',
+          relationTo: 'media',
+          required: true,
+        },
+      ],
     },
   ],
   labels: {

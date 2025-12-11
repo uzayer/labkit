@@ -16,7 +16,7 @@ import type { Media as MediaType } from '@/payload-types'
 
 const Testimonial7: React.FC<TestimonialBlock & { publicContext: PublicContextProps }> = ({
   headline,
-  links,
+  link,
   testimonial,
   publicContext,
 }) => {
@@ -92,10 +92,7 @@ const Testimonial7: React.FC<TestimonialBlock & { publicContext: PublicContextPr
             }}
           />
         )}
-        {links &&
-          links.map((link, index) => (
-            <CMSLink publicContext={publicContext} className="mt-6" key={index} {...link.link} />
-          ))}
+        {link && <CMSLink publicContext={publicContext} {...link} className="mt-6" />}
       </div>
       <div className="lg:container">
         <div className="mt-16 space-y-4">

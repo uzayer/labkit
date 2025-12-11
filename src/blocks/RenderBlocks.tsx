@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 
 import type { Page } from '@/payload-types'
 
+import { ArchiveBlock } from '@/blocks/ArchiveBlock/Component'
 import { FormBlock } from '@/blocks/Form/Component'
 import { FeatureBlock } from '@/blocks/Feature/Component'
 import { GalleryBlock } from './Gallery/Component'
@@ -10,7 +11,7 @@ import { LogosBlock } from '@/blocks/Logos/Component'
 import { AboutBlock } from '@/blocks/About/Component'
 import { TestimonialBlock } from '@/blocks/Testimonial/Component'
 import { FaqBlock } from './Faq/Component'
-import { StatBlock } from './Stat/Component'
+import { StatsBlock } from './Stats/Component'
 import { SplitViewBlock } from './SplitView/Component'
 import { TextBlock } from './TextBlock/Component'
 import { MediaBlock } from './MediaBlock/Component'
@@ -24,8 +25,14 @@ import { CasestudiesBlock } from './Casestudies/Component'
 import { TimelineBlock } from './Timeline/Component'
 import { LoginBlock } from './Login/Component'
 import { SignupBlock } from './Signup/Component'
+import { TeamBlock } from './Team/Component'
+import { AwardsBlock } from './Awards/Component'
+import { ProjectsBlock } from './Projects/Component'
+import { ResourcesBlock } from './Resources/Component'
+import { PublicationsBlock } from './PublicationsBlock/Component'
 
 const blockComponents: Partial<Record<Page['layout'][0]['blockType'], React.FC<any>>> = {
+  archive: ArchiveBlock,
   formBlock: FormBlock,
   feature: FeatureBlock,
   gallery: GalleryBlock,
@@ -34,7 +41,7 @@ const blockComponents: Partial<Record<Page['layout'][0]['blockType'], React.FC<a
   about: AboutBlock,
   testimonial: TestimonialBlock,
   faq: FaqBlock,
-  stat: StatBlock,
+  stats: StatsBlock,
   splitView: SplitViewBlock,
   text: TextBlock,
   mediaBlock: MediaBlock,
@@ -47,6 +54,11 @@ const blockComponents: Partial<Record<Page['layout'][0]['blockType'], React.FC<a
   timeline: TimelineBlock,
   login: LoginBlock,
   signup: SignupBlock,
+  team: TeamBlock,
+  awards: AwardsBlock,
+  projects: ProjectsBlock,
+  resources: ResourcesBlock,
+  publicationsBlock: PublicationsBlock,
 }
 
 export const RenderBlocks: React.FC<{

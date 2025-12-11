@@ -1,4 +1,3 @@
-
 import { Avatar, AvatarImage } from '@/components/ui/avatar'
 import { Page } from '@/payload-types'
 import RichText from '@/components/RichText'

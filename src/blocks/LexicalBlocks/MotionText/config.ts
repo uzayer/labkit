@@ -26,7 +26,8 @@ export const MotionText: Block = {
       type: 'text',
       label: 'Text before animated words',
       admin: {
-        description: 'Text that appears before the animated portion (e.g., "The only app you Need to")',
+        description:
+          'Text that appears before the animated portion (e.g., "The only app you Need to")',
       },
     },
     {

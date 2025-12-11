@@ -42,6 +42,7 @@ export async function search(query?: string, limit: number = 10): Promise<Search
       try {
         const recentResults = await payload.find({
           collection: 'search',
+          overrideAccess: false,
           limit: 5,
           sort: '-updatedAt',
         })
@@ -93,6 +94,7 @@ export async function search(query?: string, limit: number = 10): Promise<Search
     try {
       await payload.find({
         collection: 'search',
+        overrideAccess: false,
         limit: 1,
       })
     } catch (testError) {
@@ -112,6 +114,7 @@ export async function search(query?: string, limit: number = 10): Promise<Search
     try {
       searchResults = await payload.find({
         collection: 'search',
+        overrideAccess: false,
         limit: limit * 2, // Get more results to filter in memory
         where: {
           or: [
@@ -139,6 +142,7 @@ export async function search(query?: string, limit: number = 10): Promise<Search
       console.warn('Title query failed, trying fallback:', queryError)
       const allResults = await payload.find({
         collection: 'search',
+        overrideAccess: false,
         limit: 100,
         sort: ['-updatedAt'],
       })

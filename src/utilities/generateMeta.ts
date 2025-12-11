@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
-import type { Page, Post } from '../payload-types'
+import type { Page, Post, Project } from '../payload-types'
 import { mergeOpenGraph } from './mergeOpenGraph'
 import { serverUrl as NEXT_PUBLIC_SERVER_URL } from '@/config/server'
 
 export const generateMeta = async (args: {
-  doc: Page | Post
+  doc: Page | Post | Project
   url: string
   locale?: string
 }): Promise<Metadata> => {

@@ -106,8 +106,7 @@ import Feature250 from '@/blocks/Feature/feature250'
 import { Page } from '@/payload-types'
 import { FeatureDesignVersion } from './config'
 
-// Extract just the value property from FeatureDesignVersion for use as keys
-type FeatureDesignVersionValue = FeatureDesignVersion['value']
+type FeatureDesignVersionValue = FeatureDesignVersion
 
 // Enforce required features but allow additional ones
 type Feature<T extends string = string> = Required<

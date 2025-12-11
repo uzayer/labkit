@@ -360,7 +360,6 @@ export function serializeLexical({
                     aria-checked={node.checked ? 'true' : 'false'}
                     className={className}
                     key={index}
-                     
                     role="checkbox"
                     tabIndex={-1}
                     value={node?.value}
