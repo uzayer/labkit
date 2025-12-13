@@ -1,8 +1,8 @@
 # Theming System Architecture
 
 **Last Updated:** January 2025  
-**Status:** Stable - Minor update: Sidebar variables added (see [shadcn-sidebar-variables-update.md](../bug-reports/shadcn-sidebar-variables-update.md))  
-**Previous Status:** No changes since initial commit `b8c7e9b46ab5b817f30dfb8d2ef96623a7ac8fcc`
+**Status:** Stable - Documentation updated to reflect current implementation (localization support, ring-3 mapping, dark mode limitations, ThemeSelector auto mode)  
+**Previous Status:** Minor update: Sidebar variables added (see [shadcn-sidebar-variables-update.md](../reports/shadcn-breaking-updates/shadcn-sidebar-variables-update.md))
 
 ## Executive Summary
 
@@ -67,12 +67,13 @@ src/
 ├── providers/
 │   ├── Theme/
 │   │   ├── index.tsx              # Main Theme Provider (React Context)
-│   │   ├── types.ts               # TypeScript type definitions
-│   │   ├── shared.ts              # Shared constants and utilities
+│   │   ├── types.ts               # TypeScript type definitions (Theme, ThemeContextType)
+│   │   ├── shared.ts              # Shared constants and utilities (getImplicitPreference)
 │   │   ├── InitTheme/
 │   │   │   └── index.tsx          # Client-side theme initialization script
 │   │   └── ThemeSelector/
-│   │       └── index.tsx          # UI component for theme switching
+│   │       ├── index.tsx          # UI component for theme switching
+│   │       └── types.ts           # Theme type, themeLocalStorageKey, defaultTheme
 │   │
 │   └── HeaderTheme/
 │       └── index.tsx              # Separate theme context for header component
@@ -124,7 +125,7 @@ src/
 - `muted`, `muted-foreground`
 - `accent`, `accent-foreground`
 - `destructive`, `destructive-foreground`
-- `border`, `input`, `ring`
+- `border`, `input`, `ring-3` (mapped to CSS variable `--ring`)
 - `success`, `warning`, `error`
 - `chart-1` through `chart-5`
 - `muted2`, `muted2-foreground`
@@ -136,13 +137,34 @@ src/
 
 **Purpose:** Server-side React component that injects CSS variables into the HTML head.
 
+**Component Signature:**
+
+```typescript
+export async function ThemeConfig({ 
+  publicContext 
+}: { 
+  publicContext: PublicContextProps 
+})
+```
+
+**Key Parameters:**
+
+- `publicContext`: Contains locale information for multi-locale theme support
+  - `publicContext.locale`: Locale string (e.g., 'en', 'de') used to fetch locale-specific theme configuration
+
 **How It Works:**
 
-1. Fetches `themeConfig` global using `getCachedGlobal()` with depth 2
+1. Fetches `themeConfig` global using `getCachedGlobal('themeConfig', publicContext.locale, 2)()` with locale support
 2. Generates inline `<style>` tag with CSS variables
 3. Maps CMS values to CSS custom properties
-4. Conditionally includes dark mode variables if enabled
+4. Conditionally includes dark mode variables only if `enableDarkMode` is true
 5. Injects via `dangerouslySetInnerHTML`
+
+**Important Notes:**
+
+- **Ring Variable Mapping:** The config field `ring-3` is mapped to the CSS variable `--ring`:
+  - Config: `regularColors['ring-3']` → CSS: `--ring`
+  - This naming difference exists to match shadcn's CSS variable convention while maintaining valid field names in PayloadCMS
 
 **Output Structure:**
 
@@ -151,17 +173,21 @@ src/
   --radius: 0.5rem;
   --background: #ffffff;
   --foreground: #0a0a0a;
-  /* ... all light mode colors ... */
+  --ring: #0a0a0a;  /* mapped from ring-3 field */
+  /* ... all light mode colors including chart-1 through chart-5, muted2, muted2-foreground ... */
 }
 
+/* Only rendered if enableDarkMode is true */
 [data-theme='dark'] {
   --background: #0a0a0a;
   --foreground: #ffffff;
-  /* ... all dark mode colors ... */
+  --ring: #ffffff;  /* mapped from ring-3 field */
+  /* Note: Dark mode block does NOT include chart-1 through chart-5, muted2, or muted2-foreground */
+  /* Only includes: background, foreground, card, popover, primary, secondary, muted, accent, destructive, border, input, ring, success, warning, error */
 }
 ```
 
-**Location:** Rendered in root layout, injected into `<head>`
+**Location:** Rendered in root layout (`src/app/(frontend)/[[...slugs]]/layout.tsx`), injected into `<head>`
 
 ### 3. Theme Provider (`src/providers/Theme/index.tsx`)
 
@@ -180,9 +206,41 @@ src/
 - `setTheme(theme: 'light' | 'dark' | null)` - Sets explicit theme or clears to auto
 - `theme` - Current theme state
 
-**Storage Key:** `theme` (in localStorage)
+**Storage Key:** `payload-theme` (in localStorage)
 
-### 4. InitTheme Component (`src/providers/Theme/InitTheme/index.tsx`)
+### 4. ThemeSelector Component (`src/providers/Theme/ThemeSelector/index.tsx`)
+
+**Purpose:** UI component for theme switching in the application.
+
+**Features:**
+
+- Provides dropdown selector for theme switching
+- Supports three modes: "auto", "light", "dark"
+- "Auto" mode follows system preference (`prefers-color-scheme`)
+- Stores user preference in localStorage
+
+**Theme Modes:**
+
+1. **Auto** (`null`): Follows system preference
+   - Sets theme to `null` in context
+   - Theme provider detects system preference via `prefers-color-scheme`
+   - Automatically switches when system preference changes
+
+2. **Light**: Forces light mode
+   - Sets `data-theme="light"` on `<html>` element
+   - Overrides system preference
+
+3. **Dark**: Forces dark mode
+   - Sets `data-theme="dark"` on `<html>` element
+   - Overrides system preference
+
+**Implementation:**
+
+- Uses `useTheme()` hook from Theme Provider
+- Setting theme to `null` enables auto mode
+- Setting theme to `'light'` or `'dark'` forces explicit mode
+
+### 5. InitTheme Component (`src/providers/Theme/InitTheme/index.tsx`)
 
 **Purpose:** Prevents flash of unstyled content (FOUC) by setting theme before React hydrates.
 
@@ -190,13 +248,15 @@ src/
 
 - Renders a `<Script>` with `strategy="beforeInteractive"`
 - Executes inline JavaScript before page load
-- Reads localStorage preference
+- Reads localStorage preference (key: `payload-theme`)
 - Falls back to system preference if no stored preference
 - Sets `data-theme` attribute immediately
 
+**Note:** Imports `defaultTheme` and `themeLocalStorageKey` from `ThemeSelector/types.ts` (not `shared.ts`)
+
 **Critical For:** Preventing white flash on dark mode pages
 
-### 5. globals.css (`src/app/(frontend)/[[...slugs]]/globals.css`)
+### 6. globals.css (`src/app/(frontend)/[[...slugs]]/globals.css`)
 
 **Purpose:** Tailwind CSS configuration and CSS variable to Tailwind color mapping.
 
@@ -240,7 +300,7 @@ html[data-theme='light'] {
 }
 ```
 
-### 6. ThemeColorHelper (`src/components/AdminBar/ThemeColorHelper.tsx`)
+### 7. ThemeColorHelper (`src/components/AdminBar/ThemeColorHelper.tsx`)
 
 **Purpose:** Visual debugging tool for theme development.
 
@@ -396,26 +456,58 @@ sequenceDiagram
     CMS->>DB: Save Color Values
     DB-->>CMS: Confirmation
     
-    Client->>Server: Request Page
-    Server->>DB: Fetch ThemeConfig (cached)
+    Client->>Server: Request Page (with locale)
+    Server->>DB: Fetch ThemeConfig (cached, locale-aware)
     DB-->>Server: Return Theme Data
     Server->>Server: ThemeConfig Component
-    Server->>Server: Generate CSS Variables
+    Server->>Server: Check enableDarkMode flag
+    alt Dark Mode Enabled
+        Server->>Server: Generate :root + [data-theme='dark'] blocks
+    else Dark Mode Disabled
+        Server->>Server: Generate :root block only
+    end
     Server-->>Client: HTML with Inline <style>
     Client->>Client: Apply CSS Variables
     Client->>Client: Render UI Components
 ```
 
+**Key Points:**
+
+- ThemeConfig is fetched with locale from `publicContext.locale`
+- Dark mode block is **conditionally rendered** only if `enableDarkMode` is true
+- Dark mode block includes only a subset of variables (excludes chart-1 through chart-5, muted2, muted2-foreground)
+
 ### Dark Mode Detection Priority
 
-1. **User Preference** (localStorage `theme` key)
+1. **User Preference** (localStorage `payload-theme` key)
 2. **System Preference** (`prefers-color-scheme` media query)
-3. **Default Theme** (configured in `shared.ts`)
+3. **Default Theme** (configured in `ThemeSelector/types.ts` as `'light'`)
+
+**Note:** The localStorage key is `payload-theme`, not `theme` as mentioned in some older documentation.
+
+### Localization Support
+
+The theming system supports multi-locale theme configuration:
+
+- **Locale-Aware Fetching:** ThemeConfig component accepts `publicContext` parameter with `locale` property
+- **Per-Locale Themes:** Each locale can have its own theme configuration stored in PayloadCMS
+- **Implementation:**
+  ```typescript
+  const themeConfig = await getCachedGlobal('themeConfig', publicContext.locale, 2)()
+  ```
+- **Use Cases:**
+  - Different color schemes for different languages
+  - Locale-specific brand colors
+  - Regional theme preferences
+
+**Note:** If localization is not configured, the default locale is used. The locale is passed from the page routing context via `PublicContextProps`.
 
 ### Caching Strategy
 
 - **Global Fetching:** Uses `getCachedGlobal()` utility
 - **Cache Depth:** 2 (populates relationships)
+- **Cache Tags:** Uses `global_themeConfig` tag for revalidation
+- **Locale-Aware:** Cache key includes locale for per-locale caching
 - **Revalidation:** Triggered via `revalidateThemeConfig` hook after updates
 - **ISR:** Supports Incremental Static Regeneration
 
@@ -462,8 +554,17 @@ sequenceDiagram
 - ✅ Hex: `#ffffff`, `#fff`
 - ✅ RGB: `rgb(255, 255, 255)`
 - ✅ RGBA: `rgba(255, 255, 255, 1)`
-- ✅ HSL: `hsl(0, 0%, 100%)`
+- ✅ HSL: `hsl(0, 0%, 100%)` or `hsl(0 0% 100%)` (space-separated format also supported)
 - ✅ OKLCH: `oklch(1 0 0)` (recommended for shadcn themes)
+
+**Dark Mode Limitations:**
+
+- **Conditional Rendering:** Dark mode CSS block is only rendered if `enableDarkMode` checkbox is enabled in ThemeConfig
+- **Incomplete Variable Set:** The dark mode block does NOT include all variables available in light mode:
+  - ❌ Missing: `chart-1`, `chart-2`, `chart-3`, `chart-4`, `chart-5`
+  - ❌ Missing: `muted2`, `muted2-foreground`
+  - ✅ Includes: `background`, `foreground`, `card`, `card-foreground`, `popover`, `popover-foreground`, `primary`, `primary-foreground`, `secondary`, `secondary-foreground`, `muted`, `muted-foreground`, `accent`, `accent-foreground`, `destructive`, `destructive-foreground`, `border`, `input`, `ring`, `success`, `warning`, `error`
+- **Workaround:** If you need chart colors or muted2 in dark mode, they will fall back to light mode values
 
 **Theme Installation:**
 
@@ -529,7 +630,7 @@ If migrating from a static theme setup:
 - ✅ Global Collections: Uses standard global schema
 - ✅ Hooks: Revalidation hook on update
 - ✅ Access Control: Inherits global access permissions
-- ✅ Localization: Supports multi-locale themes if configured
+- ✅ Localization: Fully supports multi-locale themes via `publicContext.locale` parameter
 
 ---
 
@@ -545,9 +646,11 @@ If migrating from a static theme setup:
 
 **2. Dark Mode Not Working**
 
-- **Check:** Is dark mode enabled in ThemeConfig?
+- **Check:** Is dark mode enabled in ThemeConfig? (`enableDarkMode` checkbox must be checked)
 - **Check:** Does `data-theme` attribute exist on `<html>`?
 - **Check:** Are dark mode colors defined in CMS?
+- **Check:** Is the dark mode CSS block being rendered? (view page source, search for `[data-theme='dark']`)
+- **Note:** Dark mode block is conditionally rendered - if `enableDarkMode` is false, no dark mode styles will be injected
 
 **3. Colors Not Updating**
 
@@ -645,9 +748,17 @@ The Payblocks theming system successfully combines the flexibility of the shadcn
 
 - ✅ Fully compatible with shadcn ecosystem
 - ✅ CMS-driven for non-technical editing
-- ✅ Zero breaking changes since initial implementation
+- ✅ Multi-locale theme support via `publicContext.locale`
 - ✅ Safe to install any compatible theme
 - ✅ Dual dark mode support for maximum flexibility
+- ✅ Auto mode for system preference following
 - ✅ Built-in tools for theme development and testing
+
+**Important Notes:**
+
+- Dark mode is conditionally rendered and includes a subset of variables (excludes chart colors and muted2)
+- Ring variable uses `ring-3` field name in config, mapped to `--ring` CSS variable
+- ThemeSelector supports "auto" mode by setting theme to `null`
+- Localization enables per-locale theme configurations
 
 The system is production-ready and has remained stable since the initial template commit, making it a reliable foundation for theme management in PayloadCMS-based applications.
