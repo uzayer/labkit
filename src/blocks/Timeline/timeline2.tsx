@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { cn } from '@/utilities/cn'
+import { cn } from '@/utils'
 import { PublicContextProps } from '@/utilities/publicContextProps'
 import { TimelineBlock } from '@/payload-types'
 import { Media } from '@/components/Media'

@@ -8,7 +8,7 @@ import { Separator } from '@/components/ui/separator'
 import { Tabs, TabsList } from '@/components/ui/tabs'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import RichText from '@/components/RichText'
-import { cn } from '@/utilities/index'
+import { cn } from '@/utils'
 import type { TeamBlock as TeamBlockProps } from '@/payload-types'
 import type { PublicContextProps } from '@/utilities/publicContextProps'
 

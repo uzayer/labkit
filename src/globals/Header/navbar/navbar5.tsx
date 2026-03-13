@@ -4,7 +4,7 @@ import { MenuIcon } from 'lucide-react'
 import { Media } from '@/components/Media'
 import { CMSLink } from '@/components/Link'
 import { Icon } from '@/components/Icon'
-import { cn } from '@/utilities/cn'
+import { cn } from '@/utils'
 
 import {
   Accordion,

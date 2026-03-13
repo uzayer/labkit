@@ -13,7 +13,7 @@ import {
   Twitter,
 } from 'lucide-react'
 
-import { cn } from '@/utilities'
+import { cn } from '@/utils'
 import { DateFormatter } from '@/components/DateFormatter'
 import RichText from '@/components/RichText'
 import { Avatar, AvatarImage } from '@/components/ui/avatar'

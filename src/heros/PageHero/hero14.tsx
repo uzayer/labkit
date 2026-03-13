@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react'
 
 import type { CarouselApi } from '@/components/ui/carousel'
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
-import { cn } from '@/utilities/cn'
+import { cn } from '@/utils'
 
 const technologies = [
   {

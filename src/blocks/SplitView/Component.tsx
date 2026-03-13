@@ -1,4 +1,4 @@
-import { cn } from 'src/utilities/cn'
+import { cn } from '@/utils'
 import React from 'react'
 import type { SplitViewBlock as SplitViewBlockProps } from '@/payload-types'
 import { RenderBlocks } from '../RenderBlocks'

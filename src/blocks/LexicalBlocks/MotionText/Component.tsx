@@ -2,7 +2,7 @@
 
 import type { MotionTextBlock as MotionTextBlockProps } from 'src/payload-types'
 import { motion } from 'framer-motion'
-import { cn } from 'src/utilities/cn'
+import { cn } from '@/utils'
 import React, { createElement } from 'react'
 import { PublicContextProps } from '@/utilities/publicContextProps'
 

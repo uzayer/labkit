@@ -2,7 +2,7 @@
 
 import AutoScroll from 'embla-carousel-auto-scroll'
 
-import { cn } from '@/utilities/index'
+import { cn } from '@/utils'
 
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
 import { Separator } from '@/components/ui/separator'

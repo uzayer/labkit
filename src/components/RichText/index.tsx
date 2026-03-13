@@ -18,7 +18,7 @@
  * />
  */
 
-import { cn } from '@/utilities/cn'
+import { cn } from '@/utils'
 import React from 'react'
 
 import { OverrideStyle, serializeLexical } from './serialize'

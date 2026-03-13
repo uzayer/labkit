@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-import { cn } from '@/utilities/cn'
+import { cn } from '@/utils'
 
 import { BorderBeam } from '@/components/magicui/border-beam'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'

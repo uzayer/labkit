@@ -12,7 +12,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel'
-import { cn } from '@/utilities/cn'
+import { cn } from '@/utils'
 import RichText from '@/components/RichText'
 import { TestimonialBlock } from '@/payload-types'
 import { CMSLink } from '@/components/Link'

@@ -18,7 +18,7 @@ import {
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu'
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
-import { cn } from '@/utilities/cn'
+import { cn } from '@/utils'
 import { Media } from '@/components/Media'
 import { CMSLink } from '@/components/Link'
 import { Icon } from '@/components/Icon'

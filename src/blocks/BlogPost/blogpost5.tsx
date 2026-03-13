@@ -18,7 +18,7 @@ import {
 } from '@/components/ui/breadcrumb'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
-import { cn } from '@/utilities'
+import { cn } from '@/utils'
 import { Post } from '@/payload-types'
 import { PublicContextProps } from '@/utilities/publicContextProps'
 import { getAuthorObject } from '@/utilities/authorUtils'

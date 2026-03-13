@@ -4,7 +4,7 @@ import React, { useMemo } from 'react'
 import { motion } from 'framer-motion'
 
 import { Particles } from '@/components/magicui/particles'
-import { cn } from '@/utilities/cn'
+import { cn } from '@/utils'
 import { Media as MediaType, Page } from '@/payload-types'
 import { PublicContextProps } from '@/utilities/publicContextProps'
 import RichText from '@/components/RichText'

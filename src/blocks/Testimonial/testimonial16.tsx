@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 
 import { Avatar, AvatarImage } from '@/components/ui/avatar'
 import { Separator } from '@/components/ui/separator'
-import { cn } from '@/utilities/cn'
+import { cn } from '@/utils'
 import { TestimonialBlock } from '@/payload-types'
 import RichText from '@/components/RichText'
 import { PublicContextProps } from '@/utilities/publicContextProps'

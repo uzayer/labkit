@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/navigation-menu'
 import Link from 'next/link'
 import { PublicContextProps } from '@/utilities/publicContextProps'
-import { cn } from '@/utilities'
+import { cn } from '@/utils'
 import { AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion'
 
 export const LanguageSwitcher: React.FC<{

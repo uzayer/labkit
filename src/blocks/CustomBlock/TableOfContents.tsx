@@ -2,7 +2,7 @@
 
 import { AlignLeft } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
-import { cn } from '@/utilities'
+import { cn } from '@/utils'
 import { getSideMenuStructure } from '@/utilities/richtext'
 
 type TableOfContentsProps = {

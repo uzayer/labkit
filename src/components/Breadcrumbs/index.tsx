@@ -1,6 +1,6 @@
 import * as React from 'react'
 import type { Page } from '@/payload-types'
-import { cn } from '@/utilities'
+import { cn } from '@/utils'
 import {
   Breadcrumb,
   BreadcrumbItem,

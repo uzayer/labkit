@@ -1,8 +1,9 @@
 'use client'
+/* eslint-disable react-hooks/exhaustive-deps */
 
 import React, { ComponentPropsWithoutRef, useEffect, useRef, useState } from 'react'
 
-import { cn } from '@/utilities/index'
+import { cn } from '@/utils'
 
 interface MousePosition {
   x: number

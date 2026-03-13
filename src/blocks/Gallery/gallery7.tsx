@@ -2,7 +2,7 @@
 
 import AutoScroll from 'embla-carousel-auto-scroll'
 
-import { cn } from '@/utilities/cn'
+import { cn } from '@/utils'
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
 import { GalleryBlock } from '@/payload-types'
 import { PublicContextProps } from '@/utilities/publicContextProps'

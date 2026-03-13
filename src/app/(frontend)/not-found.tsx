@@ -1,6 +1,6 @@
 import { Geist_Mono, Geist } from 'next/font/google'
 import React from 'react'
-import { cn } from 'src/utilities/cn'
+import { cn } from '@/utils'
 import { Footer } from '@/globals/Footer/Component'
 import { Header } from '@/globals/Header/Component'
 import { Providers } from '@/providers'

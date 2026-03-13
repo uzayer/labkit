@@ -22,7 +22,7 @@ import {
   IS_UNDERLINE,
 } from './nodeFormat'
 import type { Page } from '@/payload-types'
-import { cn } from '@/utilities/cn'
+import { cn } from '@/utils'
 import { PublicContextProps } from '@/utilities/publicContextProps'
 import { getHeadlineId } from '@/utilities/richtext'
 

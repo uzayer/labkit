@@ -5,7 +5,7 @@ import React from 'react'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 import { serverUrl as NEXT_PUBLIC_SERVER_URL } from '@/config/server'
 
-import { cn } from 'src/utilities/cn'
+import { cn } from '@/utils'
 import { AdminBar } from '@/components/AdminBar'
 import { Footer } from '@/globals/Footer/Component'
 import { Header } from '@/globals/Header/Component'

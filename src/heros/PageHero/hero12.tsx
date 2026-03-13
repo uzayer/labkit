@@ -1,6 +1,6 @@
 import { Badge } from '@/components/ui/badge'
 import { buttonVariants } from '@/components/ui/button'
-import { cn } from '@/utilities/cn'
+import { cn } from '@/utils'
 import { Hero } from '@/payload-types'
 import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'

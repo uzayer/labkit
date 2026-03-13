@@ -3,7 +3,7 @@ import { ChevronRight } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { buttonVariants } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { cn } from '@/utilities/cn'
+import { cn } from '@/utils'
 
 const Feature8 = () => {
   return (

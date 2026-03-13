@@ -8,7 +8,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from '@/components/ui/pagination'
-import { cn } from '@/utilities/cn'
+import { cn } from '@/utils'
 import React from 'react'
 
 export const Pagination: React.FC<{
