@@ -30,11 +30,19 @@ import { AwardsBlock } from './Awards/Component'
 import { ProjectsBlock } from './Projects/Component'
 import { ResourcesBlock } from './Resources/Component'
 import { PublicationsBlock } from './PublicationsBlock/Component'
+import { FeatureHeroBlock } from './FeatureHero/Component'
+import { FeatureListBlock } from './FeatureList/Component'
+import { FeatureMediaBlock } from './FeatureMedia/Component'
+import { FeatureSpecialBlock } from './FeatureSpecial/Component'
 
-const blockComponents: Partial<Record<Page['layout'][0]['blockType'], React.FC<any>>> = {
+const blockComponents: Partial<Record<Page['layout'][0]['blockType'] | string, React.FC<any>>> = {
   archive: ArchiveBlock,
   formBlock: FormBlock,
-  feature: FeatureBlock,
+  feature: FeatureBlock, // keep during migration
+  'feature-hero': FeatureHeroBlock,
+  'feature-list': FeatureListBlock,
+  'feature-media': FeatureMediaBlock,
+  'feature-special': FeatureSpecialBlock,
   gallery: GalleryBlock,
   cta: CtaBlock,
   logos: LogosBlock,
