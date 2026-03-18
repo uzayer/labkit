@@ -4,52 +4,13 @@ import { link } from '@/fields/link'
 import { backgroundColor } from '@/fields/color'
 import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
 import { createBlockItemCondition } from '@/utilities/findParentFeatureVersion'
+import { applyVariantConditions, variantsToOptions } from '@/blocks/utils'
+import { variants } from './variants'
 
-export const allGalleryDesignVersions = [
-  // 'GALLERY1',
-  // 'GALLERY2',
-  {
-    label: 'Gallery 3 (Case Studies Carousel)',
-    value: 'GALLERY3',
-    image: '/admin/previews/gallery/gallery3.webp',
-    description:
-      'Carousel with clickable cards featuring badge, title, description, and hover effects',
-  },
-  {
-    label: 'Gallery 4 (Large Images with Overlay)',
-    value: 'GALLERY4',
-    image: '/admin/previews/gallery/gallery4.webp',
-  },
-  {
-    label: 'Gallery 5 (Carousel)',
-    value: 'GALLERY5',
-    image: '/admin/previews/gallery/gallery5.webp',
-  },
-  {
-    label: 'Gallery 6 (Card Layout)',
-    value: 'GALLERY6',
-    image: '/admin/previews/gallery/gallery6.webp',
-  },
-  {
-    label: 'Gallery 25 (4 Column Grid)',
-    value: 'GALLERY25',
-    image: '/admin/previews/gallery/gallery25.webp',
-    description:
-      'A 4-column animated image gallery, each column with varying image heights and animated transitions on view. (Grid - Number of images should be in multiples of 4)',
-  },
-  {
-    label: 'Gallery 26 (Blur Vignette)',
-    value: 'GALLERY26',
-    image: '/admin/previews/gallery/gallery26.webp',
-  },
-] as const
+export type GalleryDesignVersion = keyof typeof variants
 
-/**
- * mutable copy of allGalleryDesignVersions as payload needs this type
- */
-const galleryDesignVersions: string[] = allGalleryDesignVersions.map((item) => item.value)
-
-export type GalleryDesignVersion = (typeof allGalleryDesignVersions)[number]
+/** @deprecated use variants instead */
+export const allGalleryDesignVersions = variantsToOptions(variants)
 
 export const Gallery: Block = {
   slug: 'gallery',
@@ -60,32 +21,32 @@ export const Gallery: Block = {
   },
   fields: [
     backgroundColor,
-    designVersionPreview(allGalleryDesignVersions),
-    {
-      name: 'richText',
-      type: 'richText',
-      localized: true,
-      admin: {
-        description: 'Optional heading and description for the gallery',
-        condition: (_, { designVersion = '' } = {}) =>
-          !['GALLERY1', 'GALLERY25', 'GALLERY26'].includes(designVersion),
+    designVersionPreview(variantsToOptions(variants)),
+
+    ...applyVariantConditions(variants, [
+      {
+        name: 'richText',
+        type: 'richText',
+        localized: true,
+        admin: {
+          description: 'Optional heading and description for the gallery',
+        },
+        editor: lexicalEditor({
+          features: ({ defaultFeatures }) => [
+            ...defaultFeatures,
+            HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
+            ParagraphFeature(),
+          ],
+        }),
       },
-      editor: lexicalEditor({
-        features: ({ defaultFeatures }) => [
-          ...defaultFeatures,
-          HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
-          ParagraphFeature(),
-        ],
-      }),
-    },
-    {
-      name: 'tagline',
-      type: 'text',
-      localized: true,
-      admin: {
-        condition: (_, { designVersion = '' } = {}) => ['GALLERY6'].includes(designVersion),
+      {
+        name: 'tagline',
+        type: 'text',
+        localized: true,
       },
-    },
+    ]),
+
+    // Explicit: function-created field with condition
     link({
       appearances: false,
       overrides: {
@@ -95,6 +56,8 @@ export const Gallery: Block = {
         },
       },
     }),
+
+    // Always-visible: elements array (nested conditions use createBlockItemCondition — stay explicit)
     {
       name: 'elements',
       label: 'Gallery Items',
@@ -103,8 +66,6 @@ export const Gallery: Block = {
       minRows: 1,
       admin: {
         description: 'Add images to the gallery',
-        condition: (_, { designVersion = '' } = {}) =>
-          galleryDesignVersions.includes(designVersion),
       },
       fields: [
         {
