@@ -1,7 +1,7 @@
 import type { Block, CollectionConfig } from 'payload'
 
-import { authenticated } from '@/access/authenticated'
 import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
+import { hasPermission } from '@/utilities/checkPermission'
 
 import { FormBlock } from '@/blocks/Form/config'
 import { FeatureBlock } from '@/blocks/Feature/config'
@@ -46,9 +46,17 @@ import { ProjectsBlock } from '@/blocks/Projects/config'
 import { ResourcesBlock } from '@/blocks/Resources/config'
 import { PublicationsBlock } from '@/blocks/PublicationsBlock/config'
 import { StatsBlock } from '@/blocks/Stats/config'
+import { FeatureHeroBlock } from '@/blocks/FeatureHero/config'
+import { FeatureListBlock } from '@/blocks/FeatureList/config'
+import { FeatureMediaBlock } from '@/blocks/FeatureMedia/config'
+import { FeatureSpecialBlock } from '@/blocks/FeatureSpecial/config'
 
 export const PageBlocks: Block[] = [
-  FeatureBlock,
+  FeatureBlock, // keep during migration — existing pages with blockType:'feature' continue rendering
+  FeatureHeroBlock,
+  FeatureListBlock,
+  FeatureMediaBlock,
+  FeatureSpecialBlock,
   Archive,
   FormBlock,
   CtaBlock,
@@ -90,10 +98,10 @@ export const Pages: CollectionConfig = {
     },
   },
   access: {
-    create: authenticated,
-    delete: authenticated,
+    create: hasPermission('canManageContent'),
+    delete: hasPermission('canManageContent'),
     read: authenticatedOrPublished,
-    update: authenticated,
+    update: hasPermission('canManageContent'),
   },
   admin: {
     defaultColumns: ['title', 'slug', 'updatedAt'],
