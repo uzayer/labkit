@@ -3,10 +3,11 @@ import { HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 import { Block } from 'payload'
 import { Page, AwardsBlock as AwardsBlockType } from '@/payload-types'
 import { parentLayoutCondition } from '@/utilities/parentLayoutCondition'
+import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
+import { applyVariantConditions, variantsToOptions } from '@/blocks/utils'
+import { variants } from './variants'
 
-export const allAwardsDesignVersions = ['AWARDS2', 'AWARDS3', 'AWARDS4'] as const
-
-export type AwardsDesignVersion = (typeof allAwardsDesignVersions)[number]
+export type AwardsDesignVersion = keyof typeof variants
 
 export const AwardsBlock: Block = {
   slug: 'awards',
@@ -17,110 +18,100 @@ export const AwardsBlock: Block = {
   },
   fields: [
     backgroundColor,
-    {
-      name: 'designVersion',
-      type: 'select',
-      required: true,
-      options: allAwardsDesignVersions.map((version) => ({ label: version, value: version })),
-      defaultValue: 'AWARDS2',
-    },
-    {
-      name: 'sectionLabel',
-      type: 'text',
-      localized: true,
-      defaultValue: 'AWARDS',
-      admin: {
-        description: 'Label displayed in the sticky sidebar',
-        condition: (_, { designVersion = '' } = {}) => designVersion === 'AWARDS2',
+    designVersionPreview(variantsToOptions(variants)),
+
+    ...applyVariantConditions(variants, [
+      {
+        name: 'sectionLabel',
+        type: 'text',
+        localized: true,
+        defaultValue: 'AWARDS',
+        admin: {
+          description: 'Label displayed in the sticky sidebar',
+        },
       },
-    },
-    {
-      name: 'accentColor',
-      type: 'select',
-      required: true,
-      defaultValue: 'orange-500',
-      options: [
-        { label: 'Orange', value: 'orange-500' },
-        { label: 'Blue', value: 'blue-500' },
-        { label: 'Green', value: 'green-500' },
-        { label: 'Red', value: 'red-500' },
-        { label: 'Purple', value: 'purple-500' },
-        { label: 'Pink', value: 'pink-500' },
-        { label: 'Yellow', value: 'yellow-500' },
-        { label: 'Indigo', value: 'indigo-500' },
-        { label: 'Teal', value: 'teal-500' },
-        { label: 'Cyan', value: 'cyan-500' },
-      ],
-      admin: {
-        description: 'Color for the accent dot next to the section label',
-        condition: (_, { designVersion = '' } = {}) => designVersion === 'AWARDS2',
-      },
-    },
-    {
-      name: 'headline',
-      type: 'richText',
-      localized: true,
-      admin: {
-        description: 'Main section heading',
-        condition: (_, { designVersion = '' } = {}) =>
-          designVersion === 'AWARDS3' || designVersion === 'AWARDS4',
-      },
-      editor: lexicalEditor({
-        features: ({ rootFeatures }) => [
-          ...rootFeatures,
-          HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
+      {
+        name: 'accentColor',
+        type: 'select',
+        required: true,
+        defaultValue: 'orange-500',
+        options: [
+          { label: 'Orange', value: 'orange-500' },
+          { label: 'Blue', value: 'blue-500' },
+          { label: 'Green', value: 'green-500' },
+          { label: 'Red', value: 'red-500' },
+          { label: 'Purple', value: 'purple-500' },
+          { label: 'Pink', value: 'pink-500' },
+          { label: 'Yellow', value: 'yellow-500' },
+          { label: 'Indigo', value: 'indigo-500' },
+          { label: 'Teal', value: 'teal-500' },
+          { label: 'Cyan', value: 'cyan-500' },
         ],
-      }),
-    },
-    {
-      name: 'description',
-      type: 'textarea',
-      localized: true,
-      admin: {
-        description: 'Descriptive text below the headline',
-        condition: (_, { designVersion = '' } = {}) => designVersion === 'AWARDS3',
+        admin: {
+          description: 'Color for the accent dot next to the section label',
+        },
       },
-    },
-    {
-      name: 'dateRange',
-      type: 'text',
-      localized: true,
-      defaultValue: '(2015-25©)',
-      admin: {
-        description: 'Date range text displayed in header (e.g., "(2015-25©)")',
-        condition: (_, { designVersion = '' } = {}) => designVersion === 'AWARDS4',
+      {
+        name: 'headline',
+        type: 'richText',
+        localized: true,
+        admin: {
+          description: 'Main section heading',
+        },
+        editor: lexicalEditor({
+          features: ({ rootFeatures }) => [
+            ...rootFeatures,
+            HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
+          ],
+        }),
       },
-    },
-    {
-      name: 'nameColumnHeader',
-      type: 'text',
-      localized: true,
-      defaultValue: 'Name',
-      admin: {
-        description: 'Header text for the name column in the table',
-        condition: (_, { designVersion = '' } = {}) => designVersion === 'AWARDS4',
+      {
+        name: 'description',
+        type: 'textarea',
+        localized: true,
+        admin: {
+          description: 'Descriptive text below the headline',
+        },
       },
-    },
-    {
-      name: 'nominationColumnHeader',
-      type: 'text',
-      localized: true,
-      defaultValue: 'Nomination',
-      admin: {
-        description: 'Header text for the nomination/description column in the table',
-        condition: (_, { designVersion = '' } = {}) => designVersion === 'AWARDS4',
+      {
+        name: 'dateRange',
+        type: 'text',
+        localized: true,
+        defaultValue: '(2015-25©)',
+        admin: {
+          description: 'Date range text displayed in header (e.g., "(2015-25©)")',
+        },
       },
-    },
-    {
-      name: 'yearColumnHeader',
-      type: 'text',
-      localized: true,
-      defaultValue: 'Year',
-      admin: {
-        description: 'Header text for the year column in the table',
-        condition: (_, { designVersion = '' } = {}) => designVersion === 'AWARDS4',
+      {
+        name: 'nameColumnHeader',
+        type: 'text',
+        localized: true,
+        defaultValue: 'Name',
+        admin: {
+          description: 'Header text for the name column in the table',
+        },
       },
-    },
+      {
+        name: 'nominationColumnHeader',
+        type: 'text',
+        localized: true,
+        defaultValue: 'Nomination',
+        admin: {
+          description: 'Header text for the nomination/description column in the table',
+        },
+      },
+      {
+        name: 'yearColumnHeader',
+        type: 'text',
+        localized: true,
+        defaultValue: 'Year',
+        admin: {
+          description: 'Header text for the year column in the table',
+        },
+      },
+    ]),
+
+    // Always-visible: awards array (nested item conditions use parentLayoutCondition — stay explicit)
     {
       name: 'awards',
       label: {
