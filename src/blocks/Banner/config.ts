@@ -2,17 +2,13 @@ import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionP
 import { icon } from '@/components/Icon/config'
 import { backgroundColor } from '@/fields/color'
 import { linkGroup } from '@/fields/linkGroup'
+import { applyVariantConditions, variantsToOptions } from '@/blocks/utils'
 import { Block } from 'payload'
+import { variants } from './variants'
 
-export const allBannerDesignVersions = [
-  { label: 'BANNER1', value: 'BANNER1', image: '/admin/previews/banner/banner1.webp' },
-  { label: 'BANNER5', value: 'BANNER5', image: '/admin/previews/banner/banner5.webp' },
-] as const
-
-export type BannerDesignVersion = (typeof allBannerDesignVersions)[number]
+export type BannerDesignVersion = keyof typeof variants
 
 export const allBannerPositions = ['TOP', 'BOTTOM'] as const
-
 export type BannerPosition = (typeof allBannerPositions)[number]
 
 export const BannerBlock: Block = {
@@ -24,16 +20,18 @@ export const BannerBlock: Block = {
   },
   fields: [
     backgroundColor,
-    designVersionPreview(allBannerDesignVersions),
-    {
-      name: 'position',
-      type: 'select',
-      defaultValue: 'TOP',
-      options: allBannerPositions.map((position) => ({ label: position, value: position })),
-      admin: {
-        condition: (_, { designVersion = '' } = {}) => ['BANNER5'].includes(designVersion),
+    designVersionPreview(variantsToOptions(variants)),
+
+    ...applyVariantConditions(variants, [
+      {
+        name: 'position',
+        type: 'select',
+        defaultValue: 'TOP',
+        options: allBannerPositions.map((position) => ({ label: position, value: position })),
       },
-    },
+    ]),
+
+    // Always-visible fields
     {
       name: 'defaultVisible',
       type: 'checkbox',
@@ -50,6 +48,8 @@ export const BannerBlock: Block = {
       type: 'text',
       localized: true,
     },
+
+    // Explicit: function-created fields with their own conditions
     icon({
       admin: {
         condition: (_, { designVersion = '' } = {}) => ['BANNER5'].includes(designVersion),
@@ -57,12 +57,6 @@ export const BannerBlock: Block = {
     }),
     linkGroup({
       appearances: false,
-      overrides: {
-        admin: {
-          condition: (_, { designVersion = '' } = {}) =>
-            ['BANNER1', 'BANNER5'].includes(designVersion),
-        },
-      },
     }),
   ],
 }

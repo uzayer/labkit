@@ -2,10 +2,7 @@ import { BannerDesignVersion } from './config'
 import Banner5 from './banner5'
 import Banner1 from './banner1'
 
-// Extract the value property from BannerDesignVersion for use as keys
-type BannerVersionValue = BannerDesignVersion['value']
-
-type Banner<T extends string = string> = Required<Record<BannerVersionValue, React.FC<any>>> &
+type Banner<T extends string = string> = Required<Record<BannerDesignVersion, React.FC<any>>> &
   Record<T, React.FC<any>>
 
 const banner: Banner = {
@@ -18,7 +15,7 @@ export const BannerBlock: React.FC<any> = (props) => {
   if (props.blockType !== 'banner') return null
   if (!designVersion) return null
 
-  const BannerToRender = banner[designVersion as BannerVersionValue]
+  const BannerToRender = banner[designVersion as BannerDesignVersion]
 
   if (!BannerToRender) return null
 
