@@ -3,15 +3,10 @@ import { backgroundColor } from '@/fields/color'
 import { link } from '@/fields/link'
 import { HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 import { Block } from 'payload'
+import { applyVariantConditions, variantsToOptions } from '@/blocks/utils'
+import { variants } from './variants'
 
-export const allLogosDesignVersions = [
-  { label: 'LOGOS1', value: 'LOGOS1', image: '/admin/previews/logos/logos1.webp' },
-  { label: 'LOGOS2', value: 'LOGOS2', image: '/admin/previews/logos/logos2.webp' },
-  { label: 'LOGOS3', value: 'LOGOS3', image: '/admin/previews/logos/logos3.webp' },
-  { label: 'LOGOS9', value: 'LOGOS9', image: '/admin/previews/logos/logos9.webp' },
-] as const
-
-export type LogosDesignVersion = (typeof allLogosDesignVersions)[number]
+export type LogosDesignVersion = keyof typeof variants
 
 export const LogosBlock: Block = {
   slug: 'logos',
@@ -22,7 +17,9 @@ export const LogosBlock: Block = {
   },
   fields: [
     backgroundColor,
-    designVersionPreview(allLogosDesignVersions),
+    designVersionPreview(variantsToOptions(variants)),
+
+    // Always-visible fields
     {
       name: 'richText',
       type: 'richText',
@@ -34,14 +31,6 @@ export const LogosBlock: Block = {
         ],
       }),
     },
-    link({
-      overrides: {
-        admin: {
-          condition: (_, { designVersion } = { designVersion: '' }) =>
-            ['LOGOS2'].includes(designVersion),
-        },
-      },
-    }),
     {
       name: 'logos',
       type: 'upload',
@@ -50,31 +39,39 @@ export const LogosBlock: Block = {
       minRows: 5,
       hasMany: true,
     },
-    {
-      name: 'testimonials',
-      type: 'array',
-      admin: {
-        condition: (_, { designVersion } = { designVersion: '' }) =>
-          ['LOGOS9'].includes(designVersion),
+
+    // Explicit: function-created field with condition
+    link({
+      overrides: {
+        admin: {
+          condition: (_, { designVersion = '' } = {}) => ['LOGOS2'].includes(designVersion),
+        },
       },
-      fields: [
-        {
-          name: 'quote',
-          type: 'text',
-          localized: true,
-        },
-        {
-          name: 'name',
-          type: 'text',
-          localized: true,
-        },
-        {
-          name: 'image',
-          type: 'upload',
-          relationTo: 'media',
-          hasMany: false,
-        },
-      ],
-    },
+    }),
+
+    ...applyVariantConditions(variants, [
+      {
+        name: 'testimonials',
+        type: 'array',
+        fields: [
+          {
+            name: 'quote',
+            type: 'text',
+            localized: true,
+          },
+          {
+            name: 'name',
+            type: 'text',
+            localized: true,
+          },
+          {
+            name: 'image',
+            type: 'upload',
+            relationTo: 'media',
+            hasMany: false,
+          },
+        ],
+      },
+    ]),
   ],
 }
