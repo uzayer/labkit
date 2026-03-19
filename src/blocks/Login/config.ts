@@ -1,16 +1,10 @@
 import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
 import { Block } from 'payload'
 import { SignupBlock } from '@/blocks/Signup/config'
+import { variantsToOptions } from '@/blocks/utils'
+import { variants } from './variants'
 
-export const allLoginDesignVersions = [
-  {
-    label: 'LOGIN3',
-    value: 'LOGIN3',
-    image: '/admin/previews/login/login3.webp',
-  },
-] as const
-
-export type LoginDesignVersion = (typeof allLoginDesignVersions)[number]
+export type LoginDesignVersion = keyof typeof variants
 
 export const LoginBlock: Block = {
   slug: 'login',
@@ -20,7 +14,7 @@ export const LoginBlock: Block = {
     plural: 'multiple Logins',
   },
   fields: [
-    designVersionPreview(allLoginDesignVersions),
+    designVersionPreview(variantsToOptions(variants)),
     // should signup be enabled (default yes)
     {
       name: 'signupEnabled',

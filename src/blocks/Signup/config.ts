@@ -1,15 +1,9 @@
 import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
 import { Block } from 'payload'
+import { variantsToOptions } from '@/blocks/utils'
+import { variants } from './variants'
 
-export const allSignupDesignVersions = [
-  {
-    label: 'SIGNUP4',
-    value: 'SIGNUP4',
-    image: '/admin/previews/signup/signup4.webp',
-  },
-] as const
-
-export type SignupDesignVersion = (typeof allSignupDesignVersions)[number]
+export type SignupDesignVersion = keyof typeof variants
 
 export const SignupBlock: Block = {
   slug: 'signup',
@@ -19,7 +13,7 @@ export const SignupBlock: Block = {
     plural: 'multiple Signups',
   },
   fields: [
-    designVersionPreview(allSignupDesignVersions),
+    designVersionPreview(variantsToOptions(variants)),
     // should google signup be enabled (default yes)
     {
       name: 'googleSignupEnabled',

@@ -5,6 +5,11 @@ import {
   UnorderedListFeature,
 } from '@payloadcms/richtext-lexical'
 import type { Block } from 'payload'
+import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
+import { variantsToOptions } from '@/blocks/utils'
+import { variants } from './variants'
+
+export type ChangelogDesignVersion = keyof typeof variants
 
 export const ChangelogBlock: Block = {
   slug: 'changelog',
@@ -13,12 +18,7 @@ export const ChangelogBlock: Block = {
     plural: 'Changelogs',
   },
   fields: [
-    {
-      name: 'designVersion',
-      type: 'select',
-      required: true,
-      options: [{ label: 'Changelog 1', value: 'CHANGELOG1' }],
-    },
+    designVersionPreview(variantsToOptions(variants)),
     {
       name: 'tagline',
       type: 'text',

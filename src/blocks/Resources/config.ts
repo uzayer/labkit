@@ -7,10 +7,11 @@ import {
   FixedToolbarFeature,
   InlineToolbarFeature,
 } from '@payloadcms/richtext-lexical'
+import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
+import { variantsToOptions } from '@/blocks/utils'
+import { variants } from './variants'
 
-export const allResourcesDesignVersions = ['resources4'] as const
-
-export type ResourcesDesignVersion = (typeof allResourcesDesignVersions)[number]
+export type ResourcesDesignVersion = keyof typeof variants
 
 export const ResourcesBlock: Block = {
   slug: 'resources',
@@ -21,13 +22,7 @@ export const ResourcesBlock: Block = {
   },
   fields: [
     backgroundColor,
-    {
-      name: 'designVersion',
-      type: 'select',
-      required: true,
-      defaultValue: 'resources4',
-      options: allResourcesDesignVersions.map((version) => ({ label: version, value: version })),
-    },
+    designVersionPreview(variantsToOptions(variants)),
     {
       name: 'label',
       type: 'text',

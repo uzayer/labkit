@@ -2,13 +2,12 @@ import React from 'react'
 import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 
-import { allBlogDesignVersions } from './config'
+import { BlogDesignVersion } from './config'
 import { Blog29 } from './blog29'
 import { Post, Category } from '@/payload-types'
 import { PublicContextProps } from '@/utilities/publicContextProps'
 
-// Extract just the value property from the design versions for use as keys
-type BlogDesignVersionValue = (typeof allBlogDesignVersions)[number]['value']
+type BlogDesignVersionValue = BlogDesignVersion
 
 // Enforce required blog but allow additional ones
 type BlogContent<T extends string = string> = Required<
