@@ -9,10 +9,10 @@ import {
 } from '@payloadcms/richtext-lexical'
 import { Block } from 'payload'
 import { backgroundColor } from '@/fields/color'
+import { variantsToOptions } from '@/blocks/utils'
+import { variants } from './variants'
 
-const featureHeroOptions = [
-  { label: 'FEATURE1', value: 'FEATURE1', image: '/admin/previews/feature/feature1.webp' },
-] as const
+export type FeatureHeroDesignVersion = keyof typeof variants
 
 export const FeatureHeroBlock: Block = {
   slug: 'feature-hero',
@@ -23,7 +23,7 @@ export const FeatureHeroBlock: Block = {
   },
   fields: [
     backgroundColor,
-    designVersionPreview(featureHeroOptions),
+    designVersionPreview(variantsToOptions(variants)),
 
     // All fields always visible — only 1 variant
     {

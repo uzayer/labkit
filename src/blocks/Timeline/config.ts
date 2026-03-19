@@ -8,19 +8,16 @@ import {
 } from '@payloadcms/richtext-lexical'
 import { createBlockItemCondition } from '@/utilities/findParentFeatureVersion'
 import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
+import { variantsToOptions } from '@/blocks/utils'
+import { variants } from './variants'
 
-export type TimelineDesignVersion = (typeof allTimelineDesignVersions)[number]['value']
+export type TimelineDesignVersion = keyof typeof variants
 
 export interface TimelineSection {
   tagline: string
   richText: string
   image: string
 }
-
-export const allTimelineDesignVersions = [
-  { label: 'TIMELINE2', value: 'TIMELINE2', image: '/admin/previews/timeline/timeline2.webp' },
-  { label: 'TIMELINE8', value: 'TIMELINE8', image: '/admin/previews/timeline/timeline8.webp' },
-] as const
 
 export const TimelineBlock: Block = {
   slug: 'timeline',
@@ -31,7 +28,7 @@ export const TimelineBlock: Block = {
   },
   fields: [
     backgroundColor,
-    designVersionPreview(allTimelineDesignVersions),
+    designVersionPreview(variantsToOptions(variants)),
     {
       name: 'heading',
       type: 'text',

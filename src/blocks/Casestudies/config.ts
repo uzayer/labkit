@@ -1,16 +1,10 @@
 import { Block } from 'payload'
 import { backgroundColor } from '@/fields/color'
 import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
+import { variantsToOptions } from '@/blocks/utils'
+import { variants } from './variants'
 
-export const allCasestudiesDesignVersions = [
-  {
-    label: 'CASESTUDIES5',
-    value: 'CASESTUDIES5',
-    image: '/admin/previews/casestudies/casestudies5.webp',
-  },
-] as const
-
-export type CasestudiesDesignVersion = (typeof allCasestudiesDesignVersions)[number]['value']
+export type CasestudiesDesignVersion = keyof typeof variants
 
 export const logoSizeOptions = [
   {
@@ -40,7 +34,7 @@ export const CasestudiesBlock: Block = {
   },
   fields: [
     backgroundColor,
-    designVersionPreview(allCasestudiesDesignVersions),
+    designVersionPreview(variantsToOptions(variants)),
     {
       name: 'slides',
       type: 'array',

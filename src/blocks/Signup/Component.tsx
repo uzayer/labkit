@@ -2,8 +2,7 @@ import { Signup4 } from '@/blocks/Signup/Signup4'
 import { SignupDesignVersion } from './config'
 import { Page } from '@/payload-types'
 
-// Extract just the value property from SignupDesignVersion for use as keys
-type SignupDesignVersionValue = SignupDesignVersion['value']
+type SignupDesignVersionValue = SignupDesignVersion
 
 // Enforce required features but allow additional ones
 type Signup<T extends string = string> = Required<Record<SignupDesignVersionValue, React.FC<any>>> &

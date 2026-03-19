@@ -1,10 +1,11 @@
 import { Block } from 'payload'
 import { backgroundColor } from '@/fields/color'
 import { link } from '@/fields/link'
+import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
+import { applyVariantConditions, variantsToOptions } from '@/blocks/utils'
+import { variants } from './variants'
 
-export const allProjectsDesignVersions = ['17', '17b'] as const
-
-export type ProjectsDesignVersion = (typeof allProjectsDesignVersions)[number]
+export type ProjectsDesignVersion = keyof typeof variants
 
 export const ProjectsBlock: Block = {
   slug: 'projects',
@@ -15,13 +16,7 @@ export const ProjectsBlock: Block = {
   },
   fields: [
     backgroundColor,
-    {
-      name: 'designVersion',
-      type: 'select',
-      required: true,
-      defaultValue: '17',
-      options: allProjectsDesignVersions.map((version) => ({ label: version, value: version })),
-    },
+    designVersionPreview(variantsToOptions(variants)),
     {
       name: 'heading',
       type: 'text',
@@ -30,15 +25,18 @@ export const ProjectsBlock: Block = {
         description: 'Main heading for the projects section',
       },
     },
-    {
-      name: 'description',
-      type: 'text',
-      localized: true,
-      admin: {
-        description: 'Description text below the heading',
-        condition: (_, { designVersion }) => designVersion === '17b',
+
+    ...applyVariantConditions(variants, [
+      {
+        name: 'description',
+        type: 'text',
+        localized: true,
+        admin: {
+          description: 'Description text below the heading',
+        },
       },
-    },
+    ]),
+
     {
       name: 'projects',
       type: 'array',
@@ -54,6 +52,7 @@ export const ProjectsBlock: Block = {
           name: 'location',
           type: 'text',
         },
+        // Explicit: nested array sub-field conditions can't use applyVariantConditions
         {
           name: 'year',
           type: 'text',
