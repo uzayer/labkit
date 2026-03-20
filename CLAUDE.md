@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Payblocks is a PayloadCMS + shadcn/ui website builder, extended with research-domain collections (Publications, Grants, Awards, Team, etc.) for academic lab websites. Built on the [shadcnblocks Payload template](https://docs.shadcnblocks.com/payload/getting-started/).
 
-This repo is the current working instance (see @docs/architecture/STRATEGY.md for the upstream waterfall plan toward splitting into Gridbase → ResearchNet → client instances).
+This repo is the current working instance (see @docs/architecture/STRATEGY.md for the upstream waterfall plan toward splitting into base template → LabKit → client instances).
 
 ## Commands
 
@@ -31,6 +31,7 @@ No test framework is configured. Verify changes with `pnpm tsc` and `pnpm lint`.
 ### Core pattern: Hero + Layout Builder
 
 Pages use a **Hero** (70+ variants in `src/heros/config.ts`) followed by an array of **layout blocks** (`src/blocks/*/`). Each block has:
+
 - `config.ts` — Payload field schema with a `designVersion` select
 - `Component.tsx` — switches on `designVersion` to render variant files (e.g. `cta1.tsx`, `cta3.tsx`)
 - Variants are registered in `src/blocks/RenderBlocks.tsx` and `src/collections/Pages/index.ts`
@@ -39,7 +40,7 @@ Heros follow the same pattern: `src/heros/PageHero/hero{N}.tsx` components, disp
 
 ### Collections & Globals
 
-See `src/payload.config.ts` for the authoritative list. Beyond the base template (Pages, Posts, Media, Categories, Users, Roles), this repo adds: **ResearchThemes, Projects, Publications, Team, Awards, Organizations, Venues, Grants, Keywords**.
+See `src/payload.config.ts` for the authoritative list. Beyond the base template (Pages, Posts, Media, Categories, Users, Roles), this repo adds: **ResearchThemes, Projects, Publications, Team, Awards, Organizations, Venues, Grants, Keywords** (the LabKit research-domain collections).
 
 Globals: **ThemeConfig, Header, Footer, PageConfig, LabInfo**.
 
@@ -55,7 +56,7 @@ Role-based via `Users` ↔ `Roles` (many-to-many). Permission flags: `canManageC
 
 ## Gotchas & Non-obvious Behavior
 
-- **Tailwind bg-* classes:** `RenderBlocks.tsx` has a manual switch statement enumerating every `bg-{color}` class so Tailwind's compiler includes them. If you add a new theme color, you must add a case there too.
+- **Tailwind bg-\* classes:** `RenderBlocks.tsx` has a manual switch statement enumerating every `bg-{color}` class so Tailwind's compiler includes them. If you add a new theme color, you must add a case there too.
 - **`overrideAccess` defaults to `true`** in Payload's Local API — always set `overrideAccess: false` when access control should apply.
 - **Conditional fields:** Blocks hide/show fields based on `designVersion` using `admin.condition`. Pattern: `condition: (_, { designVersion = '' } = {}) => ['1', '2'].includes(designVersion)`.
 - **`NODE_OPTIONS=--no-deprecation`** is set on all scripts via `cross-env` to suppress noisy warnings.
