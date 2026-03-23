@@ -1,7 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
-import { authenticated } from '@/access/authenticated'
 import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
+import { hasPermission } from '@/utilities/checkPermission'
 import { validateAwards } from './hooks/validateAwards'
 import { populateOrganizationLabel } from './hooks/populateOrganizationLabel'
 
@@ -12,10 +12,10 @@ import { populateOrganizationLabel } from './hooks/populateOrganizationLabel'
 const Awards: CollectionConfig = {
   slug: 'awards',
   access: {
-    create: authenticated,
-    delete: authenticated,
+    create: hasPermission('canManageContent'),
+    delete: hasPermission('canManageContent'),
     read: authenticatedOrPublished,
-    update: authenticated,
+    update: hasPermission('canManageContent'),
   },
   admin: {
     useAsTitle: 'title',

@@ -8,7 +8,6 @@ const Roles: CollectionConfig = {
     useAsTitle: 'name',
     description: {
       en: 'Manage user roles and their permissions',
-      de: 'Verwalten Sie Benutzerrollen und deren Berechtigungen',
     },
   },
   access: {
@@ -26,7 +25,6 @@ const Roles: CollectionConfig = {
       admin: {
         description: {
           en: 'The name of the role (e.g., Admin, Editor)',
-          de: 'Der Name der Rolle (z.B. Admin, Editor)',
         },
       },
     },
@@ -38,7 +36,6 @@ const Roles: CollectionConfig = {
       admin: {
         description: {
           en: 'The identifier for the role (e.g., admin, editor)',
-          de: 'Die Kennung für die Rolle (z.B. admin, editor)',
         },
       },
       hooks: {
@@ -61,7 +58,6 @@ const Roles: CollectionConfig = {
       admin: {
         description: {
           en: 'A description of what this role can do',
-          de: 'Eine Beschreibung der Berechtigungen dieser Rolle',
         },
       },
     },
@@ -71,7 +67,6 @@ const Roles: CollectionConfig = {
       admin: {
         description: {
           en: 'Role permissions',
-          de: 'Rollenberechtigungen',
         },
       },
       fields: [
@@ -82,7 +77,6 @@ const Roles: CollectionConfig = {
           admin: {
             description: {
               en: 'Can create and edit content',
-              de: 'Kann Inhalte erstellen und bearbeiten',
             },
           },
         },
@@ -93,7 +87,6 @@ const Roles: CollectionConfig = {
           admin: {
             description: {
               en: 'Can publish content',
-              de: 'Kann Inhalte veröffentlichen',
             },
           },
         },
@@ -104,7 +97,6 @@ const Roles: CollectionConfig = {
           admin: {
             description: {
               en: 'Can manage users',
-              de: 'Kann Benutzer verwalten',
             },
           },
         },
@@ -118,7 +110,6 @@ const Roles: CollectionConfig = {
           admin: {
             description: {
               en: 'Can manage redirects',
-              de: 'Kann Redirects verwalten.',
             },
           },
         },

@@ -13,8 +13,8 @@ import {
   UploadFeature,
 } from '@payloadcms/richtext-lexical'
 
-import { authenticated } from '@/access/authenticated'
 import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
+import { hasPermission } from '@/utilities/checkPermission'
 import { Banner } from '@/blocks/LexicalBlocks/Banner/config'
 import { Code } from '@/blocks/Code/config'
 import { MediaBlock } from '@/blocks/MediaBlock/config'
@@ -138,10 +138,10 @@ export const Projects: CollectionConfig = {
     plural: 'Projects',
   },
   access: {
-    create: authenticated,
-    delete: authenticated,
+    create: hasPermission('canManageContent'),
+    delete: hasPermission('canManageContent'),
     read: authenticatedOrPublished,
-    update: authenticated,
+    update: hasPermission('canManageContent'),
   },
   admin: {
     defaultColumns: ['title', 'status', 'featured', 'startDate'],

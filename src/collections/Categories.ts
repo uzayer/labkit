@@ -1,15 +1,15 @@
 import type { CollectionConfig } from 'payload'
 
 import { anyone } from '../access/anyone'
-import { authenticated } from '../access/authenticated'
+import { hasPermission } from '@/utilities/checkPermission'
 
 const Categories: CollectionConfig = {
   slug: 'categories',
   access: {
-    create: authenticated,
-    delete: authenticated,
+    create: hasPermission('canManageContent'),
+    delete: hasPermission('canManageContent'),
     read: anyone,
-    update: authenticated,
+    update: hasPermission('canManageContent'),
   },
   admin: {
     useAsTitle: 'title',

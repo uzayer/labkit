@@ -1,7 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
-import { authenticated } from '@/access/authenticated'
 import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
+import { hasPermission } from '@/utilities/checkPermission'
 import { slugField } from '@/fields/slug'
 import { populateRoleLabel } from './hooks/populateRoleLabel'
 import { setDisplayInTeam } from './hooks/setDisplayInTeam'
@@ -22,10 +22,10 @@ const Team: CollectionConfig = {
     plural: 'Team',
   },
   access: {
-    create: authenticated,
-    delete: authenticated,
+    create: hasPermission('canManageContent'),
+    delete: hasPermission('canManageContent'),
     read: authenticatedOrPublished,
-    update: authenticated,
+    update: hasPermission('canManageContent'),
   },
   admin: {
     defaultColumns: ['name', 'role', 'title', 'displayInWebsite'],

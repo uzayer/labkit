@@ -1,7 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
-import { authenticated } from '@/access/authenticated'
 import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
+import { hasPermission } from '@/utilities/checkPermission'
 import { slugField } from '@/fields/slug'
 import { revalidateGrant } from './hooks/revalidateGrant'
 import { populateFunderLabel } from './hooks/populateFunderLabel'
@@ -18,10 +18,10 @@ const Grants: CollectionConfig = {
     plural: 'Grants',
   },
   access: {
-    create: authenticated,
-    delete: authenticated,
+    create: hasPermission('canManageContent'),
+    delete: hasPermission('canManageContent'),
     read: authenticatedOrPublished,
-    update: authenticated,
+    update: hasPermission('canManageContent'),
   },
   admin: {
     group: 'Research',
