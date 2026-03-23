@@ -14,3 +14,4 @@ tsconfig.tsbuildinfo
 
 dump
 src/payload-types.ts
+docs/scratch/
