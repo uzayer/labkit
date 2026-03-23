@@ -1,7 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
-import { authenticated } from '@/access/authenticated'
 import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
+import { hasPermission } from '@/utilities/checkPermission'
 import { validatePublications } from './hooks/validatePublications'
 import { populateAuthorPosition } from './hooks/populateAuthorPosition'
 import { populateVenueLabel } from './hooks/populateVenueLabel'
@@ -19,10 +19,10 @@ import { populateVenueLabel } from './hooks/populateVenueLabel'
 const Publications: CollectionConfig = {
   slug: 'publications',
   access: {
-    create: authenticated,
-    delete: authenticated,
+    create: hasPermission('canManageContent'),
+    delete: hasPermission('canManageContent'),
     read: authenticatedOrPublished,
-    update: authenticated,
+    update: hasPermission('canManageContent'),
   },
   admin: {
     defaultColumns: ['title', 'year', 'type', 'venueLabel', 'featured'],
