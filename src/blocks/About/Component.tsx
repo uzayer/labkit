@@ -4,6 +4,7 @@ import About2 from '@/blocks/About/about2'
 import About3 from '@/blocks/About/about3'
 import About4 from '@/blocks/About/about4'
 import About5 from '@/blocks/About/about5'
+import About18 from '@/blocks/About/about18'
 
 // Enforce required features but allow additional ones
 type About<T extends string = string> = Required<Record<AboutDesignVersion, React.FC<any>>> &
@@ -15,6 +16,7 @@ const about: About = {
   ABOUT3: About3,
   ABOUT4: About4,
   ABOUT5: About5,
+  ABOUT18: About18,
 }
 
 export const AboutBlock: React.FC<any> = (props) => {

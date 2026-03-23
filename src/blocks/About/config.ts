@@ -83,6 +83,16 @@ export const AboutBlock: Block = {
 
     ...applyVariantConditions(variants, [
       {
+        name: 'label1',
+        type: 'text',
+        localized: true,
+      },
+      {
+        name: 'label2',
+        type: 'text',
+        localized: true,
+      },
+      {
         name: 'logos',
         type: 'upload',
         relationTo: 'media',
