@@ -26,4 +26,9 @@ export const variants: VariantManifest = {
     previewImage: '/admin/previews/about/about5.webp',
     fields: ['logos', 'counter'],
   },
+  ABOUT18: {
+    label: 'ABOUT18',
+    previewImage: '/admin/previews/about/about18.webp',
+    fields: ['label1', 'label2'],
+  },
 }
