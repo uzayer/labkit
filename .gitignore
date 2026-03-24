@@ -14,4 +14,5 @@ tsconfig.tsbuildinfo
 
 dump
 src/payload-types.ts
+src/app/(payload)/admin/importMap.js
 docs/scratch/
