@@ -67,7 +67,7 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 const generateTitle: GenerateTitle<Post | Page> = ({ doc }) => {
-  return doc?.title ? `${doc.title} | Payblocks Website Template` : 'Payblocks Website Template'
+  return doc?.title ? `${doc.title} | LabKit Website Template` : 'LabKit Website Template'
 }
 
 const generateURL: GenerateURL<Post | Page> = ({ doc }) => {
@@ -90,8 +90,8 @@ export default buildConfig({
       beforeDashboard: ['@/components/AdminDashboard/BeforeDashboard'],
       afterDashboard: ['@/components/AdminDashboard/BackupDashboard'],
       graphics: {
-        Icon: '@/components/AdminDashboard/PayblocksIcon',
-        Logo: '@/components/AdminDashboard/PayblocksLogo',
+        Icon: '@/components/AdminDashboard/LabKitIcon',
+        Logo: '@/components/AdminDashboard/LabKitLogo',
       },
     },
     importMap: {
@@ -347,7 +347,7 @@ export default buildConfig({
    */
   email: resendAdapter({
     defaultFromAddress: process.env.EMAIL_FROM_ADDRESS!,
-    defaultFromName: 'Payblocks Website',
+    defaultFromName: 'LabKit Website',
     apiKey: process.env.RESEND_API_KEY || '',
   }),
   secret: process.env.PAYLOAD_SECRET!,

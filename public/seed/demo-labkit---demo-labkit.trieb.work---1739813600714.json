@@ -7,8 +7,8 @@
       "version": {
         "defaultMeta": {
           "en": {
-            "title": "Payblocks Demopage",
-            "description": "Demopage for the payblocks project"
+            "title": "LabKit Demopage",
+            "description": "Demopage for the labkit project"
           }
         },
         "openGraph": {
@@ -40,7 +40,7 @@
         "$oid": "67a508af2ead0c7978f02359"
       },
       "alt": "default open graph image",
-      "filename": "payblocks default open graph.png",
+      "filename": "labkit default open graph.png",
       "mimeType": "image/png",
       "filesize": 56804,
       "width": 2400,
@@ -119,8 +119,8 @@
       "_id": {
         "$oid": "67a4f2f45e6fbd66482a4783"
       },
-      "alt": "payblocks demo logo",
-      "filename": "payblocks-demo.png",
+      "alt": "labkit demo logo",
+      "filename": "labkit-demo.png",
       "mimeType": "image/png",
       "filesize": 23633,
       "width": 903,
@@ -368,7 +368,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Welcome to the Payblocks Demo",
+                          "text": "Welcome to the LabKit Demo",
                           "type": "text",
                           "version": 1
                         }
@@ -387,7 +387,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "text": "Click around, make changes and see test out the full power of labkit for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
                           "type": "text",
                           "version": 1
                         }
@@ -528,7 +528,7 @@
         ],
         "meta": {
           "title": {
-            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+            "en": "LabKit demo  - the Payload & shadcn starter kit"
           }
         },
         "publishedAt": {
@@ -676,7 +676,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "text": "Click around, make changes and see test out the full power of labkit for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
                           "type": "text",
                           "version": 1
                         }
@@ -723,7 +723,7 @@
         ],
         "meta": {
           "title": {
-            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+            "en": "LabKit demo  - the Payload & shadcn starter kit"
           }
         },
         "publishedAt": {
@@ -854,7 +854,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Welcome to the Payblocks Demo",
+                          "text": "Welcome to the LabKit Demo",
                           "type": "text",
                           "version": 1
                         }
@@ -873,7 +873,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "text": "Click around, make changes and see test out the full power of labkit for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
                           "type": "text",
                           "version": 1
                         }
@@ -1013,7 +1013,7 @@
         ],
         "meta": {
           "title": {
-            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+            "en": "LabKit demo  - the Payload & shadcn starter kit"
           }
         },
         "publishedAt": {
@@ -1162,7 +1162,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "text": "Click around, make changes and see test out the full power of labkit for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
                           "type": "text",
                           "version": 1
                         }
@@ -1209,7 +1209,7 @@
         ],
         "meta": {
           "title": {
-            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+            "en": "LabKit demo  - the Payload & shadcn starter kit"
           }
         },
         "publishedAt": {
@@ -1357,7 +1357,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "text": "Click around, make changes and see test out the full power of labkit for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
                           "type": "text",
                           "version": 1
                         }
@@ -1534,7 +1534,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Welcome to the Payblocks Demo",
+                          "text": "Welcome to the LabKit Demo",
                           "type": "text",
                           "version": 1
                         }
@@ -1553,7 +1553,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "text": "Click around, make changes and see test out the full power of labkit for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
                           "type": "text",
                           "version": 1
                         }
@@ -1695,7 +1695,7 @@
         ],
         "meta": {
           "title": {
-            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+            "en": "LabKit demo  - the Payload & shadcn starter kit"
           }
         },
         "publishedAt": {
@@ -1844,7 +1844,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "text": "Click around, make changes and see test out the full power of labkit for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
                           "type": "text",
                           "version": 1
                         }
@@ -1891,7 +1891,7 @@
         ],
         "meta": {
           "title": {
-            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+            "en": "LabKit demo  - the Payload & shadcn starter kit"
           }
         },
         "publishedAt": {
@@ -2040,7 +2040,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "text": "Click around, make changes and see test out the full power of labkit for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
                           "type": "text",
                           "version": 1
                         }
@@ -2087,7 +2087,7 @@
         ],
         "meta": {
           "title": {
-            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+            "en": "LabKit demo  - the Payload & shadcn starter kit"
           }
         },
         "publishedAt": {
@@ -2218,7 +2218,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Welcome to the Payblocks Demo",
+                          "text": "Welcome to the LabKit Demo",
                           "type": "text",
                           "version": 1
                         }
@@ -2237,7 +2237,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "text": "Click around, make changes and see test out the full power of labkit for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
                           "type": "text",
                           "version": 1
                         }
@@ -2377,7 +2377,7 @@
         ],
         "meta": {
           "title": {
-            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+            "en": "LabKit demo  - the Payload & shadcn starter kit"
           }
         },
         "publishedAt": {
@@ -2511,7 +2511,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Welcome to the Payblocks Demo",
+                          "text": "Welcome to the LabKit Demo",
                           "type": "text",
                           "version": 1
                         }
@@ -2530,7 +2530,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "text": "Click around, make changes and see test out the full power of labkit for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
                           "type": "text",
                           "version": 1
                         }
@@ -2671,7 +2671,7 @@
         ],
         "meta": {
           "title": {
-            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+            "en": "LabKit demo  - the Payload & shadcn starter kit"
           }
         },
         "publishedAt": {
@@ -2851,7 +2851,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Welcome to the Payblocks Demo",
+                          "text": "Welcome to the LabKit Demo",
                           "type": "text",
                           "version": 1
                         }
@@ -2870,7 +2870,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "text": "Click around, make changes and see test out the full power of labkit for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
                           "type": "text",
                           "version": 1
                         }
@@ -3010,7 +3010,7 @@
         ],
         "meta": {
           "title": {
-            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+            "en": "LabKit demo  - the Payload & shadcn starter kit"
           }
         },
         "publishedAt": {
@@ -3158,7 +3158,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "text": "Click around, make changes and see test out the full power of labkit for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
                           "type": "text",
                           "version": 1
                         }
@@ -3346,7 +3346,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "text": "Click around, make changes and see test out the full power of labkit for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
                           "type": "text",
                           "version": 1
                         }
@@ -3534,7 +3534,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "text": "Click around, make changes and see test out the full power of labkit for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
                           "type": "text",
                           "version": 1
                         }
@@ -3708,7 +3708,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Welcome to the Payblocks Demo",
+                          "text": "Welcome to the LabKit Demo",
                           "type": "text",
                           "version": 1
                         }
@@ -3727,7 +3727,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "text": "Click around, make changes and see test out the full power of labkit for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
                           "type": "text",
                           "version": 1
                         }
@@ -3868,7 +3868,7 @@
         ],
         "meta": {
           "title": {
-            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+            "en": "LabKit demo  - the Payload & shadcn starter kit"
           }
         },
         "publishedAt": {
@@ -3999,7 +3999,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Welcome to the Payblocks Demo",
+                          "text": "Welcome to the LabKit Demo",
                           "type": "text",
                           "version": 1
                         }
@@ -4018,7 +4018,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "text": "Click around, make changes and see test out the full power of labkit for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
                           "type": "text",
                           "version": 1
                         }
@@ -4158,7 +4158,7 @@
         ],
         "meta": {
           "title": {
-            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+            "en": "LabKit demo  - the Payload & shadcn starter kit"
           }
         },
         "publishedAt": {
@@ -4289,7 +4289,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Welcome to the Payblocks Demo",
+                          "text": "Welcome to the LabKit Demo",
                           "type": "text",
                           "version": 1
                         }
@@ -4308,7 +4308,7 @@
                           "format": 0,
                           "mode": "normal",
                           "style": "",
-                          "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                          "text": "Click around, make changes and see test out the full power of labkit for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
                           "type": "text",
                           "version": 1
                         }
@@ -4449,7 +4449,7 @@
         ],
         "meta": {
           "title": {
-            "en": "Payblocks demo  - the Payload & shadcn starter kit"
+            "en": "LabKit demo  - the Payload & shadcn starter kit"
           }
         },
         "publishedAt": {
@@ -5716,7 +5716,7 @@
       },
       "meta": {
         "title": {
-          "en": "Payblocks demo  - the Payload & shadcn starter kit"
+          "en": "LabKit demo  - the Payload & shadcn starter kit"
         }
       },
       "slugLock": true,
@@ -5753,7 +5753,7 @@
                         "format": 0,
                         "mode": "normal",
                         "style": "",
-                        "text": "Welcome to the Payblocks Demo",
+                        "text": "Welcome to the LabKit Demo",
                         "type": "text",
                         "version": 1
                       }
@@ -5772,7 +5772,7 @@
                         "format": 0,
                         "mode": "normal",
                         "style": "",
-                        "text": "Click around, make changes and see test out the full power of payblocks for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
+                        "text": "Click around, make changes and see test out the full power of labkit for yourself. You can visit the admin dashboard and get auto-logged in as editor.",
                         "type": "text",
                         "version": 1
                       }
@@ -6219,8 +6219,8 @@
       "globalType": "page-config",
       "defaultMeta": {
         "en": {
-          "title": "Payblocks Demopage",
-          "description": "Demopage for the payblocks project"
+          "title": "LabKit Demopage",
+          "description": "Demopage for the labkit project"
         }
       },
       "openGraph": {

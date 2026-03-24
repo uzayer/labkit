@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Payblocks is a PayloadCMS + shadcn/ui website builder, extended with research-domain collections (Publications, Grants, Awards, Team, etc.) for academic lab websites. Built on the [shadcnblocks Payload template](https://docs.shadcnblocks.com/payload/getting-started/).
+LabKit is a PayloadCMS + shadcn/ui website builder, extended with research-domain collections (Publications, Grants, Awards, Team, etc.) for academic lab websites. Built on the [shadcnblocks Payload template](https://docs.shadcnblocks.com/payload/getting-started/).
 
 This repo is the current working instance (see @docs/architecture/STRATEGY.md for the upstream waterfall plan toward splitting into base template → LabKit → client instances).
 

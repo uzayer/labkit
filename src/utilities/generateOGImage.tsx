@@ -46,7 +46,7 @@ export const contentType = 'image/png'
  * The title is rendered with the font 'Inter', loaded from Google Fonts.
  *
  * @param {Object} options - Options for generating the image
- * @param {string} [options.title] - Title to render on the image. Defaults to "Payblocks".
+ * @param {string} [options.title] - Title to render on the image. Defaults to "LabKit".
  * @returns {Promise<ImageResponse>} - A promise that resolves to an `ImageResponse` object.
  */
 export default async function generateOGImage({
@@ -79,7 +79,7 @@ export default async function generateOGImage({
 
   // Extract the localized page title
   const defaultMeta = pageConfig.defaultMeta as any
-  const pageTitle = title || defaultMeta?.[currentLocale]?.title || 'Payblocks'
+  const pageTitle = title || defaultMeta?.[currentLocale]?.title || 'LabKit'
 
   const textColor = pageConfig.openGraph?.textColor
 

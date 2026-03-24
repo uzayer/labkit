@@ -1,10 +1,10 @@
-# Payblocks
+# LabKit
 
-Payblocks is a powerful website builder that combines the best of two worlds: PayloadCMS's robust content management capabilities and shadcnblocks' extensive UI component library. The name "Payblocks" reflects this fusion - "Pay" from PayloadCMS and "Blocks" from shadcnblocks.
+LabKit is a powerful website builder that combines the best of two worlds: PayloadCMS's robust content management capabilities and shadcnblocks' extensive UI component library. The name "LabKit" reflects this fusion - "Pay" from PayloadCMS and "Blocks" from shadcnblocks.
 
-This project transforms the traditional PayloadCMS starter into a feature-rich website builder with a beautiful, modern UI and an extensive collection of pre-built components. Whether you're building a corporate website, a portfolio, or a complex web application, Payblocks provides all the building blocks you need.
+This project transforms the traditional PayloadCMS starter into a feature-rich website builder with a beautiful, modern UI and an extensive collection of pre-built components. Whether you're building a corporate website, a portfolio, or a complex web application, LabKit provides all the building blocks you need.
 
-The docs for this repo are located here: [Payblocks Docs](https://docs.shadcnblocks.com/payload/getting-started/)
+The docs for this repo are located here: [LabKit Docs](https://docs.shadcnblocks.com/payload/getting-started/)
 
 ## ✨ Key Features
 

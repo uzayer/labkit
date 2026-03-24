@@ -27,6 +27,6 @@ jobs:
       - name: Restore Demo Environment
         if: env.DEMO_RESTORE_TOKEN != ''
         run: |
-          curl https://demo-payblocks.trieb.work/next/backup/restore \
+          curl https://demo-labkit.trieb.work/next/backup/restore \
             -H "Authorization: Bearer ${{ env.DEMO_RESTORE_TOKEN }}" \
             --data '{"url":"${{ env.DEMO_RESTORE_URL }}"}'

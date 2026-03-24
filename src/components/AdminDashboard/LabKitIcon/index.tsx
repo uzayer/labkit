@@ -1,4 +1,4 @@
-export default function PayblocksIcon() {
+export default function LabKitIcon() {
   return (
     <svg
       width="100%"

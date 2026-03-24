@@ -10,7 +10,7 @@ import configPromise from '@payload-config'
 import { User } from '@/payload-types'
 
 const SEED_DUMP_URL =
-  serverConfig.serverUrl + '/seed/demo-payblocks---demo-payblocks.trieb.work---1739813600714.json'
+  serverConfig.serverUrl + '/seed/demo-labkit---demo-labkit.trieb.work---1739813600714.json'
 
 const BackupDashboard: React.FC = async ({ user }: { user: User | null }) => {
   if (!user) return
@@ -36,16 +36,16 @@ const BackupDashboard: React.FC = async ({ user }: { user: User | null }) => {
 
   return (
     <div className="backup-dashboard-2">
-      <h2>Welcome to the Payblocks starter</h2>
+      <h2>Welcome to the LabKit starter</h2>
 
       <p>
-        Payblocks is a comprehensive website builder toolkit that combines PayloadCMS&apos;s
-        powerful content management capabilities with shadcn/ui&apos;s modern components and
+        LabKit is a comprehensive website builder toolkit that combines PayloadCMS&apos;s powerful
+        content management capabilities with shadcn/ui&apos;s modern components and
         shadcnblocks.com&apos;s extensive block library. Visit the{' '}
         <a href="https://docs.shadcnblocks.com/payload/getting-started/" target="_blank">
           documentation
         </a>{' '}
-        to guide you through setting up, configuring, and extending your Payblocks project.
+        to guide you through setting up, configuring, and extending your LabKit project.
       </p>
 
       {process.env.MONGODB_URI && showSeeding && (

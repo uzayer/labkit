@@ -1,4 +1,4 @@
-# payblocks
+# labkit
 
 ## 2.10.0
 
@@ -104,7 +104,7 @@
 
 ### Minor Changes
 
-- 3cd77dd: adding our new logo for payblocks. Showing also admin panel customisation in that way.
+- 3cd77dd: adding our new logo for labkit. Showing also admin panel customisation in that way.
 - 4e72c3e: Added new blocks:- Hero195, Banner5, Casestudies5, Timeline2 and Timeline8
 
 ## 2.1.0

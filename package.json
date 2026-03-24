@@ -1,8 +1,9 @@
 {
-  "name": "payblocks",
-  "version": "2.10.0",
+  "name": "labkit",
+  "version": "0.0.1",
   "description": "A Website template for PayloadCMS, featurig shadcn/ui and shadcnblocks.",
   "license": "MIT",
+  "private": true,
   "type": "module",
   "scripts": {
     "format": "prettier --write .",

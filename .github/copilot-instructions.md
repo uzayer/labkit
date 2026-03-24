@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Payblocks is a PayloadCMS-based website builder that integrates shadcn/ui components and shadcnblocks UI library. It combines PayloadCMS's content management with an extensive collection of pre-built, customizable blocks for building modern websites.
+LabKit is a PayloadCMS-based website builder that integrates shadcn/ui components and shadcnblocks UI library. It combines PayloadCMS's content management with an extensive collection of pre-built, customizable blocks for building modern websites.
 
 **Tech Stack:**
 
@@ -122,7 +122,7 @@ Similar structure to blocks:
 
 ### Access Control & Permissions
 
-Payblocks uses a **role-based permission system**:
+LabKit uses a **role-based permission system**:
 
 **Collections:**
 
