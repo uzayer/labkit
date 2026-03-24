@@ -1,0 +1,122 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect if PR is a Changeset Release PR or Branch is `changeset-release/main`
+        id: is_changeset_release
+        run: |
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          COMMIT_MESSAGE="$(git log -1 --pretty=%B)"
+          BRANCH_NAME_1="${{ github.ref_name }}"
+          BRANCH_NAME_2="${{ github.event.pull_request.head.ref }}"
+
+          echo "Checking PR Title: $PR_TITLE"
+          echo "Checking Commit Message: $COMMIT_MESSAGE"
+          echo "Checking Branch: $BRANCH_NAME_1"
+          echo "Checking Branch: $BRANCH_NAME_2"
+
+          if [[ "$BRANCH_NAME_1" == "changeset-release" ]] || [[ "$BRANCH_NAME_2" == "changeset-release" ]] ||[[ "$BRANCH_NAME_1" == "changeset-release/main" ]] || [[ "$BRANCH_NAME_2" == "changeset-release/main" ]] || [[ "$PR_TITLE" == "chore: release new version" ]] || echo "$COMMIT_MESSAGE" | grep -q "chore: release new version" || echo "$COMMIT_MESSAGE" | grep -q "chore(release): version packages"; then
+            echo "changeset_release=true" >> $GITHUB_ENV
+          else
+            echo "changeset_release=false" >> $GITHUB_ENV
+          fi
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Restore pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Create release PR
+        uses: changesets/action@v1
+        id: changesets
+        with:
+          version: pnpm changeset version
+          commit: 'chore(release): version packages'
+          title: 'chore: release new version'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Detect if `package.json` version changed
+        id: version_check
+        run: |
+          PREV_VERSION=$(git show HEAD^:package.json | jq -r .version)
+          CURRENT_VERSION=$(jq -r .version package.json)
+
+          echo "Previous version: $PREV_VERSION"
+          echo "Current version: $CURRENT_VERSION"
+
+          if [[ "$PREV_VERSION" != "$CURRENT_VERSION" ]]; then
+            echo "version_changed=true" >> $GITHUB_ENV
+            echo "version_changed=true"
+          else
+            echo "version_changed=false" >> $GITHUB_ENV
+            echo "version_changed=false"
+          fi
+
+      - name: Extract Version from package.json
+        if: env.version_changed == 'true' && env.changeset_release == 'true'
+        id: version
+        run: echo "version=$(jq -r .version package.json)" >> $GITHUB_ENV
+
+      - name: Extract Latest Changelog Entry
+        if: env.version_changed == 'true' && env.changeset_release == 'true'
+        id: changelog
+        run: |
+          if [ -f "CHANGELOG.md" ]; then
+            # Extract the latest changelog entry by finding the first ## header and stopping at the next ##
+            latest_changelog=$(awk '/^## /{if (p) exit; p=1} p' CHANGELOG.md)
+            echo "changelog<<EOF" >> $GITHUB_ENV
+            echo "$latest_changelog" >> $GITHUB_ENV
+            echo "EOF" >> $GITHUB_ENV
+          else
+            echo "changelog=No changelog available." >> $GITHUB_ENV
+          fi
+
+      - name: Create ZIP Archive
+        if: env.version_changed == 'true' && env.changeset_release == 'true'
+        run: |
+          zip -r release.zip . -x "*.git*" "node_modules/*" "*.DS_Store"
+
+      - name: Create GitHub Release and Upload ZIP
+        if: env.version_changed == 'true' && env.changeset_release == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ env.version }}
+          name: Release v${{ env.version }}
+          body: |
+            🚀 **New Release v${{ env.version }}**
+
+            ${{ env.changelog }}
+          files: release.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
