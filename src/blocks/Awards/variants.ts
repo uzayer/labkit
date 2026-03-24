@@ -14,6 +14,12 @@ export const variants: VariantManifest = {
   AWARDS4: {
     label: 'AWARDS4',
     previewImage: undefined,
-    fields: ['headline', 'dateRange', 'nameColumnHeader', 'nominationColumnHeader', 'yearColumnHeader'],
+    fields: [
+      'headline',
+      'dateRange',
+      'nameColumnHeader',
+      'nominationColumnHeader',
+      'yearColumnHeader',
+    ],
   },
 }

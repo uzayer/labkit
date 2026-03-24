@@ -28,7 +28,7 @@ export const variants: VariantManifest = {
   MYBLOCK1: {
     label: 'My Block 1',
     previewImage: '/admin/previews/myblock/myblock1.webp',
-    fields: ['badge', 'richText'],  // field names shown only for this variant
+    fields: ['badge', 'richText'], // field names shown only for this variant
   },
   MYBLOCK2: {
     label: 'My Block 2',

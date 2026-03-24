@@ -1,197 +1,177 @@
-// TODO: add cms connection
-const About2 = () => {
+import { Media } from '@/components/Media'
+import RichText from '@/components/RichText'
+import type { AboutBlock, Media as MediaType } from '@/payload-types'
+import { PublicContextProps } from '@/utilities/publicContextProps'
+
+const About2: React.FC<AboutBlock & { publicContext: PublicContextProps }> = ({
+  headline,
+  text1,
+  text2,
+  text3,
+  images,
+  counter,
+  logos,
+  label1,
+  publicContext,
+}) => {
   return (
     <section className="py-32">
       <div className="flex flex-col gap-28">
         <div className="container flex flex-col gap-10 text-center md:gap-24">
           <div className="mx-auto flex max-w-3xl flex-col gap-6">
-            <h1 className="text-4xl font-medium md:text-6xl">Our Background</h1>
-            <p className="text-muted-foreground text-lg md:text-xl">
-              Discover how our solution simplifies complex processes, making it easier to manage key
-              operations and deliver exceptional experiences.
-            </p>
+            {headline && (
+              <RichText
+                publicContext={publicContext}
+                content={headline}
+                withWrapper={false}
+                overrideStyle={{
+                  h1: 'text-4xl font-medium md:text-6xl',
+                  h2: 'text-4xl font-medium md:text-5xl',
+                  h3: 'text-3xl font-medium',
+                }}
+              />
+            )}
+            {text1 && (
+              <RichText
+                publicContext={publicContext}
+                content={text1}
+                withWrapper={false}
+                overrideStyle={{
+                  p: 'text-muted-foreground text-lg md:text-xl',
+                }}
+              />
+            )}
           </div>
-          <div className="grid gap-6 md:grid-cols-12">
-            <img
-              src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
-              alt="placeholder"
-              className="size-full max-h-96 rounded-xl object-cover md:col-span-5"
-            />
-            <img
-              src="https://www.shadcnblocks.com/images/block/placeholder-2.svg"
-              alt="placeholder"
-              className="size-full max-h-96 rounded-xl object-cover md:col-span-4"
-            />
-            <img
-              src="https://www.shadcnblocks.com/images/block/placeholder-3.svg"
-              alt="placeholder"
-              className="size-full max-h-96 rounded-xl object-cover md:col-span-3"
-            />
-          </div>
+          {Array.isArray(images) && images.length > 0 && (
+            <div className="grid gap-6 md:grid-cols-12">
+              {typeof images[0] === 'object' && (
+                <Media
+                  resource={images[0]}
+                  imgClassName="size-full max-h-96 rounded-xl object-cover md:col-span-5"
+                />
+              )}
+              {typeof images[1] === 'object' && (
+                <Media
+                  resource={images[1]}
+                  imgClassName="size-full max-h-96 rounded-xl object-cover md:col-span-4"
+                />
+              )}
+              {typeof images[2] === 'object' && (
+                <Media
+                  resource={images[2]}
+                  imgClassName="size-full max-h-96 rounded-xl object-cover md:col-span-3"
+                />
+              )}
+            </div>
+          )}
         </div>
+
         <div className="container flex flex-col gap-16">
-          <h2 className="max-w-3xl text-4xl font-medium md:text-5xl">
-            We excel in our field, but skill isn&apos;t everything we offer.
-          </h2>
-          <div className="grid grid-cols-2 gap-6 md:grid-cols-3">
-            <div className="flex flex-col gap-6 border-b pb-8">
-              <p className="text-4xl font-medium md:text-5xl">21M</p>
-              <p className="text-muted-foreground">Global Reach of Users</p>
+          {text2 && (
+            <RichText
+              publicContext={publicContext}
+              content={text2}
+              withWrapper={false}
+              overrideStyle={{
+                h2: 'max-w-3xl text-4xl font-medium md:text-5xl',
+                h3: 'max-w-3xl text-3xl font-medium',
+                p: 'max-w-3xl text-4xl font-medium md:text-5xl',
+              }}
+            />
+          )}
+          {Array.isArray(counter) && counter.length > 0 && (
+            <div className="grid grid-cols-2 gap-6 md:grid-cols-3">
+              {counter.map((c) => (
+                <div key={c.id} className="flex flex-col gap-6 border-b pb-8">
+                  <p className="text-4xl font-medium md:text-5xl">{c.value}</p>
+                  <p className="text-muted-foreground">{c.title}</p>
+                </div>
+              ))}
             </div>
-            <div className="flex flex-col gap-6 border-b pb-8">
-              <p className="text-4xl font-medium md:text-5xl">12+</p>
-              <p className="text-muted-foreground">Years of Expertise</p>
-            </div>
-            <div className="flex flex-col gap-6 border-b pb-8">
-              <p className="text-4xl font-medium md:text-5xl">654</p>
-              <p className="text-muted-foreground">Projects Completed</p>
-            </div>
-            <div className="flex flex-col gap-6 border-b pb-8">
-              <p className="text-4xl font-medium md:text-5xl">113k+</p>
-              <p className="text-muted-foreground">Monthly Active Users</p>
-            </div>
-            <div className="flex flex-col gap-6 border-b pb-8">
-              <p className="text-4xl font-medium md:text-5xl">461k</p>
-              <p className="text-muted-foreground">Registered Accounts</p>
-            </div>
-            <div className="flex flex-col gap-6 border-b pb-8">
-              <p className="text-4xl font-medium md:text-5xl">98+</p>
-              <p className="text-muted-foreground">Daily Users</p>
-            </div>
-          </div>
+          )}
         </div>
-        <div className="bg-muted/50 py-24">
-          <div className="container flex flex-col items-center gap-11">
-            <p className="text-center text-xl font-medium">
-              Trusted by leading product teams worldwide.
-            </p>
-            <div className="grid grid-cols-2 gap-x-7 gap-y-12 lg:grid-cols-4">
-              <div className="flex items-center gap-3">
-                <img
-                  src="https://www.shadcnblocks.com/images/block/block-1.svg"
-                  alt="logo"
-                  className="h-8 w-auto md:h-14"
-                />
-                <p className="text-xl font-semibold md:text-4xl">Acme</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <img
-                  src="https://www.shadcnblocks.com/images/block/block-2.svg"
-                  alt="logo"
-                  className="h-8 w-auto md:h-14"
-                />
-                <p className="text-xl font-semibold md:text-4xl">Creative</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <img
-                  src="https://www.shadcnblocks.com/images/block/block-3.svg"
-                  alt="logo"
-                  className="h-8 w-auto md:h-14"
-                />
-                <p className="text-xl font-semibold md:text-4xl">Octan</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <img
-                  src="https://www.shadcnblocks.com/images/block/block-4.svg"
-                  alt="logo"
-                  className="h-8 w-auto md:h-14"
-                />
-                <p className="text-xl font-semibold md:text-4xl">Newco</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <img
-                  src="https://www.shadcnblocks.com/images/block/block-5.svg"
-                  alt="logo"
-                  className="h-8 w-auto md:h-14"
-                />
-                <p className="text-xl font-semibold md:text-4xl">Contoso</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <img
-                  src="https://www.shadcnblocks.com/images/block/block-6.svg"
-                  alt="logo"
-                  className="h-8 w-auto md:h-14"
-                />
-                <p className="text-xl font-semibold md:text-4xl">Fabrikam</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <img
-                  src="https://www.shadcnblocks.com/images/block/block-1.svg"
-                  alt="logo"
-                  className="h-8 w-auto md:h-14"
-                />
-                <p className="text-xl font-semibold md:text-4xl">Litware</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <img
-                  src="https://www.shadcnblocks.com/images/block/block-2.svg"
-                  alt="logo"
-                  className="h-8 w-auto md:h-14"
-                />
-                <p className="text-xl font-semibold md:text-4xl">Northwind</p>
+
+        {Array.isArray(logos) && logos.length > 0 && (
+          <div className="bg-muted/50 py-24">
+            <div className="container flex flex-col items-center gap-11">
+              {label1 && <p className="text-center text-xl font-medium">{label1}</p>}
+              <div className="grid grid-cols-2 gap-x-7 gap-y-12 lg:grid-cols-4">
+                {logos.map((logo: MediaType) => (
+                  <div key={logo.id} className="flex items-center gap-3">
+                    <Media imgClassName="h-8 w-auto md:h-14" resource={logo} />
+                    {logo.caption && (
+                      <RichText
+                        publicContext={publicContext}
+                        content={logo.caption}
+                        withWrapper={false}
+                        overrideStyle={{
+                          p: 'text-xl font-semibold md:text-4xl',
+                        }}
+                      />
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
-        </div>
-        <div className="container flex flex-col items-center gap-14">
-          <h2 className="text-center text-4xl font-semibold md:text-5xl">
-            See the Benefits Firsthand
-          </h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <div className="grid grid-cols-1 gap-6 md:col-span-2 md:grid-cols-2 md:flex-row lg:col-span-1 lg:grid-cols-1 lg:flex-col">
-              <img
-                src="https://www.shadcnblocks.com/images/block/placeholder-2.svg"
-                alt="placeholder"
-                className="max-h-96 w-full rounded-xl object-cover"
+        )}
+
+        {(text3 ||
+          (Array.isArray(counter) && counter.length > 0) ||
+          (Array.isArray(images) && images.length > 3)) && (
+          <div className="container flex flex-col items-center gap-14">
+            {text3 && (
+              <RichText
+                publicContext={publicContext}
+                content={text3}
+                withWrapper={false}
+                overrideStyle={{
+                  h2: 'text-center text-4xl font-semibold md:text-5xl',
+                  h3: 'text-center text-3xl font-semibold',
+                  p: 'text-center text-4xl font-semibold md:text-5xl',
+                }}
               />
-              <div className="bg-muted flex flex-col justify-center rounded-xl p-8">
-                <p className="mb-2 text-4xl font-medium">21M</p>
-                <p className="mb-6 font-semibold">Global Users</p>
-                <p className="text-muted-foreground">
-                  Streamline tasks and boost efficiency by up to 80% using our tools.
-                </p>
-              </div>
-            </div>
-            <div className="relative">
-              <img
-                src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
-                alt="placeholder"
-                className="h-full rounded-xl object-cover"
-              />
-              <div className="bg-background absolute inset-x-6 bottom-6 rounded-xl p-4">
-                <div className="mb-4 flex items-center gap-2">
-                  <img
-                    src="https://www.shadcnblocks.com/images/block/block-1.svg"
-                    alt="placeholder"
-                    className="h-7 w-auto"
+            )}
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid grid-cols-1 gap-6 md:col-span-2 md:grid-cols-2 md:flex-row lg:col-span-1 lg:grid-cols-1 lg:flex-col">
+                {typeof images?.[3] === 'object' && (
+                  <Media
+                    resource={images[3]}
+                    imgClassName="max-h-96 w-full rounded-xl object-cover"
                   />
-                  <span className="text-lg font-semibold">Acme.</span>
-                </div>
-                <p className="mb-6 text-sm">
-                  Our solution helps you reduce costs by half with improved operations.
-                </p>
-                <div className="flex items-baseline gap-1">
-                  <span className="font-medium">John Doe,</span>
-                  <span className="text-muted-foreground text-sm">CEO at Acme.</span>
-                </div>
+                )}
+                {Array.isArray(counter) && counter[0] && (
+                  <div className="bg-muted flex flex-col justify-center rounded-xl p-8">
+                    <p className="mb-2 text-4xl font-medium">{counter[0].value}</p>
+                    <p className="mb-6 font-semibold">{counter[0].title}</p>
+                    {counter[0].description && (
+                      <p className="text-muted-foreground">{counter[0].description}</p>
+                    )}
+                  </div>
+                )}
               </div>
-            </div>
-            <div className="flex flex-col gap-6">
-              <div className="bg-muted rounded-xl p-8">
-                <p className="mb-2 text-4xl font-medium">97%</p>
-                <p className="mb-6 font-semibold">Minimized Errors</p>
-                <p className="text-muted-foreground">
-                  Achieve greater accuracy and efficiency with our advanced toolkit.
-                </p>
-              </div>
-              <img
-                src="https://www.shadcnblocks.com/images/block/placeholder-3.svg"
-                alt="placeholder"
-                className="max-h-96 rounded-xl object-cover"
-              />
+              {typeof images?.[4] === 'object' && (
+                <div className="relative">
+                  <Media resource={images[4]} imgClassName="h-full rounded-xl object-cover" />
+                </div>
+              )}
+              {Array.isArray(counter) && counter[1] && (
+                <div className="flex flex-col gap-6">
+                  <div className="bg-muted rounded-xl p-8">
+                    <p className="mb-2 text-4xl font-medium">{counter[1].value}</p>
+                    <p className="mb-6 font-semibold">{counter[1].title}</p>
+                    {counter[1].description && (
+                      <p className="text-muted-foreground">{counter[1].description}</p>
+                    )}
+                  </div>
+                  {typeof images?.[5] === 'object' && (
+                    <Media resource={images[5]} imgClassName="max-h-96 rounded-xl object-cover" />
+                  )}
+                </div>
+              )}
             </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   )

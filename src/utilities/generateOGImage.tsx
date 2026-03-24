@@ -101,61 +101,59 @@ export default async function generateOGImage({
     const fontData = await loadGoogleFont('Inter', pageTitle)
 
     return new ImageResponse(
-      (
-        <div
+      <div
+        style={{
+          background: '#fff',
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+          justifyContent: 'center',
+        }}
+      >
+        {/* Background image */}
+        <img
+          src={backgroundImage}
+          alt="Background"
+          width={size.width}
+          height={size.height}
           style={{
-            background: '#fff',
+            position: 'absolute',
+            top: 0,
+            left: 0,
             width: '100%',
             height: '100%',
+            objectFit: 'cover',
+          }}
+        />
+        {/* Title container with fixed height */}
+        <div
+          style={{
+            position: 'relative',
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'flex-start',
             justifyContent: 'center',
+            padding: '60px',
+            maxWidth: '70%',
+            minHeight: '200px',
           }}
         >
-          {/* Background image */}
-          <img
-            src={backgroundImage}
-            alt="Background"
-            width={size.width}
-            height={size.height}
+          <h1
             style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-            }}
-          />
-          {/* Title container with fixed height */}
-          <div
-            style={{
-              position: 'relative',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              padding: '60px',
-              maxWidth: '70%',
-              minHeight: '200px',
+              fontSize: '48px',
+              lineHeight: '1.4',
+              fontWeight: '600',
+              color: textColor,
+              textAlign: 'left',
+              margin: '0',
+              fontFamily: 'Inter',
             }}
           >
-            <h1
-              style={{
-                fontSize: '48px',
-                lineHeight: '1.4',
-                fontWeight: '600',
-                color: textColor,
-                textAlign: 'left',
-                margin: '0',
-                fontFamily: 'Inter',
-              }}
-            >
-              {pageTitle}
-            </h1>
-          </div>
+            {pageTitle}
+          </h1>
         </div>
-      ),
+      </div>,
       {
         ...size,
         fonts: [

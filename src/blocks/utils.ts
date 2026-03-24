@@ -1,7 +1,10 @@
 import type { Field } from 'payload'
 import type { DesignVersionPreviewOptions } from '@/components/AdminDashboard/DesignVersionPreview/config'
 
-export type VariantManifest = Record<string, { label: string; previewImage?: string; fields: string[] }>
+export type VariantManifest = Record<
+  string,
+  { label: string; previewImage?: string; fields: string[] }
+>
 
 /**
  * Converts a variant manifest to the options array expected by designVersionPreview().

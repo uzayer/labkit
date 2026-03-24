@@ -74,8 +74,7 @@ export const FaqBlock: Block = {
       overrides: {
         name: 'calloutLink',
         admin: {
-          condition: (_, { designVersion = '' } = {}) =>
-            ['FAQ3', 'FAQ4'].includes(designVersion),
+          condition: (_, { designVersion = '' } = {}) => ['FAQ3', 'FAQ4'].includes(designVersion),
         },
       },
     }),

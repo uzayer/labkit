@@ -96,6 +96,11 @@ export const SlugComponent: React.FC<SlugComponentProps> = ({
         path={path || field.name}
         readOnly={Boolean(readOnlyFromProps || isLocked)}
       />
+      {isLocked && !value && (
+        <p className="slug-field-component__hint">
+          New page? Click <strong>Unlock</strong> to auto-generate from the title.
+        </p>
+      )}
     </div>
   )
 }
