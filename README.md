@@ -43,3 +43,10 @@ The docs for this repo are located here: [LabKit Docs](https://docs.shadcnblocks
 To spin up this project locally, follow these steps from our [Shadcnblocks Payload CMS boilerplate docs](https://docs.shadcnblocks.com/payload/getting-started/)
 
 If you are stuck, feel free to open a Issue in this repo for things that are related especially to this boilerplate. For general payload CMS problems we recommend to consult the [official Payload CMS](https://payloadcms.com/docs/getting-started/what-is-payload) docs or search/open a issue in the [Payload CMS repo](https://github.com/payloadcms/payload/issues).
+
+## Release Automation Status
+
+Changesets and release workflows are currently paused while LabKit is prepared for its first major release.
+
+- Archived workflows live in `.github/workflows-archive/`.
+- To re-enable, move `release.yml` and `validate-changesets.yml` back to `.github/workflows/`.
