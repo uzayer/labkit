@@ -11,7 +11,7 @@ import { FormBlock } from '../Form/config'
 import { backgroundColor } from '@/fields/color'
 import { icon } from '@/components/Icon/config'
 import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
-import { variantsToOptions } from '@/blocks/utils'
+import { applyVariantConditions, variantsToOptions } from '@/blocks/utils'
 import { variants } from './variants'
 
 export type ContactDesignVersion = keyof typeof variants
@@ -75,5 +75,13 @@ export const ContactBlock: Block = {
       blocks: [FormBlock],
       maxRows: 1,
     },
+
+    ...applyVariantConditions(variants, [
+      {
+        name: 'label1',
+        type: 'text',
+        localized: true,
+      },
+    ]),
   ],
 }

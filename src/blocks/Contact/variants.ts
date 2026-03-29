@@ -23,4 +23,9 @@ export const variants: VariantManifest = {
     previewImage: '/admin/previews/contact/contact4.webp',
     fields: [],
   },
+  CONTACT10: {
+    label: 'CONTACT10',
+    previewImage: '/admin/previews/contact/contact10.webp',
+    fields: ['label1'],
+  },
 }
