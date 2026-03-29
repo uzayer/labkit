@@ -64,6 +64,8 @@ Role-based via `Users` ↔ `Roles` (many-to-many). Permission flags: `canManageC
 - **Localization:** English enabled, German commented out. Both admin i18n and content localization configured in `src/localization.config.ts`.
 - **Default roles** are auto-created on startup via `onInit` → `initializeRoles()`.
 - **Nested docs URL generation:** Runs on save. Changing the `generateURL` function in config requires re-saving all pages to update URLs.
+- **Turnstile on form submissions:** `src/app/(payload)/api/[...slug]/route.ts` wraps `POST` for `form-submissions` with Cloudflare Turnstile verification when `NEXT_PUBLIC_TURNSTILE_SITE_KEY` is set. The middleware is in the catch-all API route, not the Form block component — easy to miss. Frontend must send a `cf-turnstile-token` header or the request is silently rejected with 400.
+- **Standalone form components ≠ Payload forms:** Components in `src/components/` like `contact10.tsx`, `waitlist*.tsx`, and `wishlist*.tsx` use react-hook-form but only `console.log` on submit. They are **not** wired to Payload's `form-submissions` collection. To wire them up, see @docs/guides/forms.md.
 
 ## Adding new blocks
 
@@ -97,5 +99,6 @@ Library IDs: PayloadCMS `/payloadcms/payload`, Next.js `/vercel/next.js`, React 
 - @docs/architecture/STRATEGY.md — upstream waterfall architecture & business model
 - @docs/architecture/SCHEMA.md — data schema
 - @docs/architecture/theming-system.md — theming implementation
+- @docs/guides/forms.md — form submissions system, wiring standalone forms to Payload
 - @docs/security-issues.md — security audit findings
 - Template docs: https://docs.shadcnblocks.com/payload/getting-started/

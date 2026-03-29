@@ -18,6 +18,7 @@ Task-oriented how-tos for common operations.
 - [Email Configuration](./guides/email-configuration.md) - Configure email providers
 - [Editing Pages](./guides/editing-pages.md) - Use the page builder and theme customization
 - [Roles and Permissions](./guides/roles-and-permissions.md) - Manage user access control
+- [Forms](./guides/forms.md) - Form submissions, Turnstile, and wiring standalone forms to Payload
 
 ### Architecture
 Understanding-oriented explanations of how the system works.

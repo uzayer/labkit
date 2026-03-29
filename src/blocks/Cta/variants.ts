@@ -66,4 +66,9 @@ export const variants: VariantManifest = {
     previewImage: '/admin/previews/cta/cta17.webp',
     fields: [],
   },
+  CTA20: {
+    label: 'CTA20',
+    previewImage: '/admin/previews/cta/cta20.webp',
+    fields: ['tagline'],
+  },
 }

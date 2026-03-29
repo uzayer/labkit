@@ -1,6 +1,7 @@
 import { TimelineDesignVersion } from './config'
 import Timeline2 from './timeline2'
 import Timeline8 from './timeline8'
+import Timeline14 from './timeline14'
 
 type Timeline<T extends string = string> = Required<Record<TimelineDesignVersion, React.FC<any>>> &
   Record<T, React.FC<any>>
@@ -8,6 +9,7 @@ type Timeline<T extends string = string> = Required<Record<TimelineDesignVersion
 const timeline: Timeline = {
   TIMELINE2: Timeline2,
   TIMELINE8: Timeline8,
+  TIMELINE14: Timeline14,
 }
 
 export const TimelineBlock: React.FC<any> = (props) => {

@@ -55,7 +55,7 @@ const ProductSpecs2: React.FC<ProductSpecsBlock & { publicContext: PublicContext
             <ScrollableTabsList>
               <TabsList className="inline-flex w-auto overflow-y-hidden">
                 {specCategories.map((group) => (
-                  <TabsTrigger key={group.id} value={group.id}>
+                  <TabsTrigger key={group.id} value={group.id ?? ''}>
                     {group.name}
                   </TabsTrigger>
                 ))}
@@ -63,7 +63,7 @@ const ProductSpecs2: React.FC<ProductSpecsBlock & { publicContext: PublicContext
             </ScrollableTabsList>
 
             {specCategories.map((group) => (
-              <TabsContent key={group.id} value={group.id} className="mt-0">
+              <TabsContent key={group.id} value={group.id ?? ''} className="mt-0">
                 <div className="rounded-lg border">
                   <div className="grid divide-y">
                     {Array.isArray(group.specs) &&

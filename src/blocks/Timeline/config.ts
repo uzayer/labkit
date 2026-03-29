@@ -41,7 +41,7 @@ export const TimelineBlock: Block = {
       minRows: 1,
       admin: {
         condition: (_, { designVersion = '' } = {}) =>
-          ['TIMELINE2', 'TIMELINE8'].includes(designVersion),
+          ['TIMELINE2', 'TIMELINE8', 'TIMELINE14'].includes(designVersion),
       },
       fields: [
         {
@@ -59,7 +59,16 @@ export const TimelineBlock: Block = {
           required: true,
           localized: true,
           admin: {
-            condition: createBlockItemCondition(['TIMELINE2']),
+            condition: createBlockItemCondition(['TIMELINE2', 'TIMELINE14']),
+          },
+        },
+        {
+          name: 'dateLabel',
+          type: 'text',
+          localized: true,
+          admin: {
+            description: 'Freeform date label (e.g. "2020", "Q1 2023")',
+            condition: createBlockItemCondition(['TIMELINE14']),
           },
         },
         {
@@ -68,7 +77,7 @@ export const TimelineBlock: Block = {
           relationTo: 'media',
           required: true,
           admin: {
-            condition: createBlockItemCondition(['TIMELINE2']),
+            condition: createBlockItemCondition(['TIMELINE2', 'TIMELINE14']),
           },
         },
         {
