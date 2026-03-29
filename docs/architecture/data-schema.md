@@ -186,8 +186,8 @@ Legend: The **ownership diagrams** show where relationships are edited in the ad
 | **Grants** | funder, investigators, themes | projects |
 | **Team** | affiliation, researchInterests | projects, publications, grants |
 | **Awards** | organization | projects, publications |
-| **Research Themes** | icon | projects, publications, grants |
-| **Keywords** | — | publications, teamMembers |
+| **Research Themes** | icon, keywords | projects, publications, grants |
+| **Keywords** | — | publications, teamMembers, themes |
 | **Venues** | publisher | publications |
 | **Organizations** | — | grants, teamMembers, awards, venues |
 
@@ -461,17 +461,24 @@ High-level research areas that group projects, publications, and grants.
   title: string              // Required
   slug: string
   shortDescription: string   // For landing page cards
-  
+
   // Visual
   icon: Media
   featured: boolean          // Highlight on homepage
-  
+
+  // Classification (owned)
+  keywords: Keyword[]        // CCS concepts / OpenAlex concepts for this theme
+                             // Used to infer related themes (themes sharing keywords)
+                             // Also enriches schema.org and OpenAlex discoverability
+
   // Joins (read-only)
   projects: Project[]        // Via Projects.themes
   publications: Publication[] // Via Publications.themes
   grants: Grant[]            // Via Grants.themes
 }
 ```
+
+> **Related themes logic:** Find themes whose `keywords` overlap with this theme's `keywords`. Secondary fallback: themes that share at least one project. ACM CCS concepts and OpenAlex Concepts can be entered as Keywords (Keywords.openAlexId links them to the academic graph).
 
 ---
 

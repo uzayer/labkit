@@ -96,6 +96,6 @@ Library IDs: PayloadCMS `/payloadcms/payload`, Next.js `/vercel/next.js`, React 
 
 - @docs/architecture/STRATEGY.md — upstream waterfall architecture & business model
 - @docs/architecture/SCHEMA.md — data schema
-- @docs/architecture/THEMING_SYSTEM.md — theming implementation
+- @docs/architecture/theming-system.md — theming implementation
 - @docs/security-issues.md — security audit findings
 - Template docs: https://docs.shadcnblocks.com/payload/getting-started/

@@ -12,7 +12,7 @@ The LabKit theming system is a CMS-driven architecture that extends the standard
 
 - ✅ **100% Compatible** with shadcn ecosystem themes
 - ✅ **CMS-Driven** - Colors stored in PayloadCMS database
-- ✅ **Dual Dark Mode Support** - Works with both `.dark` class and `[data-theme='dark']` attribute
+- ⚠️ **Dark Mode via CSS Variables Only** - Runtime dark mode uses `[data-theme='dark']` on `<html>`. The `@custom-variant dark` in `globals.css` enables the Tailwind `dark:` prefix only for `.dark` class ancestors, which is **never set at runtime** — so `dark:` utilities do not respond to the theme toggle
 - ✅ **Zero Breaking Changes** - Unchanged since initial template commit
 - ✅ **Real-time Preview** - Built-in Theme Editor tool for live adjustments
 
@@ -65,18 +65,15 @@ src/
 │           └── revalidateThemeConfig.ts  # ISR revalidation hook
 │
 ├── providers/
-│   ├── Theme/
-│   │   ├── index.tsx              # Main Theme Provider (React Context)
-│   │   ├── types.ts               # TypeScript type definitions (Theme, ThemeContextType)
-│   │   ├── shared.ts              # Shared constants and utilities (getImplicitPreference)
-│   │   ├── InitTheme/
-│   │   │   └── index.tsx          # Client-side theme initialization script
-│   │   └── ThemeSelector/
-│   │       ├── index.tsx          # UI component for theme switching
-│   │       └── types.ts           # Theme type, themeLocalStorageKey, defaultTheme
-│   │
-│   └── HeaderTheme/
-│       └── index.tsx              # Separate theme context for header component
+│   └── Theme/
+│       ├── index.tsx              # Main Theme Provider (React Context)
+│       ├── types.ts               # TypeScript type definitions (Theme, ThemeContextType)
+│       ├── shared.ts              # Shared constants and utilities (defaultTheme, themeLocalStorageKey, getImplicitPreference)
+│       ├── InitTheme/
+│       │   └── index.tsx          # Client-side theme initialization script
+│       └── ThemeSelector/
+│           ├── index.tsx          # UI component for theme switching
+│           └── types.ts           # defaultTheme, themeLocalStorageKey (also used by InitTheme)
 │
 ├── cssVariables.ts                # JavaScript constants (minimal usage)
 │
@@ -268,7 +265,7 @@ export async function ThemeConfig({
 @custom-variant dark (&:where(.dark, .dark *));
 ```
 
-This enables dual support for both `.dark` class and `[data-theme='dark']` attribute.
+This defines the Tailwind `dark:` prefix to activate when an ancestor has the `.dark` class. **Important:** the runtime theme system never adds a `.dark` class — it only sets `data-theme` on `<html>` — so `dark:` utilities are not activated by the theme toggle. The actual dark mode color switching happens via the `[data-theme='dark']` block injected by `ThemeConfig/Component.tsx`. If you use `dark:` utilities, you must also manually add a `.dark` class or switch to using CSS variables directly.
 
 **2. Theme Variable Mapping:**
 
@@ -368,10 +365,10 @@ The system maintains **100% compatibility** with the shadcn ecosystem because:
    - Uses identical variable names as official shadcn themes
    - No conflicts or overrides
 
-2. **Dual Dark Mode Support**
-   - Custom variant: `@custom-variant dark (&:where(.dark, .dark *))`
-   - Works with `.dark` class (standard shadcn)
-   - Works with `[data-theme='dark']` (custom implementation)
+2. **Dark Mode via CSS Variables**
+   - Runtime dark mode: `[data-theme='dark']` set on `<html>` by `ThemeProvider` and `InitTheme`
+   - CSS variables for all tokens switch under `[data-theme='dark']` (injected by `ThemeConfig/Component.tsx`)
+   - The `@custom-variant dark (&:where(.dark, .dark *))` enables the Tailwind `dark:` prefix for `.dark` class ancestors, but this class is **never set at runtime** — `dark:` utilities will not respond to the theme toggle unless you add `.dark` manually
 
 3. **Standard Component Structure**
    - All shadcn/ui components work without modification
@@ -750,7 +747,7 @@ The LabKit theming system successfully combines the flexibility of the shadcn ec
 - ✅ CMS-driven for non-technical editing
 - ✅ Multi-locale theme support via `publicContext.locale`
 - ✅ Safe to install any compatible theme
-- ✅ Dual dark mode support for maximum flexibility
+- ⚠️ Dark mode works via CSS variable switching (`[data-theme='dark']`); Tailwind `dark:` utilities require a `.dark` class ancestor which is never set at runtime
 - ✅ Auto mode for system preference following
 - ✅ Built-in tools for theme development and testing
 
@@ -760,5 +757,6 @@ The LabKit theming system successfully combines the flexibility of the shadcn ec
 - Ring variable uses `ring-3` field name in config, mapped to `--ring` CSS variable
 - ThemeSelector supports "auto" mode by setting theme to `null`
 - Localization enables per-locale theme configurations
+- **`dark:` Tailwind utilities do not activate with the runtime theme toggle** — the theme system only sets `data-theme` on `<html>`, not `.dark` class. The `@custom-variant dark` in `globals.css` requires `.dark` class. All dark mode color changes work via CSS variable injection under `[data-theme='dark']`.
 
 The system is production-ready and has remained stable since the initial template commit, making it a reliable foundation for theme management in PayloadCMS-based applications.
