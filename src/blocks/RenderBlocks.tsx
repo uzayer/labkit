@@ -34,6 +34,7 @@ import { FeatureHeroBlock } from './FeatureHero/Component'
 import { FeatureListBlock } from './FeatureList/Component'
 import { FeatureMediaBlock } from './FeatureMedia/Component'
 import { FeatureSpecialBlock } from './FeatureSpecial/Component'
+import { ProductSpecsBlock } from './ProductSpecs/Component'
 
 const blockComponents: Partial<Record<Page['layout'][0]['blockType'] | string, React.FC<any>>> = {
   archive: ArchiveBlock,
@@ -67,6 +68,7 @@ const blockComponents: Partial<Record<Page['layout'][0]['blockType'] | string, R
   projects: ProjectsBlock,
   resources: ResourcesBlock,
   publicationsBlock: PublicationsBlock,
+  'product-specs': ProductSpecsBlock,
 }
 
 export const RenderBlocks: React.FC<{

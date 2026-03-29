@@ -50,6 +50,7 @@ import { FeatureHeroBlock } from '@/blocks/FeatureHero/config'
 import { FeatureListBlock } from '@/blocks/FeatureList/config'
 import { FeatureMediaBlock } from '@/blocks/FeatureMedia/config'
 import { FeatureSpecialBlock } from '@/blocks/FeatureSpecial/config'
+import { ProductSpecsBlock } from '@/blocks/ProductSpecs/config'
 
 export const PageBlocks: Block[] = [
   FeatureBlock, // keep during migration — existing pages with blockType:'feature' continue rendering
@@ -83,6 +84,7 @@ export const PageBlocks: Block[] = [
   ProjectsBlock,
   ResourcesBlock,
   PublicationsBlock,
+  ProductSpecsBlock,
 ]
 
 export const Pages: CollectionConfig = {
