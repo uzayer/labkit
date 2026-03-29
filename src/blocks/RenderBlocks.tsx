@@ -38,6 +38,8 @@ import { ProductSpecsBlock } from './ProductSpecs/Component'
 import { CareersBlock } from './Careers/Component'
 import { TrustStripBlockComponent } from './TrustStrip/Component'
 import { IndustriesBlock } from './Industries/Component'
+import { WaitlistBlock } from './Waitlist/Component'
+import { WishlistBlock } from './Wishlist/Component'
 
 const blockComponents: Partial<Record<Page['layout'][0]['blockType'] | string, React.FC<any>>> = {
   archive: ArchiveBlock,
@@ -75,6 +77,8 @@ const blockComponents: Partial<Record<Page['layout'][0]['blockType'] | string, R
   careers: CareersBlock,
   'trust-strip': TrustStripBlockComponent,
   industries: IndustriesBlock,
+  waitlist: WaitlistBlock,
+  wishlist: WishlistBlock,
 }
 
 export const RenderBlocks: React.FC<{
