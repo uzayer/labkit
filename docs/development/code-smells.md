@@ -15,7 +15,7 @@ It uses examples from this repository so you can practice with real context inst
 
 ## 1) Duplicate logic (DRY violations)
 
-**Example:** `/home/runner/work/payblocks/payblocks/src/actions/search.ts` (fallback filtering in the `catch` branch)
+**Example:** `src/actions/search.ts` (fallback filtering in the `catch` branch)
 
 The fallback search logic duplicates field matching in multiple places (title, extracted text, meta title/description).  
 This increases the chance that one branch is updated and the other is forgotten.
@@ -34,7 +34,7 @@ Extract a single predicate function (for example `matchesQuery`) and use it in e
 
 ## 2) Type unsafety with `any`
 
-**Example:** `/home/runner/work/payblocks/payblocks/src/utilities/richtext.ts`
+**Example:** `src/utilities/richtext.ts`
 
 This file uses `any` in shared utility paths (`splitRichText`, `extractTextContent`, `getSideMenuStructure`, `extractPlainText`).
 
@@ -55,8 +55,8 @@ This file uses `any` in shared utility paths (`splitRichText`, `extractTextConte
 ## 3) Silent or low-context error handling
 
 **Examples:**  
-- `/home/runner/work/payblocks/payblocks/src/actions/search.ts`  
-- `/home/runner/work/payblocks/payblocks/src/actions/auth/login.ts`
+- `src/actions/search.ts`  
+- `src/actions/auth/login.ts`
 
 Some catch blocks return empty results or generic errors without enough context for diagnosis.
 
@@ -76,7 +76,7 @@ Some catch blocks return empty results or generic errors without enough context 
 
 ## 4) Non-null assertions (`!`) in auth/control flow
 
-**Example:** `/home/runner/work/payblocks/payblocks/src/utilities/getMeUser.ts` (`token!`)
+**Example:** `src/utilities/getMeUser.ts` (`token!`)
 
 Non-null assertions bypass safety checks and can hide edge-case crashes.
 
@@ -97,7 +97,7 @@ Use explicit guards before returning values:
 
 ## 5) Unstructured console logging in server actions
 
-**Example:** `/home/runner/work/payblocks/payblocks/src/components/AdminDashboard/BackupDashboard/actions.tsx`
+**Example:** `src/components/AdminDashboard/BackupDashboard/actions.tsx`
 
 `console.log`/`console.warn`/`console.error` are used throughout backup/restore operations.
 
@@ -117,7 +117,7 @@ Use explicit guards before returning values:
 
 ## 6) Long server-action functions with mixed responsibilities
 
-**Example:** `/home/runner/work/payblocks/payblocks/src/components/AdminDashboard/BackupDashboard/actions.tsx` (`restoreBackup`, `createBackup`)
+**Example:** `src/components/AdminDashboard/BackupDashboard/actions.tsx` (`restoreBackup`, `createBackup`)
 
 These functions parse data, access DB, upload files, revalidate cache, and redirect in one flow.
 
@@ -141,7 +141,7 @@ Split into focused helpers:
 
 ## 7) Weak input validation at external boundaries
 
-**Example:** `/home/runner/work/payblocks/payblocks/src/components/AdminDashboard/BackupDashboard/actions.tsx` (downloaded backup parsing + collection iteration)
+**Example:** `src/components/AdminDashboard/BackupDashboard/actions.tsx` (downloaded backup parsing + collection iteration)
 
 External input (backup file content) is parsed and used with limited schema validation.
 
@@ -161,7 +161,7 @@ External input (backup file content) is parsed and used with limited schema vali
 
 ## 8) Expensive in-memory fallback behavior
 
-**Example:** `/home/runner/work/payblocks/payblocks/src/actions/search.ts` (loads broad result set and filters in memory)
+**Example:** `src/actions/search.ts` (loads broad result set and filters in memory)
 
 When query-level search fails, fallback loads many docs and filters in app code.
 
