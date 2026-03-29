@@ -11,6 +11,7 @@ import Cta13 from '@/blocks/Cta/cta13'
 import Cta15 from '@/blocks/Cta/cta15'
 import Cta16 from '@/blocks/Cta/cta16'
 import Cta17 from '@/blocks/Cta/cta17'
+import Cta20 from '@/blocks/Cta/cta20'
 
 import { CtaDesignVersion } from './config'
 
@@ -31,6 +32,7 @@ const ctas: Cta = {
   CTA15: Cta15,
   CTA16: Cta16,
   CTA17: Cta17,
+  CTA20: Cta20,
 }
 
 export const CtaBlock: React.FC<any> = (props) => {

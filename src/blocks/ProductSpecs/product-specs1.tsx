@@ -17,14 +17,15 @@ const ProductSpecs1: React.FC<ProductSpecsBlock & { publicContext: PublicContext
   publicContext,
 }) => {
   const [openCategories, setOpenCategories] = useState<string[]>(
-    specCategories?.map((c) => c.id) || [],
+    specCategories?.map((c) => c.id ?? '').filter(Boolean) || [],
   )
 
   const toggleCategory = (id: string) => {
     setOpenCategories((prev) => (prev.includes(id) ? prev.filter((c) => c !== id) : [...prev, id]))
   }
 
-  const expandAll = () => setOpenCategories(specCategories?.map((c) => c.id) || [])
+  const expandAll = () =>
+    setOpenCategories(specCategories?.map((c) => c.id ?? '').filter(Boolean) || [])
   const collapseAll = () => setOpenCategories([])
 
   return (
@@ -61,8 +62,8 @@ const ProductSpecs1: React.FC<ProductSpecsBlock & { publicContext: PublicContext
             {specCategories.map((category) => (
               <Collapsible
                 key={category.id}
-                open={openCategories.includes(category.id)}
-                onOpenChange={() => toggleCategory(category.id)}
+                open={openCategories.includes(category.id ?? '')}
+                onOpenChange={() => toggleCategory(category.id ?? '')}
               >
                 <div className="rounded-lg border">
                   <CollapsibleTrigger className="hover:bg-muted/50 flex w-full items-center justify-between p-4 text-left">
@@ -75,7 +76,7 @@ const ProductSpecs1: React.FC<ProductSpecsBlock & { publicContext: PublicContext
                     <ChevronDown
                       className={cn(
                         'text-muted-foreground size-5 transition-transform',
-                        openCategories.includes(category.id) && 'rotate-180',
+                        openCategories.includes(category.id ?? '') && 'rotate-180',
                       )}
                     />
                   </CollapsibleTrigger>

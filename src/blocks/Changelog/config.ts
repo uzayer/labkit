@@ -7,6 +7,8 @@ import {
 import type { Block } from 'payload'
 import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
 import { variantsToOptions } from '@/blocks/utils'
+import { linkGroup } from '@/fields/linkGroup'
+import { createBlockItemCondition } from '@/utilities/findParentFeatureVersion'
 import { variants } from './variants'
 
 export type ChangelogDesignVersion = keyof typeof variants
@@ -26,7 +28,7 @@ export const ChangelogBlock: Block = {
       admin: {
         description: {
           en: 'Add a tagline underneath the intro text',
-          de: 'Überschrift unterhalb des Intro-Texts hinzu',
+          de: 'Überschrift unterhalb des Intro-Texts hinzu',
         },
       },
     },
@@ -85,16 +87,25 @@ export const ChangelogBlock: Block = {
         },
       ],
     },
+    linkGroup({
+      overrides: {
+        admin: {
+          condition: (_: any, { designVersion = '' }: any = {}) =>
+            ['CHANGELOG4', 'CHANGELOG5'].includes(designVersion),
+          description: 'Social links (Changelog 4) or subscribe/follow links (Changelog 5)',
+        },
+      },
+    }),
     {
       name: 'entries',
       label: {
         en: 'Changelog entries',
-        de: 'Changelog-Einträge',
+        de: 'Changelog-Einträge',
       },
       admin: {
         description: {
           en: "Add changelog entries. Entries coming from Github won't be overwritten when the data is updated manually.",
-          de: 'Changelog-Einträge hinzufügen',
+          de: 'Changelog-Einträge hinzufügen',
         },
       },
       type: 'array',
@@ -125,10 +136,11 @@ export const ChangelogBlock: Block = {
         {
           name: 'version',
           type: 'text',
-          required: true,
+          admin: {
+            condition: createBlockItemCondition(['CHANGELOG1', 'CHANGELOG8']),
+          },
         },
         {
-          // If this is a github entry, we store the id here to keep track of it.
           name: 'githubId',
           type: 'text',
           admin: {
@@ -136,15 +148,114 @@ export const ChangelogBlock: Block = {
           },
         },
         {
-          // We can optionally add an image for each entry
           name: 'image',
           type: 'upload',
           relationTo: 'media',
           admin: {
             description: {
               en: 'Optional image for the entry',
-              de: 'Optionales Bild für den Eintrag',
+              de: 'Optionales Bild für den Eintrag',
             },
+          },
+        },
+        {
+          name: 'items',
+          type: 'array',
+          labels: { singular: 'Item', plural: 'Items' },
+          admin: {
+            description: 'Bullet list items (e.g. "What\'s included")',
+            condition: createBlockItemCondition(['CHANGELOG8']),
+          },
+          fields: [
+            {
+              name: 'text',
+              type: 'text',
+              required: true,
+              localized: true,
+            },
+          ],
+        },
+        {
+          name: 'category',
+          type: 'text',
+          localized: true,
+          admin: {
+            description: 'Single category label (e.g. "New feature", "Improvement")',
+            condition: createBlockItemCondition(['CHANGELOG5']),
+          },
+        },
+        {
+          name: 'tags',
+          type: 'array',
+          labels: { singular: 'Tag', plural: 'Tags' },
+          admin: {
+            condition: createBlockItemCondition(['CHANGELOG3']),
+          },
+          fields: [
+            {
+              name: 'tagName',
+              type: 'text',
+              required: true,
+              localized: true,
+            },
+            {
+              name: 'tagColor',
+              type: 'select',
+              options: [
+                { label: 'Green', value: 'green' },
+                { label: 'Blue', value: 'blue' },
+                { label: 'Purple', value: 'purple' },
+                { label: 'Red', value: 'red' },
+                { label: 'Yellow', value: 'yellow' },
+              ],
+              defaultValue: 'blue',
+            },
+          ],
+        },
+        {
+          name: 'author',
+          type: 'text',
+          localized: true,
+          admin: {
+            description: 'Author name',
+            condition: createBlockItemCondition(['CHANGELOG5']),
+          },
+        },
+        {
+          name: 'authorRole',
+          type: 'text',
+          localized: true,
+          admin: {
+            description: 'Author role/title',
+            condition: createBlockItemCondition(['CHANGELOG5']),
+          },
+        },
+        {
+          name: 'authorImage',
+          type: 'upload',
+          relationTo: 'media',
+          admin: {
+            description: 'Author avatar image',
+            condition: createBlockItemCondition(['CHANGELOG4', 'CHANGELOG5']),
+          },
+        },
+        {
+          name: 'excerpt',
+          type: 'text',
+          localized: true,
+          admin: {
+            description: 'Short summary shown in list view; full description shown in dialog',
+            condition: createBlockItemCondition(['CHANGELOG6']),
+          },
+        },
+        {
+          name: 'contributors',
+          type: 'upload',
+          relationTo: 'media',
+          hasMany: true,
+          admin: {
+            description: 'Contributor avatar images',
+            condition: createBlockItemCondition(['CHANGELOG6']),
           },
         },
       ],

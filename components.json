@@ -16,6 +16,7 @@
     "utils": "@/utils"
   },
   "registries": {
+    "@aceternity": "https://ui.aceternity.com/registry/{name}.json",
     "@magicui": "https://magicui.design/r/{name}.json",
     "@shadcnblocks": {
       "url": "https://shadcnblocks.com/r/{name}.json",

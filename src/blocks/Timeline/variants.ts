@@ -13,4 +13,9 @@ export const variants: VariantManifest = {
     previewImage: '/admin/previews/timeline/timeline8.webp',
     fields: [],
   },
+  TIMELINE14: {
+    label: 'TIMELINE14',
+    previewImage: '/admin/previews/timeline/timeline14.webp',
+    fields: [],
+  },
 }
