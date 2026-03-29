@@ -1,0 +1,27 @@
+{
+  "eval_id": 2,
+  "eval_name": "truststrip-icons-array",
+  "prompt": "convert src/components/trust-strip1.tsx",
+  "assertions": [
+    {
+      "id": "all-four-files-exist",
+      "description": "All 4 block files created: config.ts, variants.ts, Component.tsx, trust-strip1.tsx"
+    },
+    {
+      "id": "no-lucide-item-imports",
+      "description": "trust-strip1.tsx does not import Truck, RotateCcw, Shield, Star from lucide-react (moved to Icon field)"
+    },
+    {
+      "id": "uses-icon-component",
+      "description": "trust-strip1.tsx uses <Icon component for item icons"
+    },
+    {
+      "id": "config-has-icon-field",
+      "description": "config.ts items array has an icon() sub-field"
+    },
+    {
+      "id": "no-hardcoded-items",
+      "description": "trust-strip1.tsx does not contain hardcoded item data (Free Shipping, Easy Returns, etc.)"
+    }
+  ]
+}
