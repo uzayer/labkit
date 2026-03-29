@@ -10,9 +10,10 @@ type Contact<T extends string = string> = Required<Record<ContactDesignVersion, 
 
 const contact: Contact = {
   CONTACT1: Contact1,
-  CONTACT3: Contact3,
   CONTACT2: Contact2,
+  CONTACT3: Contact3,
   CONTACT4: Contact4,
+  CONTACT10: Contact10,
 }
 
 export const ContactBlock: React.FC<any> = (props) => {
