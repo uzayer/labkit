@@ -1,0 +1,23 @@
+{
+  "skill_name": "payload-block-converter",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "convert src/components/cta20.tsx",
+      "expected_output": "CTA20 variant added to the existing Cta block. src/blocks/Cta/cta20.tsx created using existing CtaBlock fields (tagline + links). variants.ts updated with CTA20 entry. Component.tsx updated to import and register Cta20. No new fields needed in config.ts since CTA20 reuses existing ones.",
+      "files": ["src/components/cta20.tsx"]
+    },
+    {
+      "id": 1,
+      "prompt": "convert src/components/industries1.tsx",
+      "expected_output": "Brand new Industries block created. src/blocks/Industries/ directory with variants.ts, config.ts, Component.tsx, industries1.tsx. The framer-motion animation code and 'use client' directive preserved. Industries1 receives IndustriesBlock props with: headline (richText for the h2 title), industryLabel (plain text), items array (name, description, image upload, url text). Registered in Pages/index.ts and RenderBlocks.tsx. pnpm generate:types run.",
+      "files": ["src/components/industries1.tsx"]
+    },
+    {
+      "id": 2,
+      "prompt": "convert src/components/trust-strip1.tsx",
+      "expected_output": "Brand new TrustStrip block created. src/blocks/TrustStrip/ directory with all four files. trust-strip1.tsx uses Icon component for per-item icons instead of hardcoded lucide imports. config.ts has an items array field with icon(), title (text), description (text) sub-fields. Registered in Pages/index.ts and RenderBlocks.tsx. pnpm generate:types run.",
+      "files": ["src/components/trust-strip1.tsx"]
+    }
+  ]
+}

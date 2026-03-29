@@ -29,6 +29,8 @@ export default defineConfig([
       '**/.vercel',
       'postcss.config.js',
       '**/payload-types.ts',
+      '**/.claude/**',
+      '**/.agents/**',
     ],
   },
   ...compat.config({
