@@ -54,6 +54,8 @@ import { ProductSpecsBlock } from '@/blocks/ProductSpecs/config'
 import { CareersBlock } from '@/blocks/Careers/config'
 import { TrustStripBlock } from '@/blocks/TrustStrip/config'
 import { IndustriesBlock } from '@/blocks/Industries/config'
+import { WaitlistBlock } from '@/blocks/Waitlist/config'
+import { WishlistBlock } from '@/blocks/Wishlist/config'
 
 export const PageBlocks: Block[] = [
   FeatureBlock, // keep during migration — existing pages with blockType:'feature' continue rendering
@@ -91,6 +93,8 @@ export const PageBlocks: Block[] = [
   CareersBlock,
   TrustStripBlock,
   IndustriesBlock,
+  WaitlistBlock,
+  WishlistBlock,
 ]
 
 export const Pages: CollectionConfig = {
