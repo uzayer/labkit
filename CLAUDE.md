@@ -26,6 +26,14 @@ pnpm backup:apply           # Import backup/pages.json → MongoDB
 
 No test framework is configured. Verify changes with `pnpm tsc` and `pnpm lint`.
 
+## Git Commit Guidelines
+
+**CRITICAL: NEVER add Claude or any AI assistant as a co-author in git commits.**
+
+Do not include `Co-Authored-By: Claude` or any similar attribution in commit messages. All commits should be authored solely by the human developer (Uzayer Masud).
+
+This is a strict policy. Violating it requires rewriting git history to remove the unwanted attributions.
+
 ## Architecture
 
 ### Core pattern: Hero + Layout Builder
