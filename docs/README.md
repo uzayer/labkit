@@ -31,6 +31,7 @@ Understanding-oriented explanations of how the system works.
 ### Development
 For contributors extending or modifying the system.
 - [Custom Blocks](./development/custom-blocks.md) - Add and modify blocks
+- [Code Smells](./development/code-smells.md) - Learn common smells in this codebase and refactoring approaches
 - [Block Registry](./development/block-registry.md) - Reference of all available blocks *(coming soon)*
 - [Contributing](./development/contributing.md) - Code style and contribution guidelines *(coming soon)*
 - [Troubleshooting](./development/troubleshooting.md) - Common development issues *(coming soon)*
