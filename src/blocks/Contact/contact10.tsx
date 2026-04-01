@@ -3,7 +3,7 @@ import RichText from '@/components/RichText'
 import { RenderBlocks } from '@/blocks/RenderBlocks'
 import type { ContactBlock } from '@/payload-types'
 import { PublicContextProps } from '@/utilities/publicContextProps'
-import { cn } from '@/utilities/ui'
+import { cn } from '@/utils'
 
 interface DashedLineProps {
   orientation?: 'horizontal' | 'vertical'
@@ -81,7 +81,6 @@ const Contact10: React.FC<ContactBlock & { publicContext: PublicContextProps }> 
                       h2: 'font-semibold',
                       h3: 'font-semibold',
                       p: 'text-muted-foreground mt-3',
-                      a: 'text-muted-foreground hover:text-foreground',
                     }}
                   />
                 )}
