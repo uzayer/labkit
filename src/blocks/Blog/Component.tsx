@@ -3,6 +3,7 @@ import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 
 import { BlogDesignVersion } from './config'
+import { Blog14 } from './blog14'
 import { Blog29 } from './blog29'
 import { Post, Category } from '@/payload-types'
 import { PublicContextProps } from '@/utilities/publicContextProps'
@@ -31,6 +32,7 @@ export interface BlogBlockProps {
 }
 
 const blog: BlogContent = {
+  BLOG14: Blog14,
   BLOG29: Blog29,
 }
 
@@ -57,7 +59,6 @@ export const BlogBlock: React.FC<BlogBlockProps> = async (props) => {
 
   // Fetch posts based on populateBy approach
   if (populateBy === 'collection') {
-    // Fetch posts from collection with filters
     const payload = await getPayload({ config: configPromise })
 
     // Flatten categories for query

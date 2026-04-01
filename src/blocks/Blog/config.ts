@@ -2,7 +2,7 @@ import { Block } from 'payload'
 import { HeadingFeature, ParagraphFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
 import { linkGroup } from '@/fields/linkGroup'
-import { variantsToOptions } from '@/blocks/utils'
+import { variantsToOptions, applyVariantConditions } from '@/blocks/utils'
 import { variants } from './variants'
 
 export type BlogDesignVersion = keyof typeof variants
@@ -51,6 +51,16 @@ export const Blog: Block = {
         ],
       }),
     },
+    ...applyVariantConditions(variants, [
+      {
+        name: 'sectionLabel',
+        type: 'text',
+        localized: true,
+        admin: {
+          description: 'Label for the secondary posts grid (e.g. "Popular Posts")',
+        },
+      },
+    ]),
     {
       name: 'populateBy',
       type: 'select',
