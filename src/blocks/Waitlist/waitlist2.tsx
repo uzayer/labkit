@@ -10,7 +10,6 @@ import RichText from '@/components/RichText'
 import type { WaitlistBlock } from '@/payload-types'
 import type { Media as MediaType } from '@/payload-types'
 import { PublicContextProps } from '@/utilities/publicContextProps'
-import { RenderBlocks } from '@/blocks/RenderBlocks'
 
 const CountdownTimer = ({ targetDate }: { targetDate: string }) => {
   const [timeLeft, setTimeLeft] = useState({
@@ -67,16 +66,9 @@ const CountdownTimer = ({ targetDate }: { targetDate: string }) => {
   )
 }
 
-const Waitlist2: React.FC<WaitlistBlock & { publicContext: PublicContextProps }> = ({
-  headline,
-  text1,
-  label1,
-  label2,
-  label3,
-  images,
-  form,
-  publicContext,
-}) => {
+const Waitlist2: React.FC<
+  WaitlistBlock & { publicContext: PublicContextProps; renderedForm?: React.ReactNode }
+> = ({ headline, text1, label1, label2, label3, images, publicContext, renderedForm }) => {
   const logo = typeof images?.[0] === 'object' ? images[0] : null
   const avatarImages =
     images?.slice(1)?.filter((img): img is MediaType => typeof img === 'object') || []
@@ -136,11 +128,7 @@ const Waitlist2: React.FC<WaitlistBlock & { publicContext: PublicContextProps }>
             )}
           </div>
 
-          {form && form[0]?.form && (
-            <div className="mt-8 w-full max-w-md">
-              <RenderBlocks blocks={form} publicContext={publicContext} disableContainer />
-            </div>
-          )}
+          {renderedForm && <div className="mt-8 w-full max-w-md">{renderedForm}</div>}
 
           {(avatarImages.length > 0 || label1) && (
             <div className="mt-4 flex items-center">
