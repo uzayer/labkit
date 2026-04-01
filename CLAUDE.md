@@ -30,7 +30,7 @@ No test framework is configured. Verify changes with `pnpm tsc` and `pnpm lint`.
 
 **CRITICAL: NEVER add Claude or any AI assistant as a co-author in git commits.**
 
-Do not include `Co-Authored-By: Claude` or any similar attribution in commit messages. All commits should be authored solely by the human developer (Uzayer Masud).
+Do not include `Co-Authored-By: Claude` or any similar attribution in commit messages. All commits should be authored solely by the human developer.
 
 This is a strict policy. Violating it requires rewriting git history to remove the unwanted attributions.
 
@@ -58,7 +58,7 @@ Globals: **ThemeConfig, Header, Footer, PageConfig, LabInfo**.
 
 ### Access control
 
-Role-based via `Users` ↔ `Roles` (many-to-many). Permission flags: `canManageContent`, `canPublish`, `canManageUsers`, `canManageRedirects`. Use `hasPermission()` from `src/utilities/checkPermission.ts`.
+Role-based via `Users` ↔ `Roles` (many-to-many). Permission flags: `canManageContent`, `canPublish`, `canManageUsers`, `canManageRedirects`. Use `hasPermission()` from `srctilities/checkPermission.ts`.
 
 **Gotcha:** Roles must be **populated** (not string IDs) for permission checks to work. The system warns on string IDs.
 
@@ -100,7 +100,9 @@ Node: `^18.20.2 || ^20.9.0 || ^22.0.0 || ^23.6.0 || ^24.6.0` — pnpm 9.15.9 (en
 
 IMPORTANT: Always use Context7 MCP tools for code generation, setup, or library/API documentation — resolve library IDs and fetch docs automatically without being asked.
 
-Library IDs: PayloadCMS `/payloadcms/payload`, Next.js `/vercel/next.js`, React `/facebook/react`, Tailwind CSS `/websites/tailwindcss`, MongoDB `/mongodb/mongo`.
+Library IDs: Next.js `/vercel/next.js`, React `/facebook/react`, Tailwind CSS `/websites/tailwindcss`, MongoDB `/mongodb/mongo`.
+
+**PayloadCMS:** Use the `payload` skill instead of Context7 — it has bundled reference docs (fields, hooks, access control, queries, adapters) that are faster and more targeted than ctx7 lookups.
 
 ## Further reading
 
