@@ -317,6 +317,21 @@ Preview image download failed for <name>. Add it manually:
 pnpm generate:types
 ```
 
+### 8c — Validate the build
+
+Run each command in sequence. If a command surfaces errors in files you created or modified,
+fix them before moving to the next command. Pre-existing errors in files you didn't touch
+can be ignored.
+
+1. **Type-check:** `pnpm tsc` — fix any type errors in the new/modified block files
+2. **Lint + auto-fix:** `pnpm lint:fix` — auto-fix what it can, manually fix the rest
+3. **Format:** `pnpm format` — run Prettier so the new files match project style
+4. **Build:** `pnpm build` — full Next.js build to catch anything tsc alone misses (e.g.
+   Payload config resolution, import map issues)
+
+If the build fails on something unrelated to your changes (e.g. a pre-existing error in an
+unrelated page), note it for the user but don't block on it.
+
 Tell the user which files were created/modified and what the variant key(s) are.
 
 ---
