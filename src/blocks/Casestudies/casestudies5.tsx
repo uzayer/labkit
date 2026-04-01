@@ -33,7 +33,9 @@ const Casestudies5: React.FC<CasestudiesBlock> = ({ slides }) => {
     }
   }, [carouselApi])
 
-  const renderGrid = (images: (typeof slides)[0]['images']) => {
+  if (!slides || slides.length === 0) return null
+
+  const renderGrid = (images: (typeof slides)[number]['images']) => {
     return (
       <div className="grid h-full w-full grid-cols-3 grid-rows-3 gap-3 p-3">
         {Array.from({ length: 9 }).map((_, index) => {
