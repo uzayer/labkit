@@ -310,6 +310,37 @@ const Publications: CollectionConfig = {
                   ],
                 },
                 {
+                  type: 'row',
+                  fields: [
+                    {
+                      name: 'publisher',
+                      type: 'text',
+                      admin: {
+                        placeholder: 'e.g., ACM, Springer',
+                        width: '50%',
+                      },
+                    },
+                    {
+                      name: 'series',
+                      type: 'text',
+                      admin: {
+                        placeholder: 'e.g., LNCS 12345',
+                        width: '50%',
+                        description: 'Conference or book series',
+                      },
+                    },
+                  ],
+                },
+                {
+                  name: 'editor',
+                  type: 'text',
+                  admin: {
+                    description:
+                      'Editor(s) of the volume — for book chapters (BibTeX format: "Last, First and Last, First")',
+                    condition: (data) => data?.type === 'book-chapter',
+                  },
+                },
+                {
                   name: 'citationText',
                   type: 'text',
                   admin: {
