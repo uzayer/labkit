@@ -61,7 +61,7 @@ export const AboutBlock: Block = {
       hasMany: true,
       admin: {
         description:
-          'Images are used in order: ABOUT1 — [0] full-cover photo (left card), [1] background image behind text (right card); ABOUT3 — [0] hero, [1] card logo, [2] side; ABOUT4 — all images in grid; ABOUT18 — [0] left (desaturated), [1] right',
+          'Images are used in order: ABOUT1 — [0] full-cover photo (left card), [1] background image behind text (right card); ABOUT2 — [0–2] top row (5/4/3 cols), [3–5] lower section; ABOUT3 — [0] hero, [1] card logo, [2] side; ABOUT4 — all images in grid; ABOUT18 — [0] left (desaturated), [1] right',
       },
     },
 
