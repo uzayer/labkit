@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic'
 import React from 'react'
 
 const features: Record<string, React.ComponentType<any>> = {
-  FEATURE1: dynamic(() => import('@/blocks/Feature/feature1')),
+  FEATUREHERO1: dynamic(() => import('./featurehero1')),
 }
 
 export const FeatureHeroBlock: React.FC<any> = (props) => {
