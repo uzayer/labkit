@@ -31,12 +31,24 @@ const Navbar4: React.FC<{ header: HeaderType; publicContext: PublicContextProps 
   return (
     <section className="bg-background inset-x-0 top-0 z-50">
       <div className="container">
+        {/*
+          `relative` + `min-w-full` replace the original's `[&>div:last-child]:left-auto` hack.
+          The shadcn viewport wrapper is `absolute top-full left-0` relative to this root.
+          With `max-w-max` (the shadcn default), the root collapses to fit its triggers, so
+          `left-auto` was needed to shift the dropdown rightward. With `min-w-full` the root
+          is already full container-width, so `left: 0` anchors correctly and `left-auto`
+          would misalign it. `z-50` overrides the default `z-10` for proper stacking.
+        */}
         <NavigationMenu className="relative z-50 min-w-full">
           <div className="flex w-full justify-between gap-2 py-4">
             <CMSLink publicContext={publicContext} url={'/'} className="flex items-center gap-2">
               <Media resource={header.logo} className="h-9" imgClassName="h-full w-auto" priority />
             </CMSLink>
             <div className="flex items-center gap-2 xl:gap-8">
+              {/*
+                No `gap-0` here unlike the original. shadcn's NavigationMenuList uses
+                `space-x-1` (margin-based), not `gap`, so adding `gap-0` is a no-op.
+              */}
               <NavigationMenuList className="hidden lg:flex">
                 {navItems.map((item) => {
                   if (item.blockType === 'link') {
@@ -108,6 +120,12 @@ const Navbar4: React.FC<{ header: HeaderType; publicContext: PublicContextProps 
           </div>
 
           {/* Mobile Menu */}
+          {/*
+            `overflow-scroll` (not `overflow-auto`) is intentional: on iOS Safari,
+            `overflow-auto` inside a `fixed` container doesn't trigger native momentum
+            scrolling. `overflow-scroll` forces the element to always be a scroll
+            container, enabling rubber-band touch scrolling on iOS.
+          */}
           {open && (
             <div className="border-border bg-background fixed inset-0 top-[72px] flex h-[calc(100vh-72px)] w-full flex-col overflow-scroll border-t lg:hidden">
               {submenu && (
