@@ -11,12 +11,8 @@ import {
 import { Block } from 'payload'
 import { backgroundColor } from '@/fields/color'
 import { createBlockItemCondition } from '@/utilities/findParentFeatureVersion'
-
-const featureSpecialOptions = [
-  { label: 'FEATURE19', value: 'FEATURE19', image: '/admin/previews/feature/feature19.webp' },
-  { label: 'FEATURE114', value: 'FEATURE114', image: '/admin/previews/feature/feature114.webp' },
-  { label: 'FEATURE250', value: 'FEATURE250', image: '/admin/previews/feature/feature250.webp' },
-] as const
+import { variantsToOptions } from '@/blocks/utils'
+import { variants } from './variants'
 
 export const FeatureSpecialBlock: Block = {
   slug: 'feature-special',
@@ -27,7 +23,7 @@ export const FeatureSpecialBlock: Block = {
   },
   fields: [
     backgroundColor,
-    designVersionPreview(featureSpecialOptions),
+    designVersionPreview(variantsToOptions(variants)),
 
     {
       name: 'richText',
