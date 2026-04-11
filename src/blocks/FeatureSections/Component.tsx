@@ -1,0 +1,90 @@
+import dynamic from 'next/dynamic'
+import React from 'react'
+
+const features: Record<string, React.ComponentType<any>> = {
+  FEATURE2: dynamic(() => import('./feature2')),
+  FEATURE3: dynamic(() => import('./feature3')),
+  FEATURE4: dynamic(() => import('./feature4')),
+  FEATURE5: dynamic(() => import('./feature5')),
+  FEATURE6: dynamic(() => import('./feature6')),
+  FEATURE7: dynamic(() => import('./feature7')),
+  FEATURE8: dynamic(() => import('./feature8')),
+  FEATURE9: dynamic(() => import('./feature9')),
+  FEATURE10: dynamic(() => import('./feature10')),
+  FEATURE11: dynamic(() => import('./feature11')),
+  FEATURE13: dynamic(() => import('./feature13')),
+  FEATURE14: dynamic(() => import('./feature14')),
+  FEATURE15: dynamic(() => import('./feature15')),
+  FEATURE16: dynamic(() => import('./feature16')),
+  FEATURE17: dynamic(() => import('./feature17')),
+  FEATURE18: dynamic(() => import('./feature18')),
+  FEATURE20: dynamic(() => import('./feature20')),
+  FEATURE21: dynamic(() => import('./feature21')),
+  FEATURE22: dynamic(() => import('./feature22')),
+  FEATURE23: dynamic(() => import('./feature23')),
+  FEATURE24: dynamic(() => import('./feature24')),
+  FEATURE26: dynamic(() => import('./feature26')),
+  FEATURE27: dynamic(() => import('./feature27')),
+  FEATURE28: dynamic(() => import('./feature28')),
+  FEATURE29: dynamic(() => import('./feature29')),
+  FEATURE30: dynamic(() => import('./feature30')),
+  FEATURE31: dynamic(() => import('./feature31')),
+  FEATURE32: dynamic(() => import('./feature32')),
+  FEATURE33: dynamic(() => import('./feature33')),
+  FEATURE34: dynamic(() => import('./feature34')),
+  FEATURE35: dynamic(() => import('./feature35')),
+  FEATURE36: dynamic(() => import('./feature36')),
+  FEATURE37: dynamic(() => import('./feature37')),
+  FEATURE38: dynamic(() => import('./feature38')),
+  FEATURE39: dynamic(() => import('./feature39')),
+  FEATURE41: dynamic(() => import('./feature41')),
+  FEATURE42: dynamic(() => import('./feature42')),
+  FEATURE43: dynamic(() => import('./feature43')),
+  FEATURE44: dynamic(() => import('./feature44')),
+  FEATURE55: dynamic(() => import('./feature55')),
+  FEATURE56: dynamic(() => import('./feature56')),
+  FEATURE58: dynamic(() => import('./feature58')),
+  FEATURE59: dynamic(() => import('./feature59')),
+  FEATURE60: dynamic(() => import('./feature60')),
+  FEATURE61: dynamic(() => import('./feature61')),
+  FEATURE62: dynamic(() => import('./feature62')),
+  FEATURE63: dynamic(() => import('./feature63')),
+  FEATURE64: dynamic(() => import('./feature64')),
+  FEATURE65: dynamic(() => import('./feature65')),
+  FEATURE66: dynamic(() => import('./feature66')),
+  FEATURE67: dynamic(() => import('./feature67')),
+  FEATURE71: dynamic(() => import('./feature71')),
+  FEATURE73: dynamic(() => import('./feature73')),
+  FEATURE74: dynamic(() => import('./feature74')),
+  FEATURE75: dynamic(() => import('./feature75')),
+  FEATURE76: dynamic(() => import('./feature76')),
+  FEATURE77: dynamic(() => import('./feature77')),
+  FEATURE79: dynamic(() => import('./feature79')),
+  FEATURE80: dynamic(() => import('./feature80')),
+  FEATURE82: dynamic(() => import('./feature82')),
+  FEATURE83: dynamic(() => import('./feature83')),
+  FEATURE85: dynamic(() => import('./feature85')),
+  FEATURE86: dynamic(() => import('./feature86')),
+  FEATURE87: dynamic(() => import('./feature87')),
+  FEATURE89: dynamic(() => import('./feature89')),
+  FEATURE92: dynamic(() => import('./feature92')),
+  FEATURE93: dynamic(() => import('./feature93')),
+  FEATURE94: dynamic(() => import('./feature94')),
+  FEATURE98: dynamic(() => import('./feature98')),
+  FEATURE101: dynamic(() => import('./feature101')),
+  FEATURE104: dynamic(() => import('./feature104')),
+  FEATURE107: dynamic(() => import('./feature107')),
+  FEATURE109: dynamic(() => import('./feature109')),
+}
+
+export const FeatureSectionsBlock: React.FC<any> = (props) => {
+  if (props.blockType !== 'feature-sections') return null
+
+  const { designVersion } = props || {}
+  if (!designVersion) return null
+
+  const F = features[designVersion]
+  if (!F) return null
+
+  return <F {...props} />
+}
