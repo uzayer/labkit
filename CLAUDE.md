@@ -111,4 +111,3 @@ Library IDs: Next.js `/vercel/next.js`, React `/facebook/react`, Tailwind CSS `/
 - @docs/architecture/theming-system.md — theming implementation
 - @docs/guides/forms.md — form submissions system, wiring standalone forms to Payload
 - @docs/security-issues.md — security audit findings
-- Template docs: https://docs.shadcnblocks.com/payload/getting-started/

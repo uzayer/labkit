@@ -17,7 +17,6 @@ To spin up this project locally, follow these steps.
 After cloning your repo, make sure you install the correct package manager version by enabling Corepack. In your repo console, run:
 
 ```bash
-npm install corepack
 corepack enable
 pnpm -v
 ```

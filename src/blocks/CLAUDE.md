@@ -12,7 +12,7 @@ These are shadcnblocks page-builder blocks. Every block with a `designVersion` f
 Single-template blocks from Payload's website template or shadcnblocks base: `ArchiveBlock`, `Code`, `Form`, `MediaBlock`, `RelatedPosts`, `TextBlock`, `SplitView`. Their select fields configure behavior, not visual variants — do not add `variants.ts`.
 
 **Pattern D — Legacy / decommission**
-`Feature/` is being replaced by `FeatureHero/`, `FeatureList/`, `FeatureMedia/`, `FeatureSpecial/`. Do not add variants to `Feature/`. Delete it after all pages are migrated.
+`Feature/` keeps only `Component.tsx` + `config.tsx` (legacy `blockType: 'feature'` dispatcher). Variant `.tsx` files live under `FeatureHero/`, `FeatureList/`, `FeatureMedia/`, `FeatureSpecial/`, or `FeatureSections/` (default marketing feature layouts that are not list-, media-, or special-shaped). Do not add new variant files under `Feature/`. Delete the legacy dispatcher after pages are migrated off `blockType: 'feature'`.
 
 ---
 
