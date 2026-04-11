@@ -2,15 +2,14 @@ import dynamic from 'next/dynamic'
 import React from 'react'
 
 const features: Record<string, React.ComponentType<any>> = {
-  FEATURE50: dynamic(() => import('@/blocks/Feature/feature50')),
-  FEATURE53: dynamic(() => import('@/blocks/Feature/feature53')),
-  FEATURE57: dynamic(() => import('@/blocks/Feature/feature57')),
-  FEATURE70: dynamic(() => import('@/blocks/Feature/feature70')),
-  FEATURE72: dynamic(() => import('@/blocks/Feature/feature72')),
-  FEATURE102: dynamic(() => import('@/blocks/Feature/feature102')),
-  FEATURE105: dynamic(() => import('@/blocks/Feature/feature105')),
-  FEATURE117: dynamic(() => import('@/blocks/Feature/feature117')),
-  FEATURE126: dynamic(() => import('@/blocks/Feature/feature126')),
+  FEATURE1: dynamic(() => import('./feature1')),
+  FEATURE50: dynamic(() => import('./feature50')),
+  FEATURE53: dynamic(() => import('./feature53')),
+  FEATURE72: dynamic(() => import('./feature72')),
+  FEATURE81: dynamic(() => import('./feature81')),
+  FEATURE90: dynamic(() => import('./feature90')),
+  FEATURE102: dynamic(() => import('./feature102')),
+  FEATURE117: dynamic(() => import('./feature117')),
 }
 
 export const FeatureMediaBlock: React.FC<any> = (props) => {

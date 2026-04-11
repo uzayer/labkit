@@ -14,18 +14,8 @@ import {
 import { Block } from 'payload'
 import { backgroundColor } from '@/fields/color'
 import { createBlockItemCondition } from '@/utilities/findParentFeatureVersion'
-
-const featureMediaOptions = [
-  { label: 'FEATURE50', value: 'FEATURE50', image: '/admin/previews/feature/feature50.webp' },
-  { label: 'FEATURE53', value: 'FEATURE53', image: '/admin/previews/feature/feature53.webp' },
-  { label: 'FEATURE57', value: 'FEATURE57', image: '/admin/previews/feature/feature57.webp' },
-  { label: 'FEATURE70', value: 'FEATURE70', image: '/admin/previews/feature/feature70.webp' },
-  { label: 'FEATURE72', value: 'FEATURE72', image: '/admin/previews/feature/feature72.webp' },
-  { label: 'FEATURE102', value: 'FEATURE102', image: '/admin/previews/feature/feature102.webp' },
-  { label: 'FEATURE105', value: 'FEATURE105', image: '/admin/previews/feature/feature105.webp' },
-  { label: 'FEATURE117', value: 'FEATURE117', image: '/admin/previews/feature/feature117.webp' },
-  { label: 'FEATURE126', value: 'FEATURE126', image: '/admin/previews/feature/feature126.webp' },
-] as const
+import { variantsToOptions } from '@/blocks/utils'
+import { variants } from './variants'
 
 export const FeatureMediaBlock: Block = {
   slug: 'feature-media',
@@ -36,7 +26,7 @@ export const FeatureMediaBlock: Block = {
   },
   fields: [
     backgroundColor,
-    designVersionPreview(featureMediaOptions),
+    designVersionPreview(variantsToOptions(variants)),
 
     {
       name: 'badge',
