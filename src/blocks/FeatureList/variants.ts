@@ -8,6 +8,11 @@ export const variants: VariantManifest = {
     previewImage: '/admin/previews/feature/feature25.webp',
     fields: [],
   },
+  FEATURE68: {
+    label: 'FEATURE68',
+    previewImage: '/admin/previews/feature/feature68.webp',
+    fields: [],
+  },
   FEATURE91: {
     label: 'FEATURE91',
     previewImage: '/admin/previews/feature/feature91.webp',

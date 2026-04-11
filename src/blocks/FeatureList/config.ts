@@ -14,15 +14,8 @@ import {
 import { Block } from 'payload'
 import { backgroundColor } from '@/fields/color'
 import { createBlockItemCondition } from '@/utilities/findParentFeatureVersion'
-
-const featureListOptions = [
-  { label: 'FEATURE25', value: 'FEATURE25', image: '/admin/previews/feature/feature25.webp' },
-  { label: 'FEATURE91', value: 'FEATURE91', image: '/admin/previews/feature/feature91.webp' },
-  { label: 'FEATURE97', value: 'FEATURE97', image: '/admin/previews/feature/feature97.webp' },
-  { label: 'FEATURE99', value: 'FEATURE99', image: '/admin/previews/feature/feature99.webp' },
-  { label: 'FEATURE103', value: 'FEATURE103', image: '/admin/previews/feature/feature103.webp' },
-  { label: 'FEATURE159', value: 'FEATURE159', image: '/admin/previews/feature/feature159.webp' },
-] as const
+import { variantsToOptions } from '@/blocks/utils'
+import { variants } from './variants'
 
 export const FeatureListBlock: Block = {
   slug: 'feature-list',
@@ -33,7 +26,7 @@ export const FeatureListBlock: Block = {
   },
   fields: [
     backgroundColor,
-    designVersionPreview(featureListOptions),
+    designVersionPreview(variantsToOptions(variants)),
 
     {
       name: 'tagline',
