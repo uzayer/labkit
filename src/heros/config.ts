@@ -69,6 +69,7 @@ export const allHeroDesignVersions = [
   { label: 'HERO220', value: '220', image: '/admin/previews/hero/hero220.jpeg' },
   { label: 'HERO214', value: '214', image: '/admin/previews/hero/hero214.webp' },
   { label: 'HERO219', value: '219', image: '/admin/previews/hero/hero219.webp' },
+  { label: 'HERO262', value: '262', image: '/admin/previews/hero/hero262.webp' },
 ] as const
 
 export type HeroDesignVersion = (typeof allHeroDesignVersions)[number]
@@ -136,7 +137,7 @@ export const hero: Field = {
       localized: true,
       admin: {
         condition: (_, { designVersion = '' } = {}) =>
-          ['1', '2', '3', '4', '5', '6', '12', '101', '112', '195', '214', '219'].includes(
+          ['1', '2', '3', '4', '5', '6', '12', '101', '112', '195', '214', '219', '262'].includes(
             designVersion,
           ),
       },
@@ -151,6 +152,28 @@ export const hero: Field = {
             FixedToolbarFeature(),
             InlineToolbarFeature(),
           ]
+        },
+      }),
+      label: false,
+    },
+    {
+      name: 'subheading',
+      type: 'text',
+      localized: true,
+      admin: {
+        condition: (_, { designVersion = '' } = {}) => ['262'].includes(designVersion),
+      },
+    },
+    {
+      name: 'description',
+      type: 'richText',
+      localized: true,
+      admin: {
+        condition: (_, { designVersion = '' } = {}) => ['262'].includes(designVersion),
+      },
+      editor: lexicalEditor({
+        features: ({ rootFeatures }) => {
+          return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
         },
       }),
       label: false,
@@ -255,9 +278,9 @@ export const hero: Field = {
       label: 'Stats Items',
       type: 'array',
       admin: {
-        condition: (_, { designVersion = '' } = {}) => ['112'].includes(designVersion),
+        condition: (_, { designVersion = '' } = {}) => ['112', '262'].includes(designVersion),
       },
-      maxRows: 3,
+      maxRows: 4,
       defaultValue: [
         {
           title: 'Courses by Experts',
