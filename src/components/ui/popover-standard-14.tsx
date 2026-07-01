@@ -1,4 +1,5 @@
-import { Copy, Facebook, Share2, Twitter } from 'lucide-react'
+import { Copy, Share2 } from 'lucide-react'
+import { FacebookIcon as Facebook, XIcon as Twitter } from '@/components/SimpleIcon'
 
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'

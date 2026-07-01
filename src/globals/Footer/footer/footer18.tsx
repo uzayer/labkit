@@ -1,15 +1,12 @@
 'use client'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { ArrowRight, ChevronDown, Cookie, Languages } from 'lucide-react'
 import {
-  ArrowRight,
-  ChevronDown,
-  Cookie,
-  Facebook,
-  Github,
-  Languages,
-  Linkedin,
-  Twitter,
-} from 'lucide-react'
+  FacebookIcon as Facebook,
+  GithubIcon as Github,
+  LinkedInIcon as Linkedin,
+  XIcon as Twitter,
+} from '@/components/SimpleIcon'
 import { Controller, useForm } from 'react-hook-form'
 import { z } from 'zod'
 

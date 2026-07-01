@@ -1,6 +1,11 @@
 'use client'
 
-import { Github, Globe, GraduationCap, Linkedin, Twitter } from 'lucide-react'
+import { Globe, GraduationCap } from 'lucide-react'
+import {
+  GithubIcon as Github,
+  LinkedInIcon as Linkedin,
+  XIcon as Twitter,
+} from '@/components/SimpleIcon'
 import type { Team } from '@/payload-types'
 
 import { Avatar, AvatarFallback /* , AvatarImage */ } from '@/components/ui/avatar'

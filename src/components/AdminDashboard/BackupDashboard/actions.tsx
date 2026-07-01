@@ -160,12 +160,12 @@ export async function restoreBackup(
         })
     }
   }
-  revalidateTag('global_footer')
-  revalidateTag('global_header')
-  revalidateTag('global_page-config')
-  revalidateTag('global_pageConfig')
-  revalidateTag('global_theme-Config')
-  revalidateTag('global_themeConfig')
+  revalidateTag('global_footer', 'max')
+  revalidateTag('global_header', 'max')
+  revalidateTag('global_page-config', 'max')
+  revalidateTag('global_pageConfig', 'max')
+  revalidateTag('global_theme-Config', 'max')
+  revalidateTag('global_themeConfig', 'max')
   revalidatePath('/admin')
   redirect('/admin/logout')
 }

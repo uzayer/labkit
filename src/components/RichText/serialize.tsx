@@ -114,7 +114,7 @@ export type NodeTypes =
     >
 
 export type OverrideStyle = Partial<
-  Record<'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'li', string>
+  Record<'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'li' | 'a', string>
 >
 
 type Props = {
@@ -382,8 +382,11 @@ export function serializeLexical({
                 </blockquote>
               )
             }
-            case 'link': {
+            case 'link':
+            case 'autolink': {
               const fields = node.fields
+              const linkClassName =
+                mergedStyles?.a ?? 'text-muted-foreground transition-colors hover:underline'
 
               return (
                 <CMSLink
@@ -394,7 +397,7 @@ export function serializeLexical({
                   type={fields.linkType === 'internal' ? 'reference' : 'custom'}
                   url={fields.url}
                   appearance="inline"
-                  className="text-muted-foreground transition-colors hover:underline"
+                  className={linkClassName}
                 >
                   {serializedChildren}
                 </CMSLink>

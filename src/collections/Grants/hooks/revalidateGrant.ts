@@ -15,7 +15,7 @@ export const revalidateGrant: CollectionAfterChangeHook<Grant> = ({
       payload.logger.info(`Revalidating grant at path: ${path}`)
 
       revalidatePath(path)
-      revalidateTag('grants-sitemap')
+      revalidateTag('grants-sitemap', 'max')
     }
 
     // If the grant was previously published, we need to revalidate the old path
@@ -25,7 +25,7 @@ export const revalidateGrant: CollectionAfterChangeHook<Grant> = ({
       payload.logger.info(`Revalidating old grant at path: ${oldPath}`)
 
       revalidatePath(oldPath)
-      revalidateTag('grants-sitemap')
+      revalidateTag('grants-sitemap', 'max')
     }
   }
 

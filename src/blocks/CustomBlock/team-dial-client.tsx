@@ -2,7 +2,12 @@
 
 import { useMemo, useState } from 'react'
 import { TabsTrigger } from '@radix-ui/react-tabs'
-import { SearchIcon, Github, Linkedin, Twitter, GraduationCap, Globe } from 'lucide-react'
+import { SearchIcon, GraduationCap, Globe } from 'lucide-react'
+import {
+  GithubIcon as Github,
+  LinkedInIcon as Linkedin,
+  XIcon as Twitter,
+} from '@/components/SimpleIcon'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'

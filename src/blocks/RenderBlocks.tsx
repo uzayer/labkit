@@ -2,7 +2,6 @@ import React, { Fragment } from 'react'
 
 import type { Page } from '@/payload-types'
 
-import { ArchiveBlock } from '@/blocks/ArchiveBlock/Component'
 import { FormBlock } from '@/blocks/Form/Component'
 import { FeatureBlock } from '@/blocks/Feature/Component'
 import { GalleryBlock } from './Gallery/Component'
@@ -42,7 +41,6 @@ import { WaitlistBlock } from './Waitlist/Component'
 import { WishlistBlock } from './Wishlist/Component'
 
 const blockComponents: Partial<Record<Page['layout'][0]['blockType'] | string, React.FC<any>>> = {
-  archive: ArchiveBlock,
   formBlock: FormBlock,
   feature: FeatureBlock, // keep during migration
   'feature-hero': FeatureHeroBlock,

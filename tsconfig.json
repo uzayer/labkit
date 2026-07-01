@@ -15,7 +15,7 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "incremental": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
@@ -24,6 +24,9 @@
     "plugins": [
       {
         "name": "next"
+      },
+      {
+        "name": "@payloadcms/typescript-plugin"
       }
     ],
     "paths": {
@@ -35,7 +38,7 @@
       ],
       "@/*": [
         "./src/*"
-      ],
+      ]
     }
   },
   "include": [
@@ -43,7 +46,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "redirects.js",
-    "next.config.js"
+    "next.config.js",
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

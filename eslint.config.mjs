@@ -1,12 +1,9 @@
 import { defineConfig } from 'eslint/config'
-import { FlatCompat } from '@eslint/eslintrc'
+import nextVitals from 'eslint-config-next/core-web-vitals'
+import nextTs from 'eslint-config-next/typescript'
 import unusedImports from 'eslint-plugin-unused-imports'
 
 const __dirname = new URL('.', import.meta.url).pathname
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-})
 
 // https://nextjs.org/docs/app/api-reference/config/eslint#with-core-web-vitals
 export default defineConfig([
@@ -31,11 +28,12 @@ export default defineConfig([
       '**/payload-types.ts',
       '**/.claude/**',
       '**/.agents/**',
+      'payblocks-2.12.1/**',
+      '**/payblocks-2.12.1/**',
     ],
   },
-  ...compat.config({
-    extends: ['next/core-web-vitals', 'next/typescript'],
-  }),
+  ...nextVitals,
+  ...nextTs,
   {
     languageOptions: {
       parserOptions: {
