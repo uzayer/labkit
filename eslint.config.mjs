@@ -10,6 +10,7 @@ export default defineConfig([
   {
     ignores: [
       '.tmp',
+      'dial-test/**',
       '**/.git',
       '**/.hg',
       '**/.pnp.*',

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIAL Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..900;1,8..60,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  /* ── Brand palette ── */
+  --primary:   #002541;   /* oklch(0.16 0.065 255) */
+  --secondary: #004A80;   /* oklch(0.33 0.105 254) */
+  --accent:    #FF8E27;   /* oklch(0.73 0.175 52)  */
+
+  /* ── Primary (dark navy) scale — anchored to #002541 ── */
+  --n50:  oklch(0.97 0.010 255);
+  --n100: oklch(0.93 0.020 255);
+  --n200: oklch(0.86 0.042 255);
+  --n300: oklch(0.72 0.075 255);
+  --n400: oklch(0.55 0.095 255);
+  --n500: oklch(0.42 0.100 255);
+  --n600: oklch(0.33 0.105 254);   /* ≈ #004A80 secondary */
+  --n700: oklch(0.25 0.085 255);
+  --n800: #002541;                  /* ★ Primary */
+  --n900: oklch(0.12 0.045 255);
+  --n950: oklch(0.09 0.030 255);
+
+  /* ── Accent (orange) ── */
+  --accent-light: oklch(0.95 0.055 52);
+  --accent-dark:  oklch(0.58 0.155 52);
+
+  /* ── Semantic ── */
+  --bg:     oklch(0.99 0.006 255);
+  --fg:     #002541;
+  --card:   oklch(1.00 0.004 255);
+  --muted:  oklch(0.96 0.008 255);
+  --mfg:    oklch(0.48 0.030 255);
+  --border: oklch(0.90 0.010 255);
+}
+html, body { font-family: 'Source Sans 3', sans-serif; background: var(--bg); color: var(--fg); font-size: 14px; }
+.page { max-width: 1200px; margin: 0 auto; padding: 60px 40px 120px; }
+
+/* Header */
+.ds-header { display: flex; align-items: flex-end; justify-content: space-between; padding-bottom: 32px; border-bottom: 1px solid var(--border); margin-bottom: 64px; }
+.ds-header h1 { font-size: 13px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mfg); }
+.ds-header .name { font-size: 32px; font-weight: 600; letter-spacing: -0.015em; color: var(--fg); margin-top: 6px; font-family: 'Source Serif 4', serif; font-optical-sizing: auto; }
+.version { font-size: 11px; font-family: 'Geist Mono', monospace; color: var(--mfg); background: var(--muted); padding: 4px 10px; border-radius: 6px; }
+
+/* Sections */
+.section { margin-bottom: 72px; }
+.section-label { font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mfg); margin-bottom: 24px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+
+/* Color swatches */
+.swatch-row { display: flex; gap: 6px; }
+.swatch { flex: 1; }
+.swatch-chip { width: 100%; height: 72px; border-radius: 10px; border: 1px solid rgba(0,0,0,0.06); }
+.swatch-name { font-size: 10px; font-weight: 600; color: var(--mfg); margin-top: 6px; text-align: center; }
+.swatch-val { font-size: 9px; color: oklch(0.7 0.01 252); text-align: center; font-family: 'Geist Mono', monospace; }
+
+.semantic-row { display: grid; grid-template-columns: repeat(8, 1fr); gap: 10px; }
+.sem { }
+.sem-chip { width: 100%; height: 52px; border-radius: 10px; border: 1px solid rgba(0,0,0,0.06); }
+.sem-name { font-size: 10px; font-weight: 600; color: var(--mfg); margin-top: 6px; text-align: center; }
+
+/* Type specimens */
+.type-rows { display: flex; flex-direction: column; gap: 0; }
+.type-row { display: flex; align-items: baseline; gap: 20px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+.type-meta { font-size: 10px; font-family: 'Geist Mono', monospace; color: var(--mfg); min-width: 160px; flex-shrink: 0; line-height: 1.6; }
+.type-sample { color: var(--fg); }
+
+/* Radius */
+.radius-row { display: flex; gap: 20px; align-items: flex-end; flex-wrap: wrap; }
+.radius-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.radius-box { background: var(--n800); opacity: 0.12; border: 2px solid var(--n800); }
+.radius-label { font-size: 10px; font-weight: 600; color: var(--mfg); }
+.radius-val { font-size: 9px; font-family: 'Geist Mono', monospace; color: oklch(0.7 0.01 252); }
+
+/* Shadows */
+.shadow-row { display: flex; gap: 20px; align-items: flex-end; }
+.shadow-card { background: var(--card); border-radius: 16px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 12px; }
+.shadow-label { font-size: 10px; font-weight: 600; color: var(--mfg); text-align: center; margin-top: 10px; }
+.shadow-sub { font-size: 9px; color: oklch(0.7 0.01 252); text-align: center; font-family: 'Geist Mono', monospace; }
+
+/* Buttons */
+.btn-rows { display: flex; flex-direction: column; gap: 20px; }
+.btn-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.row-label { font-size: 10px; font-weight: 500; letter-spacing: 0.10em; text-transform: uppercase; color: var(--mfg); min-width: 80px; }
+button, .btn { font-family: 'Source Sans 3', sans-serif; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s; border: none; text-decoration: none; }
+.btn-primary   { background: #002541; color: #fff; border-radius: 9999px; padding: 11px 24px; font-size: 14px; font-weight: 700; }
+.btn-secondary { background: #004A80; color: #fff; border-radius: 9999px; padding: 11px 24px; font-size: 14px; font-weight: 700; }
+.btn-accent    { background: #FF8E27; color: #002541; border-radius: 9999px; padding: 11px 24px; font-size: 14px; font-weight: 700; }
+.btn-outline   { background: transparent; color: #002541; border: 1.5px solid #002541; border-radius: 9999px; padding: 10px 24px; font-size: 14px; font-weight: 600; }
+.btn-ghost     { background: transparent; color: #002541; border-radius: 9999px; padding: 8px 14px; font-size: 13px; font-weight: 500; }
+.btn-sm        { background: #002541; color: #fff; border-radius: 9999px; padding: 7px 18px; font-size: 12px; font-weight: 600; }
+.btn-icon      { background: var(--muted); color: #002541; border-radius: 9999px; width: 34px; height: 34px; padding: 0; font-size: 14px; justify-content: center; }
+
+/* Cards */
+.card-row { display: flex; gap: 16px; align-items: flex-start; }
+.ds-card { background: var(--card); border: 1px solid var(--border); border-radius: 28px; padding: 22px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+.ds-card-primary { background: var(--n800); border-radius: 28px; padding: 22px; color: var(--n50); }
+.ds-card-muted { background: var(--muted); border-radius: 24px; padding: 20px; }
+.icon-badge { width: 38px; height: 38px; border-radius: 14px; border: 1px solid var(--border); background: var(--bg); display: flex; align-items: center; justify-content: center; font-size: 15px; margin-bottom: 14px; }
+.card-title { font-family: 'Source Serif 4', serif; font-size: 14px; font-weight: 600; letter-spacing: -0.01em; color: var(--fg); font-optical-sizing: auto; }
+.card-body  { font-size: 12px; color: var(--mfg); margin-top: 6px; line-height: 1.6; }
+.card-arrow { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+
+/* Badges */
+.badge-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; }
+.badge { display: inline-flex; align-items: center; gap: 5px; border-radius: 9999px; font-size: 11px; font-weight: 500; padding: 4px 11px; }
+.tag   { display: inline-flex; align-items: center; border-radius: 8px; font-size: 11px; font-weight: 500; padding: 3px 9px; border: 1px solid; }
+
+/* Inputs */
+.input-row { display: flex; gap: 12px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 12px; }
+.field { display: flex; flex-direction: column; gap: 5px; }
+.field label { font-size: 11px; font-weight: 500; color: var(--n800); }
+input, select, textarea {
+  font-family: 'Source Sans 3', sans-serif; font-size: 13px;
+  padding: 9px 13px; border: 1px solid var(--border);
+  border-radius: 10px; background: var(--card); color: var(--fg);
+  outline: none;
+}
+input:focus, select:focus { border-color: var(--n400); box-shadow: 0 0 0 3px oklch(0.62 0.12 252 / 0.15); }
+
+/* Logo */
+.logo-row { display: flex; gap: 0; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); }
+.logo-bg { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 28px 20px; gap: 10px; }
+.logo-bg span { font-size: 9px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.45; }
+
+/* Spacing tokens */
+.spacing-row { display: flex; gap: 8px; align-items: flex-end; }
+.sp { display: flex; flex-direction: column; align-items: center; gap: 5px; }
+.sp-bar { background: var(--n800); opacity: 0.15; border-radius: 4px; width: 20px; }
+.sp-val { font-size: 9px; font-family: 'Geist Mono', monospace; color: var(--mfg); }
+
+/* Dark mode preview strip */
+.dark-strip { background: var(--n950); border-radius: 20px; padding: 28px 32px; display: flex; gap: 16px; align-items: center; margin-top: 20px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="ds-header">
+    <div>
+      <div class="ds-header h1">Design System</div>
+      <div class="ds-header name">DIAL — Design &amp; Inclusion Lab</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
+      <img src="assets/dial-logo.svg" alt="DIAL" style="height:20px">
+      <span class="version">v1.0 · Navy Blue · April 2026</span>
+    </div>
+  </div>
+
+  <!-- ── COLORS ───────────────────────────────── -->
+  <div class="section">
+    <div class="section-label">Colors — Brand Palette</div>
+
+    <!-- Three brand anchors -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px">
+      <div style="border-radius:16px;overflow:hidden;border:1px solid var(--border)">
+        <div style="height:80px;background:#002541"></div>
+        <div style="padding:14px 16px;background:var(--card)">
+          <div style="font-size:13px;font-weight:700;color:var(--fg)">Primary</div>
+          <div style="font-size:11px;font-family:'Geist Mono',monospace;color:var(--mfg);margin-top:3px">#002541</div>
+          <div style="font-size:10px;color:var(--mfg);margin-top:2px">oklch(0.16 0.065 255)</div>
+          <div style="font-size:10px;color:var(--mfg);margin-top:4px;line-height:1.5">Dark navy — buttons, headings, primary surfaces</div>
+        </div>
+      </div>
+      <div style="border-radius:16px;overflow:hidden;border:1px solid var(--border)">
+        <div style="height:80px;background:#004A80"></div>
+        <div style="padding:14px 16px;background:var(--card)">
+          <div style="font-size:13px;font-weight:700;color:var(--fg)">Secondary</div>
+          <div style="font-size:11px;font-family:'Geist Mono',monospace;color:var(--mfg);margin-top:3px">#004A80</div>
+          <div style="font-size:10px;color:var(--mfg);margin-top:2px">oklch(0.33 0.105 254)</div>
+          <div style="font-size:10px;color:var(--mfg);margin-top:4px;line-height:1.5">Mid navy — hover states, links, secondary actions</div>
+        </div>
+      </div>
+      <div style="border-radius:16px;overflow:hidden;border:1px solid var(--border)">
+        <div style="height:80px;background:#FF8E27"></div>
+        <div style="padding:14px 16px;background:var(--card)">
+          <div style="font-size:13px;font-weight:700;color:var(--fg)">Accent</div>
+          <div style="font-size:11px;font-family:'Geist Mono',monospace;color:var(--mfg);margin-top:3px">#FF8E27</div>
+          <div style="font-size:10px;color:var(--mfg);margin-top:2px">oklch(0.73 0.175 52)</div>
+          <div style="font-size:10px;color:var(--mfg);margin-top:4px;line-height:1.5">Orange — highlights, awards, CTAs on dark bg</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Full scale -->
+    <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--mfg);margin-bottom:12px">Primary Scale — anchored to #002541</div>
+    <div class="swatch-row">
+      <div class="swatch"><div class="swatch-chip" style="background:var(--n50)"></div><div class="swatch-name">50</div><div class="swatch-val">#EDF2F7</div></div>
+      <div class="swatch"><div class="swatch-chip" style="background:var(--n100)"></div><div class="swatch-name">100</div><div class="swatch-val">#DAEAF5</div></div>
+      <div class="swatch"><div class="swatch-chip" style="background:var(--n200)"></div><div class="swatch-name">200</div><div class="swatch-val">#B5D3E9</div></div>
+      <div class="swatch"><div class="swatch-chip" style="background:var(--n300)"></div><div class="swatch-name">300</div><div class="swatch-val">#7AAFC8</div></div>
+      <div class="swatch"><div class="swatch-chip" style="background:var(--n400)"></div><div class="swatch-name">400</div><div class="swatch-val">#4082A8</div></div>
+      <div class="swatch"><div class="swatch-chip" style="background:var(--n500)"></div><div class="swatch-name">500</div><div class="swatch-val">#205E84</div></div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#004A80;outline:2px solid oklch(0.55 0.095 255);outline-offset:2px"></div>
+        <div class="swatch-name" style="color:#004A80;font-weight:700">600 ★</div>
+        <div class="swatch-val">#004A80</div>
+      </div>
+      <div class="swatch"><div class="swatch-chip" style="background:var(--n700)"></div><div class="swatch-name">700</div><div class="swatch-val">#003360</div></div>
+      <div class="swatch">
+        <div class="swatch-chip" style="background:#002541;outline:2px solid #004A80;outline-offset:2px"></div>
+        <div class="swatch-name" style="color:#002541;font-weight:700">800 ★</div>
+        <div class="swatch-val">#002541</div>
+      </div>
+      <div class="swatch"><div class="swatch-chip" style="background:var(--n900)"></div><div class="swatch-name">900</div><div class="swatch-val">#001529</div></div>
+      <div class="swatch"><div class="swatch-chip" style="background:var(--n950)"></div><div class="swatch-name">950</div><div class="swatch-val">#000D1A</div></div>
+    </div>
+
+    <!-- Accent tints -->
+    <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--mfg);margin:24px 0 12px">Accent Scale — anchored to #FF8E27</div>
+    <div style="display:flex;gap:8px">
+      <div class="swatch" style="flex:none;width:80px"><div class="swatch-chip" style="background:#FFF4E8"></div><div class="swatch-name">50</div><div class="swatch-val">#FFF4E8</div></div>
+      <div class="swatch" style="flex:none;width:80px"><div class="swatch-chip" style="background:#FFE0B2"></div><div class="swatch-name">100</div><div class="swatch-val">#FFE0B2</div></div>
+      <div class="swatch" style="flex:none;width:80px"><div class="swatch-chip" style="background:#FFB74D"></div><div class="swatch-name">300</div><div class="swatch-val">#FFB74D</div></div>
+      <div class="swatch" style="flex:none;width:80px">
+        <div class="swatch-chip" style="background:#FF8E27;outline:2px solid #FFB74D;outline-offset:2px"></div>
+        <div class="swatch-name" style="color:#C96800;font-weight:700">500 ★</div>
+        <div class="swatch-val">#FF8E27</div>
+      </div>
+      <div class="swatch" style="flex:none;width:80px"><div class="swatch-chip" style="background:#E06400"></div><div class="swatch-name">700</div><div class="swatch-val">#E06400</div></div>
+      <div class="swatch" style="flex:none;width:80px"><div class="swatch-chip" style="background:#9C4400"></div><div class="swatch-name">900</div><div class="swatch-val">#9C4400</div></div>
+
+      <!-- Usage examples -->
+      <div style="margin-left:24px;display:flex;flex-direction:column;gap:8px;justify-content:center">
+        <div style="display:flex;gap:8px;align-items:center">
+          <div style="background:#002541;border-radius:9999px;padding:8px 18px;font-size:12px;font-weight:700;color:white;display:inline-flex;align-items:center;gap:6px">Explore research <span style="color:#FF8E27">→</span></div>
+          <div style="font-size:10px;color:var(--mfg)">Accent arrow on primary button</div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <span style="background:#FF8E27;border-radius:9999px;padding:4px 12px;font-size:11px;font-weight:700;color:#002541">🏆 Best Paper · CHI 2024</span>
+          <div style="font-size:10px;color:var(--mfg)">Accent badge on awards</div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <div style="background:#002541;border-radius:12px;padding:10px 16px;font-size:11px;color:white;display:flex;gap:10px;align-items:center"><span style="color:#FF8E27;font-size:16px">★</span><span>Award-winning HCI research</span></div>
+          <div style="font-size:10px;color:var(--mfg)">Accent icon on dark surface</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Semantic tokens -->
+    <div style="margin-top:28px">
+      <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--mfg);margin-bottom:14px">Semantic Tokens — Light</div>
+      <div class="semantic-row">
+        <div class="sem"><div class="sem-chip" style="background:var(--bg)"></div><div class="sem-name">background</div></div>
+        <div class="sem"><div class="sem-chip" style="background:#002541"></div><div class="sem-name">foreground</div></div>
+        <div class="sem"><div class="sem-chip" style="background:var(--card);border:1px solid var(--border)"></div><div class="sem-name">card</div></div>
+        <div class="sem"><div class="sem-chip" style="background:#002541"></div><div class="sem-name">primary</div></div>
+        <div class="sem"><div class="sem-chip" style="background:#004A80"></div><div class="sem-name">secondary</div></div>
+        <div class="sem"><div class="sem-chip" style="background:#FF8E27"></div><div class="sem-name">accent</div></div>
+        <div class="sem"><div class="sem-chip" style="background:var(--border)"></div><div class="sem-name">border</div></div>
+        <div class="sem"><div class="sem-chip" style="background:oklch(0.577 0.245 27.325)"></div><div class="sem-name">destructive</div></div>
+      </div>
+    </div>
+
+    <!-- Dark mode strip -->
+    <div class="dark-strip">
+      <div style="display:grid;grid-template-columns:repeat(8,1fr);gap:10px;width:100%">
+        <div class="sem"><div class="sem-chip" style="background:var(--n950);border:1px solid rgba(255,255,255,0.1)"></div><div class="sem-name" style="color:var(--n400)">background</div></div>
+        <div class="sem"><div class="sem-chip" style="background:var(--n50)"></div><div class="sem-name" style="color:var(--n400)">foreground</div></div>
+        <div class="sem"><div class="sem-chip" style="background:oklch(0.19 0.040 255)"></div><div class="sem-name" style="color:var(--n400)">card</div></div>
+        <div class="sem"><div class="sem-chip" style="background:var(--n300)"></div><div class="sem-name" style="color:var(--n400)">primary</div></div>
+        <div class="sem"><div class="sem-chip" style="background:#004A80"></div><div class="sem-name" style="color:var(--n400)">secondary</div></div>
+        <div class="sem"><div class="sem-chip" style="background:#FF8E27"></div><div class="sem-name" style="color:var(--n400)">accent</div></div>
+        <div class="sem"><div class="sem-chip" style="background:rgba(255,255,255,0.1)"></div><div class="sem-name" style="color:var(--n400)">border</div></div>
+        <div class="sem"><div class="sem-chip" style="background:var(--n500)"></div><div class="sem-name" style="color:var(--n400)">ring</div></div>
+      </div>
+    </div>
+    <div style="margin-top:6px;font-size:10px;color:var(--mfg);font-family:'Geist Mono',monospace">↑ Dark mode — primary lightens to n300; secondary + accent remain constant</div>
+  </div>
+
+  <!-- ── TYPOGRAPHY ───────────────────────────── -->
+  <div class="section">
+    <div class="section-label">Typography — Source Serif 4 + Source Sans 3</div>
+
+    <!-- Font pairing intro -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:32px">
+      <div style="border-radius:14px;border:1px solid var(--border);padding:20px 22px;background:var(--card)">
+        <div style="font-size:10px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:var(--mfg);margin-bottom:12px">Heading / Display</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:28px;font-weight:600;color:var(--fg);letter-spacing:-0.01em;line-height:1.2">Source Serif 4</div>
+        <div style="font-size:11px;color:var(--mfg);margin-top:8px;line-height:1.5">Variable · 8–60pt optical sizing · wght 300–900<br>Used for all titles, section heads, stats</div>
+      </div>
+      <div style="border-radius:14px;border:1px solid var(--border);padding:20px 22px;background:var(--card)">
+        <div style="font-size:10px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:var(--mfg);margin-bottom:12px">Body / UI</div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:24px;font-weight:400;color:var(--fg);line-height:1.2">Source Sans 3</div>
+        <div style="font-size:11px;color:var(--mfg);margin-top:8px;line-height:1.5">Variable · wght 200–900 · ital support<br>Used for body text, nav, labels, buttons</div>
+      </div>
+      <div style="border-radius:14px;border:1px solid var(--border);padding:20px 22px;background:var(--card)">
+        <div style="font-size:10px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:var(--mfg);margin-bottom:12px">Mono</div>
+        <div style="font-family:'Geist Mono',monospace;font-size:20px;font-weight:400;color:var(--fg);line-height:1.2">Geist Mono</div>
+        <div style="font-size:11px;color:var(--mfg);margin-top:8px;line-height:1.5">wght 400–500<br>Used for DOIs, citations, code</div>
+      </div>
+    </div>
+
+    <div class="type-rows">
+      <div class="type-row">
+        <div class="type-meta">Display<br>52px · -0.020em · 600<br>Source Serif 4</div>
+        <div class="type-sample" style="font-family:'Source Serif 4',serif;font-size:46px;font-weight:600;letter-spacing:-0.020em;line-height:1.15;font-optical-sizing:auto">Technology for communities.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">H1<br>44px · -0.015em · 600<br>Source Serif 4</div>
+        <div class="type-sample" style="font-family:'Source Serif 4',serif;font-size:36px;font-weight:600;letter-spacing:-0.015em;line-height:1.2;font-optical-sizing:auto">The lab works where social need and technical systems meet.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">H2<br>36px · -0.010em · 600<br>Source Serif 4</div>
+        <div class="type-sample" style="font-family:'Source Serif 4',serif;font-size:28px;font-weight:600;letter-spacing:-0.010em;line-height:1.25;font-optical-sizing:auto">Research with purpose. Join the lab.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">H3<br>24px · 0 · 600<br>Source Serif 4</div>
+        <div class="type-sample" style="font-family:'Source Serif 4',serif;font-size:20px;font-weight:600;letter-spacing:0;line-height:1.35;font-optical-sizing:auto">Accessibility &amp; Inclusion</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">H4 / Card title<br>16px · 0 · 600<br>Source Sans 3</div>
+        <div class="type-sample" style="font-family:'Source Sans 3',sans-serif;font-size:15px;font-weight:600;letter-spacing:0;line-height:1.35;color:var(--fg)">Accessibility &amp; Inclusion — sans for contrast at small size</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">Body LG<br>17px · lh 1.75<br>Source Sans 3 · muted</div>
+        <div class="type-sample" style="font-family:'Source Sans 3',sans-serif;font-size:16px;line-height:1.75;color:var(--mfg)">DIAL studies how people live with technology in low-resource, high-stakes settings, then builds inclusive systems with the communities who will use them.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">Body<br>15px · lh 1.75<br>Source Sans 3</div>
+        <div class="type-sample" style="font-family:'Source Sans 3',sans-serif;font-size:14px;line-height:1.75;color:var(--fg)">Participatory design with communities that mainstream technology largely ignores. Based in Dhaka, DIAL collaborates across universities, funders, and partners.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">Body SM<br>13px · lh 1.65<br>Source Sans 3 · muted</div>
+        <div class="type-sample" style="font-family:'Source Sans 3',sans-serif;font-size:13px;line-height:1.65;color:var(--mfg)">HCI research from Bangladesh. North South University, Dhaka.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">Label<br>11px · 0.10em · 600 · CAPS<br>Source Sans 3</div>
+        <div class="type-sample" style="font-family:'Source Sans 3',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:var(--mfg)">Research Areas · North South University · Dhaka</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">Caption<br>13px · italic · lh 1.65<br>Source Sans 3</div>
+        <div class="type-sample" style="font-family:'Source Sans 3',sans-serif;font-size:13px;font-style:italic;line-height:1.65;color:var(--mfg)">Figure 1. Participatory design session with garment workers in Dhaka, 2023.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">Citation / italic serif<br>15px · italic · lh 1.75<br>Source Serif 4</div>
+        <div class="type-sample" style="font-family:'Source Serif 4',serif;font-size:14px;font-style:italic;line-height:1.75;color:var(--mfg);font-optical-sizing:auto">Ahmed, N. et al. (2024). <em>Jyoti: Designing for blind users in Bangladesh.</em> <span style="font-style:normal">ACM CHI 2024.</span></div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">Stat<br>44px · -0.03em · 600<br>Source Serif 4</div>
+        <div class="type-sample" style="font-family:'Source Serif 4',serif;font-size:44px;font-weight:600;letter-spacing:-0.03em;line-height:1;font-optical-sizing:auto;color:#002541">50+ <span style="font-family:'Source Sans 3',sans-serif;font-size:17px;font-weight:600;letter-spacing:0;color:var(--mfg)">publications</span></div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">Mono<br>13px · Geist Mono</div>
+        <div class="type-sample" style="font-family:'Geist Mono',monospace;font-size:13px;color:#004A80">DOI: 10.1145/3613904.3642051 &nbsp;·&nbsp; --primary: #002541</div>
+      </div>
+    </div>
+
+    <!-- Type pairing in context -->
+    <div style="margin-top:32px;border-radius:20px;border:1px solid var(--border);padding:32px 36px;background:var(--card)">
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:var(--mfg);margin-bottom:14px">In context — publication card</div>
+      <div style="font-family:'Source Serif 4',serif;font-size:22px;font-weight:600;letter-spacing:-0.01em;line-height:1.3;color:#002541;font-optical-sizing:auto;max-width:600px">Jyoti: Designing assistive technology for blind users in low-resource settings</div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:13px;color:var(--mfg);margin-top:10px">Nova Ahmed, Mahbuba Tasmin, Ulfat Tahsin &nbsp;·&nbsp; <span style="font-style:italic">ACM CHI 2024</span></div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:14px;line-height:1.75;color:var(--fg);margin-top:14px;max-width:640px">We present Jyoti, a voice-based navigation system co-designed with blind users in Dhaka. Through 14 months of participatory fieldwork, we identified barriers mainstream screen readers create in low-bandwidth, multilingual contexts.</div>
+      <div style="display:flex;gap:16px;margin-top:16px;align-items:center">
+        <span style="background:#FF8E27;border-radius:9999px;padding:3px 11px;font-family:'Source Sans 3',sans-serif;font-size:11px;font-weight:700;color:#002541">🏆 Best Paper · CHI 2024</span>
+        <span style="font-family:'Geist Mono',monospace;font-size:11px;color:var(--mfg)">DOI: 10.1145/3613904.3642051</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SPACING & RADIUS ──────────────────────── -->
+  <div class="section">
+    <div class="section-label">Spacing — Border Radius &amp; Shadows</div>
+    <div class="radius-row">
+      <div class="radius-item"><div class="radius-box" style="width:32px;height:32px;border-radius:4px"></div><div class="radius-label">sm · 4px</div></div>
+      <div class="radius-item"><div class="radius-box" style="width:40px;height:40px;border-radius:8px"></div><div class="radius-label">base · 10px</div></div>
+      <div class="radius-item"><div class="radius-box" style="width:48px;height:48px;border-radius:14px"></div><div class="radius-label">icon · 14px</div></div>
+      <div class="radius-item"><div class="radius-box" style="width:56px;height:56px;border-radius:16px"></div><div class="radius-label">badge · 16px</div></div>
+      <div class="radius-item"><div class="radius-box" style="width:64px;height:64px;border-radius:24px"></div><div class="radius-label">stat · 24px</div></div>
+      <div class="radius-item"><div class="radius-box" style="width:72px;height:72px;border-radius:28px"></div><div class="radius-label">feature · 28px</div></div>
+      <div class="radius-item"><div class="radius-box" style="width:80px;height:80px;border-radius:32px"></div><div class="radius-label">hero · 32px</div></div>
+      <div class="radius-item"><div class="radius-box" style="width:80px;height:34px;border-radius:9999px"></div><div class="radius-label">pill button</div></div>
+
+      <div style="margin-left:32px;display:flex;gap:20px;align-items:flex-end">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+          <div class="shadow-card" style="width:88px;height:64px;border:1px solid var(--border)"></div>
+          <div class="shadow-label">border only</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+          <div class="shadow-card" style="width:96px;height:72px;box-shadow:0 1px 2px rgba(0,0,0,0.05);border:1px solid var(--border)"></div>
+          <div class="shadow-label">shadow-sm ★</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+          <div class="shadow-card" style="width:104px;height:80px;box-shadow:0 4px 6px -1px rgba(0,0,0,0.07),0 2px 4px -2px rgba(0,0,0,0.06);border:1px solid var(--border)"></div>
+          <div class="shadow-label">shadow-md</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+          <div style="width:88px;height:60px;border-radius:16px;background:var(--n800)"></div>
+          <div class="shadow-label">no shadow</div>
+          <div class="shadow-sub">primary bg</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── COMPONENTS ────────────────────────────── -->
+  <div class="section">
+    <div class="section-label">Components — Buttons</div>
+    <div class="btn-rows">
+      <div class="btn-row">
+        <div class="row-label">Primary</div>
+        <button class="btn-primary">Explore our research →</button>
+        <button class="btn-primary" style="display:inline-flex;align-items:center;gap:8px">Explore our research <span style="color:#FF8E27">→</span></button>
+        <button class="btn-outline">View all themes →</button>
+        <button class="btn-ghost">Contact Us</button>
+      </div>
+      <div class="btn-row">
+        <div class="row-label">Secondary</div>
+        <button class="btn-secondary">Join the lab</button>
+        <button class="btn-accent">Start a collaboration</button>
+        <button class="btn-sm">Learn more</button>
+        <button class="btn-icon">☀</button>
+        <button class="btn-sm" style="background:transparent;color:#002541;border:1.5px solid var(--border)">☰ Menu</button>
+      </div>
+      <div class="btn-row">
+        <div class="row-label">States</div>
+        <button class="btn-primary" style="opacity:0.45;cursor:not-allowed">Disabled</button>
+        <button class="btn-primary" style="background:#004A80">Hover</button>
+        <button class="btn-primary" style="background:#001529">Active/Press</button>
+        <button class="btn-accent" style="background:#E06400">Accent hover</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Components — Cards</div>
+    <div class="card-row">
+      <!-- Feature card -->
+      <div class="ds-card" style="width:192px">
+        <div class="card-arrow">
+          <div class="icon-badge">♿</div>
+          <span style="font-size:13px;color:var(--mfg)">→</span>
+        </div>
+        <div class="card-title">Accessibility &amp; Inclusion</div>
+        <div class="card-body">Interfaces for low-literacy, disabled, and resource-constrained communities.</div>
+      </div>
+
+      <!-- Stat tiles -->
+      <div style="display:flex;flex-direction:column;gap:10px;width:160px">
+        <div class="ds-card-muted">
+          <div style="font-size:36px;font-weight:600;letter-spacing:-0.06em;color:var(--fg)">50+</div>
+          <div style="font-size:13px;font-weight:600;color:var(--fg);margin-top:8px">publications</div>
+          <div style="font-size:11px;color:var(--mfg);margin-top:4px;line-height:1.5">HCI, ICTD, privacy, accessibility.</div>
+        </div>
+        <div class="ds-card-muted" style="padding:16px">
+          <div style="font-size:32px;font-weight:600;letter-spacing:-0.06em;color:var(--fg)">20+</div>
+          <div style="font-size:12px;font-weight:600;color:var(--fg);margin-top:6px">awards &amp; honours</div>
+        </div>
+      </div>
+
+      <!-- Primary promo card -->
+      <div class="ds-card-primary" style="width:200px;display:flex;flex-direction:column;gap:8px">
+        <div style="font-size:9px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#FF8E27">HCI Research from Bangladesh</div>
+        <div style="font-size:20px;font-weight:600;letter-spacing:-0.04em;line-height:1.2;color:white">Explore our research</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.6);line-height:1.5;margin-top:4px">Participatory design with communities mainstream technology ignores.</div>
+        <div style="font-size:12px;font-weight:700;color:#FF8E27;margin-top:10px;display:flex;align-items:center;gap:4px">Read more →</div>
+      </div>
+
+      <!-- Invitation CTA card -->
+      <div class="ds-card" style="flex:1;display:flex;flex-direction:column;justify-content:space-between;min-height:200px">
+        <div>
+          <div style="font-size:10px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--mfg);margin-bottom:10px">Work with us</div>
+          <div style="font-size:20px;font-weight:600;letter-spacing:-0.04em;color:var(--fg);line-height:1.2">Research with purpose. Join the lab.</div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:16px">
+          <button class="btn-primary" style="font-size:12px;padding:8px 16px">Join the lab</button>
+          <button class="btn-outline" style="font-size:12px;padding:7px 16px">Collaborate</button>
+        </div>      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Components — Badges &amp; Tags</div>
+    <div class="badge-row">
+      <span style="font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--mfg);min-width:64px">Status</span>
+      <span class="badge" style="background:#002541;color:white"><span style="width:5px;height:5px;border-radius:9999px;background:#FF8E27"></span>North South University · Dhaka</span>
+      <span class="badge" style="background:#FF8E27;color:#002541;font-weight:700">🏆 Best Paper · CHI 2024</span>
+      <span class="badge" style="background:oklch(0.577 0.245 27.325 / 0.1);color:oklch(0.45 0.18 27)">Best of CHI · 2019</span>
+      <span class="badge" style="background:var(--muted);color:var(--mfg)">Open Access</span>
+    </div>
+    <div class="badge-row">
+      <span style="font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--mfg);min-width:64px">Tags</span>
+      <span class="tag" style="color:#002541;border-color:#004A80">Accessibility</span>
+      <span class="tag" style="color:#002541;border-color:#004A80">Gender &amp; HCI</span>
+      <span class="tag" style="color:#002541;border-color:#004A80">ICTD</span>
+      <span class="tag" style="color:#002541;border-color:#004A80">Mental Health</span>
+      <span class="tag" style="color:#002541;border-color:#004A80">CHI 2024</span>
+    </div>
+    <div class="badge-row">
+      <span style="font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--mfg);min-width:64px">Nav</span>
+      <span class="badge" style="background:#002541;color:white">20 Projects →</span>
+      <span class="badge" style="background:#004A80;color:white">10-Year Impact Award →</span>
+      <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(0,37,65,0.07);color:#002541;border-radius:9999px;font-size:11px;font-weight:500;padding:5px 13px;border:1px solid rgba(0,37,65,0.18)"><span style="width:5px;height:5px;border-radius:9999px;background:#002541"></span>North South University · Dhaka</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Components — Form Inputs</div>
+    <div class="input-row">
+      <div class="field">
+        <label>Name</label>
+        <input type="text" placeholder="Dr. Nova Ahmed" style="width:200px">
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" value="nova@northsouth.edu" style="width:220px">
+      </div>
+      <div class="field">
+        <label>Error state</label>
+        <input type="text" value="invalid@" style="width:160px;border-color:oklch(0.577 0.245 27.325)">
+        <span style="font-size:11px;color:oklch(0.577 0.245 27.325)">Enter a valid email address.</span>
+      </div>
+      <div class="field">
+        <label>Research area</label>
+        <select style="width:200px">
+          <option>Accessibility &amp; Inclusion</option>
+          <option>Gender &amp; Feminist HCI</option>
+        </select>
+      </div>
+    </div>
+    <div class="input-row">
+      <div class="field">
+        <label>Message</label>
+        <textarea placeholder="Tell us about your research interests…" rows="3" style="width:440px;resize:none"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── BRAND ──────────────────────────────────── -->
+  <div class="section">
+    <div class="section-label">Brand — Logo</div>
+    <div class="logo-row">
+      <div class="logo-bg" style="background:var(--bg)">
+        <img src="assets/dial-logo.svg" alt="DIAL" style="height:22px">
+        <span style="color:var(--mfg)">Light</span>
+      </div>
+      <div class="logo-bg" style="background:var(--n800)">
+        <img src="assets/dial-logo.svg" alt="DIAL" style="height:22px;filter:invert(1)">
+        <span style="color:var(--n400)">Navy Primary</span>
+      </div>
+      <div class="logo-bg" style="background:var(--n950)">
+        <img src="assets/dial-logo.svg" alt="DIAL" style="height:22px;filter:invert(1)">
+        <span style="color:var(--n600)">Dark Mode</span>
+      </div>
+      <div class="logo-bg" style="background:var(--muted)">
+        <img src="assets/dial-logo.svg" alt="DIAL" style="height:22px">
+        <span style="color:var(--mfg)">Muted surface</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
