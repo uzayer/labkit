@@ -28,8 +28,6 @@ export default defineConfig([
       '**/payload-types.ts',
       '**/.claude/**',
       '**/.agents/**',
-      'payblocks-2.12.1/**',
-      '**/payblocks-2.12.1/**',
     ],
   },
   ...nextVitals,

@@ -1,7 +1,7 @@
 {
   "name": "labkit",
   "version": "0.0.1",
-  "description": "A Website template for PayloadCMS, featurig shadcn/ui and shadcnblocks.",
+  "description": "LabKit \u2014 a PayloadCMS content platform for research lab websites, built with shadcn/ui.",
   "license": "MIT",
   "private": true,
   "type": "module",
