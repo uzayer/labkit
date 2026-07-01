@@ -1,6 +1,11 @@
 'use client'
 
-import { Clock, Facebook, Home, Linkedin, Twitter } from 'lucide-react'
+import { Clock, Home } from 'lucide-react'
+import {
+  FacebookIcon as Facebook,
+  LinkedInIcon as Linkedin,
+  XIcon as Twitter,
+} from '@/components/SimpleIcon'
 import { useEffect, useRef, useState } from 'react'
 
 import { DateFormatter } from '@/components/DateFormatter'

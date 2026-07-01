@@ -145,7 +145,7 @@ export default buildConfig({
                 name: 'url',
                 type: 'text',
                 admin: {
-                  condition: ({ linkType }) => linkType !== 'internal',
+                  condition: (_, siblingData) => siblingData.linkType !== 'internal',
                 },
                 label: ({ t }) => t('fields:enterURL'),
                 required: true,

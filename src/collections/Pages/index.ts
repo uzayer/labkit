@@ -39,7 +39,6 @@ import { CasestudiesBlock } from '@/blocks/Casestudies/config'
 import { TimelineBlock } from '@/blocks/Timeline/config'
 import { LoginBlock } from '@/blocks/Login/config'
 import { SignupBlock } from '@/blocks/Signup/config'
-import { Archive } from '@/blocks/ArchiveBlock/config'
 import { TeamBlock } from '@/blocks/Team/config'
 import { AwardsBlock } from '@/blocks/Awards/config'
 import { ProjectsBlock } from '@/blocks/Projects/config'
@@ -63,7 +62,6 @@ export const PageBlocks: Block[] = [
   FeatureListBlock,
   FeatureMediaBlock,
   FeatureSpecialBlock,
-  Archive,
   FormBlock,
   CtaBlock,
   LogosBlock,

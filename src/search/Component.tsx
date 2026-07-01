@@ -14,8 +14,7 @@ import {
 import { useDebounce } from '@/utilities/useDebounce'
 import { useRouter } from 'next/navigation'
 import { Input } from '@/components/ui/input'
-import { Button, buttonVariants } from '@/components/ui/button'
-import { type VariantProps } from 'class-variance-authority'
+import { Button, ButtonProps } from '@/components/ui/button'
 import { useSearch } from '@/utilities/useSearch'
 import { Sheet, SheetContent, SheetTitle } from '@/components/ui/sheet'
 import { VisuallyHidden } from '@/components/ui/visually-hidden'
@@ -183,7 +182,7 @@ export function SearchButton({
   publicContext,
 }: {
   className?: string
-  variant?: VariantProps<typeof buttonVariants>['variant']
+  variant?: ButtonProps['variant']
   publicContext?: PublicContextProps
 }) {
   const [open, setOpen] = React.useState(false)
