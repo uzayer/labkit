@@ -2,25 +2,9 @@
 
 This directory stores workflows that are intentionally disabled.
 
-## Paused Release Automation (LabKit)
+Release automation (`release.yml`, `validate-changesets.yml`) was re-enabled and moved back to `.github/workflows/` when the repo was renamed to labkit. Releases are managed with changesets: run `pnpm changeset` to record a change, and the release workflow opens a version PR on push to main; merging it tags and publishes a GitHub Release.
 
-LabKit release automation is intentionally paused until the first major release is ready.
-
-The following workflows are archived here and therefore do not run in GitHub Actions:
-
-- `release.yml`
-- `validate-changesets.yml`
-
-### Re-enable release automation
-
-1. Move `release.yml` back to `.github/workflows/`.
-2. Move `validate-changesets.yml` back to `.github/workflows/`.
-3. If branch protection enforces old checks, update required checks in GitHub settings.
-4. Create or update `.changeset/*.md` entries and open a release PR.
-
-### Pause again later
-
-Move those workflow files back into `.github/workflows-archive/`.
+## Demo cleanup (still archived)
 
 To re-enable the demo cleanup workflow for LabKit:
 
