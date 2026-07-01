@@ -4,12 +4,7 @@ import deepMerge from '@/utilities/deepMerge'
 import { icon } from '@/components/Icon/config'
 
 export type LinkAppearances =
-  | 'default'
-  | 'outline'
-  | 'inline'
-  | 'destructive'
-  | 'ghost'
-  | 'secondary'
+  'default' | 'outline' | 'inline' | 'destructive' | 'ghost' | 'secondary'
 
 export const appearanceOptions: Record<LinkAppearances, { label: string; value: string }> = {
   default: {
@@ -119,15 +114,7 @@ export const link: LinkType = ({
       type: 'text',
       admin: {
         condition: (_, siblingData) => siblingData?.type === 'reference',
-        components: {
-          Field: {
-            path: '@/components/AdminDashboard/SectionSelect',
-            serverProps: {
-              // there is no "clever" way to always get this information, so we need to set it additionally here as prop
-              relationTo,
-            },
-          },
-        },
+        description: 'Optional anchor on the target page (rendered as #anchor in the URL)',
       },
     },
     {

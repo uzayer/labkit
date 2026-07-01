@@ -5,7 +5,6 @@ import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 import React from 'react'
 
-import { RenderBlocks } from '@/blocks/RenderBlocks'
 import { RenderHero } from '@/heros/RenderHero'
 import { generateMeta } from '@/utilities/generateMeta'
 import PageClient from './page.client'
@@ -106,7 +105,7 @@ export default async function Page(props: Args) {
   }
 
   if (page.type === 'page') {
-    const { hero, layout, breadcrumbs: breadcrumbData, enableBreadcrumbs } = page
+    const { hero, breadcrumbs: breadcrumbData, enableBreadcrumbs } = page
 
     return (
       <article className="">
@@ -117,7 +116,6 @@ export default async function Page(props: Args) {
         {enableBreadcrumbs && breadcrumbData && (
           <Breadcrumbs items={breadcrumbData} publicContext={publicContext} />
         )}
-        <RenderBlocks blocks={layout} publicContext={publicContext} />
       </article>
     )
   } else if (page.type === 'post') {

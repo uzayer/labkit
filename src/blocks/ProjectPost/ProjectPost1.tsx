@@ -23,14 +23,7 @@ import { PublicContextProps } from '@/utilities/publicContextProps'
 import { getAuthorObject } from '@/utilities/authorUtils'
 import { TeamMemberHoverCard } from '@/components/TeamMemberHoverCard'
 import { aggregateProjectAwards } from '@/utilities/aggregateProjectAwards'
-// Note: TableOfContents is currently imported from current directory.
-// If TableOfContents is not in src/blocks/ProjectPost, we might need to move it or update import.
-// Checking file structure suggests it might need attention or it's a new file to create.
-// Assuming TableOfContents needs to be accessible. If it was in CustomBlock, we should check.
-// For now, I will assume it needs to be imported from where it was or copied.
-// Wait, I see `import { TableOfContents } from './TableOfContents'` in the original file.
-// I need to check where TableOfContents is.
-import { TableOfContents } from '@/blocks/CustomBlock/TableOfContents'
+import { TableOfContents } from './TableOfContents'
 import type { ReactNode } from 'react'
 
 type CaseStudy3Fields = {

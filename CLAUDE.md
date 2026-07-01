@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-LabKit is a PayloadCMS + shadcn/ui website builder, extended with research-domain collections (Publications, Grants, Awards, Team, etc.) for academic lab websites. Built on the [shadcnblocks Payload template](https://docs.shadcnblocks.com/payload/getting-started/).
+LabKit is a PayloadCMS content platform for research lab websites: research-domain collections (Publications, Grants, Awards, Team, etc.) with a shadcn/ui frontend. Originally built on the [shadcnblocks Payload template](https://docs.shadcnblocks.com/payload/getting-started/); the page-builder block library was removed and lives on in the `payblocks-autana` fork (Autana Systems' agency website-builder). The `dial-test/` directory holds the standalone Next.js template that will become the lab site frontend once collections are finalized.
 
 This repo is the current working instance (see @docs/architecture/STRATEGY.md for the upstream waterfall plan toward splitting into base template → LabKit → client instances).
 
@@ -36,19 +36,13 @@ This is a strict policy. Violating it requires rewriting git history to remove t
 
 ## Architecture
 
-### Core pattern: Hero + Layout Builder
+### Rendering
 
-Pages use a **Hero** (70+ variants in `src/heros/config.ts`) followed by an array of **layout blocks** (`src/blocks/*/`). Each block has:
-
-- `config.ts` — Payload field schema with a `designVersion` select
-- `Component.tsx` — switches on `designVersion` to render variant files (e.g. `cta1.tsx`, `cta3.tsx`)
-- Variants are registered in `src/blocks/RenderBlocks.tsx` and `src/collections/Pages/index.ts`
-
-Heros follow the same pattern: `src/heros/PageHero/hero{N}.tsx` components, dispatched by `src/heros/RenderHero.tsx`.
+The page-builder layout system was removed. Pages are now Hero + SEO only (70+ hero variants in `src/heros/config.ts`, dispatched by `src/heros/RenderHero.tsx`). Posts and Projects render as full detail pages via `src/blocks/RenderPostDetailPage.tsx` / `RenderProjectDetailPage.tsx`. The only remaining `blocks` fields are richText embeds (Code, MediaBlock, Banner, MotionText) and Projects' `appendLayoutBlock` (Stats, Awards). See `src/blocks/CLAUDE.md`.
 
 ### Collections & Globals
 
-See `src/payload.config.ts` for the authoritative list. Beyond the base template (Pages, Posts, Media, Categories, Users, Roles), this repo adds: **ResearchThemes, Projects, Publications, Team, Awards, Organizations, Venues, Grants, Keywords** (the LabKit research-domain collections).
+See `src/payload.config.ts` for the authoritative list. Beyond the base template (Pages, Posts, Media, Categories, Users, Roles), this repo adds: **ResearchThemes, Projects, Publications, Team, Awards, Organizations, Venues, Grants** (the LabKit research-domain collections).
 
 Globals: **ThemeConfig, Header, Footer, PageConfig, LabInfo**.
 
@@ -74,14 +68,6 @@ Role-based via `Users` ↔ `Roles` (many-to-many). Permission flags: `canManageC
 - **Nested docs URL generation:** Runs on save. Changing the `generateURL` function in config requires re-saving all pages to update URLs.
 - **Turnstile on form submissions:** `src/app/(payload)/api/[...slug]/route.ts` wraps `POST` for `form-submissions` with Cloudflare Turnstile verification when `NEXT_PUBLIC_TURNSTILE_SITE_KEY` is set. The middleware is in the catch-all API route, not the Form block component — easy to miss. Frontend must send a `cf-turnstile-token` header or the request is silently rejected with 400.
 - **Standalone form components ≠ Payload forms:** Components in `src/components/` like `contact10.tsx`, `waitlist*.tsx`, and `wishlist*.tsx` use react-hook-form but only `console.log` on submit. They are **not** wired to Payload's `form-submissions` collection. To wire them up, see @docs/guides/forms.md.
-
-## Adding new blocks
-
-1. Create `src/blocks/NewBlock/config.ts` (include `designVersion` select + `backgroundColor`)
-2. Create variant components and `Component.tsx`
-3. Register in `src/collections/Pages/index.ts` blocks array
-4. Register in `src/blocks/RenderBlocks.tsx` component map
-5. Add preview image to `public/admin/previews/`
 
 ## Code style
 

@@ -8,6 +8,7 @@ import { DefaultNodeTypes, SerializedBlockNode } from '@payloadcms/richtext-lexi
 import type {
   BannerBlock as BannerBlockProps,
   MotionTextBlock as MotionTextBlockProps,
+  MediaBlock as MediaBlockProps,
   Media as MediaType,
 } from '@/payload-types'
 import Image from 'next/image'
@@ -21,7 +22,6 @@ import {
   IS_SUPERSCRIPT,
   IS_UNDERLINE,
 } from './nodeFormat'
-import type { Page } from '@/payload-types'
 import { cn } from '@/utils'
 import { PublicContextProps } from '@/utilities/publicContextProps'
 import { getHeadlineId } from '@/utilities/richtext'
@@ -105,13 +105,7 @@ const defaultColors = {
 
 export type NodeTypes =
   | DefaultNodeTypes
-  | SerializedBlockNode<
-      | Extract<Page['layout'][0], { blockType: 'cta' }>
-      | Extract<Page['layout'][0], { blockType: 'mediaBlock' }>
-      | BannerBlockProps
-      | MotionTextBlockProps
-      | CodeBlockProps
-    >
+  | SerializedBlockNode<MediaBlockProps | BannerBlockProps | MotionTextBlockProps | CodeBlockProps>
 
 export type OverrideStyle = Partial<
   Record<'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'li' | 'a', string>

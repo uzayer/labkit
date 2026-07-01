@@ -1,22 +1,9 @@
-import type { Block, CollectionConfig } from 'payload'
+import type { CollectionConfig } from 'payload'
 
 import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
 import { hasPermission } from '@/utilities/checkPermission'
 
-import { FormBlock } from '@/blocks/Form/config'
-import { FeatureBlock } from '@/blocks/Feature/config'
-import { CtaBlock } from '@/blocks/Cta/config'
-import { AboutBlock } from '@/blocks/About/config'
-import { LogosBlock } from '@/blocks/Logos/config'
-import { Gallery } from '@/blocks/Gallery/config'
-import { TestimonialBlock } from '@/blocks/Testimonial/config'
-import { FaqBlock } from '@/blocks/Faq/config'
-import { SplitViewBlock } from '@/blocks/SplitView/config'
-import { TextBlock } from '@/blocks/TextBlock/config'
-import { MediaBlock } from '@/blocks/MediaBlock/config'
 import { hero } from '@/heros/config'
-import { CustomBlock } from '@/blocks/CustomBlock/config'
-import { ChangelogBlock } from '@/blocks/Changelog/config'
 
 import { slugField } from '@/fields/slug'
 import { populatePublishedAt } from '@/hooks/populatePublishedAt'
@@ -31,69 +18,7 @@ import {
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
 import { serverUrl as NEXT_PUBLIC_SERVER_URL } from '@/config/server'
-import { ContactBlock } from '@/blocks/Contact/config'
 import { Breadcrumb } from '@payloadcms/plugin-nested-docs/types'
-import { Blog } from '@/blocks/Blog/config'
-import { BannerBlock } from '@/blocks/Banner/config'
-import { CasestudiesBlock } from '@/blocks/Casestudies/config'
-import { TimelineBlock } from '@/blocks/Timeline/config'
-import { LoginBlock } from '@/blocks/Login/config'
-import { SignupBlock } from '@/blocks/Signup/config'
-import { TeamBlock } from '@/blocks/Team/config'
-import { AwardsBlock } from '@/blocks/Awards/config'
-import { ProjectsBlock } from '@/blocks/Projects/config'
-import { ResourcesBlock } from '@/blocks/Resources/config'
-import { PublicationsBlock } from '@/blocks/PublicationsBlock/config'
-import { StatsBlock } from '@/blocks/Stats/config'
-import { FeatureHeroBlock } from '@/blocks/FeatureHero/config'
-import { FeatureListBlock } from '@/blocks/FeatureList/config'
-import { FeatureMediaBlock } from '@/blocks/FeatureMedia/config'
-import { FeatureSpecialBlock } from '@/blocks/FeatureSpecial/config'
-import { ProductSpecsBlock } from '@/blocks/ProductSpecs/config'
-import { CareersBlock } from '@/blocks/Careers/config'
-import { TrustStripBlock } from '@/blocks/TrustStrip/config'
-import { IndustriesBlock } from '@/blocks/Industries/config'
-import { WaitlistBlock } from '@/blocks/Waitlist/config'
-import { WishlistBlock } from '@/blocks/Wishlist/config'
-
-export const PageBlocks: Block[] = [
-  FeatureBlock, // keep during migration — existing pages with blockType:'feature' continue rendering
-  FeatureHeroBlock,
-  FeatureListBlock,
-  FeatureMediaBlock,
-  FeatureSpecialBlock,
-  FormBlock,
-  CtaBlock,
-  LogosBlock,
-  AboutBlock,
-  ContactBlock,
-  Gallery,
-  TestimonialBlock,
-  FaqBlock,
-  StatsBlock,
-  SplitViewBlock,
-  TextBlock,
-  MediaBlock,
-  CustomBlock,
-  ChangelogBlock,
-  Blog,
-  BannerBlock,
-  CasestudiesBlock,
-  TimelineBlock,
-  LoginBlock,
-  SignupBlock,
-  TeamBlock,
-  AwardsBlock,
-  ProjectsBlock,
-  ResourcesBlock,
-  PublicationsBlock,
-  ProductSpecsBlock,
-  CareersBlock,
-  TrustStripBlock,
-  IndustriesBlock,
-  WaitlistBlock,
-  WishlistBlock,
-]
 
 export const Pages: CollectionConfig = {
   slug: 'pages',
@@ -153,17 +78,6 @@ export const Pages: CollectionConfig = {
         {
           fields: [hero],
           label: 'Hero',
-        },
-        {
-          fields: [
-            {
-              name: 'layout',
-              type: 'blocks',
-              blocks: PageBlocks,
-              required: true,
-            },
-          ],
-          label: 'Content',
         },
         {
           name: 'meta',

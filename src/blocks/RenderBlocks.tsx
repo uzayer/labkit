@@ -1,86 +1,20 @@
 import React, { Fragment } from 'react'
 
-import type { Page } from '@/payload-types'
+import type { Project } from '@/payload-types'
 
-import { FormBlock } from '@/blocks/Form/Component'
-import { FeatureBlock } from '@/blocks/Feature/Component'
-import { GalleryBlock } from './Gallery/Component'
-import { CtaBlock } from '@/blocks/Cta/Component'
-import { LogosBlock } from '@/blocks/Logos/Component'
-import { AboutBlock } from '@/blocks/About/Component'
-import { TestimonialBlock } from '@/blocks/Testimonial/Component'
-import { FaqBlock } from './Faq/Component'
 import { StatsBlock } from './Stats/Component'
-import { SplitViewBlock } from './SplitView/Component'
-import { TextBlock } from './TextBlock/Component'
-import { MediaBlock } from './MediaBlock/Component'
-import { ChangelogBlock } from './Changelog/Component'
-import { CustomBlock } from '@/blocks/CustomBlock'
-import type { PublicContextProps } from '@/utilities/publicContextProps'
-import ContactBlock from './Contact/Component'
-import { BlogBlock } from './Blog/Component'
-import { BannerBlock } from './Banner/Component'
-import { CasestudiesBlock } from './Casestudies/Component'
-import { TimelineBlock } from './Timeline/Component'
-import { LoginBlock } from './Login/Component'
-import { SignupBlock } from './Signup/Component'
-import { TeamBlock } from './Team/Component'
 import { AwardsBlock } from './Awards/Component'
-import { ProjectsBlock } from './Projects/Component'
-import { ResourcesBlock } from './Resources/Component'
-import { PublicationsBlock } from './PublicationsBlock/Component'
-import { FeatureHeroBlock } from './FeatureHero/Component'
-import { FeatureListBlock } from './FeatureList/Component'
-import { FeatureMediaBlock } from './FeatureMedia/Component'
-import { FeatureSpecialBlock } from './FeatureSpecial/Component'
-import { ProductSpecsBlock } from './ProductSpecs/Component'
-import { CareersBlock } from './Careers/Component'
-import { TrustStripBlockComponent } from './TrustStrip/Component'
-import { IndustriesBlock } from './Industries/Component'
-import { WaitlistBlock } from './Waitlist/Component'
-import { WishlistBlock } from './Wishlist/Component'
+import type { PublicContextProps } from '@/utilities/publicContextProps'
 
-const blockComponents: Partial<Record<Page['layout'][0]['blockType'] | string, React.FC<any>>> = {
-  formBlock: FormBlock,
-  feature: FeatureBlock, // keep during migration
-  'feature-hero': FeatureHeroBlock,
-  'feature-list': FeatureListBlock,
-  'feature-media': FeatureMediaBlock,
-  'feature-special': FeatureSpecialBlock,
-  gallery: GalleryBlock,
-  cta: CtaBlock,
-  logos: LogosBlock,
-  about: AboutBlock,
-  testimonial: TestimonialBlock,
-  faq: FaqBlock,
+type LayoutBlock = NonNullable<Project['appendLayoutBlock']>[number]
+
+const blockComponents: Partial<Record<LayoutBlock['blockType'] | string, React.FC<any>>> = {
   stats: StatsBlock,
-  splitView: SplitViewBlock,
-  text: TextBlock,
-  mediaBlock: MediaBlock,
-  changelog: ChangelogBlock,
-  contact: ContactBlock,
-  blog: BlogBlock,
-  customblock: CustomBlock,
-  banner: BannerBlock,
-  casestudies: CasestudiesBlock,
-  timeline: TimelineBlock,
-  login: LoginBlock,
-  signup: SignupBlock,
-  team: TeamBlock,
   awards: AwardsBlock,
-  projects: ProjectsBlock,
-  resources: ResourcesBlock,
-  publicationsBlock: PublicationsBlock,
-  'product-specs': ProductSpecsBlock,
-  careers: CareersBlock,
-  'trust-strip': TrustStripBlockComponent,
-  industries: IndustriesBlock,
-  waitlist: WaitlistBlock,
-  wishlist: WishlistBlock,
 }
 
 export const RenderBlocks: React.FC<{
-  blocks: Page['layout'][0][]
+  blocks: LayoutBlock[] | null | undefined
   publicContext: PublicContextProps
   disableContainer?: boolean
 }> = (props) => {
