@@ -1,6 +1,6 @@
 import type { CollectionConfig } from 'payload'
 
-import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
+import { anyone } from '@/access/anyone'
 import { hasPermission } from '@/utilities/checkPermission'
 import { validatePublications } from './hooks/validatePublications'
 import { populateAuthorPosition } from './hooks/populateAuthorPosition'
@@ -21,7 +21,7 @@ const Publications: CollectionConfig = {
   access: {
     create: hasPermission('canManageContent'),
     delete: hasPermission('canManageContent'),
-    read: authenticatedOrPublished,
+    read: anyone,
     update: hasPermission('canManageContent'),
   },
   admin: {
@@ -51,8 +51,7 @@ const Publications: CollectionConfig = {
             },
             {
               name: 'keywords',
-              type: 'relationship',
-              relationTo: 'keywords',
+              type: 'text',
               hasMany: true,
               admin: {
                 description: 'Concepts or keywords (e.g., "Fitts\' Law", "VR")',
@@ -536,14 +535,6 @@ const Publications: CollectionConfig = {
     beforeChange: [validatePublications, populateAuthorPosition, populateVenueLabel],
     afterChange: [],
     afterRead: [],
-  },
-  versions: {
-    drafts: {
-      autosave: {
-        interval: 2000,
-      },
-    },
-    maxPerDoc: 50,
   },
 }
 

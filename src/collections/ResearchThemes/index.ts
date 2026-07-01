@@ -1,6 +1,6 @@
 import type { CollectionConfig } from 'payload'
 
-import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
+import { anyone } from '@/access/anyone'
 import { hasPermission } from '@/utilities/checkPermission'
 import { slugField } from '@/fields/slug'
 import { validateResearchThemes } from './hooks/validateResearchThemes'
@@ -10,7 +10,7 @@ const ResearchThemes: CollectionConfig = {
   access: {
     create: hasPermission('canManageContent'),
     delete: hasPermission('canManageContent'),
-    read: authenticatedOrPublished,
+    read: anyone,
     update: hasPermission('canManageContent'),
   },
   admin: {
@@ -85,14 +85,6 @@ const ResearchThemes: CollectionConfig = {
   ],
   hooks: {
     beforeChange: [validateResearchThemes],
-  },
-  versions: {
-    drafts: {
-      autosave: {
-        interval: 2000,
-      },
-    },
-    maxPerDoc: 50,
   },
 }
 

@@ -1,6 +1,6 @@
 import type { CollectionConfig } from 'payload'
 
-import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
+import { anyone } from '@/access/anyone'
 import { hasPermission } from '@/utilities/checkPermission'
 import { slugField } from '@/fields/slug'
 import { populateRoleLabel } from './hooks/populateRoleLabel'
@@ -24,7 +24,7 @@ const Team: CollectionConfig = {
   access: {
     create: hasPermission('canManageContent'),
     delete: hasPermission('canManageContent'),
-    read: authenticatedOrPublished,
+    read: anyone,
     update: hasPermission('canManageContent'),
   },
   admin: {
@@ -129,12 +129,10 @@ const Team: CollectionConfig = {
             },
             {
               name: 'researchInterests',
-              type: 'relationship',
-              relationTo: 'keywords',
+              type: 'text',
               hasMany: true,
               admin: {
-                description:
-                  'Select relevant research concepts and interests (e.g., "HCI", "ICTD")',
+                description: 'Research concepts and interests (e.g., "HCI", "ICTD")',
               },
             },
             {
@@ -295,14 +293,6 @@ const Team: CollectionConfig = {
   hooks: {
     beforeChange: [populateFullName, setDisplayInTeam, validateTeamMembers], // populateFullName added here
     afterRead: [populateRoleLabel],
-  },
-  versions: {
-    drafts: {
-      autosave: {
-        interval: 2000,
-      },
-    },
-    maxPerDoc: 50,
   },
 }
 

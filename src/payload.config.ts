@@ -44,7 +44,6 @@ import Awards from './collections/Awards'
 import Organizations from './collections/Organizations'
 import Venues from './collections/Venues'
 import Grants from './collections/Grants'
-import Keywords from './collections/Keywords'
 import { Footer } from './globals/Footer/config'
 import { Header } from './globals/Header/config'
 import { ThemeConfig } from './globals/ThemeConfig/config'
@@ -192,7 +191,6 @@ export default buildConfig({
     Organizations,
     Venues,
     Grants,
-    Keywords,
   ],
   cors: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
   csrf: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),

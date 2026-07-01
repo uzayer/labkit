@@ -1,6 +1,6 @@
 import type { CollectionConfig } from 'payload'
 
-import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
+import { anyone } from '@/access/anyone'
 import { hasPermission } from '@/utilities/checkPermission'
 import { validateAwards } from './hooks/validateAwards'
 import { populateOrganizationLabel } from './hooks/populateOrganizationLabel'
@@ -14,7 +14,7 @@ const Awards: CollectionConfig = {
   access: {
     create: hasPermission('canManageContent'),
     delete: hasPermission('canManageContent'),
-    read: authenticatedOrPublished,
+    read: anyone,
     update: hasPermission('canManageContent'),
   },
   admin: {
@@ -117,14 +117,6 @@ const Awards: CollectionConfig = {
   ],
   hooks: {
     beforeChange: [validateAwards, populateOrganizationLabel],
-  },
-  versions: {
-    drafts: {
-      autosave: {
-        interval: 2000,
-      },
-    },
-    maxPerDoc: 50,
   },
 }
 

@@ -224,22 +224,15 @@ export const TeamDialClient: React.FC<TeamDialClientProps> = ({
                         )}
                         {member.researchInterests && member.researchInterests.length > 0 && (
                           <div className="mb-4 flex flex-wrap justify-center gap-1">
-                            {member.researchInterests.map((interest, idx) => {
-                              const interestTitle =
-                                typeof interest === 'object' ? interest.title : String(interest) // Ensure it's a string if it's just an ID
-                              const interestId =
-                                typeof interest === 'object' ? interest.id : `interest-${idx}` // Fallback key if not an object
-
-                              return (
-                                <Badge
-                                  key={interestId}
-                                  variant="secondary"
-                                  className="bg-muted/50 px-2 py-1 text-xs"
-                                >
-                                  {interestTitle}
-                                </Badge>
-                              )
-                            })}
+                            {member.researchInterests.map((interest, idx) => (
+                              <Badge
+                                key={`interest-${idx}`}
+                                variant="secondary"
+                                className="bg-muted/50 px-2 py-1 text-xs"
+                              >
+                                {interest}
+                              </Badge>
+                            ))}
                           </div>
                         )}
                         {member.socials && member.socials.length > 0 && (

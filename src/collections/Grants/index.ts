@@ -1,6 +1,6 @@
 import type { CollectionConfig } from 'payload'
 
-import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
+import { anyone } from '@/access/anyone'
 import { hasPermission } from '@/utilities/checkPermission'
 import { slugField } from '@/fields/slug'
 import { revalidateGrant } from './hooks/revalidateGrant'
@@ -20,7 +20,7 @@ const Grants: CollectionConfig = {
   access: {
     create: hasPermission('canManageContent'),
     delete: hasPermission('canManageContent'),
-    read: authenticatedOrPublished,
+    read: anyone,
     update: hasPermission('canManageContent'),
   },
   admin: {
@@ -57,7 +57,7 @@ const Grants: CollectionConfig = {
         description: 'Select from Organizations lookup',
       },
       validate: (value, { data }) => {
-        if (data?._status === 'published' && !value && !data?.funderLabel) {
+        if (!value && !data?.funderLabel) {
           return 'Select a funder or enter a name in the fallback field'
         }
         return true
@@ -225,14 +225,6 @@ const Grants: CollectionConfig = {
   hooks: {
     beforeChange: [populateFunderLabel],
     afterChange: [revalidateGrant],
-  },
-  versions: {
-    drafts: {
-      autosave: {
-        interval: 2000,
-      },
-    },
-    maxPerDoc: 50,
   },
 }
 
