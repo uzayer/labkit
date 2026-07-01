@@ -1,8 +1,21 @@
 ## Archived Workflows
 
-This directory stores workflows that are intentionally disabled.
+This directory stores workflows that are intentionally disabled. Nothing in `.github/workflows/` is active right now.
 
-Release automation (`release.yml`, `validate-changesets.yml`) was re-enabled and moved back to `.github/workflows/` when the repo was renamed to labkit. Releases are managed with changesets: run `pnpm changeset` to record a change, and the release workflow opens a version PR on push to main; merging it tags and publishes a GitHub Release.
+## Paused release automation (until LabKit exits alpha)
+
+Release automation is intentionally paused while LabKit is in alpha. Keep recording changes with `pnpm changeset` as you work — entries accumulate in `.changeset/` and will all roll into the first automated release.
+
+The workflows are already modernized (pnpm/action-setup@v4, Node 22) and ready to go:
+
+- `release.yml` — on push to main, the changesets action opens a version PR; merging it bumps `package.json`, updates `CHANGELOG.md`, tags, and publishes a GitHub Release with a zip archive
+- `validate-changesets.yml` — requires PRs against main to include a changeset (skippable with the `no-changeset` label)
+
+### Re-enable when out of alpha
+
+1. Move `release.yml` and `validate-changesets.yml` back to `.github/workflows/`.
+2. In repo Settings → Actions → General → Workflow permissions: set "Read and write permissions" and check "Allow GitHub Actions to create and approve pull requests" (or run `gh api -X PUT repos/Uzayer/labkit/actions/permissions/workflow -f default_workflow_permissions=write -F can_approve_pull_request_reviews=true`). This was deliberately reverted to read-only while automation is paused.
+3. Push to main; merge the release PR the action opens.
 
 ## Demo cleanup (still archived)
 
