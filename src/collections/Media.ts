@@ -47,7 +47,7 @@ export const Media: CollectionConfig = {
     // Upload to the public/media directory in Next.js making them publicly accessible even outside of Payload
     staticDir: path.resolve(dirname, '../../public/media'),
     // Allow image uploads and PDF files
-    mimeTypes: ['image/*', 'application/pdf'],
+    mimeTypes: ['image/jpeg', 'image/png', 'image/webp', 'image/gif', 'application/pdf'],
     // Explicitly enable focal point selector
     focalPoint: true,
     // Generate WebP variants for all images and use a WebP thumbnail in admin

@@ -7,6 +7,7 @@ import { CMSLink } from '@/components/Link'
 import { VideoText } from '@/components/magicui/video-text'
 import { Page } from '@/payload-types'
 import { PublicContextProps } from '@/utilities/publicContextProps'
+import { getSafePresentationVideoSource } from '@/utilities/validation'
 
 export const Hero220: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = ({
   richText,
@@ -16,6 +17,7 @@ export const Hero220: React.FC<Page['hero'] & { publicContext: PublicContextProp
   images,
   tagline,
 }) => {
+  const videoSource = getSafePresentationVideoSource(presentationVideo?.videoUrl)
   const backgroundUrl =
     images &&
     Array.isArray(images) &&
@@ -38,9 +40,9 @@ export const Hero220: React.FC<Page['hero'] & { publicContext: PublicContextProp
             transition={{ duration: 0.3 }}
             className="relative flex h-[250px] w-full items-center"
           >
-            {presentationVideo?.videoUrl && (
+            {videoSource?.type === 'file' && (
               <VideoText
-                src={presentationVideo?.videoUrl}
+                src={videoSource.src}
                 className="font-playfair text-[15rem] font-bold tracking-tighter"
                 fontFamily="Playfair Display"
               >

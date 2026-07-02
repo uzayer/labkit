@@ -11,6 +11,7 @@ import { PublicContextProps } from '@/utilities/publicContextProps'
 import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
+import { getSafePresentationVideoSource } from '@/utilities/validation'
 
 const Hero101: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = ({
   richText,
@@ -20,6 +21,7 @@ const Hero101: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = 
   publicContext,
 }) => {
   const [isVideoOpen, setIsVideoOpen] = useState<boolean>(false)
+  const videoSource = getSafePresentationVideoSource(presentationVideo?.videoUrl)
   return (
     <>
       <section className="relative overflow-hidden border border-b pt-40 pb-10 font-sans shadow-[inset_0_-4px_10px_var(--color-primary)] before:absolute before:-top-[88%] before:left-1/2 before:block before:h-[200%] before:w-[200%] before:-translate-x-1/2 before:bg-[radial-gradient(var(--color-violet-100)_15%,var(--color-transparent)_20%,var(--color-yellow-50)_30%,var(--color-transparent)_50%,var(--color-cyan-50)_60%)] before:bg-cover before:bg-no-repeat before:opacity-55 before:content-['']">
@@ -95,13 +97,25 @@ const Hero101: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = 
             <DialogTitle>Presentation Video</DialogTitle>
           </DialogHeader>
           <AspectRatio ratio={16 / 9}>
-            <iframe
-              className="h-full w-full"
-              src={presentationVideo?.videoUrl || 'https://www.youtube.com/embed/your-video-id'}
-              title={presentationVideo?.label || 'Presentation Video'}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+            {videoSource?.type === 'embed' ? (
+              <iframe
+                className="h-full w-full"
+                src={videoSource.src}
+                title={presentationVideo?.label || 'Presentation Video'}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                referrerPolicy="strict-origin-when-cross-origin"
+                sandbox="allow-scripts allow-same-origin allow-presentation"
+              />
+            ) : videoSource?.type === 'file' ? (
+              <video
+                className="h-full w-full"
+                controls
+                playsInline
+                preload="metadata"
+                src={videoSource.src}
+              />
+            ) : null}
           </AspectRatio>
         </DialogContent>
       </Dialog>

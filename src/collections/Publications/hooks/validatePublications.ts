@@ -1,6 +1,6 @@
 import type { CollectionBeforeChangeHook } from 'payload'
 import type { Publication } from '../../../payload-types'
-import { isValidUrl } from '../../../utilities/validation'
+import { isValidExternalHttpUrl } from '../../../utilities/validation'
 
 const MIN_YEAR = 1900
 const MAX_FUTURE_OFFSET = 5
@@ -21,8 +21,12 @@ export const validatePublications: CollectionBeforeChangeHook<Publication> = ({ 
     data.openalex_id = undefined
   }
 
-  if (data?.externalUrl && !isValidUrl(data.externalUrl)) {
+  if (data?.externalUrl && !isValidExternalHttpUrl(data.externalUrl)) {
     errors.push('The External URL must be a valid URL.')
+  }
+
+  if (data?.pdf?.type === 'link' && data?.pdf?.link && !isValidExternalHttpUrl(data.pdf.link)) {
+    errors.push('The PDF link must be a valid http:// or https:// URL.')
   }
 
   if (typeof data?.year === 'number') {

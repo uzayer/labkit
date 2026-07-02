@@ -1,19 +1,24 @@
 import React from 'react'
 
 const BeforeLogin: React.FC = () => {
+  const demoCredentials =
+    process.env.NODE_ENV !== 'production'
+      ? process.env.NEXT_PUBLIC_DEMO_DASHBOARD_CREDENTIALS
+      : undefined
+
   return (
     <div>
       <p>
-        {process.env.NEXT_PUBLIC_DEMO_DASHBOARD_CREDENTIALS ? (
+        {demoCredentials ? (
           <>
             <b>Welcome to the demo dashboard!</b>
             <br />
             <br />
             Use these credentials below to log in as the demo user:
             <br />
-            <b>Email:</b> {process.env.NEXT_PUBLIC_DEMO_DASHBOARD_CREDENTIALS?.split(':')?.[0]}
+            <b>Email:</b> {demoCredentials.split(':')?.[0]}
             <br />
-            <b>Password:</b> {process.env.NEXT_PUBLIC_DEMO_DASHBOARD_CREDENTIALS?.split(':')?.[1]}
+            <b>Password:</b> {demoCredentials.split(':')?.[1]}
             <br />
             The demo environment gets reset daily at 12:00 UTC and 00:00 UTC.
             <br />

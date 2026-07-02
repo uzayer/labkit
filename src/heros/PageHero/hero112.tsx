@@ -11,6 +11,7 @@ import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import { PublicContextProps } from '@/utilities/publicContextProps'
+import { getSafePresentationVideoSource } from '@/utilities/validation'
 
 const Hero112: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = ({
   richText,
@@ -24,6 +25,7 @@ const Hero112: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = 
   publicContext,
 }) => {
   const [isVideoOpen, setIsVideoOpen] = useState(false)
+  const videoSource = getSafePresentationVideoSource(presentationVideo?.videoUrl)
 
   return (
     <section className="bg-background py-12 md:py-32">
@@ -138,13 +140,25 @@ const Hero112: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = 
             <DialogTitle>Presentation Video</DialogTitle>
           </DialogHeader>
           <div className="aspect-video">
-            <iframe
-              className="h-full w-full"
-              src={presentationVideo?.videoUrl || 'https://www.youtube.com/embed/your-video-id'}
-              title={presentationVideo?.label || 'Presentation Video'}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+            {videoSource?.type === 'embed' ? (
+              <iframe
+                className="h-full w-full"
+                src={videoSource.src}
+                title={presentationVideo?.label || 'Presentation Video'}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                referrerPolicy="strict-origin-when-cross-origin"
+                sandbox="allow-scripts allow-same-origin allow-presentation"
+              />
+            ) : videoSource?.type === 'file' ? (
+              <video
+                className="h-full w-full"
+                controls
+                playsInline
+                preload="metadata"
+                src={videoSource.src}
+              />
+            ) : null}
           </div>
         </DialogContent>
       </Dialog>
