@@ -22,3 +22,6 @@ docs/scratch/
 .codex/
 .claude/settings.local.json
 .understand-anything/
+.atlas/
+.agents/skills/shadcn/
+.claude/skills/shadcn/
