@@ -29,6 +29,7 @@ LabKit is optimized for deployment on Vercel, but can be deployed to other platf
    - Therefore, a real cloud storage like Vercel Blob Storage is needed.
    - Enable Vercel Blob in your project settings.
    - Add `BLOB_READ_WRITE_TOKEN` to your local and project environment variables.
+   - Set `CRON_SECRET` to a strong non-demo value before enabling backup automation. LabKit now refuses blob-backed backup automation when `CRON_SECRET` is missing or still using a weak/demo value.
    - After `BLOB_READ_WRITE_TOKEN` is set, Payload will switch from storing media in local files (`/public/media/...`) to storing them in Vercel Blob Storage. If you already uploaded media in the Payload admin UI before enabling blob storage, you need to manually upload them via the Vercel Blob Storage dashboard. Open your `/public/media` folder and drag-and-drop them into the Vercel Blob Storage Browser area (located in the Vercel dashboard).
 ## Alternative Deployments
 For deployments to other platforms, you'll need to swap the storage adapter.
@@ -73,6 +74,7 @@ For deployments to other platforms, you'll need to swap the storage adapter.
 
 ### Backups
 - Regular database backups
+- Backup archives are treated as private admin-only artifacts and should be accessed through the application, not shared as permanent public URLs
 - Media files backup strategy
 - Environment configuration backup
 

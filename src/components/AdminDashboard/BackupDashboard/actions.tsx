@@ -12,6 +12,9 @@ import path from 'node:path'
 import zlib from 'node:zlib'
 import tar from 'tar-stream'
 import { Readable } from 'node:stream'
+import { checkRole } from '@/utilities/checkRole'
+import { getMeUser } from '@/utilities/getMeUser'
+import { assertStrongCronSecret, createSignedBackupDownloadUrl, isBackupPathname } from './security'
 
 const BACKUPS_TO_KEEP = Number(process.env.BACKUPS_TO_KEEP) || 10
 const COLLECTION_FILE_NAME = 'collections.json'
@@ -49,6 +52,16 @@ function logBackupEvent(
   metadata?: Record<string, unknown>,
 ) {
   console[level](`[BackupDashboard] ${event}`, metadata ?? {})
+}
+
+async function requireAdminUser() {
+  const { user } = await getMeUser()
+
+  if (!checkRole(['admin'], user)) {
+    throw new Error('Unauthorized backup operation')
+  }
+
+  return user
 }
 
 export async function getDb() {
@@ -120,6 +133,14 @@ async function fetchBackupResponse(downloadUrl: string) {
   }
 
   return response
+}
+
+async function resolveBackupDownloadUrl(pathname: string) {
+  if (!isBackupPathname(pathname)) {
+    throw new Error('Invalid backup pathname')
+  }
+
+  return createSignedBackupDownloadUrl(pathname)
 }
 
 async function restoreBackupMedia(files: BackupFile[]) {
@@ -291,12 +312,16 @@ function resolveTarGzip(fileBuffer: Buffer) {
   })
 }
 
-export async function restoreBackup(
+async function restoreBackupFromDownloadUrl(
   downloadUrl: string,
   collectionBlacklist: string[] = [],
   mergeData = false,
+  skipAuthorization = false,
 ) {
-  'use server'
+  if (!skipAuthorization) {
+    await requireAdminUser()
+  }
+
   const db = await getDb()
   const collections = await loadBackupCollections(downloadUrl)
 
@@ -317,8 +342,39 @@ export async function restoreBackup(
   redirect('/admin/logout')
 }
 
+export async function restoreBackup(
+  pathname: string,
+  collectionBlacklist: string[] = [],
+  mergeData = false,
+  skipAuthorization = false,
+) {
+  'use server'
+  return restoreBackupFromDownloadUrl(
+    await resolveBackupDownloadUrl(pathname),
+    collectionBlacklist,
+    mergeData,
+    skipAuthorization,
+  )
+}
+
+export async function restoreExternalBackup(
+  downloadUrl: string,
+  collectionBlacklist: string[] = [],
+  mergeData = false,
+  skipAuthorization = false,
+) {
+  'use server'
+  return restoreBackupFromDownloadUrl(
+    downloadUrl,
+    collectionBlacklist,
+    mergeData,
+    skipAuthorization,
+  )
+}
+
 export async function restoreSeedMedia() {
   'use server'
+  await requireAdminUser()
   const files = await fs.readdir(path.join(process.cwd(), 'public/seed/media'))
   for (const file of files) {
     const data = await fs.readFile(path.join(process.cwd(), 'public/seed/media', file))
@@ -407,7 +463,19 @@ async function buildBackupFile(allData: Record<string, unknown[]>, includeMedia:
   )
 }
 
-export async function createBackup(cron: boolean = false, includeMedia: boolean = false) {
+export async function createBackup(
+  cron: boolean = false,
+  includeMedia: boolean = false,
+  skipAuthorization = false,
+) {
+  if (!cron) {
+    if (!skipAuthorization) {
+      await requireAdminUser()
+    }
+  } else {
+    assertStrongCronSecret()
+  }
+
   const currentHostname = getCurrentHostname()
   const currentDbName = getCurrentDbName()
 
@@ -419,15 +487,43 @@ export async function createBackup(cron: boolean = false, includeMedia: boolean 
   const allData = await collectAllDbData(db)
   const backupFile = await buildBackupFile(allData, includeMedia)
   const name = `backups/${createBlobName(cron ? 'cron' : 'manual', currentDbName, currentHostname, Date.now().toString(), includeMedia ? 'tar.gz' : 'json')}`
-  await put(name, backupFile, { access: 'public' })
+  await put(name, backupFile, { access: 'private' })
   revalidatePath('/admin')
   logBackupEvent('log', 'backup_created', { name, includeMedia, cron })
 }
-export async function listBackups() {
+
+export async function listBackups(skipAuthorization = false) {
   'use server'
+  if (!skipAuthorization) {
+    await requireAdminUser()
+  }
   const { blobs } = await list({
     prefix: 'backups/',
     limit: 1000,
   })
   return blobs
+}
+
+export async function getBackupDownloadUrl(pathname: string) {
+  'use server'
+  await requireAdminUser()
+
+  return resolveBackupDownloadUrl(pathname)
+}
+
+export async function downloadBackup(pathname: string) {
+  'use server'
+  redirect(await getBackupDownloadUrl(pathname))
+}
+
+export async function deleteBackup(pathname: string) {
+  'use server'
+  await requireAdminUser()
+
+  if (!isBackupPathname(pathname)) {
+    throw new Error('Invalid backup pathname')
+  }
+
+  await del(pathname)
+  revalidatePath('/admin')
 }

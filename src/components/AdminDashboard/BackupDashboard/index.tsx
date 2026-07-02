@@ -1,7 +1,6 @@
 import './index.scss'
-import { del } from '@vercel/blob'
 import { revalidatePath } from 'next/cache'
-import { createBackup, listBackups, restoreBackup } from './actions'
+import { createBackup, deleteBackup, downloadBackup, listBackups, restoreBackup } from './actions'
 
 import { Button, Popup, Collapsible } from '@payloadcms/ui'
 import { isAdminHidden } from '@/access/isAdmin'
@@ -86,14 +85,15 @@ const BackupDashboard: React.FC<BackupDashboardProps> = async ({ user, i18n, sea
                 <span>{blob.size} bytes</span>
               </p>
               <div className="right">
-                <a
+                <Button
                   className="btn btn--icon-style-without-border btn--size-medium btn--withoutPopup btn--style-primary btn--withoutPopup"
-                  href={blob.downloadUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  onClick={async () => {
+                    'use server'
+                    await downloadBackup(blob.pathname)
+                  }}
                 >
                   Download Backup
-                </a>
+                </Button>
                 <Popup
                   className="btn-right"
                   button={
@@ -110,7 +110,7 @@ const BackupDashboard: React.FC<BackupDashboardProps> = async ({ user, i18n, sea
                     className="btn-red"
                     onClick={async () => {
                       'use server'
-                      await restoreBackup(blob.downloadUrl)
+                      await restoreBackup(blob.pathname)
                       revalidatePath('/admin')
                     }}
                   >
@@ -129,8 +129,7 @@ const BackupDashboard: React.FC<BackupDashboardProps> = async ({ user, i18n, sea
                     className="btn-red"
                     onClick={async () => {
                       'use server'
-                      await del(blob.url)
-                      revalidatePath('/admin')
+                      await deleteBackup(blob.pathname)
                     }}
                   >
                     Yes

@@ -32,7 +32,14 @@ This check happens in the `getUserInfo` callback in `src/payload.config.ts`, not
 
 ## How Users Get Roles
 
-See [Roles and Permissions](./roles-and-permissions.md) and [Architecture: Access Control](../architecture/access-control.md) — role assignment on user creation is unrelated to which auth method (password vs. Google) was used to log in.
+Role assignment on user creation is intentionally separate from authentication:
+
+- `ALLOWED_EMAIL_DOMAINS` controls who may sign in with Google
+- it does **not** grant the admin role
+- new users are created as editors by default unless an admin explicitly assigns roles
+- when the system has no admins yet, the oldest created user is promoted to admin once to bootstrap the instance
+
+See [Roles and Permissions](./roles-and-permissions.md) and [Architecture: Access Control](../architecture/access-control.md) for the full policy.
 
 ## Related Files
 

@@ -5,8 +5,15 @@ LabKit implements a robust role-based access control system to manage user permi
 
 ## Default Roles
 The system comes with two pre-configured roles:
-- Admin: full access to all features; can manage content; can publish content; can manage users; the first user in the system is automatically assigned the admin role.
+- Admin: full access to all features; can manage content; can publish content; can manage users.
 - Editor: can create and edit content; cannot publish content; cannot manage users; the most common role for content creators.
+
+## User Creation Policy
+
+- New users default to the `Editor` role unless an existing admin explicitly assigns roles.
+- Google sign-in domain allowlisting (`ALLOWED_EMAIL_DOMAINS`) controls who may authenticate, not who becomes an admin.
+- If the system has no admins yet, LabKit promotes exactly one bootstrap admin: the oldest created user.
+- The last remaining admin cannot be demoted or deleted.
 
 ## Role Permissions
 Each role has specific permissions that can be configured:

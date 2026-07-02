@@ -4,9 +4,13 @@ import { isAdmin, isAdminFieldLevel } from '@/access/isAdmin'
 import { isAdminOrSelf } from '@/access/isAdminOrCreatedBy'
 import { checkRole } from '@/utilities/checkRole'
 
+const SKIP_USER_ROLE_SYNC = 'skipUserRoleSync'
+
 async function findRole(payload: any, slug: string) {
   const { docs } = await payload.find({
     collection: 'roles',
+    limit: 1,
+    overrideAccess: true,
     where: {
       slug: {
         equals: slug,
@@ -16,9 +20,43 @@ async function findRole(payload: any, slug: string) {
   return docs[0] || null
 }
 
+function hasAdminRole(user: { roles?: unknown[] | null }) {
+  return checkRole(['admin'], user as any)
+}
+
+function getCreatedAtTimestamp(user: { createdAt?: string | null }) {
+  return user.createdAt ? new Date(user.createdAt).getTime() : 0
+}
+
+function getOldestUser<T extends { createdAt?: string | null; id: number | string }>(users: T[]) {
+  return [...users].sort((a, b) => {
+    const timestampDifference = getCreatedAtTimestamp(a) - getCreatedAtTimestamp(b)
+
+    if (timestampDifference !== 0) {
+      return timestampDifference
+    }
+
+    return String(a.id).localeCompare(String(b.id))
+  })[0]
+}
+
+async function listUsersForAdminChecks(req: any) {
+  const { docs } = await req.payload.find({
+    collection: 'users',
+    depth: 1,
+    limit: 1000,
+    overrideAccess: true,
+  })
+
+  return docs
+}
+
 const Users: CollectionConfig = {
   slug: 'users',
-  auth: true,
+  auth: {
+    lockTime: 15 * 60 * 1000,
+    maxLoginAttempts: 5,
+  },
   admin: {
     defaultColumns: ['name', 'email'],
     useAsTitle: 'name',
@@ -27,7 +65,7 @@ const Users: CollectionConfig = {
     create: isAdmin,
     read: authenticated,
     update: isAdminOrSelf,
-    delete: isAdminOrSelf,
+    delete: isAdmin,
     /**
      * Limit the access to the admin dashboard here
      */
@@ -35,29 +73,27 @@ const Users: CollectionConfig = {
   },
   hooks: {
     beforeValidate: [
-      async ({ req, data = {}, operation }) => {
+      async ({ context, req, data = {}, operation }) => {
+        if (context[SKIP_USER_ROLE_SYNC]) {
+          return data
+        }
+
         if (operation === 'create') {
           try {
-            // If roles are already set in the data (e.g., from admin dashboard), don't override them
-            if (data.roles && Array.isArray(data.roles) && data.roles.length > 0) {
+            const requesterIsAdmin = checkRole(['admin'], req.user as any)
+
+            // Allow explicit role assignment only for admins creating users intentionally.
+            if (
+              requesterIsAdmin &&
+              data.roles &&
+              Array.isArray(data.roles) &&
+              data.roles.length > 0
+            ) {
               req.payload.logger.info('User already has roles assigned, keeping existing roles')
               return data
             }
 
-            const { totalDocs } = await req.payload.find({
-              collection: 'users',
-              limit: 0,
-            })
-
-            // Determine which role to assign. First user should be admin. Emails with domain
-            // in ALLOWED_EMAIL_DOMAINS will be assigned admin as well
-            const isAdmin =
-              totalDocs === 0 ||
-              (data.email &&
-                process.env.ALLOWED_EMAIL_DOMAINS?.split(',').includes(data.email.split('@')[1]))
-
-            // Find the appropriate role
-            const role = await findRole(req.payload, isAdmin ? 'admin' : 'editor')
+            const role = await findRole(req.payload, 'editor')
 
             if (role?.id) {
               req.payload.logger.info(`Assigning ${role.name}, id: ${role.id} role to new user`)
@@ -75,6 +111,100 @@ const Users: CollectionConfig = {
         return data
       },
     ],
+    beforeChange: [
+      async ({ context, data, operation, originalDoc, req }) => {
+        if (context[SKIP_USER_ROLE_SYNC] || operation !== 'update' || !originalDoc) {
+          return data
+        }
+
+        if (!hasAdminRole(originalDoc)) {
+          return data
+        }
+
+        const nextRoles = Array.isArray(data.roles) ? data.roles : originalDoc.roles
+
+        if (hasAdminRole({ roles: nextRoles as unknown[] })) {
+          return data
+        }
+
+        const users = await listUsersForAdminChecks(req)
+        const hasOtherAdmin = users.some(
+          (user: any) => user.id !== originalDoc.id && hasAdminRole(user),
+        )
+
+        if (!hasOtherAdmin) {
+          throw new Error('Cannot remove the admin role from the last admin user.')
+        }
+
+        return data
+      },
+    ],
+    afterChange: [
+      async ({ context, doc, operation, req }) => {
+        if (context[SKIP_USER_ROLE_SYNC] || operation !== 'create') {
+          return doc
+        }
+
+        const users = await listUsersForAdminChecks(req)
+
+        if (users.some((user: any) => hasAdminRole(user))) {
+          return doc
+        }
+
+        const oldestUser = getOldestUser(users)
+
+        if (!oldestUser || oldestUser.id !== doc.id) {
+          return doc
+        }
+
+        const adminRole = await findRole(req.payload, 'admin')
+
+        if (!adminRole?.id) {
+          throw new Error('No admin role found for initial user bootstrap.')
+        }
+
+        await req.payload.update({
+          collection: 'users',
+          id: doc.id,
+          data: {
+            roles: [adminRole.id],
+          },
+          depth: 0,
+          overrideAccess: true,
+          context: {
+            ...context,
+            [SKIP_USER_ROLE_SYNC]: true,
+          },
+        })
+
+        return doc
+      },
+    ],
+    beforeDelete: [
+      async ({ id, req }) => {
+        if (req.user?.id === id) {
+          throw new Error('Users cannot delete their own account.')
+        }
+
+        const targetUser = await req.payload.findByID({
+          collection: 'users',
+          id,
+          depth: 1,
+          overrideAccess: true,
+        })
+
+        if (!hasAdminRole(targetUser)) {
+          return
+        }
+
+        const users = await listUsersForAdminChecks(req)
+        const hasOtherAdmin = users.some((user: any) => user.id !== id && hasAdminRole(user))
+
+        if (!hasOtherAdmin) {
+          throw new Error('Cannot delete the last admin user.')
+        }
+      },
+    ],
   },
   fields: [
     {
@@ -89,7 +219,7 @@ const Users: CollectionConfig = {
       required: false,
       saveToJWT: true,
       access: {
-        create: () => true,
+        create: ({ req: { user } }) => !user || checkRole(['admin'], user as any),
         update: isAdminFieldLevel,
         read: () => true,
       },

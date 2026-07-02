@@ -1,4 +1,5 @@
 import { createBackup } from '@/components/AdminDashboard/BackupDashboard/actions'
+import { assertStrongCronSecret } from '@/components/AdminDashboard/BackupDashboard/security'
 import { after } from 'next/server'
 
 export async function GET(req: Request): Promise<Response> {
@@ -7,12 +8,23 @@ export async function GET(req: Request): Promise<Response> {
       status: 503,
     })
   }
+
+  let cronSecret: string
+
+  try {
+    cronSecret = assertStrongCronSecret()
+  } catch (error) {
+    return new Response('Service unavailable', {
+      status: 503,
+    })
+  }
+
   const authHeader = req.headers.get('authorization')
-  if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+  if (authHeader !== `Bearer ${cronSecret}`) {
     return new Response('Unauthorized', {
       status: 401,
     })
   }
-  after(createBackup(true))
+  after(createBackup(true, false, true))
   return new Response('Backup creation started', { status: 202 })
 }

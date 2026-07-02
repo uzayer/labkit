@@ -1,6 +1,6 @@
 import './index.scss'
 import { revalidatePath } from 'next/cache'
-import { restoreBackup, restoreSeedMedia } from '../BackupDashboard/actions'
+import { restoreExternalBackup, restoreSeedMedia } from '../BackupDashboard/actions'
 import { getPayload } from 'payload'
 
 import { Button, Popup } from '@payloadcms/ui'
@@ -73,7 +73,7 @@ const BackupDashboard: React.FC = async ({ user }: { user: User | null }) => {
               onClick={async () => {
                 'use server'
                 await restoreSeedMedia()
-                await restoreBackup(SEED_DUMP_URL, ['users', 'roles'])
+                await restoreExternalBackup(SEED_DUMP_URL, ['users', 'roles'])
                 revalidatePath('/admin')
               }}
             >

@@ -61,6 +61,7 @@ import { hasPermission } from './utilities/checkPermission'
 import { PageConfig } from './globals/PageConfig/config'
 import { LabInfo } from './globals/LabInfo/config'
 import { Telephone } from './fields/formBuilder/telephone'
+import { assertStrongCronSecret } from './components/AdminDashboard/BackupDashboard/security'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -359,6 +360,10 @@ export default buildConfig({
     /**
      * Add the default roles if needed on system startup
      */
+    if (process.env.BLOB_READ_WRITE_TOKEN) {
+      assertStrongCronSecret()
+    }
+
     await initializeRoles(payload)
   },
   // Enable localization for the website
