@@ -11,6 +11,16 @@ const DOI_REGEX = /^10\.\d{4,}\/[-._;()\/:a-zA-Z0-9]+$/
 export const validatePublications: CollectionBeforeChangeHook<Publication> = ({ data, req }) => {
   const errors: string[] = []
 
+  // Mongo's unique index treats "" as a value, so two DOI-less publications
+  // would collide on a shared empty string. Normalize to undefined so the
+  // sparse unique index only applies to publications that actually have one.
+  if (data?.doi === '') {
+    data.doi = undefined
+  }
+  if (data?.openalex_id === '') {
+    data.openalex_id = undefined
+  }
+
   if (data?.externalUrl && !isValidUrl(data.externalUrl)) {
     errors.push('The External URL must be a valid URL.')
   }

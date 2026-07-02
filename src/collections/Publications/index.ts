@@ -5,6 +5,7 @@ import { hasPermission } from '@/utilities/checkPermission'
 import { validatePublications } from './hooks/validatePublications'
 import { populateAuthorPosition } from './hooks/populateAuthorPosition'
 import { populateVenueLabel } from './hooks/populateVenueLabel'
+import { provenanceFields } from '@/fields/provenance'
 
 /**
  * Publications - Academic papers, articles, and other scholarly works
@@ -359,6 +360,7 @@ const Publications: CollectionConfig = {
               name: 'doi',
               label: 'DOI',
               type: 'text',
+              unique: true,
               admin: {
                 description: 'e.g., 10.1145/1234567.1234568',
                 placeholder: '10.1000/182',
@@ -482,6 +484,7 @@ const Publications: CollectionConfig = {
         position: 'sidebar',
       },
     },
+    provenanceFields(),
     {
       name: 'projects',
       type: 'join',
@@ -506,6 +509,7 @@ const Publications: CollectionConfig = {
           name: 'openalex_id',
           label: 'OpenAlex ID',
           type: 'text',
+          unique: true,
           admin: {
             readOnly: true,
             description: 'Auto-populated by sync',

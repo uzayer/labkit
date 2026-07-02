@@ -187,6 +187,14 @@ export const Projects: CollectionConfig = {
           label: 'Overview',
           fields: [
             {
+              name: 'localName',
+              type: 'text',
+              admin: {
+                description:
+                  "Name in the lab's local language (e.g., Bengali), used as the visual headline on project cards",
+              },
+            },
+            {
               name: 'abstract',
               type: 'textarea',
               admin: {

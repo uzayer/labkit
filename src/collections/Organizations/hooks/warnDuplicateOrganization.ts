@@ -12,6 +12,15 @@ export const warnDuplicateOrganization: CollectionBeforeChangeHook = async ({
 }) => {
   if (operation !== 'create' && operation !== 'update') return data
 
+  // Empty string is a real value on a sparse unique index and would collide
+  // across every organization without one — normalize to undefined instead.
+  if (data?.ror_id === '') {
+    data.ror_id = undefined
+  }
+  if (data?.openalex_id === '') {
+    data.openalex_id = undefined
+  }
+
   const { payload } = req
   const warnings: string[] = []
 

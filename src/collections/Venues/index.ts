@@ -40,6 +40,15 @@ const Venues: CollectionConfig = {
       },
     },
     {
+      name: 'alternateNames',
+      type: 'text',
+      hasMany: true,
+      admin: {
+        description:
+          'Other names this venue appears under (e.g., full conference proceedings title from Crossref). Used for ingestion matching.',
+      },
+    },
+    {
       name: 'type',
       type: 'select',
       options: [
@@ -64,8 +73,10 @@ const Venues: CollectionConfig = {
       name: 'issn',
       label: 'ISSN',
       type: 'text',
+      index: true,
       admin: {
-        description: 'International Standard Serial Number (for journals)',
+        description:
+          'International Standard Serial Number (for journals). Not unique — print and electronic editions can share an ISSN.',
       },
     },
     {
@@ -89,6 +100,7 @@ const Venues: CollectionConfig = {
       name: 'openalex_id',
       label: 'OpenAlex ID',
       type: 'text',
+      unique: true,
       admin: {
         description: 'OpenAlex source identifier for future sync',
         position: 'sidebar',

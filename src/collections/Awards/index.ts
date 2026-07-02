@@ -4,6 +4,7 @@ import { anyone } from '@/access/anyone'
 import { hasPermission } from '@/utilities/checkPermission'
 import { validateAwards } from './hooks/validateAwards'
 import { populateOrganizationLabel } from './hooks/populateOrganizationLabel'
+import { provenanceFields } from '@/fields/provenance'
 
 /**
  * Awards - Recognition for publications and projects
@@ -40,7 +41,15 @@ const Awards: CollectionConfig = {
           required: true,
           index: true,
           admin: {
-            width: '30%',
+            width: '25%',
+          },
+        },
+        {
+          name: 'endYear',
+          type: 'number',
+          admin: {
+            description: 'For multi-year honors (e.g., fellowships)',
+            width: '25%',
           },
         },
         {
@@ -52,11 +61,71 @@ const Awards: CollectionConfig = {
             { label: 'Best Presentation', value: 'best-presentation' },
             { label: 'Best Demo', value: 'best-demo' },
             { label: 'Best Poster', value: 'best-poster' },
+            { label: 'Impact', value: 'impact' },
+            { label: 'Research Grant', value: 'research-grant' },
+            { label: 'Scholarship', value: 'scholarship' },
+            { label: 'Recognition', value: 'recognition' },
+            { label: 'Fellowship', value: 'fellowship' },
+            { label: 'Competition', value: 'competition' },
             { label: 'Other', value: 'other' },
           ],
           admin: {
-            width: '70%',
+            width: '50%',
           },
+        },
+      ],
+    },
+    {
+      name: 'scope',
+      type: 'select',
+      defaultValue: 'lab',
+      options: [
+        { label: 'Lab', value: 'lab' },
+        { label: 'Personal', value: 'personal' },
+      ],
+      admin: {
+        description: 'Lab-wide recognition vs. a personal honor for one recipient',
+      },
+    },
+    {
+      name: 'recipients',
+      type: 'array',
+      admin: {
+        description:
+          'Who received this award. Each row is either a Team member or an external name.',
+      },
+      fields: [
+        {
+          type: 'row',
+          fields: [
+            {
+              name: 'teamMember',
+              type: 'relationship',
+              relationTo: 'team',
+              admin: {
+                width: '50%',
+                description: 'Select a team member',
+                condition: (_, siblingData) => !siblingData?.customRecipient,
+              },
+              validate: (val, { siblingData }) => {
+                if (!val && !siblingData?.customRecipient) {
+                  return 'Either select a team member or provide a custom recipient name.'
+                }
+                return true
+              },
+            },
+            {
+              name: 'customRecipient',
+              label: 'Custom Recipient Name',
+              type: 'text',
+              admin: {
+                width: '50%',
+                description:
+                  'Enter if recipient is not a team member (e.g., external collaborator).',
+                condition: (_, siblingData) => !siblingData?.teamMember,
+              },
+            },
+          ],
         },
       ],
     },
@@ -93,7 +162,16 @@ const Awards: CollectionConfig = {
         description: 'Link to award announcement',
       },
     },
-    // Sidebar - join fields
+    // Sidebar fields
+    {
+      name: 'featured',
+      type: 'checkbox',
+      defaultValue: false,
+      admin: {
+        description: 'Show on homepage',
+        position: 'sidebar',
+      },
+    },
     {
       name: 'projects',
       type: 'join',
@@ -114,6 +192,7 @@ const Awards: CollectionConfig = {
         allowCreate: false,
       },
     },
+    provenanceFields(),
   ],
   hooks: {
     beforeChange: [validateAwards, populateOrganizationLabel],

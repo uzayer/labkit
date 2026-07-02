@@ -7,8 +7,12 @@ import type { Project } from '../../../payload-types'
 export const revalidateProject: CollectionAfterChangeHook<Project> = ({
   doc,
   previousDoc,
-  req: { payload },
+  req: { payload, context },
 }) => {
+  if (context.disableRevalidate) {
+    return doc
+  }
+
   if (doc._status === 'published') {
     const path = `/projects/${doc.slug}`
 

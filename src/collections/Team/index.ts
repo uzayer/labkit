@@ -192,15 +192,17 @@ const Team: CollectionConfig = {
               name: 'orcid',
               label: 'ORCID',
               type: 'text',
+              unique: true,
               admin: {
                 description: 'ORCID identifier for academic identity',
                 placeholder: '0000-0002-1825-0097',
               },
             },
             {
-              name: 'openalex_author_id',
+              name: 'openalex_id',
               label: 'OpenAlex Author ID',
               type: 'text',
+              unique: true,
               admin: {
                 description: 'OpenAlex author identifier for future sync',
                 placeholder: 'A5023888391',

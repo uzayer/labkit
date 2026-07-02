@@ -328,9 +328,11 @@ export default buildConfig({
         }
       },
       successRedirect: (req: PayloadRequest) => {
-        // redirect to state
-        if (req.query.state && (req.query.state as string).startsWith('/')) {
-          return `${req.query.state}`
+        const state = typeof req.query.state === 'string' ? req.query.state : ''
+
+        // Only allow local root-relative paths, not protocol-relative redirects.
+        if (state.startsWith('/') && !state.startsWith('//') && !state.startsWith('/\\')) {
+          return state
         }
         return '/admin'
       },

@@ -39,6 +39,21 @@ const Organizations: CollectionConfig = {
       },
     },
     {
+      name: 'alternateNames',
+      type: 'text',
+      hasMany: true,
+      admin: {
+        description: 'Other names this organization appears under. Used for ingestion matching.',
+      },
+    },
+    {
+      name: 'country',
+      type: 'text',
+      admin: {
+        description: 'Country (e.g., "Bangladesh", "USA")',
+      },
+    },
+    {
       name: 'type',
       type: 'select',
       options: [
@@ -65,6 +80,7 @@ const Organizations: CollectionConfig = {
       name: 'ror_id',
       label: 'ROR ID',
       type: 'text',
+      unique: true,
       admin: {
         description: 'Research Organization Registry identifier (e.g., "https://ror.org/...")',
       },
@@ -73,6 +89,7 @@ const Organizations: CollectionConfig = {
       name: 'openalex_id',
       label: 'OpenAlex ID',
       type: 'text',
+      unique: true,
       admin: {
         description: 'OpenAlex institution identifier for future sync',
         position: 'sidebar',

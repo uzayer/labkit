@@ -12,6 +12,12 @@ export const warnDuplicateVenue: CollectionBeforeChangeHook = async ({
 }) => {
   if (operation !== 'create' && operation !== 'update') return data
 
+  // Empty string is a real value on a sparse unique index and would collide
+  // across every venue without one — normalize to undefined instead.
+  if (data?.openalex_id === '') {
+    data.openalex_id = undefined
+  }
+
   const { payload } = req
   const warnings: string[] = []
 

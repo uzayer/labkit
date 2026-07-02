@@ -3,6 +3,7 @@ import type { CollectionConfig } from 'payload'
 import { anyone } from '@/access/anyone'
 import { hasPermission } from '@/utilities/checkPermission'
 import { slugField } from '@/fields/slug'
+import { provenanceFields } from '@/fields/provenance'
 import { revalidateGrant } from './hooks/revalidateGrant'
 import { populateFunderLabel } from './hooks/populateFunderLabel'
 
@@ -147,9 +148,26 @@ const Grants: CollectionConfig = {
               name: 'teamMember',
               type: 'relationship',
               relationTo: 'team',
-              required: true,
               admin: {
-                width: '60%',
+                width: '40%',
+                description: 'Select a team member',
+                condition: (_, siblingData) => !siblingData?.customInvestigator,
+              },
+              validate: (val, { siblingData }) => {
+                if (!val && !siblingData?.customInvestigator) {
+                  return 'Either select a team member or provide a custom investigator name.'
+                }
+                return true
+              },
+            },
+            {
+              name: 'customInvestigator',
+              label: 'Custom Investigator Name',
+              type: 'text',
+              admin: {
+                width: '30%',
+                description: 'Enter if investigator is not a team member (e.g., external PI).',
+                condition: (_, siblingData) => !siblingData?.teamMember,
               },
             },
             {
@@ -162,7 +180,7 @@ const Grants: CollectionConfig = {
                 { label: 'Collaborator', value: 'collaborator' },
               ],
               admin: {
-                width: '40%',
+                width: '30%',
               },
             },
           ],
@@ -221,6 +239,7 @@ const Grants: CollectionConfig = {
         allowCreate: false,
       },
     },
+    provenanceFields(),
   ],
   hooks: {
     beforeChange: [populateFunderLabel],
