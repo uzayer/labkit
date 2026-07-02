@@ -6,7 +6,7 @@ This file provides guidance to Codex (Codex.ai/code) when working with code in t
 
 LabKit is a PayloadCMS + shadcn/ui website builder, extended with research-domain collections (Publications, Grants, Awards, Team, etc.) for academic lab websites. Built on the [shadcnblocks Payload template](https://docs.shadcnblocks.com/payload/getting-started/).
 
-This repo is the current working instance (see @docs/architecture/STRATEGY.md for the upstream waterfall plan toward splitting into base template → LabKit → client instances).
+This repo is the current working instance. Upstream website-builder concerns now belong in Payblocks Autana; this repo should stay focused on LabKit-specific product and implementation work.
 
 ## Commands
 
@@ -106,8 +106,7 @@ Library IDs: Next.js `/vercel/next.js`, React `/facebook/react`, Tailwind CSS `/
 
 ## Further reading
 
-- @docs/architecture/STRATEGY.md — upstream waterfall architecture & business model
-- @docs/architecture/SCHEMA.md — data schema
+- @docs/architecture/data-schema.md — data model intent
 - @docs/architecture/theming-system.md — theming implementation
 - @docs/guides/forms.md — form submissions system, wiring standalone forms to Payload
 - @docs/security-issues.md — security audit findings

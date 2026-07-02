@@ -6,7 +6,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 LabKit is a PayloadCMS content platform for research lab websites: research-domain collections (Publications, Grants, Awards, Team, etc.) with a shadcn/ui frontend. Originally built on the [shadcnblocks Payload template](https://docs.shadcnblocks.com/payload/getting-started/); the page-builder block library was removed and lives on in the `payblocks-autana` fork (Autana Systems' agency website-builder). The `dial-test/` directory holds the standalone Next.js template that will become the lab site frontend once collections are finalized.
 
-This repo is the current working instance (see @docs/architecture/STRATEGY.md for the upstream waterfall plan toward splitting into base template → LabKit → client instances).
+This repo is the current working instance. Upstream website-builder concerns now belong in Payblocks Autana; this repo should stay focused on LabKit-specific product and implementation work.
+
+Before starting nontrivial work, check @LOG.md — a running record of non-obvious product/architecture decisions and the reasoning behind them. It catches things a fresh read of the code can't (why a rejected approach was rejected, what a prior session confirmed against real data). When you make or learn a decision that isn't obvious from the diff alone, append an entry.
 
 ## Commands
 
@@ -92,9 +94,8 @@ Library IDs: Next.js `/vercel/next.js`, React `/facebook/react`, Tailwind CSS `/
 
 ## Further reading
 
-- @docs/architecture/STRATEGY.md — upstream waterfall architecture & business model
+- @LOG.md — decision log: why, not just what
 - @docs/product/VISION.md — product vision and target user
 - @docs/architecture/data-schema.md — data schema
 - @docs/architecture/theming-system.md — theming implementation
-- @docs/architecture/ingestion.md — ingestion architecture (why, not how — read the code for mechanics)
 - @docs/guides/forms.md — form submissions system, wiring standalone forms to Payload

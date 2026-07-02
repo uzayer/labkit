@@ -1,69 +1,50 @@
-# LabKit Product Vision
+# LabKit Vision
 
-> Distilled from braindump. Last updated: 2026-03-13. Edit freely — this is a living doc.
+> This doc is for the durable product thesis. Use [ROADMAP.md](./ROADMAP.md) for sequencing and current execution decisions.
 
-## The Problem
+## Core thesis
 
-Academic lab websites are either stuck in 2004 or custom-built by well-funded institutions. PIs and lab staff don't invest in web dev because their outdated sites still serve their core purposes. The highly structured, predictable nature of academic websites means even ugly HTML gets the job done.
+The website is the wedge, not the moat.
 
-**Why existing sites persist despite bad UX:**
+Labs will say yes to a better website because it is visible, easy to understand, and immediately valuable. But the deeper product is a lab-level research information system: structured records for publications, people, grants, projects, awards, organizations, and research themes that can later power reporting, automation, and institutional workflows.
 
-- Research dissemination still works (simple HTML is scraper-friendly)
-- Publications/awards establish credibility regardless of design
-- Collaborators and prospective RAs find what they need
-- Google Scholar and indexers love simple HTML; modern CSR can hurt discoverability if not optimized
+## Why this space is viable
 
-**Why they stay stale:**
+Academic lab sites survive while being ugly because they are good enough at the real jobs:
 
-- Data entry and migration is tedious
-- Website builders don't understand academic contexts
-- fPIs manage research, not websites — updating is low priority busywork
+- proving credibility
+- listing publications
+- helping students and collaborators find the lab
+- satisfying institutional expectations with minimal maintenance
 
-## The Insight
+That means "make it prettier" is not enough. The product only wins if it also reduces the labor of keeping the lab's information current.
 
-Academic websites follow a remarkably consistent structure: Home, Research/Projects, Publications, Team, Awards, News. Very few labs deviate. The data behind these pages is **already structured in researchers' heads** — from grant applications, CVs, and institutional reporting. The problem isn't information architecture; it's the gap between how researchers think about their data and how website builders expect them to enter it.
+## Product direction
 
-## What LabKit Does
+LabKit should treat research data as the primary asset and the public site as one output of that asset.
 
-A CMS for research labs where the **data model mirrors the researcher's mental model**:
+Short term:
 
-- **Collections match academic concepts:** Projects, Publications, Team, Grants, Awards, Research Themes, Keywords, Venues, Organizations
-- **Filing cabinet philosophy:** Projects own their team members, publications, and grants — just like in reality
-- **Interconnected by default:** A project page shows its grants, team, publications, and awards. Click through to any of them. No manual cross-linking needed
-- **Template-driven, not block-driven:** Researchers update data, not layouts. Pages render from predefined templates that pull from collections
-- **Schema.org + OpenAlex compatible:** Proper structured data for SEO, academic discoverability, and future API integrations
+- ship strong lab websites
+- model the domain the way labs already think about it
+- reduce manual website upkeep through ingestion and better admin flows
 
-## Who It's For
+Long term:
 
-**Primary:** Principal Investigators and lab managers at universities who:
+- support lab-level RIMS workflows
+- reuse the same data for CVs, grant reporting, and institutional submissions
+- make grant and research administration less manual
 
-- Have an outdated or no website
-- Maintain publication lists, team rosters, and grant info in scattered docs
-- Want credibility and discoverability without hiring a web dev
+## Product positioning
 
-**First customer:** DIAL Lab (Design and Inclusion Access Lab) at North South University, Dhaka.
+Generic site builders are optimized for marketing sites, blogs, and small business pages. Labs do not think in those terms. They think in publications, grants, team rosters, collaborations, and outputs.
 
-## The Moat
+LabKit is for PIs and lab operators who want:
 
-The website is an expression of the data, not the product itself. Once a lab's data is structured in LabKit, expansion opportunities include:
+- a credible public-facing site
+- a structured internal source of truth
+- less repetitive admin work over time
 
-- Automatic CV generation from the same data
-- OpenAlex sync (auto-discover new papers, PI confirms and publishes)
-- Grant compliance reporting
-- Publication metrics dashboards
+## Non-goal
 
-## Current State (as of 2026-03-13)
-
-- Data schema designed and implemented (10 collections + LabInfo global)
-- Admin panel functional for data entry
-- Several template pages in progress (team, publications, projects)
-- Block library being built out (shadcnblocks → registered Payload blocks)
-- MVP needs: finish templates, polish data entry UX, deploy for DIAL
-
-## What's Not Decided Yet
-
-- Pricing model (SaaS vs. one-time setup + hosting fee?)
-- Open source strategy (core open, hosted service paid?)
-- Template customization depth (how much layout control do labs get?)
-- OpenAlex integration timeline and scope
-
+LabKit should not drift back toward "page builder for anything." Generic website-builder concerns belong upstream in Payblocks Autana. LabKit stays focused on research-domain structure and the workflows that come from it.

@@ -1,6 +1,8 @@
 # Documentation
 
-This is the documentation for the LabKit codebase — a PayloadCMS content platform for research lab websites, originally forked from the shadcnblocks Payload template (the page-builder block system has since been removed; see root `CLAUDE.md` for the fork lineage).
+This is the documentation for the LabKit codebase: a PayloadCMS product for research lab websites and, later, lab-level research information workflows.
+
+Docs in this repo should explain LabKit-specific intent, constraints, and operating decisions. Generic website-builder or template documentation belongs upstream in Payblocks Autana, not here.
 
 ## Navigation
 
@@ -20,15 +22,13 @@ Task-oriented how-tos for common operations.
 
 ### Architecture
 Understanding-oriented explanations of how the system works.
-- [Strategy](./architecture/STRATEGY.md) - Upstream waterfall architecture & business model
-- [Data Schema](./architecture/data-schema.md) - Research collection ownership & relationships
+- [Data Schema](./architecture/data-schema.md) - Why the research-domain collections exist and how they should be used
 - [Access Control](./architecture/access-control.md) - Custom RBAC extension and permissions system
-- [Theming System](./architecture/theming-system.md) - CMS-driven theming architecture
+- [Theming System](./architecture/theming-system.md) - Current theming approach and known limits
 
 ### Product
-- [Vision](./product/VISION.md) - Product vision and target user
+- [Vision](./product/VISION.md) - Current product thesis and long-term direction
 - [Roadmap](./product/ROADMAP.md) - Product decisions and sequencing
-- [Problem Analysis](./product/problem-analysis.md) - Why academic lab sites stay stale; constraints on building for labs
 - [Idea Evolution](./product/idea-evolution.md) - How the product pivoted from page-builder to data-centric CMS
 - [OpenAlex Automation Notes](./product/automation-notes.md) - Raw notes on what OpenAlex sync can and can't automate
 
@@ -48,4 +48,4 @@ Per-client working material: specs, content data, and reference scrapes.
 - **Architecture** answers "Why does it work this way?" with explanations and context
 - **Development** answers "How do I extend this?" with patterns and examples
 
-Documentation should explain decisions, not just describe code. If you're reading this 6 months from now, you should understand not just what the code does, but why it was designed that way.
+Documentation should explain decisions, not just describe code. The code is the source of truth for mechanics; docs should justify intent, scope, and tradeoffs.

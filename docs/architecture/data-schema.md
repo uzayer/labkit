@@ -1,162 +1,58 @@
-# Research Collections: Ownership & Relationships
+# Data Model Intent
 
-This document explains the relationship architecture across LabKit's research collections (Projects, Publications, Team, Grants, Awards, Research Themes, Venues, Organizations) — specifically, which collection owns each relationship and which side just shows a read-only reverse lookup.
+This doc exists to explain intent, not field-level schema. If you need exact fields or validation rules, read `src/collections/` and `src/globals/` directly.
 
-For field-level schema (what fields exist on each collection), read the collection config in `src/collections/` directly — that's the source of truth and this doc won't try to duplicate it.
+## Why LabKit has research-domain collections
 
----
+LabKit is not a generic website builder with renamed blog posts. The product assumes a lab is operating on a stable set of academic entities:
 
-## Filing Cabinet Philosophy
+- publications
+- people
+- grants
+- projects
+- awards
+- venues
+- organizations
+- research themes
 
-The relationship architecture follows a **filing cabinet model** where:
+Those entities matter because they already exist in the lab's reporting and decision-making workflow. The site is one output of that data, not the reason the data exists.
 
-- **Relationships** (editable) = The collection that conceptually "owns" the data defines the link
-- **Joins** (read-only) = Reverse lookups that show related items without data duplication
+## The operating model
 
-### Why This Matters
+The model follows a filing-cabinet rule:
 
-In academia, a **Project** owns its team members, publications, and funding sources. You don't go to a person's profile to add them to a project—you go to the project and add the person. This reflects how research labs actually operate:
+- edit relationships from the record that conceptually owns them
+- expose reverse lookups for navigation, not as duplicate sources of truth
 
-- Principal Investigators manage project teams
-- Publications are outputs of funded projects
-- Awards are given to specific papers or projects
-- Grants fund specific research initiatives
+Examples:
 
----
+- projects own their linked people, grants, publications, awards, and themes
+- publications own their authors, venue, themes, and awards
+- grants own their funder, investigators, and themes
 
-## Collection Overview
+This keeps the admin aligned with how labs actually think. You add a person to a project from the project, not by editing a person's page and scattering links outward.
 
-| Collection | Purpose | Schema.org Type | OpenAlex Type |
-|------------|---------|-----------------|---------------|
-| **Projects** | Research projects and case studies | `ResearchProject` | — |
-| **Publications** | Academic papers, articles, chapters | `ScholarlyArticle` | `Work` |
-| **Team** | Lab members, collaborators, alumni | `Person` | `Author` |
-| **Grants** | Research funding | `Grant` / `MonetaryGrant` | `Funder` (relationship) |
-| **Awards** | Recognition (Best Paper, etc.) | `Award` (property) | — |
-| **Research Themes** | Research areas/topics | `Thing` (with `about`) | — |
-| **Venues** | Conferences, journals | `Periodical` / `Event` | `Source` |
-| **Organizations** | Institutions, funders, publishers | `Organization` subtypes | `Institution` |
-| **Lab Info** | Global lab configuration | `ResearchOrganization` | `Institution` |
+## What this doc should and should not do
 
----
+This doc should:
 
-## Relationship Map
+- justify why these collections exist at all
+- explain the ownership philosophy behind relationships
+- help decide whether a new concept deserves its own collection
 
-**Ownership: Projects as the hub**
+This doc should not:
 
-```mermaid
-flowchart LR
-  classDef collection fill:#EEF2FF,stroke:#4F46E5,stroke-width:1px,color:#111827;
+- mirror every field already visible in code
+- become a second schema reference that drifts
+- document temporary DIAL-specific workarounds
 
-  Projects:::collection
-  Team:::collection
-  Publications:::collection
-  Grants:::collection
-  Awards:::collection
-  Themes:::collection
+## Scope test for future schema additions
 
-  Projects -->|teamMembers| Team
-  Projects -->|publications| Publications
-  Projects -->|grants| Grants
-  Projects -->|awards| Awards
-  Projects -->|themes| Themes
-```
+A new concept probably deserves a first-class collection only if most of the following are true:
 
-**Ownership: Publication-centric**
+- labs already think about it as a durable thing, not page copy
+- it participates in real relationships with other records
+- it may appear in ingestion, reporting, or automation later
+- it would be painful to model as free-text forever
 
-```mermaid
-flowchart LR
-  classDef collection fill:#EEF2FF,stroke:#4F46E5,stroke-width:1px,color:#111827;
-
-  Publications:::collection
-  Team:::collection
-  Venues:::collection
-  Themes:::collection
-  Awards:::collection
-
-  Publications -->|authors| Team
-  Publications -->|venue| Venues
-  Publications -->|themes| Themes
-  Publications -->|awards| Awards
-```
-
-`keywords` is a free-text tag array on Publications (`type: 'text', hasMany: true`), not a relationship to another collection.
-
-**Ownership: Grants, Team, and Organizations**
-
-```mermaid
-flowchart LR
-  classDef collection fill:#EEF2FF,stroke:#4F46E5,stroke-width:1px,color:#111827;
-
-  Grants:::collection
-  Team:::collection
-  Organizations:::collection
-  Awards:::collection
-  Venues:::collection
-
-  Grants -->|funder| Organizations
-  Grants -->|investigators| Team
-  Grants -->|themes| Themes
-
-  Team -->|affiliation| Organizations
-
-  Awards -->|organization| Organizations
-  Venues -->|publisher| Organizations
-```
-
-`researchInterests` is a free-text array on Team (`type: 'text', hasMany: true`), not a relationship.
-
-**Joins: What you see on each collection from others**
-
-```mermaid
-flowchart LR
-  classDef collection fill:#F9FAFB,stroke:#9CA3AF,stroke-width:1px,color:#111827,stroke-dasharray: 3 3;
-
-  Projects:::collection
-  Publications:::collection
-  Grants:::collection
-  Team:::collection
-  Awards:::collection
-  Themes:::collection
-  Venues:::collection
-  Organizations:::collection
-
-  Publications -. projects .-> Projects
-
-  Team -. projects .-> Projects
-  Team -. publications .-> Publications
-  Team -. grants .-> Grants
-
-  Grants -. projects .-> Projects
-
-  Awards -. projects .-> Projects
-  Awards -. publications .-> Publications
-
-  Themes -. projects .-> Projects
-  Themes -. publications .-> Publications
-  Themes -. grants .-> Grants
-
-  Venues -. publications .-> Publications
-
-  Organizations -. grants .-> Grants
-  Organizations -. teamMembers .-> Team
-  Organizations -. awards .-> Awards
-  Organizations -. venues .-> Venues
-```
-
-Legend: The **ownership diagrams** show where relationships are edited in the admin; the **joins diagram** shows which collections expose reverse lookups for convenience.
-
-### Ownership Summary
-
-| Collection | Owns (Editable Relationships) | Shows (Read-only Joins) |
-|------------|-------------------------------|-------------------------|
-| **Projects** | teamMembers, publications, grants, awards, themes | — |
-| **Publications** | authors, venue, themes, awards | projects |
-| **Grants** | funder, investigators, themes | projects |
-| **Team** | affiliation | projects, publications, grants |
-| **Awards** | organization | projects, publications |
-| **Research Themes** | icon | projects, publications, grants |
-| **Venues** | publisher | publications |
-| **Organizations** | — | grants, teamMembers, awards, venues |
-
-
+If not, prefer a simpler field.
