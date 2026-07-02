@@ -1,0 +1,899 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2025,
+          6,
+          19
+        ]
+      ],
+      "date-time": "2025-06-19T05:06:27Z",
+      "timestamp": 1750309587950,
+      "version": "3.41.0"
+    },
+    "reference-count": 79,
+    "publisher": "Association for Computing Machinery (ACM)",
+    "issue": "2",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2025,
+              4,
+              11
+            ]
+          ],
+          "date-time": "2025-04-11T00:00:00Z",
+          "timestamp": 1744329600000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "content-domain": {
+      "domain": [
+        "dl.acm.org"
+      ],
+      "crossmark-restriction": true
+    },
+    "short-container-title": [
+      "ACM J. Comput. Sustain. Soc."
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2025,
+          6,
+          30
+        ]
+      ]
+    },
+    "abstract": "<jats:p>The COVID-19 pandemic increased the usage of Mobile Financial Services (MFSs) everywhere, including in developing countries such as Bangladesh. The increment of usage is paired with continuing misuse and abuse in several ways that impact users’ MFS usage behaviors. This qualitative study aimed to understand users’ adoptive MFS usage behaviors due to negative experiences and their implications among several communities. The study took place across all eight divisions in Bangladesh and did focus group discussions involving N = 313 participants (female = 203, male = 108, and transgender = 2) covering urban, suburban, and rural regions. Study findings present the ways participants limit their usage, delegate MFS operations, and rely on others to avoid misuse and abuse. The stories also indicate the inability of these measures to avoid monetary loss, which creates more negativity. We discuss the cyclic relationship between negative experiences, social constructs, and confidence. We suggest potential technology interventions to break the cycle.</jats:p>",
+    "DOI": "10.1145/3723041",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2025,
+          3,
+          15
+        ]
+      ],
+      "date-time": "2025-03-15T11:24:39Z",
+      "timestamp": 1742037879000
+    },
+    "page": "1-31",
+    "update-policy": "https://doi.org/10.1145/crossmark-policy",
+    "source": "Crossref",
+    "is-referenced-by-count": 0,
+    "title": [
+      "Implications of Mobile Financial Service Users’ Adaptive Usage Behavior: The Vicious Cycle of Negative Experience, Social Construct, and Confidence"
+    ],
+    "prefix": "10.1145",
+    "volume": "3",
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-0860-0444",
+        "authenticated-orcid": false,
+        "given": "Ifti Azad",
+        "family": "Abeer",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-9240-2108",
+        "authenticated-orcid": false,
+        "given": "Anik",
+        "family": "Saha",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-4225-7413",
+        "authenticated-orcid": false,
+        "given": "Anik",
+        "family": "Sinha",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-5788-2145",
+        "authenticated-orcid": false,
+        "given": "Rahat Jahangir",
+        "family": "Rony",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "School of Computer Science and Informatics, Cardiff University, Cardiff, United Kingdom"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0009-0007-4444-7428",
+        "authenticated-orcid": false,
+        "given": "Gazi Fakhrul",
+        "family": "Islam",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-4899-4780",
+        "authenticated-orcid": false,
+        "given": "Shajnush",
+        "family": "Amir",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-8668-0120",
+        "authenticated-orcid": false,
+        "given": "Md. Sabbir",
+        "family": "Ahmed",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-3466-8482",
+        "authenticated-orcid": false,
+        "given": "Syeda Shabnam",
+        "family": "Khan",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-7715-1742",
+        "authenticated-orcid": false,
+        "given": "Nova",
+        "family": "Ahmed",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "member": "320",
+    "published-online": {
+      "date-parts": [
+        [
+          2025,
+          4,
+          11
+        ]
+      ]
+    },
+    "reference": [
+      {
+        "volume-title": "Bangladesh Bank",
+        "key": "e_1_3_3_2_2",
+        "unstructured": "Bangladesh Bank. Retrieved June 5, 2022 from https://www.bb.org.bd/en/index.php/financialactivity/mfsdata"
+      },
+      {
+        "volume-title": "Rate of MFS Fraud Victims Is Higher among the Highly Educated",
+        "year": "2022",
+        "key": "e_1_3_3_3_2",
+        "unstructured": "TBS News. 2022. Rate of MFS Fraud Victims Is Higher among the Highly Educated. Retrieved June 9, 2022 from https://www.tbsnews.net/features/panorama/rate-mfs-fraud-victims-higher-among-highly-educated-401222"
+      },
+      {
+        "key": "e_1_3_3_4_2",
+        "unstructured": "Business Inspection. 2024. Top MFS Providers in Bangladesh. Retrieved May 23 2022 from https://businessinspection.com.bd/top-mfs-providers-in-bangladesh/"
+      },
+      {
+        "volume-title": "Atlas.ti",
+        "key": "e_1_3_3_5_2",
+        "unstructured": "Atlas.ti. Retrieved June 2022 from https://atlasti.com/"
+      },
+      {
+        "volume-title": "Ministry of Health and Family Welfare, Bangladesh",
+        "key": "e_1_3_3_6_2",
+        "unstructured": "Ministry of Health and Family Welfare, Bangladesh. Retrieved March 2022 from http://www.mohfw.gov.bd/"
+      },
+      {
+        "volume-title": "World Health Organization, Bangladesh",
+        "key": "e_1_3_3_7_2",
+        "unstructured": "World Health Organization, Bangladesh. Retrieved March 2022 from https://www.who.int/countries/bgd/"
+      },
+      {
+        "key": "e_1_3_3_8_2",
+        "article-title": "FinTech e-commerce payment application user experience analysis during COVID-19 pandemic",
+        "author": "Abdillah L. A.",
+        "year": "2020",
+        "unstructured": "L. A. Abdillah. 2020. FinTech e-commerce payment application user experience analysis during COVID-19 pandemic. arXiv preprint arXiv:2012.07750 (2020).",
+        "journal-title": "arXiv preprint arXiv:2012.07750"
+      },
+      {
+        "key": "e_1_3_3_9_2",
+        "article-title": "Digital financial services and the pandemic: Opportunities and risks for emerging and developing economies",
+        "volume": "1",
+        "author": "Agur I.",
+        "year": "2020",
+        "unstructured": "I. Agur, S. M. Peria, and C. Rochon. 2020. Digital financial services and the pandemic: Opportunities and risks for emerging and developing economies. International Monetary Fund Special Series on COVID-19, Transactions 1 (2020), 2–1.",
+        "journal-title": "International Monetary Fund Special Series on COVID-19, Transactions"
+      },
+      {
+        "key": "e_1_3_3_10_2",
+        "article-title": "Resilience during COVID pandemic: Role of fintech in the perspective of Bangladesh",
+        "author": "Ahmed Nova",
+        "year": "2021",
+        "unstructured": "Nova Ahmed, Rahat Jahangir Rony, Syeda Shabnam Khan, MD Ahmed, Anik Sinha, Anik Saha, Shajnush Amir, Ifti Azad Abeer, and Sayan Sarcar. 2021. Resilience during COVID pandemic: Role of fintech in the perspective of Bangladesh. In Resilience during COVID Pandemic: Role of Fintech in the Perspective of Bangladesh.",
+        "journal-title": "Resilience during COVID Pandemic: Role of Fintech in the Perspective of Bangladesh."
+      },
+      {
+        "key": "e_1_3_3_11_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3134652"
+      },
+      {
+        "key": "e_1_3_3_12_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.worlddev.2020.105216"
+      },
+      {
+        "key": "e_1_3_3_13_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/09614524.2019.1651251"
+      },
+      {
+        "key": "e_1_3_3_14_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/1753326.1753521"
+      },
+      {
+        "key": "e_1_3_3_15_2",
+        "doi-asserted-by": "crossref",
+        "DOI": "10.1596/30189",
+        "volume-title": "Closing the Gender Gap: Opportunities for the Women’s Mobile Financial Services Market in Bangladesh",
+        "author": "Barooah Prabir",
+        "year": "2018",
+        "unstructured": "Prabir Barooah, Samveet Sahoo, Sunil Bhat, and Denny George. 2018. Closing the Gender Gap: Opportunities for the Women’s Mobile Financial Services Market in Bangladesh. https://www.bb.org.bd/fnansys/paymentsys/127980-wp-public-finalreviewedreportwomenmfsbd.pdf"
+      },
+      {
+        "key": "e_1_3_3_16_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.jdeveco.2018.01.005"
+      },
+      {
+        "key": "e_1_3_3_17_2",
+        "volume-title": "Research Methods in Anthropology: Qualitative and Quantitative Approaches (3rd ed.)",
+        "author": "Bernard H. R.",
+        "year": "2002",
+        "unstructured": "H. R. Bernard. 2002. Research Methods in Anthropology: Qualitative and Quantitative Approaches (3rd ed.). Alta Mira Press, Walnut Creek, CA. 681 pages."
+      },
+      {
+        "volume-title": "Using Mobile Salary Payments to Improve Afghan Firm Performance",
+        "author": "Blumenstock J.",
+        "key": "e_1_3_3_18_2",
+        "unstructured": "J. Blumenstock, M. Callen, and T. Ghani. Accessed on 2022. Using Mobile Salary Payments to Improve Afghan Firm Performance."
+      },
+      {
+        "key": "e_1_3_3_19_2",
+        "first-page": "1",
+        "article-title": "Violence and financial decisions: Evidence from mobile money in Afghanistan",
+        "author": "Blumenstock J.",
+        "year": "2014",
+        "unstructured": "J. Blumenstock, M. Callen, T. Ghani, and R. Gonzalez. 2014. Violence and financial decisions: Evidence from mobile money in Afghanistan. Review of Economics and Statistics (2014), 1–45.",
+        "journal-title": "Review of Economics and Statistics"
+      },
+      {
+        "key": "e_1_3_3_20_2",
+        "first-page": "1",
+        "volume-title": "Proceedings of the 7th International Conference on Information and Communication",
+        "author": "Blumenstock J. E.",
+        "year": "2015",
+        "unstructured": "J. E. Blumenstock, M. Callen, T. Ghani, and L. Koepke. 2015. Promises and pitfalls of mobile money in Afghanistan: Evidence from a randomized control trial. In Proceedings of the 7th International Conference on Information and Communication. 1–10."
+      },
+      {
+        "key": "e_1_3_3_21_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1191/1478088706qp063oa"
+      },
+      {
+        "key": "e_1_3_3_22_2",
+        "first-page": "1131",
+        "article-title": "The boundaries of privacy harm",
+        "volume": "86",
+        "author": "Calo Ryan",
+        "year": "2011",
+        "unstructured": "Ryan Calo. 2011. The boundaries of privacy harm. Indiana Law Journal 86 (2011), 1131.",
+        "journal-title": "Indiana Law Journal"
+      },
+      {
+        "key": "e_1_3_3_23_2",
+        "volume-title": "Constructing Grounded Theory (2nd ed.)",
+        "author": "Charmaz Kathy",
+        "year": "2014",
+        "unstructured": "Kathy Charmaz. 2014. Constructing Grounded Theory (2nd ed.). SAGE."
+      },
+      {
+        "key": "e_1_3_3_24_2",
+        "volume-title": "One in 10 MFS Users Victims of Fraud",
+        "author": "Correspondent The Daily Star. Staff",
+        "year": "2022",
+        "unstructured": "The Daily Star. Staff Correspondent. 2022. One in 10 MFS Users Victims of Fraud. Retrieved June 5, 2022 https://www.thedailystar.net/news/bangladesh/crime-justice/news/one-10-mfs-users-victims-fraud-2994376"
+      },
+      {
+        "key": "e_1_3_3_25_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1596/978-1-4648-1259-0"
+      },
+      {
+        "key": "e_1_3_3_26_2",
+        "doi-asserted-by": "crossref",
+        "DOI": "10.1596/1813-9450-5988",
+        "volume-title": "Kenya’s Mobile Revolution and the Promise of Mobile Savings",
+        "author": "Demombynes G.",
+        "year": "2012",
+        "unstructured": "G. Demombynes and A. Thegeya. 2012. Kenya’s Mobile Revolution and the Promise of Mobile Savings. Policy Research Working Paper WPS5988. World Bank."
+      },
+      {
+        "key": "e_1_3_3_27_2",
+        "doi-asserted-by": "crossref",
+        "unstructured": "N. Emara and M. Mohieldin. 2020. Financial inclusion and extreme poverty in the MENA region: A gap analysis approach. Review of Economics and Political Science 5 3 (2020) 207–230.",
+        "DOI": "10.1108/REPS-03-2020-0041"
+      },
+      {
+        "key": "e_1_3_3_28_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.11648/j.ajtas.20160501.11"
+      },
+      {
+        "key": "e_1_3_3_29_2",
+        "volume-title": "Living Spirit, Living Practice: Poetics, Politics, Epistemology",
+        "author": "Frankenberg R.",
+        "year": "2004",
+        "unstructured": "R. Frankenberg. 2004. Living Spirit, Living Practice: Poetics, Politics, Epistemology. Duke University Press."
+      },
+      {
+        "key": "e_1_3_3_30_2",
+        "volume-title": "Gender and Digital Financial Inclusion: What Do We Know and What Do We Need to Know",
+        "author": "Gammage S.",
+        "year": "2017",
+        "unstructured": "S. Gammage, A. Kes, L. Winograd, N. Sultana, S. Hiller, and S. Bourgault. 2017. Gender and Digital Financial Inclusion: What Do We Know and What Do We Need to Know. International Center for Research on Women, Washington, DC."
+      },
+      {
+        "key": "e_1_3_3_31_2",
+        "volume-title": "Survey Finds Half Mobile Users Lose Cash to Fraudsters",
+        "author": "Guguyu Otiato",
+        "year": "2021",
+        "unstructured": "Otiato Guguyu. 2021. Survey Finds Half Mobile Users Lose Cash to Fraudsters. Retrieved June 5, 2022 from https://www.businessdailyafrica.com/bd/economy/survey-finds-half-mobile-users-lose-cash-fraudsters-3654490"
+      },
+      {
+        "key": "e_1_3_3_32_2",
+        "article-title": "Survey Finds Half of Mobile Users Lose Cash to Fraudsters",
+        "author": "Guguyu Otiato",
+        "year": "2021",
+        "unstructured": "Otiato Guguyu. 2021. Survey Finds Half of Mobile Users Lose Cash to Fraudsters. Retrieved June 5, 2022 from https://www.businessdailyafrica.com/bd/economy/survey-finds-half-mobile-users-lose-cash-fraudsters-3654490",
+        "journal-title": "Retrieved June 5, 2022 from"
+      },
+      {
+        "key": "e_1_3_3_33_2",
+        "doi-asserted-by": "crossref",
+        "first-page": "1",
+        "DOI": "10.1145/3359275",
+        "article-title": "Of ulti, “hajano,” and “matachetar otanetak datam” exploring local practices of exchanging confidential and sensitive information in urban Bangladesh",
+        "volume": "3",
+        "author": "Haque S. T.",
+        "year": "2019",
+        "unstructured": "S. T. Haque, P. Saha, M. S. Rahman, and S. I. Ahmed. 2019. Of ulti, “hajano,” and “matachetar otanetak datam” exploring local practices of exchanging confidential and sensitive information in urban Bangladesh. Proceedings of the ACM on Human-computer Interaction 3, CSCW (2019), 1–22.",
+        "journal-title": "Proceedings of the ACM on Human-computer Interaction"
+      },
+      {
+        "issue": "36",
+        "key": "e_1_3_3_34_2",
+        "first-page": "78",
+        "article-title": "Picture of the socio-economic development of rural people of Bangladesh through mobile financial services-a study on bkash",
+        "volume": "9",
+        "author": "Hossain M. S.",
+        "year": "2017",
+        "unstructured": "M. S. Hossain and A. H. Russel. 2017. Picture of the socio-economic development of rural people of Bangladesh through mobile financial services-a study on bkash. European Journal of Business and Management 9, 36 (2017), 78–93.",
+        "journal-title": "European Journal of Business and Management"
+      },
+      {
+        "key": "e_1_3_3_35_2",
+        "unstructured": "Tashnin Hossain. 2019. Digital financial services of Bangladesh: SureCash bKash iPay Upay.(2019)."
+      },
+      {
+        "key": "e_1_3_3_36_2",
+        "first-page": "1",
+        "volume-title": "Proceedings of the 1st ACM SIGCAS Conference on Computing and Sustainable Societies",
+        "author": "Ibtasam S.",
+        "year": "2018",
+        "unstructured": "S. Ibtasam, L. Razaq, H. W. Anwar, H. Mehmood, K. Shah, J. Webster, and R. Anderson. 2018. Knowledge, access, and decision-making: Women’s financial inclusion in Pakistan. In Proceedings of the 1st ACM SIGCAS Conference on Computing and Sustainable Societies. 1–12."
+      },
+      {
+        "key": "e_1_3_3_37_2",
+        "doi-asserted-by": "crossref",
+        "first-page": "202",
+        "DOI": "10.1145/3429360.3468212",
+        "volume-title": "Asian CHI Symposium 2021",
+        "author": "Rony R. Jahangir",
+        "year": "2021",
+        "unstructured": "R. Jahangir Rony, S. Shabnam Khan, A. Sinha, A. Saha, and N. Ahmed. 2021. “COVID has made everyone digital and digitally independent”: Understanding working women’s DFS and technology adoption during COVID pandemic in Bangladesh. In Asian CHI Symposium 2021. 202–209."
+      },
+      {
+        "key": "e_1_3_3_38_2",
+        "doi-asserted-by": "crossref",
+        "first-page": "261",
+        "DOI": "10.1145/3460112.3471961",
+        "volume-title": "ACM SIGCAS Conference on Computing and Sustainable Societies",
+        "author": "Jain P.",
+        "year": "2021",
+        "unstructured": "P. Jain, R. A. Varanasi, and N. Dell. 2021. “Who is protecting us? No one!” Vulnerabilities experienced by low-income Indian merchants using digital payments. In ACM SIGCAS Conference on Computing and Sustainable Societies. 261–274."
+      },
+      {
+        "key": "e_1_3_3_39_2",
+        "unstructured": "M. Kamruzzaman. 2021. COVID-19 pandemic and Bangladesh: A review. Virology: Current Research 5 2 (2021) 1–7."
+      },
+      {
+        "key": "e_1_3_3_40_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.worlddev.2020.105123"
+      },
+      {
+        "key": "e_1_3_3_41_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2559206.2581288"
+      },
+      {
+        "key": "e_1_3_3_42_2",
+        "volume-title": "Focus Groups: A Practical Guide for Applied Research (2nd ed.)",
+        "author": "Krueger R. A.",
+        "year": "1994",
+        "unstructured": "R. A. Krueger. 1994. Focus Groups: A Practical Guide for Applied Research (2nd ed.). Sage Publications."
+      },
+      {
+        "key": "e_1_3_3_43_2",
+        "volume-title": "Agent Network Accelerator Survey: Tanzania Country Report 2015",
+        "author": "Kuijpers Dorieke",
+        "year": "2016",
+        "unstructured": "Dorieke Kuijpers and Vera Bersudskaya. 2016. Agent Network Accelerator Survey: Tanzania Country Report 2015. www.helix-institute.com/sites/default/files/Publications/160412ANATanzaniaWaveII-2015.pdf"
+      },
+      {
+        "key": "e_1_3_3_44_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1257/app.20190067"
+      },
+      {
+        "key": "e_1_3_3_45_2",
+        "volume-title": "1 Out of Every 10 Are Victims of MFS Fraud",
+        "author": "Liaquat Z. B.",
+        "year": "2022",
+        "unstructured": "Z. B. Liaquat. 2022. 1 Out of Every 10 Are Victims of MFS Fraud. Retrieved June 4, 2022 from https://www.dhakatribune.com/business/2022/03/30/1-out-of-every-10-are-victims-of-mfs-fraud"
+      },
+      {
+        "key": "e_1_3_3_46_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1177/14647001221082296"
+      },
+      {
+        "key": "e_1_3_3_47_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3274304"
+      },
+      {
+        "key": "e_1_3_3_48_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.worlddev.2015.11.006"
+      },
+      {
+        "key": "e_1_3_3_49_2",
+        "first-page": "1",
+        "volume-title": "Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems",
+        "author": "Mustafa M.",
+        "year": "2019",
+        "unstructured": "M. Mustafa, N. Mazhar, A. Asghar, M. Z. Usmani, L. Razaq, and R. Anderson. 2019. Digital financial needs of micro-entrepreneur women in Pakistan: Is mobile money the answer? In Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems. 1–12."
+      },
+      {
+        "key": "e_1_3_3_50_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3411764.3445605"
+      },
+      {
+        "key": "e_1_3_3_51_2",
+        "volume-title": "Chup: Breaking the Silence about India’s Women",
+        "author": "Narayan D.",
+        "year": "2018",
+        "unstructured": "D. Narayan. 2018. Chup: Breaking the Silence about India’s Women. Juggernaut Books."
+      },
+      {
+        "key": "e_1_3_3_52_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3491102.3501883"
+      },
+      {
+        "key": "e_1_3_3_53_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.worlddev.2021.105405"
+      },
+      {
+        "key": "e_1_3_3_54_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1177/1609406917733847"
+      },
+      {
+        "key": "e_1_3_3_55_2",
+        "first-page": "1",
+        "volume-title": "Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems",
+        "author": "Pal J.",
+        "year": "2018",
+        "unstructured": "J. Pal, P. Chandra, V. Kameswaran, A. Parameshwar, S. Joshi, and A. Johri. 2018. Digital payment and its discontents: Street shops and the Indian government’s push for cashless transactions. In Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems. 1–13."
+      },
+      {
+        "key": "e_1_3_3_56_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3162082"
+      },
+      {
+        "key": "e_1_3_3_57_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3314344.3332500"
+      },
+      {
+        "key": "e_1_3_3_58_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3616386"
+      },
+      {
+        "issue": "5",
+        "key": "e_1_3_3_59_2",
+        "first-page": "88",
+        "article-title": "Prospects of digital financial services in Bangladesh in the context of the fourth industrial revolution",
+        "volume": "2",
+        "author": "Rashid M. H.",
+        "year": "2020",
+        "unstructured": "M. H. Rashid. 2020. Prospects of digital financial services in Bangladesh in the context of the fourth industrial revolution. Asian Journal of Social Science 2, 5 (2020), 88–95.",
+        "journal-title": "Asian Journal of Social Science"
+      },
+      {
+        "key": "e_1_3_3_60_2",
+        "first-page": "398",
+        "volume-title": "2023 International Conference on Intelligent Systems for Communication, IoT and Security (ICISCoIS ’23)",
+        "author": "Rathika P. D.",
+        "year": "2023",
+        "unstructured": "P. D. Rathika and A. Pushparaj. 2023. Privacy preservation using federated learning for credit card transactions. In 2023 International Conference on Intelligent Systems for Communication, IoT and Security (ICISCoIS ’23). IEEE, 398–403."
+      },
+      {
+        "issue": "1",
+        "key": "e_1_3_3_61_2",
+        "doi-asserted-by": "crossref",
+        "first-page": "1",
+        "DOI": "10.1145/3449115",
+        "article-title": "“We even borrowed money from our neighbor”: Understanding mobile-based frauds through victims’ experiences",
+        "volume": "5",
+        "author": "Razaq L.",
+        "year": "2021",
+        "unstructured": "L. Razaq, T. Ahmad, S. Ibtasam, U. Ramzan, and S. Mare. 2021. “We even borrowed money from our neighbor”: Understanding mobile-based frauds through victims’ experiences. Proceedings of the ACM on Human-computer Interaction 5, CSCW1 (2021), 1–30.",
+        "journal-title": "Proceedings of the ACM on Human-computer Interaction"
+      },
+      {
+        "key": "e_1_3_3_62_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3491101.3503705"
+      },
+      {
+        "key": "e_1_3_3_63_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3530190.3534810"
+      },
+      {
+        "key": "e_1_3_3_64_2",
+        "volume-title": "Digital Hundi Threatens Mobile Banking Success",
+        "author": "S Islam",
+        "year": "2017",
+        "unstructured": "Islam S and Ovi IH. 2017. Digital Hundi Threatens Mobile Banking Success. Retrieved June 18, 2022 from https://archive.dhakatribune.com/tribune-supplements/2017/10/15/digital-hundi-threatens-mobile-banking-success"
+      },
+      {
+        "key": "e_1_3_3_65_2",
+        "first-page": "1",
+        "volume-title": "Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems",
+        "author": "Sambasivan N.",
+        "year": "2019",
+        "unstructured": "N. Sambasivan, A. Batool, N. Ahmed, T. Matthews, K. Thomas, L. S. Gaytán-Lugo, and S. Consolvo. 2019. “They don’t leave us alone anywhere we go”: Gender and digital abuse in South Asia. In Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems. 1–14."
+      },
+      {
+        "key": "e_1_3_3_66_2",
+        "first-page": "127",
+        "volume-title": "14th Symposium on Usable Privacy and Security (SOUPS ’18)",
+        "author": "Sambasivan N.",
+        "year": "2018",
+        "unstructured": "N. Sambasivan, G. Checkley, A. Batool, N. Ahmed, D. Nemer, L. S. Gaytán-Lugo, and E. Churchill. 2018. “Privacy is not for me, it’s for those rich women”: Performative privacy practices on mobile phones by women in South Asia. In 14th Symposium on Usable Privacy and Security (SOUPS ’18). 127–142."
+      },
+      {
+        "key": "e_1_3_3_67_2",
+        "volume-title": "Privacy Enforcement with Data Owner-defined Policies",
+        "author": "Scheffler Thomas",
+        "year": "2013",
+        "unstructured": "Thomas Scheffler. 2013. Privacy Enforcement with Data Owner-defined Policies. Ph.D. Dissertation. University of Potsdam. http://opus.kobv.de/ubp/volltexte/2013/6793/"
+      },
+      {
+        "issue": "4",
+        "key": "e_1_3_3_68_2",
+        "doi-asserted-by": "crossref",
+        "first-page": "6148",
+        "DOI": "10.1007/s10668-020-00867-y",
+        "article-title": "Strategic assessment of COVID-19 pandemic in Bangladesh: Comparative lockdown scenario analysis, public perception, and management for sustainability",
+        "volume": "23",
+        "author": "Shammi M.",
+        "year": "2021",
+        "unstructured": "M. Shammi, M. Bodrud-Doza, A. R. M. Islam, and M. Rahman. 2021. Strategic assessment of COVID-19 pandemic in Bangladesh: Comparative lockdown scenario analysis, public perception, and management for sustainability. Environment, Development and Sustainability 23, 4 (2021), 6148–6191.",
+        "journal-title": "Environment, Development and Sustainability"
+      },
+      {
+        "key": "e_1_3_3_69_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/978-3-031-22390-7_17"
+      },
+      {
+        "key": "e_1_3_3_70_2",
+        "first-page": "1",
+        "article-title": "Witchcraft and HCI: Morality, modernity, and postcolonial computing in rural Bangladesh",
+        "author": "Sultana S.",
+        "year": "2019",
+        "unstructured": "S. Sultana and S. I. Ahmed. 2019. Witchcraft and HCI: Morality, modernity, and postcolonial computing in rural Bangladesh. In Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems, 1–15.",
+        "journal-title": "Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems"
+      },
+      {
+        "issue": "3",
+        "key": "e_1_3_3_71_2",
+        "doi-asserted-by": "crossref",
+        "first-page": "1",
+        "DOI": "10.1145/3432913",
+        "article-title": "Seeing in context: Traditional visual communication practices in rural Bangladesh",
+        "volume": "4",
+        "author": "Sultana S.",
+        "year": "2021",
+        "unstructured": "S. Sultana, S. I. Ahmed, and J. M. Rzeszotarski. 2021. Seeing in context: Traditional visual communication practices in rural Bangladesh. Proceedings of the ACM on Human-computer Interaction 4, CSCW 3 (2021), 1–31.",
+        "journal-title": "Proceedings of the ACM on Human-computer Interaction"
+      },
+      {
+        "key": "e_1_3_3_72_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3173574.3174110"
+      },
+      {
+        "key": "e_1_3_3_73_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1126/science.aah5309"
+      },
+      {
+        "key": "e_1_3_3_74_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1093/intqhc/mzm042"
+      },
+      {
+        "key": "e_1_3_3_75_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3314344.3332499"
+      },
+      {
+        "key": "e_1_3_3_76_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3577199"
+      },
+      {
+        "key": "e_1_3_3_77_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TII.2022.3151917"
+      },
+      {
+        "key": "e_1_3_3_78_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3390/s21062036"
+      },
+      {
+        "key": "e_1_3_3_79_2",
+        "unstructured": "D. A. Zetzsche D. Arner J. N. Barberis J. Walker and A. M. Dahdal. 2020. Digital finance & the COVID-19 crisis. (2020)."
+      },
+      {
+        "key": "e_1_3_3_80_2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3498361.3539774"
+      }
+    ],
+    "container-title": [
+      "ACM Journal on Computing and Sustainable Societies"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://dl.acm.org/doi/10.1145/3723041",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://dl.acm.org/doi/pdf/10.1145/3723041",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2025,
+          6,
+          19
+        ]
+      ],
+      "date-time": "2025-06-19T01:56:42Z",
+      "timestamp": 1750298202000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://dl.acm.org/doi/10.1145/3723041"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          4,
+          11
+        ]
+      ]
+    },
+    "references-count": 79,
+    "journal-issue": {
+      "issue": "2",
+      "published-print": {
+        "date-parts": [
+          [
+            2025,
+            6,
+            30
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "10.1145/3723041"
+    ],
+    "URL": "https://doi.org/10.1145/3723041",
+    "relation": {},
+    "ISSN": [
+      "2834-5533"
+    ],
+    "issn-type": [
+      {
+        "type": "electronic",
+        "value": "2834-5533"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2025,
+          4,
+          11
+        ]
+      ]
+    },
+    "assertion": [
+      {
+        "value": "2024-05-24",
+        "order": 0,
+        "name": "received",
+        "label": "Received",
+        "group": {
+          "name": "publication_history",
+          "label": "Publication History"
+        }
+      },
+      {
+        "value": "2025-02-21",
+        "order": 2,
+        "name": "accepted",
+        "label": "Accepted",
+        "group": {
+          "name": "publication_history",
+          "label": "Publication History"
+        }
+      },
+      {
+        "value": "2025-04-11",
+        "order": 3,
+        "name": "published",
+        "label": "Published",
+        "group": {
+          "name": "publication_history",
+          "label": "Publication History"
+        }
+      }
+    ]
+  }
+}

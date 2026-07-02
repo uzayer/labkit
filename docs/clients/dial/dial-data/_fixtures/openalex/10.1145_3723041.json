@@ -1,0 +1,1210 @@
+{
+  "id": "https://openalex.org/W4408480426",
+  "doi": "https://doi.org/10.1145/3723041",
+  "title": "Implications of Mobile Financial Service Users’ Adaptive Usage Behavior: The Vicious Cycle of Negative Experience, Social Construct, and Confidence",
+  "display_name": "Implications of Mobile Financial Service Users’ Adaptive Usage Behavior: The Vicious Cycle of Negative Experience, Social Construct, and Confidence",
+  "publication_year": 2025,
+  "publication_date": "2025-03-15",
+  "ids": {
+    "openalex": "https://openalex.org/W4408480426",
+    "doi": "https://doi.org/10.1145/3723041"
+  },
+  "language": "en",
+  "primary_location": {
+    "id": "doi:10.1145/3723041",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.1145/3723041",
+    "pdf_url": null,
+    "source": {
+      "id": "https://openalex.org/S4387291547",
+      "display_name": "ACM Journal on Computing and Sustainable Societies",
+      "issn_l": "2834-5533",
+      "issn": [
+        "2834-5533"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "host_organization": "https://openalex.org/P4310319798",
+      "host_organization_name": "Association for Computing Machinery",
+      "host_organization_lineage": [
+        "https://openalex.org/P4310319798"
+      ],
+      "host_organization_lineage_names": [
+        "Association for Computing Machinery"
+      ],
+      "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "ACM Journal on Computing and Sustainable Societies",
+    "raw_type": "journal-article"
+  },
+  "type": "article",
+  "indexed_in": [
+    "crossref"
+  ],
+  "open_access": {
+    "is_oa": true,
+    "oa_status": "hybrid",
+    "oa_url": "https://doi.org/10.1145/3723041",
+    "any_repository_has_fulltext": true
+  },
+  "authorships": [
+    {
+      "author_position": "first",
+      "author": {
+        "id": "https://openalex.org/A5050709725",
+        "display_name": "Ifti Azad Abeer",
+        "orcid": "https://orcid.org/0000-0002-0860-0444"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ],
+      "countries": [
+        "BD"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Ifti Azad Abeer",
+      "raw_affiliation_strings": [
+        "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+      ],
+      "raw_orcid": "https://orcid.org/0000-0002-0860-0444",
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5005530539",
+        "display_name": "Anik Saha",
+        "orcid": "https://orcid.org/0000-0002-9240-2108"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ],
+      "countries": [
+        "BD"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Anik Saha",
+      "raw_affiliation_strings": [
+        "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+        "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka Bangladesh"
+      ],
+      "raw_orcid": "https://orcid.org/0000-0002-9240-2108",
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        },
+        {
+          "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5073863363",
+        "display_name": "Anik Sinha",
+        "orcid": "https://orcid.org/0000-0003-4225-7413"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ],
+      "countries": [
+        "BD"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Anik Sinha",
+      "raw_affiliation_strings": [
+        "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+        "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka Bangladesh"
+      ],
+      "raw_orcid": "https://orcid.org/0000-0003-4225-7413",
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        },
+        {
+          "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5051692316",
+        "display_name": "Rahat Jahangir Rony",
+        "orcid": "https://orcid.org/0000-0001-5788-2145"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
+        },
+        {
+          "id": "https://openalex.org/I79510175",
+          "display_name": "Cardiff University",
+          "ror": "https://ror.org/03kk7td41",
+          "country_code": "GB",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I79510175"
+          ]
+        }
+      ],
+      "countries": [
+        "BD",
+        "GB"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Rahat Jahangir Rony",
+      "raw_affiliation_strings": [
+        "School of Computer Science and Informatics, Cardiff University, Cardiff, United Kingdom",
+        "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka Bangladesh"
+      ],
+      "raw_orcid": "https://orcid.org/0000-0001-5788-2145",
+      "affiliations": [
+        {
+          "raw_affiliation_string": "School of Computer Science and Informatics, Cardiff University, Cardiff, United Kingdom",
+          "institution_ids": [
+            "https://openalex.org/I79510175"
+          ]
+        },
+        {
+          "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5109619138",
+        "display_name": "Gazi Fakhrul Islam",
+        "orcid": null
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ],
+      "countries": [
+        "BD"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Gazi Fakhrul Islam",
+      "raw_affiliation_strings": [
+        "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+        "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka Bangladesh"
+      ],
+      "raw_orcid": "https://orcid.org/0009-0007-4444-7428",
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        },
+        {
+          "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5007106191",
+        "display_name": "Shajnush Amir",
+        "orcid": "https://orcid.org/0000-0003-4899-4780"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ],
+      "countries": [
+        "BD"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Shajnush Amir",
+      "raw_affiliation_strings": [
+        "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+        "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka Bangladesh"
+      ],
+      "raw_orcid": "https://orcid.org/0000-0003-4899-4780",
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        },
+        {
+          "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5052130889",
+        "display_name": "Md. Sabbir Ahmed",
+        "orcid": "https://orcid.org/0000-0001-8668-0120"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ],
+      "countries": [
+        "BD"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Md. Sabbir Ahmed",
+      "raw_affiliation_strings": [
+        "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+        "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka Bangladesh"
+      ],
+      "raw_orcid": "https://orcid.org/0000-0001-8668-0120",
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        },
+        {
+          "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5023205936",
+        "display_name": "Syeda Shabnam Khan",
+        "orcid": "https://orcid.org/0000-0003-3466-8482"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ],
+      "countries": [
+        "BD"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Syeda Shabnam Khan",
+      "raw_affiliation_strings": [
+        "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+        "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka Bangladesh"
+      ],
+      "raw_orcid": "https://orcid.org/0000-0003-3466-8482",
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        },
+        {
+          "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "last",
+      "author": {
+        "id": "https://openalex.org/A5011009295",
+        "display_name": "Nova Ahmed",
+        "orcid": "https://orcid.org/0000-0002-7715-1742"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ],
+      "countries": [
+        "BD"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Nova Ahmed",
+      "raw_affiliation_strings": [
+        "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+        "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka Bangladesh"
+      ],
+      "raw_orcid": "https://orcid.org/0000-0002-7715-1742",
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        },
+        {
+          "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ]
+    }
+  ],
+  "institutions": [],
+  "countries_distinct_count": 2,
+  "institutions_distinct_count": 9,
+  "corresponding_author_ids": [],
+  "corresponding_institution_ids": [],
+  "apc_list": null,
+  "apc_paid": null,
+  "fwci": 0,
+  "has_fulltext": false,
+  "cited_by_count": 0,
+  "citation_normalized_percentile": {
+    "value": 0.05366499,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": false
+  },
+  "cited_by_percentile_year": null,
+  "biblio": {
+    "volume": "3",
+    "issue": "2",
+    "first_page": "1",
+    "last_page": "31"
+  },
+  "is_retracted": false,
+  "is_paratext": false,
+  "is_xpac": false,
+  "primary_topic": {
+    "id": "https://openalex.org/T13194",
+    "display_name": "ICT in Developing Communities",
+    "score": 0.984000027179718,
+    "subfield": {
+      "id": "https://openalex.org/subfields/1710",
+      "display_name": "Information Systems"
+    },
+    "field": {
+      "id": "https://openalex.org/fields/17",
+      "display_name": "Computer Science"
+    },
+    "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+    }
+  },
+  "topics": [
+    {
+      "id": "https://openalex.org/T13194",
+      "display_name": "ICT in Developing Communities",
+      "score": 0.984000027179718,
+      "subfield": {
+        "id": "https://openalex.org/subfields/1710",
+        "display_name": "Information Systems"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/17",
+        "display_name": "Computer Science"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/3",
+        "display_name": "Physical Sciences"
+      }
+    },
+    {
+      "id": "https://openalex.org/T10068",
+      "display_name": "Technology Adoption and User Behaviour",
+      "score": 0.9824000000953674,
+      "subfield": {
+        "id": "https://openalex.org/subfields/1802",
+        "display_name": "Information Systems and Management"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/18",
+        "display_name": "Decision Sciences"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/2",
+        "display_name": "Social Sciences"
+      }
+    },
+    {
+      "id": "https://openalex.org/T11536",
+      "display_name": "Consumer Retail Behavior Studies",
+      "score": 0.9429000020027161,
+      "subfield": {
+        "id": "https://openalex.org/subfields/1406",
+        "display_name": "Marketing"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/14",
+        "display_name": "Business, Management and Accounting"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/2",
+        "display_name": "Social Sciences"
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "https://openalex.org/keywords/delegate",
+      "display_name": "Delegate",
+      "score": 0.6009833216667175
+    },
+    {
+      "id": "https://openalex.org/keywords/psychology",
+      "display_name": "Psychology",
+      "score": 0.5664933323860168
+    },
+    {
+      "id": "https://openalex.org/keywords/construct",
+      "display_name": "Construct (python library)",
+      "score": 0.4571714997291565
+    },
+    {
+      "id": "https://openalex.org/keywords/psychological-intervention",
+      "display_name": "Psychological intervention",
+      "score": 0.4162886142730713
+    },
+    {
+      "id": "https://openalex.org/keywords/social-psychology",
+      "display_name": "Social psychology",
+      "score": 0.3807661533355713
+    },
+    {
+      "id": "https://openalex.org/keywords/computer-science",
+      "display_name": "Computer science",
+      "score": 0.10739931464195251
+    }
+  ],
+  "concepts": [
+    {
+      "id": "https://openalex.org/C143273055",
+      "wikidata": "https://www.wikidata.org/wiki/Q2382794",
+      "display_name": "Delegate",
+      "level": 2,
+      "score": 0.6009833216667175
+    },
+    {
+      "id": "https://openalex.org/C15744967",
+      "wikidata": "https://www.wikidata.org/wiki/Q9418",
+      "display_name": "Psychology",
+      "level": 0,
+      "score": 0.5664933323860168
+    },
+    {
+      "id": "https://openalex.org/C2780801425",
+      "wikidata": "https://www.wikidata.org/wiki/Q5164392",
+      "display_name": "Construct (python library)",
+      "level": 2,
+      "score": 0.4571714997291565
+    },
+    {
+      "id": "https://openalex.org/C27415008",
+      "wikidata": "https://www.wikidata.org/wiki/Q7256382",
+      "display_name": "Psychological intervention",
+      "level": 2,
+      "score": 0.4162886142730713
+    },
+    {
+      "id": "https://openalex.org/C77805123",
+      "wikidata": "https://www.wikidata.org/wiki/Q161272",
+      "display_name": "Social psychology",
+      "level": 1,
+      "score": 0.3807661533355713
+    },
+    {
+      "id": "https://openalex.org/C41008148",
+      "wikidata": "https://www.wikidata.org/wiki/Q21198",
+      "display_name": "Computer science",
+      "level": 0,
+      "score": 0.10739931464195251
+    },
+    {
+      "id": "https://openalex.org/C118552586",
+      "wikidata": "https://www.wikidata.org/wiki/Q7867",
+      "display_name": "Psychiatry",
+      "level": 1,
+      "score": 0
+    },
+    {
+      "id": "https://openalex.org/C199360897",
+      "wikidata": "https://www.wikidata.org/wiki/Q9143",
+      "display_name": "Programming language",
+      "level": 1,
+      "score": 0
+    }
+  ],
+  "mesh": [],
+  "locations_count": 2,
+  "locations": [
+    {
+      "id": "doi:10.1145/3723041",
+      "is_oa": true,
+      "landing_page_url": "https://doi.org/10.1145/3723041",
+      "pdf_url": null,
+      "source": {
+        "id": "https://openalex.org/S4387291547",
+        "display_name": "ACM Journal on Computing and Sustainable Societies",
+        "issn_l": "2834-5533",
+        "issn": [
+          "2834-5533"
+        ],
+        "is_oa": false,
+        "is_in_doaj": false,
+        "is_core": true,
+        "host_organization": "https://openalex.org/P4310319798",
+        "host_organization_name": "Association for Computing Machinery",
+        "host_organization_lineage": [
+          "https://openalex.org/P4310319798"
+        ],
+        "host_organization_lineage_names": [
+          "Association for Computing Machinery"
+        ],
+        "type": "journal"
+      },
+      "license": "cc-by",
+      "license_id": "https://openalex.org/licenses/cc-by",
+      "version": "publishedVersion",
+      "is_accepted": true,
+      "is_published": true,
+      "raw_source_name": "ACM Journal on Computing and Sustainable Societies",
+      "raw_type": "journal-article"
+    },
+    {
+      "id": "pmh:oai:https://orca.cardiff.ac.uk:177758",
+      "is_oa": true,
+      "landing_page_url": null,
+      "pdf_url": "https://orca.cardiff.ac.uk/id/eprint/177758/1/3723041.pdf",
+      "source": {
+        "id": "https://openalex.org/S4306401195",
+        "display_name": "ORCA Online Research @Cardiff (Cardiff University)",
+        "issn_l": null,
+        "issn": null,
+        "is_oa": false,
+        "is_in_doaj": false,
+        "is_core": false,
+        "host_organization": "https://openalex.org/I79510175",
+        "host_organization_name": "Cardiff University",
+        "host_organization_lineage": [
+          "https://openalex.org/I79510175"
+        ],
+        "host_organization_lineage_names": [],
+        "type": "repository"
+      },
+      "license": null,
+      "license_id": null,
+      "version": "submittedVersion",
+      "is_accepted": false,
+      "is_published": false,
+      "raw_source_name": null,
+      "raw_type": "PeerReviewed"
+    }
+  ],
+  "best_oa_location": {
+    "id": "doi:10.1145/3723041",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.1145/3723041",
+    "pdf_url": null,
+    "source": {
+      "id": "https://openalex.org/S4387291547",
+      "display_name": "ACM Journal on Computing and Sustainable Societies",
+      "issn_l": "2834-5533",
+      "issn": [
+        "2834-5533"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "host_organization": "https://openalex.org/P4310319798",
+      "host_organization_name": "Association for Computing Machinery",
+      "host_organization_lineage": [
+        "https://openalex.org/P4310319798"
+      ],
+      "host_organization_lineage_names": [
+        "Association for Computing Machinery"
+      ],
+      "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "ACM Journal on Computing and Sustainable Societies",
+    "raw_type": "journal-article"
+  },
+  "sustainable_development_goals": [],
+  "awards": [],
+  "funders": [],
+  "has_content": {
+    "pdf": false,
+    "grobid_xml": false
+  },
+  "content_urls": null,
+  "referenced_works_count": 55,
+  "referenced_works": [
+    "https://openalex.org/W1244635768",
+    "https://openalex.org/W1775663254",
+    "https://openalex.org/W1969185721",
+    "https://openalex.org/W1979290264",
+    "https://openalex.org/W2138664283",
+    "https://openalex.org/W2140420369",
+    "https://openalex.org/W2213574772",
+    "https://openalex.org/W2239306219",
+    "https://openalex.org/W2559928430",
+    "https://openalex.org/W2763766763",
+    "https://openalex.org/W2767914633",
+    "https://openalex.org/W2769533150",
+    "https://openalex.org/W2775715748",
+    "https://openalex.org/W2780620674",
+    "https://openalex.org/W2781731354",
+    "https://openalex.org/W2784140750",
+    "https://openalex.org/W2789152355",
+    "https://openalex.org/W2796034586",
+    "https://openalex.org/W2799331516",
+    "https://openalex.org/W2886362333",
+    "https://openalex.org/W2941111231",
+    "https://openalex.org/W2963064592",
+    "https://openalex.org/W2963144337",
+    "https://openalex.org/W2980945527",
+    "https://openalex.org/W2985009384",
+    "https://openalex.org/W2987376566",
+    "https://openalex.org/W2999729048",
+    "https://openalex.org/W3013428959",
+    "https://openalex.org/W3043758161",
+    "https://openalex.org/W3046643511",
+    "https://openalex.org/W3091902505",
+    "https://openalex.org/W3092364236",
+    "https://openalex.org/W3112098256",
+    "https://openalex.org/W3120070483",
+    "https://openalex.org/W3125192083",
+    "https://openalex.org/W3127107429",
+    "https://openalex.org/W3138837807",
+    "https://openalex.org/W3158102973",
+    "https://openalex.org/W3159999480",
+    "https://openalex.org/W3197649032",
+    "https://openalex.org/W3204381935",
+    "https://openalex.org/W4213002759",
+    "https://openalex.org/W4220938882",
+    "https://openalex.org/W4225100575",
+    "https://openalex.org/W4225154064",
+    "https://openalex.org/W4240505852",
+    "https://openalex.org/W4240837268",
+    "https://openalex.org/W4250245141",
+    "https://openalex.org/W4282972106",
+    "https://openalex.org/W4283453847",
+    "https://openalex.org/W4312190637",
+    "https://openalex.org/W4313180997",
+    "https://openalex.org/W4376044081",
+    "https://openalex.org/W4386482797",
+    "https://openalex.org/W6638027619"
+  ],
+  "related_works": [
+    "https://openalex.org/W2748952813",
+    "https://openalex.org/W4391375266",
+    "https://openalex.org/W2031284701",
+    "https://openalex.org/W3141203889",
+    "https://openalex.org/W1969486489",
+    "https://openalex.org/W2156039046",
+    "https://openalex.org/W2418771911",
+    "https://openalex.org/W2994187804",
+    "https://openalex.org/W2960441665",
+    "https://openalex.org/W2070558560"
+  ],
+  "abstract_inverted_index": {
+    "313": [
+      78
+    ],
+    "The": [
+      0,
+      19,
+      60,
+      117
+    ],
+    "COVID-19": [
+      1
+    ],
+    "pandemic": [
+      2
+    ],
+    "increased": [
+      3
+    ],
+    "the": [
+      4,
+      99,
+      121,
+      136,
+      153
+    ],
+    "usage": [
+      5,
+      22,
+      37,
+      48
+    ],
+    "of": [
+      6,
+      21,
+      123
+    ],
+    "Mobile": [
+      7
+    ],
+    "Financial": [
+      8
+    ],
+    "Services": [
+      9
+    ],
+    "(MFSs)": [
+      10
+    ],
+    "everywhere,": [
+      11
+    ],
+    "including": [
+      12
+    ],
+    "in": [
+      13,
+      30,
+      68
+    ],
+    "developing": [
+      14
+    ],
+    "countries": [
+      15
+    ],
+    "such": [
+      16
+    ],
+    "as": [
+      17
+    ],
+    "Bangladesh.": [
+      18
+    ],
+    "increment": [
+      20
+    ],
+    "is": [
+      23
+    ],
+    "paired": [
+      24
+    ],
+    "with": [
+      25
+    ],
+    "continuing": [
+      26
+    ],
+    "misuse": [
+      27,
+      114
+    ],
+    "and": [
+      28,
+      54,
+      70,
+      86,
+      93,
+      108,
+      115,
+      144
+    ],
+    "abuse": [
+      29
+    ],
+    "several": [
+      31,
+      58
+    ],
+    "ways": [
+      32,
+      100
+    ],
+    "that": [
+      33
+    ],
+    "impact": [
+      34
+    ],
+    "users’": [
+      35,
+      45
+    ],
+    "MFS": [
+      36,
+      47,
+      106
+    ],
+    "behaviors.": [
+      38
+    ],
+    "This": [
+      39
+    ],
+    "qualitative": [
+      40
+    ],
+    "study": [
+      41,
+      61
+    ],
+    "aimed": [
+      42
+    ],
+    "to": [
+      43,
+      51,
+      112,
+      126,
+      151
+    ],
+    "understand": [
+      44
+    ],
+    "adoptive": [
+      46
+    ],
+    "behaviors": [
+      49
+    ],
+    "due": [
+      50
+    ],
+    "negative": [
+      52,
+      140
+    ],
+    "experiences": [
+      53
+    ],
+    "their": [
+      55,
+      103
+    ],
+    "implications": [
+      56
+    ],
+    "among": [
+      57
+    ],
+    "communities.": [
+      59
+    ],
+    "took": [
+      62
+    ],
+    "place": [
+      63
+    ],
+    "across": [
+      64
+    ],
+    "all": [
+      65
+    ],
+    "eight": [
+      66
+    ],
+    "divisions": [
+      67
+    ],
+    "Bangladesh": [
+      69
+    ],
+    "did": [
+      71
+    ],
+    "focus": [
+      72
+    ],
+    "group": [
+      73
+    ],
+    "discussions": [
+      74
+    ],
+    "involving": [
+      75
+    ],
+    "N": [
+      76
+    ],
+    "=": [
+      77,
+      81,
+      84,
+      88
+    ],
+    "participants": [
+      79,
+      101
+    ],
+    "(female": [
+      80
+    ],
+    "203,": [
+      82
+    ],
+    "male": [
+      83
+    ],
+    "108,": [
+      85
+    ],
+    "transgender": [
+      87
+    ],
+    "2)": [
+      89
+    ],
+    "covering": [
+      90
+    ],
+    "urban,": [
+      91
+    ],
+    "suburban,": [
+      92
+    ],
+    "rural": [
+      94
+    ],
+    "regions.": [
+      95
+    ],
+    "Study": [
+      96
+    ],
+    "findings": [
+      97
+    ],
+    "present": [
+      98
+    ],
+    "limit": [
+      102
+    ],
+    "usage,": [
+      104
+    ],
+    "delegate": [
+      105
+    ],
+    "operations,": [
+      107
+    ],
+    "rely": [
+      109
+    ],
+    "on": [
+      110
+    ],
+    "others": [
+      111
+    ],
+    "avoid": [
+      113,
+      127
+    ],
+    "abuse.": [
+      116
+    ],
+    "stories": [
+      118
+    ],
+    "also": [
+      119
+    ],
+    "indicate": [
+      120
+    ],
+    "inability": [
+      122
+    ],
+    "these": [
+      124
+    ],
+    "measures": [
+      125
+    ],
+    "monetary": [
+      128
+    ],
+    "loss,": [
+      129
+    ],
+    "which": [
+      130
+    ],
+    "creates": [
+      131
+    ],
+    "more": [
+      132
+    ],
+    "negativity.": [
+      133
+    ],
+    "We": [
+      134,
+      146
+    ],
+    "discuss": [
+      135
+    ],
+    "cyclic": [
+      137
+    ],
+    "relationship": [
+      138
+    ],
+    "between": [
+      139
+    ],
+    "experiences,": [
+      141
+    ],
+    "social": [
+      142
+    ],
+    "constructs,": [
+      143
+    ],
+    "confidence.": [
+      145
+    ],
+    "suggest": [
+      147
+    ],
+    "potential": [
+      148
+    ],
+    "technology": [
+      149
+    ],
+    "interventions": [
+      150
+    ],
+    "break": [
+      152
+    ],
+    "cycle.": [
+      154
+    ]
+  },
+  "counts_by_year": [],
+  "updated_date": "2026-06-11T09:08:48.828518",
+  "created_date": "2025-10-10T00:00:00"
+}

@@ -1,0 +1,424 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2025,
+          6,
+          18
+        ]
+      ],
+      "date-time": "2025-06-18T04:20:55Z",
+      "timestamp": 1750220455281,
+      "version": "3.41.0"
+    },
+    "publisher-location": "New York, NY, USA",
+    "reference-count": 31,
+    "publisher": "ACM",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              5,
+              8
+            ]
+          ],
+          "date-time": "2021-05-08T00:00:00Z",
+          "timestamp": 1620432000000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "https://www.acm.org/publications/policies/copyright_policy#Background"
+      }
+    ],
+    "funder": [
+      {
+        "name": "Eastern University, Bangladesh"
+      }
+    ],
+    "content-domain": {
+      "domain": [
+        "dl.acm.org"
+      ],
+      "crossmark-restriction": true
+    },
+    "short-container-title": [],
+    "published-print": {
+      "date-parts": [
+        [
+          2021,
+          5,
+          8
+        ]
+      ]
+    },
+    "DOI": "10.1145/3429360.3468192",
+    "type": "proceedings-article",
+    "created": {
+      "date-parts": [
+        [
+          2021,
+          9,
+          7
+        ]
+      ],
+      "date-time": "2021-09-07T16:12:22Z",
+      "timestamp": 1631031142000
+    },
+    "page": "114-121",
+    "update-policy": "https://doi.org/10.1145/crossmark-policy",
+    "source": "Crossref",
+    "is-referenced-by-count": 4,
+    "title": [
+      "Identifying High and Low Academic Result Holders Through Smartphone Usage Data"
+    ],
+    "prefix": "10.1145",
+    "author": [
+      {
+        "given": "Md Sabbir",
+        "family": "Ahmed",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Eastern University, Bangladesh"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Rahat",
+        "family": "Jahangir Rony",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "North South University, Bangladesh"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Nova",
+        "family": "Ahmed",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "North South University, Bangladesh"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "member": "320",
+    "published-online": {
+      "date-parts": [
+        [
+          2021,
+          9,
+          7
+        ]
+      ]
+    },
+    "reference": [
+      {
+        "volume-title": "Retrieved on 30th",
+        "year": "2020",
+        "key": "e_1_3_2_1_1_1",
+        "unstructured": "Newzoo. 2020 . Number of smartphone users worldwide from 2016 to 2021 . Retrieved on 30th June, 2020 from https://www.statista.com/statistics/330695/number-of-smartphone-users-worldwide/ Newzoo. 2020. Number of smartphone users worldwide from 2016 to 2021. Retrieved on 30th June, 2020 from https://www.statista.com/statistics/330695/number-of-smartphone-users-worldwide/"
+      },
+      {
+        "key": "e_1_3_2_1_2_1",
+        "volume-title": "Dey",
+        "author": "Ferreira Denzil",
+        "year": "2014",
+        "unstructured": "Denzil Ferreira , Jorge Goncalves , Vassilis Kostakos , Louise Barkhuus , and Anind K . Dey . 2014 . Contextual Experience Sampling of Mobile Application Micro-Usage. In MobileHCI '14. Denzil Ferreira, Jorge Goncalves, Vassilis Kostakos, Louise Barkhuus, and Anind K. Dey. 2014. Contextual Experience Sampling of Mobile Application Micro-Usage. In MobileHCI'14."
+      },
+      {
+        "key": "e_1_3_2_1_3_1",
+        "volume-title": "An In-Situ Study of Mobile App& Mobile Search Interactions. In CHI'15",
+        "author": "Carrascal Juan Pablo",
+        "year": "2015",
+        "unstructured": "Juan Pablo Carrascal , Karen Church . 2015 . An In-Situ Study of Mobile App& Mobile Search Interactions. In CHI'15 . Juan Pablo Carrascal, Karen Church. 2015. An In-Situ Study of Mobile App& Mobile Search Interactions. In CHI'15."
+      },
+      {
+        "key": "e_1_3_2_1_4_1",
+        "volume-title": "Dey",
+        "author": "Shin Choonsung",
+        "year": "2012",
+        "unstructured": "Choonsung Shin , Jin-Hyuk Hong , and Anind K . Dey . 2012 . Understanding and Prediction of Mobile Application Usage for Smart Phones. In UbiComp’ 12, 173–182 Choonsung Shin, Jin-Hyuk Hong, and Anind K. Dey. 2012. Understanding and Prediction of Mobile Application Usage for Smart Phones. In UbiComp’ 12, 173–182"
+      },
+      {
+        "key": "e_1_3_2_1_5_1",
+        "first-page": "353",
+        "volume-title": "ICMI’11",
+        "author": "Tri Do Trinh Minh",
+        "unstructured": "Trinh Minh Tri Do , Jan Blom , and Daniel Gatica-Perez . Smartphone usage in the wild: a large-scale analysis of applications and context . In ICMI’11 , 353 - 360 . Trinh Minh Tri Do, Jan Blom, and Daniel Gatica-Perez. Smartphone usage in the wild: a large-scale analysis of applications and context. In ICMI’11, 353-360."
+      },
+      {
+        "key": "e_1_3_2_1_6_1",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Sha Zhao Julian Ramos Jianrong Tao Ziwen Jiang Shijian Li Zhaohui Wu Gang Pan Anind K. Dey. 2016. Discovering different kinds of smartphone users through their application usage behaviors. In UbiComp’ 16 498 - 509.  Sha Zhao Julian Ramos Jianrong Tao Ziwen Jiang Shijian Li Zhaohui Wu Gang Pan Anind K. Dey. 2016. Discovering different kinds of smartphone users through their application usage behaviors. In UbiComp’ 16 498 - 509.",
+        "DOI": "10.1145/2971648.2971696"
+      },
+      {
+        "key": "e_1_3_2_1_7_1",
+        "volume-title": "CHI 2020 HCIxB Symposium.",
+        "author": "Chowdhury Anuva",
+        "year": "2020",
+        "unstructured": "Anuva Chowdhury , Arisha Chowdhury , Rahat Jahangir Rony , Nova Ahmed , and Md. Moinuddin Bhuiyan . 2020 . Mom thinks, Technology is my Enemy: A Teen Perspective . CHI 2020 HCIxB Symposium. Anuva Chowdhury, Arisha Chowdhury, Rahat Jahangir Rony, Nova Ahmed, and Md. Moinuddin Bhuiyan. 2020. Mom thinks, Technology is my Enemy: A Teen Perspective. CHI 2020 HCIxB Symposium."
+      },
+      {
+        "key": "e_1_3_2_1_8_1",
+        "unstructured": "Frank Bentley Karen Church Beverly Harrison Kent Lyons and Matthew Rafalow. 2015. Three Hours a Day: Understanding Current Teen Practices of Smartphone Application Use. arXiv preprint arXiv:1510.05192  Frank Bentley Karen Church Beverly Harrison Kent Lyons and Matthew Rafalow. 2015. Three Hours a Day: Understanding Current Teen Practices of Smartphone Application Use. arXiv preprint arXiv:1510.05192"
+      },
+      {
+        "key": "e_1_3_2_1_9_1",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Matthias Böhmer Brent Hecht Johannes Schöning Antonio Krüger and Gernot Bauer. 2011. Falling Asleep with Angry Birds Facebook and Kindle –A Large Scale Study on Mobile Application Usage. In MobileHCI ’11 47- 56.  Matthias Böhmer Brent Hecht Johannes Schöning Antonio Krüger and Gernot Bauer. 2011. Falling Asleep with Angry Birds Facebook and Kindle –A Large Scale Study on Mobile Application Usage. In MobileHCI ’11 47- 56.",
+        "DOI": "10.1145/2037373.2037383"
+      },
+      {
+        "key": "e_1_3_2_1_10_1",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Alistair Morrison Xiaoyu Xiong Matthew Higgs Marek Bell and Matthew Chalmers. 2018. A Large-Scale Study of iPhone App Launch Behaviour. In CHI' 18.  Alistair Morrison Xiaoyu Xiong Matthew Higgs Marek Bell and Matthew Chalmers. 2018. A Large-Scale Study of iPhone App Launch Behaviour. In CHI' 18.",
+        "DOI": "10.1145/3173574.3173918"
+      },
+      {
+        "key": "e_1_3_2_1_11_1",
+        "unstructured": "Uichin Lee Joonwon Lee Minsam Ko Changhun Lee Yuhwan Kim Subin Yang Koji Yatani Gahgene Gweon Kyong-Mee Chung and Junehwa Song. 2014. Hooked on Smartphones: An Exploratory Study on Smartphone Overuse among College Students. In CHI ‘14 2327–2336.  Uichin Lee Joonwon Lee Minsam Ko Changhun Lee Yuhwan Kim Subin Yang Koji Yatani Gahgene Gweon Kyong-Mee Chung and Junehwa Song. 2014. Hooked on Smartphones: An Exploratory Study on Smartphone Overuse among College Students. In CHI ‘14 2327–2336."
+      },
+      {
+        "key": "e_1_3_2_1_12_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/bjet.12176"
+      },
+      {
+        "key": "e_1_3_2_1_13_1",
+        "volume-title": "Campbell",
+        "author": "Wang Rui",
+        "year": "2015",
+        "unstructured": "Rui Wang , Gabriella Harari , Peilin Hao , Xia Zhou , and Andrew T . Campbell . 2015 . SmartGPA: How Smartphones Can Assess and Predict Academic Performance of College Students . In UbiComp’15, 295-306. Rui Wang, Gabriella Harari, Peilin Hao, Xia Zhou, and Andrew T. Campbell. 2015. SmartGPA: How Smartphones Can Assess and Predict Academic Performance of College Students. In UbiComp’15, 295-306."
+      },
+      {
+        "volume-title": "The Impact of University Students",
+        "author": "Mubassira Masiath",
+        "key": "e_1_3_2_1_14_1",
+        "unstructured": "Masiath Mubassira and Amit Kumar Das . 2019. The Impact of University Students ’ Smartphone Use and Academic Performance in Bangladesh : A Quantitative Study . In IMCOM '19, 734-748. DOI: 10.1007/978-3-030-19063-7_59 10.1007/978-3-030-19063-7_59 Masiath Mubassira and Amit Kumar Das. 2019. The Impact of University Students’ Smartphone Use and Academic Performance in Bangladesh: A Quantitative Study. In IMCOM '19, 734-748. DOI: 10.1007/978-3-030-19063-7_59"
+      },
+      {
+        "key": "e_1_3_2_1_15_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3173574.3173992"
+      },
+      {
+        "key": "e_1_3_2_1_16_1",
+        "first-page": "1",
+        "article-title": "App Usage Predicts Cognitive Ability in Older Adults",
+        "volume": "19",
+        "author": "Gordon MitcheDisll L.",
+        "year": "2019",
+        "unstructured": "MitcheDisll L. Gordon , Leon Gatys , Carlos Guestrin , Jeffrey P. Bigham , Andrew Trister , and Kayur Patel . 2019 . App Usage Predicts Cognitive Ability in Older Adults . In CHI' 19 , 1 - 12 . MitcheDisll L. Gordon, Leon Gatys, Carlos Guestrin, Jeffrey P. Bigham, Andrew Trister, and Kayur Patel. 2019. App Usage Predicts Cognitive Ability in Older Adults. In CHI' 19, 1-12.",
+        "journal-title": "CHI'"
+      },
+      {
+        "key": "e_1_3_2_1_17_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/J.COMPEDU.2017.10.006"
+      },
+      {
+        "key": "e_1_3_2_1_18_1",
+        "volume-title": "Retrieved on",
+        "author": "Contributors Wikipedia",
+        "year": "2020",
+        "unstructured": "Wikipedia Contributors . 2020 . Academic grading in Bangladesh . Retrieved on June 15, 2020 from https://en.wikipedia.org/wiki/Academic_grading_in_Bangladesh Wikipedia Contributors. 2020. Academic grading in Bangladesh. Retrieved on June 15, 2020 from https://en.wikipedia.org/wiki/Academic_grading_in_Bangladesh"
+      },
+      {
+        "key": "#cr-split#-e_1_3_2_1_19_1.1",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Nikola Banovic Christina Brant Jennifer Mankoff Anind K. Dey. 2014. ProactiveTasks: the Short of Mobile Device Use Sessions. In MobileHCI'14. DOI: 10.1145/2628363.2628380 10.1145/2628363.2628380",
+        "DOI": "10.1145/2628363.2628380"
+      },
+      {
+        "key": "#cr-split#-e_1_3_2_1_19_1.2",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Nikola Banovic Christina Brant Jennifer Mankoff Anind K. Dey. 2014. ProactiveTasks: the Short of Mobile Device Use Sessions. In MobileHCI'14. DOI: 10.1145/2628363.2628380",
+        "DOI": "10.1145/2628363.2628380"
+      },
+      {
+        "key": "e_1_3_2_1_20_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2858036.2858348"
+      },
+      {
+        "key": "e_1_3_2_1_21_1",
+        "volume-title": "YouTube is bigger distraction to children's homework than television, survey finds. Retrieved on 12th",
+        "author": "Turner Camilla",
+        "year": "2019",
+        "unstructured": "Camilla Turner . 2018. YouTube is bigger distraction to children's homework than television, survey finds. Retrieved on 12th December 2019 from https://www.telegraph.co.uk/education/2018/02/23/youtube-bigger-distraction-childrens-homework-television-survey/ Camilla Turner. 2018. YouTube is bigger distraction to children's homework than television, survey finds. Retrieved on 12th December 2019 from https://www.telegraph.co.uk/education/2018/02/23/youtube-bigger-distraction-childrens-homework-television-survey/"
+      },
+      {
+        "key": "e_1_3_2_1_22_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/584091.584093"
+      },
+      {
+        "key": "#cr-split#-e_1_3_2_1_23_1.1",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Jaejeung Kim Joonyoung Park Hyunsoo Lee Minsam Ko and Uichin Lee. 2019. LocknType: Lockout Task Intervention for Discouraging Smartphone App Use. In CHI'19. DOI: 10.1145/3290605.3300927 10.1145/3290605.3300927",
+        "DOI": "10.1145/3290605.3300927"
+      },
+      {
+        "key": "#cr-split#-e_1_3_2_1_23_1.2",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Jaejeung Kim Joonyoung Park Hyunsoo Lee Minsam Ko and Uichin Lee. 2019. LocknType: Lockout Task Intervention for Discouraging Smartphone App Use. In CHI'19. DOI: 10.1145/3290605.3300927",
+        "DOI": "10.1145/3290605.3300927"
+      },
+      {
+        "key": "#cr-split#-e_1_3_2_1_24_1.1",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Fabian Okeke Michael Sobolev Nicola Dell and Deborah Estrin. 2018. Good vibrations : Can a Digital Nudge Reduce Digital Overload?. In MobileHCI'18. DOI: 10.1145/3229434.3229463 10.1145/3229434.3229463",
+        "DOI": "10.1145/3229434.3229463"
+      },
+      {
+        "key": "#cr-split#-e_1_3_2_1_24_1.2",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Fabian Okeke Michael Sobolev Nicola Dell and Deborah Estrin. 2018. Good vibrations : Can a Digital Nudge Reduce Digital Overload?. In MobileHCI'18. DOI: 10.1145/3229434.3229463",
+        "DOI": "10.1145/3229434.3229463"
+      },
+      {
+        "key": "e_1_3_2_1_25_1",
+        "first-page": "1",
+        "article-title": "GoalKeeper: Exploring Interaction Lockout Mechanisms for Regulating Smartphone Use",
+        "volume": "3",
+        "author": "Kim Jaejeung",
+        "year": "2019",
+        "unstructured": "Jaejeung Kim , Hayoung Jung , Minsam Ko , and Uichin Lee . 2019 . GoalKeeper: Exploring Interaction Lockout Mechanisms for Regulating Smartphone Use . In IMWUT 3 , 1: 1 – 29 . DOI: 10.1145/3314403 10.1145/3314403 Jaejeung Kim, Hayoung Jung, Minsam Ko, and Uichin Lee. 2019. GoalKeeper: Exploring Interaction Lockout Mechanisms for Regulating Smartphone Use. In IMWUT 3, 1: 1–29. DOI: 10.1145/3314403",
+        "journal-title": "IMWUT"
+      },
+      {
+        "key": "e_1_3_2_1_26_1",
+        "volume-title": "Adjunct Proc. of UbiComp’20",
+        "author": "Sabbir Ahmed Md.",
+        "year": "2020",
+        "unstructured": "Md. Sabbir Ahmed , Rahat Jahangir Rony , Tanvir Hasan , and Nova Ahmed . 2020 . Smartphone usage behavior between depressed and non-depressed students . In Adjunct Proc. of UbiComp’20 . DOI: 10.1145/3410530.3414441 10.1145/3410530.3414441 Md. Sabbir Ahmed, Rahat Jahangir Rony, Tanvir Hasan, and Nova Ahmed. 2020. Smartphone usage behavior between depressed and non-depressed students. In Adjunct Proc. of UbiComp’20. DOI: 10.1145/3410530.3414441"
+      },
+      {
+        "key": "e_1_3_2_1_27_1",
+        "volume-title": "Md. Mahir Ashhab",
+        "author": "Sabbir Ahmed Md.",
+        "year": "2020",
+        "unstructured": "Md. Sabbir Ahmed , Rahat Jahangir Rony , Md. Mahir Ashhab , and Nova Ahmed. 2020 . An Empirical Study to Analyze the Impact of Instagram on Students’ Academic Results . In IEEE TENSYMP’20. DOI: 10.1109/tensymp50017.2020.9230945 10.1109/tensymp50017.2020.9230945 Md. Sabbir Ahmed, Rahat Jahangir Rony, Md. Mahir Ashhab, and Nova Ahmed. 2020. An Empirical Study to Analyze the Impact of Instagram on Students’ Academic Results. In IEEE TENSYMP’20. DOI: 10.1109/tensymp50017.2020.9230945"
+      },
+      {
+        "key": "e_1_3_2_1_28_1",
+        "volume-title": "Recent Advances in Information and Communication Technology",
+        "author": "Srisawatsakul Charnsak",
+        "year": "2018",
+        "unstructured": "Charnsak Srisawatsakul and Waransanang Boontarig . 2018. Generations and Level of Information on Mobile Devices Usage: An Entropy-Based Study . In Recent Advances in Information and Communication Technology 2018 . Springer International Publishing , 267–276. DOI: 10.1007/978-3-319-93692-5_26 10.1007/978-3-319-93692-5_26 Charnsak Srisawatsakul and Waransanang Boontarig. 2018. Generations and Level of Information on Mobile Devices Usage: An Entropy-Based Study. In Recent Advances in Information and Communication Technology 2018. Springer International Publishing, 267–276. DOI: 10.1007/978-3-319-93692-5_26"
+      }
+    ],
+    "event": {
+      "name": "CHI '21: CHI Conference on Human Factors in Computing Systems",
+      "sponsor": [
+        "SIGCHI ACM Special Interest Group on Computer-Human Interaction",
+        "SIGACCESS ACM Special Interest Group on Accessible Computing"
+      ],
+      "location": "Yokohama Japan",
+      "acronym": "CHI '21"
+    },
+    "container-title": [
+      "Asian CHI Symposium 2021"
+    ],
+    "original-title": [],
+    "link": [
+      {
+        "URL": "https://dl.acm.org/doi/10.1145/3429360.3468192",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://dl.acm.org/doi/pdf/10.1145/3429360.3468192",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2025,
+          6,
+          17
+        ]
+      ],
+      "date-time": "2025-06-17T20:48:02Z",
+      "timestamp": 1750193282000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://dl.acm.org/doi/10.1145/3429360.3468192"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2021,
+          5,
+          8
+        ]
+      ]
+    },
+    "references-count": 31,
+    "alternative-id": [
+      "10.1145/3429360.3468192",
+      "10.1145/3429360"
+    ],
+    "URL": "https://doi.org/10.1145/3429360.3468192",
+    "relation": {},
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2021,
+          5,
+          8
+        ]
+      ]
+    },
+    "assertion": [
+      {
+        "value": "2021-09-07",
+        "order": 2,
+        "name": "published",
+        "label": "Published",
+        "group": {
+          "name": "publication_history",
+          "label": "Publication History"
+        }
+      }
+    ]
+  }
+}

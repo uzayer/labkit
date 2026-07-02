@@ -1,0 +1,1163 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          9
+        ]
+      ],
+      "date-time": "2026-05-09T16:43:54Z",
+      "timestamp": 1778345034424,
+      "version": "3.51.4"
+    },
+    "reference-count": 110,
+    "publisher": "Springer Science and Business Media LLC",
+    "issue": "1",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              1,
+              6
+            ]
+          ],
+          "date-time": "2021-01-06T00:00:00Z",
+          "timestamp": 1609891200000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "https://www.springernature.com/gp/researchers/text-and-data-mining"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              1,
+              6
+            ]
+          ],
+          "date-time": "2021-01-06T00:00:00Z",
+          "timestamp": 1609891200000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "https://www.springernature.com/gp/researchers/text-and-data-mining"
+      }
+    ],
+    "content-domain": {
+      "domain": [
+        "link.springer.com"
+      ],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [
+      "Qual User Exp"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2021,
+          12
+        ]
+      ]
+    },
+    "DOI": "10.1007/s41233-020-00043-0",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2021,
+          1,
+          6
+        ]
+      ],
+      "date-time": "2021-01-06T12:03:35Z",
+      "timestamp": 1609934615000
+    },
+    "update-policy": "https://doi.org/10.1007/springer_crossmark_policy",
+    "source": "Crossref",
+    "is-referenced-by-count": 17,
+    "title": [
+      "Understanding self-reported stress among drivers and designing stress monitor using heart rate variability"
+    ],
+    "prefix": "10.1007",
+    "volume": "6",
+    "author": [
+      {
+        "given": "Nova",
+        "family": "Ahmed",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-5788-2145",
+        "authenticated-orcid": false,
+        "given": "Rahat Jahangir",
+        "family": "Rony",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "member": "297",
+    "published-online": {
+      "date-parts": [
+        [
+          2021,
+          1,
+          6
+        ]
+      ]
+    },
+    "reference": [
+      {
+        "key": "43_CR1",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Hwang C, Pushp S (2018) Investigating the user’s stress causes in daily life. UbiComp/ISWC’18 adjunct. http://dx.doi.org/10.1145/3267305.3267668",
+        "DOI": "10.1145/3267305.3267668"
+      },
+      {
+        "key": "43_CR2",
+        "unstructured": "Rony RJ, Mushfique MDT, Ahmed N, Ur Rahman SA (2018) Changes in driving behavior possibly hidden in stress, ASSET 2018, COMSNETS 2018"
+      },
+      {
+        "issue": "8",
+        "key": "43_CR3",
+        "doi-asserted-by": "publisher",
+        "first-page": "1351",
+        "DOI": "10.1080/00140130701318913",
+        "volume": "50",
+        "author": "R Ma",
+        "year": "2007",
+        "unstructured": "Ma R (2007) Situation awareness and driving performance in a simulated navigation task. Ergonomics 50(8):1351–1364",
+        "journal-title": "Ergonomics"
+      },
+      {
+        "key": "43_CR4",
+        "unstructured": "Chan AHS, Chen K (2011) Driving aptitude test (DAT): a new set of aptitude tests for occupational drivers. IMECS 2011"
+      },
+      {
+        "issue": "7540",
+        "key": "43_CR5",
+        "doi-asserted-by": "publisher",
+        "first-page": "521",
+        "DOI": "10.1136/bmj.38693.435301.80",
+        "volume": "332",
+        "author": "T Chandola",
+        "year": "2006",
+        "unstructured": "Chandola T, Brunner E, Marmot M (2006) Chronic stress at work and the metabolic syndrome: prospective study. BMJ 332(7540):521–525",
+        "journal-title": "BMJ"
+      },
+      {
+        "key": "43_CR6",
+        "doi-asserted-by": "publisher",
+        "unstructured": "Bonde A, Pan S, Jia Z, Zhang Y, Noh HY, Zhang P (2018) VVRRM: vehicular vibration-based heart RR-interval monitoring system. In: Proceedings of 19th international workshop on mobile computing systems and applications (HotMobile’18). https://doi.org/10.1145/3177102.3177110",
+        "DOI": "10.1145/3177102.3177110"
+      },
+      {
+        "key": "43_CR7",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Rony RJ, Ahmed N (2019) Understanding drivers wellbeing: quantitative study analysis and wearable experiment. In: International workshop on computing for wellbeing 2019 (Wellcomp 2019). UbiComp/ISWC 2019 adjunct. http://dx.doi.org/10.1145/3341162.3344830",
+        "DOI": "10.1145/3341162.3344830"
+      },
+      {
+        "key": "43_CR8",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Iqbal ST, Horvitz E, Ju YC, Mathews E (2011) Hang on a Sec!: effects of proactive mediation of phone conversations while driving. In: Proceedings of the SIGCHI conference on human factors in computing systems (CHI’11). ACM, New York, pp 463–472. http://dx.doi.org/10.1145/1978942.1979008",
+        "DOI": "10.1145/1978942.1979008"
+      },
+      {
+        "key": "43_CR9",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Iqbal ST, Ju YC, Horvitz E (2010) Cars, calls, and cognition: investigating driving and divided attention. In: Proceedings of the SIGCHI conference on human factors in computing systems (CHI’10). ACM, New York, pp 1281–1290. http://dx.doi.org/10.1145/1753326.1753518",
+        "DOI": "10.1145/1753326.1753518"
+      },
+      {
+        "issue": "6",
+        "key": "43_CR10",
+        "first-page": "546",
+        "volume": "9",
+        "author": "CF Choudhury",
+        "year": "2013",
+        "unstructured": "Choudhury CF, Ben-Akiva ME (2013) Modelling driving decisions: a latent plan approach. Transp A Transp Sci 9(6):546–566",
+        "journal-title": "Transp A Transp Sci"
+      },
+      {
+        "key": "43_CR11",
+        "first-page": "102",
+        "volume-title": "Handbook of personality: theory and research",
+        "author": "OP John",
+        "year": "1999",
+        "unstructured": "John OP, Srivastava S (1999) The Big-Five trait taxonomy: history, measurement, and theoretical perspectives. In: Pervin LA, John OP (eds) Handbook of personality: theory and research, vol 2. Guilford Press, New York, pp 102–138"
+      },
+      {
+        "key": "43_CR12",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Rony RJ, Ahmed N (2020) Development of a low-cost wearable with mobile sensing to monitor driving stress using HRV. In: Asian CHI 2020 symposium. http://dx.doi.org/10.1145/3391203.3391213",
+        "DOI": "10.1145/3391203.3391213"
+      },
+      {
+        "key": "43_CR13",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Ahmed N, Rony RJ, Mushfique MT, Rahman MM, Tahsin NE, Azad S, Raiyan S, Al Hasan S, Khan SS, D’Costa PA, Rahman SA (2019) Ambient intelligence in system to support wellbeing of drivers. In: Guide to ambient intelligence in the IoT environment: principles, technologies and applications. Springer, Cham. http://dx.doi.org/10.1007/978-3-030-04173-1 10",
+        "DOI": "10.1007/978-3-030-04173-1_10"
+      },
+      {
+        "key": "43_CR14",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/COMSNETS.2019.8711411",
+        "author": "RJ Rony",
+        "year": "2019",
+        "unstructured": "Rony RJ, Ahmed N (2019) Monitoring driving stress using HRV. COMSNETS. https://doi.org/10.1109/COMSNETS.2019.8711411",
+        "journal-title": "COMSNETS"
+      },
+      {
+        "key": "43_CR15",
+        "unstructured": "Ahmed N, ur Rahman SA, Rony RJ, Mushfique T (2016) Assessing driving stress using custom built real time sensors. IC4ME2"
+      },
+      {
+        "key": "43_CR16",
+        "unstructured": "Islam MM, Choudhury CF (2012) A violation behavior model for non-motorized vehicle drivers in heterogeneous traffic streams. In: Transportation Research Board 91st annual meeting"
+      },
+      {
+        "key": "43_CR17",
+        "unstructured": "Study: Bangladesh has second worst roads in Asia. https://www.dhakatribune.com/what-the-world-says/2018/02/28/study-bangladesh-second-worst-roads-asia. Accessed Sept 2018"
+      },
+      {
+        "key": "43_CR18",
+        "unstructured": "The global competitiveness report 2017-2018. World Economic Forum. ISBN-13: 978-1-944835-11-8"
+      },
+      {
+        "key": "43_CR19",
+        "unstructured": "Bangladesh: road traffic accidents. https://www.daily-sun.com/printversion/details/327901/2018/08/08/Bangladesh:-Road-Traffic-Accidents. Accessed Aug 2018"
+      },
+      {
+        "key": "43_CR20",
+        "unstructured": "Teenagers bring parts of Bangladesh to a Halt with bus death protests. https://www.theguardian.com/world/2018/aug/03/teenagers-bring-parts-of-bangladesh-to-a-halt-with-bus-death-protests. Accessed Aug 2018"
+      },
+      {
+        "key": "43_CR21",
+        "unstructured": "Pedestrians killed in Jatrabari accidents. https://www.dhakatribune.com/bangladesh/dhaka/2018/10/22/1-pedestrian-killed-in-jatrabari-bus-accident. Accessed Oct 2018"
+      },
+      {
+        "issue": "5",
+        "key": "43_CR22",
+        "doi-asserted-by": "publisher",
+        "first-page": "575",
+        "DOI": "10.1016/j.trf.2012.05.007",
+        "volume": "15",
+        "author": "R Abdu",
+        "year": "2012",
+        "unstructured": "Abdu R, Shinar D, Meiran N (2012) Situational (state) anger and driving. Transp Res F Traffic Psychol Behav 15(5):575–580",
+        "journal-title": "Transp Res F Traffic Psychol Behav"
+      },
+      {
+        "key": "43_CR23",
+        "doi-asserted-by": "publisher",
+        "first-page": "29",
+        "DOI": "10.1016/j.trf.2012.08.009",
+        "volume": "16",
+        "author": "T-Y Hu",
+        "year": "2013",
+        "unstructured": "Hu T-Y, Xie X, Li J (2013) Negative or positive? The effect of emotion and mood on risky driving. Transp Res F Traffic Psychol Behav 16:29–40",
+        "journal-title": "Transp Res F Traffic Psychol Behav"
+      },
+      {
+        "issue": "1",
+        "key": "43_CR24",
+        "doi-asserted-by": "publisher",
+        "first-page": "12",
+        "DOI": "10.1080/00140139.2011.638403",
+        "volume": "55",
+        "author": "MD Van Der Zwaag",
+        "year": "2012",
+        "unstructured": "Van Der Zwaag MD, Dijksterhuis C, De Waard D, Mulder BL, Westerink JH, Brookhuis KA (2012) The influence of music on mood and performance while driving. Ergonomics 55(1):12–22",
+        "journal-title": "Ergonomics"
+      },
+      {
+        "issue": "1",
+        "key": "43_CR25",
+        "doi-asserted-by": "publisher",
+        "first-page": "67",
+        "DOI": "10.2466/pms.2003.96.1.67",
+        "volume": "96",
+        "author": "E De Valck",
+        "year": "2003",
+        "unstructured": "De Valck E, De Groot E, Cluydts R (2003) Effects of slow-release caffeine and a nap on driving simulator performance after partial sleep deprivation. Perceptual Motor Skills 96(1):67–78",
+        "journal-title": "Perceptual Motor Skills"
+      },
+      {
+        "issue": "2",
+        "key": "43_CR26",
+        "doi-asserted-by": "publisher",
+        "first-page": "330",
+        "DOI": "10.1348/014466610X533623",
+        "volume": "51",
+        "author": "TL Webb",
+        "year": "2012",
+        "unstructured": "Webb TL, Sheeran P, Totterdell P, Miles E, Mansell W, Baker S (2012) Using implementation intentions to overcome the effect of mood on risky behaviour. Br J Soc Psychol 51(2):330–345",
+        "journal-title": "Br J Soc Psychol"
+      },
+      {
+        "key": "43_CR27",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Van Elslande P, Jaffard M, Fouquet K, Vatonne V (2008) Variety of attentional failures in traffic accidents. In: Proceedings of the 15th European conference on cognitive ergonomics: the ergonomics of cool interaction (ECCE’08). ACM, New York, Article 9, 5 pages. http://dx.doi.org/10.1145/1473018.1473030",
+        "DOI": "10.1145/1473018.1473030"
+      },
+      {
+        "issue": "3",
+        "key": "43_CR28",
+        "doi-asserted-by": "publisher",
+        "first-page": "128",
+        "DOI": "10.1111/j.1467-8721.2007.00489.x",
+        "volume": "16",
+        "author": "DL Strayer",
+        "year": "2007",
+        "unstructured": "Strayer DL, Drews FA (2007) Cell-phone–induced driver distraction. Curr Dir Psychol Sci 16(3):128–131",
+        "journal-title": "Curr Dir Psychol Sci"
+      },
+      {
+        "key": "43_CR29",
+        "unstructured": "World Health Organization et al (2011) Mobile phone use: a growing problem of driver distraction"
+      },
+      {
+        "issue": "5",
+        "key": "43_CR30",
+        "doi-asserted-by": "publisher",
+        "first-page": "255",
+        "DOI": "10.1111/j.1467-8721.2006.00447.x",
+        "volume": "15",
+        "author": "A Pollatsek",
+        "year": "2006",
+        "unstructured": "Pollatsek A, Fisher DL, Pradhan A (2006) Identifying and remedying failures of selective attention in younger drivers. Curr Dir Psychol Sci 15(5):255–259. https://doi.org/10.1111/j.1467-8721.2006.00447.x",
+        "journal-title": "Curr Dir Psychol Sci"
+      },
+      {
+        "issue": "1",
+        "key": "43_CR31",
+        "doi-asserted-by": "publisher",
+        "first-page": "3",
+        "DOI": "10.1177/0963721411429459",
+        "volume": "21",
+        "author": "A Pollatsek",
+        "year": "2012",
+        "unstructured": "Pollatsek A, Romoser MR, Fisher DL (2012) Identifying and remediating failures of selective attention in older drivers. Curr Dir Psychol Sci 21(1):3–7",
+        "journal-title": "Curr Dir Psychol Sci"
+      },
+      {
+        "issue": "4",
+        "key": "43_CR32",
+        "doi-asserted-by": "publisher",
+        "first-page": "637",
+        "DOI": "10.1017/S1041610209009119",
+        "volume": "21",
+        "author": "JL Mathias",
+        "year": "2009",
+        "unstructured": "Mathias JL, Lucas LK (2009) Cognitive predictors of unsafe driving in older drivers: a meta-analysis. IPG Int Psychogeriatr 21(4):637–653. https://doi.org/10.1017/S1041610209009119",
+        "journal-title": "IPG Int Psychogeriatr"
+      },
+      {
+        "key": "43_CR33",
+        "unstructured": "Young K, Regan M, Hammer M (2007) Driver distraction: a review of the literature. In: Distracted driving, pp 379–405"
+      },
+      {
+        "issue": "10",
+        "key": "43_CR34",
+        "doi-asserted-by": "publisher",
+        "first-page": "1054",
+        "DOI": "10.1016/S0006-3223(97)00475-7",
+        "volume": "44",
+        "author": "H Cohen",
+        "year": "1998",
+        "unstructured": "Cohen H, Kotler M, Matar MA, Kaplan Z, Loewenthal U, Miodownik H, Cassuto Y (1998) Analysis of heart rate variability in posttraumatic stress disorder patients in response to a trauma-related reminder. Biol Psychiatr 44(10):1054–1059",
+        "journal-title": "Biol Psychiatr"
+      },
+      {
+        "issue": "6",
+        "key": "43_CR35",
+        "first-page": "S14",
+        "volume": "7",
+        "author": "M Pagani",
+        "year": "1989",
+        "unstructured": "Pagani M, Furlan R, Pizzinelli P, Crivellaro W, Cerutti S, Malliani A (1989) Spectral analysis of RR and arterial pressure variabilities to assess sympatho-vagal interaction during mental stress in humans. J Hypertens Suppl Off J Int Soc Hypertens 7(6):S14–S15",
+        "journal-title": "J Hypertens Suppl Off J Int Soc Hypertens"
+      },
+      {
+        "issue": "2",
+        "key": "43_CR36",
+        "doi-asserted-by": "publisher",
+        "first-page": "1",
+        "DOI": "10.1145/3214288",
+        "volume": "2",
+        "author": "C Wang",
+        "year": "2018",
+        "unstructured": "Wang C, Xie L, Wang W, Chen Y, Bu Y, Lu S (2018) RF-ECG: heart rate variability assessment based on COTS RFID tag array. Proc ACM Interact Mob Wearable Ubiquitous Technol 2(2):1–26. https://doi.org/10.1145/3214288",
+        "journal-title": "Proc ACM Interact Mob Wearable Ubiquitous Technol"
+      },
+      {
+        "key": "43_CR37",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2667317.2667335",
+        "author": "S Vhaduri",
+        "year": "2014",
+        "unstructured": "Vhaduri S, Ali A, Sharmin M, Hovsepian K, Kumar S (2014) Estimating drivers’ stress from GPS traces. AutomotiveUI. https://doi.org/10.1145/2667317.2667335",
+        "journal-title": "AutomotiveUI"
+      },
+      {
+        "key": "43_CR38",
+        "doi-asserted-by": "crossref",
+        "unstructured": "MacLean D, Roseway A, Czerwinski M (2013) MoodWings: a wearable biofeedback device for real-time stress intervention. PETRA’13. http://dx.doi.org/10.1145/2504335.2504406",
+        "DOI": "10.1145/2504335.2504406"
+      },
+      {
+        "key": "43_CR39",
+        "unstructured": "Empatica. https://support.empatica.com/hc/en-us/articles/202581999-E4-wristband-technical-specifications. Accessed Jan 2019"
+      },
+      {
+        "key": "43_CR40",
+        "unstructured": "Fitbit charge 2: activity tracker. https://www.amazon.in/Fitbit-Wireless-Activity-Tracker-Wristband/. Accessed May 2019"
+      },
+      {
+        "key": "43_CR41",
+        "unstructured": "Polar Wearable. https://www.polar.com/uk-en/products/accessories//h10 heart rate sensor. Accessed May 2019"
+      },
+      {
+        "key": "43_CR42",
+        "unstructured": "Zephyre wearable. https://www.zephyranywhere.com/system/components. Accessed May 2019"
+      },
+      {
+        "key": "43_CR43",
+        "unstructured": "Dhaka population 2018. http://worldpopulationreview.com/world-cities/dhaka-population/. Accessed Oct 2018"
+      },
+      {
+        "key": "43_CR44",
+        "unstructured": "Dhakatribune.com (2013) Congestion costs Tk200bn every year: survey. http://www.dhakatribune.com/bangladesh/2013/jul/14/congestion-costs-tk200bn-every-year-survey. Accessed Aug 2018"
+      },
+      {
+        "issue": "2",
+        "key": "43_CR45",
+        "first-page": "112",
+        "volume": "2",
+        "author": "K Mahmud",
+        "year": "2012",
+        "unstructured": "Mahmud K, Gope K, Chowdhury SM (2012) Possible causes and solutions of traffic jam and their impact on the economy of Dhaka city. J Manag Sustain 2(2):112",
+        "journal-title": "J Manag Sustain"
+      },
+      {
+        "key": "43_CR46",
+        "unstructured": "Bangladesh motor vehicle registered. https://www.ceicdata.com/en/bangladesh/motor-vehicle-registered/motor-vehicle-registered-bangladesh-total. Accessed May 2019"
+      },
+      {
+        "key": "43_CR47",
+        "unstructured": "Assignmentpoint.com (2015) Traffic jam in Dhaka city. http://www.assignmentpoint.com/arts/modern-civilization/traffic-jam-dhaka-city.html. Last accessed July 2015"
+      },
+      {
+        "key": "43_CR48",
+        "unstructured": "Ghosts driving 10 lakh vehicles. https://www.thedailystar.net/frontpage/ghosts-driving-10-lakh-vehicles-1371037. Accessed May 2019"
+      },
+      {
+        "key": "43_CR49",
+        "unstructured": "Are drivers alone responsible for road accidents in Bangladesh? https://www.dhakatribune.com/bangladesh/2018/04/24/drivers-alone-responsible-road-accidents-bangladesh/. Accessed May 2019"
+      },
+      {
+        "key": "43_CR50",
+        "unstructured": "Killed in 3 years. https://en.prothomalo.com/bangladesh/news/181012/25-120-killed-on-roads-in-3-years. Accessed Aug 2018"
+      },
+      {
+        "issue": "3",
+        "key": "43_CR51",
+        "doi-asserted-by": "publisher",
+        "first-page": "311",
+        "DOI": "10.1016/S0001-4575(02)00006-4",
+        "volume": "35",
+        "author": "AT McCartt",
+        "year": "2003",
+        "unstructured": "McCartt AT, Shabanova VI, Leaf WA (2003) Driving experience, crashes and traffic citations of teenage beginning drivers. Accid Anal Prev 35(3):311–320",
+        "journal-title": "Accid Anal Prev"
+      },
+      {
+        "issue": "3",
+        "key": "43_CR52",
+        "doi-asserted-by": "publisher",
+        "first-page": "307",
+        "DOI": "10.1016/0191-8869(95)00068-H",
+        "volume": "19",
+        "author": "T Lajunen",
+        "year": "1995",
+        "unstructured": "Lajunen T, Summala H (1995) Driving experience, personality, and skill and safety-motive dimensions in drivers’ self-assessments. Personal Individ Differ 19(3):307–318",
+        "journal-title": "Personal Individ Differ"
+      },
+      {
+        "issue": "3",
+        "key": "43_CR53",
+        "doi-asserted-by": "publisher",
+        "first-page": "424",
+        "DOI": "10.1016/j.ssci.2010.10.007",
+        "volume": "49",
+        "author": "J Cestac",
+        "year": "2011",
+        "unstructured": "Cestac J, Paran F, Delhomme P (2011) Young drivers sensation seeking, subjective norms, and perceived behavioral control and their roles in predicting speeding intention: how risktaking motivations evolve with gender and driving experience. Saf Sci 49(3):424–432",
+        "journal-title": "Saf Sci"
+      },
+      {
+        "key": "43_CR54",
+        "unstructured": "Ahmed N, Ur Rahman SA, Rony RJ, Mushfique T (2017) How do you feel when you are driving? A participatory approach, symposium 2017, CHI"
+      },
+      {
+        "issue": "5",
+        "key": "43_CR55",
+        "doi-asserted-by": "publisher",
+        "first-page": "871",
+        "DOI": "10.1016/j.aap.2006.02.013",
+        "volume": "38",
+        "author": "DD Clarke",
+        "year": "2006",
+        "unstructured": "Clarke DD, Ward P, Bartle C, Truman W (2006) Young driver accidents in the UK: the influence of age, experience, and time of day. Accid Anal Prev 38(5):871–878",
+        "journal-title": "Accid Anal Prev"
+      },
+      {
+        "issue": "5",
+        "key": "43_CR56",
+        "doi-asserted-by": "publisher",
+        "first-page": "1",
+        "DOI": "10.1145/3186585",
+        "volume": "51",
+        "author": "MN Rastgoo",
+        "year": "2018",
+        "unstructured": "Rastgoo MN, Nakisa B, Rakotonirainy A, Chandran V, Tjondronegoro D (2018) A critical review of proactive detection of driver stress levels based on multimodal measurements. ACM Comput Surv 51(5):1–35. https://doi.org/10.1145/3186585",
+        "journal-title": "ACM Comput Surv"
+      },
+      {
+        "key": "43_CR57",
+        "doi-asserted-by": "crossref",
+        "first-page": "515",
+        "DOI": "10.1002/9781118910566.ch20",
+        "volume-title": "Emotion recognition",
+        "author": "CD Katsis",
+        "year": "2015",
+        "unstructured": "Katsis CD, Rigas G, Goletsis Y, Fotiadis DI (2015) Emotion recognition in car industry. In: Konar A, Chakraborty A (eds) Emotion recognition. Wiley, Hoboken, pp 515–544"
+      },
+      {
+        "issue": "1",
+        "key": "43_CR58",
+        "doi-asserted-by": "publisher",
+        "first-page": "7",
+        "DOI": "10.1080/02678379008256960",
+        "volume": "4",
+        "author": "E Gulian",
+        "year": "1990",
+        "unstructured": "Gulian E, Glendon AI, Matthews G, Davies DR, Debney LM (1990) The stress of driving: a diary study. Work Stress 4(1):7–16. https://doi.org/10.1080/02678379008256960",
+        "journal-title": "Work Stress"
+      },
+      {
+        "key": "43_CR59",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Salvucci DD (2013) Distraction beyond the driver: predicting the effects of in-vehicle interaction on surrounding traffic. In: Proceedings of the SIGCHI conference on human factors in computing systems. ACM, pp 3131–3134",
+        "DOI": "10.1145/2470654.2466427"
+      },
+      {
+        "key": "43_CR60",
+        "doi-asserted-by": "publisher",
+        "first-page": "4",
+        "DOI": "10.1002/neu.10160",
+        "volume": "54",
+        "author": "TJ Bouchard",
+        "year": "2003",
+        "unstructured": "Bouchard TJ, McGue M (2003) Genetic and environmental influences on human psychological differences. J Neurobiol 54:4–45",
+        "journal-title": "J Neurobiol"
+      },
+      {
+        "issue": "1",
+        "key": "43_CR61",
+        "doi-asserted-by": "publisher",
+        "first-page": "21",
+        "DOI": "10.1002/ab.90003",
+        "volume": "28",
+        "author": "B Krah´e",
+        "year": "2002",
+        "unstructured": "Krah´e B, Fenske I (2002) Predicting aggressive driving behavior: the role of macho personality, age, and power of car. Aggress Behav Off J Int Soc Res Aggress 28(1):21–29",
+        "journal-title": "Aggress Behav Off J Int Soc Res Aggress"
+      },
+      {
+        "issue": "2",
+        "key": "43_CR62",
+        "doi-asserted-by": "publisher",
+        "first-page": "241",
+        "DOI": "10.1037/0022-006X.50.2.241",
+        "volume": "50",
+        "author": "DM Donovan",
+        "year": "1982",
+        "unstructured": "Donovan DM, Alan Marlatt G (1982) Personality subtypes among driving-while- intoxicated offenders: relationship to drinking behavior and driving risk. J Consult Clin Psychol 50(2):241",
+        "journal-title": "J Consult Clin Psychol"
+      },
+      {
+        "issue": "1",
+        "key": "43_CR63",
+        "doi-asserted-by": "publisher",
+        "first-page": "147",
+        "DOI": "10.1016/S0191-8869(97)00017-2",
+        "volume": "23",
+        "author": "R Trimpop",
+        "year": "1997",
+        "unstructured": "Trimpop R, Kircaldy B (1997) Personality predictors of driving accidents. Personal Individ Differ J 23(1):147–152",
+        "journal-title": "Personal Individ Differ J"
+      },
+      {
+        "key": "43_CR64",
+        "doi-asserted-by": "publisher",
+        "first-page": "79",
+        "DOI": "10.1007/BF02765302",
+        "volume": "4",
+        "author": "BD Kirkcaldy",
+        "year": "1997",
+        "unstructured": "Kirkcaldy BD, Trimpop R, Cooper CL (1997) Working hours, job stress, work satisfaction and accident rates among medical practitioners and allied personnel. Int J Stress Manag 4:79–87",
+        "journal-title": "Int J Stress Manag"
+      },
+      {
+        "issue": "6",
+        "key": "43_CR65",
+        "first-page": "S3",
+        "volume": "1",
+        "author": "G Matthews",
+        "year": "1991",
+        "unstructured": "Matthews G, Dorn L, Glendon AI (1991) Personality correlates of driver stress: personality predictors of driving accidents. Personal Individ Differ J 1(6):S3–S549",
+        "journal-title": "Personal Individ Differ J"
+      },
+      {
+        "issue": "5",
+        "key": "43_CR66",
+        "doi-asserted-by": "publisher",
+        "first-page": "903",
+        "DOI": "10.1016/j.paid.2006.03.016",
+        "volume": "41",
+        "author": "ER Dahlen",
+        "year": "2006",
+        "unstructured": "Dahlen ER, White RP (2006) The Big Five factors, sensation seeking, and driving anger in the prediction of unsafe driving. Personal Individ Differ 41(5):903–915",
+        "journal-title": "Personal Individ Differ"
+      },
+      {
+        "issue": "3",
+        "key": "43_CR67",
+        "doi-asserted-by": "publisher",
+        "first-page": "307",
+        "DOI": "10.1016/0191-8869(95)00068-H",
+        "volume": "19",
+        "author": "T Lajunen",
+        "year": "1995",
+        "unstructured": "Lajunen T, Summala H (1995) Driving experience, personality, and skill and safety-motive dimensions in drivers self-assessments. Personality correlates of driver stress. Personality predictors of driving accidents. Personal Individ Differ J 19(3):307–318",
+        "journal-title": "Personal Individ Differ J"
+      },
+      {
+        "issue": "3",
+        "key": "43_CR68",
+        "doi-asserted-by": "publisher",
+        "first-page": "524",
+        "DOI": "10.1037/0022-3514.81.3.524",
+        "volume": "81",
+        "author": "SV Paunonen",
+        "year": "2001",
+        "unstructured": "Paunonen SV, Ashton MC (2001) Big five factors and facets and the prediction of behavior. J Personal Soc Psychol 81(3):524",
+        "journal-title": "J Personal Soc Psychol"
+      },
+      {
+        "issue": "4",
+        "key": "43_CR69",
+        "doi-asserted-by": "publisher",
+        "first-page": "365",
+        "DOI": "10.1016/j.trc.2009.01.005",
+        "volume": "17",
+        "author": "T Toledo",
+        "year": "2009",
+        "unstructured": "Toledo T, Koutsopoulos HN, Ben-Akiva ME (2009) Estimation of an integrated driving behavior model. Transp Res C Emerg Technol 17(4):365–380",
+        "journal-title": "Transp Res C Emerg Technol"
+      },
+      {
+        "key": "43_CR70",
+        "doi-asserted-by": "publisher",
+        "first-page": "e2",
+        "DOI": "10.1017/ATSIP.2013.2",
+        "volume": "2",
+        "author": "C Miyajima",
+        "year": "2013",
+        "unstructured": "Miyajima C, Angkititrakul P, Takeda K (2013) Behavior signal processing for vehicle applications. APSIPA Trans Signal Inf Process 2:e2",
+        "journal-title": "APSIPA Trans Signal Inf Process"
+      },
+      {
+        "issue": "5",
+        "key": "43_CR71",
+        "doi-asserted-by": "publisher",
+        "first-page": "325",
+        "DOI": "10.1016/S1361-9209(01)00003-7",
+        "volume": "6",
+        "author": "E Ericsson",
+        "year": "2001",
+        "unstructured": "Ericsson E (2001) Independent driving pattern factors and their influence on fuel-use and exhaust emission factors. Transp Res D Transp Environ 6(5):325–345",
+        "journal-title": "Transp Res D Transp Environ"
+      },
+      {
+        "issue": "1",
+        "key": "43_CR72",
+        "doi-asserted-by": "publisher",
+        "first-page": "43",
+        "DOI": "10.1243/095440704322829155",
+        "volume": "218",
+        "author": "J Van Mierlo",
+        "year": "2004",
+        "unstructured": "Van Mierlo J, Maggetto G, Van De Burgwal E, Gense R (2004) Driving style and traffic measures-influence on vehicle emissions and fuel consumption. Proc Inst Mech Eng D J Automob Eng 218(1):43–50",
+        "journal-title": "Proc Inst Mech Eng D J Automob Eng"
+      },
+      {
+        "issue": "6",
+        "key": "43_CR73",
+        "doi-asserted-by": "publisher",
+        "first-page": "733",
+        "DOI": "10.1145/90417.90738",
+        "volume": "26",
+        "author": "TA Ranney",
+        "year": "1994",
+        "unstructured": "Ranney TA (1994) Models of driving behavior: a review of their evolution. Accid Anal Prev 26(6):733–750. https://doi.org/10.1145/90417.90738",
+        "journal-title": "Accid Anal Prev"
+      },
+      {
+        "issue": "5",
+        "key": "43_CR74",
+        "doi-asserted-by": "publisher",
+        "first-page": "425",
+        "DOI": "10.1016/j.tra.2005.02.002",
+        "volume": "39",
+        "author": "P Bonsall",
+        "year": "2005",
+        "unstructured": "Bonsall P, Liu R, Young W (2005) Modelling safety-related driving behaviour-impact of parameter values. Transp Res A Policy Pract 39(5):425–444",
+        "journal-title": "Transp Res A Policy Pract"
+      },
+      {
+        "key": "43_CR75",
+        "doi-asserted-by": "publisher",
+        "first-page": "787",
+        "DOI": "10.1007/s00779-018-1141-6",
+        "volume": "22",
+        "author": "Yu Bin",
+        "year": "2018",
+        "unstructured": "Bin Yu, Jun H, Funk M, Feijs L (2018) DeLight: biofeedback through ambient light for stress intervention and relaxation assistance. Pers Ubiquit Comput 22:787–805. https://doi.org/10.1007/s00779-018-1141-6",
+        "journal-title": "Pers Ubiquit Comput"
+      },
+      {
+        "issue": "6",
+        "key": "43_CR76",
+        "doi-asserted-by": "publisher",
+        "first-page": "585",
+        "DOI": "10.1080/00140138908966134",
+        "volume": "32",
+        "author": "E Gulian",
+        "year": "1989",
+        "unstructured": "Gulian E, Matthews G, Glendon AI, Davies DR, Debney LM (1989) Dimensions of driver stress. Ergonomics 32(6):585–602",
+        "journal-title": "Ergonomics"
+      },
+      {
+        "key": "43_CR77",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3064663.3064729",
+        "author": "Yu Bin",
+        "year": "2017",
+        "unstructured": "Bin Yu, Funk M, Jun H, Feijs L (2017) StressTree: a metaphorical visualization for biofeedback assisted stress management. DIS. https://doi.org/10.1145/3064663.3064729",
+        "journal-title": "DIS"
+      },
+      {
+        "key": "43_CR78",
+        "doi-asserted-by": "publisher",
+        "unstructured": "Moosavi S, Omidvar-Tehrani B, Craig RB, Nandi A, Ramnath R (2017) Characterizing driving context from driver behavior. In: Proceedings of SIGSPATIAL’17. https://doi.org/10.1145/3139958.3139992",
+        "DOI": "10.1145/3139958.3139992"
+      },
+      {
+        "issue": "2",
+        "key": "43_CR79",
+        "doi-asserted-by": "publisher",
+        "first-page": "162",
+        "DOI": "10.1111/j.1751-9861.2000.tb00072.x",
+        "volume": "5",
+        "author": "DA Hennessy",
+        "year": "2000",
+        "unstructured": "Hennessy DA, Wiesenthal DL, Kohn PM (2000) The influence of traffic congestion, daily hassles, and trait stress susceptibility on state driver stress: an interactive perspective. J Appl Behav Res 5(2):162–179",
+        "journal-title": "J Appl Behav Res"
+      },
+      {
+        "key": "43_CR80",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Matthews G (1996) Individual differences in driver stress and performance. In: Proceedings of human factors and ergonomics society annual meeting, vol 40, no 2. SAGE Publications, pp 579–583",
+        "DOI": "10.1177/154193129604001205"
+      },
+      {
+        "key": "43_CR81",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Riener A, Ferscha A, Aly M (2009) Heart on the road: HRV analysis for monitoring a driver’s affective state. In: Proceedings of international conference on automotive user interfaces and interactive vehicular applications. ACM Press, pp 99–106",
+        "DOI": "10.1145/1620509.1620529"
+      },
+      {
+        "key": "43_CR82",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Manseer M, Riener A (2014) Evaluation of driver stress while transiting road tunnels. AutomotiveUI’14. http://dx.doi.org/10.1145/2667239.2667269",
+        "DOI": "10.1145/2667239.2667269"
+      },
+      {
+        "key": "43_CR83",
+        "doi-asserted-by": "publisher",
+        "unstructured": "Soman K, Alex V, Srinivas C (2013) Analysis of physiological signals in response to stress using ECG and respiratory signals of automobile drivers. In: International multi-conference on automation, computing, communication, control and compressed sensing (iMac4s’13), pp 574–579. https://doi.org/10.1109/iMac4s.2013.6526476",
+        "DOI": "10.1109/iMac4s.2013.6526476"
+      },
+      {
+        "key": "43_CR84",
+        "unstructured": "http://www.heart.org/en/healthy-living/healthy-lifestyle/stress-management/stress-and-heart-health. Accessed May 2019"
+      },
+      {
+        "key": "43_CR85",
+        "unstructured": "Cardiovascular disease. http://www.who.int/cardiovasculardiseases/. Accessed May 2019"
+      },
+      {
+        "key": "43_CR86",
+        "doi-asserted-by": "publisher",
+        "first-page": "281",
+        "DOI": "10.1016/S0926-6410(00)00086-0",
+        "volume": "11",
+        "author": "Y Kubota",
+        "year": "2001",
+        "unstructured": "Kubota Y, Sato W, Toichi M, Murai T, Okada T, Hayashi A, Sengoku A (2001) Frontal midline theta rhythm is correlated with cardiac autonomic activities during the performance of an attention demanding meditation procedure. Cogn Brain Res 11:281–287",
+        "journal-title": "Cogn Brain Res"
+      },
+      {
+        "issue": "14",
+        "key": "43_CR87",
+        "doi-asserted-by": "publisher",
+        "first-page": "1089",
+        "DOI": "10.1016/S0002-9149(99)80309-9",
+        "volume": "76",
+        "author": "R McCraty",
+        "year": "1995",
+        "unstructured": "McCraty R, Atkinson M, Tiller WA, Rein G, Watkins AD (1995) The effects of emotions on short-term power spectral analysis of heart rate variability. Am J Cardiol 76(14):1089–1093",
+        "journal-title": "Am J Cardiol"
+      },
+      {
+        "key": "43_CR88",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Deininger G, Loudon G (2011) Correlation between coherent heart rate variability and divergent thinking. C&C’11. ACM 978-1-4503-0820-5/11/11",
+        "DOI": "10.1145/2069618.2069681"
+      },
+      {
+        "key": "43_CR89",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Jonsson IM, Nass C, Endo J, Reaves B, Harris H, Ta JL, Chan N, Knapp S (2004) Don’t blame me I am only the driver: impact of blame attribution on attitudes and attention to driving task. In: CHI’04 extended abstracts on human factors in computing systems (CHI EA’04). ACM, New York, pp 1219–1222. http://dx.doi.org/10.1145/985921.986028",
+        "DOI": "10.1145/985921.986028"
+      },
+      {
+        "issue": "1",
+        "key": "43_CR90",
+        "doi-asserted-by": "publisher",
+        "first-page": "51",
+        "DOI": "10.1016/S0001-4575(00)00102-0",
+        "volume": "34",
+        "author": "TE Boyce",
+        "year": "2002",
+        "unstructured": "Boyce TE, Geller ES (2002) An instrumented vehicle assessment of problem behavior and driving style: do younger males really take more risks? Accid Anal Prev 34(1):51–64",
+        "journal-title": "Accid Anal Prev"
+      },
+      {
+        "issue": "9",
+        "key": "43_CR91",
+        "doi-asserted-by": "publisher",
+        "first-page": "140",
+        "DOI": "10.1109/MCOM.2010.5560598",
+        "volume": "48",
+        "author": "ND Lane",
+        "year": "2010",
+        "unstructured": "Lane ND, Miluzzo E, Hong L, Peebles D, Choudhury T, Campbell AT (2010) A survey of mobile phone sensing. IEEE Commun Mag 48(9):140–150",
+        "journal-title": "IEEE Commun Mag"
+      },
+      {
+        "key": "43_CR92",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Sen R, Raman B, Sharma P (2010) Horn-ok-please. In: Proceedings of the 8th international conference on mobile systems, applications, and services (MobiSys’10). ACM, New York, pp 137–150. http://dx.doi.org/10.1145/1814433.1814449",
+        "DOI": "10.1145/1814433.1814449"
+      },
+      {
+        "issue": "1",
+        "key": "43_CR93",
+        "doi-asserted-by": "publisher",
+        "first-page": "1",
+        "DOI": "10.1186/1687-1499-2014-114",
+        "volume": "2014",
+        "author": "V Douangphachanh",
+        "year": "2014",
+        "unstructured": "Douangphachanh V, Oneyama H (2014) A study on the use of smart-phones under realistic settings to estimate road roughness condition. EURASIP J Wirel Commun Netw 2014(1):1–11",
+        "journal-title": "EURASIP J Wirel Commun Netw"
+      },
+      {
+        "issue": "6",
+        "key": "43_CR94",
+        "doi-asserted-by": "publisher",
+        "first-page": "1093",
+        "DOI": "10.1016/j.aap.2005.06.007",
+        "volume": "37",
+        "author": "J Stutts",
+        "year": "2005",
+        "unstructured": "Stutts J, Feaganes J, Reinfurt D, Rodgman E, Hamlett C, Gish K, Staplin L (2005) Driver’s exposure to distractions in their natural driving environment. Accid Anal Prev 37(6):1093–1101",
+        "journal-title": "Accid Anal Prev"
+      },
+      {
+        "key": "43_CR95",
+        "unstructured": "Abdur Razzaque. Driver distraction management using sensor data cloud. http://driverdistraction.gnrbd.net/. Last accessed July 2015"
+      },
+      {
+        "key": "43_CR96",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2702123.2702399",
+        "author": "Y Lyu",
+        "year": "2015",
+        "unstructured": "Lyu Y, Luo X, Zhou J, Chun Yu, Miao C, Wang T, Shi Y, Kameyama K-i (2015) Measuring photoplethysmogram-based stress-induced vascular response index to assess cognitive load and stress. CHI. https://doi.org/10.1145/2702123.2702399",
+        "journal-title": "CHI"
+      },
+      {
+        "issue": "13",
+        "key": "43_CR97",
+        "doi-asserted-by": "publisher",
+        "first-page": "33",
+        "DOI": "10.1007/s00779-007-0173-0",
+        "volume": "2009",
+        "author": "A Benoit",
+        "year": "2007",
+        "unstructured": "Benoit A, Bonnaud L, Caplier A, Ngo P, Lawson L, Trevisan DG, Levacic V, Mancas C, Chanel G (2007) Multimodal focus attention and stress detection and feedback in an augmented driver simulator. Pers Ubiquit Comput 2009(13):33–41. https://doi.org/10.1007/s00779-007-0173-0",
+        "journal-title": "Pers Ubiquit Comput"
+      },
+      {
+        "key": "43_CR98",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2598784.2602780",
+        "author": "J Hernandez",
+        "year": "2014",
+        "unstructured": "Hernandez J, Benavides X, Maes P, McDuff D, Amores J, Picard RW (2014) AutoEmotive: bringing empathy to the driving experience to manage stress. DIS. https://doi.org/10.1145/2598784.2602780",
+        "journal-title": "DIS"
+      },
+      {
+        "key": "43_CR99",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Dell N, Vaidyanathan V, Medhi I, Cutrell E, Thies W (2012) Yours is better!: participant response bias in HCI. In: Proceedings of the SIGCHI conference on human factors in computing systems. ACM, pp 1321–1330",
+        "DOI": "10.1145/2207676.2208589"
+      },
+      {
+        "key": "43_CR100",
+        "unstructured": "Paschalidis E, Choudhury CF, Hess S (2018) Modelling the effects of stress on gap-acceptance decisions in a driving simulator experiment using physiological sensors. No. 18-05539. 2018"
+      },
+      {
+        "key": "43_CR101",
+        "doi-asserted-by": "publisher",
+        "first-page": "418",
+        "DOI": "10.1016/j.trf.2018.09.019",
+        "volume": "59",
+        "author": "E Paschalidis",
+        "year": "2018",
+        "unstructured": "Paschalidis E, Choudhury CF, Hess S (2018) Modelling the effects of stress on gap-acceptance decisions combining data from driving simulator and physiological sensors. Transp Res F Traffic Psychol Behav 59:418–435",
+        "journal-title": "Transp Res F Traffic Psychol Behav"
+      },
+      {
+        "key": "43_CR102",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Camm AJ, Malik M, Bigger JT, Breithardt G, Cerutti S, Cohen RJ, Coumel P, Fallen EL, Kennedy HL, Kleiger RE, Lombardi F (1996) Heart rate variability: standards of measurement, physiological interpretation and clinical use. Task Force of the European Society of Cardiology and the North American Society of Pacing and Electrophysiology",
+        "DOI": "10.1111/j.1542-474X.1996.tb00275.x"
+      },
+      {
+        "key": "43_CR103",
+        "unstructured": "HRV. https://imotions.com/blog/heart-rate-variability/"
+      },
+      {
+        "key": "43_CR104",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3267305.3277809",
+        "author": "RJ Rony",
+        "year": "2018",
+        "unstructured": "Rony RJ (2018) How well our drivers on road? Discomfort is obvious in drivers daily life. UbiComp/ISWC. https://doi.org/10.1145/3267305.3277809",
+        "journal-title": "UbiComp/ISWC"
+      },
+      {
+        "key": "43_CR105",
+        "unstructured": "Wijsman JLP (2014) Sensing stress: stress detection from physiological variables in controlled and uncontrolled conditions. http://eprints.eemcs.utwente.nl/25701/"
+      },
+      {
+        "key": "43_CR106",
+        "unstructured": "Caruso MJ, Withanawasam LS (1999) Vehicle detection and compass applications using AMR magnetic sensors"
+      },
+      {
+        "key": "43_CR107",
+        "doi-asserted-by": "publisher",
+        "first-page": "78",
+        "DOI": "10.3390/s16010078",
+        "volume": "16",
+        "author": "V Markevicius",
+        "year": "2016",
+        "unstructured": "Markevicius V, Navikas D, Zilys M, Andriukaitis D, Valinevicius A, Cepenas M (2016) Dynamic vehicle detection via the use of magneticfield sensors. Sensors 16:78",
+        "journal-title": "Sensors"
+      },
+      {
+        "key": "43_CR108",
+        "unstructured": "https://www.rotoview.com/magnetometer.htm"
+      },
+      {
+        "issue": "3",
+        "key": "43_CR109",
+        "doi-asserted-by": "publisher",
+        "first-page": "229",
+        "DOI": "10.1007/s10484-010-9133-y",
+        "volume": "35",
+        "author": "AL Wheat",
+        "year": "2010",
+        "unstructured": "Wheat AL, Larkin KT (2010) Biofeedback of heart rate variability and related physiology: a critical review. Appl Psychophysiol Biofeedback 35(3):229–242",
+        "journal-title": "Appl Psychophysiol Biofeedback"
+      },
+      {
+        "issue": "3",
+        "key": "43_CR110",
+        "doi-asserted-by": "publisher",
+        "first-page": "229",
+        "DOI": "10.1037/1089-2680.10.3.229",
+        "volume": "10",
+        "author": "BM Appelhans",
+        "year": "2006",
+        "unstructured": "Appelhans BM, Luecken LJ (2006) Heart rate variability as an index of regulated emotional responding. Rev Gen Psychol 10(3):229–240",
+        "journal-title": "Rev Gen Psychol"
+      }
+    ],
+    "container-title": [
+      "Quality and User Experience"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://link.springer.com/content/pdf/10.1007/s41233-020-00043-0.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://link.springer.com/article/10.1007/s41233-020-00043-0/fulltext.html",
+        "content-type": "text/html",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://link.springer.com/content/pdf/10.1007/s41233-020-00043-0.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2023,
+          10,
+          17
+        ]
+      ],
+      "date-time": "2023-10-17T01:48:11Z",
+      "timestamp": 1697507291000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://link.springer.com/10.1007/s41233-020-00043-0"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2021,
+          1,
+          6
+        ]
+      ]
+    },
+    "references-count": 110,
+    "journal-issue": {
+      "issue": "1",
+      "published-print": {
+        "date-parts": [
+          [
+            2021,
+            12
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "43"
+    ],
+    "URL": "https://doi.org/10.1007/s41233-020-00043-0",
+    "relation": {},
+    "ISSN": [
+      "2366-0139",
+      "2366-0147"
+    ],
+    "issn-type": [
+      {
+        "value": "2366-0139",
+        "type": "print"
+      },
+      {
+        "value": "2366-0147",
+        "type": "electronic"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2021,
+          1,
+          6
+        ]
+      ]
+    },
+    "assertion": [
+      {
+        "value": "27 February 2020",
+        "order": 1,
+        "name": "received",
+        "label": "Received",
+        "group": {
+          "name": "ArticleHistory",
+          "label": "Article History"
+        }
+      },
+      {
+        "value": "6 January 2021",
+        "order": 2,
+        "name": "first_online",
+        "label": "First Online",
+        "group": {
+          "name": "ArticleHistory",
+          "label": "Article History"
+        }
+      }
+    ],
+    "article-number": "4"
+  }
+}

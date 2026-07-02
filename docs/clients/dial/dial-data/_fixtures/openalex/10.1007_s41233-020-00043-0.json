@@ -1,0 +1,661 @@
+{
+  "id": "https://openalex.org/W3165524267",
+  "doi": "https://doi.org/10.1007/s41233-020-00043-0",
+  "title": "Understanding self-reported stress among drivers and designing stress monitor using heart rate variability",
+  "display_name": "Understanding self-reported stress among drivers and designing stress monitor using heart rate variability",
+  "publication_year": 2021,
+  "publication_date": "2021-01-06",
+  "ids": {
+    "openalex": "https://openalex.org/W3165524267",
+    "doi": "https://doi.org/10.1007/s41233-020-00043-0",
+    "mag": "3165524267"
+  },
+  "language": "en",
+  "primary_location": {
+    "id": "doi:10.1007/s41233-020-00043-0",
+    "is_oa": false,
+    "landing_page_url": "https://doi.org/10.1007/s41233-020-00043-0",
+    "pdf_url": null,
+    "source": {
+      "id": "https://openalex.org/S4210197207",
+      "display_name": "Quality and User Experience",
+      "issn_l": "2366-0139",
+      "issn": [
+        "2366-0139",
+        "2366-0147"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "host_organization": "https://openalex.org/P4310319900",
+      "host_organization_name": "Springer Science+Business Media",
+      "host_organization_lineage": [
+        "https://openalex.org/P4310319900",
+        "https://openalex.org/P4310319965"
+      ],
+      "host_organization_lineage_names": [
+        "Springer Science+Business Media",
+        "Springer Nature"
+      ],
+      "type": "journal"
+    },
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Quality and User Experience",
+    "raw_type": "journal-article"
+  },
+  "type": "article",
+  "indexed_in": [
+    "crossref"
+  ],
+  "open_access": {
+    "is_oa": false,
+    "oa_status": "closed",
+    "oa_url": null,
+    "any_repository_has_fulltext": false
+  },
+  "authorships": [
+    {
+      "author_position": "first",
+      "author": {
+        "id": "https://openalex.org/A5011009295",
+        "display_name": "Nova Ahmed",
+        "orcid": "https://orcid.org/0000-0002-7715-1742"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ],
+      "countries": [
+        "BD"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Nova Ahmed",
+      "raw_affiliation_strings": [
+        "North South University, Dhaka, Bangladesh"
+      ],
+      "raw_orcid": null,
+      "affiliations": [
+        {
+          "raw_affiliation_string": "North South University, Dhaka, Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "last",
+      "author": {
+        "id": "https://openalex.org/A5051692316",
+        "display_name": "Rahat Jahangir Rony",
+        "orcid": "https://orcid.org/0000-0001-5788-2145"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ],
+      "countries": [
+        "BD"
+      ],
+      "is_corresponding": true,
+      "raw_author_name": "Rahat Jahangir Rony",
+      "raw_affiliation_strings": [
+        "North South University, Dhaka, Bangladesh"
+      ],
+      "raw_orcid": "https://orcid.org/0000-0001-5788-2145",
+      "affiliations": [
+        {
+          "raw_affiliation_string": "North South University, Dhaka, Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ]
+    }
+  ],
+  "institutions": [],
+  "countries_distinct_count": 1,
+  "institutions_distinct_count": 2,
+  "corresponding_author_ids": [
+    "https://openalex.org/A5051692316"
+  ],
+  "corresponding_institution_ids": [
+    "https://openalex.org/I157386601"
+  ],
+  "apc_list": {
+    "value": 2590,
+    "currency": "EUR",
+    "value_usd": 3390
+  },
+  "apc_paid": null,
+  "fwci": 2.1847,
+  "has_fulltext": false,
+  "cited_by_count": 18,
+  "citation_normalized_percentile": {
+    "value": 0.87244686,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": false
+  },
+  "cited_by_percentile_year": {
+    "min": 94,
+    "max": 98
+  },
+  "biblio": {
+    "volume": "6",
+    "issue": "1",
+    "first_page": null,
+    "last_page": null
+  },
+  "is_retracted": false,
+  "is_paratext": false,
+  "is_xpac": false,
+  "primary_topic": {
+    "id": "https://openalex.org/T11373",
+    "display_name": "Sleep and Work-Related Fatigue",
+    "score": 0.9959999918937683,
+    "subfield": {
+      "id": "https://openalex.org/subfields/3205",
+      "display_name": "Experimental and Cognitive Psychology"
+    },
+    "field": {
+      "id": "https://openalex.org/fields/32",
+      "display_name": "Psychology"
+    },
+    "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+    }
+  },
+  "topics": [
+    {
+      "id": "https://openalex.org/T11373",
+      "display_name": "Sleep and Work-Related Fatigue",
+      "score": 0.9959999918937683,
+      "subfield": {
+        "id": "https://openalex.org/subfields/3205",
+        "display_name": "Experimental and Cognitive Psychology"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/32",
+        "display_name": "Psychology"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/2",
+        "display_name": "Social Sciences"
+      }
+    },
+    {
+      "id": "https://openalex.org/T10745",
+      "display_name": "Heart Rate Variability and Autonomic Control",
+      "score": 0.9933000206947327,
+      "subfield": {
+        "id": "https://openalex.org/subfields/2705",
+        "display_name": "Cardiology and Cardiovascular Medicine"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/27",
+        "display_name": "Medicine"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/4",
+        "display_name": "Health Sciences"
+      }
+    },
+    {
+      "id": "https://openalex.org/T10525",
+      "display_name": "Human-Automation Interaction and Safety",
+      "score": 0.9836999773979187,
+      "subfield": {
+        "id": "https://openalex.org/subfields/3207",
+        "display_name": "Social Psychology"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/32",
+        "display_name": "Psychology"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/2",
+        "display_name": "Social Sciences"
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "https://openalex.org/keywords/stress",
+      "display_name": "Stress (linguistics)",
+      "score": 0.6309843063354492
+    },
+    {
+      "id": "https://openalex.org/keywords/law-enforcement",
+      "display_name": "Law enforcement",
+      "score": 0.5700926780700684
+    },
+    {
+      "id": "https://openalex.org/keywords/applied-psychology",
+      "display_name": "Applied psychology",
+      "score": 0.5554917454719543
+    },
+    {
+      "id": "https://openalex.org/keywords/wearable-computer",
+      "display_name": "Wearable computer",
+      "score": 0.5202030539512634
+    },
+    {
+      "id": "https://openalex.org/keywords/stress-measures",
+      "display_name": "Stress measures",
+      "score": 0.47631391882896423
+    },
+    {
+      "id": "https://openalex.org/keywords/wearable-technology",
+      "display_name": "Wearable technology",
+      "score": 0.4448709189891815
+    },
+    {
+      "id": "https://openalex.org/keywords/personality",
+      "display_name": "Personality",
+      "score": 0.44013693928718567
+    },
+    {
+      "id": "https://openalex.org/keywords/self-driving",
+      "display_name": "Self driving",
+      "score": 0.42800575494766235
+    },
+    {
+      "id": "https://openalex.org/keywords/computer-science",
+      "display_name": "Computer science",
+      "score": 0.36758437752723694
+    },
+    {
+      "id": "https://openalex.org/keywords/psychology",
+      "display_name": "Psychology",
+      "score": 0.34722253680229187
+    },
+    {
+      "id": "https://openalex.org/keywords/computer-security",
+      "display_name": "Computer security",
+      "score": 0.3300139009952545
+    },
+    {
+      "id": "https://openalex.org/keywords/transport-engineering",
+      "display_name": "Transport engineering",
+      "score": 0.2700525224208832
+    },
+    {
+      "id": "https://openalex.org/keywords/engineering",
+      "display_name": "Engineering",
+      "score": 0.2504783570766449
+    },
+    {
+      "id": "https://openalex.org/keywords/social-psychology",
+      "display_name": "Social psychology",
+      "score": 0.18109670281410217
+    }
+  ],
+  "concepts": [
+    {
+      "id": "https://openalex.org/C21036866",
+      "wikidata": "https://www.wikidata.org/wiki/Q181767",
+      "display_name": "Stress (linguistics)",
+      "level": 2,
+      "score": 0.6309843063354492
+    },
+    {
+      "id": "https://openalex.org/C2780262971",
+      "wikidata": "https://www.wikidata.org/wiki/Q44554",
+      "display_name": "Law enforcement",
+      "level": 2,
+      "score": 0.5700926780700684
+    },
+    {
+      "id": "https://openalex.org/C75630572",
+      "wikidata": "https://www.wikidata.org/wiki/Q538904",
+      "display_name": "Applied psychology",
+      "level": 1,
+      "score": 0.5554917454719543
+    },
+    {
+      "id": "https://openalex.org/C150594956",
+      "wikidata": "https://www.wikidata.org/wiki/Q1334829",
+      "display_name": "Wearable computer",
+      "level": 2,
+      "score": 0.5202030539512634
+    },
+    {
+      "id": "https://openalex.org/C76709773",
+      "wikidata": "https://www.wikidata.org/wiki/Q7623445",
+      "display_name": "Stress measures",
+      "level": 3,
+      "score": 0.47631391882896423
+    },
+    {
+      "id": "https://openalex.org/C54290928",
+      "wikidata": "https://www.wikidata.org/wiki/Q4845080",
+      "display_name": "Wearable technology",
+      "level": 3,
+      "score": 0.4448709189891815
+    },
+    {
+      "id": "https://openalex.org/C187288502",
+      "wikidata": "https://www.wikidata.org/wiki/Q641118",
+      "display_name": "Personality",
+      "level": 2,
+      "score": 0.44013693928718567
+    },
+    {
+      "id": "https://openalex.org/C3018391801",
+      "wikidata": "https://www.wikidata.org/wiki/Q741490",
+      "display_name": "Self driving",
+      "level": 2,
+      "score": 0.42800575494766235
+    },
+    {
+      "id": "https://openalex.org/C41008148",
+      "wikidata": "https://www.wikidata.org/wiki/Q21198",
+      "display_name": "Computer science",
+      "level": 0,
+      "score": 0.36758437752723694
+    },
+    {
+      "id": "https://openalex.org/C15744967",
+      "wikidata": "https://www.wikidata.org/wiki/Q9418",
+      "display_name": "Psychology",
+      "level": 0,
+      "score": 0.34722253680229187
+    },
+    {
+      "id": "https://openalex.org/C38652104",
+      "wikidata": "https://www.wikidata.org/wiki/Q3510521",
+      "display_name": "Computer security",
+      "level": 1,
+      "score": 0.3300139009952545
+    },
+    {
+      "id": "https://openalex.org/C22212356",
+      "wikidata": "https://www.wikidata.org/wiki/Q775325",
+      "display_name": "Transport engineering",
+      "level": 1,
+      "score": 0.2700525224208832
+    },
+    {
+      "id": "https://openalex.org/C127413603",
+      "wikidata": "https://www.wikidata.org/wiki/Q11023",
+      "display_name": "Engineering",
+      "level": 0,
+      "score": 0.2504783570766449
+    },
+    {
+      "id": "https://openalex.org/C77805123",
+      "wikidata": "https://www.wikidata.org/wiki/Q161272",
+      "display_name": "Social psychology",
+      "level": 1,
+      "score": 0.18109670281410217
+    },
+    {
+      "id": "https://openalex.org/C17744445",
+      "wikidata": "https://www.wikidata.org/wiki/Q36442",
+      "display_name": "Political science",
+      "level": 0,
+      "score": 0
+    },
+    {
+      "id": "https://openalex.org/C149635348",
+      "wikidata": "https://www.wikidata.org/wiki/Q193040",
+      "display_name": "Embedded system",
+      "level": 1,
+      "score": 0
+    },
+    {
+      "id": "https://openalex.org/C199539241",
+      "wikidata": "https://www.wikidata.org/wiki/Q7748",
+      "display_name": "Law",
+      "level": 1,
+      "score": 0
+    },
+    {
+      "id": "https://openalex.org/C41895202",
+      "wikidata": "https://www.wikidata.org/wiki/Q8162",
+      "display_name": "Linguistics",
+      "level": 1,
+      "score": 0
+    },
+    {
+      "id": "https://openalex.org/C138885662",
+      "wikidata": "https://www.wikidata.org/wiki/Q5891",
+      "display_name": "Philosophy",
+      "level": 0,
+      "score": 0
+    }
+  ],
+  "mesh": [],
+  "locations_count": 2,
+  "locations": [
+    {
+      "id": "doi:10.1007/s41233-020-00043-0",
+      "is_oa": false,
+      "landing_page_url": "https://doi.org/10.1007/s41233-020-00043-0",
+      "pdf_url": null,
+      "source": {
+        "id": "https://openalex.org/S4210197207",
+        "display_name": "Quality and User Experience",
+        "issn_l": "2366-0139",
+        "issn": [
+          "2366-0139",
+          "2366-0147"
+        ],
+        "is_oa": false,
+        "is_in_doaj": false,
+        "is_core": true,
+        "host_organization": "https://openalex.org/P4310319900",
+        "host_organization_name": "Springer Science+Business Media",
+        "host_organization_lineage": [
+          "https://openalex.org/P4310319900",
+          "https://openalex.org/P4310319965"
+        ],
+        "host_organization_lineage_names": [
+          "Springer Science+Business Media",
+          "Springer Nature"
+        ],
+        "type": "journal"
+      },
+      "license": null,
+      "license_id": null,
+      "version": "publishedVersion",
+      "is_accepted": true,
+      "is_published": true,
+      "raw_source_name": "Quality and User Experience",
+      "raw_type": "journal-article"
+    },
+    {
+      "id": "pmh:oai:https://orca.cardiff.ac.uk:154396",
+      "is_oa": false,
+      "landing_page_url": "https://orca.cardiff.ac.uk/id/eprint/154396/",
+      "pdf_url": null,
+      "source": {
+        "id": "https://openalex.org/S4306401195",
+        "display_name": "ORCA Online Research @Cardiff (Cardiff University)",
+        "issn_l": null,
+        "issn": null,
+        "is_oa": false,
+        "is_in_doaj": false,
+        "is_core": false,
+        "host_organization": "https://openalex.org/I79510175",
+        "host_organization_name": "Cardiff University",
+        "host_organization_lineage": [
+          "https://openalex.org/I79510175"
+        ],
+        "host_organization_lineage_names": [],
+        "type": "repository"
+      },
+      "license": null,
+      "license_id": null,
+      "version": "submittedVersion",
+      "is_accepted": false,
+      "is_published": false,
+      "raw_source_name": "",
+      "raw_type": "Article"
+    }
+  ],
+  "best_oa_location": null,
+  "sustainable_development_goals": [
+    {
+      "display_name": "Peace, Justice and strong institutions",
+      "score": 0.7300000190734863,
+      "id": "https://metadata.un.org/sdg/16"
+    }
+  ],
+  "awards": [],
+  "funders": [],
+  "has_content": {
+    "pdf": false,
+    "grobid_xml": false
+  },
+  "content_urls": null,
+  "referenced_works_count": 88,
+  "referenced_works": [
+    "https://openalex.org/W100580236",
+    "https://openalex.org/W163708237",
+    "https://openalex.org/W191269599",
+    "https://openalex.org/W319066963",
+    "https://openalex.org/W805355577",
+    "https://openalex.org/W1490704196",
+    "https://openalex.org/W1523029986",
+    "https://openalex.org/W1641003075",
+    "https://openalex.org/W1767708321",
+    "https://openalex.org/W1792152982",
+    "https://openalex.org/W1963490115",
+    "https://openalex.org/W1964023669",
+    "https://openalex.org/W1966714388",
+    "https://openalex.org/W1986581909",
+    "https://openalex.org/W1995373043",
+    "https://openalex.org/W1995531461",
+    "https://openalex.org/W1995719837",
+    "https://openalex.org/W2003482333",
+    "https://openalex.org/W2003676727",
+    "https://openalex.org/W2005293356",
+    "https://openalex.org/W2010645028",
+    "https://openalex.org/W2011940732",
+    "https://openalex.org/W2019338309",
+    "https://openalex.org/W2021988811",
+    "https://openalex.org/W2023763378",
+    "https://openalex.org/W2024415913",
+    "https://openalex.org/W2027752040",
+    "https://openalex.org/W2029717291",
+    "https://openalex.org/W2034980234",
+    "https://openalex.org/W2039146121",
+    "https://openalex.org/W2039867277",
+    "https://openalex.org/W2045344246",
+    "https://openalex.org/W2046145137",
+    "https://openalex.org/W2050876878",
+    "https://openalex.org/W2060678323",
+    "https://openalex.org/W2066033824",
+    "https://openalex.org/W2066358405",
+    "https://openalex.org/W2067689261",
+    "https://openalex.org/W2068807113",
+    "https://openalex.org/W2073669264",
+    "https://openalex.org/W2073938609",
+    "https://openalex.org/W2075241587",
+    "https://openalex.org/W2080480643",
+    "https://openalex.org/W2081710620",
+    "https://openalex.org/W2083614802",
+    "https://openalex.org/W2083712240",
+    "https://openalex.org/W2087359765",
+    "https://openalex.org/W2089798151",
+    "https://openalex.org/W2090592666",
+    "https://openalex.org/W2092677738",
+    "https://openalex.org/W2094147539",
+    "https://openalex.org/W2102739269",
+    "https://openalex.org/W2104107943",
+    "https://openalex.org/W2110019901",
+    "https://openalex.org/W2110895314",
+    "https://openalex.org/W2112359816",
+    "https://openalex.org/W2118166874",
+    "https://openalex.org/W2124394571",
+    "https://openalex.org/W2124767042",
+    "https://openalex.org/W2132361767",
+    "https://openalex.org/W2133288192",
+    "https://openalex.org/W2133589238",
+    "https://openalex.org/W2137100320",
+    "https://openalex.org/W2140275529",
+    "https://openalex.org/W2144036167",
+    "https://openalex.org/W2158792595",
+    "https://openalex.org/W2162550931",
+    "https://openalex.org/W2256588125",
+    "https://openalex.org/W2335199918",
+    "https://openalex.org/W2614211306",
+    "https://openalex.org/W2621948666",
+    "https://openalex.org/W2767066510",
+    "https://openalex.org/W2786009638",
+    "https://openalex.org/W2800685173",
+    "https://openalex.org/W2803603897",
+    "https://openalex.org/W2863119652",
+    "https://openalex.org/W2891394872",
+    "https://openalex.org/W2893369817",
+    "https://openalex.org/W2898688103",
+    "https://openalex.org/W2898768832",
+    "https://openalex.org/W2907573063",
+    "https://openalex.org/W2939330635",
+    "https://openalex.org/W2945632721",
+    "https://openalex.org/W2973228724",
+    "https://openalex.org/W3027013506",
+    "https://openalex.org/W3046495182",
+    "https://openalex.org/W3105619491",
+    "https://openalex.org/W4232045436"
+  ],
+  "related_works": [
+    "https://openalex.org/W3090300519",
+    "https://openalex.org/W4250401876",
+    "https://openalex.org/W2943851981",
+    "https://openalex.org/W2095299560",
+    "https://openalex.org/W2907667791",
+    "https://openalex.org/W3047461507",
+    "https://openalex.org/W3126390843",
+    "https://openalex.org/W4245880644",
+    "https://openalex.org/W4312415459",
+    "https://openalex.org/W3083225868"
+  ],
+  "abstract_inverted_index": null,
+  "counts_by_year": [
+    {
+      "year": 2026,
+      "cited_by_count": 1
+    },
+    {
+      "year": 2025,
+      "cited_by_count": 5
+    },
+    {
+      "year": 2024,
+      "cited_by_count": 6
+    },
+    {
+      "year": 2023,
+      "cited_by_count": 2
+    },
+    {
+      "year": 2022,
+      "cited_by_count": 4
+    }
+  ],
+  "updated_date": "2026-06-19T15:47:20.252518",
+  "created_date": "2025-10-10T00:00:00"
+}

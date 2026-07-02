@@ -1,0 +1,1349 @@
+{
+  "id": "https://openalex.org/W4280631832",
+  "doi": "https://doi.org/10.3389/fcomm.2022.878050",
+  "title": "Risk Communication During COVID-19 Pandemic: Impacting Women in Bangladesh",
+  "display_name": "Risk Communication During COVID-19 Pandemic: Impacting Women in Bangladesh",
+  "publication_year": 2022,
+  "publication_date": "2022-05-18",
+  "ids": {
+    "openalex": "https://openalex.org/W4280631832",
+    "doi": "https://doi.org/10.3389/fcomm.2022.878050"
+  },
+  "language": "en",
+  "primary_location": {
+    "id": "doi:10.3389/fcomm.2022.878050",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.3389/fcomm.2022.878050",
+    "pdf_url": "https://www.frontiersin.org/articles/10.3389/fcomm.2022.878050/pdf",
+    "source": {
+      "id": "https://openalex.org/S2596093566",
+      "display_name": "Frontiers in Communication",
+      "issn_l": "2297-900X",
+      "issn": [
+        "2297-900X"
+      ],
+      "is_oa": true,
+      "is_in_doaj": true,
+      "is_core": true,
+      "host_organization": "https://openalex.org/P4310320527",
+      "host_organization_name": "Frontiers Media",
+      "host_organization_lineage": [
+        "https://openalex.org/P4310320527"
+      ],
+      "host_organization_lineage_names": [
+        "Frontiers Media"
+      ],
+      "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Frontiers in Communication",
+    "raw_type": "journal-article"
+  },
+  "type": "article",
+  "indexed_in": [
+    "crossref",
+    "doaj"
+  ],
+  "open_access": {
+    "is_oa": true,
+    "oa_status": "gold",
+    "oa_url": "https://www.frontiersin.org/articles/10.3389/fcomm.2022.878050/pdf",
+    "any_repository_has_fulltext": true
+  },
+  "authorships": [
+    {
+      "author_position": "first",
+      "author": {
+        "id": "https://openalex.org/A5011009295",
+        "display_name": "Nova Ahmed",
+        "orcid": "https://orcid.org/0000-0002-7715-1742"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ],
+      "countries": [
+        "BD"
+      ],
+      "is_corresponding": true,
+      "raw_author_name": "Nova Ahmed",
+      "raw_affiliation_strings": [
+        "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+      ],
+      "raw_orcid": null,
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5051692316",
+        "display_name": "Rahat Jahangir Rony",
+        "orcid": "https://orcid.org/0000-0001-5788-2145"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ],
+      "countries": [
+        "BD"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Rahat Jahangir Rony",
+      "raw_affiliation_strings": [
+        "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+      ],
+      "raw_orcid": null,
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5073863363",
+        "display_name": "Anik Sinha",
+        "orcid": "https://orcid.org/0000-0003-4225-7413"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ],
+      "countries": [
+        "BD"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Anik Sinha",
+      "raw_affiliation_strings": [
+        "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+      ],
+      "raw_orcid": null,
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5052130889",
+        "display_name": "Md. Sabbir Ahmed",
+        "orcid": "https://orcid.org/0000-0001-8668-0120"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ],
+      "countries": [
+        "BD"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Md. Sabbir Ahmed",
+      "raw_affiliation_strings": [
+        "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+      ],
+      "raw_orcid": null,
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5085122738",
+        "display_name": "Anik Saha",
+        "orcid": "https://orcid.org/0000-0001-6969-6788"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ],
+      "countries": [
+        "BD"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Anik Saha",
+      "raw_affiliation_strings": [
+        "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+      ],
+      "raw_orcid": null,
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5023205936",
+        "display_name": "Syeda Shabnam Khan",
+        "orcid": "https://orcid.org/0000-0003-3466-8482"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ],
+      "countries": [
+        "BD"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Syeda Shabnam Khan",
+      "raw_affiliation_strings": [
+        "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+      ],
+      "raw_orcid": null,
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5050709725",
+        "display_name": "Ifti Azad Abeer",
+        "orcid": "https://orcid.org/0000-0002-0860-0444"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ],
+      "countries": [
+        "BD"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Ifti Azad Abeer",
+      "raw_affiliation_strings": [
+        "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+      ],
+      "raw_orcid": null,
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5007106191",
+        "display_name": "Shajnush Amir",
+        "orcid": "https://orcid.org/0000-0003-4899-4780"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ],
+      "countries": [
+        "BD"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Shajnush Amir",
+      "raw_affiliation_strings": [
+        "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+      ],
+      "raw_orcid": null,
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "last",
+      "author": {
+        "id": "https://openalex.org/A5003038626",
+        "display_name": "Tanvir Hasan Fuad",
+        "orcid": null
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ],
+      "countries": [
+        "BD"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Tanvir Hasan Fuad",
+      "raw_affiliation_strings": [
+        "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+      ],
+      "raw_orcid": null,
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ]
+    }
+  ],
+  "institutions": [],
+  "countries_distinct_count": 1,
+  "institutions_distinct_count": 9,
+  "corresponding_author_ids": [
+    "https://openalex.org/A5011009295"
+  ],
+  "corresponding_institution_ids": [
+    "https://openalex.org/I157386601"
+  ],
+  "apc_list": {
+    "value": 950,
+    "currency": "USD",
+    "value_usd": 950
+  },
+  "apc_paid": {
+    "value": 950,
+    "currency": "USD",
+    "value_usd": 950
+  },
+  "fwci": 2.5019,
+  "has_fulltext": true,
+  "cited_by_count": 10,
+  "citation_normalized_percentile": {
+    "value": 0.91562347,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": true
+  },
+  "cited_by_percentile_year": {
+    "min": 90,
+    "max": 98
+  },
+  "biblio": {
+    "volume": "7",
+    "issue": null,
+    "first_page": null,
+    "last_page": null
+  },
+  "is_retracted": false,
+  "is_paratext": false,
+  "is_xpac": false,
+  "primary_topic": {
+    "id": "https://openalex.org/T11711",
+    "display_name": "COVID-19 Pandemic Impacts",
+    "score": 0.993399977684021,
+    "subfield": {
+      "id": "https://openalex.org/subfields/2002",
+      "display_name": "Economics and Econometrics"
+    },
+    "field": {
+      "id": "https://openalex.org/fields/20",
+      "display_name": "Economics, Econometrics and Finance"
+    },
+    "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+    }
+  },
+  "topics": [
+    {
+      "id": "https://openalex.org/T11711",
+      "display_name": "COVID-19 Pandemic Impacts",
+      "score": 0.993399977684021,
+      "subfield": {
+        "id": "https://openalex.org/subfields/2002",
+        "display_name": "Economics and Econometrics"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/20",
+        "display_name": "Economics, Econometrics and Finance"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/2",
+        "display_name": "Social Sciences"
+      }
+    },
+    {
+      "id": "https://openalex.org/T10410",
+      "display_name": "COVID-19 epidemiological studies",
+      "score": 0.9811999797821045,
+      "subfield": {
+        "id": "https://openalex.org/subfields/2611",
+        "display_name": "Modeling and Simulation"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/26",
+        "display_name": "Mathematics"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/3",
+        "display_name": "Physical Sciences"
+      }
+    },
+    {
+      "id": "https://openalex.org/T11147",
+      "display_name": "Misinformation and Its Impacts",
+      "score": 0.9627000093460083,
+      "subfield": {
+        "id": "https://openalex.org/subfields/3312",
+        "display_name": "Sociology and Political Science"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/33",
+        "display_name": "Social Sciences"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/2",
+        "display_name": "Social Sciences"
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "https://openalex.org/keywords/pandemic",
+      "display_name": "Pandemic",
+      "score": 0.7728925943374634
+    },
+    {
+      "id": "https://openalex.org/keywords/risk-communication",
+      "display_name": "Risk communication",
+      "score": 0.6241109371185303
+    },
+    {
+      "id": "https://openalex.org/keywords/work",
+      "display_name": "Work (physics)",
+      "score": 0.5887173414230347
+    },
+    {
+      "id": "https://openalex.org/keywords/business",
+      "display_name": "Business",
+      "score": 0.5634835362434387
+    },
+    {
+      "id": "https://openalex.org/keywords/economic-growth",
+      "display_name": "Economic growth",
+      "score": 0.49325984716415405
+    },
+    {
+      "id": "https://openalex.org/keywords/developing-country",
+      "display_name": "Developing country",
+      "score": 0.46776387095451355
+    },
+    {
+      "id": "https://openalex.org/keywords/qualitative-research",
+      "display_name": "Qualitative research",
+      "score": 0.4486643075942993
+    },
+    {
+      "id": "https://openalex.org/keywords/rural-area",
+      "display_name": "Rural area",
+      "score": 0.4148377478122711
+    },
+    {
+      "id": "https://openalex.org/keywords/coronavirus-disease-2019",
+      "display_name": "Coronavirus disease 2019 (COVID-19)",
+      "score": 0.40223756432533264
+    },
+    {
+      "id": "https://openalex.org/keywords/socioeconomics",
+      "display_name": "Socioeconomics",
+      "score": 0.325064480304718
+    },
+    {
+      "id": "https://openalex.org/keywords/political-science",
+      "display_name": "Political science",
+      "score": 0.28404390811920166
+    },
+    {
+      "id": "https://openalex.org/keywords/economics",
+      "display_name": "Economics",
+      "score": 0.18769922852516174
+    },
+    {
+      "id": "https://openalex.org/keywords/medicine",
+      "display_name": "Medicine",
+      "score": 0.17511528730392456
+    },
+    {
+      "id": "https://openalex.org/keywords/sociology",
+      "display_name": "Sociology",
+      "score": 0.12528657913208008
+    },
+    {
+      "id": "https://openalex.org/keywords/engineering",
+      "display_name": "Engineering",
+      "score": 0.10526415705680847
+    },
+    {
+      "id": "https://openalex.org/keywords/risk-analysis",
+      "display_name": "Risk analysis (engineering)",
+      "score": 0.0967138409614563
+    }
+  ],
+  "concepts": [
+    {
+      "id": "https://openalex.org/C89623803",
+      "wikidata": "https://www.wikidata.org/wiki/Q12184",
+      "display_name": "Pandemic",
+      "level": 5,
+      "score": 0.7728925943374634
+    },
+    {
+      "id": "https://openalex.org/C3017634809",
+      "wikidata": "https://www.wikidata.org/wiki/Q84862664",
+      "display_name": "Risk communication",
+      "level": 2,
+      "score": 0.6241109371185303
+    },
+    {
+      "id": "https://openalex.org/C18762648",
+      "wikidata": "https://www.wikidata.org/wiki/Q42213",
+      "display_name": "Work (physics)",
+      "level": 2,
+      "score": 0.5887173414230347
+    },
+    {
+      "id": "https://openalex.org/C144133560",
+      "wikidata": "https://www.wikidata.org/wiki/Q4830453",
+      "display_name": "Business",
+      "level": 0,
+      "score": 0.5634835362434387
+    },
+    {
+      "id": "https://openalex.org/C50522688",
+      "wikidata": "https://www.wikidata.org/wiki/Q189833",
+      "display_name": "Economic growth",
+      "level": 1,
+      "score": 0.49325984716415405
+    },
+    {
+      "id": "https://openalex.org/C83864248",
+      "wikidata": "https://www.wikidata.org/wiki/Q177323",
+      "display_name": "Developing country",
+      "level": 2,
+      "score": 0.46776387095451355
+    },
+    {
+      "id": "https://openalex.org/C190248442",
+      "wikidata": "https://www.wikidata.org/wiki/Q839486",
+      "display_name": "Qualitative research",
+      "level": 2,
+      "score": 0.4486643075942993
+    },
+    {
+      "id": "https://openalex.org/C129047720",
+      "wikidata": "https://www.wikidata.org/wiki/Q175185",
+      "display_name": "Rural area",
+      "level": 2,
+      "score": 0.4148377478122711
+    },
+    {
+      "id": "https://openalex.org/C3008058167",
+      "wikidata": "https://www.wikidata.org/wiki/Q84263196",
+      "display_name": "Coronavirus disease 2019 (COVID-19)",
+      "level": 4,
+      "score": 0.40223756432533264
+    },
+    {
+      "id": "https://openalex.org/C45355965",
+      "wikidata": "https://www.wikidata.org/wiki/Q1643441",
+      "display_name": "Socioeconomics",
+      "level": 1,
+      "score": 0.325064480304718
+    },
+    {
+      "id": "https://openalex.org/C17744445",
+      "wikidata": "https://www.wikidata.org/wiki/Q36442",
+      "display_name": "Political science",
+      "level": 0,
+      "score": 0.28404390811920166
+    },
+    {
+      "id": "https://openalex.org/C162324750",
+      "wikidata": "https://www.wikidata.org/wiki/Q8134",
+      "display_name": "Economics",
+      "level": 0,
+      "score": 0.18769922852516174
+    },
+    {
+      "id": "https://openalex.org/C71924100",
+      "wikidata": "https://www.wikidata.org/wiki/Q11190",
+      "display_name": "Medicine",
+      "level": 0,
+      "score": 0.17511528730392456
+    },
+    {
+      "id": "https://openalex.org/C144024400",
+      "wikidata": "https://www.wikidata.org/wiki/Q21201",
+      "display_name": "Sociology",
+      "level": 0,
+      "score": 0.12528657913208008
+    },
+    {
+      "id": "https://openalex.org/C127413603",
+      "wikidata": "https://www.wikidata.org/wiki/Q11023",
+      "display_name": "Engineering",
+      "level": 0,
+      "score": 0.10526415705680847
+    },
+    {
+      "id": "https://openalex.org/C112930515",
+      "wikidata": "https://www.wikidata.org/wiki/Q4389547",
+      "display_name": "Risk analysis (engineering)",
+      "level": 1,
+      "score": 0.0967138409614563
+    },
+    {
+      "id": "https://openalex.org/C524204448",
+      "wikidata": "https://www.wikidata.org/wiki/Q788926",
+      "display_name": "Infectious disease (medical specialty)",
+      "level": 3,
+      "score": 0
+    },
+    {
+      "id": "https://openalex.org/C142724271",
+      "wikidata": "https://www.wikidata.org/wiki/Q7208",
+      "display_name": "Pathology",
+      "level": 1,
+      "score": 0
+    },
+    {
+      "id": "https://openalex.org/C2779134260",
+      "wikidata": "https://www.wikidata.org/wiki/Q12136",
+      "display_name": "Disease",
+      "level": 2,
+      "score": 0
+    },
+    {
+      "id": "https://openalex.org/C36289849",
+      "wikidata": "https://www.wikidata.org/wiki/Q34749",
+      "display_name": "Social science",
+      "level": 1,
+      "score": 0
+    },
+    {
+      "id": "https://openalex.org/C78519656",
+      "wikidata": "https://www.wikidata.org/wiki/Q101333",
+      "display_name": "Mechanical engineering",
+      "level": 1,
+      "score": 0
+    },
+    {
+      "id": "https://openalex.org/C199539241",
+      "wikidata": "https://www.wikidata.org/wiki/Q7748",
+      "display_name": "Law",
+      "level": 1,
+      "score": 0
+    }
+  ],
+  "mesh": [],
+  "locations_count": 3,
+  "locations": [
+    {
+      "id": "doi:10.3389/fcomm.2022.878050",
+      "is_oa": true,
+      "landing_page_url": "https://doi.org/10.3389/fcomm.2022.878050",
+      "pdf_url": "https://www.frontiersin.org/articles/10.3389/fcomm.2022.878050/pdf",
+      "source": {
+        "id": "https://openalex.org/S2596093566",
+        "display_name": "Frontiers in Communication",
+        "issn_l": "2297-900X",
+        "issn": [
+          "2297-900X"
+        ],
+        "is_oa": true,
+        "is_in_doaj": true,
+        "is_core": true,
+        "host_organization": "https://openalex.org/P4310320527",
+        "host_organization_name": "Frontiers Media",
+        "host_organization_lineage": [
+          "https://openalex.org/P4310320527"
+        ],
+        "host_organization_lineage_names": [
+          "Frontiers Media"
+        ],
+        "type": "journal"
+      },
+      "license": "cc-by",
+      "license_id": "https://openalex.org/licenses/cc-by",
+      "version": "publishedVersion",
+      "is_accepted": true,
+      "is_published": true,
+      "raw_source_name": "Frontiers in Communication",
+      "raw_type": "journal-article"
+    },
+    {
+      "id": "pmh:oai:https://orca.cardiff.ac.uk:154395",
+      "is_oa": false,
+      "landing_page_url": null,
+      "pdf_url": null,
+      "source": {
+        "id": "https://openalex.org/S4306401195",
+        "display_name": "ORCA Online Research @Cardiff (Cardiff University)",
+        "issn_l": null,
+        "issn": null,
+        "is_oa": false,
+        "is_in_doaj": false,
+        "is_core": false,
+        "host_organization": "https://openalex.org/I79510175",
+        "host_organization_name": "Cardiff University",
+        "host_organization_lineage": [
+          "https://openalex.org/I79510175"
+        ],
+        "host_organization_lineage_names": [],
+        "type": "repository"
+      },
+      "license": null,
+      "license_id": null,
+      "version": "acceptedVersion",
+      "is_accepted": true,
+      "is_published": false,
+      "raw_source_name": "",
+      "raw_type": "Article"
+    },
+    {
+      "id": "pmh:oai:doaj.org/article:e3a5e5b86a344e589ba4fb93e8f09e5e",
+      "is_oa": true,
+      "landing_page_url": "https://doaj.org/article/e3a5e5b86a344e589ba4fb93e8f09e5e",
+      "pdf_url": null,
+      "source": {
+        "id": "https://openalex.org/S4306401280",
+        "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+        "issn_l": null,
+        "issn": null,
+        "is_oa": false,
+        "is_in_doaj": false,
+        "is_core": false,
+        "host_organization": null,
+        "host_organization_name": null,
+        "host_organization_lineage": [],
+        "host_organization_lineage_names": [],
+        "type": "repository"
+      },
+      "license": "cc-by-sa",
+      "license_id": "https://openalex.org/licenses/cc-by-sa",
+      "version": "submittedVersion",
+      "is_accepted": false,
+      "is_published": false,
+      "raw_source_name": "Frontiers in Communication, Vol 7 (2022)",
+      "raw_type": "article"
+    }
+  ],
+  "best_oa_location": {
+    "id": "doi:10.3389/fcomm.2022.878050",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.3389/fcomm.2022.878050",
+    "pdf_url": "https://www.frontiersin.org/articles/10.3389/fcomm.2022.878050/pdf",
+    "source": {
+      "id": "https://openalex.org/S2596093566",
+      "display_name": "Frontiers in Communication",
+      "issn_l": "2297-900X",
+      "issn": [
+        "2297-900X"
+      ],
+      "is_oa": true,
+      "is_in_doaj": true,
+      "is_core": true,
+      "host_organization": "https://openalex.org/P4310320527",
+      "host_organization_name": "Frontiers Media",
+      "host_organization_lineage": [
+        "https://openalex.org/P4310320527"
+      ],
+      "host_organization_lineage_names": [
+        "Frontiers Media"
+      ],
+      "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Frontiers in Communication",
+    "raw_type": "journal-article"
+  },
+  "sustainable_development_goals": [],
+  "awards": [],
+  "funders": [
+    {
+      "id": "https://openalex.org/F4320306137",
+      "display_name": "Bill and Melinda Gates Foundation",
+      "ror": "https://ror.org/0456r8d26"
+    },
+    {
+      "id": "https://openalex.org/F4320330545",
+      "display_name": "North South University",
+      "ror": "https://ror.org/05wdbfp45"
+    }
+  ],
+  "has_content": {
+    "pdf": true,
+    "grobid_xml": true
+  },
+  "content_urls": {
+    "pdf": "https://content.openalex.org/works/W4280631832.pdf",
+    "grobid_xml": "https://content.openalex.org/works/W4280631832.grobid-xml"
+  },
+  "referenced_works_count": 29,
+  "referenced_works": [
+    "https://openalex.org/W1515587369",
+    "https://openalex.org/W1979290264",
+    "https://openalex.org/W2067404301",
+    "https://openalex.org/W2097679784",
+    "https://openalex.org/W2157396057",
+    "https://openalex.org/W2412313461",
+    "https://openalex.org/W2786049635",
+    "https://openalex.org/W2883746335",
+    "https://openalex.org/W2889159254",
+    "https://openalex.org/W2911428659",
+    "https://openalex.org/W2940556245",
+    "https://openalex.org/W2955771389",
+    "https://openalex.org/W3012550011",
+    "https://openalex.org/W3027601780",
+    "https://openalex.org/W3027720260",
+    "https://openalex.org/W3042114636",
+    "https://openalex.org/W3043758161",
+    "https://openalex.org/W3046815354",
+    "https://openalex.org/W3066351986",
+    "https://openalex.org/W3081696911",
+    "https://openalex.org/W3082077386",
+    "https://openalex.org/W3093337245",
+    "https://openalex.org/W3131645232",
+    "https://openalex.org/W3157694052",
+    "https://openalex.org/W3197649032",
+    "https://openalex.org/W3199406023",
+    "https://openalex.org/W4200400555",
+    "https://openalex.org/W4206233629",
+    "https://openalex.org/W6753945571"
+  ],
+  "related_works": [
+    "https://openalex.org/W2378502579",
+    "https://openalex.org/W2377889937",
+    "https://openalex.org/W2362359465",
+    "https://openalex.org/W2369433317",
+    "https://openalex.org/W2087863410",
+    "https://openalex.org/W2375884684",
+    "https://openalex.org/W1573708909",
+    "https://openalex.org/W2092340116",
+    "https://openalex.org/W2358956489",
+    "https://openalex.org/W2385251173"
+  ],
+  "abstract_inverted_index": {
+    "37": [
+      54
+    ],
+    "Risk": [
+      0
+    ],
+    "communication": [
+      1,
+      21,
+      67,
+      85,
+      168
+    ],
+    "during": [
+      2,
+      42,
+      124,
+      169
+    ],
+    "COVID-19": [
+      3,
+      44,
+      171
+    ],
+    "is": [
+      4,
+      11,
+      24,
+      160
+    ],
+    "essential": [
+      5
+    ],
+    "to": [
+      6,
+      17,
+      70,
+      98,
+      129,
+      149,
+      162
+    ],
+    "have": [
+      7
+    ],
+    "support,": [
+      8,
+      110
+    ],
+    "but": [
+      9
+    ],
+    "it": [
+      10
+    ],
+    "challenging": [
+      12
+    ],
+    "in": [
+      13,
+      35,
+      175
+    ],
+    "developing": [
+      14,
+      36
+    ],
+    "countries": [
+      15
+    ],
+    "due": [
+      16
+    ],
+    "a": [
+      18,
+      48
+    ],
+    "lack": [
+      19,
+      84
+    ],
+    "of": [
+      20,
+      80,
+      102,
+      145,
+      166
+    ],
+    "setup.": [
+      22
+    ],
+    "It": [
+      23,
+      75
+    ],
+    "more": [
+      25
+    ],
+    "difficult": [
+      26
+    ],
+    "for": [
+      27,
+      118
+    ],
+    "the": [
+      28,
+      43,
+      65,
+      78,
+      81,
+      94,
+      100,
+      103,
+      112,
+      125,
+      143,
+      164,
+      170
+    ],
+    "low-income,": [
+      29
+    ],
+    "marginal": [
+      30
+    ],
+    "communities,": [
+      31
+    ],
+    "and": [
+      32,
+      72,
+      135,
+      142
+    ],
+    "specifically,": [
+      33
+    ],
+    "women": [
+      34,
+      55,
+      174
+    ],
+    "countries.": [
+      37
+    ],
+    "To": [
+      38
+    ],
+    "understand": [
+      39,
+      163
+    ],
+    "this,": [
+      40
+    ],
+    "particularly": [
+      41
+    ],
+    "pandemic,": [
+      45
+    ],
+    "we": [
+      46
+    ],
+    "conducted": [
+      47
+    ],
+    "qualitative": [
+      49
+    ],
+    "study": [
+      50
+    ],
+    "among": [
+      51,
+      173
+    ],
+    "N": [
+      52
+    ],
+    "=": [
+      53,
+      59
+    ],
+    "(urban": [
+      56
+    ],
+    "20,": [
+      57
+    ],
+    "rural": [
+      58,
+      113
+    ],
+    "17)": [
+      60
+    ],
+    "across": [
+      61
+    ],
+    "Bangladesh": [
+      62
+    ],
+    "that": [
+      63,
+      77
+    ],
+    "presents": [
+      64
+    ],
+    "risk": [
+      66,
+      140,
+      155,
+      167
+    ],
+    "factors": [
+      68
+    ],
+    "related": [
+      69
+    ],
+    "social": [
+      71
+    ],
+    "financial": [
+      73,
+      109,
+      146,
+      152
+    ],
+    "challenges.": [
+      74
+    ],
+    "reveals": [
+      76
+    ],
+    "majority": [
+      79,
+      101
+    ],
+    "urban": [
+      82,
+      90,
+      104
+    ],
+    "communities": [
+      83,
+      92
+    ],
+    "with": [
+      86,
+      121
+    ],
+    "local": [
+      87,
+      122
+    ],
+    "authorities,": [
+      88
+    ],
+    "where": [
+      89
+    ],
+    "low-income": [
+      91
+    ],
+    "are": [
+      93
+    ],
+    "worst": [
+      95
+    ],
+    "sufferers.": [
+      96
+    ],
+    "Due": [
+      97
+    ],
+    "that,": [
+      99
+    ],
+    "participants": [
+      105,
+      114,
+      133
+    ],
+    "could": [
+      106
+    ],
+    "not": [
+      107
+    ],
+    "get": [
+      108,
+      150
+    ],
+    "whereas": [
+      111
+    ],
+    "received": [
+      115
+    ],
+    "such": [
+      116
+    ],
+    "support": [
+      117,
+      153
+    ],
+    "having": [
+      119
+    ],
+    "communications": [
+      120
+    ],
+    "authorities": [
+      123
+    ],
+    "pandemic.": [
+      126
+    ],
+    "However,": [
+      127
+    ],
+    "access": [
+      128
+    ],
+    "technology": [
+      130,
+      147
+    ],
+    "helped": [
+      131,
+      148
+    ],
+    "some": [
+      132
+    ],
+    "share": [
+      134
+    ],
+    "receive": [
+      136
+    ],
+    "pandemic-related": [
+      137
+    ],
+    "information": [
+      138
+    ],
+    "about": [
+      139
+    ],
+    "communication,": [
+      141
+    ],
+    "adoption": [
+      144
+    ],
+    "emergency": [
+      151
+    ],
+    "through": [
+      154
+    ],
+    "communication.": [
+      156
+    ],
+    "Moreover,": [
+      157
+    ],
+    "this": [
+      158
+    ],
+    "work": [
+      159
+    ],
+    "expected": [
+      161
+    ],
+    "role": [
+      165
+    ],
+    "pandemic": [
+      172
+    ],
+    "Bangladesh.": [
+      176
+    ]
+  },
+  "counts_by_year": [
+    {
+      "year": 2026,
+      "cited_by_count": 1
+    },
+    {
+      "year": 2025,
+      "cited_by_count": 3
+    },
+    {
+      "year": 2024,
+      "cited_by_count": 1
+    },
+    {
+      "year": 2023,
+      "cited_by_count": 1
+    },
+    {
+      "year": 2022,
+      "cited_by_count": 4
+    }
+  ],
+  "updated_date": "2026-05-21T06:26:12.895304",
+  "created_date": "2025-10-10T00:00:00"
+}

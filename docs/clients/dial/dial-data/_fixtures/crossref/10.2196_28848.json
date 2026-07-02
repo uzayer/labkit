@@ -1,0 +1,666 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          30
+        ]
+      ],
+      "date-time": "2026-06-30T18:03:19Z",
+      "timestamp": 1782842599138,
+      "version": "3.54.5"
+    },
+    "reference-count": 101,
+    "publisher": "JMIR Publications Inc.",
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [
+      "JMIR Form Res"
+    ],
+    "abstract": "<jats:sec>\n                    <jats:title>Background</jats:title>\n                    <jats:p>Existing robust, pervasive device-based systems developed in recent years to detect depression require data collected over a long period and may not be effective in cases where early detection is crucial. Additionally, due to the requirement of running systems in the background for prolonged periods, existing systems can be resource inefficient. As a result, these systems can be infeasible in low-resource settings.</jats:p>\n                  </jats:sec>\n                  <jats:sec>\n                    <jats:title>Objective</jats:title>\n                    <jats:p>Our main objective was to develop a minimalistic system to identify depression using data retrieved in the fastest possible time. Another objective was to explain the machine learning (ML) models that were best for identifying depression.</jats:p>\n                  </jats:sec>\n                  <jats:sec>\n                    <jats:title>Methods</jats:title>\n                    <jats:p>We developed a fast tool that retrieves the past 7 days’ app usage data in 1 second (mean 0.31, SD 1.10 seconds). A total of 100 students from Bangladesh participated in our study, and our tool collected their app usage data and responses to the Patient Health Questionnaire-9. To identify depressed and nondepressed students, we developed a diverse set of ML models: linear, tree-based, and neural network–based models. We selected important features using the stable approach, along with 3 main types of feature selection (FS) approaches: filter, wrapper, and embedded methods. We developed and validated the models using the nested cross-validation method. Additionally, we explained the best ML models through the Shapley additive explanations (SHAP) method.</jats:p>\n                  </jats:sec>\n                  <jats:sec>\n                    <jats:title>Results</jats:title>\n                    <jats:p>Leveraging only the app usage data retrieved in 1 second, our light gradient boosting machine model used the important features selected by the stable FS approach and correctly identified 82.4% (n=42) of depressed students (precision=75%, F1-score=78.5%). Moreover, after comprehensive exploration, we presented a parsimonious stacking model where around 5 features selected by the all-relevant FS approach Boruta were used in each iteration of validation and showed a maximum precision of 77.4% (balanced accuracy=77.9%). Feature importance analysis suggested app usage behavioral markers containing diurnal usage patterns as being more important than aggregated data-based markers. In addition, a SHAP analysis of our best models presented behavioral markers that were related to depression. For instance, students who were not depressed spent more time on education apps on weekdays, whereas those who were depressed used a higher number of photo and video apps and also had a higher deviation in using photo and video apps over the morning, afternoon, evening, and night time periods of the weekend.</jats:p>\n                  </jats:sec>\n                  <jats:sec>\n                    <jats:title>Conclusions</jats:title>\n                    <jats:p>Due to our system’s fast and minimalistic nature, it may make a worthwhile contribution to identifying depression in underdeveloped and developing regions. In addition, our detailed discussion about the implication of our findings can facilitate the development of less resource-intensive systems to better understand students who are depressed and take steps for intervention.</jats:p>\n                  </jats:sec>",
+    "DOI": "10.2196/28848",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2023,
+          4,
+          26
+        ]
+      ],
+      "date-time": "2023-04-26T10:53:01Z",
+      "timestamp": 1682506381000
+    },
+    "page": "e28848",
+    "source": "Crossref",
+    "is-referenced-by-count": 20,
+    "title": [
+      "A Fast and Minimal System to Identify Depression Using Smartphones: Explainable Machine Learning–Based Approach"
+    ],
+    "prefix": "10.2196",
+    "volume": "7",
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0001-8668-0120",
+        "authenticated-orcid": false,
+        "given": "Md Sabbir",
+        "family": "Ahmed",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-7715-1742",
+        "authenticated-orcid": false,
+        "given": "Nova",
+        "family": "Ahmed",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "member": "1010",
+    "published-online": {
+      "date-parts": [
+        [
+          2023,
+          8,
+          10
+        ]
+      ]
+    },
+    "reference": [
+      {
+        "key": "ref1",
+        "unstructured": "Global health data exchange (GHDx)Institute for Health Metrics and Evaluation20192022-04-23http://ghdx.healthdata.org/gbd-results-tool?params=gbd-api-2019-permalink/d780dffbe8a381b25e1416884959e88b"
+      },
+      {
+        "key": "ref2",
+        "unstructured": "80% of depression burden is among people living in low- and middle-income countries (LMICs)European Commission20172022-05-20https://cordis.europa.eu/article/id/134176-80-of-depression-burden-is-among-people-living-in-low-and-middlein come-countries-lmics/fr"
+      },
+      {
+        "key": "ref3",
+        "unstructured": "National Mental Health Survey of Bangladesh 2018-19: provisional fact sheetWorld Health Organization2023-04-29https://www.who.int/docs/default-source/searo/bangladesh/pdf-reports/cat-2/nimh-fact-sheet-5-11-19.pdf?sfvrsn=3e62d4b0_2"
+      },
+      {
+        "key": "ref4",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1017/gmh.2021.49"
+      },
+      {
+        "key": "ref5",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.31887/DCNS.2006.8.2/mgoodwin"
+      },
+      {
+        "key": "ref6",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/d41586-020-00922-8"
+      },
+      {
+        "key": "ref7",
+        "unstructured": "DepressionWorld Health Organization2022-04-23https://www.who.int/news-room/fact-sheets/detail/depression"
+      },
+      {
+        "key": "ref8",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/0163-8343(94)00056-j"
+      },
+      {
+        "key": "ref9",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s11606-006-0085-0"
+      },
+      {
+        "key": "ref10",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1002/wps.20128"
+      },
+      {
+        "key": "ref11",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.11622/smedj.2017006"
+      },
+      {
+        "key": "ref12",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/s41398-019-0460-3"
+      },
+      {
+        "key": "ref13",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.crbeha.2021.100044"
+      },
+      {
+        "key": "ref14",
+        "first-page": "69",
+        "author": "Munir, U",
+        "year": "2022",
+        "journal-title": "Proceedings of the Third International Conference on Trends in Computational and Cognitive Engineering. Lecture Notes in Networks and Systems, vol 348"
+      },
+      {
+        "key": "ref15",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1186/s12888-022-03742-4"
+      },
+      {
+        "key": "ref16",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1002/brb3.2000"
+      },
+      {
+        "key": "ref17",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1371/journal.pone.0261131"
+      },
+      {
+        "key": "ref18",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.2196/13209"
+      },
+      {
+        "key": "ref19",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3351274"
+      },
+      {
+        "key": "ref20",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3448107"
+      },
+      {
+        "key": "ref21",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3422821"
+      },
+      {
+        "key": "ref22",
+        "unstructured": "EliasJWhy wearables are out of reach for people who need them mostForbes20152022-04-23https://www.forbes.com/sites/jenniferelias/2015/10/27/the-leftovers-part-i-the-cost-of-activity/?sh=a0e5ffc63c9b"
+      },
+      {
+        "key": "ref23",
+        "unstructured": "LohchabHAffordable smartphone sales shoot up as demand grows due to e-learning needs InternetEconomic Times20202022-05-26https://economictimes.indiatimes.com/tech/hardware/affordable-smartphone-sales-shoot-up-as-demand-grows/articleshow/78241563.cms"
+      },
+      {
+        "key": "ref24",
+        "unstructured": "AtskeSUse of smartphones and social media is common across most emerging economiesPew Research Center: Internet, Science & Tech20192022-04-23https://www.pewresearch.org/internet/2019/03/07/use-of-smartphones-and-social-media-is- common-across-most-emerging-economies/"
+      },
+      {
+        "key": "ref25",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3410530.3414441"
+      },
+      {
+        "key": "ref26",
+        "doi-asserted-by": "crossref",
+        "first-page": "218",
+        "DOI": "10.1007/978-3-030-99194-4_15",
+        "author": "Ahmed, M",
+        "year": "2022",
+        "journal-title": "Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering"
+      },
+      {
+        "key": "ref27",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.2196/jmir.4273"
+      },
+      {
+        "key": "ref28",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.2196/27589"
+      },
+      {
+        "key": "ref29",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1521/jscp.2018.37.10.751"
+      },
+      {
+        "key": "ref30",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3390/ijerph18126212"
+      },
+      {
+        "key": "ref31",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.7717/peerj.2197"
+      },
+      {
+        "key": "ref32",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3191775"
+      },
+      {
+        "key": "ref33",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.jbi.2019.103371"
+      },
+      {
+        "key": "ref34",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.2196/14045"
+      },
+      {
+        "key": "ref35",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.2196/26540"
+      },
+      {
+        "key": "ref36",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.pmcj.2022.101621"
+      },
+      {
+        "key": "ref37",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.smhl.2019.100093"
+      },
+      {
+        "key": "ref38",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tbdata.2018.2872569"
+      },
+      {
+        "key": "ref39",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/wh.2016.7764553"
+      },
+      {
+        "key": "ref40",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2750858.2805845"
+      },
+      {
+        "key": "ref41",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/1592606.1592621"
+      },
+      {
+        "key": "ref42",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.4018/ijhcr.2014100102"
+      },
+      {
+        "key": "ref43",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/jcc4.12021"
+      },
+      {
+        "key": "ref44",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3313831.3376435"
+      },
+      {
+        "key": "ref45",
+        "unstructured": "AhmedMSMon MajhiGoogle Play2023-04-29https://play.google.com/store/apps/details?id=net.mn.u"
+      },
+      {
+        "key": "ref46",
+        "unstructured": "Mobile operating system market share BangladeshStatCounter Global Stats20222022-04-24https://gs.statcounter.com/os-mar ket-share/mobile/bangladesh"
+      },
+      {
+        "key": "ref47",
+        "unstructured": "UsageStatsManagerAndroid Developers20222023-04-29https://developer.android.com/reference/android/app/usage/UsageSta tsManager"
+      },
+      {
+        "key": "ref48",
+        "unstructured": "LuSApp usageGoogle2022-04-24https://play.google.com/store/apps/details?id=com.a0soft.gphone.uninstaller"
+      },
+      {
+        "key": "ref49",
+        "unstructured": "YourHour - screentime controlMindefy Labs2023-04-29https://play.google.com/store/apps/details?id=com.mindefy.phoneaddi ction.mobilepe"
+      },
+      {
+        "key": "ref50",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s11469-020-00242-y"
+      },
+      {
+        "key": "ref51",
+        "unstructured": "AhmedM86pc university students own smartphones in Bangladesh: surveyProthom Alo2020662023-04-29https://en.prothomalo.com/youth/education/86pc-university-students-own-smartphones-in-bangladesh-survey"
+      },
+      {
+        "key": "ref52",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1186/s12888-020-2435-6"
+      },
+      {
+        "key": "ref53",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1046/j.1525-1497.2001.016009606.x"
+      },
+      {
+        "key": "ref54",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3314403"
+      },
+      {
+        "key": "ref55",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3173574.3173992"
+      },
+      {
+        "key": "ref56",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3313831.3376672"
+      },
+      {
+        "key": "ref57",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3290605.3300429"
+      },
+      {
+        "key": "ref58",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2037373.2037383"
+      },
+      {
+        "key": "ref59",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2702123.2702486"
+      },
+      {
+        "key": "ref60",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/ngmast.2011.12"
+      },
+      {
+        "key": "ref61",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2858036.2858348"
+      },
+      {
+        "key": "ref62",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2628363.2628380"
+      },
+      {
+        "key": "ref63",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2628363.2628367"
+      },
+      {
+        "key": "ref64",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/584091.584093"
+      },
+      {
+        "key": "ref65",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3264948"
+      },
+      {
+        "key": "ref66",
+        "first-page": "668",
+        "year": "2009",
+        "journal-title": "Encyclopedia of Biometrics"
+      },
+      {
+        "key": "ref67",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2971648.2971696"
+      },
+      {
+        "key": "ref68",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.52631/jemds.v1i3.51"
+      },
+      {
+        "key": "ref69",
+        "doi-asserted-by": "crossref",
+        "DOI": "10.1007/978-3-540-35488-8",
+        "author": "Guyon, I",
+        "year": "2006",
+        "journal-title": "Feature Extraction: Foundations and Applications"
+      },
+      {
+        "key": "ref70",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/j.1467-9868.2010.00740.x"
+      },
+      {
+        "key": "ref71",
+        "author": "Geron, A",
+        "year": "2017",
+        "journal-title": "Hands-On Machine Learning with Scikit-Learn and TensorFlow"
+      },
+      {
+        "key": "ref72",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/s0895-4356(96)00236-3"
+      },
+      {
+        "key": "ref73",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.18637/jss.v036.i11"
+      },
+      {
+        "key": "ref74",
+        "unstructured": "Boruta_pyGitHub20192022-04-24https://github.com/scikit-learn-contrib/boruta_py"
+      },
+      {
+        "key": "ref75",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3510029"
+      },
+      {
+        "key": "ref76",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/s41398-018-0289-1"
+      },
+      {
+        "key": "ref77",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1136/bmj.n2281"
+      },
+      {
+        "key": "ref78",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/inista52262.2021.9548444"
+      },
+      {
+        "key": "ref79",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3390/ijerph17165929"
+      },
+      {
+        "key": "ref80",
+        "unstructured": "KeGMengQFinleyTWangTChenWMaWYeQLiuTLightGBM: a highly efficient gradient boosting decision tree201731st International Conference on Neural Information Processing SystemsDec 4-9Long Beach, CA"
+      },
+      {
+        "key": "ref81",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.5555/3327757.3327770"
+      },
+      {
+        "key": "ref82",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1214/aos/1013203451"
+      },
+      {
+        "key": "ref83",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1371/journal.pone.0224365"
+      },
+      {
+        "key": "ref84",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.jeconom.2015.02.006"
+      },
+      {
+        "key": "ref85",
+        "unstructured": "BergstraJYaminsDCoxDMaking a science of model search: hyperparameter optimization in hundreds of dimensions for vision architectures201330th International Conference on Machine LearningJune 16-21Atlanta, GA115123"
+      },
+      {
+        "key": "ref86",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.48550/arXiv.1201.0490"
+      },
+      {
+        "key": "ref87",
+        "unstructured": "LundbergSMLeeS-IA unified approach to interpreting model predictions2017Advances in Neural Information Processing Systems 30 (NIPS 2017)Dec 4-9Long Beach, CA"
+      },
+      {
+        "key": "ref88",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.smhl.2020.100118"
+      },
+      {
+        "key": "ref89",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.smhl.2020.100137"
+      },
+      {
+        "key": "ref90",
+        "unstructured": "New research reveals mobile users want phones to be more resilient with longer battery lifePR Newswire20132022-05-23https://www.prnewswire.com/news-releases/new-research-reveals-mobile-users-want-phones-to-be-more-resilient-with -longer-battery-life-233725021.html"
+      },
+      {
+        "key": "ref91",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/access.2017.2728620"
+      },
+      {
+        "key": "ref92",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3290605.3300655"
+      },
+      {
+        "key": "ref93",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1093/gigascience/gix019"
+      },
+      {
+        "key": "ref94",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2935334.2935383"
+      },
+      {
+        "key": "ref95",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/s41562-019-0738-8"
+      },
+      {
+        "key": "ref96",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3389/fnbot.2013.00021"
+      },
+      {
+        "key": "ref97",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3389/fpsyt.2021.714181"
+      },
+      {
+        "key": "ref98",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1140/epjds/s13688-017-0110-z"
+      },
+      {
+        "key": "ref99",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3025453.3025932"
+      },
+      {
+        "key": "ref100",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.chbr.2020.100050"
+      },
+      {
+        "key": "ref101",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.jad.2008.06.026"
+      }
+    ],
+    "container-title": [
+      "JMIR Formative Research"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://formative.jmir.org/2023/1/e28848",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          30
+        ]
+      ],
+      "date-time": "2026-06-30T17:42:29Z",
+      "timestamp": 1782841349000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://formative.jmir.org/2023/1/e28848"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2023,
+          8,
+          10
+        ]
+      ]
+    },
+    "references-count": 101,
+    "URL": "https://doi.org/10.2196/28848",
+    "relation": {
+      "has-preprint": [
+        {
+          "id-type": "doi",
+          "id": "10.31234/osf.io/wk8bv",
+          "asserted-by": "object"
+        },
+        {
+          "id-type": "doi",
+          "id": "10.2196/preprints.28848",
+          "asserted-by": "object"
+        }
+      ]
+    },
+    "ISSN": [
+      "2561-326X"
+    ],
+    "issn-type": [
+      {
+        "value": "2561-326X",
+        "type": "electronic"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2023,
+          8,
+          10
+        ]
+      ]
+    }
+  }
+}

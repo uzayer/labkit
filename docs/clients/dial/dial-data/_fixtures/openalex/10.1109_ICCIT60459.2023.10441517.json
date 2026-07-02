@@ -1,0 +1,776 @@
+{
+  "id": "https://openalex.org/W4392209805",
+  "doi": "https://doi.org/10.1109/iccit60459.2023.10441517",
+  "title": "NLP-based Emotions Analysis of the Marginalized Communities of Bangladesh",
+  "display_name": "NLP-based Emotions Analysis of the Marginalized Communities of Bangladesh",
+  "publication_year": 2023,
+  "publication_date": "2023-12-13",
+  "ids": {
+    "openalex": "https://openalex.org/W4392209805",
+    "doi": "https://doi.org/10.1109/iccit60459.2023.10441517"
+  },
+  "language": "en",
+  "primary_location": {
+    "id": "doi:10.1109/iccit60459.2023.10441517",
+    "is_oa": false,
+    "landing_page_url": "http://dx.doi.org/10.1109/iccit60459.2023.10441517",
+    "pdf_url": null,
+    "source": null,
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "2023 26th International Conference on Computer and Information Technology (ICCIT)",
+    "raw_type": "proceedings-article"
+  },
+  "type": "article",
+  "indexed_in": [
+    "crossref"
+  ],
+  "open_access": {
+    "is_oa": false,
+    "oa_status": "closed",
+    "oa_url": null,
+    "any_repository_has_fulltext": false
+  },
+  "authorships": [
+    {
+      "author_position": "first",
+      "author": {
+        "id": "https://openalex.org/A5104249904",
+        "display_name": "Tanvir Hasan",
+        "orcid": null
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I98381234",
+          "display_name": "University of Oulu",
+          "ror": "https://ror.org/03yj89h83",
+          "country_code": "FI",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I98381234"
+          ]
+        }
+      ],
+      "countries": [
+        "FI"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Tanvir Hasan",
+      "raw_affiliation_strings": [
+        "University of Oulu,Department of Computer Science &#x0026; Engineering,Oulu,Finland"
+      ],
+      "raw_orcid": null,
+      "affiliations": [
+        {
+          "raw_affiliation_string": "University of Oulu,Department of Computer Science &#x0026; Engineering,Oulu,Finland",
+          "institution_ids": [
+            "https://openalex.org/I98381234"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5040560127",
+        "display_name": "Silvia Ahmed",
+        "orcid": "https://orcid.org/0000-0002-2306-5857"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ],
+      "countries": [
+        "BD"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Silvia Ahmed",
+      "raw_affiliation_strings": [
+        "North South University,Department of Electrical &#x0026; Computer Engineering,Dhaka,Bangladesh"
+      ],
+      "raw_orcid": null,
+      "affiliations": [
+        {
+          "raw_affiliation_string": "North South University,Department of Electrical &#x0026; Computer Engineering,Dhaka,Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ]
+    },
+    {
+      "author_position": "last",
+      "author": {
+        "id": "https://openalex.org/A5011009295",
+        "display_name": "Nova Ahmed",
+        "orcid": "https://orcid.org/0000-0002-7715-1742"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ],
+      "countries": [
+        "BD"
+      ],
+      "is_corresponding": false,
+      "raw_author_name": "Nova Ahmed",
+      "raw_affiliation_strings": [
+        "North South University,Department of Electrical &#x0026; Computer Engineering,Dhaka,Bangladesh"
+      ],
+      "raw_orcid": null,
+      "affiliations": [
+        {
+          "raw_affiliation_string": "North South University,Department of Electrical &#x0026; Computer Engineering,Dhaka,Bangladesh",
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
+        }
+      ]
+    }
+  ],
+  "institutions": [],
+  "countries_distinct_count": 2,
+  "institutions_distinct_count": 3,
+  "corresponding_author_ids": [],
+  "corresponding_institution_ids": [],
+  "apc_list": null,
+  "apc_paid": null,
+  "fwci": 0,
+  "has_fulltext": false,
+  "cited_by_count": 0,
+  "citation_normalized_percentile": {
+    "value": 0.20441383,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": false
+  },
+  "cited_by_percentile_year": null,
+  "biblio": {
+    "volume": "17",
+    "issue": null,
+    "first_page": "1",
+    "last_page": "6"
+  },
+  "is_retracted": false,
+  "is_paratext": false,
+  "is_xpac": false,
+  "primary_topic": {
+    "id": "https://openalex.org/T10664",
+    "display_name": "Sentiment Analysis and Opinion Mining",
+    "score": 0.9915000200271606,
+    "subfield": {
+      "id": "https://openalex.org/subfields/1702",
+      "display_name": "Artificial Intelligence"
+    },
+    "field": {
+      "id": "https://openalex.org/fields/17",
+      "display_name": "Computer Science"
+    },
+    "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+    }
+  },
+  "topics": [
+    {
+      "id": "https://openalex.org/T10664",
+      "display_name": "Sentiment Analysis and Opinion Mining",
+      "score": 0.9915000200271606,
+      "subfield": {
+        "id": "https://openalex.org/subfields/1702",
+        "display_name": "Artificial Intelligence"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/17",
+        "display_name": "Computer Science"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/3",
+        "display_name": "Physical Sciences"
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "https://openalex.org/keywords/computer-science",
+      "display_name": "Computer science",
+      "score": 0.6415155529975891
+    },
+    {
+      "id": "https://openalex.org/keywords/natural-language-processing",
+      "display_name": "Natural language processing",
+      "score": 0.6143230199813843
+    },
+    {
+      "id": "https://openalex.org/keywords/artificial-intelligence",
+      "display_name": "Artificial intelligence",
+      "score": 0.5169553160667419
+    },
+    {
+      "id": "https://openalex.org/keywords/sentiment-analysis",
+      "display_name": "Sentiment analysis",
+      "score": 0.4816690683364868
+    },
+    {
+      "id": "https://openalex.org/keywords/data-science",
+      "display_name": "Data science",
+      "score": 0.3505041003227234
+    },
+    {
+      "id": "https://openalex.org/keywords/information-retrieval",
+      "display_name": "Information retrieval",
+      "score": 0.3313373327255249
+    },
+    {
+      "id": "https://openalex.org/keywords/linguistics",
+      "display_name": "Linguistics",
+      "score": 0.3232526183128357
+    }
+  ],
+  "concepts": [
+    {
+      "id": "https://openalex.org/C41008148",
+      "wikidata": "https://www.wikidata.org/wiki/Q21198",
+      "display_name": "Computer science",
+      "level": 0,
+      "score": 0.6415155529975891
+    },
+    {
+      "id": "https://openalex.org/C204321447",
+      "wikidata": "https://www.wikidata.org/wiki/Q30642",
+      "display_name": "Natural language processing",
+      "level": 1,
+      "score": 0.6143230199813843
+    },
+    {
+      "id": "https://openalex.org/C154945302",
+      "wikidata": "https://www.wikidata.org/wiki/Q11660",
+      "display_name": "Artificial intelligence",
+      "level": 1,
+      "score": 0.5169553160667419
+    },
+    {
+      "id": "https://openalex.org/C66402592",
+      "wikidata": "https://www.wikidata.org/wiki/Q2271421",
+      "display_name": "Sentiment analysis",
+      "level": 2,
+      "score": 0.4816690683364868
+    },
+    {
+      "id": "https://openalex.org/C2522767166",
+      "wikidata": "https://www.wikidata.org/wiki/Q2374463",
+      "display_name": "Data science",
+      "level": 1,
+      "score": 0.3505041003227234
+    },
+    {
+      "id": "https://openalex.org/C23123220",
+      "wikidata": "https://www.wikidata.org/wiki/Q816826",
+      "display_name": "Information retrieval",
+      "level": 1,
+      "score": 0.3313373327255249
+    },
+    {
+      "id": "https://openalex.org/C41895202",
+      "wikidata": "https://www.wikidata.org/wiki/Q8162",
+      "display_name": "Linguistics",
+      "level": 1,
+      "score": 0.3232526183128357
+    },
+    {
+      "id": "https://openalex.org/C138885662",
+      "wikidata": "https://www.wikidata.org/wiki/Q5891",
+      "display_name": "Philosophy",
+      "level": 0,
+      "score": 0
+    }
+  ],
+  "mesh": [],
+  "locations_count": 1,
+  "locations": [
+    {
+      "id": "doi:10.1109/iccit60459.2023.10441517",
+      "is_oa": false,
+      "landing_page_url": "http://dx.doi.org/10.1109/iccit60459.2023.10441517",
+      "pdf_url": null,
+      "source": null,
+      "license": null,
+      "license_id": null,
+      "version": "publishedVersion",
+      "is_accepted": true,
+      "is_published": true,
+      "raw_source_name": "2023 26th International Conference on Computer and Information Technology (ICCIT)",
+      "raw_type": "proceedings-article"
+    }
+  ],
+  "best_oa_location": null,
+  "sustainable_development_goals": [
+    {
+      "id": "https://metadata.un.org/sdg/10",
+      "display_name": "Reduced inequalities",
+      "score": 0.8100000023841858
+    }
+  ],
+  "awards": [],
+  "funders": [],
+  "has_content": {
+    "grobid_xml": false,
+    "pdf": false
+  },
+  "content_urls": null,
+  "referenced_works_count": 31,
+  "referenced_works": [
+    "https://openalex.org/W193025648",
+    "https://openalex.org/W1006448126",
+    "https://openalex.org/W1546555761",
+    "https://openalex.org/W1993659691",
+    "https://openalex.org/W1995290750",
+    "https://openalex.org/W1995953411",
+    "https://openalex.org/W2020864002",
+    "https://openalex.org/W2130716178",
+    "https://openalex.org/W2143637943",
+    "https://openalex.org/W2153723960",
+    "https://openalex.org/W2168493061",
+    "https://openalex.org/W2590071090",
+    "https://openalex.org/W2769687515",
+    "https://openalex.org/W2795374197",
+    "https://openalex.org/W2903101678",
+    "https://openalex.org/W2952527214",
+    "https://openalex.org/W2980705493",
+    "https://openalex.org/W3093997634",
+    "https://openalex.org/W3094129119",
+    "https://openalex.org/W3097585152",
+    "https://openalex.org/W3097686307",
+    "https://openalex.org/W3104964010",
+    "https://openalex.org/W3155227529",
+    "https://openalex.org/W4214840481",
+    "https://openalex.org/W4235510064",
+    "https://openalex.org/W4287838577",
+    "https://openalex.org/W4306249297",
+    "https://openalex.org/W4307570196",
+    "https://openalex.org/W6692383592",
+    "https://openalex.org/W6764172869",
+    "https://openalex.org/W6795906485"
+  ],
+  "related_works": [
+    "https://openalex.org/W2548633793",
+    "https://openalex.org/W3013279174",
+    "https://openalex.org/W2941935829",
+    "https://openalex.org/W2596247554",
+    "https://openalex.org/W3132372214",
+    "https://openalex.org/W4224284088",
+    "https://openalex.org/W4286571989",
+    "https://openalex.org/W2765903680",
+    "https://openalex.org/W4317653575",
+    "https://openalex.org/W2801635251"
+  ],
+  "abstract_inverted_index": {
+    "108": [
+      50
+    ],
+    "Human": [
+      0
+    ],
+    "life": [
+      1
+    ],
+    "relies": [
+      2
+    ],
+    "heavily": [
+      3
+    ],
+    "on": [
+      4,
+      21,
+      72
+    ],
+    "emotions,": [
+      5,
+      120
+    ],
+    "as": [
+      6
+    ],
+    "they": [
+      7
+    ],
+    "influence": [
+      8
+    ],
+    "our": [
+      9
+    ],
+    "decision-making,": [
+      10
+    ],
+    "social": [
+      11,
+      25
+    ],
+    "connections,": [
+      12
+    ],
+    "and": [
+      13,
+      68,
+      81,
+      95,
+      126
+    ],
+    "daily": [
+      14
+    ],
+    "conduct.": [
+      15
+    ],
+    "Current": [
+      16
+    ],
+    "research": [
+      17
+    ],
+    "has": [
+      18
+    ],
+    "primarily": [
+      19
+    ],
+    "focused": [
+      20
+    ],
+    "predicting": [
+      22
+    ],
+    "emotions": [
+      23,
+      35,
+      70
+    ],
+    "from": [
+      24
+    ],
+    "media": [
+      26
+    ],
+    "data,": [
+      27
+    ],
+    "neglecting": [
+      28
+    ],
+    "to": [
+      29,
+      62
+    ],
+    "explore": [
+      30
+    ],
+    "the": [
+      31,
+      64,
+      101
+    ],
+    "underlying": [
+      32
+    ],
+    "reasons": [
+      33,
+      85
+    ],
+    "behind": [
+      34,
+      86
+    ],
+    "among": [
+      36
+    ],
+    "marginalized": [
+      37,
+      51
+    ],
+    "populations": [
+      38
+    ],
+    "in": [
+      39,
+      130,
+      139
+    ],
+    "developing": [
+      40
+    ],
+    "countries.": [
+      41
+    ],
+    "In": [
+      42
+    ],
+    "this": [
+      43
+    ],
+    "study,": [
+      44
+    ],
+    "we": [
+      45
+    ],
+    "explored": [
+      46
+    ],
+    "total": [
+      47
+    ],
+    "of": [
+      48,
+      57,
+      77
+    ],
+    "a": [
+      49
+    ],
+    "people’s": [
+      52
+    ],
+    "interview": [
+      53
+    ],
+    "conversational": [
+      54
+    ],
+    "text": [
+      55
+    ],
+    "data": [
+      56
+    ],
+    "Bangladesh.": [
+      58
+    ],
+    "The": [
+      59,
+      103,
+      142
+    ],
+    "study": [
+      60,
+      91,
+      104,
+      143
+    ],
+    "aimed": [
+      61
+    ],
+    "understand": [
+      63
+    ],
+    "joy,": [
+      65
+    ],
+    "fear,": [
+      66
+    ],
+    "anger,": [
+      67
+    ],
+    "sadness": [
+      69,
+      112
+    ],
+    "based": [
+      71
+    ],
+    "computational": [
+      73
+    ],
+    "machine": [
+      74
+    ],
+    "learning": [
+      75
+    ],
+    "model": [
+      76
+    ],
+    "IBM": [
+      78
+    ],
+    "Tone": [
+      79
+    ],
+    "Analyzer": [
+      80
+    ],
+    "figure": [
+      82
+    ],
+    "out": [
+      83
+    ],
+    "possible": [
+      84
+    ],
+    "their": [
+      87
+    ],
+    "individual": [
+      88
+    ],
+    "emotions.": [
+      89
+    ],
+    "Our": [
+      90
+    ],
+    "reveals": [
+      92
+    ],
+    "that": [
+      93,
+      107
+    ],
+    "fear": [
+      94
+    ],
+    "anger": [
+      96
+    ],
+    "were": [
+      97
+    ],
+    "relatively": [
+      98
+    ],
+    "low": [
+      99
+    ],
+    "across": [
+      100
+    ],
+    "community.": [
+      102
+    ],
+    "also": [
+      105
+    ],
+    "finds": [
+      106
+    ],
+    "male": [
+      108
+    ],
+    "laborers": [
+      109,
+      122
+    ],
+    "have": [
+      110,
+      117,
+      123
+    ],
+    "higher": [
+      111,
+      118
+    ],
+    "than": [
+      113,
+      135
+    ],
+    "women,": [
+      114
+    ],
+    "low-income": [
+      115
+    ],
+    "participants": [
+      116,
+      127
+    ],
+    "joy": [
+      119
+    ],
+    "young": [
+      121
+    ],
+    "high": [
+      124
+    ],
+    "sadness,": [
+      125
+    ],
+    "who": [
+      128,
+      137
+    ],
+    "live": [
+      129,
+      138
+    ],
+    "rural": [
+      131
+    ],
+    "areas": [
+      132
+    ],
+    "are": [
+      133
+    ],
+    "happier": [
+      134
+    ],
+    "those": [
+      136
+    ],
+    "urban": [
+      140
+    ],
+    "areas.": [
+      141
+    ],
+    "will": [
+      144
+    ],
+    "assist": [
+      145
+    ],
+    "future": [
+      146
+    ],
+    "technology": [
+      147
+    ],
+    "designers": [
+      148
+    ],
+    "create": [
+      149
+    ],
+    "emotion-aware": [
+      150
+    ],
+    "technologies.": [
+      151
+    ]
+  },
+  "counts_by_year": [],
+  "updated_date": "2026-06-11T09:08:48.828518",
+  "created_date": "2025-10-10T00:00:00"
+}

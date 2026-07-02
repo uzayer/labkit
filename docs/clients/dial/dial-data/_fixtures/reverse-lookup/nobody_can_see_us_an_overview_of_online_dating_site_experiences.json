@@ -1,0 +1,631 @@
+{
+  "status": "ok",
+  "message-type": "work-list",
+  "message-version": "1.0.0",
+  "message": {
+    "facets": {},
+    "total-results": 3971894,
+    "items": [
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2026,
+              4,
+              13
+            ]
+          ],
+          "date-time": "2026-04-13T19:11:03Z",
+          "timestamp": 1776107463992,
+          "version": "3.50.1"
+        },
+        "publisher-location": "New York, NY, USA",
+        "reference-count": 30,
+        "publisher": "ACM",
+        "license": [
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2024,
+                  7,
+                  8
+                ]
+              ],
+              "date-time": "2024-07-08T00:00:00Z",
+              "timestamp": 1720396800000
+            },
+            "content-version": "vor",
+            "delay-in-days": 0,
+            "URL": "https://www.acm.org/publications/policies/copyright_policy#Background"
+          }
+        ],
+        "funder": [
+          {
+            "DOI": "10.13039/501100006374",
+            "name": "North South University",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "1"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "1"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/501100006374",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          }
+        ],
+        "content-domain": {
+          "domain": [
+            "dl.acm.org"
+          ],
+          "crossmark-restriction": true
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              7,
+              8
+            ]
+          ]
+        },
+        "DOI": "10.1145/3674829.3675072",
+        "type": "proceedings-article",
+        "created": {
+          "date-parts": [
+            [
+              2024,
+              8,
+              28
+            ]
+          ],
+          "date-time": "2024-08-28T18:26:30Z",
+          "timestamp": 1724869590000
+        },
+        "page": "179-185",
+        "update-policy": "https://doi.org/10.1145/crossmark-policy",
+        "source": "Crossref",
+        "is-referenced-by-count": 1,
+        "title": [
+          "Nobody Can See Us: An Overview of Online Dating Site Experiences"
+        ],
+        "prefix": "10.1145",
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-7715-1742",
+            "authenticated-orcid": false,
+            "given": "Nova",
+            "family": "Ahmed",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "North South University, Bangladesh"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-9253-8283",
+            "authenticated-orcid": false,
+            "given": "Abdul",
+            "family": "Wohab",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "North South University, Bangladesh"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0005-3903-4878",
+            "authenticated-orcid": false,
+            "given": "Monisha",
+            "family": "Dey",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Design Inclusion Access Lab, North South University, Bangladesh"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "member": "320",
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              8,
+              28
+            ]
+          ]
+        },
+        "reference": [
+          {
+            "key": "e_1_3_2_1_1_1",
+            "first-page": "666",
+            "volume-title": "N",
+            "author": "Ahmed M. S.",
+            "year": "2020",
+            "unstructured": "Ahmed M. S. Rony, R. J. Md Mahir Ashhab,M. M. & Ahmed, N (2020). \"An Empirical Study to Analyze the Impact of Instagram on Students' Academic Results.\" In 2020 IEEE Region 10 Symposium (TENSYMP), pp. 666-669. IEEE, 2020."
+          },
+          {
+            "key": "e_1_3_2_1_2_1",
+            "first-page": "114",
+            "volume-title": "N",
+            "author": "Ahmed M. S.",
+            "year": "2021",
+            "unstructured": "Ahmed,M. S. Rony, R. J. Md Mahir Ashhab,M. M. & Ahmed, N (2021). \"Identifying High and Low Academic Result Holders Through Smartphone Usage Data.\" In Asian CHI Symposium 2021, pp. 114-121. 2021."
+          },
+          {
+            "key": "e_1_3_2_1_3_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1037//1093-4510.9.3.186"
+          },
+          {
+            "key": "e_1_3_2_1_4_1",
+            "unstructured": "Bangladesh Telecommunication Regulatory (BTRC). (2009-2010). Annual Report. http://www.btrc.gov.bd/papers/annual-report-2009-2010-english"
+          },
+          {
+            "key": "e_1_3_2_1_5_1",
+            "unstructured": "Bangladesh Telecommunication Regulatory (BTRC). (2012-2013). Annual Report. http://www.btrc.gov.bd/papers/annual-report-2012-2013-english."
+          },
+          {
+            "key": "e_1_3_2_1_6_1",
+            "unstructured": "Bangladesh Telecommunication Regulatory (BTRC). (2017-2018). Annual Report. http://www.btrc.gov.bd/papers/annual-report-2017-2018-bangla"
+          },
+          {
+            "key": "e_1_3_2_1_7_1",
+            "volume-title": "Annual Report",
+            "author": "Bangladesh Telecommunication Regulatory",
+            "year": "2021",
+            "unstructured": "Bangladesh Telecommunication Regulatory (BTRC). (2021). Annual Report. http://www.btrc.gov.bd/content/internet-subscribers-bangladesh-january-2021 [8] David Kosiur. 2001. Understanding Policy-Based Networking (2nd. ed.). Wiley, New York, NY.."
+          },
+          {
+            "key": "e_1_3_2_1_8_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s10676-019-09508-z"
+          },
+          {
+            "key": "e_1_3_2_1_9_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s11469-020-00318-9"
+          },
+          {
+            "key": "e_1_3_2_1_10_1",
+            "volume-title": "Human Computer Interaction Across Borders Symposium (HCIxB)",
+            "author": "Chowdhury A.",
+            "year": "2020",
+            "unstructured": "Chowdhury,A. Chowdhury, A. Rony, R. J. Ahmed, N. Bhuiyan, M.M. (2020), Mom thinks, Technology is my Enemy: A Teen Perspective, Human Computer Interaction Across Borders Symposium (HCIxB), 2020"
+          },
+          {
+            "key": "e_1_3_2_1_11_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1080/01639625.2020.1734170"
+          },
+          {
+            "key": "e_1_3_2_1_12_1",
+            "volume-title": "Online focus groups. The SAGE handbook of online research methods, 290-306",
+            "author": "Gaiser T. J.",
+            "year": "2008",
+            "unstructured": "Gaiser,T. J. (2008). Online focus groups. The SAGE handbook of online research methods, 290-306."
+          },
+          {
+            "key": "e_1_3_2_1_13_1",
+            "volume-title": "Problematic internet use among young and adult population in Bangladesh: Correlates with lifestyle and online activities during the COVID-19 pandemic. Addictive behaviors reports, 12, 100311",
+            "author": "Islam M. S.",
+            "year": "2020",
+            "unstructured": "Islam M. S., Sujan, M. S. H., Tasnim, R., Ferdous, M. Z., Masud, J. H. B., Kundu, S., Mosaddek, A.S. M; Shahabuddin, M., Choudhuri, K., & Griffiths, M. D. (2020). Problematic internet use among young and adult population in Bangladesh: Correlates with lifestyle and online activities during the COVID-19 pandemic. Addictive behaviors reports, 12, 100311."
+          },
+          {
+            "key": "e_1_3_2_1_14_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1111/jomf.12072"
+          },
+          {
+            "key": "e_1_3_2_1_15_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1177/0192513X12468437"
+          },
+          {
+            "key": "e_1_3_2_1_16_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/j.tele.2021.101709"
+          },
+          {
+            "key": "e_1_3_2_1_17_1",
+            "volume-title": "Research methods in the social sciences",
+            "author": "Nachmias D.",
+            "year": "2014",
+            "unstructured": "Nachmias,D., Nachmias, C. & DeWaard, J. (2014). Research methods in the social sciences, Worth Publishers, USA, Eight Edition"
+          },
+          {
+            "key": "e_1_3_2_1_18_1",
+            "first-page": "1",
+            "volume-title": "Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems",
+            "author": "Nithya S.",
+            "year": "2019",
+            "unstructured": "Nithya,S. Batool, A. Ahmed, N. Matthews, T. Thomas, K. Gaytán-Lugo, L. S. Nemer, D. Bursztein, E. Churchill, E. & Consolvo, S. \"They Don't Leave Us Alone Anywhere We Go\" Gender and Digital Abuse in South Asia.\" In Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems, pp. 1-14. 2019."
+          },
+          {
+            "key": "e_1_3_2_1_19_1",
+            "volume-title": "Proceedings of the Tenth International Conference on Information and Communication Technologies and Development (pp. 1-12)",
+            "author": "Nova F. F.",
+            "year": "2019",
+            "unstructured": "Nova,F. F., Rifat, M. R., Saha, P., Ahmed, S. I., & Guha, S. (2019, January). Online sexual harassment over anonymous social media in Bangladesh. In Proceedings of the Tenth International Conference on Information and Communication Technologies and Development (pp. 1-12)."
+          },
+          {
+            "key": "e_1_3_2_1_20_1",
+            "volume-title": "Adolescent health. Healthy People",
+            "author": "Office",
+            "year": "2018",
+            "unstructured": "Office of Disease Prevention and Health Promotion. (2018). Adolescent health. Healthy People 2020. Retrieved from . https://www.healthypeople.gov/2020/topicsobjectives/topic/Adolescent-Health"
+          },
+          {
+            "key": "e_1_3_2_1_21_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1145/3309074.3309085"
+          },
+          {
+            "key": "e_1_3_2_1_22_1",
+            "volume-title": "The Daily Star, 16 May, https://www.thedailystar.net/in-focus/digital-sexual-harassment-digital-bangladesh-82480",
+            "author": "Preetha S. S",
+            "year": "2015",
+            "unstructured": "Preetha,S. S (2015), Digital Sexual Harassment in Digital Bangladesh, The Daily Star, 16 May, https://www.thedailystar.net/in-focus/digital-sexual-harassment-digital-bangladesh-82480"
+          },
+          {
+            "key": "e_1_3_2_1_23_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1371/journal.pone.0243733"
+          },
+          {
+            "key": "e_1_3_2_1_24_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.2190/NFLM-E0MY-Q26N-DBVH"
+          },
+          {
+            "key": "e_1_3_2_1_25_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s10508-020-01671-5"
+          },
+          {
+            "key": "e_1_3_2_1_26_1",
+            "volume-title": "The Business Standard, 14 October, https://www.tbsnews.net/bangladesh/rights-based-civil-society-representatives-urge-legal-action-combat-online-harassment.",
+            "author": "The Business Standard",
+            "year": "2023",
+            "unstructured": "The Business Standard (2023), Rights-based civil society representatives urge legal action to combat online harassment of women, The Business Standard, 14 October, https://www.tbsnews.net/bangladesh/rights-based-civil-society-representatives-urge-legal-action-combat-online-harassment."
+          },
+          {
+            "key": "e_1_3_2_1_27_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.3390/socsci11070297"
+          },
+          {
+            "key": "e_1_3_2_1_28_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s10639-021-10633-w"
+          },
+          {
+            "key": "e_1_3_2_1_29_1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.5120/ijca2015907699"
+          },
+          {
+            "key": "e_1_3_2_1_30_1",
+            "volume-title": "Companion of the 2018 ACM conference on computer supported cooperative work and social computing (pp. 353-356)",
+            "author": "Zytko D.",
+            "year": "2018",
+            "unstructured": "Zytko,D., Regalado, V., Grandhi, S. A., & Jones, Q. (2018, October). Supporting online dating decisions with a prompted discussion interface. In Companion of the 2018 ACM conference on computer supported cooperative work and social computing (pp. 353-356)."
+          }
+        ],
+        "event": {
+          "name": "COMPASS '24: ACM SIGCAS/SIGCHI Conference on Computing and Sustainable Societies",
+          "location": "New Delhi India",
+          "acronym": "COMPASS '24",
+          "sponsor": [
+            "SIGCHI ACM Special Interest Group on Computer-Human Interaction",
+            "SIGCAS ACM Special Interest Group on Computers and Society"
+          ]
+        },
+        "container-title": [
+          "Proceedings of the 7th ACM SIGCAS/SIGCHI Conference on Computing and Sustainable Societies"
+        ],
+        "link": [
+          {
+            "URL": "https://dl.acm.org/doi/10.1145/3674829.3675072",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "https://dl.acm.org/doi/pdf/10.1145/3674829.3675072",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2025,
+              8,
+              22
+            ]
+          ],
+          "date-time": "2025-08-22T21:43:38Z",
+          "timestamp": 1755899018000
+        },
+        "score": 61.711468,
+        "resource": {
+          "primary": {
+            "URL": "https://dl.acm.org/doi/10.1145/3674829.3675072"
+          }
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2024,
+              7,
+              8
+            ]
+          ]
+        },
+        "references-count": 30,
+        "alternative-id": [
+          "10.1145/3674829.3675072",
+          "10.1145/3674829"
+        ],
+        "URL": "https://doi.org/10.1145/3674829.3675072",
+        "published": {
+          "date-parts": [
+            [
+              2024,
+              7,
+              8
+            ]
+          ]
+        },
+        "assertion": [
+          {
+            "value": "2024-08-28",
+            "order": 3,
+            "name": "published",
+            "label": "Published",
+            "group": {
+              "name": "publication_history",
+              "label": "Publication History"
+            }
+          }
+        ]
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2025,
+              8,
+              26
+            ]
+          ],
+          "date-time": "2025-08-26T00:14:25Z",
+          "timestamp": 1756167265747,
+          "version": "3.44.0"
+        },
+        "posted": {
+          "date-parts": [
+            [
+              2020,
+              12,
+              2
+            ]
+          ]
+        },
+        "group-title": "Article",
+        "reference-count": 0,
+        "publisher": "The Conversation",
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "DOI": "10.64628/aa.d95649t3d",
+        "type": "posted-content",
+        "created": {
+          "date-parts": [
+            [
+              2025,
+              8,
+              25
+            ]
+          ],
+          "date-time": "2025-08-25T18:47:51Z",
+          "timestamp": 1756147671000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "‘Nobody checked on us’: what people with disability told us about their experiences of disasters and emergencies"
+        ],
+        "prefix": "10.64628",
+        "author": [
+          {
+            "given": "Michelle",
+            "family": "Villeneuve",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of Sydney"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "member": "54080",
+        "deposited": {
+          "date-parts": [
+            [
+              2025,
+              8,
+              25
+            ]
+          ],
+          "date-time": "2025-08-25T18:48:52Z",
+          "timestamp": 1756147732000
+        },
+        "score": 28.978994,
+        "resource": {
+          "primary": {
+            "URL": "https://theconversation.com/nobody-checked-on-us-what-people-with-disability-told-us-about-their-experiences-of-disasters-and-emergencies-151198"
+          }
+        },
+        "editor": [
+          {
+            "given": "Sunanda",
+            "family": "Creagh",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "editor",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2020,
+              12,
+              2
+            ]
+          ]
+        },
+        "references-count": 0,
+        "URL": "https://doi.org/10.64628/aa.d95649t3d",
+        "published": {
+          "date-parts": [
+            [
+              2020,
+              12,
+              2
+            ]
+          ]
+        },
+        "subtype": "other"
+      },
+      {
+        "institution": [
+          {
+            "name": "Koninklijke Brill NV",
+            "acronym": [
+              "BRILL"
+            ]
+          }
+        ],
+        "indexed": {
+          "date-parts": [
+            [
+              2026,
+              3,
+              3
+            ]
+          ],
+          "date-time": "2026-03-03T08:58:57Z",
+          "timestamp": 1772528337196,
+          "version": "3.50.1"
+        },
+        "reference-count": 0,
+        "publisher": "Walter de Gruyter GmbH",
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "DOI": "10.1163/2210-7975_hrd-9812-20180023",
+        "type": "dataset",
+        "created": {
+          "date-parts": [
+            [
+              2019,
+              9,
+              9
+            ]
+          ],
+          "date-time": "2019-09-09T07:14:36Z",
+          "timestamp": 1568013276000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "'Nobody Wants Us': The Alienated Civilians of Eastern Ukraine"
+        ],
+        "prefix": "10.1163",
+        "member": "374",
+        "container-title": [
+          "Human Rights Documents Online"
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2026,
+              3,
+              3
+            ]
+          ],
+          "date-time": "2026-03-03T08:02:23Z",
+          "timestamp": 1772524943000
+        },
+        "score": 28.923971,
+        "resource": {
+          "primary": {
+            "URL": "https://www.degruyterbrill.com/database/hrdo/entry/hrdo.HRD-9812_2018-9812-0023/html"
+          }
+        },
+        "issued": {
+          "date-parts": [
+            [
+              null
+            ]
+          ]
+        },
+        "references-count": 0,
+        "URL": "https://doi.org/10.1163/2210-7975_hrd-9812-20180023"
+      }
+    ],
+    "items-per-page": 3,
+    "query": {
+      "start-index": 0,
+      "search-terms": null
+    }
+  }
+}

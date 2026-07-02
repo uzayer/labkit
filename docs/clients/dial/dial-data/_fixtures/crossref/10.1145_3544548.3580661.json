@@ -1,0 +1,647 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          4,
+          13
+        ]
+      ],
+      "date-time": "2026-04-13T19:35:34Z",
+      "timestamp": 1776108934300,
+      "version": "3.50.1"
+    },
+    "publisher-location": "New York, NY, USA",
+    "reference-count": 72,
+    "publisher": "ACM",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2023,
+              4,
+              19
+            ]
+          ],
+          "date-time": "2023-04-19T00:00:00Z",
+          "timestamp": 1681862400000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "https://www.acm.org/publications/policies/copyright_policy#Background"
+      }
+    ],
+    "content-domain": {
+      "domain": [
+        "dl.acm.org"
+      ],
+      "crossmark-restriction": true
+    },
+    "short-container-title": [],
+    "published-print": {
+      "date-parts": [
+        [
+          2023,
+          4,
+          19
+        ]
+      ]
+    },
+    "DOI": "10.1145/3544548.3580661",
+    "type": "proceedings-article",
+    "created": {
+      "date-parts": [
+        [
+          2023,
+          4,
+          20
+        ]
+      ],
+      "date-time": "2023-04-20T04:27:20Z",
+      "timestamp": 1681964840000
+    },
+    "page": "1-19",
+    "update-policy": "https://doi.org/10.1145/crossmark-policy",
+    "source": "Crossref",
+    "is-referenced-by-count": 8,
+    "title": [
+      "MFS Design in Appstore-enabled Smart Featurephones for Low-literate, Marginalized Communities"
+    ],
+    "prefix": "10.1145",
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-0373-6676",
+        "authenticated-orcid": false,
+        "given": "Mohammad",
+        "family": "Rayed",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Department of Electrical and Computer Engineering, North South University, Bangladesh"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-9336-9584",
+        "authenticated-orcid": false,
+        "given": "Tawfique",
+        "family": "Elahi",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Electrical and Computer Engineering, North South University, Bangladesh"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-5007-2828",
+        "authenticated-orcid": false,
+        "given": "Shaikh Shawon",
+        "family": "Arefin Shimon",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "School of Computer Science, University of Waterloo, Canada"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-7715-1742",
+        "authenticated-orcid": false,
+        "given": "Nova",
+        "family": "Ahmed",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Electrical and Computer Engineering, North South University, Bangladesh"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "member": "320",
+    "published-online": {
+      "date-parts": [
+        [
+          2023,
+          4,
+          19
+        ]
+      ]
+    },
+    "reference": [
+      {
+        "key": "e_1_3_3_2_1_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.17226/11893"
+      },
+      {
+        "key": "e_1_3_3_2_2_1",
+        "unstructured": "2013. Mobile Financial Services Basic Terminology - AFI-global.org. https://www.afi-global.org/wp-content/uploads/publications/mfswg_gl_1_basic_terminology_finalnewnew_pdf.pdf"
+      },
+      {
+        "key": "e_1_3_3_2_3_1",
+        "unstructured": "2019. Doro. https://www.doro.com/"
+      },
+      {
+        "key": "e_1_3_3_2_4_1",
+        "unstructured": "2021. KaiOS Technologies. https://www.kaiostech.com/"
+      },
+      {
+        "key": "e_1_3_3_2_5_1",
+        "unstructured": "2021. Understanding the mobile disability gap. https://www.gsma.com/mobilefordevelopment/resources/understanding-the-mobile-disability-gap/"
+      },
+      {
+        "key": "e_1_3_3_2_6_1",
+        "volume-title": "Resilience During COVID Pandemic: Role of Fintech in the Perspective of Bangladesh. SSRN-Sorical Science Research Network 1",
+        "author": "Ahmed Nova",
+        "year": "2021",
+        "unstructured": "Nova Ahmed, Rahat Jahangir Rony, Syeda Shabnam Khan, MD Ahmed, Anik Sinha, Anik Saha, Shajnush Amir, Ifti Azad Abeer, and Sayan Sarcar. 2021. Resilience During COVID Pandemic: Role of Fintech in the Perspective of Bangladesh. SSRN-Sorical Science Research Network 1 (2021), 18 pages. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4009497"
+      },
+      {
+        "key": "e_1_3_3_2_7_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2537052.2537066"
+      },
+      {
+        "key": "e_1_3_3_2_8_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3378393.3402244"
+      },
+      {
+        "key": "e_1_3_3_2_9_1",
+        "volume-title": "Mina Lyn C Peralta, and Juliana Harshanti",
+        "author": "Alampay A",
+        "year": "2017",
+        "unstructured": "Erwin A Alampay, Goodiel Charles Moshi, Ishita Ghosh, Mina Lyn C Peralta, and Juliana Harshanti. 2017. The impact of mobile Financial services in low and lower-middle-income countries. International Development Research Centre (IDRC), Department for International Development (DfID)(2017)."
+      },
+      {
+        "key": "e_1_3_3_2_10_1",
+        "volume-title": "Fraud gang steals bKash money in 30 seconds. The Business Standard 14 (September",
+        "author": "Amin Nurul",
+        "year": "2020",
+        "unstructured": "Nurul Amin. 2020. Fraud gang steals bKash money in 30 seconds. The Business Standard 14 (September 2020), 2022. https://www.tbsnews.net/bangladesh/crime/fraud-gang-steals-bkash-money-30-seconds-175672"
+      },
+      {
+        "key": "e_1_3_3_2_11_1",
+        "unstructured": "Bangladesh Bank. 2022. www.bb.org.bd. Retrieved June 5(2022). https://www.bb.org.bd/en/index.php/financialactivity/mfsdata"
+      },
+      {
+        "key": "e_1_3_3_2_12_1",
+        "volume-title": "Bangladesh Financial Intelligence Unit",
+        "author": "Bangladesh Bank and Focus Group",
+        "year": "2018",
+        "unstructured": "Bangladesh Bank and Focus Group. 2022. Bangladesh Financial Intelligence Unit. 2018. AML/CFT Regulations for Mobile Money: Global Standards & PracticesRisk & TrendPolicy Options for Bangladesh 5 (June 2022). https://www.bb.org.bd/pub/research/sp_research_work/srw1704.pdf"
+      },
+      {
+        "key": "e_1_3_3_2_13_1",
+        "volume-title": "Top Mobile Financial Services (MFS) Providers in Bangladesh. Business Inspection 13 (September",
+        "author": "Business Inspection BD.",
+        "year": "2022",
+        "unstructured": "Business Inspection BD. 2022. Top Mobile Financial Services (MFS) Providers in Bangladesh. Business Inspection 13 (September 2022), 2022. https://businessinspection.com.bd/top-mfs-providers-in-bangladesh/"
+      },
+      {
+        "key": "e_1_3_3_2_14_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/978-3-319-40093-8_41"
+      },
+      {
+        "key": "e_1_3_3_2_15_1",
+        "volume-title": "Transforming Qualitative Information: Thematic Analysis and Code Development. (01",
+        "author": "Boyatzis Richard",
+        "year": "1998",
+        "unstructured": "Richard Boyatzis. 1998. Transforming Qualitative Information: Thematic Analysis and Code Development. (01 1998)."
+      },
+      {
+        "key": "e_1_3_3_2_16_1",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Kathy Charmaz. 2006. Constructing Grounded Theory: A Practical Guide Through Qualitative Analysis. Vol. 1.",
+        "DOI": "10.3402/qhw.v1i3.4932"
+      },
+      {
+        "key": "e_1_3_3_2_17_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2110363.2110377"
+      },
+      {
+        "key": "e_1_3_3_2_18_1",
+        "unstructured": "Sebastien Codeville. 2021. KaiOS enabling accessible and affordable internet for all with the GSMA’s MISTT module. GSMA Mobile for Development. https://www.gsma.com/mobilefordevelopment/blog/kaios-enabling-accessible-and-affordable-internet-for-all-with-the-gsmas-mistt-module/"
+      },
+      {
+        "key": "e_1_3_3_2_19_1",
+        "unstructured": "Alan Cooper and Robert Reimann. 2003. About Face 2.0: The Essentials of Interaction Design. –504 pages."
+      },
+      {
+        "key": "e_1_3_3_2_20_1",
+        "unstructured": "Novel Coronavirus (covid 19) Guidelines. 2022. Directorate General of Health Services Bangladesh. Retrieved September 13(2022). https://old.dghs.gov.bd/index.php/en/home/5376-novel-coronavirus-covid-19-guidelines"
+      },
+      {
+        "key": "e_1_3_3_2_21_1",
+        "unstructured": "CEIC Data. 2022. Bangladesh Banking Sector: Number of Banks and Branches. CEIC Data. https://www.ceicdata.com/en/bangladesh/banking-sector-number-of-banks-and-branches"
+      },
+      {
+        "key": "e_1_3_3_2_22_1",
+        "first-page": "24",
+        "article-title": "Exploring Mobile-only Internet Use: Results of a Training Study in Urban South Africa",
+        "volume": "5",
+        "author": "Donner J.",
+        "year": "2011",
+        "unstructured": "J. Donner, S. Gitau, and G. Marsden. 2011. Exploring Mobile-only Internet Use: Results of a Training Study in Urban South Africa. International Journal Of Communication 5 (2011), 24. https://ijoc.org/index.php/ijoc/article/view/750",
+        "journal-title": "International Journal Of Communication"
+      },
+      {
+        "key": "e_1_3_3_2_23_1",
+        "volume-title": "Living Spirit",
+        "author": "Frankenberg Ruth",
+        "unstructured": "Ruth Frankenberg. 2004. Living Spirit, Living Practice: Poetics, Politics, Epistemology. Duke University Press, Durham, NC, USA. http://www.jstor.org/stable/j.ctv1168c2c"
+      },
+      {
+        "key": "e_1_3_3_2_24_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/765891.766014"
+      },
+      {
+        "key": "e_1_3_3_2_25_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/1753326.1753720"
+      },
+      {
+        "key": "e_1_3_3_2_26_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/258549.258869"
+      },
+      {
+        "key": "e_1_3_3_2_27_1",
+        "volume-title": "Emerging Markets Mobile Banking Runs Ahead Of Google Wallet. Forbes. Retrieved September 4",
+        "author": "Groenfeldt Tom",
+        "year": "2021",
+        "unstructured": "Tom Groenfeldt. 2021. Emerging Markets Mobile Banking Runs Ahead Of Google Wallet. Forbes. Retrieved September 4 (2021), 2022. https://www.forbes.com/sites/tomgroenfeldt/2012/01/11/emerging-markets-mobile-banking-runs-ahead-of-google-wallet/"
+      },
+      {
+        "key": "e_1_3_3_2_28_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3530190.3534824"
+      },
+      {
+        "key": "e_1_3_3_2_29_1",
+        "volume-title": "Nagad Islamic Banking: The Future of Shariah MFS in Bangladesh. Business Inspection 14 (September",
+        "author": "Hossan Sajjad",
+        "year": "2022",
+        "unstructured": "Sajjad Hossan. 2022. Nagad Islamic Banking: The Future of Shariah MFS in Bangladesh. Business Inspection 14 (September 2022), 2022. https://businessinspection.com.bd/nagad-islamic-banking-future-of-shariah-mfs-in-bd/"
+      },
+      {
+        "key": "e_1_3_3_2_30_1",
+        "volume-title": "Design approaches for developing user-interfaces accessible to illiterate users",
+        "author": "Huenerfauth Matthew Paul",
+        "year": "2002",
+        "unstructured": "Matthew Paul Huenerfauth. 2002. Design approaches for developing user-interfaces accessible to illiterate users. University College Dublin, Ireland WS-02-08 (2002), 23–32."
+      },
+      {
+        "key": "e_1_3_3_2_31_1",
+        "volume-title": "“Digital Udaan. Retrieved September 5(2019)",
+        "author": "Infocomm Reliance Jio",
+        "year": "2022",
+        "unstructured": "Reliance Jio Infocomm. 2019. Media Release - Jio launches a digital literacy program “Digital Udaan. Retrieved September 5(2019), 2022. https://www.ril.com/getattachment/2b645130-57b3-4869-9e1b-8e342b8fbab2/Jio-Launches-a-Digital-Literacy-Program-Digital-Ud.aspx"
+      },
+      {
+        "key": "e_1_3_3_2_32_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3429360.3468212"
+      },
+      {
+        "key": "e_1_3_3_2_33_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3411763.3441327"
+      },
+      {
+        "key": "e_1_3_3_2_34_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/01972243.2020.1761497"
+      },
+      {
+        "key": "e_1_3_3_2_35_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.ijhcs.2019.04.004"
+      },
+      {
+        "key": "e_1_3_3_2_36_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1177/22785337211001969"
+      },
+      {
+        "key": "e_1_3_3_2_37_1",
+        "unstructured": "Knoema. 2022. Bangladesh Commercial bank branches. Knoema. https://knoema.com/atlas/Bangladesh/topics/Economy/Financial-Sector-Access/Commercial-bank-branches"
+      },
+      {
+        "key": "e_1_3_3_2_38_1",
+        "volume-title": "Mobile Money Services - Design and Development for Financial. Retrieved September 5(2015)",
+        "author": "Lal Rajiv",
+        "year": "2022",
+        "unstructured": "Rajiv Lal and Ishan Sachdev. 2015. Mobile Money Services - Design and Development for Financial. Retrieved September 5(2015), 2022. https://www.hbs.edu/ris/download.aspx?name=15-083.pdf"
+      },
+      {
+        "key": "e_1_3_3_2_39_1",
+        "unstructured": "Eletta Leung. 2020. How access to mobile internet improves quality of Life. KaiOS Tech. https://www.kaiostech.com/how-access-to-mobile-internet-improves-quality-of-life/"
+      },
+      {
+        "key": "e_1_3_3_2_40_1",
+        "volume-title": "How smart feature phones help the unbanked. KaiOS. Retrieved September 4",
+        "author": "Leung Eletta",
+        "year": "2020",
+        "unstructured": "Eletta Leung. 2020. How smart feature phones help the unbanked. KaiOS. Retrieved September 4 (2020), 2022. https://www.kaiostech.com/how-smart-feature-phones-help-the-unbanked/"
+      },
+      {
+        "key": "e_1_3_3_2_41_1",
+        "volume-title": "JazzCash on KaiOS to unlock mobile payment capabilities - KaiOS. KaiOS. Retrieved September 16",
+        "author": "Leung Eletta",
+        "year": "2021",
+        "unstructured": "Eletta Leung. 2021. JazzCash on KaiOS to unlock mobile payment capabilities - KaiOS. KaiOS. Retrieved September 16 (2021), 2022. https://www.kaiostech.com/jazzcash-on-kaios-to-unlock-mobile-payment-capabilities/"
+      },
+      {
+        "key": "e_1_3_3_2_42_1",
+        "unstructured": "Isobel Mak. 2020. How the life app is changing lives around the world. https://www.kaiostech.com/life-app-changing-lives-around-world/"
+      },
+      {
+        "key": "e_1_3_3_2_43_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.5897/jeif2013.0541"
+      },
+      {
+        "key": "e_1_3_3_2_44_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/1518701.1518970"
+      },
+      {
+        "key": "e_1_3_3_2_45_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/1959022.1959024"
+      },
+      {
+        "key": "e_1_3_3_2_46_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/1242572.1242690"
+      },
+      {
+        "key": "e_1_3_3_2_47_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/978-3-642-02767-3_54"
+      },
+      {
+        "key": "e_1_3_3_2_48_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/ICTD.2006.301841"
+      },
+      {
+        "key": "e_1_3_3_2_49_1",
+        "volume-title": "A comparison of list vs. hierarchical UIs on mobile phones for non-literate users",
+        "author": "Medhi Indrani",
+        "unstructured": "Indrani Medhi, Kentaro Toyama, Anirudha Joshi, Uday Athavankar, and Edward Cutrell. 2013. A comparison of list vs. hierarchical UIs on mobile phones for non-literate users. In Springer,, Ifip Conference on Human-Computer Interaction (Ed.). Berlin, Heidelberg, 497–504."
+      },
+      {
+        "key": "e_1_3_3_2_50_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1561/1100000047"
+      },
+      {
+        "key": "e_1_3_3_2_51_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2675133.2675224"
+      },
+      {
+        "key": "e_1_3_3_2_52_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3173574.3173963"
+      },
+      {
+        "key": "e_1_3_3_2_53_1",
+        "volume-title": "Qualitative Data Analysis: An expanded sourcebook",
+        "author": "Miles B.",
+        "unstructured": "Matthew B. Miles and A. Michael Huberman. 1994. Qualitative Data Analysis: An expanded sourcebook. Sage."
+      },
+      {
+        "key": "e_1_3_3_2_54_1",
+        "unstructured": "Khanyi Mlaba. 2021. 9 in 10 children in Africa can’t read - these organisations are working to change that. https://www.globalcitizen.org/en/content/these-organisations-help-child-literacy-in-africa/"
+      },
+      {
+        "key": "e_1_3_3_2_55_1",
+        "unstructured": "Kenechi Okeleke. 2021. Achieving mobile-enabled digital inclusion in Banglades. GSMA Mobile for Development Sweden. https://www.gsma.com/mobilefordevelopment/wp-content/uploads/2021/03/Achieving-mobile-enabled-digital-inclusion-in-Bangladesh.pdf"
+      },
+      {
+        "key": "e_1_3_3_2_56_1",
+        "volume-title": "Design Studies for a Financial Management System for Micro-Credit Groups in Rural India. CUU ’0 11",
+        "author": "Parikh Tapan",
+        "year": "2003",
+        "unstructured": "Tapan Parikh, Kaushik Ghosh, and Apala Chavan. 2003. Design Studies for a Financial Management System for Micro-Credit Groups in Rural India. CUU ’0 11, 2003 (November 2003), 15–22."
+      },
+      {
+        "key": "e_1_3_3_2_57_1",
+        "volume-title": "Vox. Retrieved September 4(2020)",
+        "author": "Piper Kelsey",
+        "year": "2022",
+        "unstructured": "Kelsey Piper. 2020. What Kenya can teach its neighbors - and the US - about improving the lives of the “unbanked.” Vox. Retrieved September 4(2020), 2022. https://www.vox.com/future-perfect/21420357/kenya-mobile-banking-unbanked-cellphone-money"
+      },
+      {
+        "key": "e_1_3_3_2_58_1",
+        "volume-title": "The Financial Express Stories 4 (September",
+        "author": "Rathee Kiran",
+        "year": "2019",
+        "unstructured": "Kiran Rathee. 2019. Financialexpress. The Financial Express Stories 4 (September 2019), 2022. https://www.financialexpress.com/industry/making-inroads-jiophone-takes-reliance-jio-to-hinterland/1728398/"
+      },
+      {
+        "key": "e_1_3_3_2_59_1",
+        "volume-title": "A Quantum Leap over High Hurdles to Financial Inclusion: The. HARVARD Kennedy School 5 (September",
+        "author": "Rosengard Jay",
+        "year": "2016",
+        "unstructured": "Jay Rosengard. 2016. A Quantum Leap over High Hurdles to Financial Inclusion: The. HARVARD Kennedy School 5 (September 2016), 2022. https://www.hks.harvard.edu/publications/quantum-leap-over-high-hurdles-financial-inclusion-mobile-banking-revolution-kenya"
+      },
+      {
+        "key": "e_1_3_3_2_60_1",
+        "volume-title": "M-Pesa and the African Fintech Revolution. M-Pesa and the African Fintech Revolution 4 (September",
+        "author": "Rubinstein Marc",
+        "year": "2021",
+        "unstructured": "Marc Rubinstein. 2021. M-Pesa and the African Fintech Revolution. M-Pesa and the African Fintech Revolution 4 (September 2021), 2022. https://www.netinterest.co/p/m-pesa-and-the-african-fintech-revolution-3c1"
+      },
+      {
+        "key": "e_1_3_3_2_61_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3290605.3300232"
+      },
+      {
+        "key": "e_1_3_3_2_62_1",
+        "volume-title": "Proceedings of the Fourteenth USENIX Conference on Usable Privacy and Security",
+        "author": "Sambasivan Nithya",
+        "year": "2018",
+        "unstructured": "Nithya Sambasivan, Garen Checkley, Amna Batool, Nova Ahmed, David Nemer, Laura Sanely Gaytán-Lugo, Tara Matthews, Sunny Consolvo, and Elizabeth Churchil. 2018. \"Privacy is Not for Me, It’s for Those Rich Women\": Performative Privacy Practices on Mobile Phones by Women in South Asia. In Proceedings of the Fourteenth USENIX Conference on Usable Privacy and Security (Baltimore, MD, USA) (SOUPS ’18). USENIX Association, USA, 127–142."
+      },
+      {
+        "key": "e_1_3_3_2_63_1",
+        "unstructured": "B. Shneiderman. 2003. Designing the user interface. Pearson Education India Gurgaon."
+      },
+      {
+        "key": "e_1_3_3_2_64_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3449210"
+      },
+      {
+        "key": "e_1_3_3_2_65_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3173574.3174110"
+      },
+      {
+        "key": "e_1_3_3_2_66_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3287098.3287131"
+      },
+      {
+        "key": "e_1_3_3_2_67_1",
+        "volume-title": "Designing Interfaces Tidwell",
+        "author": "J.",
+        "year": "2010",
+        "unstructured": "J.: Designing Interfaces Tidwell. 2010. O’Reilly Media. Inc, Sebastopol."
+      },
+      {
+        "key": "e_1_3_3_2_68_1",
+        "volume-title": "Geek heresy: Rescuing social change from the cult of technology. PublicAffairs",
+        "author": "Toyama K.",
+        "unstructured": "K. Toyama. 2015. Geek heresy: Rescuing social change from the cult of technology. PublicAffairs, New York, USA."
+      },
+      {
+        "key": "e_1_3_3_2_69_1",
+        "volume-title": "4 ways KaiOS is spurring new interest in mobile development. KaiOS. Retrieved September 4",
+        "author": "Vaghela Harshdeep",
+        "year": "2020",
+        "unstructured": "Harshdeep Vaghela. 2020. 4 ways KaiOS is spurring new interest in mobile development. KaiOS. Retrieved September 4 (2020), 2022. https://www.kaiostech.com/4-ways-kaios-is-spurring-new-interest-in-mobile-development/"
+      },
+      {
+        "key": "e_1_3_3_2_70_1",
+        "volume-title": "COVID-19 transmission and protective measures",
+        "author": "Western Pacific Region World Health Organization",
+        "year": "2022",
+        "unstructured": "Western Pacific Region World Health Organization. 2022. COVID-19 transmission and protective measures. World Health Organization 13 (September 2022), 2022. https://www.who.int/westernpacific/emergencies/covid-19/information/transmission-protective-measures"
+      },
+      {
+        "key": "e_1_3_3_2_71_1",
+        "doi-asserted-by": "publisher",
+        "unstructured": "Susan P. Wyche and Laura L. Murphy. 2012. Dead China-make. phones off the grid: investigating and designing for mobile phone use in rural Africa 12(2012). https://doi.org/10.1145/2317956.2317985",
+        "DOI": "10.1145/2317956.2317985"
+      },
+      {
+        "key": "e_1_3_3_2_72_1",
+        "volume-title": "bKash: Revolutionizing mobile financial services in Bangladesh?In Business and management practices in South Asia",
+        "author": "Yesmin Shamima",
+        "unstructured": "Shamima Yesmin, Tonmoy Ananda Paul, Mohshin Uddin, 2019. bKash: Revolutionizing mobile financial services in Bangladesh?In Business and management practices in South Asia. Springer, 125–148."
+      }
+    ],
+    "event": {
+      "name": "CHI '23: CHI Conference on Human Factors in Computing Systems",
+      "location": "Hamburg Germany",
+      "acronym": "CHI '23",
+      "sponsor": [
+        "SIGCHI ACM Special Interest Group on Computer-Human Interaction"
+      ]
+    },
+    "container-title": [
+      "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems"
+    ],
+    "original-title": [],
+    "link": [
+      {
+        "URL": "https://dl.acm.org/doi/10.1145/3544548.3580661",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://dl.acm.org/doi/pdf/10.1145/3544548.3580661",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2025,
+          6,
+          17
+        ]
+      ],
+      "date-time": "2025-06-17T19:02:55Z",
+      "timestamp": 1750186975000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://dl.acm.org/doi/10.1145/3544548.3580661"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2023,
+          4,
+          19
+        ]
+      ]
+    },
+    "references-count": 72,
+    "alternative-id": [
+      "10.1145/3544548.3580661",
+      "10.1145/3544548"
+    ],
+    "URL": "https://doi.org/10.1145/3544548.3580661",
+    "relation": {},
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2023,
+          4,
+          19
+        ]
+      ]
+    },
+    "assertion": [
+      {
+        "value": "2023-04-19",
+        "order": 3,
+        "name": "published",
+        "label": "Published",
+        "group": {
+          "name": "publication_history",
+          "label": "Publication History"
+        }
+      }
+    ]
+  }
+}

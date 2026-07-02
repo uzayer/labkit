@@ -1,0 +1,947 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2025,
+          6,
+          18
+        ]
+      ],
+      "date-time": "2025-06-18T04:10:37Z",
+      "timestamp": 1750219837285,
+      "version": "3.41.0"
+    },
+    "reference-count": 115,
+    "publisher": "Association for Computing Machinery (ACM)",
+    "issue": "MHCI",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2023,
+              9,
+              11
+            ]
+          ],
+          "date-time": "2023-09-11T00:00:00Z",
+          "timestamp": 1694390400000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "https://www.acm.org/publications/policies/copyright_policy#Background"
+      }
+    ],
+    "content-domain": {
+      "domain": [
+        "dl.acm.org"
+      ],
+      "crossmark-restriction": true
+    },
+    "short-container-title": [
+      "Proc. ACM Hum.-Comput. Interact."
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2023,
+          9,
+          11
+        ]
+      ]
+    },
+    "abstract": "<jats:p>Due to usage of self-reported data which may contain biasness, the existing studies may not unveil the exact relation between academic grades and app categories such as Video. Additionally, the existing systems' requirement for data of prolonged period to predict grades may not facilitate early intervention to improve it. Thus, we presented an app that retrieves past 7 days' actual app usage data within a second (Mean=0.31s, SD=1.1s). Our analysis on 124 Bangladeshi students' real-time data demonstrates app usage sessions have a significant (p&lt;0.05) negative association with CGPA. However, the Productivity and Books categories have a significant positive association whereas Video has a significant negative association. Moreover, the high and low CGPA holders have significantly different app usage behavior. Leveraging only the instantly accessed data, our machine learning model predicts CGPA within ±0.36 of the actual CGPA. We discuss the design implications that can be potential for students to improve grades.</jats:p>",
+    "DOI": "10.1145/3604240",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2023,
+          9,
+          13
+        ]
+      ],
+      "date-time": "2023-09-13T15:16:20Z",
+      "timestamp": 1694618180000
+    },
+    "page": "1-28",
+    "update-policy": "https://doi.org/10.1145/crossmark-policy",
+    "source": "Crossref",
+    "is-referenced-by-count": 2,
+    "title": [
+      "A Minimalistic Approach to Predict and Understand the Relation of App Usage with Students' Academic Performance"
+    ],
+    "prefix": "10.1145",
+    "volume": "7",
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0001-8668-0120",
+        "authenticated-orcid": false,
+        "given": "Md Sabbir",
+        "family": "Ahmed",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "North South University, Dhaka, Bangladesh"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-5788-2145",
+        "authenticated-orcid": false,
+        "given": "Rahat Jahangir",
+        "family": "Rony",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Cardiff University, Cardiff, United Kingdom"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-6241-9526",
+        "authenticated-orcid": false,
+        "given": "Mohammad Abdul",
+        "family": "Hadi",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "University of British Columbia, Kelowna, BC, Canada"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-0473-4453",
+        "authenticated-orcid": false,
+        "given": "Ekram",
+        "family": "Hossain",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "University of Rochester, Rochester, NY, USA"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-7715-1742",
+        "authenticated-orcid": false,
+        "given": "Nova",
+        "family": "Ahmed",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "North South University, Dhaka, Bangladesh"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "member": "320",
+    "published-online": {
+      "date-parts": [
+        [
+          2023,
+          9,
+          13
+        ]
+      ]
+    },
+    "reference": [
+      {
+        "key": "e_1_2_2_1_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3173574.3173992"
+      },
+      {
+        "key": "e_1_2_2_2_1",
+        "unstructured": "Laura Silver. 2019. In emerging economies smartphone adoption has grown more quickly among younger generations. Retrieved on 21 December 2019 from https://www.pewresearch.org/global/2019/02/05/in-emerging-economies-smartphone-adoption-has-grown-more-quickly-among-younger-generations/"
+      },
+      {
+        "key": "e_1_2_2_3_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.chb.2016.03.052"
+      },
+      {
+        "key": "e_1_2_2_4_1",
+        "first-page": "84",
+        "article-title": "Facebook Usage and African American Student's Academic Performance: An Ongoing Investigation",
+        "volume": "6",
+        "author": "Yu Yanjun",
+        "year": "2016",
+        "unstructured": "Yanjun Yu. 2016. Facebook Usage and African American Student's Academic Performance: An Ongoing Investigation. IOSR Journal of Research & Method in Education (IOSR-JRME) 6, 5: 84--88.",
+        "journal-title": "IOSR Journal of Research & Method in Education (IOSR-JRME)"
+      },
+      {
+        "key": "e_1_2_2_5_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.compedu.2017.10.006"
+      },
+      {
+        "key": "e_1_2_2_6_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/978--3-030--19063--7_59"
+      },
+      {
+        "key": "e_1_2_2_7_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2971648.2971696"
+      },
+      {
+        "key": "e_1_2_2_8_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/ICRIIS.2017.8002516"
+      },
+      {
+        "key": "e_1_2_2_9_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.sbspro.2012.09.427"
+      },
+      {
+        "key": "e_1_2_2_10_1",
+        "first-page": "2",
+        "article-title": "Relationship between Facebook Practice and Academic Performance of University Students",
+        "volume": "2",
+        "author": "Negussie Nebiat",
+        "year": "2014",
+        "unstructured": "Nebiat Negussie and Girum Ketema. 2014. Relationship between Facebook Practice and Academic Performance of University Students. Asian Journal of Humanities and Social Sciences (AJHSS) 2, 2.",
+        "journal-title": "Asian Journal of Humanities and Social Sciences (AJHSS)"
+      },
+      {
+        "key": "e_1_2_2_11_1",
+        "doi-asserted-by": "publisher",
+        "unstructured": "Inyeop Kim Rihun Kim Heepyung Kim Duyeon Kim Kyungsik Hana Paul H Lee Gloria Mark and Uichin Lee. 2019. Understanding Smartphone Usage in College Classrooms: A Long-term Measurement Study. Computers & Education. DOI: 10.1016/j.compedu.2019.103611",
+        "DOI": "10.1016/j.compedu.2019.103611"
+      },
+      {
+        "key": "e_1_2_2_12_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/bjet.12176"
+      },
+      {
+        "key": "e_1_2_2_13_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.chb.2018.08.045"
+      },
+      {
+        "key": "e_1_2_2_14_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2070481.2070550"
+      },
+      {
+        "key": "e_1_2_2_15_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2750858.2804251"
+      },
+      {
+        "key": "e_1_2_2_16_1",
+        "volume-title": "Retrieved on 23rd",
+        "author": "Ahmed Mustak",
+        "year": "2020",
+        "unstructured": "Mustak Ahmed. Retrieved on 23rd August, 2020 from https://en.prothomalo.com/youth/education/86pc-university-students-own-smartphones-in-bangladesh-survey"
+      },
+      {
+        "key": "e_1_2_2_17_1",
+        "doi-asserted-by": "publisher",
+        "unstructured": "Muhammad Faisal Masood Aimal Khan Farhan Hussain Arslan Shaukat Babar Zeb and Rana Muhammad Kaleem Ullah. 2019. Towards the Selection of Best Machine Learning Model for Student Performance Analysis and Prediction. In 2019 ISCMI. DOI: 10.1109/iscmi47871.2019.9004299",
+        "DOI": "10.1109/iscmi47871.2019.9004299"
+      },
+      {
+        "key": "e_1_2_2_18_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.sbspro.2014.03.567"
+      },
+      {
+        "key": "e_1_2_2_19_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3229434.3229448"
+      },
+      {
+        "key": "e_1_2_2_20_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.chb.2015.12.045"
+      },
+      {
+        "key": "e_1_2_2_21_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.chb.2013.10.049"
+      },
+      {
+        "key": "e_1_2_2_22_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1177/0961000616662699"
+      },
+      {
+        "key": "e_1_2_2_23_1",
+        "article-title": "A Study on the Use of Mobile Dictionaries in Vocabulary Teaching",
+        "author": "Aslan Erdinç",
+        "year": "2016",
+        "unstructured": "Erdinç Aslan. 2016. A Study on the Use of Mobile Dictionaries in Vocabulary Teaching. Journal of Language and Linguistic Studies.",
+        "journal-title": "Journal of Language and Linguistic Studies."
+      },
+      {
+        "key": "e_1_2_2_24_1",
+        "first-page": "37",
+        "article-title": "A Study on User's Perception towards Learner-generated Comics",
+        "volume": "6",
+        "author": "Azman Farah Nadia",
+        "year": "2016",
+        "unstructured": "Farah Nadia Azman, Syamsul Bahrin Zaibon, and Norshuhada Shiratuddin. 2016. A Study on User's Perception towards Learner-generated Comics. International Review of Management and Marketing 6: 37--42.",
+        "journal-title": "International Review of Management and Marketing"
+      },
+      {
+        "key": "e_1_2_2_25_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.sbspro.2015.02.303"
+      },
+      {
+        "key": "e_1_2_2_26_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2675133.2675271"
+      },
+      {
+        "key": "e_1_2_2_27_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.chb.2011.08.026"
+      },
+      {
+        "key": "e_1_2_2_28_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2556288.2557361"
+      },
+      {
+        "volume-title": "Retrieved on",
+        "year": "2019",
+        "key": "e_1_2_2_29_1",
+        "unstructured": "StatCounter. 2019. Mobile Operating System Market Share Bangladesh. Retrieved on December 26, 2019 from https://gs.statcounter.com/os-market-share/mobile/bangladesh"
+      },
+      {
+        "key": "e_1_2_2_30_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.chb.2012.06.016"
+      },
+      {
+        "key": "e_1_2_2_31_1",
+        "doi-asserted-by": "publisher",
+        "unstructured": "Vedran Sekara Laura Alessandretti Enys Mones and Håkan Jonsson. 2021. Temporal and cultural limits of privacy in smartphone app usage. Scientific Reports 11. https://doi.org/10.1038/s41598-021--82294--1",
+        "DOI": "10.1038/s41598-021--82294--1"
+      },
+      {
+        "key": "e_1_2_2_32_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2632048.2632054"
+      },
+      {
+        "key": "e_1_2_2_33_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1140/epjds"
+      },
+      {
+        "key": "e_1_2_2_34_1",
+        "volume-title": "YouTube is bigger distraction to children's homework than television, survey finds. Retrieved on 12th",
+        "author": "Turner Camilla",
+        "year": "2019",
+        "unstructured": "Camilla Turner. 2018. YouTube is bigger distraction to children's homework than television, survey finds. Retrieved on 12th December 2019 from https://www.telegraph.co.uk/education/2018/02/23/youtube-bigger-distraction-childrens-homework-television-survey/"
+      },
+      {
+        "key": "e_1_2_2_35_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.sbspro.2014.01.1244"
+      },
+      {
+        "key": "e_1_2_2_36_1",
+        "volume-title": "Retrieved on",
+        "author": "Clement J.",
+        "year": "2019",
+        "unstructured": "J. Clement. 2019. Most popular Google Play app categories as of 3rd quarter 2019, by share of available apps. Retrieved on December 18, 2019 from https://www.statista.com/statistics/279286/google-play-android-app-categories/"
+      },
+      {
+        "volume-title": "Most popular Google Play categories. Retrieved online on 25th",
+        "year": "2021",
+        "key": "e_1_2_2_37_1",
+        "unstructured": "AppBrain. 2021. Most popular Google Play categories. Retrieved online on 25th December, 2021 from https://www.appbrain.com/stats/android-market-app-categories"
+      },
+      {
+        "volume-title": "Retrieved",
+        "year": "2018",
+        "key": "e_1_2_2_38_1",
+        "unstructured": "Ofcom. 2018. A decade of digital dependency. Retrieved December 19, 2019 from https://www.ofcom.org.uk/about-ofcom/latest/features-and-news/decade-of-digital-dependency"
+      },
+      {
+        "key": "e_1_2_2_39_1",
+        "volume-title": "Retrieved on",
+        "author": "Ovi Ibrahim Hossain",
+        "year": "2017",
+        "unstructured": "Ibrahim Hossain Ovi. 2017. Dhaka is second most active city in world for Facebook users. Retrieved on January 14, 2020 from https://www.dhakatribune.com/bangladesh/dhaka/2017/04/14/dhaka-ranks-second-world-active-facebook-users/"
+      },
+      {
+        "key": "e_1_2_2_40_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2556288.2557366"
+      },
+      {
+        "key": "e_1_2_2_41_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1088/1755--1315"
+      },
+      {
+        "key": "e_1_2_2_42_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/j.2517--6161.1995.tb02031.x"
+      },
+      {
+        "key": "e_1_2_2_43_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3125659.3125695"
+      },
+      {
+        "key": "e_1_2_2_44_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3390/app10238413"
+      },
+      {
+        "key": "e_1_2_2_45_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1063/1.4937103"
+      },
+      {
+        "key": "e_1_2_2_46_1",
+        "volume-title": "Wikipedia, The Free Encyclopedia. Retrieved on",
+        "author": "Wikipedia",
+        "year": "2021",
+        "unstructured": "Wikipedia contributors. Snowball sampling. In Wikipedia, The Free Encyclopedia. Retrieved on March 28, 2021, from https://en.wikipedia.org/w/index.php?title=Snowball_sampling&oldid=1013776327."
+      },
+      {
+        "key": "e_1_2_2_47_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TENSYMP50017.2020.9230945"
+      },
+      {
+        "key": "e_1_2_2_48_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3429360.3468192"
+      },
+      {
+        "key": "e_1_2_2_49_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.compedu.2020.103984"
+      },
+      {
+        "key": "e_1_2_2_50_1",
+        "first-page": "33",
+        "article-title": "Web Browsing, Mobile Computing and Academic Performance",
+        "volume": "4",
+        "author": "Grace-Martin Michael",
+        "year": "2001",
+        "unstructured": "Michael Grace-Martin, Geri Gay. 2001. Web Browsing, Mobile Computing and Academic Performance. Educational Technology & Society, 4, 33.",
+        "journal-title": "Educational Technology & Society"
+      },
+      {
+        "key": "e_1_2_2_51_1",
+        "volume-title": "App Usage - Manage/Track Usage. Retrieved on 28th",
+        "author": "Lu Sam",
+        "year": "2021",
+        "unstructured": "Sam Lu. App Usage - Manage/Track Usage. Retrieved on 28th March, 2021 from https://play.google.com/store/apps/details?id=com.a0soft.gphone.uninstaller"
+      },
+      {
+        "key": "e_1_2_2_52_1",
+        "volume-title": "YourHour - Phone Addiction Tracker & Controller. Retrieved on 28th",
+        "author": "Labs Mindefy",
+        "year": "2021",
+        "unstructured": "Mindefy Labs. YourHour - Phone Addiction Tracker & Controller. Retrieved on 28th March, 2021 from https://play.google.com/store/apps/details?id=com.mindefy.phoneaddiction.mobilepe"
+      },
+      {
+        "key": "e_1_2_2_53_1",
+        "volume-title": "Retrieved on 28th",
+        "author": "Developer Google",
+        "year": "2021",
+        "unstructured": "Google Developer. UsageStatsManager. Retrieved on 28th March, 2021 from https://developer.android.com/reference/android/app/usage/UsageStatsManager.html#queryEvents(long,%20long)"
+      },
+      {
+        "key": "e_1_2_2_54_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s00779-011-0412--2"
+      },
+      {
+        "key": "e_1_2_2_55_1",
+        "volume-title": "Proceedings of International Conference on Industrial Engineering, World Academy of Science, Engineering and Technology.",
+        "author": "Obeidat Suleiman",
+        "year": "2012",
+        "unstructured": "Suleiman Obeidat, Adnan Bashir, Wisam Abu Jadayil. 2012. The Importance of Class Attendance and Cumulative GPA for Academic Success inIndustrial Engineering Classes. In Proceedings of International Conference on Industrial Engineering, World Academy of Science, Engineering and Technology."
+      },
+      {
+        "key": "e_1_2_2_56_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1609/aaai.v34i10.7155"
+      },
+      {
+        "key": "e_1_2_2_57_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2818048.2819940"
+      },
+      {
+        "key": "e_1_2_2_58_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3314403"
+      },
+      {
+        "key": "e_1_2_2_59_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3191754"
+      },
+      {
+        "key": "e_1_2_2_60_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3191750"
+      },
+      {
+        "key": "e_1_2_2_61_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3313831.3376672"
+      },
+      {
+        "key": "e_1_2_2_62_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3290605.3300429"
+      },
+      {
+        "key": "e_1_2_2_63_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2702123.2702486"
+      },
+      {
+        "key": "e_1_2_2_64_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/ngmast.2011.1"
+      },
+      {
+        "key": "e_1_2_2_65_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2037373.2037383"
+      },
+      {
+        "key": "e_1_2_2_66_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2858036.2858348"
+      },
+      {
+        "key": "e_1_2_2_67_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2628363.2628380"
+      },
+      {
+        "key": "e_1_2_2_68_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2628363.2628367"
+      },
+      {
+        "key": "e_1_2_2_69_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3290605.3300927"
+      },
+      {
+        "key": "e_1_2_2_70_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3314395"
+      },
+      {
+        "key": "e_1_2_2_71_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2675133.2675244"
+      },
+      {
+        "key": "e_1_2_2_72_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/kykl.12214"
+      },
+      {
+        "key": "e_1_2_2_73_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.chb.2019.04.015"
+      },
+      {
+        "key": "e_1_2_2_74_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.chb.2019.106189"
+      },
+      {
+        "key": "e_1_2_2_75_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.compedu.2012.10.003"
+      },
+      {
+        "key": "e_1_2_2_76_1",
+        "first-page": "1",
+        "article-title": "Beneficial Neglect: Instant Message Notification Handling Behaviors and Academic Performance",
+        "volume": "5",
+        "author": "Kim Minhyung",
+        "year": "2021",
+        "unstructured": "Minhyung Kim, Inyeop Kim, and Uichin Lee. 2021. Beneficial Neglect: Instant Message Notification Handling Behaviors and Academic Performance. In Proceedings of the ACM IMWUT 5, 1: 1--26.",
+        "journal-title": "Proceedings of the ACM IMWUT"
+      },
+      {
+        "key": "e_1_2_2_77_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1177/0956797620956613"
+      },
+      {
+        "key": "e_1_2_2_78_1",
+        "first-page": "2",
+        "article-title": "Cumulative grade point average as a tangible predictor of academic achievement: A retrospective cross-sectional study",
+        "volume": "1",
+        "author": "James Gonsalves",
+        "year": "2014",
+        "unstructured": "Gonsalves James, Abraham Reem, Hande Shyamala, Rai Sharada, Bairy K, and Komattil Ramnarayan. 2014. Cumulative grade point average as a tangible predictor of academic achievement: A retrospective cross-sectional study. Journal of Education Technology in Health Sciences, 1, 2.",
+        "journal-title": "Journal of Education Technology in Health Sciences"
+      },
+      {
+        "key": "e_1_2_2_79_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3432213"
+      },
+      {
+        "key": "e_1_2_2_80_1",
+        "first-page": "1",
+        "article-title": "Let's FOCUS: Mitigating Mobile Phone Use in College Classrooms. In Proceedings of the ACM on Interactive",
+        "volume": "1",
+        "author": "Kim Inyeop",
+        "year": "2017",
+        "unstructured": "Inyeop Kim, Gyuwon Jung, Hayoung Jung, Minsam Ko, and Uichin Lee. 2017. Let's FOCUS: Mitigating Mobile Phone Use in College Classrooms. In Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT) 1, 3: 1--29.",
+        "journal-title": "Mobile, Wearable and Ubiquitous Technologies (IMWUT)"
+      },
+      {
+        "key": "e_1_2_2_81_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3299087"
+      },
+      {
+        "key": "e_1_2_2_82_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1371/journal.pone.0054402"
+      },
+      {
+        "key": "e_1_2_2_83_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3229434.3229463"
+      },
+      {
+        "key": "e_1_2_2_84_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2858036.2858568"
+      },
+      {
+        "key": "e_1_2_2_85_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3123024.3124558"
+      },
+      {
+        "key": "e_1_2_2_86_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1073/pnas.0903620106"
+      },
+      {
+        "key": "e_1_2_2_87_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/b978-0--12--817736--5.00001--6"
+      },
+      {
+        "key": "e_1_2_2_88_1",
+        "first-page": "1",
+        "article-title": "Predicting Brain Functional Connectivity Using Mobile Sensing",
+        "volume": "4",
+        "author": "Obuchi Mikio",
+        "year": "2020",
+        "unstructured": "Mikio Obuchi, Jeremy F. Huckins, Weichen Wang, Alex daSilva, Courtney Rogers, Eilis Murphy, Elin Hedlund, Paul Holtzheimer, Shayan Mirjafari, and Andrew Campbell. 2020. Predicting Brain Functional Connectivity Using Mobile Sensing. In Proceedings of the ACM IMWUT 4, 1: 1--22.",
+        "journal-title": "Proceedings of the ACM IMWUT"
+      },
+      {
+        "key": "e_1_2_2_89_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1098/rsif.2018.0210"
+      },
+      {
+        "key": "e_1_2_2_90_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3290605.3300536"
+      },
+      {
+        "key": "e_1_2_2_91_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3290605.3300232"
+      },
+      {
+        "key": "e_1_2_2_92_1",
+        "doi-asserted-by": "publisher",
+        "unstructured": "Nova Ahmed Tamanna Urmi and Mahbuba Tasmin. 2020. Challenges and Opportunities for Young Female Learners in STEM from the Perspective of Bangladesh. In 2020 IEEE TALE. DOI: 10.1109/tale48869.2020.9368378",
+        "DOI": "10.1109/tale48869.2020.9368378"
+      },
+      {
+        "key": "e_1_2_2_93_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/ACCESS.2020.2992869"
+      },
+      {
+        "key": "e_1_2_2_94_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3313831.3376163"
+      },
+      {
+        "volume-title": "Hands-On Machine Learning with Scikit-Learn and TensorFlow",
+        "author": "Géron Aurélien",
+        "key": "e_1_2_2_95_1",
+        "unstructured": "Aurélien Géron. 2017. Hands-On Machine Learning with Scikit-Learn and TensorFlow. O'Reilly Media, Inc., USA."
+      },
+      {
+        "issue": "85",
+        "key": "e_1_2_2_96_1",
+        "first-page": "2825",
+        "article-title": "Scikit-learn: Machine Learning in Python",
+        "volume": "12",
+        "author": "Pedregosa Fabian",
+        "year": "2011",
+        "unstructured": "Fabian Pedregosa, Gaël Varoquaux, Alexandre Gramfort, Vincent Michel, Bertrand Thirion, Olivier Grisel, Mathieu Blondel, Peter Prettenhofer, Ron Weiss, Vincent Dubourg, Jake Vanderplas, Alexandre Passos, David Cournapeau, Matthieu Brucher, Matthieu Perrot, Édouard Duchesnay. 2011. Scikit-learn: Machine Learning in Python. Journal of Machine Learning Research 12(85):2825--2830",
+        "journal-title": "Journal of Machine Learning Research"
+      },
+      {
+        "key": "e_1_2_2_97_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2750858.2804283"
+      },
+      {
+        "key": "e_1_2_2_98_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/978--3--319--47829--6_916--1"
+      },
+      {
+        "key": "e_1_2_2_99_1",
+        "volume-title": "CNBC. Retrieved",
+        "author": "Rodriguez Salvador",
+        "year": "2021",
+        "unstructured": "Salvador Rodriguez. 2021. YouTube is social media's big winner during the pandemic. CNBC. Retrieved April 24, 2023 from https://www.cnbc.com/2021/04/07/youtube-is-social-medias-big-winner-during-the-pandemic.html"
+      },
+      {
+        "key": "e_1_2_2_100_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1073/pnas.2209123120"
+      },
+      {
+        "key": "e_1_2_2_101_1",
+        "volume-title": "Forbes. Retrieved",
+        "author": "Elias Jennifer",
+        "year": "2015",
+        "unstructured": "Jennifer Elias. 2015. Why wearables are out of reach for people who need them most. Forbes. Retrieved April 24, 2023 from https://www.forbes.com/sites/jenniferelias/2015/10/27/the-leftovers-part-i-the-cost-of-activity/'sh=a0e5ffc63c9b"
+      },
+      {
+        "key": "e_1_2_2_102_1",
+        "volume-title": "Prothom Alo English. Retrieved",
+        "author": "Ahmed Mustak",
+        "year": "2020",
+        "unstructured": "Mustak Ahmed. 2020. 86pc university students own smartphones in Bangladesh: Survey. Prothom Alo English. Retrieved April 24, 2023 from https://en.prothomalo.com/youth/education/86pc-university-students-own-smartphones-in-bangladesh-survey"
+      },
+      {
+        "key": "e_1_2_2_103_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/1592606.1592621"
+      },
+      {
+        "key": "e_1_2_2_104_1",
+        "doi-asserted-by": "publisher",
+        "unstructured": "Ayomide Owoyemi Joshua Owoyemi Adenekan Osiyemi and Andy Boyd. 2020. Artificial intelligence for healthcare in Africa. Frontiers in digital health 2: 6. https://doi.org/10.3389/fdgth.2020.00006",
+        "DOI": "10.3389/fdgth.2020.00006"
+      },
+      {
+        "key": "e_1_2_2_105_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3290605.3300655"
+      },
+      {
+        "key": "e_1_2_2_106_1",
+        "doi-asserted-by": "publisher",
+        "unstructured": "Dinh C. Nguyen Quoc-Viet Pham Pubudu N. Pathirana Ming Ding Aruna Seneviratne Zihuai Lin Octavia Dobre and Won-Joo Hwang. 2023. Federated Learning for smart healthcare: A survey. ACM computing surveys 55 3: 1--37. https://doi.org/10.1145/3501296",
+        "DOI": "10.1145/3501296"
+      },
+      {
+        "volume-title": "The effects of academic pressure on South Asian children",
+        "year": "2023",
+        "key": "e_1_2_2_107_1",
+        "unstructured": "MySahana. 2012. The effects of academic pressure on South Asian children. Center for Asian American Studies. Retrieved April 25, 2023 from https://liberalarts.utexas.edu/aas/news/the-effects-of-academic-pressure-on-south-asian-children"
+      },
+      {
+        "key": "e_1_2_2_108_1",
+        "volume-title": "Retrieved",
+        "author": "Correspondent Senior",
+        "year": "2022",
+        "unstructured": "Senior Correspondent. 2022. Schoolgirl who jumped to her death from a building was ?under pressure' for failing exams. bdnews24.com. Retrieved April 25, 2023 from https://bdnews24.com/society/w6qgl86vn1"
+      },
+      {
+        "key": "e_1_2_2_109_1",
+        "volume-title": "Retrieved",
+        "author": "Crivello Gina",
+        "year": "2023",
+        "unstructured": "Gina Crivello. Coming of age in the time of coronavirus: young lives and families in low- and middle-income countries. Ox.ac.uk. Retrieved April 25, 2023 from https://www.ox.ac.uk/news/science-blog/coming-age-time-coronavirus-young-lives-and-families-low-and-middle-income"
+      },
+      {
+        "key": "e_1_2_2_110_1",
+        "volume-title": "Retrieved",
+        "author": "Alonso Cristian",
+        "year": "2020",
+        "unstructured": "Cristian Alonso, Siddharth Kothari, and Sidra Rehman. 2020. Imf.org. Retrieved April 25, 2023 from https://www.imf.org/en/Blogs/Articles/2020/12/02/blog-how-artificial-intelligence-could-widen-the-gap-between-rich-and-poor-nations"
+      },
+      {
+        "key": "e_1_2_2_111_1",
+        "volume-title": "Retrieved on 27th",
+        "author": "Developer Google",
+        "year": "2023",
+        "unstructured": "Google Developer. UsageStatsManager. Retrieved on 27th April, 2023 from https://developer.android.com/reference/android/app/usage/UsageStatsManager#queryUsageStats(int,%20long,%20long)"
+      },
+      {
+        "key": "e_1_2_2_112_1",
+        "doi-asserted-by": "publisher",
+        "unstructured": "Razmin Bari and Farhana Sultana. 2021. Second Wave of COVID-19 in Bangladesh: An Integrated and Coordinated Set of Actions Is Crucial to Tackle Current Upsurge of Cases and Deaths. Frontiers in Public Health 9. https://doi.org/10.3389/fpubh.2021.699918",
+        "DOI": "10.3389/fpubh.2021.699918"
+      },
+      {
+        "key": "e_1_2_2_113_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3544548.3581575"
+      },
+      {
+        "key": "e_1_2_2_114_1",
+        "unstructured": "Md Sabbir Ahmed. Mon Majhi. Retrieved July 4 2023 from https://play.google.com/store/apps/details/?id=net.mn.u"
+      },
+      {
+        "key": "e_1_2_2_115_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/s41592-019-0686--2"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the ACM on Human-Computer Interaction"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://dl.acm.org/doi/10.1145/3604240",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://dl.acm.org/doi/pdf/10.1145/3604240",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2025,
+          6,
+          17
+        ]
+      ],
+      "date-time": "2025-06-17T16:46:43Z",
+      "timestamp": 1750178803000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://dl.acm.org/doi/10.1145/3604240"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2023,
+          9,
+          11
+        ]
+      ]
+    },
+    "references-count": 115,
+    "journal-issue": {
+      "issue": "MHCI",
+      "published-print": {
+        "date-parts": [
+          [
+            2023,
+            9,
+            11
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "10.1145/3604240"
+    ],
+    "URL": "https://doi.org/10.1145/3604240",
+    "relation": {},
+    "ISSN": [
+      "2573-0142"
+    ],
+    "issn-type": [
+      {
+        "type": "electronic",
+        "value": "2573-0142"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2023,
+          9,
+          11
+        ]
+      ]
+    },
+    "assertion": [
+      {
+        "value": "2023-09-13",
+        "order": 3,
+        "name": "published",
+        "label": "Published",
+        "group": {
+          "name": "publication_history",
+          "label": "Publication History"
+        }
+      }
+    ]
+  }
+}

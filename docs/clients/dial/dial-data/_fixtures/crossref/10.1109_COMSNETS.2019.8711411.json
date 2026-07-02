@@ -1,0 +1,350 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          3
+        ]
+      ],
+      "date-time": "2026-06-03T13:32:09Z",
+      "timestamp": 1780493529423,
+      "version": "3.54.1"
+    },
+    "reference-count": 27,
+    "publisher": "IEEE",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2019,
+              1,
+              1
+            ]
+          ],
+          "date-time": "2019-01-01T00:00:00Z",
+          "timestamp": 1546300800000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2019,
+              1,
+              1
+            ]
+          ],
+          "date-time": "2019-01-01T00:00:00Z",
+          "timestamp": 1546300800000
+        },
+        "content-version": "stm-asf",
+        "delay-in-days": 0,
+        "URL": "https://doi.org/10.15223/policy-029"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2019,
+              1,
+              1
+            ]
+          ],
+          "date-time": "2019-01-01T00:00:00Z",
+          "timestamp": 1546300800000
+        },
+        "content-version": "stm-asf",
+        "delay-in-days": 0,
+        "URL": "https://doi.org/10.15223/policy-037"
+      }
+    ],
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [],
+    "published-print": {
+      "date-parts": [
+        [
+          2019,
+          1
+        ]
+      ]
+    },
+    "DOI": "10.1109/comsnets.2019.8711411",
+    "type": "proceedings-article",
+    "created": {
+      "date-parts": [
+        [
+          2019,
+          5,
+          13
+        ]
+      ],
+      "date-time": "2019-05-13T23:00:56Z",
+      "timestamp": 1557788456000
+    },
+    "page": "417-419",
+    "source": "Crossref",
+    "is-referenced-by-count": 9,
+    "title": [
+      "Monitoring Driving Stress using HRV"
+    ],
+    "prefix": "10.1109",
+    "author": [
+      {
+        "given": "Rahat Jahangir",
+        "family": "Rony",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Nova",
+        "family": "Ahmed",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "member": "263",
+    "reference": [
+      {
+        "key": "ref10",
+        "year": "0",
+        "journal-title": "Killed in 3 Years"
+      },
+      {
+        "key": "ref11",
+        "year": "0",
+        "journal-title": "Study Bangladesh has second worst roads in Asia"
+      },
+      {
+        "key": "ref12",
+        "first-page": "11",
+        "year": "0",
+        "journal-title": "The Global Competitiveness Report 2017-2018"
+      },
+      {
+        "key": "ref13",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/00140139.2011.638403"
+      },
+      {
+        "key": "ref14",
+        "author": "ahmed",
+        "year": "2016",
+        "journal-title": "Assessing Driving Stress using Custom Built Real Time Sensors"
+      },
+      {
+        "key": "ref15",
+        "year": "2018",
+        "journal-title": "Dhaka Population"
+      },
+      {
+        "key": "ref16",
+        "year": "2013",
+        "journal-title": "Congestion costs Tk200bn every year Survey"
+      },
+      {
+        "key": "ref17",
+        "year": "2015",
+        "journal-title": "Traffic Jam in Dhaka City"
+      },
+      {
+        "key": "ref18",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3186585"
+      },
+      {
+        "key": "ref19",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/iMac4s.2013.6526476"
+      },
+      {
+        "key": "ref4",
+        "author": "chan",
+        "year": "2011",
+        "journal-title": "Driving Aptitude Test (DAT) A New Set of Aptitude Tests for Occupational Drivers"
+      },
+      {
+        "key": "ref27",
+        "article-title": "How Well Our Drivers on Road?: Discomfort is Obvious in Drivers Daily Life",
+        "author": "jahangir rony",
+        "year": "2018",
+        "journal-title": "UbiComp/ISWC 2018 Adjunct"
+      },
+      {
+        "key": "ref3",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/00140130701318913"
+      },
+      {
+        "key": "ref6",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.trc.2009.01.005"
+      },
+      {
+        "key": "ref5",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/18128602.2011.632846"
+      },
+      {
+        "key": "ref8",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2667317.2667335"
+      },
+      {
+        "key": "ref7",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2667239.2667269"
+      },
+      {
+        "key": "ref2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/1753326.1753518"
+      },
+      {
+        "key": "ref9",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/j.1751-9861.2000.tb00072.x"
+      },
+      {
+        "key": "ref1",
+        "doi-asserted-by": "crossref",
+        "first-page": "463",
+        "DOI": "10.1145/1978942.1979008",
+        "article-title": "Effects of Proactive Mediation of Phone Conversations While Driving",
+        "author": "iqbal",
+        "year": "2011",
+        "journal-title": "Proc SIGCHI Conf Human Factors in Computing Systems (CHI"
+      },
+      {
+        "key": "ref20",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/S0926-6410(00)00086-0"
+      },
+      {
+        "key": "ref22",
+        "year": "0"
+      },
+      {
+        "key": "ref21",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/S0002-9149(99)80309-9"
+      },
+      {
+        "key": "ref24",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3177102.3177110"
+      },
+      {
+        "key": "ref23",
+        "year": "2016",
+        "journal-title": "Cardiovascular diseases"
+      },
+      {
+        "key": "ref26",
+        "year": "0"
+      },
+      {
+        "key": "ref25",
+        "author": "maclean",
+        "year": "2013",
+        "journal-title": "MoodWings A Wearable Biofeedback Device for Real-Time Stress Intervention PETRA &#x2019;13"
+      }
+    ],
+    "event": {
+      "name": "2019 11th International Conference on Communication Systems & Networks (COMSNETS)",
+      "location": "Bengaluru, India",
+      "start": {
+        "date-parts": [
+          [
+            2019,
+            1,
+            7
+          ]
+        ]
+      },
+      "end": {
+        "date-parts": [
+          [
+            2019,
+            1,
+            11
+          ]
+        ]
+      }
+    },
+    "container-title": [
+      "2019 11th International Conference on Communication Systems &amp; Networks (COMSNETS)"
+    ],
+    "original-title": [],
+    "link": [
+      {
+        "URL": "http://xplorestaging.ieee.org/ielx7/8703514/8711008/08711411.pdf?arnumber=8711411",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2022,
+          7,
+          15
+        ]
+      ],
+      "date-time": "2022-07-15T03:14:03Z",
+      "timestamp": 1657854843000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://ieeexplore.ieee.org/document/8711411/"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2019,
+          1
+        ]
+      ]
+    },
+    "references-count": 27,
+    "URL": "https://doi.org/10.1109/comsnets.2019.8711411",
+    "relation": {},
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2019,
+          1
+        ]
+      ]
+    }
+  }
+}

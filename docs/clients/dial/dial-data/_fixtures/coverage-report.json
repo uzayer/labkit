@@ -1,0 +1,443 @@
+[
+  {
+    "doi": "10.1109/COMSNETS.2019.8711411",
+    "crossref": {
+      "ok": true,
+      "abstract": false,
+      "funder": false,
+      "issn": false,
+      "page": true,
+      "volume": false,
+      "publisher": true,
+      "authorOrcid": false,
+      "publishedDate": true
+    },
+    "openalex": {
+      "ok": true,
+      "abstractIndex": true,
+      "oaStatus": true,
+      "authorships": true,
+      "grants": false
+    }
+  },
+  {
+    "doi": "10.1145/3391203.3391213",
+    "crossref": {
+      "ok": true,
+      "abstract": false,
+      "funder": false,
+      "issn": false,
+      "page": true,
+      "volume": false,
+      "publisher": true,
+      "authorOrcid": false,
+      "publishedDate": true
+    },
+    "openalex": {
+      "ok": true,
+      "abstractIndex": true,
+      "oaStatus": true,
+      "authorships": true,
+      "grants": false
+    }
+  },
+  {
+    "doi": "10.1145/3449134",
+    "crossref": {
+      "ok": true,
+      "abstract": true,
+      "funder": false,
+      "issn": true,
+      "page": true,
+      "volume": true,
+      "publisher": true,
+      "authorOrcid": false,
+      "publishedDate": true
+    },
+    "openalex": {
+      "ok": true,
+      "abstractIndex": true,
+      "oaStatus": true,
+      "authorships": true,
+      "grants": false
+    }
+  },
+  {
+    "doi": "10.1145/3411764.3445605",
+    "crossref": {
+      "ok": true,
+      "abstract": false,
+      "funder": false,
+      "issn": false,
+      "page": true,
+      "volume": false,
+      "publisher": true,
+      "authorOrcid": false,
+      "publishedDate": true
+    },
+    "openalex": {
+      "ok": true,
+      "abstractIndex": true,
+      "oaStatus": true,
+      "authorships": true,
+      "grants": false
+    }
+  },
+  {
+    "doi": "10.1145/3429360.3468192",
+    "crossref": {
+      "ok": true,
+      "abstract": false,
+      "funder": true,
+      "issn": false,
+      "page": true,
+      "volume": false,
+      "publisher": true,
+      "authorOrcid": false,
+      "publishedDate": true
+    },
+    "openalex": {
+      "ok": true,
+      "abstractIndex": true,
+      "oaStatus": true,
+      "authorships": true,
+      "grants": false
+    }
+  },
+  {
+    "doi": "10.1007/s41233-020-00043-0",
+    "crossref": {
+      "ok": true,
+      "abstract": false,
+      "funder": false,
+      "issn": true,
+      "page": false,
+      "volume": true,
+      "publisher": true,
+      "authorOrcid": true,
+      "publishedDate": true
+    },
+    "openalex": {
+      "ok": true,
+      "abstractIndex": false,
+      "oaStatus": true,
+      "authorships": true,
+      "grants": false
+    }
+  },
+  {
+    "doi": "10.1109/ICCIT54785.2021.9689868",
+    "crossref": {
+      "ok": true,
+      "abstract": false,
+      "funder": false,
+      "issn": false,
+      "page": true,
+      "volume": false,
+      "publisher": true,
+      "authorOrcid": false,
+      "publishedDate": true
+    },
+    "openalex": {
+      "ok": true,
+      "abstractIndex": true,
+      "oaStatus": true,
+      "authorships": true,
+      "grants": false
+    }
+  },
+  {
+    "doi": "10.3389/fcomm.2022.878050",
+    "crossref": {
+      "ok": true,
+      "abstract": true,
+      "funder": false,
+      "issn": true,
+      "page": false,
+      "volume": true,
+      "publisher": true,
+      "authorOrcid": false,
+      "publishedDate": true
+    },
+    "openalex": {
+      "ok": true,
+      "abstractIndex": true,
+      "oaStatus": true,
+      "authorships": true,
+      "grants": false
+    }
+  },
+  {
+    "doi": "10.1145/3530190.3534847",
+    "crossref": {
+      "ok": true,
+      "abstract": false,
+      "funder": true,
+      "issn": false,
+      "page": true,
+      "volume": false,
+      "publisher": true,
+      "authorOrcid": false,
+      "publishedDate": true
+    },
+    "openalex": {
+      "ok": true,
+      "abstractIndex": true,
+      "oaStatus": true,
+      "authorships": true,
+      "grants": false
+    }
+  },
+  {
+    "doi": "10.1145/3544548.3580661",
+    "crossref": {
+      "ok": true,
+      "abstract": false,
+      "funder": false,
+      "issn": false,
+      "page": true,
+      "volume": false,
+      "publisher": true,
+      "authorOrcid": true,
+      "publishedDate": true
+    },
+    "openalex": {
+      "ok": true,
+      "abstractIndex": true,
+      "oaStatus": true,
+      "authorships": true,
+      "grants": false
+    }
+  },
+  {
+    "doi": "10.1145/3604240",
+    "crossref": {
+      "ok": true,
+      "abstract": true,
+      "funder": false,
+      "issn": true,
+      "page": true,
+      "volume": true,
+      "publisher": true,
+      "authorOrcid": true,
+      "publishedDate": true
+    },
+    "openalex": {
+      "ok": true,
+      "abstractIndex": true,
+      "oaStatus": true,
+      "authorships": true,
+      "grants": false
+    }
+  },
+  {
+    "doi": "10.1007/978-3-031-34586-9_31",
+    "crossref": {
+      "ok": true,
+      "abstract": false,
+      "funder": false,
+      "issn": true,
+      "page": true,
+      "volume": false,
+      "publisher": true,
+      "authorOrcid": false,
+      "publishedDate": true
+    },
+    "openalex": {
+      "ok": true,
+      "abstractIndex": false,
+      "oaStatus": true,
+      "authorships": true,
+      "grants": false
+    }
+  },
+  {
+    "doi": "10.2196/28848",
+    "crossref": {
+      "ok": true,
+      "abstract": true,
+      "funder": false,
+      "issn": true,
+      "page": true,
+      "volume": true,
+      "publisher": true,
+      "authorOrcid": true,
+      "publishedDate": true
+    },
+    "openalex": {
+      "ok": true,
+      "abstractIndex": true,
+      "oaStatus": true,
+      "authorships": true,
+      "grants": false
+    }
+  },
+  {
+    "doi": "10.1007/978-3-031-34586-9_3",
+    "crossref": {
+      "ok": true,
+      "abstract": false,
+      "funder": false,
+      "issn": true,
+      "page": true,
+      "volume": false,
+      "publisher": true,
+      "authorOrcid": false,
+      "publishedDate": true
+    },
+    "openalex": {
+      "ok": true,
+      "abstractIndex": false,
+      "oaStatus": true,
+      "authorships": true,
+      "grants": false
+    }
+  },
+  {
+    "doi": "10.1109/ICCIT60459.2023.10441517",
+    "crossref": {
+      "ok": true,
+      "abstract": false,
+      "funder": false,
+      "issn": false,
+      "page": true,
+      "volume": false,
+      "publisher": true,
+      "authorOrcid": false,
+      "publishedDate": true
+    },
+    "openalex": {
+      "ok": true,
+      "abstractIndex": true,
+      "oaStatus": true,
+      "authorships": true,
+      "grants": false
+    }
+  },
+  {
+    "doi": "10.2196/76934",
+    "crossref": {
+      "ok": true,
+      "abstract": true,
+      "funder": false,
+      "issn": true,
+      "page": true,
+      "volume": true,
+      "publisher": true,
+      "authorOrcid": true,
+      "publishedDate": true
+    },
+    "openalex": {
+      "ok": true,
+      "abstractIndex": true,
+      "oaStatus": true,
+      "authorships": true,
+      "grants": false
+    }
+  },
+  {
+    "doi": "10.1145/3700794.3700820",
+    "crossref": {
+      "ok": true,
+      "abstract": false,
+      "funder": false,
+      "issn": false,
+      "page": true,
+      "volume": false,
+      "publisher": true,
+      "authorOrcid": true,
+      "publishedDate": true
+    },
+    "openalex": {
+      "ok": true,
+      "abstractIndex": false,
+      "oaStatus": true,
+      "authorships": true,
+      "grants": false
+    }
+  },
+  {
+    "doi": "10.1145/3723041",
+    "crossref": {
+      "ok": true,
+      "abstract": true,
+      "funder": false,
+      "issn": true,
+      "page": true,
+      "volume": true,
+      "publisher": true,
+      "authorOrcid": true,
+      "publishedDate": true
+    },
+    "openalex": {
+      "ok": true,
+      "abstractIndex": true,
+      "oaStatus": true,
+      "authorships": true,
+      "grants": false
+    }
+  },
+  {
+    "doi": "10.1145/3724502",
+    "crossref": {
+      "ok": true,
+      "abstract": true,
+      "funder": false,
+      "issn": true,
+      "page": true,
+      "volume": true,
+      "publisher": true,
+      "authorOrcid": true,
+      "publishedDate": true
+    },
+    "openalex": {
+      "ok": true,
+      "abstractIndex": true,
+      "oaStatus": true,
+      "authorships": true,
+      "grants": false
+    }
+  },
+  {
+    "doi": "10.1145/3715335.3744891",
+    "crossref": {
+      "ok": true,
+      "abstract": false,
+      "funder": false,
+      "issn": false,
+      "page": true,
+      "volume": false,
+      "publisher": true,
+      "authorOrcid": true,
+      "publishedDate": true
+    },
+    "openalex": {
+      "ok": true,
+      "abstractIndex": true,
+      "oaStatus": true,
+      "authorships": true,
+      "grants": false
+    }
+  },
+  {
+    "doi": "10.1145/3762808",
+    "crossref": {
+      "ok": true,
+      "abstract": true,
+      "funder": false,
+      "issn": true,
+      "page": true,
+      "volume": true,
+      "publisher": true,
+      "authorOrcid": true,
+      "publishedDate": true
+    },
+    "openalex": {
+      "ok": true,
+      "abstractIndex": true,
+      "oaStatus": true,
+      "authorships": true,
+      "grants": false
+    }
+  }
+]

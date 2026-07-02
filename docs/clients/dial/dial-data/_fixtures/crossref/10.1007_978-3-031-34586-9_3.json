@@ -1,0 +1,693 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          25
+        ]
+      ],
+      "date-time": "2026-06-25T07:36:59Z",
+      "timestamp": 1782373019824,
+      "version": "3.54.5"
+    },
+    "publisher-location": "Cham",
+    "reference-count": 25,
+    "publisher": "Springer Nature Switzerland",
+    "isbn-type": [
+      {
+        "value": "9783031345852",
+        "type": "print"
+      },
+      {
+        "value": "9783031345869",
+        "type": "electronic"
+      }
+    ],
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2023,
+              1,
+              1
+            ]
+          ],
+          "date-time": "2023-01-01T00:00:00Z",
+          "timestamp": 1672531200000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "https://www.springernature.com/gp/researchers/text-and-data-mining"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2023,
+              1,
+              1
+            ]
+          ],
+          "date-time": "2023-01-01T00:00:00Z",
+          "timestamp": 1672531200000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "https://www.springernature.com/gp/researchers/text-and-data-mining"
+      }
+    ],
+    "content-domain": {
+      "domain": [
+        "link.springer.com"
+      ],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [],
+    "published-print": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "DOI": "10.1007/978-3-031-34586-9_3",
+    "type": "book-chapter",
+    "created": {
+      "date-parts": [
+        [
+          2023,
+          6,
+          10
+        ]
+      ],
+      "date-time": "2023-06-10T03:27:04Z",
+      "timestamp": 1686367624000
+    },
+    "page": "33-45",
+    "update-policy": "https://doi.org/10.1007/springer_crossmark_policy",
+    "source": "Crossref",
+    "is-referenced-by-count": 2,
+    "title": [
+      "A Low-Cost Wearable System to Support Upper Limb Rehabilitation in Resource-Constrained Settings"
+    ],
+    "prefix": "10.1007",
+    "author": [
+      {
+        "given": "Md. Sabbir",
+        "family": "Ahmed",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Shajnush",
+        "family": "Amir",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Samuelson",
+        "family": "Atiba",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Rahat Jahangir",
+        "family": "Rony",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Nervo Verdezoto",
+        "family": "Dias",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Valerie",
+        "family": "Sparkes",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Katarzyna",
+        "family": "Stawarz",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Nova",
+        "family": "Ahmed",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "member": "297",
+    "published-online": {
+      "date-parts": [
+        [
+          2023,
+          6,
+          11
+        ]
+      ]
+    },
+    "reference": [
+      {
+        "key": "3_CR1",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Anowar, J., Ali, A.A., Amin, M.A.: A low-cost wearable rehabilitation device. In: Proceedings of the 2020 12th ICCAE. ACM (2020)",
+        "DOI": "10.1145/3384613.3384628"
+      },
+      {
+        "key": "3_CR2",
+        "unstructured": "Bangladesh Bureau of Statistics. Household Income and Expenditure Survey 2016"
+      },
+      {
+        "key": "3_CR3",
+        "doi-asserted-by": "publisher",
+        "first-page": "9",
+        "DOI": "10.3329/cmoshmcj.v17i1.39435",
+        "volume": "17",
+        "author": "PK Chakraborty",
+        "year": "2018",
+        "unstructured": "Chakraborty, P.K., Islam, M.J., Hossain, M.S., Barua, S.K., Rahman, S.: Profile of patients receiving stroke rehabilitation in A tertiary care Hospital. Chattagram Maa-O-Shishu Hosp. Med. Coll. j. 17, 9–12 (2018). https://doi.org/10.3329/cmoshmcj.v17i1.39435",
+        "journal-title": "Chattagram Maa-O-Shishu Hosp. Med. Coll. j."
+      },
+      {
+        "key": "3_CR4",
+        "doi-asserted-by": "crossref",
+        "unstructured": "D’Auria, D., Persia, F., Siciliano, B.: Human-computer interaction in healthcare: how to support patients during their wrist rehabilitation. In: 2016 IEEE Tenth ICSC. IEEE (2016)",
+        "DOI": "10.1109/ICSC.2016.21"
+      },
+      {
+        "key": "3_CR5",
+        "doi-asserted-by": "publisher",
+        "first-page": "100264",
+        "DOI": "10.1016/j.smhl.2022.100264",
+        "volume": "23",
+        "author": "D Dutta",
+        "year": "2022",
+        "unstructured": "Dutta, D., Sen, S., Aruchamy, S., Mandal, S.: Prevalence of post-stroke upper extremity paresis in developing countries and significance of m-Health for rehabilitation after stroke - a review. Smart Health 23, 100264 (2022). https://doi.org/10.1016/j.smhl.2022.100264",
+        "journal-title": "Smart Health"
+      },
+      {
+        "key": "3_CR6",
+        "unstructured": "boruta_py. https://github.com/scikit-learn-contrib/boruta_py. Accessed 03 Aug 2022"
+      },
+      {
+        "key": "3_CR7",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Tran, P., Jeong, S., Wolf, S.L., Desai, J.P.: Patient-specific, voice-controlled, robotic FLEXotendon glove-II system for spinal cord injury. IEEE Robot. Autom. Lett. (2020)",
+        "DOI": "10.1109/LRA.2020.2965900"
+      },
+      {
+        "key": "3_CR8",
+        "unstructured": "EVAR - Noise variance estimation. https://www.biomecardio.com/matlab/evar_doc.html. Accessed 05 Aug 2022"
+      },
+      {
+        "key": "3_CR9",
+        "doi-asserted-by": "publisher",
+        "first-page": "103",
+        "DOI": "10.1111/j.1468-2419.2011.00373.x",
+        "volume": "15",
+        "author": "R Grossman",
+        "year": "2011",
+        "unstructured": "Grossman, R., Salas, E.: The transfer of training: what really matters: the transfer of training. Int. J. Train. Dev. 15, 103–120 (2011)",
+        "journal-title": "Int. J. Train. Dev."
+      },
+      {
+        "key": "3_CR10",
+        "doi-asserted-by": "publisher",
+        "first-page": "175",
+        "DOI": "10.1002/oti.275",
+        "volume": "16",
+        "author": "IJ Hubbard",
+        "year": "2009",
+        "unstructured": "Hubbard, I.J., Parsons, M.W., Neilson, C., Carey, L.M.: Task-specific training: evidence for and translation to clinical practice: task-specific training in clinical practice. Occup. Ther. Int. 16, 175–189 (2009). https://doi.org/10.1002/oti.275",
+        "journal-title": "Occup. Ther. Int."
+      },
+      {
+        "key": "3_CR11",
+        "doi-asserted-by": "publisher",
+        "first-page": "322",
+        "DOI": "10.3389/fbioe.2019.00322",
+        "volume": "7",
+        "author": "CML Hughes",
+        "year": "2019",
+        "unstructured": "Hughes, C.M.L., et al.: Development of a post-stroke upper limb rehabilitation wearable sensor for use in sub-Saharan Africa: a pilot validation study. Front. Bioeng. Biotechnol. 7, 322 (2019)",
+        "journal-title": "Front. Bioeng. Biotechnol."
+      },
+      {
+        "key": "3_CR12",
+        "doi-asserted-by": "publisher",
+        "first-page": "1373",
+        "DOI": "10.1093/brain/awr077",
+        "volume": "134",
+        "author": "M Ietswaart",
+        "year": "2011",
+        "unstructured": "Ietswaart, M., et al.: Mental practice with motor imagery in stroke recovery: randomized controlled trial of efficacy. Brain 134, 1373–1386 (2011)",
+        "journal-title": "Brain"
+      },
+      {
+        "key": "3_CR13",
+        "doi-asserted-by": "publisher",
+        "first-page": "54",
+        "DOI": "10.1186/s12911-021-01403-2",
+        "volume": "21",
+        "author": "A Brnabic",
+        "year": "2021",
+        "unstructured": "Brnabic, A., Hess, L.M.: Systematic literature review of machine learning methods used in the analysis of real-world data for patient-provider decision making. BMC Med. Inform. Decis. Mak. 21, 54 (2021). https://doi.org/10.1186/s12911-021-01403-2",
+        "journal-title": "BMC Med. Inform. Decis. Mak."
+      },
+      {
+        "key": "3_CR14",
+        "doi-asserted-by": "publisher",
+        "first-page": "81",
+        "DOI": "10.1080/09602010443000047",
+        "volume": "15",
+        "author": "A Sunderland",
+        "year": "2005",
+        "unstructured": "Sunderland, A., Tuke, A.: Neuroplasticity, learning and recovery after stroke: a critical evaluation of constraint-induced therapy. Neuropsychol. Rehabil. 15, 81–96 (2005)",
+        "journal-title": "Neuropsychol. Rehabil."
+      },
+      {
+        "key": "3_CR15",
+        "volume-title": "Feature Extraction: Foundations and Applications",
+        "year": "2006",
+        "unstructured": "Guyon, I., Nikravesh, M., Gunn, S., Zadeh, L.A. (eds.): Feature Extraction: Foundations and Applications. Springer, Heidelberg (2006)"
+      },
+      {
+        "key": "3_CR16",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Uddin, T., Islam, M.T., Rathore, F.A., O’Connell, C.: Disability and rehabilitation medicine in Bangladesh: current scenario and future perspectives. J. Int. Soc. Phys. Rehabil. Med. (2019)",
+        "DOI": "10.4103/jisprm.jisprm_61_19"
+      },
+      {
+        "key": "3_CR17",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Low, K.S., Lee, G.X., Taher, T.: A wearable wireless sensor network for human limbs monitoring. In: 2009 IEEE I2MTC. IEEE (2009)",
+        "DOI": "10.1109/IMTC.2009.5168662"
+      },
+      {
+        "key": "3_CR18",
+        "doi-asserted-by": "publisher",
+        "first-page": "114",
+        "DOI": "10.1016/j.gaitpost.2020.11.011",
+        "volume": "84",
+        "author": "KL Hsieh",
+        "year": "2021",
+        "unstructured": "Hsieh, K.L., Sosnoff, J.J.: Smartphone accelerometry to assess postural control in individuals with multiple sclerosis. Gait Posture 84, 114–119 (2021)",
+        "journal-title": "Gait Posture"
+      },
+      {
+        "key": "3_CR19",
+        "doi-asserted-by": "publisher",
+        "first-page": "3",
+        "DOI": "10.1186/1743-0003-11-3",
+        "volume": "11",
+        "author": "P Maciejasz",
+        "year": "2014",
+        "unstructured": "Maciejasz, P., Eschweiler, J., Gerlach-Hahn, K., Jansen-Troy, A., Leonhardt, S.: A survey on robotic devices for upper limb rehabilitation. J. Neuroeng. Rehabil. 11, 3 (2014)",
+        "journal-title": "J. Neuroeng. Rehabil."
+      },
+      {
+        "key": "3_CR20",
+        "doi-asserted-by": "publisher",
+        "first-page": "520",
+        "DOI": "10.1186/s13104-017-2844-x",
+        "volume": "10",
+        "author": "FA Mamin",
+        "year": "2017",
+        "unstructured": "Mamin, F.A., Islam, M.S., Rumana, F.S., Faruqui, F.: Profile of stroke patients treated at a rehabilitation centre in Bangladesh. BMC Res. Notes 10, 520 (2017)",
+        "journal-title": "BMC Res. Notes"
+      },
+      {
+        "key": "3_CR21",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.2196/rehab.5079",
+        "volume": "3",
+        "author": "S Mawson",
+        "year": "2016",
+        "unstructured": "Mawson, S., Nasr, N., Parker, J., Davies, R., Zheng, H., Mountain, G.: A personalized self-management rehabilitation system with an intelligent shoe for stroke survivors: a realist evaluation. JMIR Rehabil. Assist. Technol. 3, e1 (2016)",
+        "journal-title": "JMIR Rehabil. Assist. Technol."
+      },
+      {
+        "key": "3_CR22",
+        "doi-asserted-by": "publisher",
+        "first-page": "e0224365",
+        "DOI": "10.1371/journal.pone.0224365",
+        "volume": "14",
+        "author": "A Vabalas",
+        "year": "2019",
+        "unstructured": "Vabalas, A., Gowen, E., Poliakoff, E., Casson, A.J.: Machine learning algorithm validation with a limited sample size. PLoS ONE 14, e0224365 (2019)",
+        "journal-title": "PLoS ONE"
+      },
+      {
+        "key": "3_CR23",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Kursa, M.B., Rudnicki, W.R.: Feature selection with the Boruta package. J. Stat. Softw. (2010). https://www.jstatsoft.org/article/view/v036i11",
+        "DOI": "10.18637/jss.v036.i11"
+      },
+      {
+        "key": "3_CR24",
+        "unstructured": "Electrical Stimulation - Its role in upper limb recovery post-stroke. https://www.physio-pedia.com/index.php?title=Electrical_Stimulation_-_Its_role_in_upper_limb_recovery_post-stroke&oldid=216559. Accessed 01 Aug 2022"
+      },
+      {
+        "key": "3_CR25",
+        "doi-asserted-by": "publisher",
+        "first-page": "142",
+        "DOI": "10.1186/s12984-019-0612-y",
+        "volume": "16",
+        "author": "P Maceira-Elvira",
+        "year": "2019",
+        "unstructured": "Maceira-Elvira, P., Popa, T., Schmid, A.-C., Hummel, F.C.: Wearable technology in stroke rehabilitation: towards improved diagnosis and treatment of upper-limb motor impairment. J. Neuroeng. Rehabil. 16, 142 (2019). https://doi.org/10.1186/s12984-019-0612-y",
+        "journal-title": "J. Neuroeng. Rehabil."
+      }
+    ],
+    "container-title": [
+      "Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering",
+      "Pervasive Computing Technologies for Healthcare"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://link.springer.com/content/pdf/10.1007/978-3-031-34586-9_3",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2023,
+          6,
+          10
+        ]
+      ],
+      "date-time": "2023-06-10T03:30:44Z",
+      "timestamp": 1686367844000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://link.springer.com/10.1007/978-3-031-34586-9_3"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "ISBN": [
+      "9783031345852",
+      "9783031345869"
+    ],
+    "references-count": 25,
+    "URL": "https://doi.org/10.1007/978-3-031-34586-9_3",
+    "relation": {},
+    "ISSN": [
+      "1867-8211",
+      "1867-822X"
+    ],
+    "issn-type": [
+      {
+        "value": "1867-8211",
+        "type": "print"
+      },
+      {
+        "value": "1867-822X",
+        "type": "electronic"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "assertion": [
+      {
+        "value": "11 June 2023",
+        "order": 1,
+        "name": "first_online",
+        "label": "First Online",
+        "group": {
+          "name": "ChapterHistory",
+          "label": "Chapter History"
+        }
+      },
+      {
+        "value": "PH",
+        "order": 1,
+        "name": "conference_acronym",
+        "label": "Conference Acronym",
+        "group": {
+          "name": "ConferenceInfo",
+          "label": "Conference Information"
+        }
+      },
+      {
+        "value": "International Conference on Pervasive Computing Technologies for Healthcare",
+        "order": 2,
+        "name": "conference_name",
+        "label": "Conference Name",
+        "group": {
+          "name": "ConferenceInfo",
+          "label": "Conference Information"
+        }
+      },
+      {
+        "value": "Thessaloniki",
+        "order": 3,
+        "name": "conference_city",
+        "label": "Conference City",
+        "group": {
+          "name": "ConferenceInfo",
+          "label": "Conference Information"
+        }
+      },
+      {
+        "value": "Greece",
+        "order": 4,
+        "name": "conference_country",
+        "label": "Conference Country",
+        "group": {
+          "name": "ConferenceInfo",
+          "label": "Conference Information"
+        }
+      },
+      {
+        "value": "2022",
+        "order": 5,
+        "name": "conference_year",
+        "label": "Conference Year",
+        "group": {
+          "name": "ConferenceInfo",
+          "label": "Conference Information"
+        }
+      },
+      {
+        "value": "12 December 2022",
+        "order": 7,
+        "name": "conference_start_date",
+        "label": "Conference Start Date",
+        "group": {
+          "name": "ConferenceInfo",
+          "label": "Conference Information"
+        }
+      },
+      {
+        "value": "14 December 2022",
+        "order": 8,
+        "name": "conference_end_date",
+        "label": "Conference End Date",
+        "group": {
+          "name": "ConferenceInfo",
+          "label": "Conference Information"
+        }
+      },
+      {
+        "value": "16",
+        "order": 9,
+        "name": "conference_number",
+        "label": "Conference Number",
+        "group": {
+          "name": "ConferenceInfo",
+          "label": "Conference Information"
+        }
+      },
+      {
+        "value": "ph2022",
+        "order": 10,
+        "name": "conference_id",
+        "label": "Conference ID",
+        "group": {
+          "name": "ConferenceInfo",
+          "label": "Conference Information"
+        }
+      },
+      {
+        "value": "https://pervasivehealth.eai-conferences.org/2022/",
+        "order": 11,
+        "name": "conference_url",
+        "label": "Conference URL",
+        "group": {
+          "name": "ConferenceInfo",
+          "label": "Conference Information"
+        }
+      },
+      {
+        "value": "Double-blind",
+        "order": 1,
+        "name": "type",
+        "label": "Type",
+        "group": {
+          "name": "ConfEventPeerReviewInformation",
+          "label": "Peer Review Information (provided by the conference organizers)"
+        }
+      },
+      {
+        "value": "Confy Plus",
+        "order": 2,
+        "name": "conference_management_system",
+        "label": "Conference Management System",
+        "group": {
+          "name": "ConfEventPeerReviewInformation",
+          "label": "Peer Review Information (provided by the conference organizers)"
+        }
+      },
+      {
+        "value": "120",
+        "order": 3,
+        "name": "number_of_submissions_sent_for_review",
+        "label": "Number of Submissions Sent for Review",
+        "group": {
+          "name": "ConfEventPeerReviewInformation",
+          "label": "Peer Review Information (provided by the conference organizers)"
+        }
+      },
+      {
+        "value": "45",
+        "order": 4,
+        "name": "number_of_full_papers_accepted",
+        "label": "Number of Full Papers Accepted",
+        "group": {
+          "name": "ConfEventPeerReviewInformation",
+          "label": "Peer Review Information (provided by the conference organizers)"
+        }
+      },
+      {
+        "value": "0",
+        "order": 5,
+        "name": "number_of_short_papers_accepted",
+        "label": "Number of Short Papers Accepted",
+        "group": {
+          "name": "ConfEventPeerReviewInformation",
+          "label": "Peer Review Information (provided by the conference organizers)"
+        }
+      },
+      {
+        "value": "38% - The value is computed by the equation \"Number of Full Papers Accepted / Number of Submissions Sent for Review * 100\" and then rounded to a whole number.",
+        "order": 6,
+        "name": "acceptance_rate_of_full_papers",
+        "label": "Acceptance Rate of Full Papers",
+        "group": {
+          "name": "ConfEventPeerReviewInformation",
+          "label": "Peer Review Information (provided by the conference organizers)"
+        }
+      },
+      {
+        "value": "2.5",
+        "order": 7,
+        "name": "average_number_of_reviews_per_paper",
+        "label": "Average Number of Reviews per Paper",
+        "group": {
+          "name": "ConfEventPeerReviewInformation",
+          "label": "Peer Review Information (provided by the conference organizers)"
+        }
+      },
+      {
+        "value": "3",
+        "order": 8,
+        "name": "average_number_of_papers_per_reviewer",
+        "label": "Average Number of Papers per Reviewer",
+        "group": {
+          "name": "ConfEventPeerReviewInformation",
+          "label": "Peer Review Information (provided by the conference organizers)"
+        }
+      },
+      {
+        "value": "Yes",
+        "order": 9,
+        "name": "external_reviewers_involved",
+        "label": "External Reviewers Involved",
+        "group": {
+          "name": "ConfEventPeerReviewInformation",
+          "label": "Peer Review Information (provided by the conference organizers)"
+        }
+      }
+    ]
+  }
+}

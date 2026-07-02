@@ -1,0 +1,163 @@
+Search this site
+
+Embedded Files
+
+Skip to main content
+
+Skip to navigation
+
+# Activities photo gallery
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SRJz7UTLLxzFkKgCyhQdAGogzcGKLZ8N4OfXroue7lM3SDW9Q9OEKufz1Ds-XqksnHXT1MePoxd6PibZ9S0Tjpq5tteUnFB6CDwyJ6CrBQGXu7hzcHDattE35nSxPL2MldJGI2XfqcTS9efgdkJ1g09uXo0P5zxh8eK0tkoxpvUR4vVL9XVG5vmYTY=w1280)
+
+Did not collaborate but inspired!
+
+I love to travel for my research and outreach work.
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SRWMY8eXXOizZHtSgB4zZB7UaigCx5TNAbUCyMZ0eEs33ZsSz2120Mn2iVMEy1fNqzxTIgrF6teB5ETtBcyKnNJwxzGUQaVa9cSfSt8BCdFqrUfqqIeRUHtDv9e8kb4_kqFJNrLWmS6P6pHz39RWOBwMHejyPlTes-n-m4wSeTy-5nH3_8PWLUVJ2g=w1280)
+
+Women in STEM Collaboration
+
+I collaborate with Dr. Lamia Iftekhar, Ms. Silvia Ahmed and Tamanna Motahar.
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SRGO1lNDAuaCXbcFudtqHDB4bIuNcsX9ia0hYQLY5qXd6Zse1ZwLbbi5Erg7z2YWw9eC7eNh50-3w8MqdW8CFc5XyplT7-sGDNQbyqyCgXLarhkWTB9MwUHoZUUzAc8QL4twxwh9LJJQygvCuTq_hnGB0dkJkjc03tCeEbWzCHQisiI6qDfe9ybeH_EqWWB6QUCXaIKkAJaH6u4L4I4UlILyIKtd0_xCJjWA2Y=w1280)
+
+Grameen Phone Collaboration
+
+I am working with Moinunddin Bhuiyan from Grameen Phone.
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SR8AW6TRR5_Fzll_phOeriuOf9pT5TFKiubGFWWUAx8PSD1jEa8Vo_k-fVoi_0N3otGfbmGOa3kMY4SxmTB6ez9Cgc6orx69faj_GMDT8dv8_vBM0Fzyfw39cGgATi-ktZeZQF4hdTQjlNAedbM3Pu-Bc6gfG7GFgb9TDVVDMmHwYuNwXXfLXgOOFudPI_tHjWXZnuxzYeZ5ss3tDpH8Gdk43YV5Xs4QpRDbRU=w1280)
+
+Collaboration with Google
+
+I have collaborated with Google with Nithya Sambasivan to ensure equity in technology for women.
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SSVQw9DJSyyGF8QmB1B9GwkFRiuChjPqF7hdzpF7TGWZeSH774cq6s9RUo-8hUzCfkGgLxNiuO5jwu5Y4MKRJmDuQOKdBQVloOhvmwDbtrX4Vx84_HG7xJudXM5kl6l-VUVbryIJbWv6NBvIer03H4GJ1zNCkO1knrr4H06spNDwGzdw-6UKVT0ShQ=w1280)
+
+Global Young Academy
+
+I  work with [GYA](https://globalyoungacademy.net/) being an alumni now  there. I contributed to Women in Science group. I was an EC member for two terms.
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SRcP_2Kpz83NFmK4EQS-j8wgH8y_d6N0O8jL17I7siXIT2_UfSHcDbOcR2BuR83kE7Ixol5SP2xFqRRQtCukkhVr5WGSMRz-lvdIFcJgbQposImZsDSKKZVPedEhmvU9Hnkpm72_c9WqR3GIK4b5VwVPTL7lohWohtOsH1kiOBWaUgGmnTAnQ-5IlI=w1280)
+
+Women in Science without Borders
+
+This is as an organizer for Women in Science Across Borders
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SQtCRhKUa_-ljqlDZO3hEfVXZWkzlCypqsYbEN1Dv2F-bddqaY44frwsxDH4oACQOo6TulMPT-2zauHwJrwhciUMqsFC3vs8aQDZlw5swQgZucGOcKDahi9yNitFL7Z3HzdYYM8ykEf_sc2051to5NweXu-WJaI49Mxzqvf6LZGWitkC6MHtn3YtsCsKCqbXyMTEn2gqXt09GQ0OICkOFye3FMQz5BW25W_Gns=w1280)
+
+Bangladeshis@CHI all attendees at CHI 2019
+
+Scotland
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SS7HVJRY4NLkhXOQM3otQzUOGTsAXoYH0tbm3_YFxQoUxq6ofZZKtvvEcWT9yHwT6N2RfD7ZOJSqRbp3-7LvqdbwGTbJbYcfnLZii8jlKhbIiHvI_nUcs1q57GZtvjL2DCZ2XZR0kg8Y1gsphKc9Ftcw6jzp_8wGIU05vGA5lpK7gTh0wCl25gmsBI=w1280)
+
+Circle of sisterhood at Ada Lovelace Celebration, Bangladesh
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SSYXpPBnwdf1zLzFncjyuQPDswiR-qq03lJ-lxot09oJkOJ6PFXEzICDL7LWgciZ_ONTSHH4BIK5KjVRoObvNgKvBIL4Sz1wzgAD21k15wtKO1nPZ2_ZW-B4dtlW_Wx6niE1Jqqt2i8q9Ozn8dvhyWLPjfC3HL4oPtI65ToLOI63eS2sQxhptcpGGzQaAOgIv4VMg2J3pZkZq6AvTYdummSaHk_OE52tA=w1280)
+
+Organized Ubicomp Boradening Participation Workshop, Singapore
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SSat12PoDC7nIF4rfhlJWyb9rdwIaE1j-O5dPcWsPlrf7BSFggRkoC3YN1uSgmK9A4B6o28vK-lD928gBoQLBRK4r71Zm11SNpMEkBClbWE3nUk0ARffJeTMVYzFbkHqOtq0_K8FfYIO2baTwfcyHrmqxWrV3zWl1rDfdf-IojHqtGzHmMnht6E0UM=w1280)
+
+BWIT activities currently serving as a Vice Chair, Bangladesh
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SRZ_U39DI9F3DHYwe97kAHH0sFAZh2siXLrDBtgrpWArczofNAQZYIserGS6OrzOUl160FnbpzO7Bu6tXC37OpxIpFCzfAxmIBjepkO59NbH4B2y15peC-L2L8zPm7ArPVm-cah6PXLCNMEdPDIdanjdyByaVn66Y5ZTyW_nxupC-Cy-ByvlkXCB8ip_TkxkgrC0nuwKj17Et-BKsvMJna6rVTLfT5ErrzkWe8=w1280)
+
+HCIxB Community, USA
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0STg_AuWwxR9yI8TG1hEosSU-86tbWssE0FviZ0NtFy6kXgfv8WElH0NN9T7sZ4V2iurKYtMsTK7B_pEuVDYxgiTBYxDuZ_R2Xho8u1GnBEH5amTyS8H6VnhhBaRF8b6PdNBvu6nSdcrqAqNFapXoQRfxtDBlpXK-PQnvl8ZcSI=w1280)
+
+Power women in my life, Bangladesh
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SSV5_PTXRE1_QwREk25amLI8DL0yJ7lHMkExAeKAwNgn4kiqlr_k8m8-qhJw6leFeyOGCqwlIuvJdoAXdtdERIN71f0WMIETN_MfStA3OlRnyKNx0-jhOntngEHdPPvyaVemA-5j6wJa3xGHQ6-pt1bJ_mUC5cJlRbu6X9ZjrSR03K_l_nU2KmDIVfM6JrYI9J6c3CXubg3ddoWcqH76o9437VkADvxjwLQq9A=w1280)
+
+My family, Ma's house, Bangladesh
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SRtcro-s2H64WYE702nEZ1Jws3rZ8RvZV5FzrbkhLINbslgXK215D3sOFvzJglYcRo3S_0xgw_MsWEJd3jaGNInoagdtFaHrtk4k5509UbatNFVNQ2E6tpOLXb-5rwte2mXVp9Ky6kC5Umc6qgvt-w0hIG62Vt25lvZupR5LbASGKcWtKdbYMToZh0aVATkPpx_e-vhtzAdiGA0bD4gdM3e9enl6nCd7Plx=w1280)
+
+Bangladeshis @Grace Hopper, USA
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0STvui3IYbMw-tvdY0hMP3c-X_5MAlxlkf5nNJsJncyWi5YVZb98auTuDsSUFgsXtKgudsneqxYHDmkK3RcX--poElxIYGt6gvUbUzFACZw6Ur6WMNAnFv5d9p1MOnJ_gszC4b8haSCKRfK0VH7PvpfWjpKTj0wsaDbYtmaXi1h4dt_pGTlRj8lf_Zk=w1280)
+
+Power women in my life
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0STBV0Z4bY6gu1oT5yVju1bfoYtgnJLtH31kWPRND4QJk3mSGokW3lNk3XFQZEoHPU4ZgwzqA2AWWhX7QyYaSfmaYD0THC426aIBhvdJhEfDECJAzvEG-68JeHmh6LWn7_E9YClalQn0Gw73pDTB3wHufqVuln-KNz6jgNsAKmCUfgMJp7Qes-WG_Vk=w1280)
+
+Power woman in my life
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SQaxGGY4dKXIsFYek5NXrwEcLNhQv_53YeyTgea7AnBqxKP_dNkALLlL5EECUVMAwxB3iyUlZtl968RsYb3AcbMUrJgaE99msss_HKLPTlJH3czpSpJzZb4DLsmdEJqm5T2RCqTOQz2---IwHflcs-PfRaobA1MjZvh5C9pPQC3U0d0G1b9KbtkD0RaHR5c3_vwY6NGlmPeKxCDUFMVWQAoj0EcLiDEz-yq=w1280)
+
+Amazing Mahbuba Tasmin @Ubicomp
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SSxFd1Kp-Bx0l9Oc6tnkRCNHGIPYKsv020M_2YPd9dl_swurF3FpJZKstOVpCzCewOqH5FqR7vnpDs6a9Sm52m1xXIJ5B1rXUD6a-SekWAv0jQ5abj7GZP0QBUIH8Odrf7Odti3HC6TpcDySJfyGU5j7uDRorFrQDAP5r2UE-MWL-i6YG691WkB=w1280)
+
+With my Students of CSE115
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SQOyduQ5N8MYGtfKB3i70nIbG--Mr_SIc5xAqmVp5CMHHIL65RmEEls7ivJzogIhkOpRQCbAvRyscZM2LNhauKM9WY5xPIZmjNFppbvnBLNTerCCGvBOzb3V1H07v4JjoXh0XQd6g8Ri8kyrIT2e62eBUwRLeJ-U5S9-RyntUdOKdOeFfXNGDYSWrOoVVuBhYIbj40ObYS37Lv1UVTLmHY_yISApREnfkIUPV4=w1280)
+
+Nasa Lunabotics Competition, USA
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0STHvP8k3KNvLRdqc-CoABadLmhg6xSp7uAaLlvMMJoGPRN5jOgUVDmHcImj0HJ0iSgcBoYid6JS8rgn_g7jiKdA6w4uk2KQfwd0MDRyG9uEu8f6WTVL00hmm_--qfqz9La1dsIowVZ7Nixze_din2Wkv0uc-tp1L2uXYVBAOP5uV1Wj98LXSdH0PEX6w1x4IDzCD-37AvzAEYjkj2EXKED5eVGGnym77XHz=w1280)
+
+With Dr. Yeshim Iqbal @meeting of Kaan Pete Roi, Dhaka, Bangladesh
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SSX_HbfpJIW2tb1ZmDniGm44COeZxsKE6_0gf_3bUZXeGekz65JLBeZg1COwMWnKiD3f22ua_i-uyVrfuhPKukAtRGIdiO608armPehv4IflK1Hiu53oxiBp0iDKgcVKSPf_4oMFbMJg-OHJZmBl-8wvYI9W8jz2NmKljAU8AhjXMnmQ4w6vfkWzcxv_zVPQ0hIsecR9rKN7MJzUHwozHZ6b8odjpRL792bhvo=w1280)
+
+My NSUHCI family, MunshiGanj, Bangladesh
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SRedVgDruQNO4vvCHq6dZmhwDMux_6nWWwSQy-AsS9yTG7mthQsjNdF_8TZ7_Cn9cFWBiqZ07RAdQVsfetwYMGc-QRDmr0fvjiBEEVl_mhKJCTXbHJ7sd19pKOboPwWd1ofRYXVCl9gTsaYGsOBSvn2bfkHIw4T-Tv3zbh75RaY-ORYMn9rlo8f9uLvod47bhOVJbp5IKgkQ3sbtypLIr0BOqV-3asT4uN_vTY=w1280)
+
+Sangat Family for activism, Nepal
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SQc3G7MCNfRgL6gecb6ADS_y6CQwVxDh_dY5VyEN8K6FevK0qblODfe6Im6z156M-y0eyw7LpWD8uowKZ679mN806gQvsoDGgcIcUxdSq3EpijhgIp3eKZsvqaO2J9T2FDsU2FTQeVXtgRNKnFyIujb8qI67AXA32InpNMZTI6Us9Wt47h3voM9Z1s=w1280)
+
+School friends, Dhaka, Banglaesh
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0STwpo6f33a1Uk0MAS8XQV1KzTKgiJ7zJN3DmdnQbDjvJtWxRtEUuxv8EKinYVNi1t7Ga1vBm2xZVMddP17ToYX4Jvk0Yc1G6HEuca21gf7Jw2vp4KNBGc4ltqTLN5wAdJ1D3UuVIMZ-Mi8JZb0hutH160ad-N_fSO6ZkVG8hanrlp04icqHFbRBTfU=w1280)
+
+Power women, NSU, Bangladesh
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0ST2Ck9fBCuM4kgFIsvOCyPUFysmp2JZtCTkhTClLI-5YM7_7haA90vz8pWzHrV4FsY_dmfxxIvC2Fl93EwrP7HvF5ZqXC-8YbLB_IWfgUPnpcj1sRXGoAsAhvvNWZpMZjxqzGTduXBK_S8UZmqw6lCNYOJAUQ2Uqr5r8uqkK77oDYDanksSMnyEX0w=w1280)
+
+Power woman, our house, Bangladesh
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SQsLiOqlboZzjNJLkgz0KyUlBPtFNWt85NOEu_K5ZkS2oj1JlFzu9nkHy8Dp6IQOUEsE0z12-iGh56J_EhjdlR5iaoAUHGsx90d5XNMVjjimGT8jJl1d4RPtrc_CteVmPtjLrL17f_UwuXiInfw6FLqQbOL9HgG-0Rf9TFeUtUj7EDekfoqdZ4PQ9Y=w1280)
+
+My family, Atlanta, USA
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SSCKcaKrBGsofE8n6l2vbDRW1AoOd3Trt62OfbznxvAJcUXS-ujARkSMdthcaameES8LAm-PKbz4B3Yt2ZnJ1adhJQ0z1MnZ2twIG-hlx5mGH9_8TRavk8rr4h9piZu6j3yCJ-glfWJSIhVJytIf_rPeiENfzrLvT4wIIt3W4PvE_hdv1JRwkb4fC0=w1280)
+
+Power women, me and my sisters, Bangladesh
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SRs_i7JizlkVsIIta4m8XExyt40FbUelCZCQ4ED3V-nnnLV6Yt6iuZdI3GCeXD-aDW80xFaCuqd6iIvf25odzF5jlKF6KdCfUU5j6G3bbX4mCz6RJE9a0ORH4EX-oWuk0Ht15csB8mv5LX5ZRx4QQWTjNIDNqlbZyTrgrvaQgn6swv1kJUnQYxS=w1280)
+
+Informal research meeting with Moin Bhuiyan, Our house, Bangladesh
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SSdqhzJxI46GhWmNljlCw6m1ePGBxMu8g2f295K8QPx22DnhpnY7utuE9fgMlGtecjl1bAtaBQLSLXrJ_3rYnHxy7bHFlL1BqauKb9hgwF8IvVKDp02I0diASBw51vA85Yw9MmM9vGqamXnZ7vqYwUCvropmdKWPVun6ht1mv6WfYr-KQiNnXvNMPg=w1280)
+
+Activism @NSU, Bangladesh
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SRyG6g22j483Kvv3-4tUbe-smNAR-27w9FWrue4l8uoMIgc1EBwQW7UJMEW7HLpccB9P6AZl8C-4JJG19mI4quevo8_uiJdkLPRAFyOA8XZF2uMlWHhj9j7rXoobXKYwDjCauC2d_fB7wBh9rMj6YW902U5kfdSfKkdJTj4Ib0kXrpzqDXrkqJb=w1280)
+
+Power men, Our house, Bangladesh
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SQux8JkzsumPMjhyUQgH5E4bWHZX81oZZ9WOJBbJiVmwyW8lD4W1Wq6xeGOAx-qRHXrGANv5KxoBtuAU8X1pzJZVi69WMC0sIaW8AkIshxQwwaPABz4yGXz-GrJnG1nfuWeJRohnPdN8d6-x5Y0BTVTqsjTUZvmjU2_hViXuxtD7flbvH3BFIciW_g22TOBfCSXVjAaEAG8YLnNYSLekRLFYibSFUOHPyaQ5VA=w1280)
+
+Dr. Jasmine Jones visiting us, GrameenPhone, Bangladesh
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0STbW7-0pvMXd-o6luY7gNb_m7XX-wCs2BuYb4OYI5yxYa-oMtqyjpBciyVnzbPkg6Wxl7giSJEKxDywzTPhMH25d1_-5syB3TYi_K2PbnbgdbX8jfSe7xXd6nLhM-1kM0tWwJjGVFau3hElcCE5Urb3f89g3o9fNoPQ-iVOJidwqwMoXWop9c2MJdaYprvEYfixBcwHpgv1KBk71EsW5s0JYYWaja8nbXJ_=w1280)
+
+Us @IIT, Mumbai, India
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SQoCQI_8aDMrK0Je6mnoHU-Khba5oF5MKHkWiHtQEfZD8c4HE4XBKJwFNqzbLoiFlCgB9gvCOyLoS38bna2dt8MTSa57brAwkaIq7cMWh0KKWQ54ODLkcOXxwxp7CIIU_W5u5QfLDMOd8Y37w2Pc5KlIXbGH67eJ6nyDawH_WYHm7RpxH73SiTkeCVQ85-zBifdJXI4YTjgj0cIuadwWOBgjwusiXEOVC5c=w1280)
+
+Travelling for Gates Project, Tnagain, Bangladesh
+
+![](https://lh3.googleusercontent.com/sitesv/APaQ0SQzjXgaOEajhI-dWFooCjLlaq15s5PN6l8JYkUrJFELbyV7KVk6yE5q4r_JlciOKT35Xa2HGEWB70zfEA_Y-BwhUSszEwZQSF_FFhPcKTOlvFvYtDcZDD0bafAcJMy0CscKmpK_VlZiS_yqc5Gs1SdpFrxQafl3D4L7GfuWkc37cYd-6dVCUkQ51oNOWZXcZ7RozA6a1MlKgcMRG9j7IgcFnV-mE_3hfEys7Fg=w1280)
+
+The Gates Team with guests from US Embassy, NSU, Bangladesh
+
+Google Sites
+
+Report abuse

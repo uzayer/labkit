@@ -1,0 +1,577 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          4,
+          13
+        ]
+      ],
+      "date-time": "2026-04-13T12:34:18Z",
+      "timestamp": 1776083658784,
+      "version": "3.50.1"
+    },
+    "reference-count": 35,
+    "publisher": "Frontiers Media SA",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2022,
+              5,
+              18
+            ]
+          ],
+          "date-time": "2022-05-18T00:00:00Z",
+          "timestamp": 1652832000000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "content-domain": {
+      "domain": [
+        "frontiersin.org"
+      ],
+      "crossmark-restriction": true
+    },
+    "short-container-title": [
+      "Front. Commun."
+    ],
+    "abstract": "<jats:p>Risk communication during COVID-19 is essential to have support, but it is challenging in developing countries due to a lack of communication setup. It is more difficult for the low-income, marginal communities, and specifically, women in developing countries. To understand this, particularly during the COVID-19 pandemic, we conducted a qualitative study among <jats:italic>N</jats:italic> = 37 women (urban 20, rural = 17) across Bangladesh that presents the risk communication factors related to social and financial challenges. It reveals that the majority of the urban communities lack communication with local authorities, where urban low-income communities are the worst sufferers. Due to that, the majority of the urban participants could not get financial support, whereas the rural participants received such support for having communications with local authorities during the pandemic. However, access to technology helped some participants share and receive pandemic-related information about risk communication, and the adoption of financial technology helped to get emergency financial support through risk communication. Moreover, this work is expected to understand the role of risk communication during the COVID-19 pandemic among women in Bangladesh.</jats:p>",
+    "DOI": "10.3389/fcomm.2022.878050",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2022,
+          5,
+          18
+        ]
+      ],
+      "date-time": "2022-05-18T07:06:56Z",
+      "timestamp": 1652857616000
+    },
+    "update-policy": "https://doi.org/10.3389/crossmark-policy",
+    "source": "Crossref",
+    "is-referenced-by-count": 8,
+    "title": [
+      "Risk Communication During COVID-19 Pandemic: Impacting Women in Bangladesh"
+    ],
+    "prefix": "10.3389",
+    "volume": "7",
+    "author": [
+      {
+        "given": "Nova",
+        "family": "Ahmed",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Rahat Jahangir",
+        "family": "Rony",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Anik",
+        "family": "Sinha",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Md. Sabbir",
+        "family": "Ahmed",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Anik",
+        "family": "Saha",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Syeda Shabnam",
+        "family": "Khan",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Ifti Azad",
+        "family": "Abeer",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Shajnush",
+        "family": "Amir",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Tanvir Hasan",
+        "family": "Fuad",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "member": "1965",
+    "published-online": {
+      "date-parts": [
+        [
+          2022,
+          5,
+          18
+        ]
+      ]
+    },
+    "reference": [
+      {
+        "key": "B1",
+        "doi-asserted-by": "publisher",
+        "first-page": "137",
+        "DOI": "10.34172/hpp.2021.18",
+        "article-title": "Risk communication and community engagement strategies for COVID-19 in 13 African countries",
+        "volume": "11",
+        "author": "Adebisi",
+        "year": "2021",
+        "journal-title": "Health Promot. Perspect."
+      },
+      {
+        "key": "B2",
+        "doi-asserted-by": "publisher",
+        "first-page": "10",
+        "DOI": "10.1145/3406034",
+        "article-title": "Design thinking around Covid-19: focusing on the garment workers of Bangladesh",
+        "volume": "27",
+        "author": "Ahmed",
+        "year": "",
+        "journal-title": "Interactions"
+      },
+      {
+        "key": "B3",
+        "doi-asserted-by": "publisher",
+        "first-page": "5",
+        "DOI": "10.30577/jba.v3i2.45",
+        "article-title": "Social distancing challenges for marginal communities during COVID-19 pandemic in Bangladesh",
+        "volume": "3",
+        "author": "Ahmed",
+        "year": "",
+        "journal-title": "J. Biomed. Anal."
+      },
+      {
+        "key": "B4",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/2926676.2926681",
+        "article-title": "“Computing beyond gender-imposed limits,”",
+        "author": "Ahmed",
+        "year": "2016",
+        "journal-title": "Proceedings of the Second Workshop on Computing within Limits"
+      },
+      {
+        "key": "B5",
+        "doi-asserted-by": "publisher",
+        "first-page": "739",
+        "DOI": "10.1177/0266666918792040",
+        "article-title": "Influence of socio-demographic factors on mobile phone adoption in rural Bangladesh: policy implications",
+        "volume": "35",
+        "author": "Alam",
+        "year": "2019",
+        "journal-title": "Inform. Dev."
+      },
+      {
+        "key": "B6",
+        "unstructured": "2022"
+      },
+      {
+        "key": "B7",
+        "doi-asserted-by": "publisher",
+        "first-page": "77",
+        "DOI": "10.1191/1478088706qp063oa",
+        "article-title": "Using thematic analysis in psychology",
+        "volume": "3",
+        "author": "Braun",
+        "year": "2006",
+        "journal-title": "Qual. Res. Psychol"
+      },
+      {
+        "key": "B8",
+        "unstructured": "Bangladesh Telecommunications Company Limited2022"
+      },
+      {
+        "key": "B9",
+        "unstructured": "Coronavirus: Bangladesh Declares Public Holiday From March 26 to April 42022"
+      },
+      {
+        "key": "B10",
+        "doi-asserted-by": "publisher",
+        "first-page": "107",
+        "DOI": "10.1111/j.1365-2648.2007.04569.x",
+        "article-title": "The qualitative content analysis process",
+        "volume": "62",
+        "author": "Elo",
+        "year": "2008",
+        "journal-title": "J. Adv. Nurs."
+      },
+      {
+        "key": "B11",
+        "doi-asserted-by": "crossref",
+        "DOI": "10.4324/9780203793206",
+        "volume-title": "Discovery of Grounded Theory: Strategies for Qualitative Research",
+        "author": "Glaser",
+        "year": "2017"
+      },
+      {
+        "key": "B12",
+        "doi-asserted-by": "publisher",
+        "first-page": "1",
+        "DOI": "10.2471/BLT.20.255695",
+        "article-title": "CoronaTracker: worldwide COVID-19 outbreak data analysis and prediction",
+        "volume": "1",
+        "author": "Hamzah",
+        "year": "2020",
+        "journal-title": "Bull. World Health Organ."
+      },
+      {
+        "key": "B13",
+        "doi-asserted-by": "publisher",
+        "first-page": "120201",
+        "DOI": "10.1016/j.techfore.2020.120201",
+        "article-title": "Misinformation sharing and social media fatigue during COVID-19: An affordance and cognitive load perspective",
+        "volume": "159",
+        "author": "Islam",
+        "year": "2020",
+        "journal-title": "Technol. Forecast. Soc. Change"
+      },
+      {
+        "key": "B14",
+        "doi-asserted-by": "publisher",
+        "first-page": "152",
+        "DOI": "10.47108/jidhealth.Vol3.Iss2.58",
+        "article-title": "COVID-19 pandemic is a worldwide typical biopsychosocial crisis",
+        "volume": "3",
+        "author": "Jadoo",
+        "year": "2020",
+        "journal-title": "J. Ideas Health"
+      },
+      {
+        "key": "B15",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3429360.3468212",
+        "article-title": "“COVID has made Everyone Digital and Digitally Independent”: Understanding Working Women's DFS and Technol*ogy Adoption during COVID Pandemic in Bangladesh,”",
+        "author": "Jahangir Rony",
+        "year": "2021",
+        "journal-title": "Asian CHI Symposium 2021"
+      },
+      {
+        "key": "B16",
+        "doi-asserted-by": "publisher",
+        "first-page": "194",
+        "DOI": "10.1093/jnci/90.3.194",
+        "article-title": "Improving public understanding guidelines for communicating emerging science on nutrition, food safety, and health",
+        "volume": "90",
+        "author": "Johnson",
+        "year": "1998",
+        "journal-title": "J. Natl. Cancer Inst"
+      },
+      {
+        "key": "B17",
+        "volume-title": "“A Global Middle Class Is More Promise than Reality: From 2001 to 2011, Nearly 700 Million Step Out of Poverty, but Most Only Barely”",
+        "author": "Kochhar",
+        "year": "2015"
+      },
+      {
+        "key": "B18",
+        "unstructured": "2021"
+      },
+      {
+        "key": "B19",
+        "doi-asserted-by": "publisher",
+        "first-page": "e0240709",
+        "DOI": "10.1371/journal.pone.0240709",
+        "article-title": "COVID-19 induced economic loss and ensuring food security for vulnerable groups: policy implications from Bangladesh",
+        "volume": "15",
+        "author": "Mottaleb",
+        "year": "2020",
+        "journal-title": "PLoS ONE"
+      },
+      {
+        "key": "B20",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3290605.3300490",
+        "article-title": "“Digital financial needs of micro-entrepreneur women in Pakistan: is mobile money the answer?,”",
+        "author": "Mustafa",
+        "year": "2019",
+        "journal-title": "Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems"
+      },
+      {
+        "key": "B21",
+        "doi-asserted-by": "publisher",
+        "first-page": "261",
+        "DOI": "10.4103/ijcm.IJCM_598_20",
+        "article-title": "Replicating the Kerala state's successful COVID-19 containment model: insights on what worked",
+        "volume": "45",
+        "author": "Rahim",
+        "year": "2020",
+        "journal-title": "Indian J. Commun. Med."
+      },
+      {
+        "key": "B22",
+        "doi-asserted-by": "publisher",
+        "first-page": "3793",
+        "DOI": "10.4103/jfmpc.jfmpc_719_20",
+        "article-title": "Importance of effective communication during COVID-19 infodemic",
+        "volume": "9",
+        "author": "Reddy",
+        "year": "2020",
+        "journal-title": "J. Family Med. Primary Care"
+      },
+      {
+        "key": "B23",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3290605.3300232",
+        "article-title": "“They Don't Leave Us Alone Anywhere We Go' gender and digital abuse in South Asia,”",
+        "author": "Sambasivan",
+        "year": "2019",
+        "journal-title": "Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems"
+      },
+      {
+        "key": "B24",
+        "first-page": "127",
+        "article-title": "“Privacy is not for me, it's for those rich women': performative privacy practices on mobile phones by women in South Asia,”",
+        "author": "Sambasivan",
+        "year": "2018",
+        "journal-title": "Fourteenth Symposium on Usable Privacy and Security"
+      },
+      {
+        "key": "B25",
+        "doi-asserted-by": "publisher",
+        "first-page": "100104",
+        "DOI": "10.1016/j.osnem.2020.100104",
+        "article-title": "An exploratory study of covid-19 misinformation on twitter",
+        "volume": "22",
+        "author": "Shahi",
+        "year": "2021",
+        "journal-title": "Online Soc. Networks Media"
+      },
+      {
+        "key": "B26",
+        "doi-asserted-by": "publisher",
+        "first-page": "6148",
+        "DOI": "10.1007/s10668-020-00867-y",
+        "article-title": "Strategic assessment of COVID-19 pandemic in Bangladesh: comparative lockdown scenario analysis, public perception, and management for sustainability",
+        "volume": "23",
+        "author": "Shammi",
+        "year": "2021",
+        "journal-title": "Environ. Dev. Sustain."
+      },
+      {
+        "key": "B27",
+        "doi-asserted-by": "publisher",
+        "first-page": "115",
+        "DOI": "10.1080/13669870903503655",
+        "article-title": "A model for developing risk communication strategy",
+        "volume": "13",
+        "author": "Smillie",
+        "year": "2010",
+        "journal-title": "J. Risk Res."
+      },
+      {
+        "key": "B28",
+        "doi-asserted-by": "publisher",
+        "first-page": "1806",
+        "DOI": "10.1002/art.41468",
+        "article-title": "The “Infodemic” of COVID-19",
+        "volume": "72",
+        "author": "Solomon",
+        "year": "2020",
+        "journal-title": "Arthritis Rheumatol."
+      },
+      {
+        "key": "B29",
+        "first-page": "1",
+        "article-title": "“Design within a patriarchal society: Opportunities and challenges in designing for rural women in Bangladesh,”",
+        "author": "Sultana",
+        "year": "2018",
+        "journal-title": "Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems"
+      },
+      {
+        "key": "B30",
+        "doi-asserted-by": "publisher",
+        "first-page": "240",
+        "DOI": "10.1177/10755470211061513",
+        "article-title": "Risk communication and community engagement during the migrant worker COVID-19 outbreak in Singapore",
+        "volume": "44",
+        "author": "Tam",
+        "year": "2021",
+        "journal-title": "Sci. Commun."
+      },
+      {
+        "key": "B31",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1108/IJSSP-05-2021-0122",
+        "article-title": "Can risk communication in mass media improve compliance behavior in the COVID-19 pandemic? Evidence from Vietnam",
+        "author": "Thanh",
+        "year": "2021",
+        "journal-title": "Int. J. Sociol. Soc. Policy"
+      },
+      {
+        "key": "B32",
+        "unstructured": "LondonThe Royal SocietyScientists and the Media: Guidelines for Scientists Working with the Media and Comments on a Press Code of Practice2000"
+      },
+      {
+        "key": "B33",
+        "doi-asserted-by": "publisher",
+        "first-page": "133",
+        "DOI": "10.1177/1035304620927107",
+        "article-title": "The COVID-19 pandemic: Lessons on building more equal and sustainable societies",
+        "volume": "31",
+        "author": "Van Barneveld",
+        "year": "2020",
+        "journal-title": "Econ. Labour Relat. Rev."
+      },
+      {
+        "key": "B34",
+        "unstructured": "Bangladesh2021"
+      },
+      {
+        "key": "B35",
+        "doi-asserted-by": "publisher",
+        "first-page": "44",
+        "DOI": "10.1016/j.ijid.2020.03.004",
+        "article-title": "The SARS-CoV-2 outbreak: what we know",
+        "volume": "94",
+        "author": "Wu",
+        "year": "2020",
+        "journal-title": "Int. J. Infect. Dis"
+      }
+    ],
+    "container-title": [
+      "Frontiers in Communication"
+    ],
+    "original-title": [],
+    "link": [
+      {
+        "URL": "https://www.frontiersin.org/articles/10.3389/fcomm.2022.878050/full",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2022,
+          5,
+          18
+        ]
+      ],
+      "date-time": "2022-05-18T07:07:03Z",
+      "timestamp": 1652857623000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://www.frontiersin.org/articles/10.3389/fcomm.2022.878050/full"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2022,
+          5,
+          18
+        ]
+      ]
+    },
+    "references-count": 35,
+    "alternative-id": [
+      "10.3389/fcomm.2022.878050"
+    ],
+    "URL": "https://doi.org/10.3389/fcomm.2022.878050",
+    "relation": {},
+    "ISSN": [
+      "2297-900X"
+    ],
+    "issn-type": [
+      {
+        "value": "2297-900X",
+        "type": "electronic"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2022,
+          5,
+          18
+        ]
+      ]
+    },
+    "article-number": "878050"
+  }
+}
