@@ -93,7 +93,8 @@ Library IDs: Next.js `/vercel/next.js`, React `/facebook/react`, Tailwind CSS `/
 ## Further reading
 
 - @docs/architecture/STRATEGY.md — upstream waterfall architecture & business model
-- @docs/architecture/SCHEMA.md — data schema
+- @docs/product/VISION.md — product vision and target user
+- @docs/architecture/data-schema.md — data schema
 - @docs/architecture/theming-system.md — theming implementation
+- @docs/architecture/ingestion.md — ingestion architecture (why, not how — read the code for mechanics)
 - @docs/guides/forms.md — form submissions system, wiring standalone forms to Payload
-- @docs/security-issues.md — security audit findings
