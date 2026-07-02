@@ -1,6 +1,6 @@
 # Documentation
 
-This is the documentation for the LabKit codebase, which is built on top of the PayBlocks template (a PayloadCMS + shadcn/ui website builder).
+This is the documentation for the LabKit codebase — a PayloadCMS content platform for research lab websites, originally forked from the shadcnblocks Payload template (the page-builder block system has since been removed; see root `CLAUDE.md` for the fork lineage).
 
 ## Navigation
 
@@ -8,7 +8,6 @@ This is the documentation for the LabKit codebase, which is built on top of the 
 New to the project? Start here to get your development environment running.
 - [Installation](./getting-started/installation.md) - Set up the project locally
 - [Database Setup](./getting-started/database-setup.md) - Configure MongoDB
-- [Environment Variables](./getting-started/environment-variables.md) - Required configuration
 - [First Steps](./getting-started/first-steps.md) - Seed the database and explore
 
 ### Guides
@@ -16,41 +15,32 @@ Task-oriented how-tos for common operations.
 - [Deploying](./guides/deploying.md) - Deploy to Vercel or other platforms
 - [Authentication](./guides/authentication.md) - Set up Google OAuth and authentication
 - [Email Configuration](./guides/email-configuration.md) - Configure email providers
-- [Editing Pages](./guides/editing-pages.md) - Use the page builder and theme customization
 - [Roles and Permissions](./guides/roles-and-permissions.md) - Manage user access control
 - [Forms](./guides/forms.md) - Form submissions, Turnstile, and wiring standalone forms to Payload
 
 ### Architecture
 Understanding-oriented explanations of how the system works.
-- [Data Schema](./architecture/data-schema.md) - Research collections, relationships, and data model
+- [Strategy](./architecture/STRATEGY.md) - Upstream waterfall architecture & business model
+- [Data Schema](./architecture/data-schema.md) - Research collection ownership & relationships
 - [Access Control](./architecture/access-control.md) - Custom RBAC extension and permissions system
 - [Theming System](./architecture/theming-system.md) - CMS-driven theming architecture
-- [Blocks and Heroes](./architecture/blocks-and-heroes.md) - Hero+Layout pattern and block system *(coming soon)*
-- [Overview](./architecture/overview.md) - System design and key patterns *(coming soon)*
-
-### Development
-For contributors extending or modifying the system.
-- [Custom Blocks](./development/custom-blocks.md) - Add and modify blocks
-- [Code Smells](./development/code-smells.md) - Learn common smells in this codebase and refactoring approaches
-- [Block Registry](./development/block-registry.md) - Reference of all available blocks *(coming soon)*
-- [Contributing](./development/contributing.md) - Code style and contribution guidelines *(coming soon)*
-- [Troubleshooting](./development/troubleshooting.md) - Common development issues *(coming soon)*
-
-### Operations
-Keeping the system running safely and efficiently.
-- *(Section reserved for future operational guides)*
 
 ### Product
-Product vision and positioning (for evaluators and contributors).
-- *(Section reserved for future product documentation)*
+- [Vision](./product/VISION.md) - Product vision and target user
+- [Roadmap](./product/ROADMAP.md) - Product decisions and sequencing
+- [Problem Analysis](./product/problem-analysis.md) - Why academic lab sites stay stale; constraints on building for labs
+- [Idea Evolution](./product/idea-evolution.md) - How the product pivoted from page-builder to data-centric CMS
+- [OpenAlex Automation Notes](./product/automation-notes.md) - Raw notes on what OpenAlex sync can and can't automate
 
-## About This Repo
-
-This repository contains:
-- **PayBlocks**: A block-based website builder using PayloadCMS and shadcn/ui blocks
-- **LabKit**: Research-specific extensions (collections, templates) for academic lab websites
-
-The research-specific features are built as add-ons on top of the base template. Eventually these may split into separate repositories.
+### Clients
+Per-client working material: specs, content data, and reference scrapes.
+- [DIAL](./clients/dial/) - DIAL Lab (North South University) — the first LabKit instance
+  - [Sitemap](./clients/dial/sitemap.md) - Page-by-page block and data source mapping
+  - [Product Context](./clients/dial/product-context.md) - Client background and goals
+  - [Site-wide Features](./clients/dial/site-wide-features.md) / [Global Layout](./clients/dial/global-layout.md) - Cross-page requirements
+  - `pages/` - Per-page content specs (home, research, publications, people, ...)
+  - `dial-data/` - Structured lab data (projects, publications, grants, team, awards) for CMS entry
+  - `scraped-data/` - Scrapes of the existing NSU HCI site and the PI's personal site (also future test fixtures for the ingestion pipeline)
 
 ## Documentation Philosophy
 

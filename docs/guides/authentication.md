@@ -1,66 +1,40 @@
 # Authentication
 
-Learn how to set up authentication in LabKit and about the supported providers.
+LabKit uses Payload's built-in email/password auth on the `Users` collection, plus an optional Google OAuth login button for the admin panel via the `payload-oauth2` plugin (`src/payload.config.ts`).
 
-LabKit includes built-in authentication support, including Google OAuth integration.
+## Google OAuth Setup
 
-## Google Authentication Setup
-1. Create a Google Cloud Project:
-   - Go to Google Cloud Console
-   - Create a new project or select an existing one
-   - Enable the Google OAuth2 API
-2. Configure OAuth Consent Screen:
-   - Go to “OAuth consent screen”
-   - Choose “External” user type
-   - Fill in the required information
-   - Add necessary scopes (`email`, `profile`)
-3. Create OAuth Credentials:
-   - Go to “Credentials”
-   - Click “Create Credentials” > “OAuth client ID”
-   - Choose “Web application”
-4. Add authorized redirect URIs:
-   - Development: `http://localhost:3000/api/auth/google/callback`
-   - Production: `https://your-domain.com/api/auth/google/callback`
-5. Set environment variables:
+Google login is disabled until both client credentials are set. Set these in `.env`:
 
 ```bash
-GOOGLE_CLIENT_ID=your_client_id
-GOOGLE_CLIENT_SECRET=your_client_secret
-GOOGLE_CALLBACK_URL=http://localhost:3000/api/auth/google/callback
+GOOGLE_LOGIN_CLIENT_ID=
+GOOGLE_LOGIN_CLIENT_SECRET=
 ```
 
-## Authentication Flow
-### Login Process
-1. User clicks “Login with Google”
-2. Redirected to the Google consent screen
-3. After approval, redirected back to your app
-4. Session created and user logged in
+To obtain them:
 
-### User Creation
-- First-time users automatically get a new account
-- Email and basic profile info synced from Google
-- Additional user fields can be filled later
+1. Create (or select) a project in the [Google Cloud Console](https://console.cloud.google.com/).
+2. Under "APIs & Services" → "OAuth consent screen", configure an External app with the `email` and `profile` scopes.
+3. Under "Credentials", create an OAuth Client ID of type "Web application".
+4. Add an authorized redirect URI matching your `NEXT_PUBLIC_SERVER_URL` — the plugin builds the callback path itself from `serverURL`, so check the network tab on a login attempt if you're unsure of the exact path for your `payload-oauth2` version.
 
-## Custom Authentication
-LabKit uses PayloadCMS’s authentication system. You can extend it with:
-- Additional OAuth providers
-- Email/password authentication
-- Custom authentication strategies
+There is no separate callback-URL env var — the plugin derives the redirect from `NEXT_PUBLIC_SERVER_URL`.
 
-Refer to PayloadCMS Authentication docs for more details.
+## Restricting Sign-in by Domain
 
-## Security Best Practices
-### Environment Variables
-- Never commit credentials to version control
-- Use different credentials for development and production
-- Regularly rotate secrets
+Set `ALLOWED_EMAIL_DOMAINS` (comma-separated) to reject Google sign-ins outside those domains:
 
-### OAuth Settings
-- Restrict authorized domains
-- Only request necessary scopes
-- Keep OAuth consent screen information up to date
+```bash
+ALLOWED_EMAIL_DOMAINS=example.edu,example.org
+```
 
-### Session Management
-- Configure appropriate session timeouts
-- Implement secure session storage
-- Handle session expiration gracefully
+This check happens in the `getUserInfo` callback in `src/payload.config.ts`, not in Google's OAuth consent flow — an unlisted domain still completes the Google auth handshake but is rejected afterward with "Email domain not allowed."
+
+## How Users Get Roles
+
+See [Roles and Permissions](./roles-and-permissions.md) and [Architecture: Access Control](../architecture/access-control.md) — role assignment on user creation is unrelated to which auth method (password vs. Google) was used to log in.
+
+## Related Files
+
+- `src/payload.config.ts` — `OAuth2Plugin` configuration, `googleAuthActive` flag
+- `src/components/AdminDashboard/LoginButton` — renders the Google login button when enabled

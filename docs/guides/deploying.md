@@ -31,25 +31,10 @@ LabKit is optimized for deployment on Vercel, but can be deployed to other platf
    - Add `BLOB_READ_WRITE_TOKEN` to your local and project environment variables.
    - After `BLOB_READ_WRITE_TOKEN` is set, Payload will switch from storing media in local files (`/public/media/...`) to storing them in Vercel Blob Storage. If you already uploaded media in the Payload admin UI before enabling blob storage, you need to manually upload them via the Vercel Blob Storage dashboard. Open your `/public/media` folder and drag-and-drop them into the Vercel Blob Storage Browser area (located in the Vercel dashboard).
 ## Alternative Deployments
-For deployments to other platforms, you’ll need to modify the storage adapter.
+For deployments to other platforms, you'll need to swap the storage adapter.
 
 ### Required Changes
-- Storage Adapter: replace the Vercel Blob storage adapter in `src/config/plugins/upload.ts`:
-
-```ts
-import { s3Adapter } from '@payloadcms/plugin-cloud-storage/s3'
-
-const storageAdapter = s3Adapter({
-  config: {
-    credentials: {
-      accessKeyId: process.env.S3_ACCESS_KEY_ID,
-      secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
-    },
-    region: process.env.S3_REGION,
-    bucket: process.env.S3_BUCKET,
-  },
-})
-```
+- Storage Adapter: the `vercelBlobStorage` plugin is registered directly in the `plugins` array in `src/payload.config.ts`. Replace it with a different `@payloadcms/storage-*` adapter (e.g. `@payloadcms/storage-s3`) per the [Payload Storage docs](https://payloadcms.com/docs/upload/storage-adapters).
 - Environment Variables: update your environment variables according to your chosen storage solution.
 
 ### Platform-Specific Guidelines
