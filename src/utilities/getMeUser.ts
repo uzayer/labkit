@@ -15,6 +15,14 @@ export const getMeUser = async (args?: {
   const cookieStore = await cookies()
   const token = cookieStore.get('payload-token')?.value
 
+  if (!token) {
+    if (nullUserRedirect) {
+      redirect(nullUserRedirect)
+    }
+
+    throw new Error('Missing payload auth token')
+  }
+
   const meUserReq = await fetch(`${NEXT_PUBLIC_SERVER_URL}/api/users/me`, {
     headers: {
       Authorization: `JWT ${token}`,
@@ -35,9 +43,8 @@ export const getMeUser = async (args?: {
     redirect(nullUserRedirect)
   }
 
-  // Token will exist here because if it doesn't the user will be redirected
   return {
-    token: token!,
+    token,
     user,
   }
 }

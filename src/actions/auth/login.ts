@@ -19,7 +19,7 @@ export async function login(formData: LoginFormData) {
       password: formData.password,
     })
     return result
-  } catch (error: any) {
+  } catch (error: unknown) {
     throw new Error(`Login failed: ${error instanceof Error ? error.message : 'Unknown error'}`)
   }
 }
@@ -30,7 +30,7 @@ export async function logout() {
       config,
     })
     return res
-  } catch (error: any) {
+  } catch (error: unknown) {
     throw new Error(`Logout failed: ${error instanceof Error ? error.message : 'Unknown error'}`)
   }
 }

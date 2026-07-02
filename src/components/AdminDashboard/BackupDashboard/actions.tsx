@@ -15,6 +15,41 @@ import { Readable } from 'node:stream'
 
 const BACKUPS_TO_KEEP = Number(process.env.BACKUPS_TO_KEEP) || 10
 const COLLECTION_FILE_NAME = 'collections.json'
+const GLOBAL_REVALIDATE_TAGS = [
+  'global_footer',
+  'global_header',
+  'global_page-config',
+  'global_pageConfig',
+  'global_theme-Config',
+  'global_themeConfig',
+] as const
+
+interface BackupFile {
+  content: Buffer
+  name: string
+}
+
+interface BackupDocument extends Record<string, unknown> {
+  _id: unknown
+}
+
+interface PageBreadcrumb {
+  url?: string
+}
+
+interface PageBackupDocument extends BackupDocument {
+  breadcrumbs?: PageBreadcrumb[][]
+}
+
+type BackupCollections = Record<string, BackupDocument[]>
+
+function logBackupEvent(
+  level: 'log' | 'warn' | 'error',
+  event: string,
+  metadata?: Record<string, unknown>,
+) {
+  console[level](`[BackupDashboard] ${event}`, metadata ?? {})
+}
 
 export async function getDb() {
   const payload = await getPayload({ config: configPromise })
@@ -23,10 +58,181 @@ export async function getDb() {
   }
   const db = payload.db.connection.db
   if (!db) {
-    console.error('Backup failed: Database not initialized')
+    logBackupEvent('error', 'database_not_initialized')
     throw new Error('Backup failed: Database not initialized')
   }
   return db!
+}
+
+type BackupDb = Awaited<ReturnType<typeof getDb>>
+
+function isPlainObject(value: unknown): value is Record<string, unknown> {
+  return typeof value === 'object' && value !== null && !Array.isArray(value)
+}
+
+function parseBackupCollections(raw: unknown): BackupCollections {
+  if (!isPlainObject(raw)) {
+    throw new Error('Backup restore failed: Expected top-level object keyed by collection name')
+  }
+
+  return Object.entries(raw).reduce<BackupCollections>((acc, [collectionName, records]) => {
+    if (!Array.isArray(records)) {
+      throw new Error(
+        `Backup restore failed: Collection "${collectionName}" must be an array of records`,
+      )
+    }
+
+    acc[collectionName] = records.map((record, index) => {
+      if (!isPlainObject(record)) {
+        throw new Error(
+          `Backup restore failed: Collection "${collectionName}" record ${index} must be an object`,
+        )
+      }
+
+      if (!('_id' in record)) {
+        throw new Error(
+          `Backup restore failed: Collection "${collectionName}" record ${index} is missing "_id"`,
+        )
+      }
+
+      return record as BackupDocument
+    })
+
+    return acc
+  }, {})
+}
+
+function parseBackupText(serializedCollections: string): BackupCollections {
+  return parseBackupCollections(EJSON.parse(serializedCollections))
+}
+
+function getBackupExtension(downloadUrl: string) {
+  return downloadUrl.split('?')[0] ?? downloadUrl
+}
+
+async function fetchBackupResponse(downloadUrl: string) {
+  const response = await fetch(downloadUrl)
+
+  if (!response.ok) {
+    throw new Error(
+      `Backup restore failed: Unable to download backup (${response.status} ${response.statusText})`,
+    )
+  }
+
+  return response
+}
+
+async function restoreBackupMedia(files: BackupFile[]) {
+  if (files.length === 0) {
+    return
+  }
+
+  const restoredMedia = await Promise.all(
+    files.map((media) =>
+      put(media.name, media.content, { access: 'public', addRandomSuffix: false }),
+    ),
+  )
+
+  logBackupEvent('log', 'media_restored', { count: restoredMedia.length })
+}
+
+async function loadBackupCollections(downloadUrl: string): Promise<BackupCollections> {
+  const backupPath = getBackupExtension(downloadUrl)
+  const response = await fetchBackupResponse(downloadUrl)
+
+  if (backupPath.endsWith('.json')) {
+    return parseBackupText(await response.text())
+  }
+
+  if (backupPath.endsWith('.gz')) {
+    const files = await resolveTarGzip(Buffer.from(await response.arrayBuffer()))
+    const collectionFile = files.find((file) => file.name === COLLECTION_FILE_NAME)
+
+    if (!collectionFile) {
+      throw new Error(
+        `Backup restore failed: Archive is missing required file "${COLLECTION_FILE_NAME}"`,
+      )
+    }
+
+    await restoreBackupMedia(files.filter((file) => file.name !== COLLECTION_FILE_NAME))
+
+    return parseBackupText(collectionFile.content.toString())
+  }
+
+  throw new Error(`File type of backup ${downloadUrl} not supported`)
+}
+
+function getUniqueIndexFields(indexes: { key: Record<string, unknown>; unique?: boolean }[]) {
+  return indexes.filter((index) => index.unique).flatMap((index) => Object.keys(index.key))
+}
+
+function createRestoreFilter(doc: BackupDocument, uniqueIndexes: string[]) {
+  if (uniqueIndexes.length === 0) {
+    return { _id: doc._id }
+  }
+
+  return {
+    $or: [{ _id: doc._id }, ...uniqueIndexes.map((field) => ({ [field]: doc[field] }))],
+  }
+}
+
+async function restoreCollection(
+  db: BackupDb,
+  collectionName: string,
+  collectionData: BackupDocument[],
+  mergeData: boolean,
+) {
+  if (collectionData.length === 0) {
+    return
+  }
+
+  logBackupEvent('log', 'collection_restore_started', {
+    collectionName,
+    documentCount: collectionData.length,
+  })
+
+  const collection = db.collection(collectionName)
+  const uniqueIndexes = getUniqueIndexFields(await collection.indexes())
+
+  if (!mergeData) {
+    await collection.deleteMany({})
+  }
+
+  const operations = collectionData.map((doc) => ({
+    updateOne: {
+      filter: createRestoreFilter(doc, uniqueIndexes),
+      update: { $set: doc },
+      upsert: true,
+    },
+  }))
+
+  const result = await collection.bulkWrite(
+    operations as Parameters<typeof collection.bulkWrite>[0],
+  )
+
+  logBackupEvent('log', 'collection_restore_completed', {
+    collectionName,
+    matchedCount: result.matchedCount,
+    modifiedCount: result.modifiedCount,
+    upsertedCount: result.upsertedCount,
+  })
+}
+
+function revalidateRestoredPages(collectionData: BackupDocument[]) {
+  collectionData
+    .flatMap((page) =>
+      ((page as PageBackupDocument).breadcrumbs ?? []).map((crumbs) => crumbs.at(-1)?.url),
+    )
+    .filter((pathName): pathName is string => Boolean(pathName))
+    .forEach((pathName) => {
+      logBackupEvent('log', 'page_revalidated', { path: pathName })
+      revalidatePath(pathName)
+    })
+}
+
+function revalidateBackupGlobals() {
+  GLOBAL_REVALIDATE_TAGS.forEach((tag) => revalidateTag(tag, 'max'))
+  revalidatePath('/admin')
 }
 
 /**
@@ -57,11 +263,11 @@ function createTarGzip(files: { name: string; content: Buffer }[]) {
 }
 
 function resolveTarGzip(fileBuffer: Buffer) {
-  return new Promise<{ name: string; content: Buffer }[]>((resolve, reject) => {
+  return new Promise<BackupFile[]>((resolve, reject) => {
     const gunzip = zlib.createGunzip()
     const extract = tar.extract()
 
-    const files: { name: string; content: Buffer }[] = []
+    const files: BackupFile[] = []
 
     extract.on('entry', (header, stream, next) => {
       const chunks: Buffer[] = []
@@ -92,81 +298,22 @@ export async function restoreBackup(
 ) {
   'use server'
   const db = await getDb()
-  const data = await fetch(downloadUrl)
-  let collections: Record<string, { _id?: any }[]> = {}
-  if (downloadUrl.split('?')?.[0]?.endsWith('.json')) {
-    collections = EJSON.parse(await data.text())
-  } else if (downloadUrl.split('?')?.[0]?.endsWith('.gz')) {
-    const files = await resolveTarGzip(Buffer.from(await data.arrayBuffer()))
-    collections = EJSON.parse(
-      files.find((file) => file.name === COLLECTION_FILE_NAME)?.content?.toString() || '{}',
-    )
-    const medias = files.filter((file) => file.name !== COLLECTION_FILE_NAME)
-    console.log(
-      'Restored medias',
-      await Promise.all(
-        medias.map((media) => {
-          return put(media.name, media.content, { access: 'public', addRandomSuffix: false })
-        }),
-      ),
-    )
-  } else {
-    throw new Error(`File type of backup ${downloadUrl} not supported`)
-  }
+  const collections = await loadBackupCollections(downloadUrl)
 
   for (const collectionName of Object.keys(collections)) {
     if (collectionBlacklist.includes(collectionName)) {
       continue
     }
-    const collectionData = collections[collectionName]
-    if (collectionData.length > 0) {
-      console.log('Restoring collection', collectionName)
-      const collection = db.collection(collectionName)
-      const indexes = await collection.indexes()
-      const uniqueIndexes = indexes
-        .filter((idx) => idx.unique)
-        .flatMap((idx) => Object.keys(idx.key))
-      if (!mergeData) {
-        await collection.deleteMany({})
-      }
-      const res = await collection.bulkWrite(
-        collectionData.map((doc) => {
-          return {
-            updateOne: {
-              filter:
-                uniqueIndexes.length > 0
-                  ? {
-                      $or: [
-                        { _id: doc._id },
-                        ...uniqueIndexes.map((field) => ({ [field]: doc[field] })),
-                      ],
-                    }
-                  : { _id: doc._id },
-              update: { $set: doc },
-              upsert: true,
-            },
-          }
-        }),
-      )
-      console.log('Restoring done', res)
-    }
 
-    if (collectionName === 'pages' && (collectionData as any)?.slug) {
-      Object.values((collectionData as any).breadcrumbs)
-        .map((b: { url: string }[]) => b[b.length - 1]?.url)
-        .forEach((path) => {
-          console.log('revalidate path', path)
-          revalidatePath(path)
-        })
+    const collectionData = collections[collectionName]
+    await restoreCollection(db, collectionName, collectionData, mergeData)
+
+    if (collectionName === 'pages') {
+      revalidateRestoredPages(collectionData)
     }
   }
-  revalidateTag('global_footer', 'max')
-  revalidateTag('global_header', 'max')
-  revalidateTag('global_page-config', 'max')
-  revalidateTag('global_pageConfig', 'max')
-  revalidateTag('global_theme-Config', 'max')
-  revalidateTag('global_themeConfig', 'max')
-  revalidatePath('/admin')
+
+  revalidateBackupGlobals()
   redirect('/admin/logout')
 }
 
@@ -178,17 +325,17 @@ export async function restoreSeedMedia() {
     if (process.env.BLOB_READ_WRITE_TOKEN) {
       // Upload file to vercel blob storage
       const blob = await put(file, data, { access: 'public', addRandomSuffix: false })
-      console.log('Restored seed media to vercel blob storage', file, blob)
+      logBackupEvent('log', 'seed_media_restored_to_blob', { file, url: blob.url })
     } else {
       // Copy file to public media directory
       const folderPath = path.join(process.cwd(), 'public/media')
       const publicPath = path.join(folderPath, file)
       await fs.mkdir(folderPath, { recursive: true })
       await fs.writeFile(publicPath, data)
-      console.log('Restored seed media to public directory', file, publicPath)
+      logBackupEvent('log', 'seed_media_restored_to_public_dir', { file, publicPath })
     }
   }
-  console.log('Restored all files')
+  logBackupEvent('log', 'seed_media_restore_completed', { fileCount: files.length })
   return files
 }
 
@@ -201,7 +348,9 @@ export async function createMediaBackupFile(
       const matchingFiles = await list({ limit: 2, prefix: media.filename })
       const blob = matchingFiles.blobs.find((blob) => blob.pathname === media.filename)
       if (!blob) {
-        console.warn('Backup: File was in collection but not in blob storage', media.filename)
+        logBackupEvent('warn', 'media_missing_from_blob_storage', {
+          filename: media.filename,
+        })
         return undefined
       }
       const data = await fetch(blob.downloadUrl)
@@ -213,40 +362,66 @@ export async function createMediaBackupFile(
     ...(mediaFiles.filter(Boolean) as { name: string; content: Buffer }[]),
   ])
 }
+
+async function pruneOldCronBackups() {
+  const { blobs } = await list({
+    prefix: 'backups/cron-',
+    limit: 1000,
+  })
+
+  const sorted = blobs.sort(
+    (a, b) => new Date(b.uploadedAt).getTime() - new Date(a.uploadedAt).getTime(),
+  )
+  const backupsToDelete = sorted.slice(BACKUPS_TO_KEEP)
+
+  for (const blob of backupsToDelete) {
+    await del(blob.url)
+    logBackupEvent('log', 'cron_backup_deleted', { pathname: blob.pathname })
+  }
+}
+
+async function collectAllDbData(db: BackupDb): Promise<Record<string, unknown[]>> {
+  const collections = await db.listCollections().toArray()
+  const allData: Record<string, unknown[]> = {}
+
+  for (const collection of collections) {
+    allData[collection.name] = await db.collection(collection.name).find({}).toArray()
+  }
+
+  return allData
+}
+
+async function buildBackupFile(allData: Record<string, unknown[]>, includeMedia: boolean) {
+  const collectionBackupFile = EJSON.stringify(allData)
+
+  if (!includeMedia) {
+    return collectionBackupFile
+  }
+
+  return createMediaBackupFile(
+    collectionBackupFile,
+    ((allData.media as { filename: string }[] | undefined) ?? []).filter(
+      (media): media is { filename: string } =>
+        isPlainObject(media) && typeof media.filename === 'string',
+    ),
+  )
+}
+
 export async function createBackup(cron: boolean = false, includeMedia: boolean = false) {
   const currentHostname = getCurrentHostname()
   const currentDbName = getCurrentDbName()
 
   if (cron) {
-    const { blobs } = await list({
-      prefix: 'backups/cron-',
-      limit: 1000,
-    })
-    // Only keep the 10(BACKUPS_TO_KEEP) newest backups and delete the rest. Only for cron backups (prefix cron-).
-    const sorted = blobs.sort(
-      (a, b) => new Date(b.uploadedAt).getTime() - new Date(a.uploadedAt).getTime(),
-    )
-    const oldest = sorted.slice(BACKUPS_TO_KEEP - 1)
-    for (const blob of oldest) {
-      await del(blob.url)
-      console.log('Deleted backup', blob.pathname)
-    }
+    await pruneOldCronBackups()
   }
 
   const db = await getDb()
-  const collections = await db.listCollections().toArray()
-  const allData = {}
-  for (const collection of collections) {
-    allData[collection.name] = await db.collection(collection.name).find({}).toArray()
-  }
-  const collectionBackupFile = EJSON.stringify(allData)
-  const backupFile = includeMedia
-    ? await createMediaBackupFile(collectionBackupFile, allData?.['media'] || [])
-    : collectionBackupFile
+  const allData = await collectAllDbData(db)
+  const backupFile = await buildBackupFile(allData, includeMedia)
   const name = `backups/${createBlobName(cron ? 'cron' : 'manual', currentDbName, currentHostname, Date.now().toString(), includeMedia ? 'tar.gz' : 'json')}`
   await put(name, backupFile, { access: 'public' })
   revalidatePath('/admin')
-  console.log('Backup created', name)
+  logBackupEvent('log', 'backup_created', { name, includeMedia, cron })
 }
 export async function listBackups() {
   'use server'

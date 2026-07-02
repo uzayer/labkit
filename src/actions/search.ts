@@ -6,6 +6,60 @@ import { Search } from '@/payload-types'
 
 const configPromise = config
 
+function logSearchEvent(
+  level: 'warn' | 'error',
+  event: string,
+  metadata?: Record<string, unknown>,
+) {
+  console[level](`[search] ${event}`, metadata ?? {})
+}
+
+function matchesSearchQuery(doc: Search, query: string): boolean {
+  const queryLower = query.toLowerCase()
+  const title = (doc.title || '').toLowerCase()
+  const extractedText = (doc.meta?.extractedText || '').toLowerCase()
+  const metaTitle = (doc.meta?.title || '').toLowerCase()
+  const metaDescription = (doc.meta?.description || '').toLowerCase()
+
+  return (
+    title.includes(queryLower) ||
+    extractedText.includes(queryLower) ||
+    metaTitle.includes(queryLower) ||
+    metaDescription.includes(queryLower)
+  )
+}
+
+function toSearchResult(doc: Search): SearchResult {
+  const collection = doc.doc?.relationTo || 'pages'
+  const slug = doc.slug || ''
+  const url = collection === 'posts' ? `/posts/${slug}` : `/${slug}`
+  const categories =
+    doc.categories
+      ?.filter(
+        (
+          category,
+        ): category is { relationTo?: string | null; id?: string | null; title?: string | null } =>
+          Boolean(category?.relationTo && category?.id && category?.title),
+      )
+      .map((category) => ({
+        relationTo: category.relationTo!,
+        id: category.id!,
+        title: category.title!,
+      })) || undefined
+
+  return {
+    id: doc.id,
+    title: doc.title || doc.meta?.title || '',
+    description: doc.meta?.description || '',
+    slug,
+    url,
+    type: collection,
+    meta: doc.meta,
+    categories,
+    updatedAt: doc.updatedAt,
+  }
+}
+
 export interface SearchResult {
   id: string
   title: string
@@ -13,11 +67,7 @@ export interface SearchResult {
   slug: string
   url: string
   type: string
-  meta?: {
-    title?: string
-    description?: string
-    image?: string | number
-  }
+  meta?: Search['meta']
   categories?: Array<{
     relationTo: string
     id: string
@@ -31,6 +81,18 @@ export interface SearchResponse {
   totalDocs: number
   error?: string
   message?: string
+}
+
+function getFallbackFetchLimit(limit: number): number {
+  return Math.min(Math.max(limit * 3, limit), 50)
+}
+
+function shouldUseInMemoryFallback(error: unknown): boolean {
+  const message = error instanceof Error ? error.message.toLowerCase() : ''
+
+  return ['contains', 'field', 'operator', 'path', 'query', 'where', 'search'].some((term) =>
+    message.includes(term),
+  )
 }
 
 export async function search(query?: string, limit: number = 10): Promise<SearchResponse> {
@@ -47,29 +109,14 @@ export async function search(query?: string, limit: number = 10): Promise<Search
           sort: '-updatedAt',
         })
 
-        const results: SearchResult[] = recentResults.docs.map((doc: any) => {
-          const collection = doc.doc?.relationTo || 'pages'
-          const slug = doc.slug || ''
-          const url = collection === 'posts' ? `/posts/${slug}` : `/${slug}`
-
-          return {
-            id: doc.id,
-            title: doc.title || doc.meta?.title || '',
-            description: doc.meta?.description || doc.excerpt || '',
-            slug,
-            url,
-            type: collection,
-            meta: doc.meta,
-            categories: doc.categories || [],
-            updatedAt: doc.updatedAt,
-          }
-        })
+        const results: SearchResult[] = recentResults.docs.map(toSearchResult)
 
         return {
           results,
           totalDocs: recentResults.totalDocs,
         }
       } catch (error) {
+        logSearchEvent('error', 'recent_results_failed', { error })
         return {
           results: [],
           totalDocs: 0,
@@ -98,7 +145,7 @@ export async function search(query?: string, limit: number = 10): Promise<Search
         limit: 1,
       })
     } catch (testError) {
-      console.error('Cannot access search collection:', testError)
+      logSearchEvent('error', 'collection_access_failed', { error: testError })
       return {
         error: 'Cannot access search collection',
         message: testError instanceof Error ? testError.message : 'Unknown error',
@@ -138,76 +185,41 @@ export async function search(query?: string, limit: number = 10): Promise<Search
         sort: ['-priority', '-updatedAt'],
       })
     } catch (queryError) {
-      // If title query fails, try without where clause and filter in memory
-      console.warn('Title query failed, trying fallback:', queryError)
+      if (!shouldUseInMemoryFallback(queryError)) {
+        throw queryError
+      }
+
+      const fallbackLimit = getFallbackFetchLimit(limit)
+      logSearchEvent('warn', 'using_in_memory_fallback', {
+        fallbackLimit,
+        query,
+        queryError,
+      })
+
       const allResults = await payload.find({
         collection: 'search',
         overrideAccess: false,
-        limit: 100,
+        limit: fallbackLimit,
         sort: ['-updatedAt'],
       })
 
-      // Filter in memory
-      const queryLower = query.toLowerCase()
+      const matchingDocs = allResults.docs.filter((doc) => matchesSearchQuery(doc, query))
       searchResults = {
         ...allResults,
-        docs: allResults.docs
-          .filter((doc) => {
-            const title = (doc.title || '').toLowerCase()
-            const excerpt = (doc.meta?.extractedText || '').toLowerCase()
-            const metaTitle = (doc.meta?.title || '').toLowerCase()
-            const metaDesc = (doc.meta?.description || '').toLowerCase()
-
-            return (
-              title.includes(queryLower) ||
-              excerpt.includes(queryLower) ||
-              metaTitle.includes(queryLower) ||
-              metaDesc.includes(queryLower)
-            )
-          })
-          .slice(0, limit),
-        totalDocs: allResults.docs.filter((doc: any) => {
-          const queryLower = query.toLowerCase()
-          const title = (doc.title || '').toLowerCase()
-          const excerpt = (doc.excerpt || '').toLowerCase()
-          const metaTitle = (doc.meta?.title || '').toLowerCase()
-          const metaDesc = (doc.meta?.description || '').toLowerCase()
-
-          return (
-            title.includes(queryLower) ||
-            excerpt.includes(queryLower) ||
-            metaTitle.includes(queryLower) ||
-            metaDesc.includes(queryLower)
-          )
-        }).length,
+        docs: matchingDocs.slice(0, limit),
+        totalDocs: matchingDocs.length,
       }
     }
 
     // Transform results to include collection type and URL
-    const results: SearchResult[] = searchResults.docs.map((doc: any) => {
-      const collection = doc.doc?.relationTo || 'pages'
-      const slug = doc.slug || ''
-      const url = collection === 'posts' ? `/posts/${slug}` : `/${slug}`
-
-      return {
-        id: doc.id,
-        title: doc.title || doc.meta?.title || '',
-        description: doc.meta?.description || doc.excerpt || '',
-        slug,
-        url,
-        type: collection,
-        meta: doc.meta,
-        categories: doc.categories || [],
-        updatedAt: doc.updatedAt,
-      }
-    })
+    const results: SearchResult[] = searchResults.docs.map(toSearchResult)
 
     return {
       results,
       totalDocs: searchResults.totalDocs,
     }
   } catch (error) {
-    console.error('Search API error:', error)
+    logSearchEvent('error', 'search_failed', { error, query, limit })
     const errorMessage = error instanceof Error ? error.message : 'Unknown error'
 
     return {

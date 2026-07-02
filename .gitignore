@@ -17,3 +17,8 @@ src/payload-types.ts
 src/app/(payload)/admin/importMap.js
 docs/scratch/
 .firecrawl/
+
+# Local agent tooling (machine-specific config/cache)
+.codex/
+.claude/settings.local.json
+.understand-anything/

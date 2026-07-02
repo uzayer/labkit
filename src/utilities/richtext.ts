@@ -20,6 +20,22 @@ type SplitOptions = {
   takeFirst?: boolean // if true, takes first matching node, if false takes first node regardless of type
 }
 
+type RichTextChild = RichTextNode & {
+  text?: string
+}
+
+type RichTextRoot<T = DefaultNodeTypes> = {
+  root?: {
+    children?: RichTextNode<T>[]
+  }
+}
+
+type TextContentNode = {
+  type?: string
+  text?: string
+  children?: TextContentNode[]
+}
+
 /**
  * Splits a RichText content object into two parts: the first matching node and the rest.
  * Useful for layouts where you need to render part of the rich text content differently,
@@ -64,7 +80,7 @@ type SplitOptions = {
  *   );
  * }
  */
-export const splitRichText = <T extends { root?: { children?: any[] } }>(
+export const splitRichText = <T extends RichTextRoot>(
   content: T | null | undefined,
   options: SplitOptions = {},
 ): {
@@ -104,7 +120,7 @@ export const splitRichText = <T extends { root?: { children?: any[] } }>(
 /**
  * Extracts text content from a node and its children recursively
  */
-const extractTextContent = (node: any): string => {
+const extractTextContent = (node?: TextContentNode | SerializedHeadingNode | null): string => {
   if (!node) return ''
 
   // If it's a text node, return its text content
@@ -154,7 +170,7 @@ export interface SideMenuItem {
  * @returns An array of objects containing the headline class, text and anchor id
  */
 export const getSideMenuStructure = (
-  content: any,
+  content: RichTextContent | null | undefined,
   options?: { headlineLevels?: ('h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6')[] },
 ): SideMenuItem[] => {
   // Handle the case where options is undefined
@@ -168,11 +184,11 @@ export const getSideMenuStructure = (
   const menuItems: SideMenuItem[] = []
 
   // Function to recursively search for heading nodes
-  const processNodes = (nodes: any[]): void => {
+  const processNodes = (nodes: RichTextChild[]): void => {
     nodes.forEach((node, index) => {
-      if (node.type === 'heading' && headlineLevels.includes(node.tag)) {
+      if (node.type === 'heading' && node.tag && headlineLevels.includes(node.tag)) {
         menuItems.push({
-          id: getHeadlineId(node, index.toString()),
+          id: getHeadlineId(node as SerializedHeadingNode, index.toString()),
           text: extractTextContent(node),
           level: node.tag,
         })
@@ -192,11 +208,14 @@ export const getSideMenuStructure = (
 /**
  * Extract plain text from rich text content
  */
-export function extractPlainText(content: any, maxLength: number = 200): string {
+export function extractPlainText(
+  content: RichTextContent | null | undefined,
+  maxLength: number = 200,
+): string {
   if (!content || !content.root || !content.root.children) return ''
 
   let text = ''
-  const traverse = (nodes: any[]) => {
+  const traverse = (nodes: RichTextChild[]) => {
     for (const node of nodes) {
       if (node.type === 'text' && typeof node.text === 'string') {
         text += node.text
