@@ -6,6 +6,7 @@ import { validatePublications } from './hooks/validatePublications'
 import { populateAuthorPosition } from './hooks/populateAuthorPosition'
 import { populateVenueLabel } from './hooks/populateVenueLabel'
 import { provenanceFields } from '@/fields/provenance'
+import { isValidExternalHttpUrl } from '@/utilities/validation'
 
 /**
  * Publications - Academic papers, articles, and other scholarly works
@@ -76,11 +77,11 @@ const Publications: CollectionConfig = {
                       admin: {
                         width: '50%',
                         description: 'Select a team member for this author entry',
-                        condition: (_, siblingData) => !siblingData?.customAuthor, // Show if no custom author
+                        condition: (_, siblingData) => !siblingData?.customAuthor?.name, // Show if no custom author
                       },
                       // Custom validation to ensure either teamMember or customAuthor exists
                       validate: (val, { siblingData }) => {
-                        if (!val && !siblingData?.customAuthor) {
+                        if (!val && !siblingData?.customAuthor?.name) {
                           return 'Either select a team member or provide a custom author name.'
                         }
                         return true
@@ -88,14 +89,42 @@ const Publications: CollectionConfig = {
                     },
                     {
                       name: 'customAuthor',
-                      label: 'Custom Author Name',
-                      type: 'text',
+                      label: 'Custom Author',
+                      type: 'group',
                       admin: {
                         width: '50%',
                         description:
                           'Enter if author is not a team member (e.g., external collaborator).',
                         condition: (_, siblingData) => !siblingData?.teamMember, // Show if no team member selected
                       },
+                      fields: [
+                        {
+                          name: 'name',
+                          label: 'Name',
+                          type: 'text',
+                          admin: {
+                            description: 'Full name as it appears on the citation.',
+                          },
+                        },
+                        {
+                          name: 'orcid',
+                          label: 'ORCID',
+                          type: 'text',
+                          admin: {
+                            description:
+                              'ORCID identifier, if known. Used to match this person across publications.',
+                            placeholder: '0000-0002-1825-0097',
+                          },
+                        },
+                        {
+                          name: 'affiliation',
+                          type: 'relationship',
+                          relationTo: 'organizations',
+                          admin: {
+                            description: 'Institutional affiliation, if known.',
+                          },
+                        },
+                      ],
                     },
                   ],
                 },
@@ -443,6 +472,14 @@ const Publications: CollectionConfig = {
                 {
                   name: 'link',
                   type: 'text',
+                  validate: (value) => {
+                    if (!value) return true
+
+                    return (
+                      isValidExternalHttpUrl(value) ||
+                      'PDF link must be a valid http:// or https:// URL.'
+                    )
+                  },
                   admin: {
                     condition: (_, siblingData) => siblingData?.type === 'link',
                     placeholder: 'https://...',

@@ -16,6 +16,7 @@ import { backgroundColor } from '@/fields/color'
 import { designVersionDescription } from '@/components/AdminDashboard/DesignVersionDescription'
 import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
 import { MotionText } from '@/blocks/LexicalBlocks/MotionText/config'
+import { isValidPresentationVideoUrl } from '@/utilities/validation'
 
 /* TODO:
 13 -> X
@@ -368,6 +369,14 @@ export const hero: Field = {
           type: 'text',
           localized: true,
           defaultValue: 'https://library.shadcnblocks.com/videos/block/landscape.mp4',
+          validate: (value) => {
+            if (!value) return true
+
+            return (
+              isValidPresentationVideoUrl(value) ||
+              'Video URL must be a YouTube/Vimeo URL or a direct HTTPS video file.'
+            )
+          },
         },
       ],
     },

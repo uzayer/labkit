@@ -36,6 +36,7 @@ import {
 import { slugField } from '@/fields/slug'
 import { serverUrl as NEXT_PUBLIC_SERVER_URL } from '@/config/server'
 import { Breadcrumb } from '@payloadcms/plugin-nested-docs/types'
+import { isValidExternalHttpUrl } from '@/utilities/validation'
 
 const PROJECT_CASE_STUDY_DESIGN = 'ProjectPost1'
 
@@ -236,6 +237,14 @@ export const Projects: CollectionConfig = {
               name: 'externalUrl',
               label: 'Project URL',
               type: 'text',
+              validate: (value) => {
+                if (!value) return true
+
+                return (
+                  isValidExternalHttpUrl(value) ||
+                  'Project URL must be a valid http:// or https:// URL.'
+                )
+              },
               admin: {
                 description: 'External website, repository, or demo link',
               },
