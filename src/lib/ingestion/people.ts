@@ -1,9 +1,12 @@
 import type { CollectionSlug, Payload } from 'payload'
 import type { CrossrefAuthor } from './crossref'
 import type { DblpAuthor } from './dblp'
-import { diceCoefficient } from './match'
+import { diceCoefficient, type RorLookupEntry } from './match'
 import { normalizeTitle } from './normalize'
+import { resolveOrCreatePartnerOrg } from './organizations'
 import type { OpenAlexAuthorship } from './openalex'
+import type { ImportReport } from './report'
+import { upsertByKey, type UpsertAction } from './upsert'
 
 /**
  * Author identity matching, split into two safety tiers:
@@ -15,7 +18,18 @@ import type { OpenAlexAuthorship } from './openalex'
  *    changes a real person's public site.
  * 2. dedupeCustomAuthor — lower stakes (never touches Team), so it can
  *    surface fuzzy suggestions, but those are NEVER auto-applied — only
- *    ORCID-equality dedup is applied automatically.
+ *    ORCID-equality dedup is applied automatically. Legacy path, still used
+ *    by Grants/Awards (see below) — Publications no longer calls this.
+ *
+ * "Option A" (this file's newest addition, resolveOrCreateTeamMember) changes
+ * what Publications ingestion does with every co-author, not the safety
+ * tiers themselves: instead of falling back to a free-text `customAuthor`
+ * entry on a miss, it now creates a real Team record (source: 'import',
+ * displayInWebsite: false) so "People" means "everyone in the publication
+ * graph." A fuzzy name hit against existing Team still NEVER auto-links —
+ * it's surfaced via report.suggestDedupe for a human to merge later, exactly
+ * like dedupeCustomAuthor's suggestion tier, it just no longer prevents a
+ * new Team record from being created on that same miss.
  */
 
 export interface TeamLookupEntry {
@@ -162,6 +176,165 @@ export function dedupeCustomAuthor(
   }
 
   return { method: 'none', entry: null }
+}
+
+export interface TeamCreationIndexes {
+  teamIndex: TeamLookupEntry[]
+  orgIndex: RorLookupEntry[]
+}
+
+/**
+ * Placeholder title for co-authors that only ever exist because ingestion
+ * created them — nothing in Crossref/OpenAlex/DBLP carries a professional
+ * title, and Team.title is a required field. Purely a schema-satisfying
+ * default; a human editing the record afterward would replace it.
+ */
+const IMPORTED_TEAM_TITLE = 'External Collaborator'
+
+/**
+ * Naive first/last split on the last space; middleName only appears with 3+
+ * tokens. Single-token names use the same token for both firstName and
+ * lastName rather than an empty lastName — Team.lastName is required, so an
+ * empty string would fail the collection's own field validation.
+ */
+function splitFullName(fullName: string): {
+  firstName: string
+  middleName?: string
+  lastName: string
+} {
+  const tokens = fullName.trim().split(/\s+/).filter(Boolean)
+  if (tokens.length <= 1) {
+    const only = tokens[0] ?? fullName
+    return { firstName: only, lastName: only }
+  }
+  if (tokens.length === 2) {
+    return { firstName: tokens[0], lastName: tokens[1] }
+  }
+  return {
+    firstName: tokens[0],
+    middleName: tokens.slice(1, -1).join(' '),
+    lastName: tokens[tokens.length - 1],
+  }
+}
+
+/**
+ * "Option A": on a matchPersonToTeam miss, create a real Team record instead
+ * of the legacy free-text customAuthor entry (see this file's top comment).
+ * A fuzzy name hit against existing Team is NEVER auto-linked — it only adds
+ * a report.suggestDedupe entry alongside the newly created record, for a
+ * human to merge later if the suggestion is a true positive.
+ *
+ * Only keys the write on ORCID/DBLP PID when present. With neither, a
+ * name-based `where` would be unsafe here: matchPersonToTeam already ruled
+ * out a *single* exact-name match, so reaching this point with no identifier
+ * means either zero matches or an ambiguous (>1) one — using name as a find
+ * key could silently land the update on an unrelated same-named record. No
+ * safe identifier means always create.
+ */
+export async function resolveOrCreateTeamMember(
+  payload: Payload,
+  report: ImportReport,
+  person: MergedAuthor,
+  indexes: TeamCreationIndexes,
+  sourceContext: string,
+  dryRun: boolean,
+): Promise<string | null> {
+  const teamMatch = matchPersonToTeam(person, indexes.teamIndex)
+  if (teamMatch.team) return teamMatch.team.id
+
+  const normalizedName = normalizeTitle(person.fullName)
+  let fuzzyMatch: TeamLookupEntry | null = null
+  let bestScore = 0
+  for (const member of indexes.teamIndex) {
+    const score = diceCoefficient(normalizedName, normalizeTitle(member.name))
+    if (score > bestScore) {
+      bestScore = score
+      fuzzyMatch = member
+    }
+  }
+  const fuzzySuggestion = bestScore >= FUZZY_NAME_THRESHOLD ? fuzzyMatch : null
+
+  let affiliationOrgId: string | undefined
+  let affiliationLabel: string | undefined
+  if (person.institutionName) {
+    const orgId = await resolveOrCreatePartnerOrg(
+      payload,
+      report,
+      { name: person.institutionName, ror: person.institutionRor },
+      indexes.orgIndex,
+      sourceContext,
+      dryRun,
+    )
+    if (orgId) affiliationOrgId = orgId
+    else affiliationLabel = person.institutionName
+  }
+
+  const { firstName, middleName, lastName } = splitFullName(person.fullName)
+  const data: Record<string, unknown> = {
+    name: person.fullName,
+    firstName,
+    middleName,
+    lastName,
+    title: IMPORTED_TEAM_TITLE,
+    orcid: person.orcid,
+    dblp_pid: person.dblpPid,
+    affiliation: affiliationOrgId,
+    affiliationLabel,
+    role: 'external-collaborator',
+    source: 'import',
+    displayInWebsite: false,
+  }
+
+  let id: string | null
+  let action: UpsertAction
+  if (person.orcid || person.dblpPid) {
+    const result = await upsertByKey({
+      payload,
+      collection: 'team',
+      where: person.orcid
+        ? { orcid: { equals: person.orcid } }
+        : { dblp_pid: { equals: person.dblpPid! } },
+      data,
+      dryRun,
+    })
+    id = result.id
+    action = result.action
+  } else if (dryRun) {
+    id = `DRY_RUN_PLACEHOLDER:team:${Math.random()}`
+    action = 'skipped-dry-run'
+  } else {
+    const created = await payload.create({
+      collection: 'team',
+      data: data as any,
+      overrideAccess: true,
+      draft: undefined,
+      context: { disableRevalidate: true },
+    })
+    id = (created as { id: string }).id
+    action = 'created'
+  }
+  report.record('team', action)
+
+  if (!id) return null
+
+  indexes.teamIndex.push({
+    id,
+    name: person.fullName,
+    orcid: person.orcid,
+    dblpPid: person.dblpPid,
+  })
+
+  if (fuzzySuggestion) {
+    report.suggestDedupe({
+      collection: 'team',
+      field: 'name',
+      sourceContext,
+      value: `${person.fullName} (new id: ${id})`,
+      suggestedMatch: `${fuzzySuggestion.name} (id: ${fuzzySuggestion.id})`,
+    })
+  }
+
+  return id
 }
 
 /**

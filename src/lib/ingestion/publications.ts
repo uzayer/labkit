@@ -7,15 +7,11 @@ import { normalizeDoi } from './normalize'
 import { mapOpenAlexToPublicationFields } from './openalex'
 import {
   attachDblpPids,
-  buildCustomAuthorIndex,
-  dedupeCustomAuthor,
-  matchPersonToTeam,
   mergeAuthors,
-  type CustomAuthorIndexEntry,
+  resolveOrCreateTeamMember,
   type MergedAuthor,
   type TeamLookupEntry,
 } from './people'
-import { resolveOrCreatePartnerOrg } from './organizations'
 import type { ImportReport } from './report'
 import { upsertByKey, type UpsertAction } from './upsert'
 
@@ -41,17 +37,13 @@ export interface PublicationIndexes {
   teamIndex: TeamLookupEntry[]
   orgIndex: RorLookupEntry[]
   venueIndex: VenueLookupEntry[]
-  /** Mutated in place as new customAuthor entries are written, so later
-   *  publications in the SAME run dedupe against them too. */
-  customAuthorIndex: CustomAuthorIndexEntry[]
 }
 
 export async function loadPublicationIndexes(payload: Payload): Promise<PublicationIndexes> {
-  const [teamDocs, orgDocs, venueDocs, customAuthorIndex] = await Promise.all([
+  const [teamDocs, orgDocs, venueDocs] = await Promise.all([
     payload.find({ collection: 'team', pagination: false, overrideAccess: true }),
     payload.find({ collection: 'organizations', pagination: false, overrideAccess: true }),
     payload.find({ collection: 'venues', pagination: false, overrideAccess: true }),
-    buildCustomAuthorIndex(payload),
   ])
 
   return {
@@ -76,7 +68,6 @@ export async function loadPublicationIndexes(payload: Payload): Promise<Publicat
       issn: normalizeIssn(doc.issn),
       openalexSourceId: doc.openalex_id ?? undefined,
     })),
-    customAuthorIndex,
   }
 }
 
@@ -85,6 +76,14 @@ export interface HydratePublicationResult {
   action: UpsertAction
 }
 
+/**
+ * "Option A": every merged co-author becomes a real Team record — an
+ * existing match via resolveOrCreateTeamMember (ORCID/DBLP-PID/exact-name,
+ * or a fuzzy hit that's only ever surfaced as a suggestion, never
+ * auto-linked), or a freshly created one (source: 'import', displayInWebsite:
+ * false). The legacy free-text `customAuthor` field is no longer written by
+ * this path at all — see people.ts's top comment and resolveOrCreateTeamMember.
+ */
 async function resolveAuthors(
   payload: Payload,
   report: ImportReport,
@@ -96,66 +95,17 @@ async function resolveAuthors(
   const authors: Array<Record<string, unknown>> = []
 
   for (const person of merged) {
-    const teamMatch = matchPersonToTeam(person, indexes.teamIndex)
-    if (teamMatch.team) {
-      authors.push({ teamMember: teamMatch.team.id })
-      continue
+    const teamId = await resolveOrCreateTeamMember(
+      payload,
+      report,
+      person,
+      indexes,
+      sourceContext,
+      dryRun,
+    )
+    if (teamId) {
+      authors.push({ teamMember: teamId })
     }
-
-    const dedupe = dedupeCustomAuthor(person, indexes.customAuthorIndex)
-    if ((dedupe.method === 'orcid-reuse' || dedupe.method === 'dblp-pid-reuse') && dedupe.entry) {
-      authors.push({
-        customAuthor: {
-          name: dedupe.entry.name,
-          orcid: dedupe.entry.orcid,
-          dblpPid: dedupe.entry.dblpPid,
-          affiliation: dedupe.entry.affiliationOrgId,
-        },
-      })
-      continue
-    }
-
-    if (dedupe.method === 'suggestion' && dedupe.entry) {
-      // Never auto-applied — still write a fresh entry from this paper's own
-      // data below, just surface the possible match for human review.
-      report.suggestDedupe({
-        collection: 'publications',
-        field: 'authors.customAuthor',
-        sourceContext,
-        value: person.fullName,
-        suggestedMatch: dedupe.entry.name,
-      })
-    }
-
-    let affiliationOrgId: string | null = null
-    if (person.institutionName) {
-      affiliationOrgId = await resolveOrCreatePartnerOrg(
-        payload,
-        report,
-        { name: person.institutionName, ror: person.institutionRor },
-        indexes.orgIndex,
-        sourceContext,
-        dryRun,
-      )
-    }
-
-    indexes.customAuthorIndex.push({
-      name: person.fullName,
-      orcid: person.orcid,
-      dblpPid: person.dblpPid,
-      affiliationOrgId: affiliationOrgId ?? undefined,
-      sourceCollection: 'publications',
-      sourceId: sourceContext, // no Publication id exists yet — sourceContext is the best identifier available at write time
-    })
-
-    authors.push({
-      customAuthor: {
-        name: person.fullName,
-        orcid: person.orcid,
-        dblpPid: person.dblpPid,
-        affiliation: affiliationOrgId ?? undefined,
-      },
-    })
   }
 
   return authors
@@ -307,6 +257,19 @@ export async function hydratePublicationFromDoi(
 
   const authors = await resolveAuthors(payload, report, merged, indexes, sourceContext, dryRun)
 
+  // minRows: 1 on Publications.authors — a hard failure resolving every
+  // co-author (not the normal path, but possible on a network/DB error) must
+  // never reach a doomed payload.create/update call.
+  if (authors.length === 0 && merged.length > 0) {
+    report.flagUnmatched({
+      collection: 'publications',
+      field: 'authors',
+      sourceContext,
+      value: 'all authors failed to resolve — publication not created',
+    })
+    return null
+  }
+
   const venueFields = await resolveVenue(
     payload,
     report,
@@ -395,6 +358,18 @@ export async function hydratePublicationFromFields(
 
   const merged: MergedAuthor[] = fields.authors.map((author) => ({ fullName: author.fullName }))
   const authors = await resolveAuthors(payload, report, merged, indexes, sourceContext, dryRun)
+
+  // minRows: 1 on Publications.authors — never attempt a doomed write if
+  // every co-author failed to resolve (see hydratePublicationFromDoi).
+  if (authors.length === 0 && merged.length > 0) {
+    report.flagUnmatched({
+      collection: 'publications',
+      field: 'authors',
+      sourceContext,
+      value: 'all authors failed to resolve — publication not created',
+    })
+    return null
+  }
 
   const data: Record<string, unknown> = {
     title: fields.title,

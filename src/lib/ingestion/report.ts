@@ -73,14 +73,11 @@ export class ImportReport {
     }
   }
 
+  toJSON() {
+    return { counts: this.counts, unmatched: this.unmatched, suggestions: this.suggestions }
+  }
+
   writeJson(filePath: string) {
-    fs.writeFileSync(
-      filePath,
-      JSON.stringify(
-        { counts: this.counts, unmatched: this.unmatched, suggestions: this.suggestions },
-        null,
-        2,
-      ),
-    )
+    fs.writeFileSync(filePath, JSON.stringify(this.toJSON(), null, 2))
   }
 }
