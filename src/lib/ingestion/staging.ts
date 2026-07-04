@@ -1,6 +1,7 @@
 import { parse, type BibtexCreator } from '@retorquere/bibtex-parser'
 
 import { extractDois } from './doi'
+import { segmentCitations } from './llm'
 import { fetchOrcidWorks } from './orcid'
 
 export interface StagedCandidate {
@@ -122,12 +123,21 @@ export async function stageBibtexCandidates(bibtexText: string): Promise<StagedC
 }
 
 /**
- * Blank-line chunking + DOI extraction only — no Crossref reverse lookup for
- * DOI-less or ambiguous chunks (that's deferred to the hydrate phase, same
- * reasoning as stageBibtexCandidates).
+ * Citation segmentation (Gemini when configured, blank-line split otherwise)
+ * + DOI extraction only — no Crossref reverse lookup for DOI-less or
+ * ambiguous chunks (that's deferred to the hydrate phase, same reasoning as
+ * stageBibtexCandidates).
  */
 export async function stageCitationCandidates(citationText: string): Promise<StagedCandidate[]> {
-  const chunks = splitIntoChunks(citationText)
+  let chunks = splitIntoChunks(citationText)
+
+  if (process.env.GEMINI_API_KEY?.trim()) {
+    try {
+      chunks = await segmentCitations(citationText)
+    } catch {
+      chunks = splitIntoChunks(citationText)
+    }
+  }
 
   return chunks.map((chunk, index) => {
     const sourceContext = chunk.length > 80 ? `${chunk.slice(0, 80)}…` : chunk

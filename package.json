@@ -27,6 +27,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@google/genai": "^2.10.0",
     "@hookform/resolvers": "^5.4.0",
     "@number-flow/react": "^0.6.1",
     "@payloadcms/admin-bar": "3.85.1",
