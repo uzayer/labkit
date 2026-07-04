@@ -2,7 +2,7 @@ import type { Team } from '@/payload-types'
 
 interface AuthorEntry {
   teamMember?: Team | string | null
-  customAuthor?: string | null
+  customAuthor?: { name?: string | null } | null
   isCoFirst?: boolean | null
 }
 
@@ -59,8 +59,8 @@ export function formatAuthorsACM(
       }
     }
     // CASE 2: Custom Author (External)
-    else if (author.customAuthor) {
-      const nameParts = author.customAuthor.trim().split(/\s+/)
+    else if (author.customAuthor?.name) {
+      const nameParts = author.customAuthor.name.trim().split(/\s+/)
       if (nameParts.length === 1) {
         formatted = nameParts[0]
       } else {

@@ -84,6 +84,19 @@ export interface NameLookupEntry {
   alternateNames?: string[]
 }
 
+export interface RorLookupEntry extends NameLookupEntry {
+  rorId?: string
+}
+
+/**
+ * ROR ID equality — an authoritative external identifier, safe to auto-match
+ * on unlike name-based resolution. Organizations.ror_id stores the full
+ * "https://ror.org/..." form, so callers must pass/compare that same form.
+ */
+export function resolveByRor(ror: string, entries: RorLookupEntry[]): RorLookupEntry | null {
+  return entries.find((entry) => entry.rorId === ror) ?? null
+}
+
 /** Resolves a free-text name against name/shortName/alternateNames, case-insensitively. */
 export function resolveByName(query: string, entries: NameLookupEntry[]): NameLookupEntry | null {
   const normalizedQuery = query.trim().toLowerCase()

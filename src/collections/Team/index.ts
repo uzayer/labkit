@@ -208,6 +208,17 @@ const Team: CollectionConfig = {
                 placeholder: 'A5023888391',
               },
             },
+            {
+              name: 'dblp_pid',
+              label: 'DBLP PID',
+              type: 'text',
+              unique: true,
+              admin: {
+                description:
+                  'DBLP author identifier (CS venues only) — used to disambiguate authors on ingested publications',
+                placeholder: '73/10485',
+              },
+            },
           ],
         },
       ],

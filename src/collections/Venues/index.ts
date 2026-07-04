@@ -73,10 +73,11 @@ const Venues: CollectionConfig = {
       name: 'issn',
       label: 'ISSN',
       type: 'text',
+      hasMany: true,
       index: true,
       admin: {
         description:
-          'International Standard Serial Number (for journals). Not unique — print and electronic editions can share an ISSN.',
+          'International Standard Serial Number(s) for this venue — print and electronic editions often have different ISSNs. Not unique; a single value can be shared across editions.',
       },
     },
     {

@@ -1,5 +1,6 @@
 import type { CollectionConfig } from 'payload'
 
+import { provenanceFields } from '@/fields/provenance'
 import { warnDuplicateOrganization } from './hooks/warnDuplicateOrganization'
 
 /**
@@ -140,6 +141,7 @@ const Organizations: CollectionConfig = {
         allowCreate: false,
       },
     },
+    provenanceFields(),
   ],
   hooks: {
     beforeChange: [warnDuplicateOrganization],

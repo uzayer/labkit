@@ -71,6 +71,7 @@
     "@radix-ui/react-toggle": "^1.1.12",
     "@radix-ui/react-toggle-group": "^1.1.13",
     "@radix-ui/react-tooltip": "^1.2.10",
+    "@retorquere/bibtex-parser": "^10.0.0",
     "@vercel/analytics": "^2.0.1",
     "@vercel/blob": "^2.5.0",
     "bson": "^7.3.1",

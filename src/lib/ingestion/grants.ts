@@ -53,7 +53,7 @@ export async function hydrateGrant(
       }
 
       return {
-        customInvestigator: investigator.customInvestigator,
+        customInvestigator: { name: investigator.customInvestigator },
         role: investigator.role,
       }
     })

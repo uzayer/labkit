@@ -25,7 +25,7 @@ async function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
 
-async function fetchJsonWithRetry(url: string, init: RequestInit): Promise<unknown | null> {
+export async function fetchJsonWithRetry(url: string, init: RequestInit): Promise<unknown | null> {
   let delayMs = INITIAL_RETRY_DELAY_MS
 
   for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
@@ -51,7 +51,7 @@ async function fetchJsonWithRetry(url: string, init: RequestInit): Promise<unkno
   return null
 }
 
-function defaultHeaders(headers?: HeadersInit): Headers {
+export function defaultHeaders(headers?: HeadersInit): Headers {
   const merged = new Headers(headers)
   merged.set('User-Agent', USER_AGENT)
   return merged

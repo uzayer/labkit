@@ -105,10 +105,10 @@ const Awards: CollectionConfig = {
               admin: {
                 width: '50%',
                 description: 'Select a team member',
-                condition: (_, siblingData) => !siblingData?.customRecipient,
+                condition: (_, siblingData) => !siblingData?.customRecipient?.name,
               },
               validate: (val, { siblingData }) => {
-                if (!val && !siblingData?.customRecipient) {
+                if (!val && !siblingData?.customRecipient?.name) {
                   return 'Either select a team member or provide a custom recipient name.'
                 }
                 return true
@@ -116,14 +116,49 @@ const Awards: CollectionConfig = {
             },
             {
               name: 'customRecipient',
-              label: 'Custom Recipient Name',
-              type: 'text',
+              label: 'Custom Recipient',
+              type: 'group',
               admin: {
                 width: '50%',
                 description:
                   'Enter if recipient is not a team member (e.g., external collaborator).',
                 condition: (_, siblingData) => !siblingData?.teamMember,
               },
+              fields: [
+                {
+                  name: 'name',
+                  type: 'text',
+                  admin: {
+                    description: 'Full name as it appears on the award record.',
+                  },
+                },
+                {
+                  name: 'orcid',
+                  label: 'ORCID',
+                  type: 'text',
+                  admin: {
+                    description: 'ORCID identifier, if known.',
+                    placeholder: '0000-0002-1825-0097',
+                  },
+                },
+                {
+                  name: 'dblpPid',
+                  label: 'DBLP PID',
+                  type: 'text',
+                  admin: {
+                    description: 'DBLP author identifier, if known (CS venues only).',
+                    placeholder: '73/10485',
+                  },
+                },
+                {
+                  name: 'affiliation',
+                  type: 'relationship',
+                  relationTo: 'organizations',
+                  admin: {
+                    description: 'Institutional affiliation, if known.',
+                  },
+                },
+              ],
             },
           ],
         },

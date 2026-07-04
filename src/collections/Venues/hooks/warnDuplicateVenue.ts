@@ -22,7 +22,7 @@ export const warnDuplicateVenue: CollectionBeforeChangeHook = async ({
   const warnings: string[] = []
 
   // Build OR conditions for potential duplicates
-  const orConditions: Array<{ [key: string]: { equals: string } }> = []
+  const orConditions: Array<Record<string, { equals: string } | { in: string[] }>> = []
 
   if (data?.name) {
     orConditions.push({ name: { equals: data.name } })
@@ -30,8 +30,8 @@ export const warnDuplicateVenue: CollectionBeforeChangeHook = async ({
   if (data?.shortName) {
     orConditions.push({ shortName: { equals: data.shortName } })
   }
-  if (data?.issn) {
-    orConditions.push({ issn: { equals: data.issn } })
+  if (Array.isArray(data?.issn) && data.issn.length > 0) {
+    orConditions.push({ issn: { in: data.issn } })
   }
   if (data?.openalex_id) {
     orConditions.push({ openalex_id: { equals: data.openalex_id } })
@@ -61,8 +61,9 @@ export const warnDuplicateVenue: CollectionBeforeChangeHook = async ({
       if (data?.shortName && data.shortName.toLowerCase() === dup.shortName?.toLowerCase()) {
         warnings.push(`Venue with short name "${dup.shortName}" already exists`)
       }
-      if (data?.issn && data.issn === dup.issn) {
-        warnings.push(`Venue with ISSN "${dup.issn}" already exists`)
+      const sharedIssn = data?.issn?.find((issn: string) => dup.issn?.includes(issn))
+      if (sharedIssn) {
+        warnings.push(`Venue with ISSN "${sharedIssn}" already exists`)
       }
       if (data?.openalex_id && data.openalex_id === dup.openalex_id) {
         warnings.push(`Venue with OpenAlex ID "${dup.openalex_id}" already exists`)

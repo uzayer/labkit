@@ -1,6 +1,6 @@
 import type { CollectionSlug, Payload, Where } from 'payload'
 
-export type UpsertAction = 'created' | 'updated' | 'skipped-dry-run'
+export type UpsertAction = 'created' | 'updated' | 'skipped-dry-run' | 'skipped-existing'
 
 export interface UpsertResult<T> {
   doc: T | null

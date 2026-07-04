@@ -9,6 +9,26 @@ export function normalizeTitle(title: string): string {
     .trim()
 }
 
+/** Strips the "https://orcid.org/" prefix ORCID/OpenAlex/Crossref all wrap the bare ID in. */
+export function normalizeOrcid(raw?: string | null): string | undefined {
+  if (!raw) return undefined
+  const trimmed = raw.replace(/^https?:\/\/orcid\.org\//i, '').trim()
+  return trimmed || undefined
+}
+
+/**
+ * Lowercases a DOI before any uniqueness check. `Publications.doi` is
+ * `unique: true` with a case-insensitive format validator, but nothing
+ * normalizes case before the check — "10.1145/ABC" and "10.1145/abc" would
+ * otherwise be treated as different values by Mongo's case-sensitive index.
+ */
+export function normalizeDoi(raw: string): string {
+  return raw
+    .replace(/^https?:\/\/(dx\.)?doi\.org\//i, '')
+    .trim()
+    .toLowerCase()
+}
+
 export function splitCommaList(value?: string): string[] {
   if (!value) return []
   return value

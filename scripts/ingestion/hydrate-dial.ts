@@ -417,11 +417,11 @@ async function hydratePublications(
               sourceContext: pub.title,
               value: a.teamMember,
             })
-            return { customAuthor: a.teamMember }
+            return { customAuthor: { name: a.teamMember } }
           }
           return { teamMember: team.id }
         }
-        return { customAuthor: a.customAuthor }
+        return { customAuthor: { name: a.customAuthor } }
       })
 
       const doi: string | undefined = pub.doi

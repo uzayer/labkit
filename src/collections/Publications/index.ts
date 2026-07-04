@@ -117,6 +117,16 @@ const Publications: CollectionConfig = {
                           },
                         },
                         {
+                          name: 'dblpPid',
+                          label: 'DBLP PID',
+                          type: 'text',
+                          admin: {
+                            description:
+                              'DBLP author identifier, if known (CS venues only). Used to match this person across publications.',
+                            placeholder: '73/10485',
+                          },
+                        },
+                        {
                           name: 'affiliation',
                           type: 'relationship',
                           relationTo: 'organizations',

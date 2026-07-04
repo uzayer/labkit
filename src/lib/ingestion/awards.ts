@@ -39,14 +39,14 @@ export async function hydrateAward(
         sourceContext: award.title,
         value: slug,
       })
-      return { customRecipient: slug }
+      return { customRecipient: { name: slug } }
     }
 
     return { teamMember: team.id }
   })
 
   for (const external of splitCommaList(award.externalRecipients)) {
-    recipients.push({ customRecipient: external })
+    recipients.push({ customRecipient: { name: external } })
   }
 
   const data: Record<string, unknown> = {

@@ -9,20 +9,38 @@ interface UnmatchedRelation {
   value: string
 }
 
+interface DedupeSuggestion {
+  collection: CollectionSlug
+  field: string
+  sourceContext: string
+  value: string
+  suggestedMatch: string
+}
+
 export class ImportReport {
   private counts: Record<string, Record<UpsertAction, number>> = {}
   private unmatched: UnmatchedRelation[] = []
+  private suggestions: DedupeSuggestion[] = []
 
   record(collection: CollectionSlug, action: UpsertAction) {
     const key = collection
     if (!this.counts[key]) {
-      this.counts[key] = { created: 0, updated: 0, 'skipped-dry-run': 0 }
+      this.counts[key] = { created: 0, updated: 0, 'skipped-dry-run': 0, 'skipped-existing': 0 }
     }
     this.counts[key][action]++
   }
 
   flagUnmatched(entry: UnmatchedRelation) {
     this.unmatched.push(entry)
+  }
+
+  /**
+   * A non-blocking, never-auto-applied suggestion — e.g. a fuzzy name match
+   * between a new customAuthor and one seen on an earlier publication. Always
+   * surfaced for human review, never merged automatically (see people.ts).
+   */
+  suggestDedupe(entry: DedupeSuggestion) {
+    this.suggestions.push(entry)
   }
 
   print(dryRun: boolean) {
@@ -44,12 +62,25 @@ export class ImportReport {
     } else {
       console.log('\nNo unmatched relations.')
     }
+
+    if (this.suggestions.length > 0) {
+      console.log(`\n--- Suggestions (${this.suggestions.length}) ---`)
+      for (const entry of this.suggestions) {
+        console.log(
+          `[${entry.collection}.${entry.field}] "${entry.value}" ~ "${entry.suggestedMatch}" — ${entry.sourceContext}`,
+        )
+      }
+    }
   }
 
   writeJson(filePath: string) {
     fs.writeFileSync(
       filePath,
-      JSON.stringify({ counts: this.counts, unmatched: this.unmatched }, null, 2),
+      JSON.stringify(
+        { counts: this.counts, unmatched: this.unmatched, suggestions: this.suggestions },
+        null,
+        2,
+      ),
     )
   }
 }

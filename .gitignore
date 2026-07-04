@@ -25,3 +25,5 @@ docs/scratch/
 .atlas/
 .agents/skills/shadcn/
 .claude/skills/shadcn/
+.agents/skills/playwright-cli/
+.claude/skills/playwright-cli
