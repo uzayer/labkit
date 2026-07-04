@@ -57,9 +57,11 @@ import { searchFields } from '@/search/fieldOverrides'
 import { beforeSyncWithSearch } from '@/search/beforeSync'
 import { serverUrl as NEXT_PUBLIC_SERVER_URL } from '@/config/server'
 import localization from './localization.config'
+import { importHydrateTask } from './lib/ingestion/jobs/import-hydrate'
 import { initializeRoles } from './utilities/initRoles'
 import { isAdminHidden } from './access/isAdmin'
 import { hasPermission } from './utilities/checkPermission'
+import { checkRole } from './utilities/checkRole'
 import { PageConfig } from './globals/PageConfig/config'
 import { LabInfo } from './globals/LabInfo/config'
 import { Telephone } from './fields/formBuilder/telephone'
@@ -200,6 +202,26 @@ export default buildConfig({
   cors: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
   csrf: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
   globals: [ThemeConfig, Header, Footer, PageConfig, LabInfo],
+  jobs: {
+    tasks: [importHydrateTask],
+    autoRun: [{ cron: '* * * * *', queue: 'imports', limit: 1 }],
+    access: {
+      run: async ({ req }) => {
+        const authHeader = req.headers.get('authorization')
+
+        if (process.env.CRON_SECRET) {
+          try {
+            const cronSecret = assertStrongCronSecret()
+            if (authHeader === `Bearer ${cronSecret}`) return true
+          } catch {
+            // falls through to admin check below
+          }
+        }
+
+        return checkRole(['admin'], req.user)
+      },
+    },
+  },
   plugins: [
     redirectsPlugin({
       collections: ['pages', 'posts', 'projects'],
