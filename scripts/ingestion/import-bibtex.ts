@@ -10,9 +10,17 @@
  * -> write directly from BibTeX fields alone (author list is already
  * structured by the parser), always flagged as low-confidence since it never
  * got Crossref/OpenAlex enrichment.
+ *
+ * Routes through the shared staging + persistence engine (stageBibtexCandidates
+ * + import-runs/review-items bookkeeping) instead of parsing and hydrating
+ * inline — this CLI has no human selection step, so every staged candidate is
+ * processed automatically regardless of its `selected` flag. `parse()` is
+ * still called directly here (in addition to stageBibtexCandidates internally
+ * re-parsing) solely to preserve the original "N entries found, M parse
+ * errors" console output, since StagedCandidate doesn't carry parser errors.
  */
 import fs from 'node:fs'
-import { parse, type BibtexCreator } from '@retorquere/bibtex-parser'
+import { parse } from '@retorquere/bibtex-parser'
 import { getPayload } from 'payload'
 import config from '@payload-config'
 
@@ -21,8 +29,12 @@ import {
   hydratePublicationFromDoi,
   hydratePublicationFromFields,
   loadPublicationIndexes,
+  type HydratePublicationResult,
 } from '@/lib/ingestion/publications'
 import { ImportReport } from '@/lib/ingestion/report'
+import { finalizeRun, persistRunProgress, type RunProgress } from '@/lib/ingestion/run-persistence'
+import { stageBibtexCandidates } from '@/lib/ingestion/staging'
+import type { UpsertAction } from '@/lib/ingestion/upsert'
 
 const DRY_RUN = process.argv.includes('dry-run')
 const bibPath = process.argv.slice(2).find((arg) => arg !== 'dry-run')
@@ -31,10 +43,22 @@ async function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
 
-function creatorFullName(creator: BibtexCreator): string | undefined {
-  if (creator.name) return creator.name
-  const parts = [creator.firstName, creator.lastName].filter(Boolean)
-  return parts.length > 0 ? parts.join(' ') : undefined
+function bucketAction(progress: RunProgress, action: UpsertAction) {
+  switch (action) {
+    case 'created':
+    case 'skipped-dry-run':
+      progress.created++
+      break
+    case 'skipped-existing':
+      progress.skippedExisting++
+      break
+    case 'updated':
+      // Not expected from this pipeline (hydratePublicationFromDoi/Fields'
+      // own existence check always precedes upsertByKey on the same key),
+      // but bucket conservatively rather than drop the count.
+      progress.created++
+      break
+  }
 }
 
 async function main() {
@@ -43,76 +67,122 @@ async function main() {
     process.exit(1)
   }
 
-  const bib = parse(fs.readFileSync(bibPath, 'utf-8'))
+  const bibText = fs.readFileSync(bibPath, 'utf-8')
+
+  // Parsed directly (in addition to stageBibtexCandidates' own internal
+  // parse) purely to preserve the original entries/parse-errors console
+  // output — StagedCandidate has no field for parser errors.
+  const bib = parse(bibText)
   console.log(`${bib.entries.length} entries found, ${bib.errors.length} parse errors.`)
 
   const payload = await getPayload({ config })
   const report = new ImportReport()
   const indexes = await loadPublicationIndexes(payload)
 
-  for (const entry of bib.entries) {
-    const sourceContext = `bibtex:${entry.key}`
-    const doi = typeof entry.fields.doi === 'string' ? entry.fields.doi : undefined
-    const title = typeof entry.fields.title === 'string' ? entry.fields.title : undefined
+  const candidates = await stageBibtexCandidates(bibText)
 
-    if (doi) {
-      await hydratePublicationFromDoi(payload, report, doi, indexes, DRY_RUN, sourceContext)
-      await sleep(150)
-      continue
-    }
+  const progress: RunProgress = {
+    total: candidates.length,
+    processed: 0,
+    created: 0,
+    skippedExisting: 0,
+    failed: 0,
+  }
 
-    if (title) {
-      const resolution = await resolveCrossrefTitle(title)
-      await sleep(150)
-      if (resolution.method === 'crossref' && resolution.candidate) {
-        await hydratePublicationFromDoi(
+  const run = await payload.create({
+    collection: 'import-runs',
+    data: {
+      label: `BibTeX import — ${bibPath}`,
+      source: 'cli',
+      status: 'running',
+      params: { bibPath, dryRun: DRY_RUN },
+      rawInput: bibText,
+      candidates,
+      progress,
+      startedAt: new Date().toISOString(),
+    },
+    overrideAccess: true,
+    context: { disableRevalidate: true },
+  })
+  const runId = run.id
+
+  try {
+    for (const candidate of candidates) {
+      const sourceContext = `bibtex:${candidate.raw?.key}`
+      let result: HydratePublicationResult | null = null
+
+      if (candidate.doi) {
+        result = await hydratePublicationFromDoi(
           payload,
           report,
-          resolution.candidate.doi,
+          candidate.doi,
           indexes,
           DRY_RUN,
           sourceContext,
         )
         await sleep(150)
-        continue
+      } else {
+        // stageBibtexCandidates falls back to entry.key as `title` when the
+        // entry has no title field at all — that's the only signal left to
+        // detect the "no title" case from a staged candidate.
+        const titleMissing = candidate.title === candidate.raw?.key
+
+        if (titleMissing) {
+          report.flagUnmatched({
+            collection: 'publications',
+            field: 'title',
+            sourceContext,
+            value: '(bibtex entry has no title field)',
+          })
+        } else {
+          const resolution = await resolveCrossrefTitle(candidate.title)
+          await sleep(150)
+
+          if (resolution.method === 'crossref' && resolution.candidate) {
+            result = await hydratePublicationFromDoi(
+              payload,
+              report,
+              resolution.candidate.doi,
+              indexes,
+              DRY_RUN,
+              sourceContext,
+            )
+            await sleep(150)
+          } else if (candidate.year === undefined) {
+            report.flagUnmatched({
+              collection: 'publications',
+              field: 'year',
+              sourceContext,
+              value: '(bibtex entry has no parseable year field)',
+            })
+          } else {
+            result = await hydratePublicationFromFields(
+              payload,
+              report,
+              {
+                title: candidate.title,
+                year: candidate.year,
+                authors: (candidate.raw?.authors as Array<{ fullName: string }>) ?? [],
+              },
+              indexes,
+              DRY_RUN,
+              sourceContext,
+            )
+          }
+        }
       }
+
+      progress.processed++
+      if (result) {
+        bucketAction(progress, result.action)
+      } else {
+        progress.failed++
+      }
+      await persistRunProgress(payload, runId, progress)
     }
-
-    if (!title) {
-      report.flagUnmatched({
-        collection: 'publications',
-        field: 'title',
-        sourceContext,
-        value: '(bibtex entry has no title field)',
-      })
-      continue
-    }
-
-    const yearRaw = typeof entry.fields.year === 'string' ? parseInt(entry.fields.year, 10) : NaN
-    if (!Number.isFinite(yearRaw)) {
-      report.flagUnmatched({
-        collection: 'publications',
-        field: 'year',
-        sourceContext,
-        value: '(bibtex entry has no parseable year field)',
-      })
-      continue
-    }
-
-    const authorField = Array.isArray(entry.fields.author) ? entry.fields.author : []
-    const authors = (authorField as BibtexCreator[]).flatMap((creator) => {
-      const fullName = creatorFullName(creator)
-      return fullName ? [{ fullName }] : []
-    })
-
-    await hydratePublicationFromFields(
-      payload,
-      report,
-      { title, year: yearRaw, authors },
-      indexes,
-      DRY_RUN,
-      sourceContext,
-    )
+  } catch (err) {
+    await finalizeRun(payload, runId, report, 'failed', String(err))
+    throw err
   }
 
   if (bib.errors.length > 0) {
@@ -123,6 +193,7 @@ async function main() {
   }
 
   report.print(DRY_RUN)
+  await finalizeRun(payload, runId, report, 'completed')
   process.exit(0)
 }
 
