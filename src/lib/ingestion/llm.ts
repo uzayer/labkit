@@ -195,8 +195,6 @@ export async function extractCitationFields(chunk: string): Promise<ExtractedCit
     const parsed = parseJson(response.text, citationFieldsSchema)
     if (!parsed) return {}
 
-    exactSubstringDoi(parsed.doi, chunk)
-
     const fields: ExtractedCitationFields = {}
     const title = sanitizeFieldString(parsed.title)
     const authors = sanitizeAuthors(parsed.authors)
