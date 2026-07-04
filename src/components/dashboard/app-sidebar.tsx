@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import { IconMicroscope } from '@tabler/icons-react'
 
