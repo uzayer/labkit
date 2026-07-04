@@ -254,6 +254,20 @@ const Team: CollectionConfig = {
       },
     },
     {
+      name: 'source',
+      type: 'select',
+      index: true,
+      defaultValue: 'manual',
+      options: [
+        { label: 'Manual', value: 'manual' },
+        { label: 'Import', value: 'import' },
+      ],
+      admin: {
+        description: 'How this record entered the system — drives People page filters',
+        position: 'sidebar',
+      },
+    },
+    {
       name: 'alumniYear',
       type: 'number',
       admin: {

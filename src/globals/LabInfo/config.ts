@@ -199,6 +199,29 @@ export const LabInfo: GlobalConfig = {
         },
       },
     },
+
+    // Dashboard feature toggles
+    {
+      name: 'features',
+      type: 'group',
+      admin: {
+        description: 'Gates dashboard nav/sections for collections this lab does not use',
+      },
+      fields: [
+        { name: 'projects', type: 'checkbox', defaultValue: true },
+        { name: 'grants', type: 'checkbox', defaultValue: true },
+        { name: 'awards', type: 'checkbox', defaultValue: true },
+        { name: 'researchThemes', type: 'checkbox', defaultValue: true },
+      ],
+    },
+    {
+      name: 'onboardingCompleted',
+      type: 'checkbox',
+      defaultValue: false,
+      admin: {
+        hidden: true,
+      },
+    },
   ],
   hooks: {
     afterChange: [revalidateLabInfo],
