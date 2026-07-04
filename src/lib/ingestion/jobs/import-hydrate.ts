@@ -500,7 +500,7 @@ export const importHydrateTask: TaskConfig<ImportHydrateTaskIO> = {
     if (hasPendingCandidates) {
       await req.payload.jobs.queue({
         queue: IMPORT_QUEUE,
-        task: 'import-hydrate' as never,
+        task: 'import-hydrate',
         input: { runId: input.runId },
       })
       return { output: {} }

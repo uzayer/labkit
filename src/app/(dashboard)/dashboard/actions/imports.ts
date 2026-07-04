@@ -151,7 +151,7 @@ export async function startImport(
 
     await payload.jobs.queue({
       queue: IMPORT_QUEUE,
-      task: 'import-hydrate' as never,
+      task: 'import-hydrate',
       input: { runId },
     })
 
