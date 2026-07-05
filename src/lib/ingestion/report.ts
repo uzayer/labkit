@@ -15,6 +15,13 @@ interface DedupeSuggestion {
   sourceContext: string
   value: string
   suggestedMatch: string
+  // Structured payload for person-merge suggestions, so the review queue can
+  // act on real Team ids instead of parsing them out of the display strings.
+  // Optional: dry runs carry placeholder ids, and older persisted summaries
+  // predate these fields.
+  newTeamId?: string
+  existingTeamId?: string
+  score?: number
 }
 
 export class ImportReport {

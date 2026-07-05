@@ -5,7 +5,7 @@
       "schedule": "0 3 * * *"
     },
     {
-      "path": "/api/payload-jobs/run?queue=imports&limit=5",
+      "path": "/api/payload-jobs/run?queue=imports&limit=1",
       "schedule": "*/1 * * * *"
     }
   ]

@@ -93,6 +93,21 @@ const ImportRuns: CollectionConfig = {
       ],
     },
     {
+      // Lease lock for the import-hydrate job — prevents two queued jobs from
+      // processing the same run concurrently (duplicate queue entries, manual
+      // requeues, overlapping cron ticks). Claimed via a conditional
+      // db.updateOne compare-and-swap; the holder refreshes heartbeatAt on
+      // every candidate checkpoint, and a lease whose heartbeat has gone
+      // stale can be taken over (the holding worker died mid-batch).
+      name: 'lock',
+      type: 'group',
+      admin: { hidden: true },
+      fields: [
+        { name: 'token', type: 'text' },
+        { name: 'heartbeatAt', type: 'date' },
+      ],
+    },
+    {
       name: 'reportSummary',
       type: 'json',
       admin: {

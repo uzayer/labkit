@@ -1,4 +1,6 @@
-import type { CollectionSlug, TaskConfig } from 'payload'
+import { randomUUID } from 'node:crypto'
+
+import type { CollectionSlug, Payload, TaskConfig } from 'payload'
 import { NotFound } from 'payload'
 
 import type { ImportRun } from '@/payload-types'
@@ -18,6 +20,18 @@ import type { UpsertAction } from '../upsert'
 const BATCH_SIZE = 20
 const THROTTLE_MS = 150
 const IMPORT_QUEUE = 'imports'
+
+// Lease/watchdog timing. The lease holder refreshes lock.heartbeatAt after
+// every candidate (each takes a few seconds), so a heartbeat older than
+// LEASE_MS means the holding worker died and the lease may be taken over.
+// A crashed Payload job stays `processing: true` forever and is never
+// retried, so recovery has to come from a *separately queued* job — the
+// watchdog queued at the top of every invocation, delayed by
+// WATCHDOG_DELAY_MS via `waitUntil`. Together they maintain the invariant
+// that a non-terminal run always has at least one queued job.
+const LEASE_MS = 5 * 60_000
+const WATCHDOG_DELAY_MS = 5 * 60_000
+const CONTENTION_RETRY_MS = 60_000
 
 interface ImportHydrateTaskIO {
   input: {
@@ -127,17 +141,94 @@ function createProgress(candidates: PersistedCandidate[]): RunProgress {
   )
 }
 
-function bucketAction(progress: RunProgress, action: UpsertAction) {
-  switch (action) {
-    case 'created':
-    case 'skipped-dry-run':
-    case 'updated':
-      progress.created++
-      break
-    case 'skipped-existing':
-      progress.skippedExisting++
-      break
+/**
+ * Compare-and-swap claim on the run's lease lock: succeeds only when no one
+ * holds it (or the holder's heartbeat has gone stale). Serializes workers
+ * per run — duplicate queued jobs, overlapping cron ticks, and manual
+ * requeues all reduce to one active worker.
+ */
+async function claimRunLock(payload: Payload, runId: string): Promise<string | null> {
+  const token = randomUUID()
+  const staleCutoff = new Date(Date.now() - LEASE_MS).toISOString()
+
+  const claimed = await payload.db.updateOne({
+    collection: 'import-runs',
+    where: {
+      and: [
+        { id: { equals: runId } },
+        {
+          or: [
+            { 'lock.token': { exists: false } },
+            { 'lock.token': { equals: null } },
+            { 'lock.heartbeatAt': { less_than: staleCutoff } },
+          ],
+        },
+      ],
+    },
+    data: { lock: { token, heartbeatAt: new Date().toISOString() } },
+  })
+
+  return claimed ? token : null
+}
+
+async function releaseRunLock(payload: Payload, runId: string, token: string): Promise<void> {
+  await payload.db.updateOne({
+    collection: 'import-runs',
+    where: {
+      and: [{ id: { equals: runId } }, { 'lock.token': { equals: token } }],
+    },
+    data: { lock: { token: null, heartbeatAt: null } },
+  })
+}
+
+/**
+ * Candidates staged with a warning note and never selected (ORCID works
+ * without a DOI, bibtex entries without a doi field, ambiguous citation
+ * chunks) still owe the operator a review-items row — deselection-by-default
+ * at staging is a safety valve, not a resolution. Candidates a user
+ * deselected deliberately (DOI-bearing, no note) stay silent.
+ */
+function flagSkippedCandidates(report: ImportReport, candidates: PersistedCandidate[]) {
+  for (const candidate of candidates) {
+    if (candidate.selected !== false || candidate.status !== 'pending' || !candidate.note) {
+      continue
+    }
+
+    report.flagUnmatched({
+      collection: 'publications',
+      field: 'doi',
+      sourceContext: candidate.title,
+      // '(no DOI)' is the exact value run-persistence maps to the
+      // 'no-doi-work' review kind; other notes ('ambiguous — …') map to
+      // 'unparsed-citation'.
+      value: candidate.note.startsWith('no DOI found') ? '(no DOI)' : candidate.note,
+    })
   }
+}
+
+/**
+ * Sanctioned kickoff for a staged run: queue the job FIRST, then flip the
+ * run to `running`. In this order a failure between the two steps leaves a
+ * queued job that sets the status itself on its first checkpoint — whereas
+ * marking `running` first and then failing to queue strands the run with no
+ * queued job for the cron safety net to resume (nothing scans for jobless
+ * running runs). Dashboard actions and scripts should call this instead of
+ * queueing + updating inline.
+ */
+export async function queueImportRun(payload: Payload, runId: string): Promise<void> {
+  await payload.jobs.queue({
+    queue: IMPORT_QUEUE,
+    task: 'import-hydrate',
+    input: { runId },
+  })
+
+  await payload.update({
+    collection: 'import-runs',
+    id: runId,
+    data: { status: 'running', startedAt: new Date().toISOString() },
+    overrideAccess: true,
+    context: { disableRevalidate: true },
+  })
 }
 
 function restoreReport(report: ImportReport, summary: ImportRun['reportSummary']) {
@@ -197,6 +288,11 @@ function restoreReport(report: ImportReport, summary: ImportRun['reportSummary']
         sourceContext: entry.sourceContext,
         value: entry.value,
         suggestedMatch: entry.suggestedMatch,
+        // Structured merge ids — must round-trip across batch invocations or
+        // finalize would persist id-less suggestions for multi-batch runs.
+        newTeamId: typeof entry.newTeamId === 'string' ? entry.newTeamId : undefined,
+        existingTeamId: typeof entry.existingTeamId === 'string' ? entry.existingTeamId : undefined,
+        score: typeof entry.score === 'number' ? entry.score : undefined,
       })
     }
   }
@@ -451,6 +547,33 @@ export const importHydrateTask: TaskConfig<ImportHydrateTaskIO> = {
       return { output: {} }
     }
 
+    const lockToken = await claimRunLock(req.payload, input.runId)
+    if (!lockToken) {
+      // Another worker holds the lease. Don't just exit: this job may be the
+      // run's only remaining queued job (e.g. the watchdog firing while the
+      // worker is mid-batch), and crash recovery depends on a non-terminal
+      // run always having at least one queued job — so hand the baton to a
+      // delayed replacement instead.
+      await req.payload.jobs.queue({
+        queue: IMPORT_QUEUE,
+        task: 'import-hydrate',
+        input: { runId: input.runId },
+        waitUntil: new Date(Date.now() + CONTENTION_RETRY_MS),
+      })
+      return { output: {} }
+    }
+
+    // Watchdog: queued before any processing, so a crash anywhere below
+    // still leaves a queued job for the cron safety net to resume from the
+    // last per-item checkpoint. On a healthy run it fires after completion
+    // and no-ops at the terminal-status check above.
+    await req.payload.jobs.queue({
+      queue: IMPORT_QUEUE,
+      task: 'import-hydrate',
+      input: { runId: input.runId },
+      waitUntil: new Date(Date.now() + WATCHDOG_DELAY_MS),
+    })
+
     const report = new ImportReport()
     restoreReport(report, run.reportSummary)
 
@@ -459,39 +582,38 @@ export const importHydrateTask: TaskConfig<ImportHydrateTaskIO> = {
     const nextBatch = candidates
       .filter((candidate) => candidate.status === 'pending' && candidate.selected !== false)
       .slice(0, BATCH_SIZE)
-    const progress = createProgress(candidates)
+    const startedAt = run.startedAt ?? new Date().toISOString()
 
     try {
       for (const candidate of nextBatch) {
         const result = await processCandidate(req.payload, run, report, indexes, candidate)
 
-        progress.processed++
-        if (result) {
-          candidate.status = resultStatus(result)
-          bucketAction(progress, result.action)
-        } else {
-          candidate.status = 'flagged'
-          progress.failed++
-        }
+        candidate.status = result ? resultStatus(result) : 'flagged'
+
+        // Per-item checkpoint: the run doc is the resume point, so candidate
+        // statuses, progress, and the report must be durable after every
+        // item — a worker that dies mid-batch loses at most the item it was
+        // on, and a resumed run never replays already-written publications.
+        // Also refreshes the lease heartbeat.
+        await req.payload.update({
+          collection: 'import-runs',
+          id: input.runId,
+          data: {
+            status: 'running',
+            startedAt,
+            candidates,
+            progress: createProgress(candidates),
+            reportSummary: report.toJSON() as ReportSummary,
+            lock: { token: lockToken, heartbeatAt: new Date().toISOString() },
+          },
+          overrideAccess: true,
+          context: { disableRevalidate: true },
+        })
       }
     } catch (error) {
       await finalizeRun(req.payload, input.runId, report, 'failed', String(error))
       throw error
     }
-
-    await req.payload.update({
-      collection: 'import-runs',
-      id: input.runId,
-      data: {
-        status: 'running',
-        startedAt: run.startedAt ?? new Date().toISOString(),
-        candidates,
-        progress,
-        reportSummary: report.toJSON() as ReportSummary,
-      },
-      overrideAccess: true,
-      context: { disableRevalidate: true },
-    })
 
     const hasPendingCandidates = candidates.some(
       (candidate) => candidate.status === 'pending' && candidate.selected !== false,
@@ -503,9 +625,12 @@ export const importHydrateTask: TaskConfig<ImportHydrateTaskIO> = {
         task: 'import-hydrate',
         input: { runId: input.runId },
       })
+      await releaseRunLock(req.payload, input.runId, lockToken)
       return { output: {} }
     }
 
+    flagSkippedCandidates(report, candidates)
+    // finalizeRun releases the lease along with its final status write.
     await finalizeRun(req.payload, input.runId, report, 'completed')
     return { output: {} }
   },

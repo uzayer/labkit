@@ -63,6 +63,9 @@ function inferReviewKind(entry: UnmatchedEntry): ReviewItemKind {
       return 'failed-doi'
     }
     if (entry.field === 'year' || entry.field === 'enrichment') return 'unparsed-citation'
+    // Zero-author works (minRows: 1 guard in publications.ts) — nothing was
+    // created, a human has to supply the author list.
+    if (entry.field === 'authors') return 'unparsed-citation'
   }
 
   return 'unparsed-citation'
@@ -76,6 +79,18 @@ export async function finalizeRun(
   error?: string,
 ): Promise<void> {
   const { unmatched, suggestions } = report.toJSON()
+
+  // Idempotency: a finalize that crashed halfway (or a double-finalize from a
+  // requeued job) must not leave duplicate review items. Review items for a
+  // run only ever exist once finalize has run, so wiping the run's items and
+  // recreating from the full report is safe — nobody can have resolved one
+  // for a run that hasn't finished yet.
+  await payload.delete({
+    collection: 'review-items',
+    where: { run: { equals: runId } },
+    overrideAccess: true,
+    context: { disableRevalidate: true },
+  })
 
   for (const entry of unmatched) {
     await payload.create({
@@ -102,9 +117,15 @@ export async function finalizeRun(
         run: runId,
         value: entry.value,
         sourceContext: entry.sourceContext,
-        // DedupeSuggestion doesn't carry team IDs today, just name strings —
-        // pass through what exists rather than inventing fields it lacks.
-        data: { suggestedMatch: entry.suggestedMatch },
+        // Structured ids so the review queue can merge without parsing them
+        // out of the display strings. Older persisted summaries (and dry-run
+        // placeholders) may lack them — nullable by design.
+        data: {
+          suggestedMatch: entry.suggestedMatch,
+          newTeamId: entry.newTeamId ?? null,
+          existingTeamId: entry.existingTeamId ?? null,
+          score: entry.score ?? null,
+        },
       },
       overrideAccess: true,
       context: { disableRevalidate: true },
@@ -118,6 +139,8 @@ export async function finalizeRun(
       status,
       reportSummary: report.toJSON(),
       finishedAt: new Date().toISOString(),
+      // Release the job lease (no-op for CLI runs, which never take one).
+      lock: { token: null, heartbeatAt: null },
       ...(error !== undefined ? { error } : {}),
     },
     overrideAccess: true,

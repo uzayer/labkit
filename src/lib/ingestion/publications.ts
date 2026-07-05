@@ -257,15 +257,19 @@ export async function hydratePublicationFromDoi(
 
   const authors = await resolveAuthors(payload, report, merged, indexes, sourceContext, dryRun)
 
-  // minRows: 1 on Publications.authors — a hard failure resolving every
-  // co-author (not the normal path, but possible on a network/DB error) must
-  // never reach a doomed payload.create/update call.
-  if (authors.length === 0 && merged.length > 0) {
+  // minRows: 1 on Publications.authors — a zero-author list (source metadata
+  // carried no authors at all, or every co-author failed to resolve) must
+  // never reach a doomed payload.create/update call; it becomes a review
+  // item instead.
+  if (authors.length === 0) {
     report.flagUnmatched({
       collection: 'publications',
       field: 'authors',
       sourceContext,
-      value: 'all authors failed to resolve — publication not created',
+      value:
+        merged.length === 0
+          ? 'no authors in source metadata — publication not created'
+          : 'all authors failed to resolve — publication not created',
     })
     return null
   }
@@ -359,14 +363,18 @@ export async function hydratePublicationFromFields(
   const merged: MergedAuthor[] = fields.authors.map((author) => ({ fullName: author.fullName }))
   const authors = await resolveAuthors(payload, report, merged, indexes, sourceContext, dryRun)
 
-  // minRows: 1 on Publications.authors — never attempt a doomed write if
-  // every co-author failed to resolve (see hydratePublicationFromDoi).
-  if (authors.length === 0 && merged.length > 0) {
+  // minRows: 1 on Publications.authors — never attempt a doomed write with a
+  // zero-author list, whether the bibtex entry had no authors or every
+  // co-author failed to resolve (see hydratePublicationFromDoi).
+  if (authors.length === 0) {
     report.flagUnmatched({
       collection: 'publications',
       field: 'authors',
       sourceContext,
-      value: 'all authors failed to resolve — publication not created',
+      value:
+        merged.length === 0
+          ? 'no authors in source metadata — publication not created'
+          : 'all authors failed to resolve — publication not created',
     })
     return null
   }

@@ -331,6 +331,9 @@ export async function resolveOrCreateTeamMember(
       sourceContext,
       value: `${person.fullName} (new id: ${id})`,
       suggestedMatch: `${fuzzySuggestion.name} (id: ${fuzzySuggestion.id})`,
+      newTeamId: id,
+      existingTeamId: fuzzySuggestion.id,
+      score: bestScore,
     })
   }
 
