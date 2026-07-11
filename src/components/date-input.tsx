@@ -29,7 +29,7 @@ function DateInput({ value, onChange }: Props) {
 
   useEffect(() => {
     const d = value ? new Date(value) : new Date()
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- resync internal parts when the value prop changes
+    // oxlint-disable-next-line react-hooks-js/set-state-in-effect -- resync internal parts when the value prop changes
     setDate({
       day: d.getDate(),
       month: d.getMonth() + 1,

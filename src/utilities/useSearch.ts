@@ -33,7 +33,7 @@ export function useSearch(query: string, enabled = true) {
 
     if (!query || query.trim().length === 0) {
       fetchInitial()
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- resets stale results from the previous query; must stay gated behind the `enabled` early-return above, so it can't be a plain derivation
+      // oxlint-disable-next-line react-hooks-js/set-state-in-effect -- resets stale results from the previous query; must stay gated behind the `enabled` early-return above, so it can't be a plain derivation
       setCachedResults([])
       setResults([])
       return

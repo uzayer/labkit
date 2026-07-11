@@ -6,8 +6,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
+    "format": "oxfmt .",
+    "format:check": "oxfmt --check .",
     "build": "pnpm payload generate:types && cross-env NODE_OPTIONS=--no-deprecation next build",
     "analyze": "cross-env ANALYZE=true NODE_OPTIONS=--no-deprecation pnpm build",
     "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
@@ -17,8 +17,8 @@
     "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
     "ii": "cross-env NODE_OPTIONS=--no-deprecation pnpm --ignore-workspace install",
     "tsc": "cross-env NODE_OPTIONS=--no-deprecation tsc --noEmit",
-    "lint": "cross-env NODE_OPTIONS=--no-deprecation eslint",
-    "lint:fix": "cross-env NODE_OPTIONS=--no-deprecation eslint --fix",
+    "lint": "cross-env NODE_OPTIONS=--no-deprecation oxlint",
+    "lint:fix": "cross-env NODE_OPTIONS=--no-deprecation oxlint --fix",
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
     "reinstall": "cross-env NODE_OPTIONS=--no-deprecation rm -rf node_modules && rm pnpm-lock.yaml && pnpm --ignore-workspace install",
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
@@ -128,10 +128,7 @@
     "@changesets/cli": "^2.31.0",
     "@commitlint/cli": "^21.1.0",
     "@commitlint/config-conventional": "^21.1.0",
-    "@eslint/eslintrc": "3.3.5",
     "@next/bundle-analyzer": "16.2.10",
-    "@next/eslint-plugin-next": "16.2.10",
-    "@payloadcms/eslint-config": "^3.28.0",
     "@payloadcms/typescript-plugin": "3.85.1",
     "@tailwindcss/postcss": "^4.3.2",
     "@tailwindcss/typography": "^0.5.20",
@@ -142,17 +139,15 @@
     "@types/react-dom": "19.2.3",
     "@types/tar-stream": "^3.1.4",
     "copyfiles": "^2.4.1",
-    "eslint": "^9.39.4",
-    "eslint-config-next": "16.2.10",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-unused-imports": "^4.4.1",
     "gray-matter": "^4.0.3",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.8",
     "mongodb": "^7.4.0",
+    "oxfmt": "^0.58.0",
+    "oxlint": "^1.73.0",
     "postcss": "^8.5.16",
-    "prettier": "^3.9.3",
-    "prettier-plugin-tailwindcss": "^0.8.0",
     "shadcn": "^4.12.0",
     "tailwindcss": "^4.3.2",
     "typescript": "5.9.3"
@@ -163,11 +158,11 @@
   "packageManager": "pnpm@11.9.0",
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
-      "eslint --fix",
-      "prettier --write"
+      "oxlint --fix",
+      "oxfmt"
     ],
     "*.{json,md,css}": [
-      "prettier --write"
+      "oxfmt"
     ]
   },
   "commitlint": {
