@@ -6,6 +6,12 @@
       "sourceType": "github",
       "computedHash": "ed8406a28d8dd2b80ca419fd4123cf3af8273dcfb8d42aca757591af7d55851e"
     },
+    "codex": {
+      "source": "giuseppe-trisciuoglio/developer-kit",
+      "sourceType": "github",
+      "skillPath": "plugins/developer-kit-tools/skills/codex/SKILL.md",
+      "computedHash": "feaa13ad8da9f218853b3e5d2bccd7afe8d47284bd91ff7b5aef2dbda40357eb"
+    },
     "frontend-design": {
       "source": "anthropics/skills",
       "sourceType": "github",

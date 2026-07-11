@@ -27,3 +27,5 @@ docs/scratch/
 .claude/skills/shadcn/
 .agents/skills/playwright-cli/
 .claude/skills/playwright-cli
+.agents/skills/codex/
+.claude/skills/codex
