@@ -23,9 +23,9 @@ const userSchema = z.object({
   phoneNumber: z.string(),
   status: userStatusSchema,
   role: userRoleSchema,
-  createdAt: z.coerce.date(),
-  lastLoginAt: z.coerce.date(),
-  updatedAt: z.coerce.date(),
+  createdAt: z.date(),
+  lastLoginAt: z.date(),
+  updatedAt: z.date(),
 })
 export type User = z.infer<typeof userSchema>
 

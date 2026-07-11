@@ -14,8 +14,8 @@ export const taskSchema = z.object({
   ]),
   label: z.union([z.literal('documentation'), z.literal('bug'), z.literal('feature')]),
   priority: z.union([z.literal('high'), z.literal('medium'), z.literal('low')]),
-  createdDate: z.coerce.date(), // Will coerce string to Date
-  dueDate: z.coerce.date(), // Will coerce string to Date
+  createdDate: z.date(),
+  dueDate: z.date(),
   estimatedTime: z.string(),
   sprintCycle: z.string(),
 })

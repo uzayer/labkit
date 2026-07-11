@@ -10,7 +10,7 @@ const recentActivitySchema = z.object({
   email: z.string(),
   amount: z.number(),
   status: recentActivityStatusSchema,
-  createdAt: z.coerce.date(),
+  createdAt: z.date(),
 })
 
 export type RecentActivity = z.infer<typeof recentActivitySchema>

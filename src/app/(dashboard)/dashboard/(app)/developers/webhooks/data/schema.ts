@@ -14,7 +14,7 @@ const webhookAuthStatusSchema = z.union([z.literal('enabled'), z.literal('disabl
 const webhookLogSchema = z.object({
   succeeded: z.boolean(),
   action: z.string(),
-  datetime: z.coerce.date(),
+  datetime: z.date(),
 })
 export type WebhookLog = z.infer<typeof webhookLogSchema>
 
@@ -26,8 +26,8 @@ const webhookSchema = z.object({
   authType: webhookAuthTypeSchema,
   status: webhookAuthStatusSchema,
   events: z.array(webhookEventSchema),
-  createdAt: z.coerce.date(),
-  updatedAt: z.coerce.date(),
+  createdAt: z.date(),
+  updatedAt: z.date(),
   logs: z.array(webhookLogSchema),
 })
 export type Webhook = z.infer<typeof webhookSchema>

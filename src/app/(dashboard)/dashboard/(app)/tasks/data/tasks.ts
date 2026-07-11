@@ -726,8 +726,8 @@ export const tasks = baseTasks.map((task) => {
   const { createdDate, dueDate } = generateTaskDates()
   return {
     ...task,
-    createdDate: createdDate.toISOString(),
-    dueDate: dueDate.toISOString(),
+    createdDate,
+    dueDate,
     estimatedTime: estimatedTimes[Math.floor(Math.random() * estimatedTimes.length)],
     sprintCycle: sprintCycles[Math.floor(Math.random() * sprintCycles.length)],
   }
