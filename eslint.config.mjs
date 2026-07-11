@@ -11,7 +11,6 @@ export default defineConfig([
     ignores: [
       '.tmp',
       'dial-test/**',
-      'shadcn-admin/**',
       '**/.git',
       '**/.hg',
       '**/.pnp.*',
