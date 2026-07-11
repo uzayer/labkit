@@ -2,6 +2,9 @@
 
 @source './**/*.{ts,tsx}';
 @source '../../components/dashboard/**/*.{ts,tsx}';
+@source '../../components/layout/**/*.{ts,tsx}';
+@source '../../components/errors/**/*.{ts,tsx}';
+@source '../../components/*.tsx';
 @source '../../components/ui/**/*.{ts,tsx}';
 
 @plugin 'tailwindcss-animate';

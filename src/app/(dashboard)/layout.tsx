@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { ThemeProvider } from 'next-themes'
 
-import { Toaster } from '@/components/ui/sonner'
+import { Toaster } from '@/components/ui/toaster'
+import { Toaster as SonnerToaster } from '@/components/ui/sonner'
 
 import './dashboard.css'
+import { Providers } from './providers'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -28,16 +29,9 @@ export default function DashboardRootLayout({ children }: DashboardRootLayoutPro
   return (
     <html className={inter.variable} lang="en" suppressHydrationWarning>
       <body className="group/body bg-background text-foreground min-h-svh antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          disableTransitionOnChange
-          enableSystem
-          storageKey="dashboard-theme"
-        >
-          {children}
-          <Toaster closeButton richColors />
-        </ThemeProvider>
+        <Providers>{children}</Providers>
+        <Toaster />
+        <SonnerToaster closeButton richColors />
       </body>
     </html>
   )

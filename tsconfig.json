@@ -52,6 +52,7 @@
   "exclude": [
     "node_modules",
     "dial-test",
-    "scripts"
+    "scripts",
+    "shadcn-admin"
   ]
 }

@@ -1,13 +1,12 @@
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
-
-import { AppSidebar } from '@/components/dashboard/app-sidebar'
+import { cn } from '@/lib/utils'
 import { SidebarProvider } from '@/components/ui/sidebar'
+import { AppSidebar } from '@/components/layout/app-sidebar'
 import { checkRole } from '@/utilities/checkRole'
 import { getMeUser } from '@/utilities/getMeUser'
-import { cn } from '@/utils'
 
-interface DashboardAppLayoutProps {
+interface Props {
   children: React.ReactNode
 }
 
@@ -21,22 +20,19 @@ async function requireAdminUser() {
   return user
 }
 
-export default async function DashboardAppLayout({ children }: DashboardAppLayoutProps) {
+export default async function DashboardLayout({ children }: Props) {
   await requireAdminUser()
 
   const cookieStore = await cookies()
-  const sidebarState =
-    cookieStore.get('sidebar:state')?.value ?? cookieStore.get('sidebar_state')?.value
-  const defaultOpen = sidebarState !== 'false'
-
+  const defaultClose = cookieStore.get('sidebar:state')?.value === 'false'
   return (
-    <div className="flex flex-1 flex-col">
-      <SidebarProvider defaultOpen={defaultOpen}>
+    <div className="border-grid flex flex-1 flex-col">
+      <SidebarProvider defaultOpen={!defaultClose}>
         <AppSidebar />
         <div
           id="content"
           className={cn(
-            'bg-background flex h-full w-full flex-col',
+            'flex h-full w-full flex-col',
             'has-[div[data-layout=fixed]]:h-svh',
             'group-data-[scroll-locked=1]/body:h-full',
             'has-[data-layout=fixed]:group-data-[scroll-locked=1]/body:h-svh',
