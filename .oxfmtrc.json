@@ -23,6 +23,7 @@
     "**/temp",
     "**/docs/**",
     "tsconfig.json",
-    "dial-test/**"
+    "dial-test/**",
+    "next-env.d.ts"
   ]
 }
