@@ -30,15 +30,15 @@ const Footer1: React.FC<{ footer: Footer; publicContext: PublicContextProps }> =
               <div className="flex gap-2">
                 <a
                   href="#"
-                  className="bg-primary inline-flex items-center justify-center rounded-lg p-2.5"
+                  className="inline-flex items-center justify-center rounded-lg bg-primary p-2.5"
                 >
-                  <FaApple className="text-background size-7" />
+                  <FaApple className="size-7 text-background" />
                 </a>
                 <a
                   href="#"
-                  className="bg-primary inline-flex items-center justify-center rounded-lg p-2.5"
+                  className="inline-flex items-center justify-center rounded-lg bg-primary p-2.5"
                 >
-                  <FaGooglePlay className="text-background size-6" />
+                  <FaGooglePlay className="size-6 text-background" />
                 </a>
               </div>
             </div>
@@ -49,10 +49,10 @@ const Footer1: React.FC<{ footer: Footer; publicContext: PublicContextProps }> =
               footer.navItems.map((section, sectionIdx) => (
                 <div key={sectionIdx}>
                   <h3 className="mb-4 font-bold">{section.title}</h3>
-                  <ul className="text-muted-foreground space-y-4">
+                  <ul className="space-y-4 text-muted-foreground">
                     {section.subNavItems &&
                       section.subNavItems.map((subitem) => (
-                        <li key={subitem.id} className="hover:text-primary font-medium">
+                        <li key={subitem.id} className="font-medium hover:text-primary">
                           <CMSLink publicContext={publicContext} {...subitem.link} />
                         </li>
                       ))}
@@ -61,32 +61,32 @@ const Footer1: React.FC<{ footer: Footer; publicContext: PublicContextProps }> =
               ))}
             <div>
               <h3 className="mb-4 font-bold">Legal</h3>
-              <ul className="text-muted-foreground space-y-4">
-                <li className="hover:text-primary font-medium">
+              <ul className="space-y-4 text-muted-foreground">
+                <li className="font-medium hover:text-primary">
                   <a href="#">Term of Services</a>
                 </li>
-                <li className="hover:text-primary font-medium">
+                <li className="font-medium hover:text-primary">
                   <a href="#">Privacy Policy</a>
                 </li>
               </ul>
               <h3 className="mt-8 mb-4 font-bold">Social</h3>
-              <ul className="text-muted-foreground flex items-center space-x-6">
-                <li className="hover:text-primary font-medium">
+              <ul className="flex items-center space-x-6 text-muted-foreground">
+                <li className="font-medium hover:text-primary">
                   <a href="#">
                     <FaDiscord className="size-6" />
                   </a>
                 </li>
-                <li className="hover:text-primary font-medium">
+                <li className="font-medium hover:text-primary">
                   <a href="#">
                     <FaRedditAlien className="size-6" />
                   </a>
                 </li>
-                <li className="hover:text-primary font-medium">
+                <li className="font-medium hover:text-primary">
                   <a href="#">
                     <FaTwitter className="size-6" />
                   </a>
                 </li>
-                <li className="hover:text-primary font-medium">
+                <li className="font-medium hover:text-primary">
                   <a href="#">
                     <FaTelegramPlane className="size-6" />
                   </a>
@@ -95,7 +95,7 @@ const Footer1: React.FC<{ footer: Footer; publicContext: PublicContextProps }> =
             </div>
           </div>
           <Separator className="my-14" />
-          <p className="text-muted-foreground text-sm">
+          <p className="text-sm text-muted-foreground">
             {footer.copyright && `© ${new Date().getFullYear()} ${footer.copyright}`}
           </p>
         </footer>

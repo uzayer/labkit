@@ -29,7 +29,7 @@ const Navbar4: React.FC<{ header: HeaderType; publicContext: PublicContextProps 
   const navItems = header.richItems || []
 
   return (
-    <section className="bg-background inset-x-0 top-0 z-50">
+    <section className="inset-x-0 top-0 z-50 bg-background">
       <div className="container">
         {/*
           `relative` + `min-w-full` replace the original's `[&>div:last-child]:left-auto` hack.
@@ -127,7 +127,7 @@ const Navbar4: React.FC<{ header: HeaderType; publicContext: PublicContextProps 
             container, enabling rubber-band touch scrolling on iOS.
           */}
           {open && (
-            <div className="border-border bg-background fixed inset-0 top-[72px] flex h-[calc(100vh-72px)] w-full flex-col overflow-scroll border-t lg:hidden">
+            <div className="fixed inset-0 top-[72px] flex h-[calc(100vh-72px)] w-full flex-col overflow-scroll border-t border-border bg-background lg:hidden">
               {submenu && (
                 <div className="mt-3 px-[1rem]">
                   <Button variant="link" onClick={() => setSubmenu(null)}>
@@ -145,7 +145,7 @@ const Navbar4: React.FC<{ header: HeaderType; publicContext: PublicContextProps 
                           key={item.id}
                           publicContext={publicContext}
                           {...item.link}
-                          className="border-border flex w-full items-center border-b px-8 py-6 text-left font-medium"
+                          className="flex w-full items-center border-b border-border px-8 py-6 text-left font-medium"
                         />
                       )
                     } else if (item.blockType === 'submenu' || item.blockType === 'sub') {
@@ -153,7 +153,7 @@ const Navbar4: React.FC<{ header: HeaderType; publicContext: PublicContextProps 
                         <button
                           key={item.id}
                           type="button"
-                          className="border-border flex w-full items-center border-b px-8 py-6 text-left"
+                          className="flex w-full items-center border-b border-border px-8 py-6 text-left"
                           onClick={() => setSubmenu(item.id as string)}
                         >
                           <span className="flex-1 text-sm font-medium">
@@ -193,14 +193,14 @@ const Navbar4: React.FC<{ header: HeaderType; publicContext: PublicContextProps 
                               key={subitem.id}
                               publicContext={publicContext}
                               {...subitem.link}
-                              className="group hover:border-foreground/50 flex flex-col gap-2 rounded-lg border p-4"
+                              className="group flex flex-col gap-2 rounded-lg border p-4 hover:border-foreground/50"
                             >
                               {subitem.link.iconBefore && (
                                 <Icon icon={subitem.link.iconBefore} className="size-8" />
                               )}
                               <div>
                                 <h3 className="font-medium">{subitem.link.label}</h3>
-                                <p className="text-muted-foreground text-sm">
+                                <p className="text-sm text-muted-foreground">
                                   {subitem.Description}
                                 </p>
                               </div>

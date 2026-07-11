@@ -141,7 +141,7 @@ export default function ImportDialog() {
           onDragLeave={onDragLeave}
           onDrop={onDrop}
           className={cn(
-            'border-muted flex h-full min-h-[150px] w-full cursor-pointer items-center justify-center rounded-sm border border-dashed transition-colors',
+            'flex h-full min-h-[150px] w-full cursor-pointer items-center justify-center rounded-sm border border-dashed border-muted transition-colors',
             {
               'border-muted-foreground': isDragging,
             },
@@ -171,7 +171,7 @@ export default function ImportDialog() {
               {files.map((file, index) => (
                 <li
                   key={index}
-                  className="bg-muted/50 flex items-center justify-between rounded p-2"
+                  className="flex items-center justify-between rounded bg-muted/50 p-2"
                 >
                   <div className="flex flex-1 flex-col items-start gap-2">
                     <div className="flex w-full items-center justify-between">
@@ -284,7 +284,7 @@ export default function ImportDialog() {
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
-              <div className="bg-muted mt-4 rounded-md p-3">
+              <div className="mt-4 rounded-md bg-muted p-3">
                 <div className="mb-2 flex items-center">
                   <AlertCircle className="mr-2 h-4 w-4" />
                   <span className="text-sm font-semibold">Important Note</span>

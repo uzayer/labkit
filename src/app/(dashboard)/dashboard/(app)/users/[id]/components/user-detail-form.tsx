@@ -175,7 +175,7 @@ export function UserDetailForm({ user }: Props) {
                           </FormControl>
                           <FormLabel className="font-normal">
                             Superadmin{' '}
-                            <span className="text-muted-foreground text-sm">
+                            <span className="text-sm text-muted-foreground">
                               (Full access to all features and settings.)
                             </span>
                           </FormLabel>
@@ -186,7 +186,7 @@ export function UserDetailForm({ user }: Props) {
                           </FormControl>
                           <FormLabel className="font-normal">
                             Admin{' '}
-                            <span className="text-muted-foreground text-sm">
+                            <span className="text-sm text-muted-foreground">
                               (Manage users, permissions, and content.)
                             </span>
                           </FormLabel>
@@ -197,7 +197,7 @@ export function UserDetailForm({ user }: Props) {
                           </FormControl>
                           <FormLabel className="font-normal">
                             Manager{' '}
-                            <span className="text-muted-foreground text-sm">
+                            <span className="text-sm text-muted-foreground">
                               (Oversee teams and manage related data.)
                             </span>
                           </FormLabel>
@@ -208,7 +208,7 @@ export function UserDetailForm({ user }: Props) {
                           </FormControl>
                           <FormLabel className="font-normal">
                             Cashier{' '}
-                            <span className="text-muted-foreground text-sm">
+                            <span className="text-sm text-muted-foreground">
                               (Handle payments and view transactions.)
                             </span>
                           </FormLabel>
@@ -252,7 +252,7 @@ export function UserDetailForm({ user }: Props) {
             <div className="flex items-center justify-between space-x-4">
               <div className="flex flex-col space-y-1 text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                 <span>Update Account Info</span>
-                <span className="text-muted-foreground text-xs leading-snug font-normal">
+                <span className="text-xs leading-snug font-normal text-muted-foreground">
                   Update the user info by turning the switch on.
                 </span>
               </div>
@@ -268,7 +268,7 @@ export function UserDetailForm({ user }: Props) {
             <div className="flex items-center justify-between space-x-4">
               <div className="flex flex-col space-y-1 text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                 <span>Send Password Reset Email</span>
-                <span className="text-muted-foreground text-xs leading-snug font-normal">
+                <span className="text-xs leading-snug font-normal text-muted-foreground">
                   Sends a reset link to the user&apos;s registered email.
                 </span>
               </div>
@@ -286,7 +286,7 @@ export function UserDetailForm({ user }: Props) {
             <div className="flex items-center justify-between space-x-4">
               <div className="flex flex-col space-y-1 text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                 <span>Deactivate Account</span>
-                <span className="text-muted-foreground text-xs leading-snug font-normal">
+                <span className="text-xs leading-snug font-normal text-muted-foreground">
                   Disables the user&apos;s account, restricting access until reactivated.
                 </span>
               </div>

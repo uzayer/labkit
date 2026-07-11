@@ -68,7 +68,7 @@ export default function GeneralForm() {
       <div className="flex w-full flex-col items-start justify-between gap-4 rounded-lg border p-4 md:flex-row md:items-center">
         <div className="flex flex-col items-start text-sm">
           <p className="font-bold tracking-wide">Your application is currently on the free plan</p>
-          <p className="text-muted-foreground font-medium">
+          <p className="font-medium text-muted-foreground">
             Paid plans offer higher usage limits, additional branches,and much more.Learn more{' '}
             <Link href="" className="underline">
               here
@@ -204,7 +204,7 @@ export default function GeneralForm() {
       <div className="mt-10 mb-4 flex w-full flex-col items-start justify-between gap-4 rounded-lg border p-4 md:flex-row md:items-center">
         <div className="flex flex-col items-start text-sm">
           <p className="font-bold tracking-wide">Remove Account</p>
-          <p className="text-muted-foreground font-medium">
+          <p className="font-medium text-muted-foreground">
             You can do &apos;Disable account&apos; to take a break from panel.
           </p>
         </div>

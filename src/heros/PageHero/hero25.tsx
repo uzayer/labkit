@@ -12,7 +12,7 @@ const Hero25 = () => {
             alt="placeholder"
             className="mx-auto mb-5 w-16 md:mb-6 md:w-24 lg:mb-7 lg:w-28"
           />
-          <span className="text-muted-foreground mb-3 text-sm tracking-widest md:text-base">
+          <span className="mb-3 text-sm tracking-widest text-muted-foreground md:text-base">
             SYSTEMS
           </span>
           <h1 className="mt-4 text-4xl font-semibold text-balance lg:text-6xl">
@@ -29,7 +29,7 @@ const Hero25 = () => {
             </Button>
           </div>
           <div className="mt-6 lg:mt-8">
-            <ul className="text-muted-foreground flex flex-wrap justify-center gap-4 text-sm lg:text-base">
+            <ul className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground lg:text-base">
               <li className="flex items-center gap-2 whitespace-nowrap">
                 <Zap className="size-4" />
                 Quick setup guide

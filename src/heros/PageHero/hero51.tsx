@@ -9,7 +9,7 @@ const Hero51 = () => {
         <div className="relative container mx-auto max-w-screen-sm py-10 text-center">
           <div className="absolute inset-0 -z-10 size-full bg-[linear-gradient(to_right,hsl(from_var(--muted)_h_s_l)_1px,transparent_1px),linear-gradient(to_bottom,hsl(from_var(--muted)_h_s_l)_1px,transparent_1px)] mask-[radial-gradient(ellipse_50%_100%_at_50%_50%,#000_60%,transparent_100%)] bg-size-[64px_64px]"></div>
           <h1 className="mb-3 text-4xl lg:text-7xl">Explore a World of Digital Assets</h1>
-          <p className="text-muted-foreground mb-5 text-sm md:text-base">
+          <p className="mb-5 text-sm text-muted-foreground md:text-base">
             Discover the future of asset management, tokenization, and liquidity with our
             comprehensive marketplace.
           </p>

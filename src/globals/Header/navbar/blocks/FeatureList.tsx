@@ -36,7 +36,7 @@ export const FeatureList: React.FC<FeatureListProps> = ({
     <div className="grid w-full gap-y-12 lg:gap-y-6">
       {title && (
         <div className="border-border text-left lg:border-b lg:pb-3">
-          <strong className="text-muted-foreground text-left text-xs font-medium tracking-wider uppercase">
+          <strong className="text-left text-xs font-medium tracking-wider text-muted-foreground uppercase">
             {title}
           </strong>
         </div>
@@ -46,7 +46,7 @@ export const FeatureList: React.FC<FeatureListProps> = ({
           <NavigationMenuLink
             key={feature.id || index}
             href={feature.link?.url || '#'}
-            className="group border-border flex flex-row items-center space-x-4 border-b py-5 text-left sm:py-7 lg:border-0 lg:py-0"
+            className="group flex flex-row items-center space-x-4 border-b border-border py-5 text-left sm:py-7 lg:border-0 lg:py-0"
           >
             {feature.icon && (
               <div className="flex aspect-square size-9 shrink-0 items-center justify-center">
@@ -54,11 +54,11 @@ export const FeatureList: React.FC<FeatureListProps> = ({
               </div>
             )}
             <div className="flex-1">
-              <div className="text-foreground/85 group-hover:text-foreground text-sm font-medium">
+              <div className="text-sm font-medium text-foreground/85 group-hover:text-foreground">
                 {feature.title}
               </div>
               {feature.description && (
-                <p className="text-muted-foreground group-hover:text-foreground mt-1 text-xs">
+                <p className="mt-1 text-xs text-muted-foreground group-hover:text-foreground">
                   {feature.description}
                 </p>
               )}

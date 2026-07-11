@@ -63,7 +63,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ content }) => 
                 className={cn(
                   'block py-1 transition-colors duration-200',
                   activeSection === item.id
-                    ? 'text-primary font-medium'
+                    ? 'font-medium text-primary'
                     : 'text-muted-foreground hover:text-primary',
                 )}
               >

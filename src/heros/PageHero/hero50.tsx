@@ -18,7 +18,7 @@ const Hero50 = () => {
         <h1 className="mx-auto max-w-4xl text-4xl font-semibold text-balance lg:text-6xl">
           Community & business data, centralized
         </h1>
-        <p className="text-muted-foreground mx-auto max-w-4xl lg:text-xl">
+        <p className="mx-auto max-w-4xl text-muted-foreground lg:text-xl">
           Showcase the value of your community to the business. Talkbase sets the stage for
           successful cross-collaboration among community teams working with customer, marketing,
           sales, and product development.
@@ -31,7 +31,7 @@ const Hero50 = () => {
         </div>
       </div>
       <div className="relative px-8">
-        <div className="from-muted absolute inset-0 top-1/2 size-full bg-linear-to-b to-transparent to-50%"></div>
+        <div className="absolute inset-0 top-1/2 size-full bg-linear-to-b from-muted to-transparent to-50%"></div>
         <div className="relative mx-auto max-w-screen-lg">
           <img
             src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
@@ -46,7 +46,7 @@ const Hero50 = () => {
           <img
             src="https://www.shadcnblocks.com/images/block/placeholder-dark-3.svg"
             alt="placeholder"
-            className="bg-muted2 absolute top-1/3 -right-3 hidden size-24 -translate-y-1/2 rounded-lg shadow-md md:block xl:-right-10"
+            className="absolute top-1/3 -right-3 hidden size-24 -translate-y-1/2 rounded-lg bg-muted2 shadow-md md:block xl:-right-10"
           />
         </div>
       </div>

@@ -96,7 +96,7 @@ const integrations = [
 const Hero40 = () => {
   return (
     <section className="relative overflow-hidden py-32">
-      <div className="bg-muted absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden bg-muted">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1400 656"
@@ -159,7 +159,7 @@ const Hero40 = () => {
             <h1 className="my-6 text-4xl font-bold text-pretty lg:text-6xl">
               Welcome to Our Website
             </h1>
-            <p className="text-muted-foreground mb-8 max-w-xl lg:text-xl">
+            <p className="mb-8 max-w-xl text-muted-foreground lg:text-xl">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia
               fugiat omnis! Porro facilis quo animi consequatur. Explicabo.
             </p>
@@ -178,14 +178,14 @@ const Hero40 = () => {
                     {line.map((integration) => (
                       <div
                         key={integration.title}
-                        className="border-background bg-background flex w-64 gap-x-3 rounded-xl border p-4 shadow-sm"
+                        className="flex w-64 gap-x-3 rounded-xl border border-background bg-background p-4 shadow-sm"
                       >
-                        <div className="bg-accent flex size-7 shrink-0 items-center justify-center rounded">
+                        <div className="flex size-7 shrink-0 items-center justify-center rounded bg-accent">
                           <integration.icon className="size-4" />
                         </div>
                         <div>
                           <div className="mb-0.5 text-xs font-medium">{integration.title}</div>
-                          <div className="text-muted-foreground text-xs font-normal">
+                          <div className="text-xs font-normal text-muted-foreground">
                             {integration.description}
                           </div>
                         </div>
@@ -195,7 +195,7 @@ const Hero40 = () => {
                 ))}
               </div>
             </div>
-            <div className="border-border bg-background relative flex aspect-3/6 w-[240px] justify-center rounded-lg border sm:w-[300px]"></div>
+            <div className="relative flex aspect-3/6 w-[240px] justify-center rounded-lg border border-border bg-background sm:w-[300px]"></div>
           </div>
         </div>
       </div>

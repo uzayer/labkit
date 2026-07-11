@@ -120,7 +120,7 @@ export default function BillingForm() {
                     </FormControl>
                     <FormLabel
                       htmlFor="card"
-                      className="border-muted hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary flex flex-1 flex-col items-center justify-between rounded-md border-2 bg-transparent p-4"
+                      className="flex flex-1 flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 peer-data-[state=checked]:border-primary hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:border-primary"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -149,7 +149,7 @@ export default function BillingForm() {
                     </FormControl>
                     <FormLabel
                       htmlFor="paypal"
-                      className="border-muted hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary flex flex-1 flex-col items-center justify-between rounded-md border-2 bg-transparent p-4"
+                      className="flex flex-1 flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 peer-data-[state=checked]:border-primary hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:border-primary"
                     >
                       <IconBrandPaypal className="mb-3 h-6 w-6" />
                       Paypal
@@ -166,7 +166,7 @@ export default function BillingForm() {
                     </FormControl>
                     <FormLabel
                       htmlFor="apple"
-                      className="border-muted hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary flex flex-1 flex-col items-center justify-between rounded-md border-2 bg-transparent p-4"
+                      className="flex flex-1 flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 peer-data-[state=checked]:border-primary hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:border-primary"
                     >
                       <IconApple className="mb-3 h-6 w-6" />
                       Apple

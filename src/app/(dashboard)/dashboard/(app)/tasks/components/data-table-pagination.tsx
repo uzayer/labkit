@@ -23,7 +23,7 @@ interface Props<TData> {
 export function DataTablePagination<TData>({ table }: Props<TData>) {
   return (
     <div className="flex items-center justify-between overflow-auto px-2">
-      <div className="text-muted-foreground hidden flex-1 text-sm sm:block">
+      <div className="hidden flex-1 text-sm text-muted-foreground sm:block">
         {table.getFilteredSelectedRowModel().rows.length} of{' '}
         {table.getFilteredRowModel().rows.length} row(s) selected.
       </div>

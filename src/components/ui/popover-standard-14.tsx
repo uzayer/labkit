@@ -31,7 +31,7 @@ const Example = () => (
         </div>
         <Separator />
         <div className="space-y-2">
-          <p className="text-muted-foreground text-xs">Or copy link</p>
+          <p className="text-xs text-muted-foreground">Or copy link</p>
           <div className="flex gap-2">
             <Input readOnly value="https://example.com/share" />
             <Button size="icon" variant="outline">

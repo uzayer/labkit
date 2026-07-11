@@ -41,7 +41,12 @@ interface ImportHydrateTaskIO {
 }
 
 type PersistedCandidateStatus =
-  StagedCandidate['status'] | 'created' | 'updated' | 'skipped-existing' | 'failed' | 'flagged'
+  | StagedCandidate['status']
+  | 'created'
+  | 'updated'
+  | 'skipped-existing'
+  | 'failed'
+  | 'flagged'
 
 interface PersistedCandidate extends Omit<StagedCandidate, 'status'> {
   status: PersistedCandidateStatus

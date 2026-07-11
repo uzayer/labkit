@@ -36,7 +36,7 @@ export default function EventsAndLogsPage() {
         <div className="flex items-center justify-between">
           <div>
             <h2 className="text-2xl font-bold">Events & Logs</h2>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-sm text-muted-foreground">
               Track, analyze, and act on application behaviors efficiently.
             </p>
           </div>

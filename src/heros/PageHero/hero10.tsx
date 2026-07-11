@@ -331,9 +331,9 @@ const Hero10 = () => {
               </p>
             </div>
             <div className="mt-4 flex justify-center">
-              <p className="text-muted-foreground text-sm">
+              <p className="text-sm text-muted-foreground">
                 Press
-                <kbd className="bg-muted text-muted-foreground pointer-events-none mx-0.5 inline-flex h-5 items-center rounded border px-1.5 font-mono font-medium opacity-100 select-none">
+                <kbd className="pointer-events-none mx-0.5 inline-flex h-5 items-center rounded border bg-muted px-1.5 font-mono font-medium text-muted-foreground opacity-100 select-none">
                   S
                 </kbd>
                 to get started

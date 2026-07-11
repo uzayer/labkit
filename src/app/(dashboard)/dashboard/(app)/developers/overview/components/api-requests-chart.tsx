@@ -47,12 +47,12 @@ export function ApiRequestsChart({ className = '' }: Props) {
         <CardTitle>API requests</CardTitle>
         <CardDescription className="flex gap-4">
           <div>
-            <div className="text-muted-foreground/85 text-xs font-semibold">Successful</div>
-            <span className="text-foreground text-sm">270</span>
+            <div className="text-xs font-semibold text-muted-foreground/85">Successful</div>
+            <span className="text-sm text-foreground">270</span>
           </div>
           <div>
-            <div className="text-muted-foreground/85 text-xs font-semibold">Failed</div>
-            <span className="text-foreground text-sm">6</span>
+            <div className="text-xs font-semibold text-muted-foreground/85">Failed</div>
+            <span className="text-sm text-foreground">6</span>
           </div>
         </CardDescription>
       </CardHeader>
@@ -83,7 +83,7 @@ export function ApiRequestsChart({ className = '' }: Props) {
         <div className="flex gap-2 leading-none font-medium">
           Requests increased by 8.7% this week <TrendingUp className="h-4 w-4" />
         </div>
-        <div className="text-muted-foreground leading-none">
+        <div className="leading-none text-muted-foreground">
           Displaying total API requests for the past {chartData.length} weeks
         </div>
       </CardFooter>

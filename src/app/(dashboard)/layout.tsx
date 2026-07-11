@@ -28,7 +28,7 @@ interface DashboardRootLayoutProps {
 export default function DashboardRootLayout({ children }: DashboardRootLayoutProps) {
   return (
     <html className={inter.variable} lang="en" suppressHydrationWarning>
-      <body className="group/body bg-background text-foreground min-h-svh antialiased">
+      <body className="group/body min-h-svh bg-background text-foreground antialiased">
         <Providers>{children}</Providers>
         <Toaster />
         <SonnerToaster closeButton richColors />

@@ -22,10 +22,10 @@ const Footer3: React.FC<{ footer: Footer; publicContext: PublicContextProps }> =
               footer.navItems.map((section, sectionIdx) => (
                 <div key={sectionIdx}>
                   <h3 className="mb-4 font-bold">{section.title}</h3>
-                  <ul className="text-muted-foreground space-y-4">
+                  <ul className="space-y-4 text-muted-foreground">
                     {section.subNavItems &&
                       section.subNavItems.map((link, linkIdx) => (
-                        <li key={linkIdx} className="hover:text-primary font-medium">
+                        <li key={linkIdx} className="font-medium hover:text-primary">
                           <CMSLink publicContext={publicContext} {...link.link} />
                         </li>
                       ))}
@@ -33,38 +33,38 @@ const Footer3: React.FC<{ footer: Footer; publicContext: PublicContextProps }> =
                 </div>
               ))}
             <div className="lg:col-span-2 xl:col-span-1">
-              <ul className="text-muted-foreground mb-10 flex items-center gap-2">
+              <ul className="mb-10 flex items-center gap-2 text-muted-foreground">
                 <li className="font-medium">
                   <a href="#">
-                    <span className="bg-muted hover:text-primary flex size-12 items-center justify-center rounded-full transition-colors">
+                    <span className="flex size-12 items-center justify-center rounded-full bg-muted transition-colors hover:text-primary">
                       <FaDiscord className="size-6" />
                     </span>
                   </a>
                 </li>
                 <li className="font-medium">
                   <a href="#">
-                    <span className="bg-muted hover:text-primary flex size-12 items-center justify-center rounded-full transition-colors">
+                    <span className="flex size-12 items-center justify-center rounded-full bg-muted transition-colors hover:text-primary">
                       <FaRedditAlien className="size-6" />
                     </span>
                   </a>
                 </li>
                 <li className="font-medium">
                   <a href="#">
-                    <span className="bg-muted hover:text-primary flex size-12 items-center justify-center rounded-full transition-colors">
+                    <span className="flex size-12 items-center justify-center rounded-full bg-muted transition-colors hover:text-primary">
                       <FaTwitter className="size-6" />
                     </span>
                   </a>
                 </li>
                 <li className="font-medium">
                   <a href="#">
-                    <span className="bg-muted hover:text-primary flex size-12 items-center justify-center rounded-full transition-colors">
+                    <span className="flex size-12 items-center justify-center rounded-full bg-muted transition-colors hover:text-primary">
                       <FaTelegramPlane className="size-6" />
                     </span>
                   </a>
                 </li>
                 <li className="font-medium">
                   <a href="#">
-                    <span className="bg-muted hover:text-primary flex size-12 items-center justify-center rounded-full transition-colors">
+                    <span className="flex size-12 items-center justify-center rounded-full bg-muted transition-colors hover:text-primary">
                       <FaLinkedin className="size-6" />
                     </span>
                   </a>
@@ -76,20 +76,20 @@ const Footer3: React.FC<{ footer: Footer; publicContext: PublicContextProps }> =
                   <Input type="email" placeholder="Email" />
                   <Button type="submit">Subscribe</Button>
                 </div>
-                <p className="text-muted-foreground mt-1 text-xs">
+                <p className="mt-1 text-xs text-muted-foreground">
                   By submitting, you agree to our
-                  <a href="#" className="text-primary ml-1 hover:underline">
+                  <a href="#" className="ml-1 text-primary hover:underline">
                     Privacy Policy
                   </a>
                 </p>
               </div>
             </div>
           </div>
-          <div className="text-muted-foreground mt-24 flex flex-col flex-wrap justify-between gap-4 border-t pt-8 text-sm font-medium md:flex-row md:items-center">
+          <div className="mt-24 flex flex-col flex-wrap justify-between gap-4 border-t pt-8 text-sm font-medium text-muted-foreground md:flex-row md:items-center">
             <p>{footer.copyright && `© ${new Date().getFullYear()} ${footer.copyright}`}</p>
             <ul className="flex gap-4">
               {footer.legalLinks?.map((item, index) => (
-                <li key={index} className="hover:text-primary whitespace-nowrap underline">
+                <li key={index} className="whitespace-nowrap underline hover:text-primary">
                   <CMSLink publicContext={publicContext} {...item.link} />
                 </li>
               ))}

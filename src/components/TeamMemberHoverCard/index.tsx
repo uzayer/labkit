@@ -83,7 +83,7 @@ export function TeamMemberHoverCard({ teamMember }: TeamMemberHoverCardProps) {
           </Avatar>
           <div className="min-w-0 flex-1">
             <p className="font-normal">{teamMember.name}</p>
-            {roleLabel && <p className="text-muted-foreground mt-0.5 text-sm">{roleLabel}</p>}
+            {roleLabel && <p className="mt-0.5 text-sm text-muted-foreground">{roleLabel}</p>}
           </div>
         </div>
       </HoverCardTrigger>
@@ -103,7 +103,7 @@ export function TeamMemberHoverCard({ teamMember }: TeamMemberHoverCardProps) {
             </Avatar>
             <div className="min-w-0 flex-1 space-y-1">
               <h4 className="text-sm font-semibold">{teamMember.name}</h4>
-              {roleLabel && <p className="text-muted-foreground text-sm">{roleLabel}</p>}
+              {roleLabel && <p className="text-sm text-muted-foreground">{roleLabel}</p>}
             </div>
           </div>
           {hasSocials && (
@@ -120,10 +120,10 @@ export function TeamMemberHoverCard({ teamMember }: TeamMemberHoverCardProps) {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-muted/80 hover:bg-primary/10 rounded-xl p-3 transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                      className="rounded-xl bg-muted/80 p-3 transition-all duration-300 hover:scale-110 hover:bg-primary/10 hover:shadow-lg"
                       aria-label={`${teamMember.name}'s ${getSocialLabel(social.platform || '')}`}
                     >
-                      <IconComponent className="text-muted-foreground hover:text-primary size-5 transition-colors duration-300" />
+                      <IconComponent className="size-5 text-muted-foreground transition-colors duration-300 hover:text-primary" />
                     </a>
                   )
                 })}

@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button'
 const Hero30 = () => {
   return (
     <section className="relative overflow-hidden py-32">
-      <div className="bg-muted absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden bg-muted">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1400 656"
@@ -66,7 +66,7 @@ const Hero30 = () => {
             <h1 className="my-6 text-4xl font-bold text-pretty lg:text-6xl">
               Welcome to Our Website
             </h1>
-            <p className="text-muted-foreground mb-8 max-w-xl lg:text-xl">
+            <p className="mb-8 max-w-xl text-muted-foreground lg:text-xl">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia
               fugiat omnis! Porro facilis quo animi consequatur. Explicabo.
             </p>
@@ -81,11 +81,11 @@ const Hero30 = () => {
             <img
               src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
               alt="placeholder hero"
-              className="border-border h-[400px] rounded-lg border object-cover object-center sm:max-w-[320px]"
+              className="h-[400px] rounded-lg border border-border object-cover object-center sm:max-w-[320px]"
             />
             <div className="hidden flex-col gap-4 sm:flex lg:hidden 2xl:flex">
-              <div className="border-border bg-background w-[256px] flex-1 rounded-lg border text-clip"></div>
-              <div className="border-border bg-background aspect-2/1 w-[256px] rounded-lg border text-clip"></div>
+              <div className="w-[256px] flex-1 rounded-lg border border-border bg-background text-clip"></div>
+              <div className="aspect-2/1 w-[256px] rounded-lg border border-border bg-background text-clip"></div>
             </div>
           </div>
         </div>

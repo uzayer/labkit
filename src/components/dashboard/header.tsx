@@ -21,7 +21,7 @@ export function Header({ title, description, actions, className, ...props }: Hea
   return (
     <header
       className={cn(
-        'bg-background/95 sticky top-0 z-40 flex h-16 shrink-0 items-center gap-3 border-b px-4 backdrop-blur',
+        'sticky top-0 z-40 flex h-16 shrink-0 items-center gap-3 border-b bg-background/95 px-4 backdrop-blur',
         className,
       )}
       {...props}
@@ -32,7 +32,7 @@ export function Header({ title, description, actions, className, ...props }: Hea
         <div className="min-w-0">
           {title ? <div className="truncate text-sm font-semibold">{title}</div> : null}
           {description ? (
-            <div className="text-muted-foreground truncate text-xs">{description}</div>
+            <div className="truncate text-xs text-muted-foreground">{description}</div>
           ) : null}
         </div>
       )}
@@ -47,7 +47,7 @@ export function Header({ title, description, actions, className, ...props }: Hea
           >
             <IconSearch className="size-4" />
             <span className="hidden sm:inline">Search</span>
-            <span className="bg-muted text-muted-foreground hidden rounded border px-1.5 py-0.5 text-[10px] md:inline-flex">
+            <span className="hidden rounded border bg-muted px-1.5 py-0.5 text-[10px] text-muted-foreground md:inline-flex">
               Ctrl K
             </span>
           </Button>

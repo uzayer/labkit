@@ -24,7 +24,7 @@ const Hero195: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = 
   return (
     <section className="overflow-x-hidden overflow-y-hidden">
       <div className="container">
-        <div className="border-border border-x py-20">
+        <div className="border-x border-border py-20">
           <div className="relative mx-auto max-w-2xl p-2">
             {richText && (
               <RichText
@@ -54,7 +54,7 @@ const Hero195: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = 
                     <TabsTrigger
                       key={index}
                       value={title}
-                      className="text-muted-foreground font-normal"
+                      className="font-normal text-muted-foreground"
                     >
                       {icon && <Icon icon={icon} className="mr-1.5 size-5" />}
                       {title}
@@ -68,8 +68,8 @@ const Hero195: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = 
                     <TabsContent
                       key={index}
                       value={title}
-                      className={cn('bg-background -mx-px transition-opacity duration-500', {
-                        'animate-in fade-in opacity-100': activeTab === title,
+                      className={cn('-mx-px bg-background transition-opacity duration-500', {
+                        'opacity-100 animate-in fade-in': activeTab === title,
                         'opacity-0': activeTab !== title,
                       })}
                     >
@@ -82,14 +82,14 @@ const Hero195: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = 
                     </TabsContent>
                   ))}
                 </div>
-                <span className="bg-border absolute -inset-x-1/5 top-0 -z-10 h-px [mask-image:linear-gradient(to_right,transparent_1%,black_10%,black_90%,transparent_99%)]"></span>
-                <span className="bg-border absolute -inset-x-1/5 bottom-0 -z-10 h-px [mask-image:linear-gradient(to_right,transparent_1%,black_10%,black_90%,transparent_99%)]"></span>
+                <span className="absolute -inset-x-1/5 top-0 -z-10 h-px bg-border [mask-image:linear-gradient(to_right,transparent_1%,black_10%,black_90%,transparent_99%)]"></span>
+                <span className="absolute -inset-x-1/5 bottom-0 -z-10 h-px bg-border [mask-image:linear-gradient(to_right,transparent_1%,black_10%,black_90%,transparent_99%)]"></span>
 
-                <span className="border-border absolute -inset-x-1/5 top-12 h-px border-t border-dashed [mask-image:linear-gradient(to_right,transparent_1%,black_10%,black_90%,transparent_99%)]"></span>
-                <span className="border-border absolute -inset-x-1/5 bottom-12 h-px border-t border-dashed [mask-image:linear-gradient(to_right,transparent_1%,black_10%,black_90%,transparent_99%)]"></span>
+                <span className="absolute -inset-x-1/5 top-12 h-px border-t border-dashed border-border [mask-image:linear-gradient(to_right,transparent_1%,black_10%,black_90%,transparent_99%)]"></span>
+                <span className="absolute -inset-x-1/5 bottom-12 h-px border-t border-dashed border-border [mask-image:linear-gradient(to_right,transparent_1%,black_10%,black_90%,transparent_99%)]"></span>
 
-                <span className="border-border absolute -inset-y-1/5 left-1/6 w-px border-r border-dashed [mask-image:linear-gradient(to_bottom,transparent_1%,black_10%,black_90%,transparent_99%)]"></span>
-                <span className="border-border absolute -inset-y-1/5 right-1/6 w-px border-r border-dashed [mask-image:linear-gradient(to_bottom,transparent_1%,black_10%,black_90%,transparent_99%)]"></span>
+                <span className="absolute -inset-y-1/5 left-1/6 w-px border-r border-dashed border-border [mask-image:linear-gradient(to_bottom,transparent_1%,black_10%,black_90%,transparent_99%)]"></span>
+                <span className="absolute -inset-y-1/5 right-1/6 w-px border-r border-dashed border-border [mask-image:linear-gradient(to_bottom,transparent_1%,black_10%,black_90%,transparent_99%)]"></span>
               </div>
             </Tabs>
           </div>

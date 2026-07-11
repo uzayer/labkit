@@ -41,7 +41,7 @@ export default function RouteView() {
                 Hostnames
               </TabsTrigger>
             </TabsList>
-            <h1 className="text-muted-foreground text-xs font-medium">VISITORS</h1>
+            <h1 className="text-xs font-medium text-muted-foreground">VISITORS</h1>
           </div>
         </CardHeader>
         <Separator />

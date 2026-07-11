@@ -4,7 +4,12 @@ import deepMerge from '@/utilities/deepMerge'
 import { icon } from '@/components/Icon/config'
 
 export type LinkAppearances =
-  'default' | 'outline' | 'inline' | 'destructive' | 'ghost' | 'secondary'
+  | 'default'
+  | 'outline'
+  | 'inline'
+  | 'destructive'
+  | 'ghost'
+  | 'secondary'
 
 export const appearanceOptions: Record<LinkAppearances, { label: string; value: string }> = {
   default: {

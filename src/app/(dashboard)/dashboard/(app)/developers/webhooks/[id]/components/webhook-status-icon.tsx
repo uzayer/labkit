@@ -6,7 +6,7 @@ interface Props {
 
 export function WebhookStatusIcon({ status }: Props) {
   if (status) {
-    return <CircleCheck size={18} className="stroke-background fill-green-500" />
+    return <CircleCheck size={18} className="fill-green-500 stroke-background" />
   }
 
   return <CircleMinus size={18} className="fill-muted-foreground/75 stroke-background" />

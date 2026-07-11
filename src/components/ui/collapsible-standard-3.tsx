@@ -11,10 +11,10 @@ const Example = () => (
       Show more information
     </CollapsibleTrigger>
     <CollapsibleContent className="space-y-2">
-      <p className="text-muted-foreground text-sm">
+      <p className="text-sm text-muted-foreground">
         Additional details about this section can be found here.
       </p>
-      <p className="text-muted-foreground text-sm">
+      <p className="text-sm text-muted-foreground">
         This content was hidden by default but can be revealed by clicking the trigger.
       </p>
     </CollapsibleContent>

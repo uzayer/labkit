@@ -51,7 +51,7 @@ export default function OverviewPage() {
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div>
             <h2 className="text-2xl font-bold">Web Overview</h2>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-sm text-muted-foreground">
               Build, manage, and optimize developer workflows seamlessly.
             </p>
           </div>

@@ -51,16 +51,16 @@ export function ApiResponseTimeChart({ className = '' }: Props) {
         <CardTitle>API response time</CardTitle>
         <CardDescription className="flex gap-4">
           <div>
-            <div className="text-muted-foreground/85 text-xs font-semibold">Min</div>
-            <span className="text-foreground text-xs">{minTime}ms</span>
+            <div className="text-xs font-semibold text-muted-foreground/85">Min</div>
+            <span className="text-xs text-foreground">{minTime}ms</span>
           </div>
           <div>
-            <div className="text-muted-foreground/85 text-xs font-semibold">Avg</div>
-            <span className="text-foreground text-xs">{avgTime}ms</span>
+            <div className="text-xs font-semibold text-muted-foreground/85">Avg</div>
+            <span className="text-xs text-foreground">{avgTime}ms</span>
           </div>
           <div>
-            <div className="text-muted-foreground/85 text-xs font-semibold">Max</div>
-            <span className="text-foreground text-xs">{maxTime}ms</span>
+            <div className="text-xs font-semibold text-muted-foreground/85">Max</div>
+            <span className="text-xs text-foreground">{maxTime}ms</span>
           </div>
         </CardDescription>
       </CardHeader>
@@ -105,7 +105,7 @@ export function ApiResponseTimeChart({ className = '' }: Props) {
         <div className="flex gap-2 leading-none font-medium">
           Response time decreased by 20ms this week <TrendingDown className="h-4 w-4" />
         </div>
-        <div className="text-muted-foreground leading-none">
+        <div className="leading-none text-muted-foreground">
           Average API response time for the past 6 weeks in milliseconds
         </div>
       </CardFooter>

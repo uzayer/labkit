@@ -36,8 +36,8 @@ const Footer24 = ({ className }: Footer24Props) => {
   return (
     <section className={cn('py-16 md:py-32', className)}>
       <div className="container px-4 md:px-6">
-        <div className="bg-muted rounded-lg p-8 md:p-16">
-          <div className="border-border mb-6 border-b pb-6 text-left md:mb-8 md:pb-8 md:text-center">
+        <div className="rounded-lg bg-muted p-8 md:p-16">
+          <div className="mb-6 border-b border-border pb-6 text-left md:mb-8 md:pb-8 md:text-center">
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl">
               {footerData.heading}
             </h1>
@@ -46,10 +46,10 @@ const Footer24 = ({ className }: Footer24Props) => {
           <div className="mb-12 flex flex-col gap-8 md:mb-16 lg:flex-row lg:justify-between lg:gap-4 xl:gap-8">
             {/* Email Section */}
             <div className="flex flex-col items-start gap-4">
-              <h3 className="text-primary text-sm font-medium tracking-wide uppercase">Email</h3>
+              <h3 className="text-sm font-medium tracking-wide text-primary uppercase">Email</h3>
               <a
                 href={footerData.email.href}
-                className="text-muted-foreground hover:text-primary flex items-center gap-2 text-base transition-colors md:text-lg"
+                className="flex items-center gap-2 text-base text-muted-foreground transition-colors hover:text-primary md:text-lg"
               >
                 {footerData.email.label}
                 <ArrowUpRight className="h-4 w-4" />
@@ -58,7 +58,7 @@ const Footer24 = ({ className }: Footer24Props) => {
 
             {/* Social Links Section */}
             <div className="flex flex-col items-start gap-4">
-              <h3 className="text-primary text-sm font-medium tracking-wide uppercase">
+              <h3 className="text-sm font-medium tracking-wide text-primary uppercase">
                 Follow Us
               </h3>
               <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
@@ -66,7 +66,7 @@ const Footer24 = ({ className }: Footer24Props) => {
                   <a
                     key={link.label}
                     href={link.href}
-                    className="text-muted-foreground hover:text-primary text-base transition-colors md:text-lg"
+                    className="text-base text-muted-foreground transition-colors hover:text-primary md:text-lg"
                   >
                     {link.label}
                   </a>
@@ -76,10 +76,10 @@ const Footer24 = ({ className }: Footer24Props) => {
 
             {/* Phone Section */}
             <div className="flex flex-col items-start gap-4">
-              <h3 className="text-primary text-sm font-medium tracking-wide uppercase">Phone</h3>
+              <h3 className="text-sm font-medium tracking-wide text-primary uppercase">Phone</h3>
               <a
                 href={footerData.phone.href}
-                className="text-muted-foreground hover:text-primary flex items-center gap-2 text-base transition-colors md:text-lg"
+                className="flex items-center gap-2 text-base text-muted-foreground transition-colors hover:text-primary md:text-lg"
               >
                 {footerData.phone.label}
                 <ArrowUpRight className="h-4 w-4" />
@@ -95,14 +95,14 @@ const Footer24 = ({ className }: Footer24Props) => {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-muted-foreground hover:text-primary text-sm transition-colors"
+                className="text-sm text-muted-foreground transition-colors hover:text-primary"
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          <div className="text-muted-foreground text-sm md:text-right md:text-xs">
+          <div className="text-sm text-muted-foreground md:text-right md:text-xs">
             Designed in <strong>San Francisco</strong>
           </div>
         </div>

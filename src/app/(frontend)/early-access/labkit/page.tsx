@@ -31,7 +31,7 @@ export default function LabKitEarlyAccessPage() {
         Your lab&apos;s website, built from data — not a template.
       </h1>
 
-      <p className="text-muted-foreground mt-6 text-lg">
+      <p className="mt-6 text-lg text-muted-foreground">
         Paste an ORCID iD or a citation list. LabKit turns it into a structured record of your
         lab&apos;s publications, people, grants, and awards — and generates a real website from that
         data, not the other way around.
@@ -44,7 +44,7 @@ export default function LabKitEarlyAccessPage() {
       </div>
 
       <section className="mt-20">
-        <h2 className="text-muted-foreground text-sm font-medium tracking-wide uppercase">
+        <h2 className="text-sm font-medium tracking-wide text-muted-foreground uppercase">
           The actual pitch
         </h2>
         <p className="mt-4 text-base leading-relaxed">
@@ -59,7 +59,7 @@ export default function LabKitEarlyAccessPage() {
       </section>
 
       <section className="mt-16">
-        <h2 className="text-muted-foreground text-sm font-medium tracking-wide uppercase">
+        <h2 className="text-sm font-medium tracking-wide text-muted-foreground uppercase">
           What&apos;s working today
         </h2>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
@@ -104,8 +104,8 @@ export default function LabKitEarlyAccessPage() {
       </section>
 
       <section className="mt-16 rounded-lg border border-dashed p-6">
-        <h2 className="text-muted-foreground text-sm font-medium tracking-wide uppercase">Proof</h2>
-        <p className="text-muted-foreground mt-3 text-base">
+        <h2 className="text-sm font-medium tracking-wide text-muted-foreground uppercase">Proof</h2>
+        <p className="mt-3 text-base text-muted-foreground">
           DIAL Lab (North South University, Dr. Nova Ahmed) is the first real instance — launching
           soon. This section gets replaced with their site and a quote the day it&apos;s live, not
           before.

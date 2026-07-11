@@ -66,7 +66,7 @@ export function CommandMenu() {
                       <IconArrowRightDashed className="text-muted-foreground" />
                     )}
                     <span>{subItem.title}</span>
-                    <span className="text-muted-foreground ml-auto text-xs">{item.title}</span>
+                    <span className="ml-auto text-xs text-muted-foreground">{item.title}</span>
                   </CommandItem>
                 ))
               })}

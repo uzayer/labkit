@@ -13,7 +13,7 @@ import { apps } from '../data/data'
 export default function ConnectAppForm() {
   return (
     <>
-      <div className="text-muted-foreground text-start text-sm font-medium tracking-tight">
+      <div className="text-start text-sm font-medium tracking-tight text-muted-foreground">
         <p>To get the best experience, we recommand setting up at least one integration.</p>
         <p>This is necessary for us to have a source to generate reports for you.</p>
       </div>
@@ -23,7 +23,7 @@ export default function ConnectAppForm() {
           <AccordionItem key={app.name} value={app.name} className="rounded-md border px-4 py-0">
             <AccordionTrigger className="flex items-center hover:no-underline">
               <div className="flex items-center gap-2">
-                <div className="bg-muted flex size-9 items-center justify-center rounded-lg p-2">
+                <div className="flex size-9 items-center justify-center rounded-lg bg-muted p-2">
                   {app.logo}
                 </div>
                 <p>{app.name}</p>

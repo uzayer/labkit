@@ -19,7 +19,7 @@ const Hero27 = () => {
               SUBHEADING.
               <br />
             </p>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-lg text-muted-foreground">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, optio quis? Veniam
               accusamus quaerat illum dolorem eos atque reiciendis numquam. Veniam accusamus quaerat
               illum

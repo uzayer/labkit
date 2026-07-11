@@ -19,7 +19,7 @@ export function SearchInput({
 }: SearchInputProps) {
   return (
     <div className={cn('relative', className)}>
-      <Search className="text-muted-foreground absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2" />
+      <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
       <Input
         type="search"
         placeholder={placeholder}

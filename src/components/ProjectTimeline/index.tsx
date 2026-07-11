@@ -31,7 +31,7 @@ export const ProjectTimeline: React.FC<ProjectTimelineProps> = ({
   }
 
   return (
-    <div className="text-muted-foreground text-sm">
+    <div className="text-sm text-muted-foreground">
       {formatMonthYear(startDate)}
       {endDate ? (
         <>

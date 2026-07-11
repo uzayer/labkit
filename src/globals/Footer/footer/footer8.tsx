@@ -23,25 +23,25 @@ const Footer8: React.FC<{ footer: Footer; publicContext: PublicContextProps }> =
                   {footer.logo && <Media resource={footer.logo} alt="logo" className="h-11" />}
                   {/* <p className="text-3xl font-semibold">Shadcnblocks</p> */}
                 </span>
-                <p className="text-muted-foreground mt-6">{footer.subline && footer.subline}</p>
+                <p className="mt-6 text-muted-foreground">{footer.subline && footer.subline}</p>
               </div>
               <ul className="flex items-center space-x-6">
-                <li className="hover:text-muted-foreground font-medium duration-200 hover:scale-110">
+                <li className="font-medium duration-200 hover:scale-110 hover:text-muted-foreground">
                   <a href="#">
                     <FaInstagram className="size-6" />
                   </a>
                 </li>
-                <li className="hover:text-muted-foreground font-medium duration-200 hover:scale-110">
+                <li className="font-medium duration-200 hover:scale-110 hover:text-muted-foreground">
                   <a href="#">
                     <FaFacebook className="size-6" />
                   </a>
                 </li>
-                <li className="hover:text-muted-foreground font-medium duration-200 hover:scale-110">
+                <li className="font-medium duration-200 hover:scale-110 hover:text-muted-foreground">
                   <a href="#">
                     <FaTwitter className="size-6" />
                   </a>
                 </li>
-                <li className="hover:text-muted-foreground font-medium duration-200 hover:scale-110">
+                <li className="font-medium duration-200 hover:scale-110 hover:text-muted-foreground">
                   <a href="#">
                     <FaLinkedin className="size-6" />
                   </a>
@@ -52,10 +52,10 @@ const Footer8: React.FC<{ footer: Footer; publicContext: PublicContextProps }> =
               footer.navItems.map((section, sectionIdx) => (
                 <div key={sectionIdx} className="col-span-2 md:col-span-1">
                   <h3 className="mb-5 font-medium">{section.title}</h3>
-                  <ul className="text-muted-foreground space-y-4 text-sm">
+                  <ul className="space-y-4 text-sm text-muted-foreground">
                     {section.subNavItems &&
                       section.subNavItems.map((link, linkIdx) => (
-                        <li key={linkIdx} className="hover:text-primary font-medium">
+                        <li key={linkIdx} className="font-medium hover:text-primary">
                           <CMSLink publicContext={publicContext} {...link.link} />
                         </li>
                       ))}
@@ -71,15 +71,15 @@ const Footer8: React.FC<{ footer: Footer; publicContext: PublicContextProps }> =
                   <Button type="submit">Subscribe</Button>
                 </div>
               </div>
-              <p className="text-muted-foreground mt-1 text-xs font-medium">
+              <p className="mt-1 text-xs font-medium text-muted-foreground">
                 By submitting, you agree to our
-                <a href="#" className="text-primary ml-1 hover:underline">
+                <a href="#" className="ml-1 text-primary hover:underline">
                   Privacy Policy
                 </a>
               </p>
             </div>
           </div>
-          <div className="text-muted-foreground mt-20 flex flex-col justify-between gap-4 border-t pt-8 text-sm font-medium lg:flex-row lg:items-center lg:text-left">
+          <div className="mt-20 flex flex-col justify-between gap-4 border-t pt-8 text-sm font-medium text-muted-foreground lg:flex-row lg:items-center lg:text-left">
             <p>{footer.copyright && `© ${new Date().getFullYear()} ${footer.copyright}`}</p>
             <p>Made with ❤️ by trieb.work</p>
           </div>

@@ -12,7 +12,7 @@ const Hero38 = () => {
             <h1 className="my-6 text-4xl font-bold text-pretty lg:text-6xl">
               Welcome to Our Website
             </h1>
-            <p className="text-muted-foreground mb-8 max-w-xl lg:text-xl">
+            <p className="mb-8 max-w-xl text-muted-foreground lg:text-xl">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia
               fugiat omnis! Porro facilis quo animi consequatur. Explicabo.
             </p>
@@ -32,7 +32,7 @@ const Hero38 = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 version="1.1"
                 viewBox="0 0 800 800"
-                className="text-muted-foreground size-full opacity-20"
+                className="size-full text-muted-foreground opacity-20"
               >
                 {Array.from(Array(720).keys()).map((dot, index, array) => {
                   const angle = 0.2 * index
@@ -52,9 +52,9 @@ const Hero38 = () => {
                 })}
               </svg>
             </div>
-            <div className="border-border bg-accent absolute top-[10%] left-[8%] flex aspect-5/6 w-[38%] justify-center rounded-lg border"></div>
-            <div className="border-border bg-accent absolute top-[20%] right-[12%] flex aspect-square w-1/5 justify-center rounded-lg border"></div>
-            <div className="border-border bg-accent absolute right-[24%] bottom-[24%] flex aspect-5/6 w-[38%] justify-center rounded-lg border"></div>
+            <div className="absolute top-[10%] left-[8%] flex aspect-5/6 w-[38%] justify-center rounded-lg border border-border bg-accent"></div>
+            <div className="absolute top-[20%] right-[12%] flex aspect-square w-1/5 justify-center rounded-lg border border-border bg-accent"></div>
+            <div className="absolute right-[24%] bottom-[24%] flex aspect-5/6 w-[38%] justify-center rounded-lg border border-border bg-accent"></div>
           </div>
         </div>
       </div>

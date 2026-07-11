@@ -28,8 +28,8 @@ export const columns: ColumnDef<User>[] = [
     ),
     meta: {
       className: cn(
-        'sticky md:table-cell left-0 z-10 rounded-tl',
-        'bg-background transition-colors duration-200 group-hover/row:bg-muted group-data-[state=selected]/row:bg-muted pr-2! md:pr-0',
+        'sticky left-0 z-10 rounded-tl md:table-cell',
+        'bg-background pr-2! transition-colors duration-200 group-hover/row:bg-muted group-data-[state=selected]/row:bg-muted md:pr-0',
       ),
     },
     cell: ({ row }) => (

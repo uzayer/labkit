@@ -82,7 +82,7 @@ const RichText: React.FC<RichTextProps> = (props) => {
         {
           container: props.enableGutter,
           'max-w-none': !props.enableGutter,
-          'prose dark:prose-invert mx-auto': props.enableProse,
+          'mx-auto prose dark:prose-invert': props.enableProse,
         },
         props.className,
       )}

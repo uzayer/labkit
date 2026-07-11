@@ -22,10 +22,10 @@ const Footer2: React.FC<{ footer: Footer; publicContext: PublicContextProps }> =
               footer.navItems.map((section, sectionIdx) => (
                 <div key={sectionIdx}>
                   <h3 className="mb-4 font-bold">{section.title}</h3>
-                  <ul className="text-muted-foreground space-y-4">
+                  <ul className="space-y-4 text-muted-foreground">
                     {section?.subNavItems &&
                       section.subNavItems.map((link, linkIdx) => (
-                        <li key={linkIdx} className="hover:text-primary font-medium">
+                        <li key={linkIdx} className="font-medium hover:text-primary">
                           <CMSLink publicContext={publicContext} {...link.link} />
                         </li>
                       ))}
@@ -33,11 +33,11 @@ const Footer2: React.FC<{ footer: Footer; publicContext: PublicContextProps }> =
                 </div>
               ))}
           </div>
-          <div className="text-muted-foreground mt-24 flex flex-col justify-between gap-4 border-t pt-8 text-sm font-medium md:flex-row md:items-center">
+          <div className="mt-24 flex flex-col justify-between gap-4 border-t pt-8 text-sm font-medium text-muted-foreground md:flex-row md:items-center">
             <p>{footer.copyright && `© ${new Date().getFullYear()} ${footer.copyright}`}</p>
             <ul className="flex gap-4">
               {footer.legalLinks?.map((item, index) => (
-                <li key={index} className="hover:text-primary underline">
+                <li key={index} className="underline hover:text-primary">
                   <CMSLink publicContext={publicContext} {...item.link} />
                 </li>
               ))}

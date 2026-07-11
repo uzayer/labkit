@@ -38,7 +38,7 @@ const Stats10: React.FC<StatsBlock & { publicContext: PublicContextProps }> = ({
           <div className={`grid grid-cols-1 gap-7 md:grid-cols-2 ${gridColsClass}`}>
             {stats10Cards?.map((card, i) => (
               <div key={i} className="block w-full">
-                <Card className="hover:border-primary rounded-3xl border-2 transition hover:-translate-y-3">
+                <Card className="rounded-3xl border-2 transition hover:-translate-y-3 hover:border-primary">
                   <CardContent className="block p-10">
                     <div className="flex items-center gap-7">
                       {card.avatarIcon && (

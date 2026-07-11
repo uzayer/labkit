@@ -417,7 +417,7 @@ export function serializeLexical({
                       className="h-auto w-full rounded-md"
                     />
                     {media.caption && (
-                      <figcaption className="text-muted-foreground mt-2 text-sm">
+                      <figcaption className="mt-2 text-sm text-muted-foreground">
                         {typeof media.caption === 'string'
                           ? media.caption
                           : serializeLexical({

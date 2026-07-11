@@ -14,7 +14,7 @@ interface Props {
 
 export default function LogsToolbar({ toggleFilters, searchVal, setSearchVal }: Props) {
   return (
-    <div className="border-muted flex items-center gap-2 border-b p-3">
+    <div className="flex items-center gap-2 border-b border-muted p-3">
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>

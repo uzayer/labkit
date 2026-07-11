@@ -60,7 +60,7 @@ export const FeaturedImage: React.FC<FeaturedImageProps> = ({
         publicContext={publicContext}
         url={link?.url || '#'}
         className={cn(
-          'group text-primary-foreground relative flex h-full flex-row overflow-hidden rounded-lg px-0 lg:rounded-xl',
+          'group relative flex h-full flex-row overflow-hidden rounded-lg px-0 text-primary-foreground lg:rounded-xl',
           bgColorClass,
         )}
       >
@@ -73,7 +73,7 @@ export const FeaturedImage: React.FC<FeaturedImageProps> = ({
                 priority
               />
             ) : (
-              <div className="bg-muted h-full w-full" />
+              <div className="h-full w-full bg-muted" />
             )}
           </div>
           <div className={cn('relative z-20 flex flex-col rounded-b-xl p-6', bgColorClass)}>

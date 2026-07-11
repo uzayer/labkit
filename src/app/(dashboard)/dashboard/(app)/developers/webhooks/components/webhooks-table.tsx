@@ -59,7 +59,7 @@ export function WebhooksTable({ columns, data }: Props) {
                       key={header.id}
                       colSpan={header.colSpan}
                       className={cn(
-                        'text-foreground/85 text-sm font-semibold',
+                        'text-sm font-semibold text-foreground/85',
                         header.column.columnDef.meta?.className ?? '',
                       )}
                     >

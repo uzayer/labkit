@@ -232,7 +232,7 @@ export const ProjectPost1: React.FC<CaseStudyProps> = (props) => {
             )}
             <div className="mb-6">
               <h2 className="font-semibold">Overview</h2>
-              <p className="text-muted-foreground mt-1 text-sm">{overviewCopy}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{overviewCopy}</p>
               {(() => {
                 const normalizedThemes = Array.isArray(themes) ? themes : (themes?.docs ?? null)
                 if (!normalizedThemes || normalizedThemes.length === 0) return null
@@ -265,9 +265,9 @@ export const ProjectPost1: React.FC<CaseStudyProps> = (props) => {
                     <div key={`${item.label}-${index}`} className="col-span-2 lg:col-span-1">
                       {item.label && <h2 className="font-semibold">{item.label}</h2>}
                       {isStringValue ? (
-                        <p className="text-muted-foreground mt-1 text-sm">{item.value}</p>
+                        <p className="mt-1 text-sm text-muted-foreground">{item.value}</p>
                       ) : (
-                        <div className="text-muted-foreground mt-1 text-sm">{item.value}</div>
+                        <div className="mt-1 text-sm text-muted-foreground">{item.value}</div>
                       )}
                     </div>
                   )
@@ -288,7 +288,7 @@ export const ProjectPost1: React.FC<CaseStudyProps> = (props) => {
                   {teamMembers.filter((member) => typeof member !== 'string' && member?.name)
                     .length > 4 && (
                     <Collapsible>
-                      <CollapsibleTrigger className="hover:bg-muted flex w-full items-center justify-between rounded-md px-3 py-2 text-sm font-medium">
+                      <CollapsibleTrigger className="flex w-full items-center justify-between rounded-md px-3 py-2 text-sm font-medium hover:bg-muted">
                         <div className="flex items-center gap-2">
                           <ChevronRight className="h-4 w-4" />
                           <span>Show more</span>
@@ -316,7 +316,7 @@ export const ProjectPost1: React.FC<CaseStudyProps> = (props) => {
               </div>
             )}
             <div className="mt-10 flex flex-col">
-              <span className="text-muted-foreground mb-2 text-sm">
+              <span className="mb-2 text-sm text-muted-foreground">
                 {caseStudySettings.shareLabel || 'Share this content:'}
               </span>
               <div className="flex gap-4">
@@ -339,7 +339,7 @@ export const ProjectPost1: React.FC<CaseStudyProps> = (props) => {
                 {caseStudySettings.problem && (
                   <div>
                     <h2 className="text-xl font-semibold">Problem</h2>
-                    <p className="text-muted-foreground mt-3">{caseStudySettings.problem}</p>
+                    <p className="mt-3 text-muted-foreground">{caseStudySettings.problem}</p>
                   </div>
                 )}
                 {caseStudySettings.problem && caseStudySettings.approach && (
@@ -348,7 +348,7 @@ export const ProjectPost1: React.FC<CaseStudyProps> = (props) => {
                 {caseStudySettings.approach && (
                   <div>
                     <h2 className="text-xl font-semibold">Approach</h2>
-                    <p className="text-muted-foreground mt-3">{caseStudySettings.approach}</p>
+                    <p className="mt-3 text-muted-foreground">{caseStudySettings.approach}</p>
                   </div>
                 )}
                 {outcomes.length > 0 && (
@@ -368,7 +368,7 @@ export const ProjectPost1: React.FC<CaseStudyProps> = (props) => {
                 )}
               </div>
               {content && (
-                <div className="prose dark:prose-invert mt-20">
+                <div className="prose mt-20 dark:prose-invert">
                   <RichText content={content} publicContext={publicContext} withWrapper={false} />
                 </div>
               )}

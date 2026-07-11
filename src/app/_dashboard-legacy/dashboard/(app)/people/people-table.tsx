@@ -137,7 +137,7 @@ export function PeopleTable({
                 >
                   {displayName}
                 </Link>
-                <span className="text-muted-foreground text-xs">{person.title}</span>
+                <span className="text-xs text-muted-foreground">{person.title}</span>
               </div>
             </div>
           )
@@ -257,7 +257,7 @@ export function PeopleTable({
               <TableRow>
                 <TableCell
                   colSpan={columns.length}
-                  className="text-muted-foreground h-24 text-center"
+                  className="h-24 text-center text-muted-foreground"
                 >
                   No people found.
                 </TableCell>
@@ -267,7 +267,7 @@ export function PeopleTable({
         </Table>
       </div>
       <div className="flex items-center justify-between gap-2">
-        <p className="text-muted-foreground text-sm">{totalDocs} total</p>
+        <p className="text-sm text-muted-foreground">{totalDocs} total</p>
       </div>
       <DataTablePagination table={table} />
     </div>

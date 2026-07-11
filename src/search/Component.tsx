@@ -118,8 +118,8 @@ function SearchList({
       <CommandList className="!h-[400px] !max-h-[400px]">
         {isLoading && displayResults.length === 0 && (
           <div className="flex items-center justify-center py-6">
-            <Loader2 className="text-muted-foreground h-4 w-4 animate-spin" />
-            <span className="text-muted-foreground ml-2 text-sm">{t.searching}</span>
+            <Loader2 className="h-4 w-4 animate-spin text-muted-foreground" />
+            <span className="ml-2 text-sm text-muted-foreground">{t.searching}</span>
           </div>
         )}
 
@@ -148,20 +148,20 @@ function SearchList({
                 onSelect={() => handleSelect(result.url)}
                 className="flex items-start gap-3"
               >
-                <FileText className="text-muted-foreground mt-0.5 h-4 w-4 shrink-0" />
+                <FileText className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
                 <div className="flex min-w-0 flex-1 flex-col gap-1">
                   <div className="truncate text-sm font-medium">{result.title}</div>
                   {result.description && (
-                    <div className="text-muted-foreground line-clamp-2 text-xs">
+                    <div className="line-clamp-2 text-xs text-muted-foreground">
                       {result.description}
                     </div>
                   )}
                   <div className="mt-1 flex items-center gap-2">
-                    <span className="text-muted-foreground text-xs capitalize">{result.type}</span>
+                    <span className="text-xs text-muted-foreground capitalize">{result.type}</span>
                     {result.categories && result.categories.length > 0 && (
                       <>
-                        <span className="text-muted-foreground text-xs">•</span>
-                        <span className="text-muted-foreground text-xs">
+                        <span className="text-xs text-muted-foreground">•</span>
+                        <span className="text-xs text-muted-foreground">
                           {result.categories.map((cat) => cat.title).join(', ')}
                         </span>
                       </>
@@ -246,7 +246,7 @@ export function SearchButton({
     <>
       <Button
         onClick={() => setOpen(true)}
-        className={`text-muted-foreground hover:text-foreground mx-2 px-3 transition-colors ${className}`}
+        className={`mx-2 px-3 text-muted-foreground transition-colors hover:text-foreground ${className}`}
         variant={variant}
       >
         <p className="flex items-center gap-2">

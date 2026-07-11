@@ -20,7 +20,7 @@ export const LanguageSwitcher: React.FC<{
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        <NavigationMenuItem className="text-muted-foreground hover:bg-card hover:text-accent-foreground rounded-md">
+        <NavigationMenuItem className="rounded-md text-muted-foreground hover:bg-card hover:text-accent-foreground">
           <NavigationMenuTrigger
             className={cn(
               size === 'sm' && 'h-9 rounded-md px-3 text-sm font-medium',
@@ -44,7 +44,7 @@ export const LanguageSwitcher: React.FC<{
                   return (
                     <span
                       key={locale}
-                      className="text-accent-foreground bg-card mb-1 flex w-[85px] items-center justify-start rounded-md p-2"
+                      className="mb-1 flex w-[85px] items-center justify-start rounded-md bg-card p-2 text-accent-foreground"
                     >
                       {localeLabels[locale]} <Check className="ml-2 h-4 w-4" />
                     </span>
@@ -55,7 +55,7 @@ export const LanguageSwitcher: React.FC<{
                       key={locale}
                       href={href}
                       lang={locale}
-                      className="hover:text-accent-foreground hover:bg-card mb-1 flex w-[85px] items-center justify-start rounded-md p-2"
+                      className="mb-1 flex w-[85px] items-center justify-start rounded-md p-2 hover:bg-card hover:text-accent-foreground"
                     >
                       {localeLabels[locale]}
                     </Link>
@@ -92,7 +92,7 @@ export const LanguageSwitcherMobile: React.FC<{ publicContext: PublicContextProp
             return (
               <span
                 key={locale}
-                className="hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground flex gap-4 rounded-md p-3 text-sm leading-none font-semibold outline-hidden transition-colors select-none"
+                className="flex gap-4 rounded-md p-3 text-sm leading-none font-semibold outline-hidden transition-colors select-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
               >
                 {localeLabels[locale]} <Check className="ml-2 h-4 w-4" />
               </span>
@@ -103,7 +103,7 @@ export const LanguageSwitcherMobile: React.FC<{ publicContext: PublicContextProp
                 key={locale}
                 href={href}
                 lang={locale}
-                className="hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground flex gap-4 rounded-md p-3 text-sm leading-none font-semibold outline-hidden transition-colors select-none"
+                className="flex gap-4 rounded-md p-3 text-sm leading-none font-semibold outline-hidden transition-colors select-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
               >
                 {localeLabels[locale]}
               </Link>

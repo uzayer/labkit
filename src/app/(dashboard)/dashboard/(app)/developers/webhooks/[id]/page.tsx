@@ -94,8 +94,8 @@ export default async function WebhookDetailPage({ params }: Props) {
 
 function Specs({ label, children }: { label: string; children: ReactNode }) {
   return (
-    <div className="border-border border-b py-2 sm:border-r sm:border-b-0 sm:px-4 sm:py-0 sm:last:border-none">
-      <span className="text-muted-foreground text-xs font-bold tracking-tight uppercase">
+    <div className="border-b border-border py-2 sm:border-r sm:border-b-0 sm:px-4 sm:py-0 sm:last:border-none">
+      <span className="text-xs font-bold tracking-tight text-muted-foreground uppercase">
         {label}
       </span>
       <div className="mt-1 flex items-start gap-2 text-sm font-medium [&>*:first-child]:flex-none">

@@ -52,7 +52,7 @@ const Awards2: React.FC<
         <div className="grid grid-cols-1 gap-20 lg:grid-cols-6">
           <div className="top-10 col-span-2 flex h-fit w-fit items-center gap-3 py-8 lg:sticky">
             <span className={`size-3 ${accentColorClass}`} />
-            <p className="text-foreground/30 text-2xl uppercase">{sectionLabelText}</p>
+            <p className="text-2xl text-foreground/30 uppercase">{sectionLabelText}</p>
           </div>
           <ul className="col-span-4 w-full">
             {awards &&
@@ -70,10 +70,10 @@ const Awards2: React.FC<
                       <div className="flex-1">
                         <h3 className="text-2xl font-medium tracking-tight">{awardTitle}</h3>
                         {awardDescription && (
-                          <p className="text-foreground/70 mt-2 text-sm">{awardDescription}</p>
+                          <p className="mt-2 text-sm text-foreground/70">{awardDescription}</p>
                         )}
                       </div>
-                      <p className="text-foreground/50 ml-4 flex-shrink-0 font-mono text-lg tracking-tighter">
+                      <p className="ml-4 flex-shrink-0 font-mono text-lg tracking-tighter text-foreground/50">
                         {awardYear}
                       </p>
                     </div>

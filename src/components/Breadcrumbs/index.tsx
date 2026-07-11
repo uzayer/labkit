@@ -33,10 +33,10 @@ export function Breadcrumbs({ items, className, publicContext }: BreadcrumbProps
   return (
     <div className="container my-12">
       <Breadcrumb>
-        <BreadcrumbList className={cn('text-muted-foreground text-sm', className)}>
+        <BreadcrumbList className={cn('text-sm text-muted-foreground', className)}>
           <BreadcrumbItem>
             <BreadcrumbLink
-              className="hover:text-foreground transition-colors duration-200"
+              className="transition-colors duration-200 hover:text-foreground"
               asChild
             >
               <Link href={localePrefix || '/'}>Home</Link>
@@ -50,7 +50,7 @@ export function Breadcrumbs({ items, className, publicContext }: BreadcrumbProps
                   <BreadcrumbPage className="font-medium">{item.label}</BreadcrumbPage>
                 ) : (
                   <BreadcrumbLink
-                    className="hover:text-foreground transition-colors duration-200"
+                    className="transition-colors duration-200 hover:text-foreground"
                     asChild
                   >
                     <Link href={localePrefix + item.url || '#'}>{item.label}</Link>

@@ -40,7 +40,7 @@ const Hero53 = () => {
               <p className="text-xs">Trusted by 2000+ developers worldwide</p>
             </div>
           </div>
-          <p className="text-muted-foreground max-w-lg text-xl">
+          <p className="max-w-lg text-xl text-muted-foreground">
             Our platform streamlines development by automating issue tracking, documentation, and
             knowledge management.
           </p>

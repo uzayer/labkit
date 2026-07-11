@@ -40,7 +40,7 @@ export default function WebhooksPage() {
       <div className="flex flex-wrap items-end justify-between gap-2">
         <div>
           <h2 className="text-2xl font-bold">Webhooks</h2>
-          <p className="text-muted-foreground text-sm">Setup, integrate and monitor webhooks.</p>
+          <p className="text-sm text-muted-foreground">Setup, integrate and monitor webhooks.</p>
         </div>
         <AddWebhook />
       </div>
@@ -49,10 +49,10 @@ export default function WebhooksPage() {
         {webhookList && webhookList.length > 0 ? (
           <WebhooksTable data={webhookList} columns={columns} />
         ) : (
-          <div className="border-border mt-6 flex flex-col items-center gap-4 rounded-lg border border-dashed px-6 py-10">
+          <div className="mt-6 flex flex-col items-center gap-4 rounded-lg border border-dashed border-border px-6 py-10">
             <Frown className="size-32" />
             <h2 className="text-lg font-semibold">No Webhooks Yet</h2>
-            <p className="text-muted-foreground text-center">
+            <p className="text-center text-muted-foreground">
               Get started by creating a webhook to <br className="hidden sm:block" /> integrate and
               automate your workflows.
             </p>

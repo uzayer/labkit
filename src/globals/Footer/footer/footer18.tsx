@@ -298,13 +298,13 @@ const CookiesPanel = ({ cookiesOptions }: CookiesPanelProps) => {
                 {cookiesOptions.map((opt) => (
                   <Field
                     key={opt.id}
-                    className="bg-background flex w-full items-start justify-between rounded-xl border p-3"
+                    className="flex w-full items-start justify-between rounded-xl border bg-background p-3"
                   >
                     <FieldLabel className="flex w-full flex-col gap-1">
-                      <p className="text-foreground text-sm leading-normal font-medium">
+                      <p className="text-sm leading-normal font-medium text-foreground">
                         {opt.title}
                       </p>
-                      <p className="text-muted-foreground text-sm leading-normal">
+                      <p className="text-sm leading-normal text-muted-foreground">
                         {opt.description}
                       </p>
                     </FieldLabel>
@@ -345,8 +345,8 @@ const LanguagesSelect = ({ languages }: LanguagesSelectProps) => {
               href={lang.link}
               className="flex cursor-pointer flex-col items-start rounded-md px-4 py-2"
             >
-              <div className="text-foreground text-base leading-normal">{lang.label}</div>
-              <div className="text-muted-foreground text-sm leading-normal">{lang.description}</div>
+              <div className="text-base leading-normal text-foreground">{lang.label}</div>
+              <div className="text-sm leading-normal text-muted-foreground">{lang.description}</div>
             </a>
           </DropdownMenuItem>
         ))}
@@ -409,7 +409,7 @@ const Footer18 = ({ className }: Footer18Props) => {
             {NAVIGATION.map((section) => (
               <ul key={`${section.title}`} className="flex flex-col items-start gap-[.4rem]">
                 <li>
-                  <p className="text-foreground text-[0.9375rem] leading-normal font-semibold">
+                  <p className="text-[0.9375rem] leading-normal font-semibold text-foreground">
                     {section.title}
                   </p>
                 </li>
@@ -417,7 +417,7 @@ const Footer18 = ({ className }: Footer18Props) => {
                   <li key={`${section.title}-${link.name}`}>
                     <a
                       href={link.href}
-                      className="text-muted-foreground text-[0.9375rem] leading-normal hover:underline"
+                      className="text-[0.9375rem] leading-normal text-muted-foreground hover:underline"
                     >
                       {link.name}
                     </a>
@@ -429,7 +429,7 @@ const Footer18 = ({ className }: Footer18Props) => {
         </nav>
         <div className="mt-8 flex items-center justify-between gap-4">
           <div className="flex items-center justify-between gap-4">
-            <p className="text-foreground text-sm leading-normal font-medium">
+            <p className="text-sm leading-normal font-medium text-foreground">
               © 2025 shadcnblocks.com
             </p>
           </div>

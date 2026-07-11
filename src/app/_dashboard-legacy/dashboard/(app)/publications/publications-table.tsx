@@ -199,7 +199,7 @@ export function PublicationsTable({
               <TableRow>
                 <TableCell
                   colSpan={columns.length}
-                  className="text-muted-foreground h-24 text-center"
+                  className="h-24 text-center text-muted-foreground"
                 >
                   No publications found.
                 </TableCell>
@@ -209,7 +209,7 @@ export function PublicationsTable({
         </Table>
       </div>
       <div className="flex items-center justify-between gap-2">
-        <p className="text-muted-foreground text-sm">{totalDocs} total</p>
+        <p className="text-sm text-muted-foreground">{totalDocs} total</p>
       </div>
       <DataTablePagination table={table} />
     </div>

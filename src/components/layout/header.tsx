@@ -8,7 +8,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        'bg-background z-50 flex h-16 shrink-0 items-center gap-2 border-b px-4',
+        'z-50 flex h-16 shrink-0 items-center gap-2 border-b bg-background px-4',
         'sticky top-0',
       )}
     >

@@ -34,13 +34,13 @@ const Awards1 = () => {
           </h1>
         </div>
         <div className="grid-cols-6 gap-10 space-y-12 lg:grid lg:space-y-0">
-          <p className="text-foreground/40 flex-center hidden h-12 items-center lg:flex">
+          <p className="flex-center hidden h-12 items-center text-foreground/40 lg:flex">
             Achievements
           </p>
           <div className="col-span-5 lg:pl-10">
             <table className="w-full border-collapse">
               <thead>
-                <tr className="text-foreground/40 h-12 border-b text-left text-sm">
+                <tr className="h-12 border-b text-left text-sm text-foreground/40">
                   <th className="font-normal">Name of the Award</th>
                   <th className="font-normal">Description</th>
                   <th className="text-left text-right font-normal">Year</th>
@@ -48,12 +48,12 @@ const Awards1 = () => {
               </thead>
               <tbody>
                 {awards.map((award, index) => (
-                  <tr key={index} className="text-foreground/40 h-20 border-b text-left text-sm">
-                    <td className="text-foreground text-lg font-medium tracking-tight lg:text-xl">
+                  <tr key={index} className="h-20 border-b text-left text-sm text-foreground/40">
+                    <td className="text-lg font-medium tracking-tight text-foreground lg:text-xl">
                       {award.name}
                     </td>
                     <td>{award.description}</td>
-                    <td className="text-foreground text-right">{award.year}</td>
+                    <td className="text-right text-foreground">{award.year}</td>
                   </tr>
                 ))}
               </tbody>

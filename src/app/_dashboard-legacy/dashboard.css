@@ -122,13 +122,13 @@
   }
 
   * {
-    @apply border-border outline-ring/50 overscroll-none;
+    @apply overscroll-none border-border outline-ring/50;
     scrollbar-width: thin;
     scrollbar-color: var(--border) transparent;
   }
 
   body {
-    @apply bg-background text-foreground min-h-svh w-full;
+    @apply min-h-svh w-full bg-background text-foreground;
     font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   }
 

@@ -98,7 +98,7 @@ export default function Filters() {
           </CollapsibleTrigger>
 
           <CollapsibleContent className="CollapsibleContent space-y-2 px-2 pt-1 pb-3 duration-75!">
-            <div className="border-muted flex flex-col overflow-hidden rounded-md border">
+            <div className="flex flex-col overflow-hidden rounded-md border border-muted">
               {containsLevelOptions.map((contain_level) => (
                 <div
                   className="flex items-center gap-2 px-2 hover:bg-gray-100 dark:hover:bg-gray-800"
@@ -139,7 +139,7 @@ export default function Filters() {
           </CollapsibleTrigger>
 
           <CollapsibleContent className="CollapsibleContent space-y-2 px-2 pt-1 pb-3 duration-75!">
-            <div className="border-muted flex flex-col overflow-hidden rounded-md border">
+            <div className="flex flex-col overflow-hidden rounded-md border border-muted">
               {environmentOptions.map((env) => (
                 <div
                   className="flex items-center gap-2 px-2 hover:bg-gray-100 dark:hover:bg-gray-800"
@@ -178,7 +178,7 @@ export default function Filters() {
           </CollapsibleTrigger>
 
           <CollapsibleContent className="CollapsibleContent space-y-2 px-2 pt-1 pb-3 duration-75!">
-            <div className="border-muted flex flex-col overflow-hidden rounded-md border">
+            <div className="flex flex-col overflow-hidden rounded-md border border-muted">
               {eventTypeOptions.map((eventType) => (
                 <div
                   className="flex items-center gap-2 p-2 hover:bg-gray-100 dark:hover:bg-gray-800"

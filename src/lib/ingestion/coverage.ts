@@ -49,7 +49,9 @@ function coverageFromCrossref(json: unknown): CoverageRow['crossref'] {
     volume: Boolean(message.volume),
     publisher: Boolean(message.publisher),
     authorOrcid: authors.some((author) => Boolean((author as { ORCID?: unknown }).ORCID)),
-    publishedDate: Boolean(message['published-print'] || message['published-online'] || message.published),
+    publishedDate: Boolean(
+      message['published-print'] || message['published-online'] || message.published,
+    ),
   }
 }
 

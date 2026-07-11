@@ -16,7 +16,7 @@ const DashedLine = ({ orientation = 'horizontal', className }: DashedLineProps) 
   return (
     <div
       className={cn(
-        'text-muted-foreground relative',
+        'relative text-muted-foreground',
         isHorizontal ? 'h-px w-full' : 'h-full w-px',
         className,
       )}
@@ -63,7 +63,7 @@ export const Hero262: React.FC<Page['hero'] & { publicContext: PublicContextProp
           )}
 
           {subheading && (
-            <p className="text-muted-foreground mt-5 text-2xl md:text-3xl lg:text-4xl">
+            <p className="mt-5 text-2xl text-muted-foreground md:text-3xl lg:text-4xl">
               {subheading}
             </p>
           )}

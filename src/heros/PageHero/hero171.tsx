@@ -19,10 +19,10 @@ const Hero171 = ({ className }: Hero171Props) => {
         <div className="container">
           <div className="flex flex-col items-center gap-20 lg:flex-row lg:items-start">
             <div className="max-w-[28.125rem]">
-              <h1 className="text-foreground text-6xl font-medium lg:text-7xl">
+              <h1 className="text-6xl font-medium text-foreground lg:text-7xl">
                 We make it effortless for you
               </h1>
-              <p className="text-muted-foreground mt-6 text-lg">
+              <p className="mt-6 text-lg text-muted-foreground">
                 Say goodbye to manual bookings and free up your time to focus on your business or
                 simply enjoy the extra freedom.
               </p>
@@ -55,51 +55,51 @@ const Hero171 = ({ className }: Hero171Props) => {
                   </a>
                 </Button>
               </div>
-              <div className="border-muted2 mt-12 flex gap-14 border-t">
+              <div className="mt-12 flex gap-14 border-t border-muted2">
                 <div className="mt-8">
                   <div className="relative flex -space-x-5">
-                    <Avatar className="border-muted2 relative h-14 w-14 rounded-full border-2">
+                    <Avatar className="relative h-14 w-14 rounded-full border-2 border-muted2">
                       <AvatarImage
                         src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-1.webp"
                         alt=""
                       />
                       <AvatarFallback>AB</AvatarFallback>
                     </Avatar>
-                    <Avatar className="border-muted2 relative h-14 w-14 rounded-full border-2">
+                    <Avatar className="relative h-14 w-14 rounded-full border-2 border-muted2">
                       <AvatarImage
                         src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-2.webp"
                         alt=""
                       />
                       <AvatarFallback>AB</AvatarFallback>
                     </Avatar>
-                    <Avatar className="border-muted2 relative h-14 w-14 rounded-full border-2">
+                    <Avatar className="relative h-14 w-14 rounded-full border-2 border-muted2">
                       <AvatarImage
                         src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-3.webp"
                         alt=""
                       />
                       <AvatarFallback>AB</AvatarFallback>
                     </Avatar>
-                    <div className="border-muted2 bg-background relative flex h-14 w-14 shrink-0 rounded-full border-2">
+                    <div className="relative flex h-14 w-14 shrink-0 rounded-full border-2 border-muted2 bg-background">
                       <Plus className="m-auto size-4 fill-slate-900" />
                     </div>
                   </div>
                   <div className="mt-4 flex flex-wrap items-center gap-4">
-                    <div className="text-foreground/60 text-5xl font-medium">97K</div>
-                    <div className="text-foreground/60 max-w-28 text-base leading-tight font-light">
+                    <div className="text-5xl font-medium text-foreground/60">97K</div>
+                    <div className="max-w-28 text-base leading-tight font-light text-foreground/60">
                       Users across the globe
                     </div>
                   </div>
                 </div>
-                <div className="border-muted2 mt-8 border-l pl-12">
+                <div className="mt-8 border-l border-muted2 pl-12">
                   <Button
                     variant="outline"
                     size="icon"
                     onClick={() => setIsVideoOpen(true)}
-                    className="group border-primary flex h-14 w-14 rounded-full border transition hover:scale-110"
+                    className="group flex h-14 w-14 rounded-full border border-primary transition hover:scale-110"
                   >
-                    <Play className="fill-primary m-auto size-3.5 transition" />
+                    <Play className="m-auto size-3.5 fill-primary transition" />
                   </Button>
-                  <p className="text-foreground/60 mt-4 max-w-28 text-base leading-tight font-light">
+                  <p className="mt-4 max-w-28 text-base leading-tight font-light text-foreground/60">
                     Watch promo video
                   </p>
                 </div>
@@ -116,7 +116,7 @@ const Hero171 = ({ className }: Hero171Props) => {
                 </div>
                 <div className="col-[1/2] row-[1/2] self-end">
                   <svg
-                    className="fill-muted-foreground w-[4.375rem] xl:w-[8rem]"
+                    className="w-[4.375rem] fill-muted-foreground xl:w-[8rem]"
                     viewBox="0 0 131 174"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -133,23 +133,23 @@ const Hero171 = ({ className }: Hero171Props) => {
                     />
                   </svg>
                 </div>
-                <div className="bg-muted col-[1/3] overflow-hidden rounded-3xl">
+                <div className="col-[1/3] overflow-hidden rounded-3xl bg-muted">
                   <div className="p-5 xl:p-7">
                     <div className="flex gap-7">
-                      <div className="text-foreground text-4xl leading-none xl:text-7xl">99%</div>
-                      <Signal className="stroke-foreground h-9 w-9 xl:h-14 xl:w-14" />
+                      <div className="text-4xl leading-none text-foreground xl:text-7xl">99%</div>
+                      <Signal className="h-9 w-9 stroke-foreground xl:h-14 xl:w-14" />
                     </div>
-                    <p className="text-foreground mt-3 text-xs md:text-sm xl:mt-7 xl:text-xl">
+                    <p className="mt-3 text-xs text-foreground md:text-sm xl:mt-7 xl:text-xl">
                       Crystal-clear{' '}
-                      <span className="text-foreground/60 font-bold">voice and video</span> calls
+                      <span className="font-bold text-foreground/60">voice and video</span> calls
                       with no background noise
                     </p>
                   </div>
                 </div>
-                <div className="bg-muted col-[2/3] row-[-3/-1] flex h-full w-full items-center justify-center overflow-hidden rounded-3xl">
-                  <AudioLines className="stroke-foreground mx-auto size-16 xl:size-27" />
+                <div className="col-[2/3] row-[-3/-1] flex h-full w-full items-center justify-center overflow-hidden rounded-3xl bg-muted">
+                  <AudioLines className="mx-auto size-16 stroke-foreground xl:size-27" />
                 </div>
-                <div className="bg-muted relative col-[3/4] row-[2/4] rounded-3xl">
+                <div className="relative col-[3/4] row-[2/4] rounded-3xl bg-muted">
                   <div className="h-full w-full overflow-hidden rounded-3xl">
                     <img
                       src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg"
@@ -158,7 +158,7 @@ const Hero171 = ({ className }: Hero171Props) => {
                     />
                   </div>
                   <svg
-                    className="fill-muted-foreground absolute -right-10 -bottom-20 w-12 rotate-45 xl:-right-14 xl:-bottom-24 xl:w-16"
+                    className="absolute -right-10 -bottom-20 w-12 rotate-45 fill-muted-foreground xl:-right-14 xl:-bottom-24 xl:w-16"
                     viewBox="0 0 90 184"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -172,17 +172,17 @@ const Hero171 = ({ className }: Hero171Props) => {
                 </div>
                 <div className="col-[-2/-1] row-[-1/-2]">
                   <div className="flex w-full items-center gap-3">
-                    <div className="bg-muted h-12 w-12 shrink-0 rounded-full"></div>
+                    <div className="h-12 w-12 shrink-0 rounded-full bg-muted"></div>
                     <div className="flex w-full flex-col gap-1">
-                      <div className="bg-muted h-6 w-[70%] rounded-lg"></div>
-                      <div className="bg-muted h-3 w-[40%] rounded-lg"></div>
+                      <div className="h-6 w-[70%] rounded-lg bg-muted"></div>
+                      <div className="h-3 w-[40%] rounded-lg bg-muted"></div>
                     </div>
                   </div>
                   <div className="mt-3 flex w-full items-center gap-3">
-                    <div className="bg-muted h-12 w-12 shrink-0 rounded-full"></div>
+                    <div className="h-12 w-12 shrink-0 rounded-full bg-muted"></div>
                     <div className="flex w-full flex-col gap-1">
-                      <div className="bg-muted h-6 w-[70%] rounded-lg"></div>
-                      <div className="bg-muted h-3 w-[40%] rounded-lg"></div>
+                      <div className="h-6 w-[70%] rounded-lg bg-muted"></div>
+                      <div className="h-3 w-[40%] rounded-lg bg-muted"></div>
                     </div>
                   </div>
                 </div>

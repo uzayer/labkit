@@ -58,7 +58,7 @@ export default function Subscription() {
       </CardHeader>
       <CardContent className="h-full">
         <div className="text-2xl font-bold">+2350</div>
-        <p className="text-muted-foreground text-xs">+180.1% from last month</p>
+        <p className="text-xs text-muted-foreground">+180.1% from last month</p>
         <ChartContainer
           config={chartConfig}
           className="mt-6 h-[calc(100%_-_120px)] max-h-[205px] w-full"

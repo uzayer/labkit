@@ -15,7 +15,7 @@ const Footer6: React.FC<{ footer: Footer; publicContext: PublicContextProps }> =
         <div className="relative mb-8 flex w-full flex-col gap-x-28 gap-y-8 md:flex-row md:justify-between md:gap-y-0">
           <div className="max-w-96">
             <div className="mb-6 flex items-center gap-3">
-              <div className="border-border bg-accent flex size-12 items-center justify-center rounded-lg border p-2">
+              <div className="flex size-12 items-center justify-center rounded-lg border border-border bg-accent p-2">
                 {footer.logo && (
                   <Media
                     resource={footer.logo}
@@ -26,7 +26,7 @@ const Footer6: React.FC<{ footer: Footer; publicContext: PublicContextProps }> =
               </div>
               <h3 className="text-xl font-bold">Company Name</h3>
             </div>
-            <p className="text-muted-foreground text-base font-medium">
+            <p className="text-base font-medium text-muted-foreground">
               {footer.subline && footer.subline}
             </p>
           </div>
@@ -38,14 +38,14 @@ const Footer6: React.FC<{ footer: Footer; publicContext: PublicContextProps }> =
                     <h4 className="mb-6 text-base font-semibold whitespace-nowrap">
                       {section.title}
                     </h4>
-                    <ul className="text-muted-foreground space-y-2 text-base font-medium">
+                    <ul className="space-y-2 text-base font-medium text-muted-foreground">
                       {section.subNavItems &&
                         section.subNavItems.map((link) => (
                           <li key={link.link.label}>
                             <CMSLink
                               publicContext={publicContext}
                               {...link.link}
-                              className="hover:text-accent-foreground text-base whitespace-nowrap"
+                              className="text-base whitespace-nowrap hover:text-accent-foreground"
                             />
                           </li>
                         ))}
@@ -65,11 +65,11 @@ const Footer6: React.FC<{ footer: Footer; publicContext: PublicContextProps }> =
             </div>
           </div>
         </div>
-        <div className="border-border flex flex-col items-baseline justify-between gap-8 border-t pt-8 md:flex-row md:gap-16">
-          <div className="text-muted-foreground text-xs sm:text-sm">
+        <div className="flex flex-col items-baseline justify-between gap-8 border-t border-border pt-8 md:flex-row md:gap-16">
+          <div className="text-xs text-muted-foreground sm:text-sm">
             {footer.copyright && `© ${new Date().getFullYear()} ${footer.copyright}`}
           </div>
-          <div className="text-muted-foreground flex flex-col items-start gap-4 text-xs sm:text-sm md:flex-row lg:items-center">
+          <div className="flex flex-col items-start gap-4 text-xs text-muted-foreground sm:text-sm md:flex-row lg:items-center">
             {footer.legalLinks?.map((item, index) => (
               <CMSLink
                 publicContext={publicContext}

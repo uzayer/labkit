@@ -24,10 +24,10 @@ const Footer5: React.FC<{ footer: Footer; publicContext: PublicContextProps }> =
               footer.navItems.map((section, sectionIdx) => (
                 <div key={sectionIdx}>
                   <h3 className="mb-4 font-bold">{section.title}</h3>
-                  <ul className="text-muted-foreground space-y-4">
+                  <ul className="space-y-4 text-muted-foreground">
                     {section.subNavItems &&
                       section.subNavItems.map((link, linkIdx) => (
-                        <li key={linkIdx} className="hover:text-primary font-medium">
+                        <li key={linkIdx} className="font-medium hover:text-primary">
                           <CMSLink publicContext={publicContext} {...link.link} />
                         </li>
                       ))}
@@ -39,38 +39,38 @@ const Footer5: React.FC<{ footer: Footer; publicContext: PublicContextProps }> =
             <div className="grid gap-8 lg:grid-cols-4 lg:flex-row">
               <div className="col-span-3">
                 <p className="mb-3 font-bold">Follow us</p>
-                <ul className="text-muted-foreground flex items-center gap-2">
+                <ul className="flex items-center gap-2 text-muted-foreground">
                   <li className="font-medium">
                     <a href="#">
-                      <span className="bg-muted hover:text-primary flex size-12 items-center justify-center rounded-full transition-colors">
+                      <span className="flex size-12 items-center justify-center rounded-full bg-muted transition-colors hover:text-primary">
                         <FaFacebook className="size-6" />
                       </span>
                     </a>
                   </li>
                   <li className="font-medium">
                     <a href="#">
-                      <span className="bg-muted hover:text-primary flex size-12 items-center justify-center rounded-full transition-colors">
+                      <span className="flex size-12 items-center justify-center rounded-full bg-muted transition-colors hover:text-primary">
                         <FaRedditAlien className="size-6" />
                       </span>
                     </a>
                   </li>
                   <li className="font-medium">
                     <a href="#">
-                      <span className="bg-muted hover:text-primary flex size-12 items-center justify-center rounded-full transition-colors">
+                      <span className="flex size-12 items-center justify-center rounded-full bg-muted transition-colors hover:text-primary">
                         <FaTwitter className="size-6" />
                       </span>
                     </a>
                   </li>
                   <li className="font-medium">
                     <a href="#">
-                      <span className="bg-muted hover:text-primary flex size-12 items-center justify-center rounded-full transition-colors">
+                      <span className="flex size-12 items-center justify-center rounded-full bg-muted transition-colors hover:text-primary">
                         <FaInstagram className="size-6" />
                       </span>
                     </a>
                   </li>
                   <li className="font-medium">
                     <a href="#">
-                      <span className="bg-muted hover:text-primary flex size-12 items-center justify-center rounded-full transition-colors">
+                      <span className="flex size-12 items-center justify-center rounded-full bg-muted transition-colors hover:text-primary">
                         <FaLinkedin className="size-6" />
                       </span>
                     </a>
@@ -79,17 +79,17 @@ const Footer5: React.FC<{ footer: Footer; publicContext: PublicContextProps }> =
               </div>
               <div>
                 <p className="mb-3 font-bold">Mobile App</p>
-                <ul className="text-muted-foreground flex items-center gap-2">
+                <ul className="flex items-center gap-2 text-muted-foreground">
                   <li className="font-medium">
                     <a href="#">
-                      <span className="bg-muted hover:text-primary flex size-12 items-center justify-center rounded-full transition-colors">
+                      <span className="flex size-12 items-center justify-center rounded-full bg-muted transition-colors hover:text-primary">
                         <FaAndroid className="size-6" />
                       </span>
                     </a>
                   </li>
                   <li className="font-medium">
                     <a href="#">
-                      <span className="bg-muted hover:text-primary flex size-12 items-center justify-center rounded-full transition-colors">
+                      <span className="flex size-12 items-center justify-center rounded-full bg-muted transition-colors hover:text-primary">
                         <FaApple className="size-6" />
                       </span>
                     </a>
@@ -99,7 +99,7 @@ const Footer5: React.FC<{ footer: Footer; publicContext: PublicContextProps }> =
             </div>
           </div>
           <div className="mt-24 border-t pt-8">
-            <p className="text-muted-foreground text-center text-sm font-medium">
+            <p className="text-center text-sm font-medium text-muted-foreground">
               {footer.copyright && `© ${new Date().getFullYear()} ${footer.copyright}`}
             </p>
           </div>

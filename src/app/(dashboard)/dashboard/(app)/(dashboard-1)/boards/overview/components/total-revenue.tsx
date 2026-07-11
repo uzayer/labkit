@@ -58,7 +58,7 @@ export default function TotalRevenue() {
       </CardHeader>
       <CardContent className="h-[calc(100%_-_52px)] pb-0">
         <div className="text-2xl font-bold">$15,231.89</div>
-        <p className="text-muted-foreground text-xs">+20.1% from last month</p>
+        <p className="text-xs text-muted-foreground">+20.1% from last month</p>
         <ChartContainer config={chartConfig} className="h-[80px] w-full">
           <LineChart
             data={data}

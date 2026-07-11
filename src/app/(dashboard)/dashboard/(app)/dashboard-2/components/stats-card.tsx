@@ -48,12 +48,12 @@ export default function StatsCard({
             {type === 'up' ? <ArrowUpRight size={16} /> : <ArrowDownRight size={16} />}
             <p className="text-xs font-bold">{percentage.toLocaleString()}%</p>
           </div>
-          <p className="text-muted-foreground text-xs font-normal">
+          <p className="text-xs font-normal text-muted-foreground">
             {type === 'up' ? '+' : '-'}
             {profit.toLocaleString()} today
           </p>
         </div>
-        <div className="bg-muted-foreground h-[0.04px] w-full opacity-50" />
+        <div className="h-[0.04px] w-full bg-muted-foreground opacity-50" />
 
         <div className="flex items-center gap-2">
           <p className="text-xs font-medium">View Report</p>

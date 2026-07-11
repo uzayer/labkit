@@ -36,7 +36,7 @@ export const MediaBlock: React.FC<Props> = (props) => {
           />
         </div>
         {caption && (
-          <p className={cn('text-muted-foreground mt-2 text-center text-sm', captionClassName)}>
+          <p className={cn('mt-2 text-center text-sm text-muted-foreground', captionClassName)}>
             {caption}
           </p>
         )}

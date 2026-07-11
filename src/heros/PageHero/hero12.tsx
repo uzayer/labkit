@@ -315,7 +315,7 @@ const Hero12: React.FC<Hero & { publicContext: PublicContextProps }> = ({
               </div>
             )}
             <div className="mt-20 flex flex-col items-center gap-4">
-              <p className="text-muted-foreground text-center lg:text-left">{tagline}</p>
+              <p className="text-center text-muted-foreground lg:text-left">{tagline}</p>
               <div className="inline-flex flex-wrap items-center justify-center gap-4">
                 {icons &&
                   icons.length > 0 &&

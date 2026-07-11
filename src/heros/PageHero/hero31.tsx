@@ -12,7 +12,7 @@ export const Hero31: React.FC<Page['hero'] & { publicContext: PublicContextProps
 }) => {
   return (
     <section className="relative overflow-hidden py-32">
-      <div className="bg-muted absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden bg-muted">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1400 900"

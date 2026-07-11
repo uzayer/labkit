@@ -95,7 +95,7 @@ const Hero32 = () => {
       <div className="relative">
         <div className="absolute left-0 z-10 hidden h-full w-1/2 bg-[linear-gradient(to_right,hsl(from_var(--background)_h_s_l)_85%,transparent_100%)] md:block"></div>
         <div className="relative container flex flex-col items-start md:flex-row md:items-center md:-space-x-26">
-          <div className="-mx-[calc(theme(container.padding))] w-[calc(100%+2*theme(container.padding))] bg-background px-[calc(theme(container.padding))] z-20 shrink-0 pt-32 md:w-1/2 md:bg-transparent md:pb-32">
+          <div className="-mx-[calc(theme(container.padding))] w-[calc(100%+2*theme(container.padding))] px-[calc(theme(container.padding))] z-20 shrink-0 bg-background pt-32 md:w-1/2 md:bg-transparent md:pb-32">
             <div className="flex flex-col items-start text-left">
               <div className="max-w-sm">
                 <h1 className="my-6 text-4xl font-bold text-pretty lg:text-6xl">
@@ -112,9 +112,9 @@ const Hero32 = () => {
                   {line.map((integration) => (
                     <div
                       key={integration.id}
-                      className="border-background bg-background size-24 rounded-xl border shadow-xl"
+                      className="size-24 rounded-xl border border-background bg-background shadow-xl"
                     >
-                      <div className="bg-muted/20 size-full p-4">{integration.icon}</div>
+                      <div className="size-full bg-muted/20 p-4">{integration.icon}</div>
                     </div>
                   ))}
                 </div>

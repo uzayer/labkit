@@ -36,7 +36,7 @@ export default async function DashboardAppLayout({ children }: DashboardAppLayou
         <div
           id="content"
           className={cn(
-            'bg-background flex h-full w-full flex-col',
+            'flex h-full w-full flex-col bg-background',
             'has-[div[data-layout=fixed]]:h-svh',
             'group-data-[scroll-locked=1]/body:h-full',
             'has-[data-layout=fixed]:group-data-[scroll-locked=1]/body:h-svh',

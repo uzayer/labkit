@@ -149,7 +149,7 @@ function buildColumns(onDone: () => void): ColumnDef<ReviewItem>[] {
       accessorKey: 'sourceContext',
       header: ({ column }) => <DataTableColumnHeader column={column} title="Source context" />,
       cell: ({ row }) => (
-        <LongText className="text-muted-foreground max-w-xs text-sm">
+        <LongText className="max-w-xs text-sm text-muted-foreground">
           {row.original.sourceContext || '—'}
         </LongText>
       ),
@@ -159,14 +159,14 @@ function buildColumns(onDone: () => void): ColumnDef<ReviewItem>[] {
       accessorFn: (row) => runLabel(row.run),
       header: ({ column }) => <DataTableColumnHeader column={column} title="Run" />,
       cell: ({ row }) => (
-        <span className="text-muted-foreground text-sm">{runLabel(row.original.run)}</span>
+        <span className="text-sm text-muted-foreground">{runLabel(row.original.run)}</span>
       ),
     },
     {
       accessorKey: 'createdAt',
       header: ({ column }) => <DataTableColumnHeader column={column} title="Flagged" />,
       cell: ({ row }) => (
-        <span className="text-muted-foreground text-sm">{formatDate(row.original.createdAt)}</span>
+        <span className="text-sm text-muted-foreground">{formatDate(row.original.createdAt)}</span>
       ),
     },
     {

@@ -22,14 +22,14 @@ const AcceptInvite2 = ({
           )}
         >
           <div className="mx-auto flex max-w-md flex-col items-center gap-2 text-center">
-            <span className="bg-muted flex size-32 items-center justify-center rounded-full text-6xl font-medium">
+            <span className="flex size-32 items-center justify-center rounded-full bg-muted text-6xl font-medium">
               {hostName.charAt(0)}
             </span>
             <p className="mt-2 text-2xl">
               <span className="font-medium">{hostName}</span>
               <span className="font-light"> invited you to join their workspace.</span>
             </p>
-            <p className="text-muted-foreground max-w-sm">{description}</p>
+            <p className="max-w-sm text-muted-foreground">{description}</p>
           </div>
 
           <div className="space-y-3">
@@ -39,7 +39,7 @@ const AcceptInvite2 = ({
               </Button>
               <Button size="lg">Accept Invite</Button>
             </div>
-            <p className="text-muted-foreground text-center text-xs">
+            <p className="text-center text-xs text-muted-foreground">
               Invitation expires in 24 hours
             </p>
           </div>

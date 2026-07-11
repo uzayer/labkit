@@ -106,7 +106,7 @@ function StagedSelection({ run, onStarted }: StagedSelectionProps) {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between">
-        <p className="text-muted-foreground text-sm">
+        <p className="text-sm text-muted-foreground">
           {selectedKeys.size} of {candidates.length} candidates selected
         </p>
         <Button onClick={handleStart} disabled={isPending || selectedKeys.size === 0}>
@@ -141,10 +141,10 @@ function StagedSelection({ run, onStarted }: StagedSelectionProps) {
                   </TableCell>
                   <TableCell className="max-w-md text-sm">{candidate.title}</TableCell>
                   <TableCell className="text-sm">{candidate.year ?? '—'}</TableCell>
-                  <TableCell className="text-muted-foreground text-xs">
+                  <TableCell className="text-xs text-muted-foreground">
                     {candidate.doi ?? '—'}
                   </TableCell>
-                  <TableCell className="text-muted-foreground max-w-xs text-xs">
+                  <TableCell className="max-w-xs text-xs text-muted-foreground">
                     {candidate.note ?? '—'}
                   </TableCell>
                 </TableRow>
@@ -224,7 +224,7 @@ function RunSummary({ run }: { run: ImportRun }) {
         <span>Failed: {run.progress?.failed ?? 0}</span>
       </div>
       {run.status === 'failed' && run.error ? (
-        <p className="text-destructive text-sm">{run.error}</p>
+        <p className="text-sm text-destructive">{run.error}</p>
       ) : null}
       <Link href="/dashboard/review" className="text-sm underline">
         Open review queue

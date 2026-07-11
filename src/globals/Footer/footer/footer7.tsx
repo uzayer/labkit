@@ -21,13 +21,13 @@ const Footer7: React.FC<{ footer: Footer; publicContext: PublicContextProps }> =
                   )}
                   {/* <p className="text-3xl font-semibold">Shadcnblocks</p> */}
                 </span>
-                <p className="text-muted-foreground mt-6 text-sm">
+                <p className="mt-6 text-sm text-muted-foreground">
                   {footer.subline && footer.subline}
                 </p>
               </div>
-              <ul className="text-muted-foreground flex items-center space-x-6">
+              <ul className="flex items-center space-x-6 text-muted-foreground">
                 {footer.socialLinks?.map((social, index) => (
-                  <li key={index} className="hover:text-primary font-medium">
+                  <li key={index} className="font-medium hover:text-primary">
                     <a href={social.url}>
                       <SocialIcon type={social.icon} />
                     </a>
@@ -40,10 +40,10 @@ const Footer7: React.FC<{ footer: Footer; publicContext: PublicContextProps }> =
                 footer.navItems.map((section, sectionIdx) => (
                   <div key={sectionIdx}>
                     <h3 className="mb-6 font-bold">{section.title}</h3>
-                    <ul className="text-muted-foreground space-y-4 text-sm">
+                    <ul className="space-y-4 text-sm text-muted-foreground">
                       {section.subNavItems &&
                         section.subNavItems.map((link, linkIdx) => (
-                          <li key={linkIdx} className="hover:text-primary font-medium">
+                          <li key={linkIdx} className="font-medium hover:text-primary">
                             <CMSLink publicContext={publicContext} {...link.link} />
                           </li>
                         ))}
@@ -52,7 +52,7 @@ const Footer7: React.FC<{ footer: Footer; publicContext: PublicContextProps }> =
                 ))}
             </div>
           </div>
-          <div className="text-muted-foreground mt-20 flex flex-col justify-between gap-4 border-t pt-8 text-center text-sm font-medium lg:flex-row lg:items-center lg:text-left">
+          <div className="mt-20 flex flex-col justify-between gap-4 border-t pt-8 text-center text-sm font-medium text-muted-foreground lg:flex-row lg:items-center lg:text-left">
             <p>{footer.copyright && `© ${new Date().getFullYear()} ${footer.copyright}`}</p>
             <ul className="flex justify-center gap-4 lg:justify-start">
               {footer.legalLinks?.map((item, index) => (

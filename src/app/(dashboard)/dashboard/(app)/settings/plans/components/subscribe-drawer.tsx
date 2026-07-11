@@ -161,7 +161,7 @@ export default function SubscribeDrawer({ plan }: Props) {
               />
             </div>
 
-            <p className="text-muted-foreground text-[13px] leading-none font-medium">
+            <p className="text-[13px] leading-none font-medium text-muted-foreground">
               *Ensure the details match your billing address for smooth and accurate processing.*
             </p>
 
@@ -201,7 +201,7 @@ export default function SubscribeDrawer({ plan }: Props) {
                                 />
                                 <div className="flex flex-col items-start">
                                   <p className="text-xs font-semibold">{payment.name}</p>
-                                  <p className="text-muted-foreground text-xs">
+                                  <p className="text-xs text-muted-foreground">
                                     ****
                                     {payment.card.toLocaleString().slice(5)}
                                   </p>

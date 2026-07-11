@@ -273,9 +273,7 @@ const afterChange = async ({ req }) => {
   await req.payload.create({
     req, // Pass req to ensure transactional behavior
     collection: 'audit-log',
-    data: {
-      /* ... */
-    },
+    data: {/* ... */},
   })
 }
 ```

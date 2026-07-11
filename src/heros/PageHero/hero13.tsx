@@ -11,7 +11,7 @@ const Hero13 = () => {
           variant="outline"
           className="mb-4 max-w-full text-sm font-normal lg:mb-10 lg:py-2 lg:pr-5 lg:pl-2"
         >
-          <span className="bg-accent mr-2 flex size-8 shrink-0 items-center justify-center rounded-full">
+          <span className="mr-2 flex size-8 shrink-0 items-center justify-center rounded-full bg-accent">
             <Bell className="size-4" />
           </span>
           <p className="truncate whitespace-nowrap">
@@ -22,7 +22,7 @@ const Hero13 = () => {
         <h1 className="mb-6 text-4xl leading-none font-bold tracking-tighter md:text-[7vw] lg:text-8xl">
           Streamline your workflow experience.
         </h1>
-        <p className="text-muted-foreground max-w-2xl md:text-[2vw] lg:text-xl">
+        <p className="max-w-2xl text-muted-foreground md:text-[2vw] lg:text-xl">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolor assumenda
           voluptatem nemo magni a maiores aspernatur.
         </p>

@@ -6,14 +6,14 @@ import { Page } from '@/payload-types'
 export const Hero8: React.FC<Page['hero']> = ({}) => {
   return (
     <section className="py-32">
-      <div className="border-muted overflow-hidden border-b">
+      <div className="overflow-hidden border-b border-muted">
         <div className="container">
           <div className="mx-auto flex max-w-5xl flex-col items-center">
             <div className="z-10 items-center text-center">
               <h1 className="mb-8 text-4xl font-medium text-pretty lg:text-8xl">
                 Build your next project with Blocks
               </h1>
-              <p className="text-muted-foreground mx-auto max-w-screen-md lg:text-xl">
+              <p className="mx-auto max-w-screen-md text-muted-foreground lg:text-xl">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia
                 fugiat omnis! Porro facilis quo animi consequatur. Explicabo.
               </p>

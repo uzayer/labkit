@@ -32,7 +32,7 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({ title, items = [], p
     <div className="order-last mt-3 sm:order-none sm:mt-0 sm:py-2 md:p-6">
       {title && (
         <div className="mb-4 text-left leading-none md:col-span-2 lg:col-span-4 lg:mb-6">
-          <strong className="text-muted-foreground text-left text-xs font-medium tracking-wider uppercase">
+          <strong className="text-left text-xs font-medium tracking-wider text-muted-foreground uppercase">
             {title}
           </strong>
         </div>

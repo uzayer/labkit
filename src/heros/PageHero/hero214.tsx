@@ -147,7 +147,7 @@ const Hero214: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = 
           <CMSLink
             publicContext={publicContext}
             appearance="secondary"
-            className="group bg-muted -bottom-5 left-0 mt-3 flex items-center justify-center rounded-full px-6 py-2 tracking-tight hover:gap-4 lg:absolute lg:bottom-0 lg:mt-0 xl:bottom-3"
+            className="group -bottom-5 left-0 mt-3 flex items-center justify-center rounded-full bg-muted px-6 py-2 tracking-tight hover:gap-4 lg:absolute lg:bottom-0 lg:mt-0 xl:bottom-3"
             {...buttonLink}
           >
             <ArrowRight className="size-4 -rotate-45 transition-all duration-300 ease-out group-hover:rotate-0" />

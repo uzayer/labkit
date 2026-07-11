@@ -53,7 +53,7 @@ export default function ApiKeysPage() {
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div>
             <h2 className="text-2xl font-bold">API Keys</h2>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-sm text-muted-foreground">
               Secure, manage, and monitor your API keys with ease.
             </p>
           </div>
@@ -73,7 +73,7 @@ export default function ApiKeysPage() {
       </div>
 
       <Tabs defaultValue="api" className="my-8">
-        <TabsList className="border-muted flex h-auto w-full items-center justify-start rounded-none border-b bg-transparent p-0!">
+        <TabsList className="flex h-auto w-full items-center justify-start rounded-none border-b border-muted bg-transparent p-0!">
           <TabsTrigger
             value="api"
             className="rounded-none border-blue-600 py-1 shadow-none! data-[state=active]:border-b-[2px]"

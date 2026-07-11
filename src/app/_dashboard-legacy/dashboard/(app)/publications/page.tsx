@@ -39,11 +39,11 @@ export default async function PublicationsPage({ searchParams }: PublicationsPag
   return (
     <main className="flex flex-1 flex-col gap-4 p-6 md:p-8">
       <div className="space-y-2">
-        <p className="text-muted-foreground text-xs font-medium tracking-[0.24em] uppercase">
+        <p className="text-xs font-medium tracking-[0.24em] text-muted-foreground uppercase">
           Research Directory
         </p>
         <h1 className="text-3xl font-semibold tracking-tight">Publications</h1>
-        <p className="text-muted-foreground max-w-2xl text-sm leading-6">
+        <p className="max-w-2xl text-sm leading-6 text-muted-foreground">
           Every Publications record, newest first. Read-only — edit a record from the admin panel.
         </p>
       </div>

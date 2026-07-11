@@ -22,9 +22,9 @@ export default function RecentActivity({ className = '' }: Props) {
             <div className="flex-1">
               <div className="flex items-center justify-between">
                 <p className="text-sm font-medium tracking-tight">{activity.title}</p>
-                <span className="text-muted-foreground text-xs">{activity.time}</span>
+                <span className="text-xs text-muted-foreground">{activity.time}</span>
               </div>
-              <p className="text-muted-foreground text-xs">{activity.description}</p>
+              <p className="text-xs text-muted-foreground">{activity.description}</p>
               <div className="flex items-center pt-2">
                 <Avatar className="mr-2 h-8 w-8">
                   <AvatarImage src={activity.user.avatar} alt={activity.user.name} />
@@ -35,7 +35,7 @@ export default function RecentActivity({ className = '' }: Props) {
                       .join('')}
                   </AvatarFallback>
                 </Avatar>
-                <span className="text-muted-foreground text-sm">{activity.user.name}</span>
+                <span className="text-sm text-muted-foreground">{activity.user.name}</span>
                 <span
                   className={`ml-auto rounded-full px-2 py-1 text-xs ${
                     activity.status === 'open'

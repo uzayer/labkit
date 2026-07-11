@@ -76,7 +76,7 @@ export const Navbar1: React.FC<{ header: HeaderType; publicContext: PublicContex
                                     <CMSLink
                                       publicContext={publicContext}
                                       className={cn(
-                                        'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground flex gap-4 rounded-md p-3 leading-none no-underline outline-hidden transition-colors select-none',
+                                        'flex gap-4 rounded-md p-3 leading-none no-underline outline-hidden transition-colors select-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
                                       )}
                                       {...subitem.link}
                                       label=""
@@ -90,7 +90,7 @@ export const Navbar1: React.FC<{ header: HeaderType; publicContext: PublicContex
                                         <div className="text-sm font-semibold">
                                           {subitem.link.label}
                                         </div>
-                                        <p className="text-muted-foreground text-sm leading-snug">
+                                        <p className="text-sm leading-snug text-muted-foreground">
                                           {subitem.Description}
                                         </p>
                                       </div>
@@ -183,7 +183,7 @@ export const Navbar1: React.FC<{ header: HeaderType; publicContext: PublicContex
                                   publicContext={publicContext}
                                   key={subitem.id}
                                   className={cn(
-                                    'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground flex gap-4 rounded-md p-3 leading-none outline-hidden transition-colors select-none',
+                                    'flex gap-4 rounded-md p-3 leading-none outline-hidden transition-colors select-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
                                   )}
                                   {...subitem.link}
                                   label=""
@@ -197,7 +197,7 @@ export const Navbar1: React.FC<{ header: HeaderType; publicContext: PublicContex
                                     <div className="text-sm font-semibold">
                                       {subitem.link.label}
                                     </div>
-                                    <p className="text-muted-foreground text-sm leading-snug">
+                                    <p className="text-sm leading-snug text-muted-foreground">
                                       {subitem.Description}
                                     </p>
                                   </div>

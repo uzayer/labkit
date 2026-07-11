@@ -86,7 +86,7 @@ export function UserAuthForm({ className, ...props }: HTMLAttributes<HTMLDivElem
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <div className="grid gap-2">
             {forbidden ? (
-              <p className="text-destructive text-sm leading-6" role="alert">
+              <p className="text-sm leading-6 text-destructive" role="alert">
                 This dashboard is restricted to admin accounts.
               </p>
             ) : null}
@@ -112,7 +112,7 @@ export function UserAuthForm({ className, ...props }: HTMLAttributes<HTMLDivElem
                     <FormLabel>Password</FormLabel>
                     <Link
                       href="/dashboard/forgot-password"
-                      className="text-muted-foreground text-sm font-medium hover:opacity-75"
+                      className="text-sm font-medium text-muted-foreground hover:opacity-75"
                     >
                       Forgot password?
                     </Link>
@@ -125,7 +125,7 @@ export function UserAuthForm({ className, ...props }: HTMLAttributes<HTMLDivElem
               )}
             />
             {form.formState.errors.root?.message ? (
-              <p className="text-destructive text-sm leading-6" role="alert">
+              <p className="text-sm leading-6 text-destructive" role="alert">
                 {form.formState.errors.root.message}
               </p>
             ) : null}

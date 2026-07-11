@@ -142,8 +142,8 @@ export function MutateWebhook({ open, setOpen, currentWebhook }: Props) {
                         <FormItem key={item} className="flex items-center space-y-0 space-x-3">
                           <FormLabel
                             className={cn(
-                              'border-border flex h-full w-full items-start gap-2 rounded-lg border px-2 py-4 font-normal capitalize sm:p-4',
-                              '[&:has([aria-checked=true])]:border-foreground [&_circle]:fill-foreground [&_circle]:stroke-transparent',
+                              'flex h-full w-full items-start gap-2 rounded-lg border border-border px-2 py-4 font-normal capitalize sm:p-4',
+                              '[&_circle]:fill-foreground [&_circle]:stroke-transparent [&:has([aria-checked=true])]:border-foreground',
                               'flex flex-col sm:flex-row [&_button]:size-4',
                             )}
                           >
@@ -178,10 +178,10 @@ export function MutateWebhook({ open, setOpen, currentWebhook }: Props) {
                               <FormLabel
                                 className={cn(
                                   'flex flex-row items-start space-y-0 space-x-2',
-                                  'border-border rounded-lg border p-4',
+                                  'rounded-lg border border-border p-4',
                                   '[&:has([aria-checked=true])]:border-btse-500',
                                   '[&_button[aria-checked=true]]:bg-btse-500 [&_button[aria-checked=true]]:border-btse-500',
-                                  '[&:has(button[aria-invalid=true])]:border-destructive [&_button[aria-invalid=true]]:border-destructive',
+                                  '[&_button[aria-invalid=true]]:border-destructive [&:has(button[aria-invalid=true])]:border-destructive',
                                 )}
                               >
                                 <FormControl>

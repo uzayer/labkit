@@ -89,11 +89,11 @@ export default async function TaskDetailPage({ params }: Props) {
         </div>
 
         {/* Task Metadata Grid */}
-        <div className="bg-card mb-6 grid grid-cols-1 gap-x-8 gap-y-4 rounded-lg border p-6 text-sm md:grid-cols-2">
+        <div className="mb-6 grid grid-cols-1 gap-x-8 gap-y-4 rounded-lg border bg-card p-6 text-sm md:grid-cols-2">
           {/* Left Column - Basic Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <span className="text-muted-foreground w-24">Priority</span>
+              <span className="w-24 text-muted-foreground">Priority</span>
               <div className="flex items-center gap-1">
                 {priority?.value === 'medium' && (
                   <IconArrowRight className="h-3.5 w-3.5 text-orange-700" />
@@ -115,11 +115,11 @@ export default async function TaskDetailPage({ params }: Props) {
 
             {/* Team Members */}
             <div className="flex items-center gap-2">
-              <span className="text-muted-foreground w-24">Assignees</span>
+              <span className="w-24 text-muted-foreground">Assignees</span>
               <div>
                 <div className="flex -space-x-2">
                   {assignees.map((assignee, index) => (
-                    <Avatar key={index} className="border-background h-5 w-5 border-2">
+                    <Avatar key={index} className="h-5 w-5 border-2 border-background">
                       <AvatarImage src={assignee.image} alt={assignee.name} />
                       <AvatarFallback>
                         {assignee.name
@@ -135,23 +135,23 @@ export default async function TaskDetailPage({ params }: Props) {
 
             {/* Dates */}
             <div className="flex items-center gap-2">
-              <span className="text-muted-foreground w-24">Due Date</span>
+              <span className="w-24 text-muted-foreground">Due Date</span>
               <div className="flex items-center gap-1">
-                <IconCalendar className="text-muted-foreground h-3.5 w-3.5" />
+                <IconCalendar className="h-3.5 w-3.5 text-muted-foreground" />
                 <span>{format(task.dueDate, 'MMM dd, yyyy')}</span>
               </div>
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="text-muted-foreground w-24">Created</span>
+              <span className="w-24 text-muted-foreground">Created</span>
               <div className="flex items-center gap-1">
-                <IconCalendar className="text-muted-foreground h-3.5 w-3.5" />
+                <IconCalendar className="h-3.5 w-3.5 text-muted-foreground" />
                 <span>{format(task.createdDate, 'MMM dd, yyyy')}</span>
               </div>
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="text-muted-foreground w-24">Project</span>
+              <span className="w-24 text-muted-foreground">Project</span>
               <span>Shopify</span>
             </div>
           </div>
@@ -159,7 +159,7 @@ export default async function TaskDetailPage({ params }: Props) {
           {/* Right Column - Additional Details */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <span className="text-muted-foreground w-24">Status</span>
+              <span className="w-24 text-muted-foreground">Status</span>
               <Badge
                 variant="outline"
                 className={`text-xs capitalize ${
@@ -175,24 +175,24 @@ export default async function TaskDetailPage({ params }: Props) {
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="text-muted-foreground w-24">Sprint</span>
+              <span className="w-24 text-muted-foreground">Sprint</span>
               <span>{task.sprintCycle}</span>
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="text-muted-foreground w-24">Est. Time</span>
+              <span className="w-24 text-muted-foreground">Est. Time</span>
               <div className="flex items-center gap-1">
-                <IconClockHour4 className="text-muted-foreground h-3.5 w-3.5" />
+                <IconClockHour4 className="h-3.5 w-3.5 text-muted-foreground" />
                 <span>{task.estimatedTime}</span>
               </div>
             </div>
 
             <div className="flex gap-2">
-              <span className="text-muted-foreground w-24">Linked Items</span>
+              <span className="w-24 text-muted-foreground">Linked Items</span>
               <div className="space-y-1">
                 {linkedItems.map((item, index) => (
                   <div key={index} className="flex items-center gap-1">
-                    <IconGitBranch className="text-muted-foreground h-3.5 w-3.5" />
+                    <IconGitBranch className="h-3.5 w-3.5 text-muted-foreground" />
                     <span className="text-xs">
                       {item.type} {item.id}: {item.title}
                     </span>
@@ -211,14 +211,14 @@ export default async function TaskDetailPage({ params }: Props) {
           </TabsList>
           <TabsContent value="description" className="mt-4">
             {/* Task Description Content */}
-            <div className="prose prose-sm text-muted-foreground max-w-none">
+            <div className="prose prose-sm max-w-none text-muted-foreground">
               <p>
                 Currently, when a Member reports a physical card as lost, stolen, or damaged, they
                 are automatically issued with a new card. This process needs to be redesigned to
                 improve security and user experience.
               </p>
 
-              <h3 className="text-foreground mt-4 mb-2 font-semibold">Technical Requirements</h3>
+              <h3 className="mt-4 mb-2 font-semibold text-foreground">Technical Requirements</h3>
               <p>The new workflow should implement the following security measures:</p>
               <ul className="mb-4 list-disc pl-4">
                 <li>Two-factor authentication for card replacement requests</li>
@@ -227,7 +227,7 @@ export default async function TaskDetailPage({ params }: Props) {
                 <li>Audit trail for all card replacement requests</li>
               </ul>
 
-              <h3 className="text-foreground mt-4 mb-2 font-semibold">Database Changes</h3>
+              <h3 className="mt-4 mb-2 font-semibold text-foreground">Database Changes</h3>
               <p>New tables and modifications required:</p>
               <ul className="mb-4 list-disc pl-4">
                 <li>card_replacement_requests</li>
@@ -235,7 +235,7 @@ export default async function TaskDetailPage({ params }: Props) {
                 <li>notification_preferences</li>
               </ul>
 
-              <h3 className="text-foreground mt-4 mb-2 font-semibold">API Endpoints</h3>
+              <h3 className="mt-4 mb-2 font-semibold text-foreground">API Endpoints</h3>
               <p>New REST endpoints to be implemented:</p>
               <ul className="mb-4 list-disc pl-4">
                 <li>POST /api/v1/cards/replacement-requests</li>
@@ -272,17 +272,17 @@ export default async function TaskDetailPage({ params }: Props) {
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
                       <span className="text-sm font-medium">Olivier Giroud</span>
-                      <span className="text-muted-foreground text-[11px]">2 days ago</span>
+                      <span className="text-[11px] text-muted-foreground">2 days ago</span>
                     </div>
-                    <p className="text-muted-foreground mt-1 text-sm">
+                    <p className="mt-1 text-sm text-muted-foreground">
                       I&apos;ve started working on the API endpoints. We might need to add rate
                       limiting to prevent abuse of the replacement request endpoint.
                     </p>
                     <div className="mt-2 flex gap-4">
-                      <button className="text-muted-foreground hover:text-foreground text-[11px]">
+                      <button className="text-[11px] text-muted-foreground hover:text-foreground">
                         Reply
                       </button>
-                      <button className="text-muted-foreground hover:text-foreground text-[11px]">
+                      <button className="text-[11px] text-muted-foreground hover:text-foreground">
                         React
                       </button>
                     </div>
@@ -298,18 +298,18 @@ export default async function TaskDetailPage({ params }: Props) {
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
                       <span className="text-sm font-medium">Michael Kane</span>
-                      <span className="text-muted-foreground text-[11px]">1 day ago</span>
+                      <span className="text-[11px] text-muted-foreground">1 day ago</span>
                     </div>
-                    <p className="text-muted-foreground mt-1 text-sm">
+                    <p className="mt-1 text-sm text-muted-foreground">
                       Good point about rate limiting. Let&apos;s also make sure we implement proper
                       logging for all replacement requests. I&apos;ll update the technical
                       requirements.
                     </p>
                     <div className="mt-2 flex gap-4">
-                      <button className="text-muted-foreground hover:text-foreground text-[11px]">
+                      <button className="text-[11px] text-muted-foreground hover:text-foreground">
                         Reply
                       </button>
-                      <button className="text-muted-foreground hover:text-foreground text-[11px]">
+                      <button className="text-[11px] text-muted-foreground hover:text-foreground">
                         React
                       </button>
                     </div>
@@ -325,18 +325,18 @@ export default async function TaskDetailPage({ params }: Props) {
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
                       <span className="text-sm font-medium">Isabella Chen</span>
-                      <span className="text-muted-foreground text-[11px]">5 hours ago</span>
+                      <span className="text-[11px] text-muted-foreground">5 hours ago</span>
                     </div>
-                    <p className="text-muted-foreground mt-1 text-sm">
+                    <p className="mt-1 text-sm text-muted-foreground">
                       I&apos;ve prepared some mockups for the verification UI. Will share them in
                       tomorrow&apos;s design review. The focus is on making the 2FA process as
                       smooth as possible.
                     </p>
                     <div className="mt-2 flex gap-4">
-                      <button className="text-muted-foreground hover:text-foreground text-[11px]">
+                      <button className="text-[11px] text-muted-foreground hover:text-foreground">
                         Reply
                       </button>
-                      <button className="text-muted-foreground hover:text-foreground text-[11px]">
+                      <button className="text-[11px] text-muted-foreground hover:text-foreground">
                         React
                       </button>
                     </div>

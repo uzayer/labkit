@@ -10,7 +10,7 @@ const Hero37 = () => {
         <h1 className="my-3 text-2xl font-bold text-pretty sm:text-4xl md:my-6 lg:text-5xl">
           Welcome to Our Website
         </h1>
-        <p className="text-muted-foreground mb-6 max-w-xl md:mb-12 lg:text-xl">
+        <p className="mb-6 max-w-xl text-muted-foreground md:mb-12 lg:text-xl">
           Elig doloremque mollitia fugiat omnis! Porro facilis quo animi consequatur.
         </p>
         <div className="flex w-full flex-col justify-center gap-2 sm:flex-row">
@@ -30,7 +30,7 @@ const Hero37 = () => {
               xmlns="http://www.w3.org/2000/svg"
               version="1.1"
               viewBox="0 0 800 800"
-              className="text-muted-foreground size-full opacity-20"
+              className="size-full text-muted-foreground opacity-20"
             >
               {Array.from(Array(4000).keys()).map((dot, index, array) => {
                 const angle = 0.2 * index
@@ -50,9 +50,9 @@ const Hero37 = () => {
               })}
             </svg>
           </div>
-          <div className="border-border bg-accent absolute inset-0 z-5 m-auto flex aspect-29/36 w-4/5 max-w-64 -translate-x-3/4 translate-y-[10%] scale-[0.85] rotate-[-15deg] justify-center rounded-lg border opacity-60 md:w-85 md:max-w-85"></div>
-          <div className="border-border bg-accent absolute inset-0 z-10 m-auto flex aspect-29/36 w-4/5 max-w-64 justify-center rounded-lg border md:w-85 md:max-w-85"></div>
-          <div className="border-border bg-accent absolute inset-0 z-5 m-auto flex aspect-29/36 w-4/5 max-w-64 translate-x-3/4 translate-y-[10%] scale-[0.85] rotate-15 justify-center rounded-lg border opacity-60 md:w-85 md:max-w-85"></div>
+          <div className="absolute inset-0 z-5 m-auto flex aspect-29/36 w-4/5 max-w-64 -translate-x-3/4 translate-y-[10%] scale-[0.85] rotate-[-15deg] justify-center rounded-lg border border-border bg-accent opacity-60 md:w-85 md:max-w-85"></div>
+          <div className="absolute inset-0 z-10 m-auto flex aspect-29/36 w-4/5 max-w-64 justify-center rounded-lg border border-border bg-accent md:w-85 md:max-w-85"></div>
+          <div className="absolute inset-0 z-5 m-auto flex aspect-29/36 w-4/5 max-w-64 translate-x-3/4 translate-y-[10%] scale-[0.85] rotate-15 justify-center rounded-lg border border-border bg-accent opacity-60 md:w-85 md:max-w-85"></div>
         </div>
       </div>
     </section>

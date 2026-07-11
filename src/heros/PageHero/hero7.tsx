@@ -13,7 +13,7 @@ export const Hero7: React.FC<Page['hero']> = ({}) => {
           <h1 className="text-3xl font-extrabold lg:text-6xl">
             A Collection of Components Built With Shadcn & Tailwind
           </h1>
-          <p className="text-muted-foreground text-balance lg:text-lg">
+          <p className="text-balance text-muted-foreground lg:text-lg">
             Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy
             and paste these blocks directly into their project.
           </p>
@@ -63,7 +63,7 @@ export const Hero7: React.FC<Page['hero']> = ({}) => {
               <Star className="size-5 fill-yellow-400 text-yellow-400" />
               <span className="font-semibold">5.0</span>
             </div>
-            <p className="text-muted-foreground text-left font-medium">from 200+ reviews</p>
+            <p className="text-left font-medium text-muted-foreground">from 200+ reviews</p>
           </div>
         </div>
       </div>

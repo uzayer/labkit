@@ -37,7 +37,7 @@ const Stats1: React.FC<StatsBlock & { publicContext: PublicContextProps }> = ({
                 />
               )}
               <p className="pt-4 text-7xl font-semibold lg:pt-10">{counter}</p>
-              {title && <p className="text-muted-foreground text-2xl font-semibold">{title}</p>}
+              {title && <p className="text-2xl font-semibold text-muted-foreground">{title}</p>}
             </div>
           ))}
         </div>

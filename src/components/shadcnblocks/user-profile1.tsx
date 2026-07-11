@@ -58,13 +58,13 @@ const UserProfile1 = ({
                     </Badge>
                   )}
                 </div>
-                {user.role && <p className="text-muted-foreground text-sm">{user.role}</p>}
+                {user.role && <p className="text-sm text-muted-foreground">{user.role}</p>}
               </div>
             </div>
           </CardHeader>
           <CardContent className="space-y-4 pt-6">
-            {user.bio && <p className="text-muted-foreground text-sm">{user.bio}</p>}
-            <div className="text-muted-foreground flex flex-col items-center gap-2 text-sm">
+            {user.bio && <p className="text-sm text-muted-foreground">{user.bio}</p>}
+            <div className="flex flex-col items-center gap-2 text-sm text-muted-foreground">
               {user.location && (
                 <div className="flex items-center gap-1.5">
                   <MapPin className="size-3.5" />

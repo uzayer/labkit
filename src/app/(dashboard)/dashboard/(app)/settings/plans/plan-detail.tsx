@@ -35,7 +35,7 @@ export default function PlanDetail() {
               <RadioGroupItem value={plan.label} className="peer sr-only" id={plan.label} />
               <Label
                 htmlFor={plan.label}
-                className="outline-muted w-full cursor-pointer rounded-md border outline peer-data-[state=checked]:border-blue-500"
+                className="w-full cursor-pointer rounded-md border outline outline-muted peer-data-[state=checked]:border-blue-500"
               >
                 <Card className="w-full border-none">
                   <CardHeader className="py-3">
@@ -63,7 +63,7 @@ export default function PlanDetail() {
                   <CardContent className="py-3">
                     <div className="flex flex-col items-start gap-1">
                       <p className="text-sm">{plan.content}</p>
-                      <p className="text-muted-foreground text-xs">{plan.description}</p>
+                      <p className="text-xs text-muted-foreground">{plan.description}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -75,7 +75,7 @@ export default function PlanDetail() {
 
       <div className="space-y-3">
         <h2 className="font-bold">Overview</h2>
-        <p className="text-muted-foreground text-sm leading-5">{plan?.overview}</p>
+        <p className="text-sm leading-5 text-muted-foreground">{plan?.overview}</p>
       </div>
 
       <div className="space-y-3">
@@ -86,7 +86,7 @@ export default function PlanDetail() {
             <IconArrowUpRight />
           </Button>
         </div>
-        <div className="border-muted-foreground grid grid-cols-6 gap-4 rounded-md border-[1px] p-4">
+        <div className="grid grid-cols-6 gap-4 rounded-md border-[1px] border-muted-foreground p-4">
           {plan?.features.map((feature) => (
             <div key={feature} className="col-span-3 flex items-center gap-2">
               <IconCheck size={18} strokeWidth={1.5} />
@@ -104,7 +104,7 @@ export default function PlanDetail() {
             <IconArrowUpRight />
           </Button>
         </div>
-        <div className="border-muted-foreground grid grid-cols-6 gap-4 rounded-md border-[1px] p-4">
+        <div className="grid grid-cols-6 gap-4 rounded-md border-[1px] border-muted-foreground p-4">
           {plan?.additionalResources.map((resource) => (
             <div key={resource} className="col-span-3 flex items-center gap-2">
               <IconCheck size={18} strokeWidth={1.5} />

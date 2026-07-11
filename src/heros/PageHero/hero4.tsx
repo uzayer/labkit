@@ -18,7 +18,7 @@ export const Hero4: React.FC<Page['hero'] & { publicContext: PublicContextProps 
   return (
     <section className="py-32">
       <div className="container grid items-center gap-10 lg:grid-cols-2 lg:gap-20">
-        <div className="bg-muted flex justify-end">
+        <div className="flex justify-end bg-muted">
           {images && images.length > 0 && (
             <Media
               imgClassName="max-h-[600px] w-full rounded-md object-cover lg:max-h-[800px]"
@@ -61,7 +61,7 @@ export const Hero4: React.FC<Page['hero'] & { publicContext: PublicContextProps 
                   <span className="font-semibold">{rating?.toFixed(1)}</span>
                 </div>
                 {tagline && (
-                  <p className="text-muted-foreground text-left font-medium">{tagline}</p>
+                  <p className="text-left font-medium text-muted-foreground">{tagline}</p>
                 )}
               </div>
             </div>

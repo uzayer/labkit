@@ -78,7 +78,7 @@ const Hero219: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = 
           {marqueeComponents}
         </motion.div>
 
-        <div className="bg-background absolute right-0 bottom-20 left-0 h-92 w-full blur-xl" />
+        <div className="absolute right-0 bottom-20 left-0 h-92 w-full bg-background blur-xl" />
       </div>
     </section>
   )
@@ -145,8 +145,8 @@ export const SkiperUiMarquee = React.memo(function SkiperUiMarquee({
           <Card key={idx} image={item} />
         ))}
       </Marquee>
-      <div className="from-background absolute top-0 z-10 h-8 w-full bg-gradient-to-b to-transparent" />
-      <div className="from-background absolute bottom-0 z-10 h-8 w-full bg-gradient-to-t to-transparent" />
+      <div className="absolute top-0 z-10 h-8 w-full bg-gradient-to-b from-background to-transparent" />
+      <div className="absolute bottom-0 z-10 h-8 w-full bg-gradient-to-t from-background to-transparent" />
     </div>
   )
 })
@@ -155,8 +155,8 @@ const Card = React.memo(function Card({ image }: { image?: MediaType }) {
   return (
     <div
       className={cn(
-        'border-muted relative flex size-24 items-center justify-center overflow-hidden rounded-3xl border p-4',
-        'from-muted/50 to-background bg-gradient-to-b',
+        'relative flex size-24 items-center justify-center overflow-hidden rounded-3xl border border-muted p-4',
+        'bg-gradient-to-b from-muted/50 to-background',
         'dark:bg-transparent dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]',
       )}
     >

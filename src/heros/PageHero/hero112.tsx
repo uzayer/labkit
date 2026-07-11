@@ -106,10 +106,10 @@ const Hero112: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = 
                   {tagline || '7000+ people already joined'}
                 </div>
               </div>
-              <div className="bg-primary absolute top-0 right-0 flex h-25 w-25 rotate-12 rounded-3xl border-8 border-white lg:h-27.5 lg:w-27.5">
+              <div className="absolute top-0 right-0 flex h-25 w-25 rotate-12 rounded-3xl border-8 border-white bg-primary lg:h-27.5 lg:w-27.5">
                 <BookOpen className="m-auto h-10 w-10 stroke-white lg:h-12.5 lg:w-12.5" />
               </div>
-              <div className="bg-primary absolute top-1/3 -left-10 flex h-25 w-25 -rotate-12 rounded-3xl border-8 border-white lg:h-27.5 lg:w-27.5">
+              <div className="absolute top-1/3 -left-10 flex h-25 w-25 -rotate-12 rounded-3xl border-8 border-white bg-primary lg:h-27.5 lg:w-27.5">
                 <PenTool className="m-auto h-14 w-14 -rotate-90 fill-white lg:h-18 lg:w-18" />
               </div>
             </div>
@@ -125,7 +125,7 @@ const Hero112: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = 
                     index < statsItems.length - 1 ? 'border-b md:border-r md:border-b-0' : ''
                   }`}
                 >
-                  <div className="text-primary text-2xl font-medium lg:text-4xl">{item.value}</div>
+                  <div className="text-2xl font-medium text-primary lg:text-4xl">{item.value}</div>
                   <div className="text-muted-foreground lg:text-lg">{item.title}</div>
                 </div>
               ))}

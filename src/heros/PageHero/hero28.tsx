@@ -131,7 +131,7 @@ const Hero28 = () => {
       </div>
       <div className="relative container flex flex-col items-center text-center">
         <h1 className="my-6 text-4xl font-bold text-pretty lg:text-6xl">Welcome to Our Website</h1>
-        <p className="text-muted-foreground mb-8 max-w-3xl lg:text-xl">
+        <p className="mb-8 max-w-3xl text-muted-foreground lg:text-xl">
           Elig doloremque mollitia fugiat omnis! Porro facilis quo animi consequatur.
         </p>
         <div>

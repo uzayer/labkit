@@ -89,10 +89,10 @@ export default function DashboardLoginPage() {
 
   return (
     <main className="relative flex min-h-svh items-center justify-center overflow-hidden bg-[radial-gradient(circle_at_top,_color-mix(in_srgb,var(--background),var(--primary)_8%),_var(--background)_55%)] px-6 py-12">
-      <div className="via-border absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent to-transparent" />
-      <Card className="border-border/80 bg-card/95 w-full max-w-md shadow-xl backdrop-blur">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      <Card className="w-full max-w-md border-border/80 bg-card/95 shadow-xl backdrop-blur">
         <CardHeader className="space-y-2">
-          <p className="text-muted-foreground text-xs font-medium tracking-[0.24em] uppercase">
+          <p className="text-xs font-medium tracking-[0.24em] text-muted-foreground uppercase">
             LabKit Admin
           </p>
           <CardTitle className="text-3xl font-semibold tracking-tight">Dashboard Login</CardTitle>
@@ -138,7 +138,7 @@ export default function DashboardLoginPage() {
                 )}
               />
               {form.formState.errors.root?.message ? (
-                <p className="text-destructive text-sm leading-6" role="alert">
+                <p className="text-sm leading-6 text-destructive" role="alert">
                   {form.formState.errors.root.message}
                 </p>
               ) : null}

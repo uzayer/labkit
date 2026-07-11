@@ -36,11 +36,11 @@ export default async function RunsPage({ searchParams }: RunsPageProps) {
   return (
     <main className="flex flex-1 flex-col gap-4 p-6 md:p-8">
       <div className="space-y-2">
-        <p className="text-muted-foreground text-xs font-medium tracking-[0.24em] uppercase">
+        <p className="text-xs font-medium tracking-[0.24em] text-muted-foreground uppercase">
           Ingestion
         </p>
         <h1 className="text-3xl font-semibold tracking-tight">Import Runs</h1>
-        <p className="text-muted-foreground max-w-2xl text-sm leading-6">
+        <p className="max-w-2xl text-sm leading-6 text-muted-foreground">
           History of every staged, running, and completed import — ORCID pulls, BibTeX/citation
           pastes, DOI quick-adds, and CLI runs.
         </p>

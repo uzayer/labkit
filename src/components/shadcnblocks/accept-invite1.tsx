@@ -52,13 +52,13 @@ const AcceptInvite1 = ({
                 <FcGoogle />
                 Sign in with Google
               </Button>
-              <span className="bg-border h-px w-full" />
+              <span className="h-px w-full bg-border" />
               <form autoComplete="off" className="flex flex-col gap-3">
                 <Input placeholder="Enter your email address" required />
                 <Button type="submit">Continue</Button>
               </form>
             </div>
-            <p className="text-muted-foreground text-xs">
+            <p className="text-xs text-muted-foreground">
               {disclaimer}
               <a href={disclaimerLink.href} className="underline">
                 {disclaimerLink.label}
@@ -68,7 +68,7 @@ const AcceptInvite1 = ({
           </div>
           <div className="flex w-full flex-col gap-4 sm:max-w-sm">
             <h3 className="text-2xl font-bold">{heading}</h3>
-            <div className="text-muted-foreground space-y-4 text-sm font-medium">
+            <div className="space-y-4 text-sm font-medium text-muted-foreground">
               {description.map((item, index) => (
                 <p key={index}>{item}</p>
               ))}
@@ -76,7 +76,7 @@ const AcceptInvite1 = ({
           </div>
         </div>
 
-        <div className="text-muted-foreground flex items-center gap-4 text-xs">
+        <div className="flex items-center gap-4 text-xs text-muted-foreground">
           <p>{copyright}</p>
           {footerLinks.map((link) => (
             <a key={link.label} href={link.href} className="underline">

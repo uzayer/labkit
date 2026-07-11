@@ -75,9 +75,9 @@ const Hero20 = () => {
             >
               {accordions.map((accordion) => (
                 <AccordionItem key={accordion.id} value={accordion.id} className="border-b-0">
-                  <AccordionTrigger className="data-[state=closed]:text-muted-foreground text-left">
+                  <AccordionTrigger className="text-left data-[state=closed]:text-muted-foreground">
                     <div className="flex items-center justify-between gap-2">
-                      <span className="bg-muted flex size-9 items-center justify-center rounded-lg">
+                      <span className="flex size-9 items-center justify-center rounded-lg bg-muted">
                         {accordion.icon}
                       </span>
                       <span className="font-medium lg:text-lg">{accordion.question}</span>
@@ -85,9 +85,9 @@ const Hero20 = () => {
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground lg:text-base">
                     {accordion.answer}
-                    <div className="bg-muted mt-8 h-px">
+                    <div className="mt-8 h-px bg-muted">
                       <div
-                        className={'animate-progress bg-primary h-px'}
+                        className={'h-px animate-progress bg-primary'}
                         style={{
                           animationDuration: `${DURATION}ms`,
                         }}

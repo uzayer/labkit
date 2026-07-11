@@ -103,14 +103,14 @@ export function RunsTable({ rows, page, pageSize, pageCount, totalDocs }: RunsTa
         id: 'progress',
         header: 'Progress',
         cell: ({ row }) => (
-          <span className="text-muted-foreground text-sm">{progressSummary(row.original)}</span>
+          <span className="text-sm text-muted-foreground">{progressSummary(row.original)}</span>
         ),
       },
       {
         accessorKey: 'createdAt',
         header: 'Created',
         cell: ({ row }) => (
-          <span className="text-muted-foreground text-sm">
+          <span className="text-sm text-muted-foreground">
             {formatDate(row.original.createdAt)}
           </span>
         ),
@@ -169,7 +169,7 @@ export function RunsTable({ rows, page, pageSize, pageCount, totalDocs }: RunsTa
               <TableRow>
                 <TableCell
                   colSpan={columns.length}
-                  className="text-muted-foreground h-24 text-center"
+                  className="h-24 text-center text-muted-foreground"
                 >
                   No import runs yet.
                 </TableCell>
@@ -179,7 +179,7 @@ export function RunsTable({ rows, page, pageSize, pageCount, totalDocs }: RunsTa
         </Table>
       </div>
       <div className="flex items-center justify-between gap-2">
-        <p className="text-muted-foreground text-sm">{totalDocs} total</p>
+        <p className="text-sm text-muted-foreground">{totalDocs} total</p>
       </div>
       <DataTablePagination table={table} />
     </div>

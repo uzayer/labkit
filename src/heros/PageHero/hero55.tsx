@@ -10,7 +10,7 @@ const Hero55 = () => {
         <div className="flex flex-col items-center gap-10 text-center">
           <a
             href="#"
-            className="hover:bg-muted flex items-center gap-2 rounded-full px-2 py-1 text-sm transition-colors"
+            className="flex items-center gap-2 rounded-full px-2 py-1 text-sm transition-colors hover:bg-muted"
           >
             <Badge>7 days ago</Badge>
             Slack integration is here!

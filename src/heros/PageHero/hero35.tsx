@@ -12,7 +12,7 @@ const Hero35 = () => {
             <h1 className="my-6 text-4xl font-bold text-pretty lg:text-6xl">
               Welcome to Our Website
             </h1>
-            <p className="text-muted-foreground mb-8 max-w-xl lg:text-xl">
+            <p className="mb-8 max-w-xl text-muted-foreground lg:text-xl">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia
               fugiat omnis! Porro facilis quo animi consequatur. Explicabo.
             </p>
@@ -26,24 +26,24 @@ const Hero35 = () => {
               </Button>
             </div>
           </div>
-          <div className="bg-accent grid aspect-3/4 grid-cols-[1fr_10fr_1fr] grid-rows-[2fr_10fr_2fr]">
-            <div className="border-border border-r border-b"></div>
-            <div className="border-border border-b"></div>
-            <div className="border-border relative border-b border-l">
-              <div className="border-accent-foreground bg-accent-foreground ring-accent absolute -bottom-[6px] -left-[6px] size-[12px] rounded-full border-[3px] ring-8"></div>
+          <div className="grid aspect-3/4 grid-cols-[1fr_10fr_1fr] grid-rows-[2fr_10fr_2fr] bg-accent">
+            <div className="border-r border-b border-border"></div>
+            <div className="border-b border-border"></div>
+            <div className="relative border-b border-l border-border">
+              <div className="absolute -bottom-[6px] -left-[6px] size-[12px] rounded-full border-[3px] border-accent-foreground bg-accent-foreground ring-8 ring-accent"></div>
             </div>
             <div className="border-r"></div>
             <div className="relative">
-              <div className="border-border bg-background absolute top-[8%] left-[12%] flex aspect-3/4 w-3/5 justify-center rounded-lg border"></div>
-              <div className="border-border bg-background absolute top-[20%] right-[10%] flex aspect-square w-[30%] justify-center rounded-lg border"></div>
-              <div className="border-border bg-background absolute bottom-[8%] left-[36%] flex aspect-4/3 w-[50%] justify-center rounded-lg border"></div>
+              <div className="absolute top-[8%] left-[12%] flex aspect-3/4 w-3/5 justify-center rounded-lg border border-border bg-background"></div>
+              <div className="absolute top-[20%] right-[10%] flex aspect-square w-[30%] justify-center rounded-lg border border-border bg-background"></div>
+              <div className="absolute bottom-[8%] left-[36%] flex aspect-4/3 w-[50%] justify-center rounded-lg border border-border bg-background"></div>
             </div>
             <div className="border-l"></div>
-            <div className="border-border relative border-t border-r">
-              <div className="border-accent-foreground bg-accent-foreground ring-accent absolute -top-[6px] -right-[6px] size-[12px] rounded-full border-[3px] ring-8"></div>
+            <div className="relative border-t border-r border-border">
+              <div className="absolute -top-[6px] -right-[6px] size-[12px] rounded-full border-[3px] border-accent-foreground bg-accent-foreground ring-8 ring-accent"></div>
             </div>
-            <div className="border-border border-t"></div>
-            <div className="border-border border-t border-l"></div>
+            <div className="border-t border-border"></div>
+            <div className="border-t border-l border-border"></div>
           </div>
         </div>
       </div>

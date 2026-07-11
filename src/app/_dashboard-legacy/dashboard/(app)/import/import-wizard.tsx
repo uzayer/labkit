@@ -215,7 +215,7 @@ export function ImportWizard() {
             key={card.id}
             className={
               activeSource === card.id
-                ? 'ring-primary cursor-pointer ring-2'
+                ? 'cursor-pointer ring-2 ring-primary'
                 : 'cursor-pointer transition-shadow hover:shadow-md'
             }
             onClick={() => setActiveSource(card.id)}

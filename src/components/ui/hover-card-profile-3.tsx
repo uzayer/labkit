@@ -28,8 +28,8 @@ const Example = () => (
             <h4 className="text-sm font-semibold">Hayden Bleasel</h4>
             <Badge variant="secondary">Pro</Badge>
           </div>
-          <p className="text-muted-foreground text-sm">Product designer and developer</p>
-          <p className="text-muted-foreground text-xs">Joined March 2020</p>
+          <p className="text-sm text-muted-foreground">Product designer and developer</p>
+          <p className="text-xs text-muted-foreground">Joined March 2020</p>
         </div>
       </div>
     </HoverCardContent>

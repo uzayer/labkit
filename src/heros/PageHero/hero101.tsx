@@ -58,14 +58,14 @@ const Hero101: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = 
                   className="flex w-fit items-center gap-3 hover:bg-transparent"
                 >
                   <a href="#">
-                    <div className="before:from-primary relative h-7 w-7 rounded-full p-[3px] before:absolute before:top-0 before:left-0 before:block before:h-full before:w-full before:animate-[spin_5s_ease-in-out_infinite] before:rounded-full before:bg-linear-to-r before:to-transparent before:content-['']">
-                      <div className="bg-background relative z-20 flex h-full w-full rounded-full">
-                        <PlayIcon className="fill-primary stroke-primary m-auto h-3! w-3!" />
+                    <div className="relative h-7 w-7 rounded-full p-[3px] before:absolute before:top-0 before:left-0 before:block before:h-full before:w-full before:animate-[spin_5s_ease-in-out_infinite] before:rounded-full before:bg-linear-to-r before:from-primary before:to-transparent before:content-['']">
+                      <div className="relative z-20 flex h-full w-full rounded-full bg-background">
+                        <PlayIcon className="m-auto h-3! w-3! fill-primary stroke-primary" />
                       </div>
                     </div>
-                    <p className="text-primary text-sm/5 font-medium">
+                    <p className="text-sm/5 font-medium text-primary">
                       {presentationVideo.label || 'Watch Demo'}{' '}
-                      <span className="text-muted-foreground ml-1 text-xs">
+                      <span className="ml-1 text-xs text-muted-foreground">
                         {presentationVideo?.videoDuration || '2 min'}
                       </span>
                     </p>

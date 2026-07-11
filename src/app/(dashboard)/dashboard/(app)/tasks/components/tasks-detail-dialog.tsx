@@ -35,13 +35,13 @@ export function TasksDetailDialog({ open, onOpenChange, currentRow }: Props) {
         </DialogHeader>
         <div className="space-y-2">
           {status && status.icon && (
-            <div className="text-muted-foreground flex items-center gap-0.5">
+            <div className="flex items-center gap-0.5 text-muted-foreground">
               <status.icon className="mr-2 size-6" />
               <span className="text-sm font-semibold">{status?.label}</span>
             </div>
           )}
           {priority && priority.icon && (
-            <div className="text-muted-foreground flex items-center gap-0.5">
+            <div className="flex items-center gap-0.5 text-muted-foreground">
               <priority.icon className="mr-2 size-6" />
               <span className="text-sm font-semibold">{priority.label}</span>
             </div>

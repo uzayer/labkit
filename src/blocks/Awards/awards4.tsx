@@ -61,7 +61,7 @@ const Awards4: React.FC<
 
         <table className="w-full border-collapse">
           <thead>
-            <tr className="text-foreground/40 h-12 border-b text-left">
+            <tr className="h-12 border-b text-left text-foreground/40">
               <th className="hidden min-w-30 font-normal lg:table-cell lg:min-w-40"></th>
               <th className="font-normal">{nameHeader}</th>
               <th className="hidden font-normal md:table-cell">{nominationHeader}</th>
@@ -94,15 +94,15 @@ const Awards4: React.FC<
                 return (
                   <tr
                     key={award.id || index}
-                    className="text-foreground/40 h-20 border-b text-left"
+                    className="h-20 border-b text-left text-foreground/40"
                   >
-                    <td className="text-foreground/50 hidden font-medium tracking-tight lg:table-cell">
+                    <td className="hidden font-medium tracking-tight text-foreground/50 lg:table-cell">
                       {indexNumber}
                     </td>
-                    <td className="text-foreground text-lg font-medium tracking-tight lg:text-xl">
+                    <td className="text-lg font-medium tracking-tight text-foreground lg:text-xl">
                       <div className="flex items-center gap-2">
                         {logoUrl && (
-                          <span className="bg-foreground flex size-8 items-center justify-center rounded-xl object-cover p-1.5">
+                          <span className="flex size-8 items-center justify-center rounded-xl bg-foreground object-cover p-1.5">
                             <img src={logoUrl} className="invert" alt={awardTitle || ''} />
                           </span>
                         )}
@@ -110,7 +110,7 @@ const Awards4: React.FC<
                       </div>
                     </td>
                     <td className="hidden md:table-cell">{awardDescription}</td>
-                    <td className="text-foreground text-right">{awardYear}</td>
+                    <td className="text-right text-foreground">{awardYear}</td>
                   </tr>
                 )
               })}

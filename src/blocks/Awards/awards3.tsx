@@ -49,7 +49,7 @@ const Awards3: React.FC<
           </div>
         )}
         {description && (
-          <p className="text-muted-foreground mb-6 max-w-3xl text-base">
+          <p className="mb-6 max-w-3xl text-base text-muted-foreground">
             {typeof description === 'string' ? description : ''}
           </p>
         )}
@@ -73,9 +73,9 @@ const Awards3: React.FC<
             return (
               <div
                 key={award.id || index}
-                className="border-border group relative flex items-start gap-4 overflow-hidden border-b p-4"
+                className="group relative flex items-start gap-4 overflow-hidden border-b border-border p-4"
               >
-                <div className="bg-accent absolute inset-0 z-0 translate-y-full transition-transform duration-300 ease-in-out group-hover:translate-y-0" />
+                <div className="absolute inset-0 z-0 translate-y-full bg-accent transition-transform duration-300 ease-in-out group-hover:translate-y-0" />
 
                 <div className="relative z-10 flex-1 space-y-2 pb-4">
                   <div className="flex items-center gap-4">
@@ -85,16 +85,16 @@ const Awards3: React.FC<
                     <h3 className="rounded-md font-medium">{awardTitle}</h3>
                   </div>
                   {awardCategories.length > 0 && (
-                    <p className="text-muted-foreground flex gap-x-2 pl-9 text-sm">
+                    <p className="flex gap-x-2 pl-9 text-sm text-muted-foreground">
                       {awardCategories.map((category, catIndex) => (
                         <span key={catIndex}>{category}</span>
                       ))}
                     </p>
                   )}
-                  <p className="text-muted-foreground pl-9 text-sm">{awardYear}</p>
+                  <p className="pl-9 text-sm text-muted-foreground">{awardYear}</p>
                 </div>
 
-                <MoveUpRight className="text-muted-foreground relative z-10 mt-1 h-4 w-4" />
+                <MoveUpRight className="relative z-10 mt-1 h-4 w-4 text-muted-foreground" />
               </div>
             )
           })}

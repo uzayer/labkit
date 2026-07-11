@@ -64,7 +64,7 @@ export const FeaturedBanner: React.FC<FeaturedBannerProps> = ({
               <ArrowRight className="ml-1 size-4 transition-transform group-hover:translate-x-1" />
             </div>
           )}
-          {description && <p className="text-primary-foreground/85 mt-2 text-xs">{description}</p>}
+          {description && <p className="mt-2 text-xs text-primary-foreground/85">{description}</p>}
         </div>
         {image && (
           <div className="relative aspect-[2/1] overflow-clip rounded-t pl-6 lg:max-w-[22rem] lg:pl-0">

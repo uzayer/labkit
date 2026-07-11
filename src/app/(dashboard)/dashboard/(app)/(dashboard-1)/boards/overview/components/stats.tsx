@@ -45,7 +45,7 @@ function StatsCard({
         <TooltipProvider>
           <Tooltip delayDuration={50}>
             <TooltipTrigger>
-              <IconInfoCircle className="text-muted-foreground scale-90 stroke-[1.25]" />
+              <IconInfoCircle className="scale-90 stroke-[1.25] text-muted-foreground" />
               <span className="sr-only">More Info</span>
             </TooltipTrigger>
             <TooltipContent>
@@ -70,7 +70,7 @@ function StatsCard({
               </LineChart>
             </ChartContainer>
           </div>
-          <p className="text-muted-foreground text-xs">Since Last week</p>
+          <p className="text-xs text-muted-foreground">Since Last week</p>
         </div>
 
         <div className="flex flex-wrap items-center justify-between gap-5">

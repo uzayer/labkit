@@ -147,12 +147,12 @@ export function TotalVisitorsChart({ className = '' }: { className?: string }) {
                 key={chart}
                 data-active={activeChart === chart}
                 className={cn(
-                  'data-[active=true]:bg-muted/50 flex flex-1 flex-col justify-center gap-0.5 text-left',
+                  'flex flex-1 flex-col justify-center gap-0.5 text-left data-[active=true]:bg-muted/50',
                   'px-4 py-2',
                 )}
                 onClick={() => setActiveChart(chart)}
               >
-                <span className="text-muted-foreground text-xs">{chartConfig[chart].label}</span>
+                <span className="text-xs text-muted-foreground">{chartConfig[chart].label}</span>
                 <span className="text-lg leading-none font-bold sm:text-xl">
                   {total[key as keyof typeof total].toLocaleString()}
                 </span>

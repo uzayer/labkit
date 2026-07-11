@@ -118,7 +118,7 @@ const BlogPost5: React.FC<Post & { publicContext: PublicContextProps }> = (props
                   {author.name}
                 </a>
                 {publishedAt && (
-                  <span className="text-muted-foreground ml-1">
+                  <span className="ml-1 text-muted-foreground">
                     on <DateFormatter date={publishedAt} locale={publicContext?.locale} />
                   </span>
                 )}
@@ -128,7 +128,7 @@ const BlogPost5: React.FC<Post & { publicContext: PublicContextProps }> = (props
         </div>
 
         {readTime && (
-          <span className="text-muted-foreground mt-2 flex items-center gap-1">
+          <span className="mt-2 flex items-center gap-1 text-muted-foreground">
             <Clock className="h-4 w-4" />
             {readTime} min. read
           </span>
@@ -147,7 +147,7 @@ const BlogPost5: React.FC<Post & { publicContext: PublicContextProps }> = (props
             )}
             {meta?.description && (
               <div className="mb-8">
-                <p className="text-muted-foreground text-sm">{meta.description}</p>
+                <p className="text-sm text-muted-foreground">{meta.description}</p>
               </div>
             )}
 
@@ -182,26 +182,26 @@ const BlogPost5: React.FC<Post & { publicContext: PublicContextProps }> = (props
             </div>
             <Separator className="order-2 mt-8 mb-11 lg:hidden" />
             <div className="order-1 flex flex-col gap-2 lg:order-none lg:mt-9">
-              <p className="text-muted-foreground font-medium">Share this article:</p>
+              <p className="font-medium text-muted-foreground">Share this article:</p>
               <ul className="flex gap-2">
                 <li>
                   <Button variant="secondary" size="icon" className="group rounded-full">
                     <a href="#">
-                      <Facebook className="fill-muted-foreground text-muted-foreground group-hover:fill-primary group-hover:text-primary h-4 w-4 transition-colors" />
+                      <Facebook className="h-4 w-4 fill-muted-foreground text-muted-foreground transition-colors group-hover:fill-primary group-hover:text-primary" />
                     </a>
                   </Button>
                 </li>
                 <li>
                   <Button variant="secondary" size="icon" className="group rounded-full">
                     <a href="#">
-                      <Linkedin className="fill-muted-foreground text-muted-foreground group-hover:fill-primary group-hover:text-primary h-4 w-4 transition-colors" />
+                      <Linkedin className="h-4 w-4 fill-muted-foreground text-muted-foreground transition-colors group-hover:fill-primary group-hover:text-primary" />
                     </a>
                   </Button>
                 </li>
                 <li>
                   <Button variant="secondary" size="icon" className="group rounded-full">
                     <a href="#">
-                      <Twitter className="fill-muted-foreground text-muted-foreground group-hover:fill-primary group-hover:text-primary h-4 w-4 transition-colors" />
+                      <Twitter className="h-4 w-4 fill-muted-foreground text-muted-foreground transition-colors group-hover:fill-primary group-hover:text-primary" />
                     </a>
                   </Button>
                 </li>

@@ -67,7 +67,7 @@ const Awards5 = () => {
       <div className="font-hedvigLettersSerif container">
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-6 lg:gap-20">
           <div className="top-10 col-span-2 flex h-fit w-fit items-center gap-3 py-8 lg:sticky">
-            <p className="text-foreground/30 text-2xl uppercase"> 05 AWWARDS</p>
+            <p className="text-2xl text-foreground/30 uppercase"> 05 AWWARDS</p>
           </div>
           <ul
             onPointerMove={handlePointerMove}
@@ -95,7 +95,7 @@ const Awards5 = () => {
                 </h3>
                 <a
                   href={award.url}
-                  className="text-foreground/30 hover:text-foreground text-sm tracking-tighter"
+                  className="text-sm tracking-tighter text-foreground/30 hover:text-foreground"
                 >
                   Verify Award
                 </a>

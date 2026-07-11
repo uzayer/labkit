@@ -35,7 +35,7 @@ export function DataTableColumnHeader<TData, TValue>({
     <div className={cn('flex items-center gap-2', className)}>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="ghost" size="sm" className="data-[state=open]:bg-accent -ml-3 h-8">
+          <Button variant="ghost" size="sm" className="-ml-3 h-8 data-[state=open]:bg-accent">
             <span>{title}</span>
             {column.getIsSorted() === 'desc' ? (
               <IconArrowDown className="ml-2 size-4" />
@@ -48,16 +48,16 @@ export function DataTableColumnHeader<TData, TValue>({
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start">
           <DropdownMenuItem onClick={() => column.toggleSorting(false)}>
-            <IconArrowUp className="text-muted-foreground mr-2 size-4" />
+            <IconArrowUp className="mr-2 size-4 text-muted-foreground" />
             Sort ascending
           </DropdownMenuItem>
           <DropdownMenuItem onClick={() => column.toggleSorting(true)}>
-            <IconArrowDown className="text-muted-foreground mr-2 size-4" />
+            <IconArrowDown className="mr-2 size-4 text-muted-foreground" />
             Sort descending
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={() => column.toggleVisibility(false)}>
-            <IconEyeOff className="text-muted-foreground mr-2 size-4" />
+            <IconEyeOff className="mr-2 size-4 text-muted-foreground" />
             Hide column
           </DropdownMenuItem>
         </DropdownMenuContent>

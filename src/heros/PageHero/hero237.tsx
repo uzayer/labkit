@@ -63,11 +63,11 @@ const Hero237 = ({ className }: Hero237Props) => {
     <section className={cn('relative w-screen overflow-hidden border border-b py-32', className)}>
       <div className="relative container flex flex-col lg:flex-row">
         <div className="mt-10 space-y-12 lg:w-1/2">
-          <p className="bg-muted w-fit rounded-full px-4 py-1 text-sm uppercase">Why Us?</p>
+          <p className="w-fit rounded-full bg-muted px-4 py-1 text-sm uppercase">Why Us?</p>
           <h1 className="font-calSans mt-3 max-w-lg text-6xl font-medium lg:text-7xl">
             <span className="opacity-30">The Only blocks</span> you need
           </h1>
-          <p className="text-muted-foreground max-w-lg text-lg">
+          <p className="max-w-lg text-lg text-muted-foreground">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua.
           </p>
@@ -83,7 +83,7 @@ const Hero237 = ({ className }: Hero237Props) => {
                   <p className="text-sm md:text-base">{stat.description}</p>
                 </div>
                 {index !== stats.length - 1 && (
-                  <div className="via-border ml-4 h-full w-px bg-gradient-to-t from-black to-transparent" />
+                  <div className="ml-4 h-full w-px bg-gradient-to-t from-black via-border to-transparent" />
                 )}
               </li>
             ))}

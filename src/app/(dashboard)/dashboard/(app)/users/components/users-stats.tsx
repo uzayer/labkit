@@ -24,7 +24,7 @@ const UserStat = (props: UserStatProps) => {
         <TooltipProvider>
           <Tooltip delayDuration={50}>
             <TooltipTrigger>
-              <IconInfoCircle className="text-muted-foreground scale-90 stroke-[1.25]" />
+              <IconInfoCircle className="scale-90 stroke-[1.25] text-muted-foreground" />
               <span className="sr-only">More Info</span>
             </TooltipTrigger>
             <TooltipContent>
@@ -35,7 +35,7 @@ const UserStat = (props: UserStatProps) => {
       </CardHeader>
       <CardContent className="pb-4">
         <div className="text-2xl font-bold">{props.stat}</div>
-        <p className="text-muted-foreground text-xs">{props.statDesc}</p>
+        <p className="text-xs text-muted-foreground">{props.statDesc}</p>
       </CardContent>
     </Card>
   )

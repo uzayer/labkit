@@ -14,25 +14,25 @@ const Hero26 = () => {
           >
             <Badge>NEW</Badge>
             Introducing Collaboration 2.0
-            <span className="bg-muted flex size-7 items-center justify-center rounded-full">
+            <span className="flex size-7 items-center justify-center rounded-full bg-muted">
               <ArrowRight className="w-4" />
             </span>
           </a>
           <h1 className="mx-auto mt-4 mb-3 max-w-3xl text-4xl font-semibold text-balance lg:mb-7 lg:text-7xl">
             Unlock the power of collaboration
           </h1>
-          <p className="m text-muted-foreground mx-auto max-w-3xl lg:text-xl">
+          <p className="m mx-auto max-w-3xl text-muted-foreground lg:text-xl">
             Collaboration 2.0 is the ultimate platform for
-            <span className="text-primary relative top-[5px] mx-2 inline-flex font-medium md:top-[3px]">
+            <span className="relative top-[5px] mx-2 inline-flex font-medium text-primary md:top-[3px]">
               <Users className="mr-1 w-4 md:w-5" />
               Teams
             </span>
             to
-            <span className="text-primary relative top-[5px] mx-2 inline-flex font-medium md:top-[3px]">
+            <span className="relative top-[5px] mx-2 inline-flex font-medium text-primary md:top-[3px]">
               <Blocks className="mr-1 w-5" />
               Collaborate,
             </span>
-            <span className="text-primary relative top-[5px] mx-2 inline-flex font-medium md:top-[3px]">
+            <span className="relative top-[5px] mx-2 inline-flex font-medium text-primary md:top-[3px]">
               <MessagesSquare className="mr-1 w-5" />
               Communicate,
             </span>

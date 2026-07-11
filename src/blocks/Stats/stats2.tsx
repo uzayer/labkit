@@ -10,7 +10,7 @@ const Stats2 = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </h1>
         <div className="grid gap-6 pt-9 text-center md:grid-cols-3 lg:pt-20">
-          <Card className="bg-accent border-none p-8 lg:p-10">
+          <Card className="border-none bg-accent p-8 lg:p-10">
             <p className="mb-1 flex items-center justify-center text-2xl font-semibold lg:text-3xl">
               <ArrowUp className="mr-1 h-8" />
               20,000
@@ -19,7 +19,7 @@ const Stats2 = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </p>
           </Card>
-          <Card className="bg-accent border-none p-8 lg:p-10">
+          <Card className="border-none bg-accent p-8 lg:p-10">
             <p className="mb-1 flex items-center justify-center text-2xl font-semibold lg:text-3xl">
               <ArrowUp className="mr-1 h-8" />
               20+
@@ -28,7 +28,7 @@ const Stats2 = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </p>
           </Card>
-          <Card className="bg-accent border-none p-8 lg:p-10">
+          <Card className="border-none bg-accent p-8 lg:p-10">
             <p className="mb-1 flex items-center justify-center text-2xl font-semibold lg:text-3xl">
               <ArrowUp className="mr-1 h-8" />
               50%
@@ -37,7 +37,7 @@ const Stats2 = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </p>
           </Card>
-          <Card className="bg-accent border-none p-8 lg:p-10">
+          <Card className="border-none bg-accent p-8 lg:p-10">
             <p className="mb-1 flex items-center justify-center text-2xl font-semibold lg:text-3xl">
               <ArrowUp className="mr-1 h-8" />
               100+
@@ -46,7 +46,7 @@ const Stats2 = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </p>
           </Card>
-          <Card className="bg-accent border-none p-8 lg:p-10">
+          <Card className="border-none bg-accent p-8 lg:p-10">
             <p className="mb-1 flex items-center justify-center text-2xl font-semibold lg:text-3xl">
               <ArrowUp className="mr-1 h-8" />
               100%
@@ -55,7 +55,7 @@ const Stats2 = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </p>
           </Card>
-          <Card className="bg-accent border-none p-8 lg:p-10">
+          <Card className="border-none bg-accent p-8 lg:p-10">
             <p className="mb-1 flex items-center justify-center text-2xl font-semibold lg:text-3xl">
               <ArrowUp className="mr-1 h-8" />
               Forever

@@ -60,7 +60,7 @@ export function DeleteActions() {
         handleConfirm={handleDeactivate}
         title={
           <span className="text-destructive">
-            <IconAlertTriangle className="stroke-destructive mr-1 inline-block" size={18} />{' '}
+            <IconAlertTriangle className="mr-1 inline-block stroke-destructive" size={18} />{' '}
             Deactivate
           </span>
         }

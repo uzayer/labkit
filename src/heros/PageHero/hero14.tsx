@@ -71,12 +71,12 @@ const Hero14 = () => {
           <h2 className="mx-auto mb-4 max-w-screen-sm text-center text-4xl font-medium md:mb-12 md:text-8xl">
             Choose your stack
           </h2>
-          <p className="text-muted-foreground mt-4 text-center text-lg md:text-2xl">
+          <p className="mt-4 text-center text-lg text-muted-foreground md:text-2xl">
             Compatible with all popular frameworks
           </p>
           <div
             key={current}
-            className="animate-fade-in-out bg-muted mx-auto mt-8 mb-12 flex w-fit items-center gap-2 rounded-md px-4 py-2 text-center"
+            className="mx-auto mt-8 mb-12 flex w-fit animate-fade-in-out items-center gap-2 rounded-md bg-muted px-4 py-2 text-center"
           >
             <img
               src={technologies[current - 1]?.image}
@@ -93,7 +93,7 @@ const Hero14 = () => {
           opts={{
             loop: true,
           }}
-          className="before:from-background after:from-background relative mx-auto w-full max-w-screen-md before:absolute before:inset-y-0 before:left-0 before:z-10 before:w-36 before:bg-linear-to-r before:to-transparent after:absolute after:inset-y-0 after:right-0 after:z-10 after:w-36 after:bg-linear-to-l after:to-transparent"
+          className="relative mx-auto w-full max-w-screen-md before:absolute before:inset-y-0 before:left-0 before:z-10 before:w-36 before:bg-linear-to-r before:from-background before:to-transparent after:absolute after:inset-y-0 after:right-0 after:z-10 after:w-36 after:bg-linear-to-l after:from-background after:to-transparent"
           onMouseEnter={() => plugin.stop()}
           onMouseLeave={() => plugin.reset()}
         >

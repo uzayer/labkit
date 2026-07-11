@@ -145,7 +145,7 @@ export const CaseStudy3: React.FC<CaseStudyPost & { publicContext: PublicContext
           <aside className="mx-auto h-fit max-w-prose lg:sticky lg:top-10 lg:mx-0 lg:w-64 lg:max-w-none">
             <div className="mb-6">
               <h2 className="font-semibold">Overview</h2>
-              <p className="text-muted-foreground mt-1 text-sm">{overviewCopy}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{overviewCopy}</p>
             </div>
             {metaItems.length > 0 && (
               <div className="grid grid-cols-2 gap-5 lg:grid-cols-1">
@@ -155,7 +155,7 @@ export const CaseStudy3: React.FC<CaseStudyPost & { publicContext: PublicContext
                     <div key={`${item?.label}-${index}`} className="col-span-2 lg:col-span-1">
                       {item?.label && <h2 className="font-semibold">{item.label}</h2>}
                       {item?.value && (
-                        <p className="text-muted-foreground mt-1 text-sm">{item.value}</p>
+                        <p className="mt-1 text-sm text-muted-foreground">{item.value}</p>
                       )}
                     </div>
                   )
@@ -163,7 +163,7 @@ export const CaseStudy3: React.FC<CaseStudyPost & { publicContext: PublicContext
               </div>
             )}
             <div className="mt-10 flex flex-col">
-              <span className="text-muted-foreground mb-2 text-sm">
+              <span className="mb-2 text-sm text-muted-foreground">
                 {caseStudySettings.shareLabel || 'Share this content:'}
               </span>
               <div className="flex gap-4">
@@ -186,7 +186,7 @@ export const CaseStudy3: React.FC<CaseStudyPost & { publicContext: PublicContext
                 {caseStudySettings.problem && (
                   <div>
                     <h2 className="text-xl font-semibold">Problem</h2>
-                    <p className="text-muted-foreground mt-3">{caseStudySettings.problem}</p>
+                    <p className="mt-3 text-muted-foreground">{caseStudySettings.problem}</p>
                   </div>
                 )}
                 {caseStudySettings.problem && caseStudySettings.approach && (
@@ -195,7 +195,7 @@ export const CaseStudy3: React.FC<CaseStudyPost & { publicContext: PublicContext
                 {caseStudySettings.approach && (
                   <div>
                     <h2 className="text-xl font-semibold">Approach</h2>
-                    <p className="text-muted-foreground mt-3">{caseStudySettings.approach}</p>
+                    <p className="mt-3 text-muted-foreground">{caseStudySettings.approach}</p>
                   </div>
                 )}
                 {outcomes.length > 0 && (
@@ -215,7 +215,7 @@ export const CaseStudy3: React.FC<CaseStudyPost & { publicContext: PublicContext
                 )}
               </div>
               {content && (
-                <div className="prose dark:prose-invert mt-20">
+                <div className="prose mt-20 dark:prose-invert">
                   <RichText content={content} publicContext={publicContext} withWrapper={false} />
                 </div>
               )}
@@ -236,7 +236,7 @@ export const CaseStudy3: React.FC<CaseStudyPost & { publicContext: PublicContext
                           className={cn(
                             'block py-1 transition-colors duration-200',
                             activeSection === item.id
-                              ? 'text-primary font-medium'
+                              ? 'font-medium text-primary'
                               : 'text-muted-foreground hover:text-primary',
                           )}
                         >
