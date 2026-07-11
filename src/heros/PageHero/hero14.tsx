@@ -1,7 +1,7 @@
 'use client'
 
 import Autoplay from 'embla-carousel-autoplay'
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useState, useSyncExternalStore } from 'react'
 
 import type { CarouselApi } from '@/components/ui/carousel'
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
@@ -47,19 +47,22 @@ const technologies = [
 ]
 
 const Hero14 = () => {
-  const plugin = useRef(Autoplay({ delay: 4000, stopOnInteraction: false }))
+  const [plugin] = useState(() => Autoplay({ delay: 4000, stopOnInteraction: false }))
   const [api, setApi] = useState<CarouselApi>()
-  const [current, setCurrent] = useState(0)
 
-  useEffect(() => {
-    if (!api) return
-
-    setCurrent(api.selectedScrollSnap() + 1)
-
-    api.on('select', () => {
-      setCurrent(api.selectedScrollSnap() + 1)
-    })
-  }, [api])
+  const subscribeToApi = useCallback(
+    (callback: () => void) => {
+      if (!api) return () => {}
+      api.on('select', callback)
+      return () => api.off('select', callback)
+    },
+    [api],
+  )
+  const current = useSyncExternalStore(
+    subscribeToApi,
+    useCallback(() => (api ? api.selectedScrollSnap() + 1 : 0), [api]),
+    () => 0,
+  )
 
   return (
     <section className="py-32">
@@ -86,13 +89,13 @@ const Hero14 = () => {
         </div>
         <Carousel
           setApi={setApi}
-          plugins={[plugin.current]}
+          plugins={[plugin]}
           opts={{
             loop: true,
           }}
           className="before:from-background after:from-background relative mx-auto w-full max-w-screen-md before:absolute before:inset-y-0 before:left-0 before:z-10 before:w-36 before:bg-linear-to-r before:to-transparent after:absolute after:inset-y-0 after:right-0 after:z-10 after:w-36 after:bg-linear-to-l after:to-transparent"
-          onMouseEnter={plugin.current.stop}
-          onMouseLeave={plugin.current.reset}
+          onMouseEnter={() => plugin.stop()}
+          onMouseLeave={() => plugin.reset()}
         >
           <CarouselContent>
             {technologies.map((technology, idx) => (

@@ -12,6 +12,7 @@ import {
   CommandList,
 } from '@/components/ui/command'
 import { useDebounce } from '@/utilities/useDebounce'
+import { useIsMobile } from '@/hooks/use-mobile'
 import { useRouter } from 'next/navigation'
 import { Input } from '@/components/ui/input'
 import { Button, ButtonProps } from '@/components/ui/button'
@@ -187,7 +188,7 @@ export function SearchButton({
 }) {
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState('')
-  const [isMobile, setIsMobile] = React.useState(false)
+  const isMobile = useIsMobile(1024)
   const router = useRouter()
 
   const locale = (publicContext?.locale || localization.defaultLocale) as Locale
@@ -196,15 +197,14 @@ export function SearchButton({
   const debouncedValue = useDebounce(value, 300)
   const { results, cachedResults, initialResults, isLoading } = useSearch(debouncedValue, open)
 
-  // Detect mobile view
-  React.useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024) // lg breakpoint
+  // Open/close the search UI, always resetting the query on close so it
+  // clears no matter which path triggered the close (Esc, backdrop click,
+  // result selection, or the shortcut below).
+  const handleOpenChange = React.useCallback((nextOpen: boolean) => {
+    setOpen(nextOpen)
+    if (!nextOpen) {
+      setValue('')
     }
-
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
   // Check for keyboard shortcuts
@@ -216,27 +216,18 @@ export function SearchButton({
       }
       if (e.key === 'Escape' && open) {
         e.preventDefault()
-        setOpen(false)
-        setValue('')
+        handleOpenChange(false)
       }
     }
 
     document.addEventListener('keydown', down)
     return () => document.removeEventListener('keydown', down)
-  }, [open])
-
-  // Reset search when dialog closes
-  React.useEffect(() => {
-    if (!open) {
-      setValue('')
-    }
-  }, [open])
+  }, [open, handleOpenChange])
 
   // Handle selection of a result
   const handleSelect = (url: string) => {
     router.push(url)
-    setOpen(false)
-    setValue('')
+    handleOpenChange(false)
   }
 
   // Combine cached and API results, showing cached first
@@ -264,7 +255,7 @@ export function SearchButton({
         </p>
       </Button>
       {isMobile ? (
-        <Sheet open={open} onOpenChange={setOpen}>
+        <Sheet open={open} onOpenChange={handleOpenChange}>
           <SheetContent
             side="bottom"
             className="flex h-[80vh] flex-col overflow-hidden p-0 [&>button]:hidden"
@@ -289,7 +280,7 @@ export function SearchButton({
           </SheetContent>
         </Sheet>
       ) : (
-        <CommandDialog open={open} onOpenChange={setOpen}>
+        <CommandDialog open={open} onOpenChange={handleOpenChange}>
           <SearchList
             value={value}
             setValue={setValue}
