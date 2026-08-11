@@ -16,9 +16,10 @@ Before starting nontrivial work, check @LOG.md — a running record of non-obvio
 pnpm dev                    # Dev server (Turbopack)
 pnpm build                  # Generate types + Next.js build
 pnpm tsc                    # Type check only
-pnpm lint                   # ESLint
-pnpm lint:fix               # Auto-fix lint
-pnpm format                 # Prettier
+pnpm lint                   # oxlint
+pnpm lint:fix               # oxlint --fix
+pnpm format                 # oxfmt
+pnpm format:check           # oxfmt --check
 pnpm generate:types         # Regenerate src/payload-types.ts
 pnpm generate:importmap     # Regenerate Payload admin import map
 pnpm dev:debug              # Dev with Node inspector
@@ -27,6 +28,8 @@ pnpm backup:apply           # Import backup/pages.json → MongoDB
 ```
 
 No test framework is configured. Verify changes with `pnpm tsc` and `pnpm lint`.
+
+A Husky `pre-commit` hook runs `oxlint --fix` + `oxfmt` on staged files (lint-staged) and `commit-msg` enforces Conventional Commits via commitlint — a non-conforming commit message is rejected, not just warned about.
 
 ## Git Commit Guidelines
 
@@ -44,7 +47,7 @@ The page-builder layout system was removed. Pages are now Hero + SEO only (70+ h
 
 ### Collections & Globals
 
-See `src/payload.config.ts` for the authoritative list. Beyond the base template (Pages, Posts, Media, Categories, Users, Roles), this repo adds: **ResearchThemes, Projects, Publications, Team, Awards, Organizations, Venues, Grants** (the LabKit research-domain collections).
+See `src/payload.config.ts` for the authoritative list. Beyond the base template (Pages, Posts, Media, Categories, Users, Roles), this repo adds: **ResearchThemes, Projects, Publications, Team, Awards, Organizations, Venues, Grants** (the LabKit research-domain collections) plus **ImportRuns, ReviewItems** — bookkeeping for the ingestion pipeline (see below).
 
 Globals: **ThemeConfig, Header, Footer, PageConfig, LabInfo**.
 
@@ -54,9 +57,17 @@ Globals: **ThemeConfig, Header, Footer, PageConfig, LabInfo**.
 
 ### Access control
 
-Role-based via `Users` ↔ `Roles` (many-to-many). Permission flags: `canManageContent`, `canPublish`, `canManageUsers`, `canManageRedirects`. Use `hasPermission()` from `srctilities/checkPermission.ts`.
+Role-based via `Users` ↔ `Roles` (many-to-many). Permission flags: `canManageContent`, `canPublish`, `canManageUsers`, `canManageRedirects`. Use `hasPermission()` from `src/utilities/checkPermission.ts`.
 
 **Gotcha:** Roles must be **populated** (not string IDs) for permission checks to work. The system warns on string IDs.
+
+### Ingestion pipeline
+
+`src/lib/ingestion/` is the engine that pulls Publications (and the Venues/Organizations/Team records they reference) from external sources — ORCID, DOI/Crossref/OpenAlex, DBLP, BibTeX, and citation-list paste (LLM-assisted via `llm.ts`, Gemini-gated). Front doors are `scripts/ingestion/{import-orcid,import-citations,import-bibtex}.ts`, all funneling into the same `hydratePublicationFromDoi`/`hydratePublicationFromFields` core in `publications.ts`. Runs are tracked in the `ImportRuns` collection (immutable history) and flagged items land in `ReviewItems` (a mutable work queue) via `run-persistence.ts`. The async path (`src/lib/ingestion/jobs/import-hydrate.ts`, registered under `jobs.tasks` in `payload.config.ts`) uses a lease-lock + watchdog crash-recovery model, not Payload's default job retry — see @LOG.md (2026-07-05) for why and how. Person-matching is deliberately conservative (ORCID/DBLP-exact or exact-name only, never fuzzy) — see the safety-tier notes at the top of `people.ts`.
+
+### Dashboard
+
+`src/app/(dashboard)/dashboard` is the shadcnblocks Admin Kit template shell, adopted wholesale as the eventual internal dashboard — most routes (dashboard-1/2/3, tasks, users, developers, settings) are still template scaffolding with only auth (`login`) actually wired to Payload. The previously-working v1 dashboard (import wizard, review queue, runs, people, publications, LabInfo settings) lives intact but **unrouted** under `src/app/_dashboard-legacy/` (a Next.js private folder — compiles, doesn't route) and is being ported into the new shell page by page. Don't assume a feature is live in `(dashboard)` just because it exists in `_dashboard-legacy`, or vice versa.
 
 ## Gotchas & Non-obvious Behavior
 
@@ -70,6 +81,7 @@ Role-based via `Users` ↔ `Roles` (many-to-many). Permission flags: `canManageC
 - **Nested docs URL generation:** Runs on save. Changing the `generateURL` function in config requires re-saving all pages to update URLs.
 - **Turnstile on form submissions:** `src/app/(payload)/api/[...slug]/route.ts` wraps `POST` for `form-submissions` with Cloudflare Turnstile verification when `NEXT_PUBLIC_TURNSTILE_SITE_KEY` is set. The middleware is in the catch-all API route, not the Form block component — easy to miss. Frontend must send a `cf-turnstile-token` header or the request is silently rejected with 400.
 - **Standalone form components ≠ Payload forms:** Components in `src/components/` like `contact10.tsx`, `waitlist*.tsx`, and `wishlist*.tsx` use react-hook-form but only `console.log` on submit. They are **not** wired to Payload's `form-submissions` collection. To wire them up, see @docs/guides/forms.md.
+- **Tailwind v4 arbitrary-value syntax silently produces no CSS:** vendored/older shadcn components use `w-[--sidebar-width]`-style syntax; Tailwind v4 only recognizes the parenthesized form `w-(--sidebar-width)` as `var()` shorthand. The bracket form compiles and lints clean but generates zero CSS — a real, previously-shipped bug. Grep for `-[--` when importing any older shadcn component. See @LOG.md (2026-07-05).
 
 ## Code style
 
@@ -82,7 +94,7 @@ Role-based via `Users` ↔ `Roles` (many-to-many). Permission flags: `canManageC
 
 See `.env.example` for all variables. Key ones: `MONGODB_URI`, `PAYLOAD_SECRET`, `NEXT_PRIVATE_DRAFT_SECRET`, `REVALIDATION_KEY`. `NEXT_PUBLIC_SERVER_URL` auto-derives from Vercel or defaults to `http://localhost:3000`.
 
-Node: `^18.20.2 || ^20.9.0 || ^22.0.0 || ^23.6.0 || ^24.6.0` — pnpm 9.15.9 (enforced).
+Node: `>=20.9.0` — pnpm 11.9.0 (pinned via `packageManager`).
 
 ## Context7
 
@@ -92,6 +104,20 @@ Library IDs: Next.js `/vercel/next.js`, React `/facebook/react`, Tailwind CSS `/
 
 **PayloadCMS:** Use the `payload` skill instead of Context7 — it has bundled reference docs (fields, hooks, access control, queries, adapters) that are faster and more targeted than ctx7 lookups.
 
+## Agent skills
+
+### Issue tracker
+
+Linear, via the `linear-autana` MCP — `autana systems` team, `LabKit` project. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+5 canonical state labels (needs-triage/needs-info/ready-for-agent/ready-for-human/wontfix) plus category labels Bug/Feature. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context — no monorepo signals. See `docs/agents/domain.md`.
+
 ## Further reading
 
 - @LOG.md — decision log: why, not just what
@@ -99,3 +125,6 @@ Library IDs: Next.js `/vercel/next.js`, React `/facebook/react`, Tailwind CSS `/
 - @docs/architecture/data-schema.md — data schema
 - @docs/architecture/theming-system.md — theming implementation
 - @docs/guides/forms.md — form submissions system, wiring standalone forms to Payload
+- @docs/agents/issue-tracker.md — Linear issue tracker config for agent skills
+- @docs/agents/triage-labels.md — triage label vocabulary mapping
+- @docs/agents/domain.md — domain doc consumer rules for agent skills
