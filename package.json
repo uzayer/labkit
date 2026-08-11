@@ -159,10 +159,10 @@
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
       "oxlint --fix",
-      "oxfmt"
+      "oxfmt --no-error-on-unmatched-pattern"
     ],
     "*.{json,md,css}": [
-      "oxfmt"
+      "oxfmt --no-error-on-unmatched-pattern"
     ]
   },
   "commitlint": {
