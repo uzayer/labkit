@@ -1,52 +1,31 @@
 # LabKit
 
-LabKit is a powerful website builder that combines the best of two worlds: PayloadCMS's robust content management capabilities and shadcnblocks' extensive UI component library. The name "LabKit" reflects this fusion - "Pay" from PayloadCMS and "Blocks" from shadcnblocks.
+LabKit is a [PayloadCMS](https://payloadcms.com) content platform for research lab websites. It models the domain the way academic labs actually think about their work — Publications, Grants, Awards, Team, Projects, Organizations, Venues, Research Themes — instead of treating a lab site as generic marketing pages. The public site is one output of that data, not the reason the data exists. See [`docs/product/VISION.md`](docs/product/VISION.md) for the product thesis.
 
-This project transforms the traditional PayloadCMS starter into a feature-rich website builder with a beautiful, modern UI and an extensive collection of pre-built components. Whether you're building a corporate website, a portfolio, or a complex web application, LabKit provides all the building blocks you need.
+Originally built on the [shadcnblocks Payload template](https://docs.shadcnblocks.com/payload/getting-started/); the general-purpose page-builder block library from that template has since been removed in favor of a fixed Hero + SEO page shape, with Posts/Projects rendering as full detail pages. That upstream page-builder work now lives on in the `payblocks-autana` fork (Autana Systems' agency website-builder) — this repo stays focused on the research-domain product.
 
-The docs for this repo are located here: [LabKit Docs](https://docs.shadcnblocks.com/payload/getting-started/)
+## What's here
 
-## ✨ Key Features
+- **Research-domain collections** — Publications, Grants, Awards, Team, Projects, Organizations, Venues, Research Themes, plus the base Payload template (Pages, Posts, Media, Users, Roles).
+- **An ingestion pipeline** (`src/lib/ingestion/`) that pulls Publications and their related records from ORCID, DOI/Crossref/OpenAlex, DBLP, BibTeX, and citation-list paste, with a review queue for anything that needs a human decision.
+- **A shadcn/ui frontend** — Hero + SEO pages, plus richText embed blocks (Code, MediaBlock, Banner, MotionText) rather than a full drag-and-drop layout builder.
+- **Role-based access control**, form submissions via `@payloadcms/plugin-form-builder`, and CMS-driven theming.
 
-- 🎨 **Rich Component Library**
-  - Extensive collection of pre-built blocks from shadcnblocks
-  - Multiple variants for each component type:
-    - 5+ FAQ layouts
-    - 15+ CTA designs
-    - 6+ Gallery layouts
-    - Various form components
-  - All components are fully customizable and responsive
+See [`CLAUDE.md`](CLAUDE.md) for architecture notes and commands, and [`LOG.md`](LOG.md) for the running decision log — why non-obvious choices were made, not just what changed.
 
-- 🔒 **Enhanced Security**
-  - Cloudflare Turnstile integration for form protection
-  - Secure authentication system
-  - Login with Google
-  - Role-based access control
+## Quick start
 
-- 🚀 **Advanced Features**
-  - Layout Builder with drag-and-drop functionality
-  - Live Preview for real-time content editing
-  - Draft Preview system
-  - SEO optimization tools
-  - Redirects management
-  - Advanced form builder with various field types
+```bash
+pnpm ii              # install (--ignore-workspace)
+cp .env.example .env # fill in MONGODB_URI, PAYLOAD_SECRET, etc.
+pnpm dev             # dev server on http://localhost:3000
+```
 
-- 💻 **Developer Experience**
-  - Built with Next.js and TypeScript
-  - Shadcn/ui integration for consistent UI components
-  - MongoDB/PostgreSQL database support
-  - Email integration with Nodemailer
-  - Cloud storage with Vercel Blob
+For general Payload CMS setup questions not specific to LabKit, see the [shadcnblocks Payload boilerplate docs](https://docs.shadcnblocks.com/payload/getting-started/) this project originated from, or the [official Payload CMS docs](https://payloadcms.com/docs/getting-started/what-is-payload).
 
-## Quick Start
+## Release automation status
 
-To spin up this project locally, follow these steps from our [Shadcnblocks Payload CMS boilerplate docs](https://docs.shadcnblocks.com/payload/getting-started/)
+Release automation (changesets → versioned GitHub Releases) is paused while LabKit is in alpha — keep recording changes with `pnpm changeset` as you work; entries accumulate in `.changeset/` and will roll into the first automated release.
 
-If you are stuck, feel free to open a Issue in this repo for things that are related especially to this boilerplate. For general payload CMS problems we recommend to consult the [official Payload CMS](https://payloadcms.com/docs/getting-started/what-is-payload) docs or search/open a issue in the [Payload CMS repo](https://github.com/payloadcms/payload/issues).
-
-## Release Automation Status
-
-Changesets and release workflows are currently paused while LabKit is prepared for its first major release.
-
-- Archived workflows live in `.github/workflows-archive/`.
-- To re-enable, move `release.yml` and `validate-changesets.yml` back to `.github/workflows/`.
+- Archived workflows live in `.github/workflows-archive/` (see that directory's `README.md` for what they do and how to re-enable them).
+- Nothing in `.github/workflows/` is currently active.
