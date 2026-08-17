@@ -96,7 +96,7 @@ export default function AboutPage() {
 
             <Card className="bg-accent/50">
               <CardHeader>
-                <CardTitle>Design &amp; Inclusion Lab</CardTitle>
+                <CardTitle>Design Inclusion and Access Lab</CardTitle>
                 <CardDescription>
                   Participatory technology research at North South University.
                 </CardDescription>
@@ -138,7 +138,7 @@ export default function AboutPage() {
           <div className="space-y-8">
             <div className="space-y-5 text-base leading-relaxed text-muted-foreground lg:text-lg">
               <p>
-                DIAL (Design &amp; Inclusion Lab) was founded in 2017 by Dr.
+                DIAL (Design Inclusion and Access Lab) was founded in 2017 by Dr.
                 Nova Ahmed through a collaboration with Google. We are based in
                 the Department of Electrical and Computer Engineering at North
                 South University, Dhaka.

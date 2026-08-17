@@ -12,14 +12,14 @@ Each Lab gets a workspace outside this documentation tree:
 
 ```text
 labs/<lab-slug>/
-  product-context.md
-  source-inventory.md
-  content/
+  README.md
+  identity.md
+  frontend.md
   scraped-data/
-  fixtures/
+  working-data/
 ```
 
-The exact folders may follow the source material. The invariant is that Lab-specific data stays in `labs/<lab-slug>/`; this runbook keeps only the reusable procedure and execution log.
+The exact files and folders may follow the source material. The invariant is that the workspace separates identity, the frontend delivery contract, raw source captures, and unverified working data. Lab-specific material stays in `labs/<lab-slug>/`; this runbook keeps only the reusable procedure and execution log.
 
 ## Definition of done
 

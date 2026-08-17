@@ -166,7 +166,7 @@ const GRANTS: Grant[] = [
 export const metadata = {
   title: 'Raisa Islam — DIAL',
   description:
-    'PhD Researcher at the Design, Inclusion and Access Lab, North South University.',
+    'PhD Researcher at the Design Inclusion and Access Lab, North South University.',
 }
 
 const scholarUrl = MEMBER.socials.find((s) => s.platform === 'google-scholar')?.url

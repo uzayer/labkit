@@ -7,7 +7,7 @@ import { Team5_9 } from "@/components/team5-9";
 export const metadata = {
   title: "People — DIAL",
   description:
-    "Meet the researchers, students, and collaborators behind the Design, Inclusion and Access Lab at North South University.",
+    "Meet the researchers, students, and collaborators behind the Design Inclusion and Access Lab at North South University.",
 };
 
 export default function PeoplePage() {

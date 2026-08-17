@@ -643,7 +643,7 @@ const LabMenu = () => (
               <ArrowRight className="ml-1 size-4 transition-transform group-hover:translate-x-1" />
             </div>
             <p className="mt-2 text-xs text-muted-foreground">
-              The Diverse &amp; Inclusive Accessible Lab at North South University.
+              The Design Inclusion and Access Lab at North South University.
             </p>
           </div>
           <div className="absolute inset-0 top-[32%] md:top-0">

@@ -6,7 +6,7 @@ import { ProjectsGrid, type ProjectEntry } from '@/components/projects-grid'
 export const metadata = {
   title: 'Projects — DIAL',
   description:
-    'The complete directory of research projects from the Design, Inclusion and Access Lab at North South University.',
+    'The complete directory of research projects from the Design Inclusion and Access Lab at North South University.',
 }
 
 // ─── data ───────────────────────────────────────────────────────────────────

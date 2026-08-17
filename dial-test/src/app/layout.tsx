@@ -16,11 +16,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "DIAL — Design & Inclusion Lab",
+    default: "DIAL — Design Inclusion and Access Lab",
     template: "%s | DIAL",
   },
   description:
-    "Human-computer interaction research from the Design & Inclusion Lab at North South University, Dhaka.",
+    "Human-computer interaction research from the Design Inclusion and Access Lab at North South University, Dhaka.",
 };
 
 export default function RootLayout({

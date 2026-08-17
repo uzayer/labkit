@@ -15,7 +15,7 @@ const About6 = ({ className }: About6Props) => {
                 About DIAL
               </h2>
               <p className="mb-9 text-muted-foreground lg:text-xl">
-                DIAL (Design &amp; Inclusion Lab) is a research lab focused on
+                DIAL (Design Inclusion and Access Lab) is a research lab focused on
                 inclusivity and access for marginalised communities—building
                 technology that is locally appropriate, low-cost, and explainable.
               </p>

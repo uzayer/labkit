@@ -130,7 +130,7 @@ const Footer18 = ({ className }: Footer18Props) => {
         </nav>
         <div className="mt-10 border-t border-border pt-8">
           <p className="text-sm leading-normal text-muted-foreground">
-            &copy; 2026 DIAL &mdash; Diverse &amp; Inclusive Accessible Lab, North South University
+            &copy; 2026 DIAL &mdash; Design Inclusion and Access Lab, North South University
           </p>
         </div>
       </footer>
