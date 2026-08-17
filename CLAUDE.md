@@ -4,11 +4,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-LabKit is a PayloadCMS content platform for research lab websites: research-domain collections (Publications, Grants, Awards, Team, etc.) with a shadcn/ui frontend. Originally built on the [shadcnblocks Payload template](https://docs.shadcnblocks.com/payload/getting-started/); the page-builder block library was removed and lives on in the `payblocks-autana` fork (Autana Systems' agency website-builder). The `dial-test/` directory holds the standalone Next.js template that will become the lab site frontend once collections are finalized.
+LabKit is a PayloadCMS content platform for research lab websites: research-domain collections (Publications, Grants, Awards, Team, etc.) with a shadcn/ui frontend. Originally built on the [shadcnblocks Payload template](https://docs.shadcnblocks.com/payload/getting-started/); the page-builder block library was removed and lives on in the `payblocks-autana` fork (Autana Systems' agency website-builder). The `dial-test/` directory holds a standalone static design prototype that is being ported in as the lab site frontend (see Frontend below).
 
 This repo is the current working instance. Upstream website-builder concerns now belong in Payblocks Autana; this repo should stay focused on LabKit-specific product and implementation work.
 
 Before starting nontrivial work, check @LOG.md — a running record of non-obvious product/architecture decisions and the reasoning behind them. It catches things a fresh read of the code can't (why a rejected approach was rejected, what a prior session confirmed against real data). When you make or learn a decision that isn't obvious from the diff alone, append an entry.
+
+Also read @CONTEXT.md — the domain glossary. Use its terms exactly; it is opinionated about which words to avoid. `LOG.md` is chronological (_why_ a decision was made), `CONTEXT.md` is structural (_what a word means today_), and `docs/adr/` holds standing architectural decisions.
+
+**Current scope (decided 2026-08-18): the MVP is "DIAL's public website is live," and nothing else.** See the MVP section at the top of @docs/product/ROADMAP.md for what is in and — more importantly — what is explicitly out. This project's dominant failure mode is scope creep; if a task doesn't move DIAL's site toward launch, it isn't MVP work.
 
 ## Commands
 
@@ -25,9 +29,28 @@ pnpm generate:importmap     # Regenerate Payload admin import map
 pnpm dev:debug              # Dev with Node inspector
 pnpm backup                 # Export MongoDB pages → backup/pages.json
 pnpm backup:apply           # Import backup/pages.json → MongoDB
+pnpm ii                     # Install (--ignore-workspace; see below)
 ```
 
-No test framework is configured. Verify changes with `pnpm tsc` and `pnpm lint`.
+Ingestion and migration scripts run through Payload's own runner, not `tsx`/`node`:
+
+```bash
+pnpm payload run scripts/ingestion/import-orcid.ts <orcid-id> [dry-run]
+pnpm payload run scripts/ingestion/import-bibtex.ts <file.bib> [dry-run]
+pnpm payload run scripts/ingestion/import-citations.ts <file.txt> [dry-run]
+pnpm payload run scripts/ingestion/probe-doi.ts <doi>...    # onboarding diagnostic
+pnpm payload run scripts/ingestion/verify-jobs-queue.ts     # jobs-queue regression check (writes only bookkeeping)
+```
+
+**`payload run` swallows flags.** It parses argv through minimist and forwards only _positional_ args, so `--dry-run` silently vanishes — every script takes the bare word `dry-run` instead. It also exits after module evaluation without awaiting a floating promise: script entrypoints must use top-level `await main()`, never `void main()`.
+
+No test framework is configured. Verify changes with `pnpm tsc` and `pnpm lint`, plus `verify-jobs-queue.ts` when touching the ingestion job path (13 live checks against real MongoDB — contention, stale-lease takeover, checkpoint visibility, watchdog drain).
+
+**What the checks don't cover:** the root `tsconfig.json` excludes `scripts/` and `dial-test/`, and `.oxlintrc.json` ignores `dial-test/**` and `docs/**`. So `pnpm tsc` does _not_ type-check the ingestion scripts — use `pnpm tsc -p scripts/tsconfig.json` for those.
+
+**`dial-test/` is a separate app, not part of this build.** It has its own `package.json`, `node_modules`, lockfiles, and `CLAUDE.md`, and is excluded from the root typecheck, lint, and Next build. Run its commands from inside that directory.
+
+`pnpm ii` is the sanctioned install (`pnpm --ignore-workspace install`) — `pnpm-workspace.yaml` exists for its `overrides`/`allowBuilds`/`peerDependencyRules` config, not because this is a real monorepo.
 
 A Husky `pre-commit` hook runs `oxlint --fix` + `oxfmt` on staged files (lint-staged) and `commit-msg` enforces Conventional Commits via commitlint — a non-conforming commit message is rejected, not just warned about.
 
@@ -51,6 +74,8 @@ See `src/payload.config.ts` for the authoritative list. Beyond the base template
 
 Globals: **ThemeConfig, Header, Footer, PageConfig, LabInfo**.
 
+The research collections set `admin.group` so the Payload sidebar reads as a deliberate v1 dashboard: **Research** (Publications, Projects, Team, Grants, Awards, ResearchThemes), **Reference Data** (Venues, Organizations), **Import** (ImportRuns, ReviewItems). The base-template collections are deliberately left ungrouped. Any new research-domain collection should pick one of these three groups rather than inventing a fourth.
+
 ### Routing
 
 `src/app/(frontend)/[[...slugs]]/page.tsx` — catch-all route. The `nestedDocsPlugin` generates hierarchical URLs from page breadcrumbs (e.g. `/parent/child`).
@@ -65,9 +90,20 @@ Role-based via `Users` ↔ `Roles` (many-to-many). Permission flags: `canManageC
 
 `src/lib/ingestion/` is the engine that pulls Publications (and the Venues/Organizations/Team records they reference) from external sources — ORCID, DOI/Crossref/OpenAlex, DBLP, BibTeX, and citation-list paste (LLM-assisted via `llm.ts`, Gemini-gated). Front doors are `scripts/ingestion/{import-orcid,import-citations,import-bibtex}.ts`, all funneling into the same `hydratePublicationFromDoi`/`hydratePublicationFromFields` core in `publications.ts`. Runs are tracked in the `ImportRuns` collection (immutable history) and flagged items land in `ReviewItems` (a mutable work queue) via `run-persistence.ts`. The async path (`src/lib/ingestion/jobs/import-hydrate.ts`, registered under `jobs.tasks` in `payload.config.ts`) uses a lease-lock + watchdog crash-recovery model, not Payload's default job retry — see @LOG.md (2026-07-05) for why and how. Person-matching is deliberately conservative (ORCID/DBLP-exact or exact-name only, never fuzzy) — see the safety-tier notes at the top of `people.ts`.
 
+### Frontend
+
+`dial-test/` is a **fully static design prototype**, not a wired frontend — ~20 routes, zero `fetch` calls, no data layer, and hardcoded placeholder publication data. `src/app/(frontend)/` has no lab-facing routes at all (15 files, all infrastructure). Porting dial-test's routes onto the Payload Local API is MVP item 1 and ~90% of the remaining MVP work. Note `Pages` has no body-content field (Hero + SEO only), so prose routes stay hardcoded by design — see ROADMAP's "split routes by churn" rule.
+
 ### Dashboard
 
-`src/app/(dashboard)/dashboard` is the shadcnblocks Admin Kit template shell, adopted wholesale as the eventual internal dashboard — most routes (dashboard-1/2/3, tasks, users, developers, settings) are still template scaffolding with only auth (`login`) actually wired to Payload. The previously-working v1 dashboard (import wizard, review queue, runs, people, publications, LabInfo settings) lives intact but **unrouted** under `src/app/_dashboard-legacy/` (a Next.js private folder — compiles, doesn't route) and is being ported into the new shell page by page. Don't assume a feature is live in `(dashboard)` just because it exists in `_dashboard-legacy`, or vice versa.
+**There is no live custom dashboard. Both are parked, and neither routes.** `/admin` (Payload) is the only real admin surface.
+
+- `src/app/_dashboard-kit/` — the shadcnblocks Admin Kit template shell (147 files), adopted wholesale as the _eventual_ internal dashboard. Most routes (dashboard-1/2/3, tasks, users, developers, settings) are still template scaffolding; only auth (`login`) was ever wired to Payload.
+- `src/app/_dashboard-legacy/` — the previously-working v1 dashboard (import wizard, review queue, runs, people, publications, LabInfo settings), intact and importable.
+
+Both are Next.js private folders (`_`-prefixed): they compile and their exports are importable, but they generate no routes. The kit was moved out of `(dashboard)` because `/dashboard/login` plus unwired register/forgot-password stubs are a support liability on a real lab's production site.
+
+**Do not delete either.** `_dashboard-kit` is genuinely diverged from the upstream checkout at `~/Developer/web/shadcn-admin` (Payload auth wiring, zod v4 / react-day-picker v9 adaptations, `/dashboard` route-prefix rewrite) — deleting means redoing that work from a v3-era template. Don't assume a feature is live in one just because it exists in the other; as of 2026-08-18 the port between them is **out of MVP scope entirely**.
 
 ## Gotchas & Non-obvious Behavior
 
@@ -120,8 +156,11 @@ Single-context — no monorepo signals. See `docs/agents/domain.md`.
 
 ## Further reading
 
+- @CONTEXT.md — domain glossary: canonical terms and words to avoid
 - @LOG.md — decision log: why, not just what
-- @docs/product/VISION.md — product vision and target user
+- @docs/adr/ — standing architectural decisions (0001: why CERIF alignment is deferred)
+- @docs/product/ROADMAP.md — **start here for scope**: the MVP definition and what's explicitly out
+- @docs/product/VISION.md — product vision, positioning, competitive landscape
 - @docs/architecture/data-schema.md — data schema
 - @docs/architecture/theming-system.md — theming implementation
 - @docs/guides/forms.md — form submissions system, wiring standalone forms to Payload

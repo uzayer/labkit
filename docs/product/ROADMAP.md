@@ -1,6 +1,50 @@
 # LabKit Roadmap
 
-> Living doc. Captures product decisions and sequencing. Last updated: 2026-07-02.
+> Living doc. Captures product decisions and sequencing. Last updated: 2026-08-18.
+
+## The MVP (decided 2026-08-18)
+
+**The MVP is: DIAL's public website is live. That is the whole definition.**
+
+Everything below this section is context and future work. If a task does not move DIAL's site toward being live, it is not MVP work — regardless of how nearly-finished, interesting, or overdue it is.
+
+### In scope
+
+| # | Item | Size |
+| --- | --- | --- |
+| 0 | Keep a runbook of every manual step, written **while** doing it | continuous |
+| 1 | Port `dial-test/`'s routes into `src/app/(frontend)/` against the Payload Local API, DIAL-shaped | **~90% of the MVP** |
+| 2 | First real (non-dry-run) ingestion of DIAL's data — ORCID + BibTeX | days |
+| 3 | Hand-clean the review fallout in the Payload admin | timebox: 1 day |
+| ~~4~~ | ~~`admin.group` across collections~~ — **already done** since commit `01b4aa8`: Research / Reference Data / Import, base-template collections deliberately ungrouped | done |
+| 5 | Deploy, hand over, ask for the testimonial **on launch day** | days |
+
+Plus two things that are not code and block launches anyway:
+
+- **Media.** Team photos and project images. Nothing in the ingestion pipeline produces them and `docs/clients/dial/dial-data/` is markdown — this is manual collection and upload, and it is the classic final-day blocker.
+- **The URL decision.** Does this replace DIAL's site at its current address, or launch on a subdomain? DNS plus NSU's IT has real lead time. Settle it early.
+
+### Explicitly out
+
+The dashboard port · CERIF and all compliance work · multi-lab and theming generalization · scrape-to-demo *automation* · OpenAlex weekly sync · AUT-133 promotion flow · Semantic Scholar / arXiv / PubMed enrichment.
+
+### Rules that make the MVP small
+
+- **The Operator runs imports; the Lab never sees a terminal.** "Paste your ORCID, get your lab's website" has to be true *in effect*, not literally. That is exactly the scrape-to-demo motion below, and it removes the entire dashboard port from the critical path.
+- **V1's dashboard is the Payload admin panel**, with collections grouped. Both hand-built dashboards stay parked (`_dashboard-legacy`, and `(dashboard)` to be moved to `_dashboard-kit`).
+- **Split routes by churn, not by tidiness.** `Pages` has no body-content field and that is not being fixed. Data-driven routes (publications, people, projects, awards, themes, news) get wired to Payload because they change and are the value proposition; prose routes (about, contact, join-us, home copy) stay hardcoded because a lab edits them approximately never.
+- **Data needs to be presentable, not clean.** A free-text `venueLabel` renders identically to a linked Venue record. Fix only what looks wrong on the rendered page; do not perfect the graph before launch.
+- **DIAL-shaped means DIAL-shaped.** Hardcoding DIAL's nine research themes as routes is allowed. If a themes-router starts getting written, stop — that is the failure mode that cost this project several months.
+
+### After the MVP
+
+**Lab #2 is the product-defining moment, not lab #1.** DIAL is hand-built by someone who knows its data, so it proves almost nothing about generality. MI Lab (NSU) is the first time the frontend and the ingestion engine meet a lab that was not designed around — that is where what is DIAL-specific and what is LabKit gets discovered. Sequence toward reaching lab #2 quickly, not toward making lab #1 perfect.
+
+Pilot pool, hand-onboarded: **DIAL → MI Lab (NSU) → BRAC.** NSU and BRAC are the two highest-research-output institutions in Bangladesh and the pool is small enough to cover almost entirely by hand.
+
+**Known seam in the go-to-market plan:** the Bangladesh pilot pool cannot validate the compliance thesis at any sample size — DIAL is a local partner rather than a grant holder, and MI Lab and BRAC labs are structurally similar. What transfers to a Western pitch: the website/maintenance value prop, an ingestion engine proven on genuinely harder data (DOI-less regional venues, ACM/IEEE proceedings without ISSNs, non-Latin author names), OSS adoption count, the JOSS paper, and the runbook. What does not transfer: compliance automation and institutional CRIS integration, both of which need a Western design partner. Compliance therefore cannot justify building anything in the next 12 months.
+
+**Cheapest open lead on compliance:** every Bangladeshi university has a UGC-mandated IQAC filing an Annual Quality Assurance Report with research output as a covered domain. Walk into BRAC's IQAC and ask what they collect from labs each year and how. An hour, zero code, highest information available on the question.
 
 ## DIAL Launch Plan
 
@@ -40,6 +84,11 @@ One shared engine (`src/lib/ingestion/`: Crossref/OpenAlex field mapping, fuzzy 
 1. **ORCID pull** — **built** (`scripts/ingestion/import-orcid.ts`). Paste a team member's ORCID iD → `pub.orcid.org/v3.0/{orcid}/works` → DOI per work → `hydratePublicationFromDoi`. Author→work linkage comes from ORCID directly, never from OpenAlex author-search (see below). **Caveat confirmed against real data:** an ORCID record is a person's whole career, not a lab's output — review is required even on this rung, not deferred to later ones (verified live: 72 works on a real record, several irrelevant/pre-lab).
 2. **Citation wall paste** — **built** (`scripts/ingestion/import-citations.ts`). The actual median artifact most labs have (a docx/PDF export, citations grouped by year), not a fallback. Segmentation is mostly free: splits on blank lines (docx paragraphs are already citation boundaries). Regex-extracts embedded DOIs first (`extractDois`, `10.\d{4,9}/\S+`); for the rest, falls back to Crossref's `query.bibliographic` reverse lookup (`resolveCrossrefTitle`) with its own score threshold — never silently accepts a low-confidence guess. A chunk containing more than one DOI is flagged as an ambiguous-segmentation case rather than guessed at. LLM segmentation remains a later enhancement for genuinely unstructured pasted text, not a prerequisite.
 3. **BibTeX upload** — **built** (`scripts/ingestion/import-bibtex.ts`), using `@retorquere/bibtex-parser` (not citation-js — its structured `{firstName, lastName}` author output and built-in field typing fit this pipeline directly). Entries with a `doi` field resolve through the same Crossref/OpenAlex path as the other rungs; DOI-less entries fall back to a Crossref title lookup, and failing that, are written directly from BibTeX fields alone with no enrichment, explicitly flagged for review. Useful for labs already on Zotero/Mendeley/EndNote, or exporting from a Google Scholar profile.
+
+   **Google Scholar is already a front door via this rung — no new code (confirmed 2026-08-18).** Google Scholar has no API and scraping it is ToS-risky and aggressively bot-detected, but every profile has a native **Export → BibTeX → "All my articles"** button, and its output shape (title/author/venue/year, frequently no DOI) is exactly what this importer's fallback chain already handles. The two entry points are good at different things, so they split by situation rather than competing:
+
+   - **Cold demo, before first contact → ORCID.** The only one with a legitimate public API, and a PI's iD is findable without asking them for anything. Data is also materially cleaner — DOI-anchored, since Crossref/Scopus auto-push populates these records (a real 122-work record had zero self-asserted entries).
+   - **Warm onboarding, after they've said yes → Google Scholar BibTeX.** Better researcher coverage — profiles get maintained because citation counts are a vanity metric — at the cost of noise: preprint/published duplicates, occasional wrong-author papers, usually no DOI. Two clicks is nothing once a lab has agreed.
 4. **DOI list paste** — effectively built as a degenerate case of rung 2 (`import-citations.ts`'s per-chunk DOI regex extraction handles a bare DOI list with no extra work) — no separate script needed.
 5. **Old-site URL scrape** — stays a manual/concierge process for now (what DIAL got), not a repeatable feature.
 
@@ -93,3 +142,8 @@ Weekly poll by team ORCIDs → "N new papers found" email → PI approves/reject
 - Pricing/packaging — deferred until real usage data exists
 - Fork-per-client (upstream waterfall) vs. eventual hosted multi-tenant — deferred, but avoid schema decisions that assume one-lab-per-database forever
 - DOI-less long tail (workshop papers, theses, regional venues, arXiv-only) — manual entry must stay pleasant; matters especially for Global South labs like DIAL
+- ~~CERIF alignment — adopt the standard model or stay bespoke?~~ **Resolved 2026-08-18** — deferred with an explicit tripwire, see [ADR-0001](../adr/0001-defer-cerif-alignment.md)
+- ~~Positioning — is LabKit a website product or a research information system?~~ **Resolved 2026-08-18** — both, as two claims for two audiences; see [VISION.md](./VISION.md#two-claims-two-audiences)
+- **What compliance work do Bangladeshi labs actually do?** Genuinely unknown. IQAC/AQAR is the lead; the answer comes from a conversation at BRAC's IQAC, not from research. Until answered, no compliance feature should be designed
+- **What does a Western design partner look like, and when?** The US compliance pain is documented (SciENcv-generated Common Forms and RPPRs, mandatory at NIH since 25 Jan 2026, ORCID-anchored) but untestable without a US lab. Open question is when to go looking for one — probably after lab #3, not before
+- **Does the frontend generalize, and how?** Deliberately unanswered until lab #2 forces it. Do not pre-solve

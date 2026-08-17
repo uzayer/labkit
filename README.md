@@ -1,31 +1,224 @@
+<div align="center">
+
+[![Payload](https://img.shields.io/badge/Payload-3.85-000000.svg?style=for-the-badge&logo=payloadcms&logoColor=white)](https://payloadcms.com)
+[![Next.js](https://img.shields.io/badge/Next.js-16-000000.svg?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org)
+[![MongoDB](https://img.shields.io/badge/MongoDB-47A248.svg?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](#license)
+[![Status: pre-release](https://img.shields.io/badge/Status-pre--release-orange.svg?style=for-the-badge)](#status)
+
+**[Vision](docs/product/VISION.md)** · **[Roadmap](docs/product/ROADMAP.md)** · **[Glossary](CONTEXT.md)** · **[Decision log](LOG.md)** · **[Architecture](CLAUDE.md)** · **[ADRs](docs/adr/)**
+
+</div>
+
 # LabKit
 
-LabKit is a [PayloadCMS](https://payloadcms.com) content platform for research lab websites. It models the domain the way academic labs actually think about their work — Publications, Grants, Awards, Team, Projects, Organizations, Venues, Research Themes — instead of treating a lab site as generic marketing pages. The public site is one output of that data, not the reason the data exists. See [`docs/product/VISION.md`](docs/product/VISION.md) for the product thesis.
+LabKit is a research information system small enough for one lab to run. It models a lab's publications, people, grants, projects, awards, venues, and collaborators as structured records, pulls most of that data in automatically from ORCID and DOI metadata, and renders the lab's public website as one output of it. Built on [PayloadCMS](https://payloadcms.com) and MongoDB.
 
-Originally built on the [shadcnblocks Payload template](https://docs.shadcnblocks.com/payload/getting-started/); the general-purpose page-builder block library from that template has since been removed in favor of a fixed Hero + SEO page shape, with Posts/Projects rendering as full detail pages. That upstream page-builder work now lives on in the `payblocks-autana` fork (Autana Systems' agency website-builder) — this repo stays focused on the research-domain product.
+- **Paste an ORCID iD, get a populated lab.** One command resolves a researcher's works to DOIs, hydrates each through Crossref and OpenAlex, and creates the Publications, Venues, Organizations, and people they reference.
+- **Every front door lands in the same engine.** ORCID, BibTeX (including a Google Scholar export), a pasted citation wall, or a bare DOI list all resolve to one internal shape — adding a source is not adding a pipeline.
+- **Identity matching is conservative on purpose.** A person is auto-linked only on an exact ORCID, an exact DBLP author ID, or an exact full name. Anything weaker becomes a Review Item for a human, because a wrong match corrupts a real person's public profile.
+- **Nothing is decided silently.** Every import writes an immutable Import Run, and everything the run could not decide safely lands in a mutable review queue that outlives it.
+- **The domain is modelled the way labs think.** Not blog posts with renamed fields — Publications own their authors, venue, and themes; Projects own the work they group; Grants own their funder and investigators.
 
-## What's here
+> **Status:** pre-release, in active development against a first pilot lab. The ingestion engine is built and verified against real data; the public frontend is being ported now. See [Status](#status).
 
-- **Research-domain collections** — Publications, Grants, Awards, Team, Projects, Organizations, Venues, Research Themes, plus the base Payload template (Pages, Posts, Media, Users, Roles).
-- **An ingestion pipeline** (`src/lib/ingestion/`) that pulls Publications and their related records from ORCID, DOI/Crossref/OpenAlex, DBLP, BibTeX, and citation-list paste, with a review queue for anything that needs a human decision.
-- **A shadcn/ui frontend** — Hero + SEO pages, plus richText embed blocks (Code, MediaBlock, Banner, MotionText) rather than a full drag-and-drop layout builder.
-- **Role-based access control**, form submissions via `@payloadcms/plugin-form-builder`, and CMS-driven theming.
+## Table of contents
 
-See [`CLAUDE.md`](CLAUDE.md) for architecture notes and commands, and [`LOG.md`](LOG.md) for the running decision log — why non-obvious choices were made, not just what changed.
+- [Why LabKit](#why-labkit)
+- [How ingestion works](#how-ingestion-works)
+- [Front doors](#front-doors)
+- [The data model](#the-data-model)
+- [Quick start](#quick-start)
+- [Commands](#commands)
+- [Project layout](#project-layout)
+- [Status](#status)
+- [Roadmap](#roadmap)
+- [Working in this repo](#working-in-this-repo)
+- [Links](#links)
+- [License](#license)
+
+## Why LabKit
+
+The research information domain is heavily modelled and well served — at institution scale. CERIF, VIVO, DSpace-CRIS, Pure, Symplectic Elements, and Converis all exist and all work. Every one of them is procured by a university and run by IT, and none of them produce the lab's own website. Nobody has built for the lab.
+
+- **The knowledge lives in the lab; the software lives at the institution.** Institutional systems have chronically poor data quality for a structural reason — they are populated by administrators who don't know the work, or by faculty who resent the data entry. LabKit builds at the layer where the information is true.
+- **Lab websites are ugly because maintenance is a chore, not because nobody cares.** A site that requires manual data entry decays the moment the student who maintained it graduates. The fix is ingestion, not a nicer theme.
+- **A lab cannot adopt a CRIS.** DSpace-CRIS needs JDK 17, Maven, Ant, PostgreSQL, Solr 9, Tomcat, Node, and PM2 across two separately deployed applications. That is a university IT project. LabKit is `pnpm dev` and a Mongo URI.
+- **Structured beats scraped.** Once the data is modelled properly, the website is only the first thing you can build from it — CVs, annual reports, and funder submissions read from the same records.
+- **The real competitor is doing nothing.** A Google Scholar link and a free theme is genuinely good enough for most labs, so the switching cost has to be near zero. That constraint is why the pitch is a command, not an onboarding flow.
+
+See [`docs/product/VISION.md`](docs/product/VISION.md) for the full thesis and competitive landscape, and [ADR-0001](docs/adr/0001-defer-cerif-alignment.md) for why CERIF alignment is deliberately deferred.
+
+## How ingestion works
+
+Ingestion is two phases, deliberately separated. **Staging** turns a front door's input into Candidates — it fetches and parses only, consults no enrichment source, and writes nothing. **Hydration** turns a selected Candidate into a real Publication, resolving its Venue, Organizations, and people along the way.
+
+| Stage          | What happens                                                                                                                                                                                      | Writes?          |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| **Staging**    | The front door's input is parsed into Candidates. DOIs are regex-extracted; DOI-less entries keep their raw text                                                                                  | No               |
+| **Resolution** | A Candidate without a DOI is reverse-looked-up against Crossref by bibliographic query, above a score threshold. Below it, the item is flagged rather than guessed                                | No               |
+| **Hydration**  | Crossref is primary. OpenAlex supplies the abstract (reconstructed from its inverted index), open-access status, and co-author affiliations. DBLP supplies disambiguated author IDs for CS venues | Yes              |
+| **Matching**   | Venues match on ISSN or OpenAlex Source ID; Organizations on ROR; people on exact ORCID, exact DBLP author ID, or exact full name. A bare name never auto-creates anything                        | Yes, gated       |
+| **Review**     | Anything undecidable becomes a Review Item — an unmatched venue, a DOI-less work, a possible person duplicate                                                                                     | Bookkeeping only |
+
+Re-running an import never overwrites an existing Publication. These scripts are meant to be run repeatedly as a lab publishes, so a second run must not clobber a human's edits.
+
+The async path runs as a Payload job with a lease-lock and a watchdog rather than Payload's default retry, because a crashed job otherwise stays `processing` forever and is never re-picked. Progress is checkpointed after every candidate, so a worker dying mid-batch loses nothing. See [`LOG.md`](LOG.md) (2026-07-05) for the full reasoning.
+
+## Front doors
+
+| Front door        | Command                          | Best for                                                                                                                                                        |
+| ----------------- | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **ORCID**         | `import-orcid.ts <orcid-id>`     | Cold start. The only source with a legitimate public API, so nothing is needed from the lab. DOI-anchored and materially cleaner than the alternatives          |
+| **BibTeX**        | `import-bibtex.ts <file.bib>`    | Warm onboarding. Covers Zotero, Mendeley, EndNote, and Google Scholar's native **Export → BibTeX → All my articles** — better researcher coverage, noisier data |
+| **Citation list** | `import-citations.ts <file.txt>` | The median artifact a lab actually has: a docx or PDF of citations grouped by year. Splits on blank lines, extracts embedded DOIs, reverse-looks-up the rest    |
+| **DOI list**      | `import-citations.ts`            | A degenerate case of the above — no separate script needed                                                                                                      |
+
+Google Scholar has no API and scraping it is ToS-risky and bot-detected; the BibTeX export is the supported path.
+
+Citation segmentation optionally uses Gemini when `GEMINI_API_KEY` is set, and **fails closed** — a missing key, a network error, a non-JSON response, or a hallucinated DOI all fall back to the deterministic blank-line split. The LLM never touches person matching.
+
+## The data model
+
+Collections are grouped so the Payload admin reads as a deliberate dashboard rather than an alphabetical dump.
+
+| Group              | Collections                                                  | Written by ingestion?                                                       |
+| ------------------ | ------------------------------------------------------------ | --------------------------------------------------------------------------- |
+| **Research**       | Publications, Projects, Team, Grants, Awards, ResearchThemes | Publications yes; Team read-and-create-only for co-authors; the rest manual |
+| **Reference Data** | Venues, Organizations                                        | Yes, gated on a safe external identifier (ISSN / OpenAlex Source ID / ROR)  |
+| **Import**         | ImportRuns, ReviewItems                                      | Bookkeeping, written even on a dry run                                      |
+
+Globals: **ThemeConfig**, **Header**, **Footer**, **PageConfig**, **LabInfo**.
+
+Two properties are load-bearing:
+
+- **Being in the publication graph and being shown on the website are separate decisions.** Every importer-created person gets `source: 'import'` and `displayInWebsite: false`.
+- **Relationships are edited from the record that owns them.** You add a person to a project from the project. Reverse lookups exist for navigation, never as a second source of truth.
+
+[`CONTEXT.md`](CONTEXT.md) is the canonical glossary — what each term means and which synonyms to avoid.
 
 ## Quick start
 
+Requires **Node ≥ 20.9**, **pnpm 11.9**, and a **MongoDB** instance.
+
 ```bash
-pnpm ii              # install (--ignore-workspace)
-cp .env.example .env # fill in MONGODB_URI, PAYLOAD_SECRET, etc.
-pnpm dev             # dev server on http://localhost:3000
+git clone git@github.com:uzayer/labkit.git
+cd labkit
+pnpm ii                 # install (--ignore-workspace; see below)
+cp .env.example .env    # fill in MONGODB_URI and PAYLOAD_SECRET
+pnpm dev                # http://localhost:3000, admin at /admin
 ```
 
-For general Payload CMS setup questions not specific to LabKit, see the [shadcnblocks Payload boilerplate docs](https://docs.shadcnblocks.com/payload/getting-started/) this project originated from, or the [official Payload CMS docs](https://payloadcms.com/docs/getting-started/what-is-payload).
+`pnpm ii` is the sanctioned install. `pnpm-workspace.yaml` exists for its `overrides` / `allowBuilds` / `peerDependencyRules` config, not because this is a monorepo, so a plain `pnpm install` misreads the repo.
 
-## Release automation status
+Then import a real corpus:
 
-Release automation (changesets → versioned GitHub Releases) is paused while LabKit is in alpha — keep recording changes with `pnpm changeset` as you work; entries accumulate in `.changeset/` and will roll into the first automated release.
+```bash
+pnpm payload run scripts/ingestion/import-orcid.ts 0000-0002-1825-0097 dry-run
+```
 
-- Archived workflows live in `.github/workflows-archive/` (see that directory's `README.md` for what they do and how to re-enable them).
-- Nothing in `.github/workflows/` is currently active.
+Drop `dry-run` to commit. A dry run still writes the Import Run and its review queue, so you can inspect exactly what would have happened in `/admin` before letting it touch content.
+
+> `payload run` parses argv through minimist and forwards only _positional_ args, so `--dry-run` silently vanishes. Every script takes the bare word `dry-run` instead.
+
+## Commands
+
+```bash
+pnpm dev                 # dev server (Turbopack)
+pnpm build               # generate types + Next.js build
+pnpm tsc                 # type check
+pnpm lint                # oxlint
+pnpm format              # oxfmt
+pnpm generate:types      # regenerate src/payload-types.ts
+pnpm backup              # export MongoDB pages → backup/pages.json
+```
+
+Ingestion and migration scripts run through Payload's own runner, never `tsx` or `node`:
+
+```bash
+pnpm payload run scripts/ingestion/import-orcid.ts <orcid-id> [dry-run]
+pnpm payload run scripts/ingestion/import-bibtex.ts <file.bib> [dry-run]
+pnpm payload run scripts/ingestion/import-citations.ts <file.txt> [dry-run]
+pnpm payload run scripts/ingestion/probe-doi.ts <doi>...     # onboarding diagnostic
+pnpm payload run scripts/ingestion/verify-jobs-queue.ts      # jobs-queue regression check
+```
+
+There is no test framework. `verify-jobs-queue.ts` is the closest thing — 13 live checks against real MongoDB covering lock contention, stale-lease takeover, mid-run checkpoint visibility, and watchdog drain. Run it whenever you touch the job path.
+
+Note that `pnpm tsc` does **not** cover `scripts/` — use `pnpm tsc -p scripts/tsconfig.json` for those.
+
+## Project layout
+
+```
+src/
+  collections/      research-domain collections + ingestion bookkeeping
+  globals/          ThemeConfig, Header, Footer, PageConfig, LabInfo
+  lib/ingestion/    the engine: crossref, openalex, dblp, orcid, matching,
+                    staging, hydration, run persistence, jobs
+  heros/            70+ hero variants, dispatched by RenderHero
+  blocks/           richText embeds + post/project detail renderers
+  app/(frontend)/   public site
+  app/(payload)/    Payload admin
+scripts/ingestion/  CLI front doors, run via `pnpm payload run`
+docs/
+  product/          VISION, ROADMAP
+  adr/              standing architectural decisions
+  architecture/     data model intent, theming
+  guides/           forms
+dial-test/          static design prototype — a separate app, own package.json,
+                    excluded from the root typecheck, lint, and build
+```
+
+## Status
+
+Honest about what is and isn't built:
+
+| Area                                   | State                                                                                                                                                                                                          |
+| -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Ingestion engine**                   | Built and verified end-to-end against a real career-wide ORCID record — a 122-work profile resolved to 108 publications, 261 people, 94 organizations, and 23 venues, with 77 items correctly routed to review |
+| **Data model**                         | Frozen against real data, not designed in the abstract. The schema gaps that mattered were found by pushing an actual lab's corpus through it                                                                  |
+| **Payload admin**                      | The working admin surface, grouped into a deliberate v1 dashboard                                                                                                                                              |
+| **Public frontend**                    | **In progress.** `dial-test/` is a complete static design prototype with no data layer; porting its routes onto the Payload Local API is the current work                                                      |
+| **Custom dashboard**                   | Parked. Two prototypes live in `src/app/_dashboard-kit/` and `src/app/_dashboard-legacy/` as Next.js private folders — they compile and are importable, but generate no routes                                 |
+| **Multi-lab / theming generalization** | Deliberately not started. Lab #2 is what will define it; pre-solving it is the failure mode this project is guarding against                                                                                   |
+
+## Roadmap
+
+- **First lab live.** The whole current milestone: one real lab's public website, running on real ingested data.
+- **The second lab.** The product-defining moment — the first time the engine and frontend meet a lab that wasn't designed around. What is lab-specific and what is LabKit gets discovered there, not before.
+- **Self-serve ingestion.** Today an operator runs the CLI. The import wizard and review queue become a UI a lab member can drive.
+- **Scrape to demo.** Run a lab's existing site through the pipeline and send the PI a link to their own site, already filled, before first contact.
+- **Recurring sync.** A weekly OpenAlex poll by team ORCID turns site maintenance into approve/reject.
+- **More enrichment sources.** Semantic Scholar for citation counts and TLDRs, arXiv for preprints, PubMed for medical-informatics venues.
+- **Export and reporting.** CVs, annual activity reports, and eventually a CERIF export — the point at which a lab's data becomes ingestible _by_ its institution.
+
+Full sequencing, including what is explicitly out of scope, is in [`docs/product/ROADMAP.md`](docs/product/ROADMAP.md).
+
+## Working in this repo
+
+Read these before non-trivial work:
+
+- [`CLAUDE.md`](CLAUDE.md) — architecture, commands, and the non-obvious gotchas that cost real debugging time.
+- [`CONTEXT.md`](CONTEXT.md) — the glossary. It is opinionated about which words to avoid; use its terms exactly.
+- [`LOG.md`](LOG.md) — the decision log. Why a rejected approach was rejected, what a prior session confirmed against real data. Append to it when you learn something a diff can't show.
+- [`docs/adr/`](docs/adr/) — standing architectural decisions.
+
+Conventions: `@/` maps to `src/*`. Functional components, named exports, server components by default. ES modules throughout. A Husky pre-commit hook runs `oxlint --fix` and `oxfmt` on staged files, and `commit-msg` enforces Conventional Commits — a non-conforming message is rejected, not warned about.
+
+LabKit originated from the [shadcnblocks Payload template](https://docs.shadcnblocks.com/payload/getting-started/). That template's general-purpose page-builder block library has been removed in favour of a fixed Hero + SEO page shape; the upstream website-builder work continues in the `payblocks-autana` fork. Keep generic site-builder concerns there — this repo stays on the research domain.
+
+## Links
+
+- **Payload CMS docs:** [payloadcms.com/docs](https://payloadcms.com/docs/getting-started/what-is-payload)
+- **shadcnblocks Payload boilerplate:** [docs.shadcnblocks.com/payload](https://docs.shadcnblocks.com/payload/getting-started/)
+- **ORCID public API:** [info.orcid.org/documentation](https://info.orcid.org/documentation/)
+- **Crossref REST API:** [api.crossref.org](https://api.crossref.org)
+- **OpenAlex:** [docs.openalex.org](https://docs.openalex.org)
+
+## Release automation
+
+Release automation (changesets → versioned GitHub Releases) is paused while LabKit is pre-release. Keep recording changes with `pnpm changeset` as you work — entries accumulate in `.changeset/` and will roll into the first automated release. Archived workflows live in `.github/workflows-archive/`; nothing in `.github/workflows/` is currently active.
+
+## License
+
+MIT, per `package.json`.
