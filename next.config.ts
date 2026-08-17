@@ -56,18 +56,16 @@ const nextConfig: NextConfig = {
   images: {
     qualities: [100, 90],
     remotePatterns: [
-      ...[new URL(serverUrl)].map((item) => {
-        const url = new URL(item)
+      (() => {
+        const url = new URL(serverUrl)
 
         return {
           hostname: url.hostname,
+          pathname: '/**',
+          port: url.port,
           protocol: url.protocol.replace(':', '') as 'http' | 'https',
         }
-      }),
-      {
-        hostname: '*.vercel.app',
-        protocol: 'https',
-      },
+      })(),
     ],
   },
   reactStrictMode: true,

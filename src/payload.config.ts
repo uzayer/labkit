@@ -321,7 +321,7 @@ export default buildConfig({
       enabled: googleAuthActive,
       strategyName: 'google',
       useEmailAsIdentity: true,
-      serverURL: NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000',
+      serverURL: NEXT_PUBLIC_SERVER_URL,
       authCollection: 'users',
       clientId: process.env.GOOGLE_LOGIN_CLIENT_ID || '',
       subFieldName: 'sub',

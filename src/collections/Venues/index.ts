@@ -1,5 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
+import { anyone } from '@/access/anyone'
+import { hasPermission } from '@/utilities/checkPermission'
 import { warnDuplicateVenue } from './hooks/warnDuplicateVenue'
 
 /**
@@ -20,7 +22,10 @@ const Venues: CollectionConfig = {
     description: 'Conferences, journals, and other publication venues',
   },
   access: {
-    read: () => true,
+    create: hasPermission('canManageContent'),
+    delete: hasPermission('canManageContent'),
+    read: anyone,
+    update: hasPermission('canManageContent'),
   },
   fields: [
     {

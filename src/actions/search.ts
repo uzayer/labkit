@@ -5,6 +5,8 @@ import config from '@payload-config'
 import { Search } from '@/payload-types'
 
 const configPromise = config
+const SEARCH_ERROR = 'Search unavailable'
+const SEARCH_ERROR_MESSAGE = 'Search is temporarily unavailable. Please try again later.'
 
 function logSearchEvent(
   level: 'warn' | 'error',
@@ -95,6 +97,15 @@ function shouldUseInMemoryFallback(error: unknown): boolean {
   )
 }
 
+function searchFailure(): SearchResponse {
+  return {
+    error: SEARCH_ERROR,
+    message: SEARCH_ERROR_MESSAGE,
+    results: [],
+    totalDocs: 0,
+  }
+}
+
 export async function search(query?: string, limit: number = 10): Promise<SearchResponse> {
   try {
     // If no query, return recent items (initial results)
@@ -117,10 +128,7 @@ export async function search(query?: string, limit: number = 10): Promise<Search
         }
       } catch (error) {
         logSearchEvent('error', 'recent_results_failed', { error })
-        return {
-          results: [],
-          totalDocs: 0,
-        }
+        return searchFailure()
       }
     }
 
@@ -129,12 +137,8 @@ export async function search(query?: string, limit: number = 10): Promise<Search
     // Check if search collection exists
     const collections = payload.config.collections.map((col) => col.slug)
     if (!collections.includes('search')) {
-      return {
-        error: 'Search collection not found',
-        message: 'The search plugin may not be properly configured',
-        results: [],
-        totalDocs: 0,
-      }
+      logSearchEvent('error', 'collection_missing')
+      return searchFailure()
     }
 
     // Try to get a count first to verify the collection is accessible
@@ -146,12 +150,7 @@ export async function search(query?: string, limit: number = 10): Promise<Search
       })
     } catch (testError) {
       logSearchEvent('error', 'collection_access_failed', { error: testError })
-      return {
-        error: 'Cannot access search collection',
-        message: testError instanceof Error ? testError.message : 'Unknown error',
-        results: [],
-        totalDocs: 0,
-      }
+      return searchFailure()
     }
 
     // Search in the search collection
@@ -192,7 +191,6 @@ export async function search(query?: string, limit: number = 10): Promise<Search
       const fallbackLimit = getFallbackFetchLimit(limit)
       logSearchEvent('warn', 'using_in_memory_fallback', {
         fallbackLimit,
-        query,
         queryError,
       })
 
@@ -219,14 +217,7 @@ export async function search(query?: string, limit: number = 10): Promise<Search
       totalDocs: searchResults.totalDocs,
     }
   } catch (error) {
-    logSearchEvent('error', 'search_failed', { error, query, limit })
-    const errorMessage = error instanceof Error ? error.message : 'Unknown error'
-
-    return {
-      error: 'Failed to perform search',
-      message: errorMessage,
-      results: [],
-      totalDocs: 0,
-    }
+    logSearchEvent('error', 'search_failed', { error, limit })
+    return searchFailure()
   }
 }

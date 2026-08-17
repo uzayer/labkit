@@ -1,5 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
+import { anyone } from '@/access/anyone'
+import { hasPermission } from '@/utilities/checkPermission'
 import { provenanceFields } from '@/fields/provenance'
 import { warnDuplicateOrganization } from './hooks/warnDuplicateOrganization'
 
@@ -21,7 +23,10 @@ const Organizations: CollectionConfig = {
     description: 'Institutions, funders, and publishers referenced across the site',
   },
   access: {
-    read: () => true,
+    create: hasPermission('canManageContent'),
+    delete: hasPermission('canManageContent'),
+    read: anyone,
+    update: hasPermission('canManageContent'),
   },
   fields: [
     {

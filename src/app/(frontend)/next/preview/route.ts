@@ -15,11 +15,12 @@ export async function GET(req: NextRequest): Promise<Response> {
   const path = searchParams.get('path')
   const collection = searchParams.get('collection') as CollectionSlug
   const slug = searchParams.get('slug')
-  const previewSecret = searchParams.get('previewSecret')
   const configuredDraftSecret = process.env.NEXT_PRIVATE_DRAFT_SECRET
 
-  if (!configuredDraftSecret || !previewSecret || previewSecret !== configuredDraftSecret) {
-    payload.logger.warn('Blocked draft-mode preview request with invalid or missing secret')
+  // The Payload session cookie authenticates this browser request. Keep the
+  // server-only secret as an explicit feature gate, but never put it in a URL.
+  if (!configuredDraftSecret) {
+    payload.logger.warn('Blocked draft-mode preview request without a configured secret')
     return new Response('You are not allowed to preview this page', { status: 403 })
   }
 

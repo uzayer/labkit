@@ -24,7 +24,6 @@ export const generatePreviewPath = ({ collection, slug, locale, breadcrumbs }: P
     collection,
     path,
     locale,
-    previewSecret: process.env.NEXT_PRIVATE_DRAFT_SECRET || '',
   }
 
   const encodedParams = new URLSearchParams()

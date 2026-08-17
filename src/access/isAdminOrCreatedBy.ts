@@ -46,9 +46,3 @@ export const isAdminOrSelf: Access = ({ req: { user } }) => {
     },
   }
 }
-
-// Field level access control
-export const isAdminOrCreatedByFieldLevel = ({ req: { user } }) => {
-  if (!user) return false
-  return checkRole(['admin'], user) || Boolean(user.id)
-}

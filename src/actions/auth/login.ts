@@ -4,6 +4,14 @@
 import config from '@payload-config'
 import { login as payloadLogin, logout as payloadLogout } from '@payloadcms/next/auth'
 
+const LOGIN_ERROR_MESSAGE = 'Unable to sign in with those credentials.'
+
+function logLoginFailure(error: unknown) {
+  // Keep the provider error in server logs for diagnosis, but never include
+  // credentials or the provider message in the error sent to the client.
+  console.error('[auth] login_failed', error)
+}
+
 export interface LoginFormData {
   email: string
   password: string
@@ -20,7 +28,8 @@ export async function login(formData: LoginFormData) {
     })
     return result
   } catch (error: unknown) {
-    throw new Error(`Login failed: ${error instanceof Error ? error.message : 'Unknown error'}`)
+    logLoginFailure(error)
+    throw new Error(LOGIN_ERROR_MESSAGE)
   }
 }
 

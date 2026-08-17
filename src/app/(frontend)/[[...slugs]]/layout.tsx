@@ -31,7 +31,7 @@ const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfa
 const caveat = Caveat({ subsets: ['latin'], variable: '--font-caveat' })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(NEXT_PUBLIC_SERVER_URL || 'https://trieb.work'),
+  metadataBase: new URL(NEXT_PUBLIC_SERVER_URL),
   openGraph: mergeOpenGraph(),
   // twitter: {
   //   card: 'summary_large_image',
