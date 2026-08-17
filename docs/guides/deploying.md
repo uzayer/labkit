@@ -15,9 +15,10 @@ LabKit is optimized for deployment on Vercel, but can be deployed to other platf
    - Import your repository
    - Select the LabKit repository
 2. Configure environment variables:
-   - Open your `.env` file and make sure all default secret values are replaced with random secrets from your side.
+   - Open your `.env` file and replace every demo secret with a unique, cryptographically random value of at least 32 characters. For example: `openssl rand -base64 48`.
    - Copy all variables from your `.env` file.
    - Add them to your Vercel project settings.
+   - Use separate values for development, preview, and production. Never commit real secrets to git.
    - If you used a local MongoDB for development, update `MONGODB_URI` with a hosted MongoDB such as Atlas MongoDB Cloud or Vercel MongoDB Integration. We recommend a separate DB between dev/preview and production. Also update your local `.env` if you decide to use remote DB.
    - Update `PAYLOAD_PUBLIC_SERVER_URL` and `NEXT_PUBLIC_SERVER_URL` to match your production domain. Set these env variables to be only available for the production environment. For preview environments, we will fall back to `VERCEL_URL` (set automatically by Vercel).
 3. Deploy:
@@ -66,6 +67,9 @@ For deployments to other platforms, you'll need to swap the storage adapter.
 - Use production-grade environment variables
 - Configure proper security headers
 - Set up SSL/TLS
+- Production startup rejects weak `PAYLOAD_SECRET` values. Configured `NEXT_PRIVATE_DRAFT_SECRET` and `CRON_SECRET` values must also be strong; draft preview and cron automation can be omitted when unused.
+- Rotate `NEXT_PRIVATE_DRAFT_SECRET` every 90 days. Rotate immediately after suspected exposure, then have editors open a fresh preview link. Rotation invalidates old preview links but does not publish draft content.
+- Draft preview requires both a valid preview secret and the editor's active Payload session; successful and rejected attempts are logged without recording the secret. LabKit does not impose IP allowlisting or a separate preview re-authentication timer because both are deployment-specific policies; add them at the network/auth-provider layer when the hosting environment requires them.
 
 ### Monitoring
 - Set up error tracking (e.g., Sentry)

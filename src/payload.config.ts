@@ -66,9 +66,11 @@ import { PageConfig } from './globals/PageConfig/config'
 import { LabInfo } from './globals/LabInfo/config'
 import { Telephone } from './fields/formBuilder/telephone'
 import { assertStrongCronSecret } from './components/AdminDashboard/BackupDashboard/security'
+import { validateRuntimeSecrets } from '@/utilities/validateSecrets'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
+const payloadSecret = validateRuntimeSecrets()
 
 const generateTitle: GenerateTitle<Post | Page> = ({ doc }) => {
   return doc?.title ? `${doc.title} | LabKit Website Template` : 'LabKit Website Template'
@@ -377,7 +379,7 @@ export default buildConfig({
     defaultFromName: 'LabKit Website',
     apiKey: process.env.RESEND_API_KEY || '',
   }),
-  secret: process.env.PAYLOAD_SECRET!,
+  secret: payloadSecret,
   sharp,
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),

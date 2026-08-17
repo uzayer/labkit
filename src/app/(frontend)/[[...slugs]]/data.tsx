@@ -1,7 +1,7 @@
 import { cache } from 'react'
-import { draftMode } from 'next/headers'
-import { Config, Page, Post, Project } from '@/payload-types'
-import { LocalizationConfig, Payload } from 'payload'
+import { draftMode, headers } from 'next/headers'
+import { Config, Page, Post, Project, User } from '@/payload-types'
+import { createLocalReq, LocalizationConfig, Payload } from 'payload'
 import { getPayload } from 'payload'
 import configPromise from '@payload-config'
 
@@ -10,6 +10,47 @@ type CollectionReturnTypeMap = {
   posts: Post & { type: 'post' }
   projects: Project & { type: 'project' }
 }
+
+interface DraftAccess {
+  draft: boolean
+  user?: User
+}
+
+interface QueryBySlugArgs {
+  cleanSlugs: string[]
+  locale: string
+  draft: boolean
+  payload: Payload
+  user?: User
+}
+
+async function getDraftAccess(payload: Payload): Promise<DraftAccess> {
+  const { isEnabled: draft } = await draftMode()
+
+  if (!draft) {
+    return { draft: false }
+  }
+
+  try {
+    const requestHeaders = new Headers(await headers())
+    const req = await createLocalReq({ req: { headers: requestHeaders } }, payload)
+    const { user } = await payload.auth({ headers: requestHeaders, req })
+
+    if (!user) {
+      payload.logger.warn('Blocked unauthenticated draft-mode content request')
+      return { draft: false }
+    }
+
+    return { draft: true, user: user as User }
+  } catch (error) {
+    payload.logger.warn({
+      err: error,
+      msg: 'Blocked draft-mode content request after auth failure',
+    })
+    return { draft: false }
+  }
+}
+
 /**
  * Select, in which collection we should search. Currently supported is 'pages', 'posts', and 'projects'
  * For slugs with /posts/XX we should search in 'posts'
@@ -27,9 +68,12 @@ export const queryCollectionData = async <T extends keyof CollectionReturnTypeMa
   locale: string
   collection: T
 }): Promise<CollectionReturnTypeMap[T] | null> => {
-  const { isEnabled: draft } = await draftMode()
-
   const payload = await getPayload({ config: configPromise })
+  const { draft, user } = await getDraftAccess(payload)
+
+  if (draft && user) {
+    payload.logger.info(`Authorized draft-mode ${collection} read for user ${user.id}`)
+  }
 
   // Check if locale is supported
   const { locales } = payload.config.localization as LocalizationConfig
@@ -41,33 +85,24 @@ export const queryCollectionData = async <T extends keyof CollectionReturnTypeMa
   let result: Page | Post | Project | null = null
 
   if (collection === 'pages') {
-    result = await queryPageBySlug({ cleanSlugs, locale, draft, payload })
+    result = await queryPageBySlug({ cleanSlugs, locale, draft, payload, user })
   } else if (collection === 'posts') {
-    result = await queryPostBySlug({ cleanSlugs, locale, draft, payload })
+    result = await queryPostBySlug({ cleanSlugs, locale, draft, payload, user })
   } else if (collection === 'projects') {
-    result = await queryProjectBySlug({ cleanSlugs, locale, draft, payload })
+    result = await queryProjectBySlug({ cleanSlugs, locale, draft, payload, user })
   }
 
   return result as CollectionReturnTypeMap[T] | null
 }
 
 export const queryPostBySlug = cache(
-  async ({
-    cleanSlugs,
-    locale,
-    draft,
-    payload,
-  }: {
-    cleanSlugs: string[]
-    locale: string
-    draft: boolean
-    payload: Payload
-  }) => {
+  async ({ cleanSlugs, locale, draft, payload, user }: QueryBySlugArgs) => {
     const result = await payload.find({
       collection: 'posts',
       draft,
       limit: 1,
-      overrideAccess: draft,
+      overrideAccess: false,
+      user,
       locale: locale as Config['locale'],
       where: {
         slug: {
@@ -86,23 +121,14 @@ export const queryPostBySlug = cache(
 )
 
 export const queryProjectBySlug = cache(
-  async ({
-    cleanSlugs,
-    locale,
-    draft,
-    payload,
-  }: {
-    cleanSlugs: string[]
-    locale: string
-    draft: boolean
-    payload: Payload
-  }) => {
+  async ({ cleanSlugs, locale, draft, payload, user }: QueryBySlugArgs) => {
     const result = await payload.find({
       collection: 'projects',
       draft,
       limit: 1,
       depth: 2,
-      overrideAccess: draft,
+      overrideAccess: false,
+      user,
       locale: locale as Config['locale'],
       where: {
         slug: {
@@ -121,22 +147,13 @@ export const queryProjectBySlug = cache(
 )
 
 export const queryPageBySlug = cache(
-  async ({
-    cleanSlugs,
-    locale,
-    draft,
-    payload,
-  }: {
-    cleanSlugs: string[]
-    locale: string
-    draft: boolean
-    payload: Payload
-  }) => {
+  async ({ cleanSlugs, locale, draft, payload, user }: QueryBySlugArgs) => {
     const result = await payload.find({
       collection: 'pages',
       draft,
       limit: 1,
-      overrideAccess: draft,
+      overrideAccess: false,
+      user,
       locale: locale as Config['locale'],
       where: {
         slug: {
