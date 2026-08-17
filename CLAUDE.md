@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-LabKit is a PayloadCMS content platform for research lab websites: research-domain collections (Publications, Grants, Awards, Team, etc.) with a shadcn/ui frontend. Originally built on the [shadcnblocks Payload template](https://docs.shadcnblocks.com/payload/getting-started/); the page-builder block library was removed and lives on in the `payblocks-autana` fork (Autana Systems' agency website-builder). The `dial-test/` directory holds a standalone static design prototype that is being ported in as the lab site frontend (see Frontend below).
+LabKit is a PayloadCMS content platform for research lab websites: research-domain collections (Publications, Grants, Awards, Team, etc.) with a shadcn/ui frontend. Originally built on the [shadcnblocks Payload template](https://docs.shadcnblocks.com/payload/getting-started/); the page-builder block library was removed. The `dial-test/` directory holds a standalone static design prototype that is being ported in as the lab site frontend (see Frontend below).
 
-This repo is the current working instance. Upstream website-builder concerns now belong in Payblocks Autana; this repo should stay focused on LabKit-specific product and implementation work.
+Generic website-builder concerns belong upstream with the template; this repo should stay focused on LabKit-specific product and implementation work.
 
 Before starting nontrivial work, check @LOG.md — a running record of non-obvious product/architecture decisions and the reasoning behind them. It catches things a fresh read of the code can't (why a rejected approach was rejected, what a prior session confirmed against real data). When you make or learn a decision that isn't obvious from the diff alone, append an entry.
 

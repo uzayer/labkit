@@ -205,7 +205,7 @@ Read these before non-trivial work:
 
 Conventions: `@/` maps to `src/*`. Functional components, named exports, server components by default. ES modules throughout. A Husky pre-commit hook runs `oxlint --fix` and `oxfmt` on staged files, and `commit-msg` enforces Conventional Commits — a non-conforming message is rejected, not warned about.
 
-LabKit originated from the [shadcnblocks Payload template](https://docs.shadcnblocks.com/payload/getting-started/). That template's general-purpose page-builder block library has been removed in favour of a fixed Hero + SEO page shape; the upstream website-builder work continues in the `payblocks-autana` fork. Keep generic site-builder concerns there — this repo stays on the research domain.
+LabKit originated from the [shadcnblocks Payload template](https://docs.shadcnblocks.com/payload/getting-started/). That template's general-purpose page-builder block library has been removed in favour of a fixed Hero + SEO page shape. Keep generic site-builder concerns upstream — this repo stays on the research domain.
 
 ## Links
 

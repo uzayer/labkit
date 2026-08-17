@@ -24,7 +24,7 @@ The conclusion was that the 2004-style site succeeds based on its simple, predic
 
 My first solution was to create a more polished version of the same lab sites—a "Shadcn for science."
 
-I chose a modern tech stack based on a template called Payblocks:
+I chose a modern tech stack based on the shadcnblocks Payload template:
 -   **Framework:** Next.js
 -   **CMS:** Payload CMS
 -   **Components:** shadcn/ui, with pre-built blocks from shadcnblocks.com

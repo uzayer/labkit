@@ -2,7 +2,7 @@
 
 This is the documentation for the LabKit codebase: a PayloadCMS product for research lab websites and, later, lab-level research information workflows.
 
-Docs in this repo should explain LabKit-specific intent, constraints, and operating decisions. Generic website-builder or template documentation belongs upstream in Payblocks Autana, not here.
+Docs in this repo should explain LabKit-specific intent, constraints, and operating decisions. Generic website-builder or template documentation belongs upstream with the template it came from, not here.
 
 ## Navigation
 

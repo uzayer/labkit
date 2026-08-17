@@ -88,4 +88,4 @@ The real competitors are elsewhere, and should be treated as the actual threats:
 
 ## Non-goal
 
-LabKit should not drift back toward "page builder for anything." Generic website-builder concerns belong upstream in Payblocks Autana. LabKit stays focused on research-domain structure and the workflows that come from it.
+LabKit should not drift back toward "page builder for anything." Generic website-builder concerns belong upstream with the template it was forked from. LabKit stays focused on research-domain structure and the workflows that come from it.

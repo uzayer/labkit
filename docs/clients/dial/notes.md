@@ -73,8 +73,8 @@
 
 notes on building academic websites for the global south
 
-- will shadcnblock payblocks template license let me opensource this code because technically i did make a lot changes to it
-    - payblocks has an MIT license haha dumbass
+- will the shadcnblocks template license let me opensource this code because technically i did make a lot changes to it
+    - it's MIT, so yes
 - there is a fine balance of trying to showcase local wins and cultures and methodologies but the credibility factor is cutthroat because we’re automatically not getting the credibility a research lab should
 - this doubles down on design where the focus is more on concrete wins in the academic world like publications and awards
 - MIT gets to say things like “what if we could fly?” with a very speculative tone because it doesn’t have to worry about credibility

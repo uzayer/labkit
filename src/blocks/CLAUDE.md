@@ -1,7 +1,7 @@
 # Blocks Directory — Conventions
 
-The shadcnblocks page-builder block library was removed from LabKit (it lives on in the
-`payblocks-autana` fork). What remains here renders collection content, not pages:
+The shadcnblocks page-builder block library was removed from LabKit. What remains here
+renders collection content, not pages:
 
 **Collection template renderers** (`Component.tsx` + variant `.tsx` files, no `config.ts`)
 `BlogPost/` (+ `CaseStudy/`, one of its design versions), `ProjectPost/`, `RelatedPosts/` —
