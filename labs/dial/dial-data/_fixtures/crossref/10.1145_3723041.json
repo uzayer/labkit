@@ -4,7 +4,13 @@
   "message-version": "1.0.0",
   "message": {
     "indexed": {
-      "date-parts": [[2025, 6, 19]],
+      "date-parts": [
+        [
+          2025,
+          6,
+          19
+        ]
+      ],
       "date-time": "2025-06-19T05:06:27Z",
       "timestamp": 1750309587950,
       "version": "3.41.0"
@@ -15,7 +21,13 @@
     "license": [
       {
         "start": {
-          "date-parts": [[2025, 4, 11]],
+          "date-parts": [
+            [
+              2025,
+              4,
+              11
+            ]
+          ],
           "date-time": "2025-04-11T00:00:00Z",
           "timestamp": 1744329600000
         },
@@ -25,18 +37,34 @@
       }
     ],
     "content-domain": {
-      "domain": ["dl.acm.org"],
+      "domain": [
+        "dl.acm.org"
+      ],
       "crossmark-restriction": true
     },
-    "short-container-title": ["ACM J. Comput. Sustain. Soc."],
+    "short-container-title": [
+      "ACM J. Comput. Sustain. Soc."
+    ],
     "published-print": {
-      "date-parts": [[2025, 6, 30]]
+      "date-parts": [
+        [
+          2025,
+          6,
+          30
+        ]
+      ]
     },
     "abstract": "<jats:p>The COVID-19 pandemic increased the usage of Mobile Financial Services (MFSs) everywhere, including in developing countries such as Bangladesh. The increment of usage is paired with continuing misuse and abuse in several ways that impact users’ MFS usage behaviors. This qualitative study aimed to understand users’ adoptive MFS usage behaviors due to negative experiences and their implications among several communities. The study took place across all eight divisions in Bangladesh and did focus group discussions involving N = 313 participants (female = 203, male = 108, and transgender = 2) covering urban, suburban, and rural regions. Study findings present the ways participants limit their usage, delegate MFS operations, and rely on others to avoid misuse and abuse. The stories also indicate the inability of these measures to avoid monetary loss, which creates more negativity. We discuss the cyclic relationship between negative experiences, social constructs, and confidence. We suggest potential technology interventions to break the cycle.</jats:p>",
     "DOI": "10.1145/3723041",
     "type": "journal-article",
     "created": {
-      "date-parts": [[2025, 3, 15]],
+      "date-parts": [
+        [
+          2025,
+          3,
+          15
+        ]
+      ],
       "date-time": "2025-03-15T11:24:39Z",
       "timestamp": 1742037879000
     },
@@ -215,7 +243,13 @@
     ],
     "member": "320",
     "published-online": {
-      "date-parts": [[2025, 4, 11]]
+      "date-parts": [
+        [
+          2025,
+          4,
+          11
+        ]
+      ]
     },
     "reference": [
       {
@@ -745,7 +779,9 @@
         "DOI": "10.1145/3498361.3539774"
       }
     ],
-    "container-title": ["ACM Journal on Computing and Sustainable Societies"],
+    "container-title": [
+      "ACM Journal on Computing and Sustainable Societies"
+    ],
     "original-title": [],
     "language": "en",
     "link": [
@@ -763,7 +799,13 @@
       }
     ],
     "deposited": {
-      "date-parts": [[2025, 6, 19]],
+      "date-parts": [
+        [
+          2025,
+          6,
+          19
+        ]
+      ],
       "date-time": "2025-06-19T01:56:42Z",
       "timestamp": 1750298202000
     },
@@ -776,19 +818,35 @@
     "subtitle": [],
     "short-title": [],
     "issued": {
-      "date-parts": [[2025, 4, 11]]
+      "date-parts": [
+        [
+          2025,
+          4,
+          11
+        ]
+      ]
     },
     "references-count": 79,
     "journal-issue": {
       "issue": "2",
       "published-print": {
-        "date-parts": [[2025, 6, 30]]
+        "date-parts": [
+          [
+            2025,
+            6,
+            30
+          ]
+        ]
       }
     },
-    "alternative-id": ["10.1145/3723041"],
+    "alternative-id": [
+      "10.1145/3723041"
+    ],
     "URL": "https://doi.org/10.1145/3723041",
     "relation": {},
-    "ISSN": ["2834-5533"],
+    "ISSN": [
+      "2834-5533"
+    ],
     "issn-type": [
       {
         "type": "electronic",
@@ -797,7 +855,13 @@
     ],
     "subject": [],
     "published": {
-      "date-parts": [[2025, 4, 11]]
+      "date-parts": [
+        [
+          2025,
+          4,
+          11
+        ]
+      ]
     },
     "assertion": [
       {

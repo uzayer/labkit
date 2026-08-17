@@ -20,14 +20,20 @@
       "id": "https://openalex.org/S4210209730",
       "display_name": "Interactive Journal of Medical Research",
       "issn_l": "1929-073X",
-      "issn": ["1929-073X"],
+      "issn": [
+        "1929-073X"
+      ],
       "is_oa": true,
       "is_in_doaj": true,
       "is_core": true,
       "host_organization": "https://openalex.org/P4310320608",
       "host_organization_name": "JMIR Publications",
-      "host_organization_lineage": ["https://openalex.org/P4310320608"],
-      "host_organization_lineage_names": ["JMIR Publications"],
+      "host_organization_lineage": [
+        "https://openalex.org/P4310320608"
+      ],
+      "host_organization_lineage_names": [
+        "JMIR Publications"
+      ],
       "type": "journal"
     },
     "license": "cc-by",
@@ -39,7 +45,11 @@
     "raw_type": "journal-article"
   },
   "type": "article",
-  "indexed_in": ["crossref", "doaj", "pubmed"],
+  "indexed_in": [
+    "crossref",
+    "doaj",
+    "pubmed"
+  ],
   "open_access": {
     "is_oa": true,
     "oa_status": "gold",
@@ -61,10 +71,14 @@
           "ror": "https://ror.org/03kk7td41",
           "country_code": "GB",
           "type": "education",
-          "lineage": ["https://openalex.org/I79510175"]
+          "lineage": [
+            "https://openalex.org/I79510175"
+          ]
         }
       ],
-      "countries": ["GB"],
+      "countries": [
+        "GB"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Rahat Jahangir Rony",
       "raw_affiliation_strings": [
@@ -74,7 +88,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Department of Computer Science and Informatics, School of Computer Science, Cardiff University, Cardiff, United Kingdom",
-          "institution_ids": ["https://openalex.org/I79510175"]
+          "institution_ids": [
+            "https://openalex.org/I79510175"
+          ]
         }
       ]
     },
@@ -92,10 +108,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Shams Akbar Aalok",
       "raw_affiliation_strings": [
@@ -105,7 +125,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Department of Electrical and Computer Science, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -123,10 +145,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Lamia Amin Tisha",
       "raw_affiliation_strings": [
@@ -136,7 +162,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Department of Electrical and Computer Science, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -154,10 +182,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Marzan Mahatab",
       "raw_affiliation_strings": [
@@ -167,7 +199,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Department of Electrical and Computer Science, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -185,10 +219,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Nova Ahmed",
       "raw_affiliation_strings": [
@@ -198,7 +236,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Department of Electrical and Computer Science, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     }
@@ -508,14 +548,20 @@
         "id": "https://openalex.org/S4210209730",
         "display_name": "Interactive Journal of Medical Research",
         "issn_l": "1929-073X",
-        "issn": ["1929-073X"],
+        "issn": [
+          "1929-073X"
+        ],
         "is_oa": true,
         "is_in_doaj": true,
         "is_core": true,
         "host_organization": "https://openalex.org/P4310320608",
         "host_organization_name": "JMIR Publications",
-        "host_organization_lineage": ["https://openalex.org/P4310320608"],
-        "host_organization_lineage_names": ["JMIR Publications"],
+        "host_organization_lineage": [
+          "https://openalex.org/P4310320608"
+        ],
+        "host_organization_lineage_names": [
+          "JMIR Publications"
+        ],
         "type": "journal"
       },
       "license": "cc-by",
@@ -541,7 +587,9 @@
         "is_core": false,
         "host_organization": "https://openalex.org/I1299303238",
         "host_organization_name": "National Institutes of Health",
-        "host_organization_lineage": ["https://openalex.org/I1299303238"],
+        "host_organization_lineage": [
+          "https://openalex.org/I1299303238"
+        ],
         "host_organization_lineage_names": [],
         "type": "repository"
       },
@@ -568,7 +616,9 @@
         "is_core": false,
         "host_organization": "https://openalex.org/I79510175",
         "host_organization_name": "Cardiff University",
-        "host_organization_lineage": ["https://openalex.org/I79510175"],
+        "host_organization_lineage": [
+          "https://openalex.org/I79510175"
+        ],
         "host_organization_lineage_names": [],
         "type": "repository"
       },
@@ -622,7 +672,9 @@
         "is_core": false,
         "host_organization": "https://openalex.org/I1303153112",
         "host_organization_name": "European Bioinformatics Institute",
-        "host_organization_lineage": ["https://openalex.org/I1303153112"],
+        "host_organization_lineage": [
+          "https://openalex.org/I1303153112"
+        ],
         "host_organization_lineage_names": [],
         "type": "repository"
       },
@@ -644,14 +696,20 @@
       "id": "https://openalex.org/S4210209730",
       "display_name": "Interactive Journal of Medical Research",
       "issn_l": "1929-073X",
-      "issn": ["1929-073X"],
+      "issn": [
+        "1929-073X"
+      ],
       "is_oa": true,
       "is_in_doaj": true,
       "is_core": true,
       "host_organization": "https://openalex.org/P4310320608",
       "host_organization_name": "JMIR Publications",
-      "host_organization_lineage": ["https://openalex.org/P4310320608"],
-      "host_organization_lineage_names": ["JMIR Publications"],
+      "host_organization_lineage": [
+        "https://openalex.org/P4310320608"
+      ],
+      "host_organization_lineage_names": [
+        "JMIR Publications"
+      ],
       "type": "journal"
     },
     "license": "cc-by",
@@ -741,292 +799,1020 @@
     "https://openalex.org/W4210578026"
   ],
   "abstract_inverted_index": {
-    "8": [218],
-    "14": [179],
-    "25": [210],
-    "35": [212],
-    "637": [253],
-    "BACKGROUND:": [0],
-    "The": [1, 188, 261],
-    "COVID-19": [2, 149, 186, 194, 284],
-    "pandemic": [3],
-    "had": [4, 215],
-    "a": [5, 15, 85, 94, 134, 326, 395],
-    "substantial,": [6],
-    "negative": [7, 349],
-    "impact": [8],
-    "on": [9, 33],
-    "the": [
-      10, 24, 28, 34, 46, 55, 65, 110, 114, 138, 148, 152, 185, 193, 250, 283, 300, 352, 411, 416,
-      436, 446
+    "8": [
+      218
     ],
-    "world,": [11],
+    "14": [
+      179
+    ],
+    "25": [
+      210
+    ],
+    "35": [
+      212
+    ],
+    "637": [
+      253
+    ],
+    "BACKGROUND:": [
+      0
+    ],
+    "The": [
+      1,
+      188,
+      261
+    ],
+    "COVID-19": [
+      2,
+      149,
+      186,
+      194,
+      284
+    ],
+    "pandemic": [
+      3
+    ],
+    "had": [
+      4,
+      215
+    ],
+    "a": [
+      5,
+      15,
+      85,
+      94,
+      134,
+      326,
+      395
+    ],
+    "substantial,": [
+      6
+    ],
+    "negative": [
+      7,
+      349
+    ],
+    "impact": [
+      8
+    ],
+    "on": [
+      9,
+      33
+    ],
+    "the": [
+      10,
+      24,
+      28,
+      34,
+      46,
+      55,
+      65,
+      110,
+      114,
+      138,
+      148,
+      152,
+      185,
+      193,
+      250,
+      283,
+      300,
+      352,
+      411,
+      416,
+      436,
+      446
+    ],
+    "world,": [
+      11
+    ],
     "and": [
-      12, 42, 140, 151, 168, 200, 211, 214, 234, 244, 259, 277, 280, 325, 335, 381, 393, 399, 422,
+      12,
+      42,
+      140,
+      151,
+      168,
+      200,
+      211,
+      214,
+      234,
+      244,
+      259,
+      277,
+      280,
+      325,
+      335,
+      381,
+      393,
+      399,
+      422,
       449
     ],
-    "physicians": [13, 60, 118, 146, 180, 189, 363],
-    "played": [14],
-    "crucial": [16],
-    "role": [17],
-    "in": [18, 119, 181, 192, 242, 434, 445],
-    "providing": [19],
-    "health": [20, 51, 279, 373, 383],
-    "care": [21],
-    "while": [22],
-    "facing": [23],
-    "risk": [25],
-    "of": [26, 87, 117, 137, 220, 255, 328, 342, 358, 418],
-    "contracting": [27],
-    "virus": [29],
-    "themselves.": [30],
-    "While": [31],
-    "working": [32, 191, 221],
-    "frontlines,": [35],
-    "they": [36, 68, 71, 346],
-    "also": [37],
-    "needed": [38],
-    "to": [39, 64, 84, 105, 112, 132, 217, 248, 306, 310, 365, 431, 451],
-    "protect": [40],
-    "themselves": [41],
-    "their": [43, 49, 127, 156, 303, 307, 312, 316, 332, 337, 368],
-    "families": [44],
-    "from": [45, 198, 351],
-    "virus.": [47],
-    "Unfortunately,": [48],
-    "mental": [50, 139, 276, 372, 380],
-    "was": [52, 240],
-    "not": [53, 102],
-    "given": [54],
-    "attention": [56],
-    "it": [57, 442],
-    "deserved.": [58],
-    "Many": [59],
-    "experienced": [61],
-    "burnout": [62],
-    "due": [63, 83],
-    "numerous": [66],
-    "challenges": [67],
-    "faced,": [69],
-    "yet": [70],
-    "received": [72],
-    "little": [73],
-    "support.": [74, 374],
-    "Resource-limited": [75],
-    "countries": [76, 91, 121],
-    "such": [77],
-    "as": [78],
-    "Bangladesh": [79],
-    "were": [80, 196, 207, 257, 263],
-    "particularly": [81],
-    "affected": [82, 331],
-    "lack": [86],
-    "resources.": [88],
-    "Although": [89],
-    "high-income": [90],
-    "have": [92],
-    "proposed": [93],
-    "well-being": [95, 281, 412],
-    "model": [96, 100, 111, 408],
-    "for": [97, 126, 439],
-    "physicians,": [98, 440],
-    "this": [99, 426],
-    "is": [101, 430, 443],
-    "directly": [103],
-    "applicable": [104],
-    "resource-limited": [106, 120],
-    "nations.": [107],
-    "However,": [108],
-    "redefining": [109],
-    "suit": [113],
-    "specific": [115, 405],
-    "needs": [116],
-    "could": [122],
-    "provide": [123],
-    "sustainable": [124, 169, 444],
-    "support": [125],
-    "well-being.": [128, 157],
-    "OBJECTIVE:": [129],
-    "We": [130, 173, 270, 389, 414],
-    "aimed": [131],
-    "gain": [133],
-    "deeper": [135],
-    "understanding": [136, 159, 398],
-    "physical": [141, 278, 382],
-    "burdens": [142, 384],
-    "faced": [143, 348],
-    "by": [144, 410],
-    "Bangladeshi": [145],
-    "during": [147, 184, 282, 356],
-    "pandemic,": [150],
-    "contextual": [153, 170, 387, 396, 421],
-    "factors": [154, 272],
-    "influencing": [155],
-    "By": [158],
-    "these": [160, 391],
-    "aspects,": [161],
-    "we": [162, 245],
-    "can": [163],
-    "recommend": [164],
-    "an": [165],
-    "adaptable,": [166],
-    "effective,": [167],
-    "model.": [171],
-    "METHODS:": [172],
-    "conducted": [174, 241],
-    "semistructured": [175],
-    "online": [176],
-    "interviews": [177],
-    "with": [178, 289, 367, 385],
-    "Chattogram,": [182],
-    "Bangladesh,": [183],
-    "pandemic.": [187, 285],
-    "actively": [190],
-    "unit": [195],
-    "recruited": [197],
-    "public": [199],
-    "private": [201],
-    "hospitals": [202],
-    "through": [203],
-    "purposive": [204],
-    "sampling.": [205],
-    "Participants": [206],
-    "aged": [208],
-    "between": [209],
-    "years": [213, 219],
-    "up": [216],
-    "experience,": [222],
-    "including": [223],
-    "43%": [224],
-    "(6/14)": [225],
-    "interns,": [226],
-    "36%": [227],
-    "(5/14)": [228],
-    "medical": [229],
-    "officers,": [230],
-    "14%": [231],
-    "(2/14)": [232],
-    "researchers,": [233],
-    "7%": [235],
-    "(1/14)": [236],
-    "surgeons.": [237],
-    "Each": [238],
-    "interview": [239],
-    "Bengali,": [243],
-    "obtained": [246],
-    "consent": [247],
-    "record": [249],
-    "audio.": [251],
-    "Overall,": [252],
-    "minutes": [254],
-    "discussion": [256],
-    "translated": [258],
-    "transcribed.": [260],
-    "results": [262],
-    "analyzed": [264],
-    "using": [265],
-    "reflexive": [266],
-    "thematic": [267],
-    "analysis.": [268],
-    "RESULTS:": [269],
-    "identified": [271],
-    "that": [273],
-    "impacted": [274],
-    "physicians'": [275, 379],
-    "They": [286],
-    "frequently": [287],
-    "dealt": [288],
-    "undiagnosed": [290],
-    "patients,": [291],
-    "which": [292],
-    "put": [293],
-    "them": [294],
-    "at": [295],
-    "risk.": [296],
-    "Physicians": [297],
-    "often": [298, 347],
-    "feared": [299],
-    "potential": [301],
-    "danger": [302],
-    "profession": [304],
-    "posed": [305],
-    "families,": [308],
-    "choosing": [309],
-    "prioritize": [311],
-    "family's": [313],
-    "safety": [314],
-    "over": [315],
-    "own.": [317],
-    "In": [318, 354],
-    "addition,": [319, 355],
-    "heavy": [320],
-    "workloads,": [321],
-    "excessive": [322],
-    "duty": [323],
-    "hours,": [324],
-    "shortage": [327],
-    "colleagues": [329],
-    "substantially": [330],
-    "sleep": [333],
-    "patterns": [334],
-    "disrupted": [336],
-    "regular": [338],
-    "work": [339, 377, 437],
-    "schedules.": [340],
-    "Instead": [341],
-    "receiving": [343],
-    "societal": [344],
-    "support,": [345],
-    "perceptions": [350],
-    "public.": [353],
-    "times": [357],
-    "mass": [359],
-    "patient": [360],
-    "deaths,": [361],
-    "many": [362],
-    "struggled": [364],
-    "cope": [366],
-    "emotions": [369],
-    "without": [370],
-    "any": [371],
-    "CONCLUSIONS:": [375],
-    "Our": [376],
-    "shows": [378],
-    "various": [386],
-    "difficulties.": [388],
-    "understood": [390],
-    "concerns": [392],
-    "suggested": [394],
-    "(emphasizes": [397],
-    "addressing": [400],
-    "users'": [401],
-    "behavior": [402],
-    "within": [403],
-    "its": [404],
-    "context)": [406],
-    "intervention": [407],
-    "inspired": [409],
-    "framework.": [413],
-    "emphasize": [415],
-    "importance": [417],
-    "integrating": [419],
-    "both": [420],
-    "technological": [423],
-    "interventions.": [424],
-    "Through": [425],
-    "model,": [427],
-    "our": [428],
-    "goal": [429],
-    "involve": [432],
-    "stakeholders": [433],
-    "redesigning": [435],
-    "environment": [438],
-    "ensuring": [441],
-    "long": [447],
-    "term": [448],
-    "adaptable": [450],
-    "different": [452],
-    "situations.": [453]
+    "physicians": [
+      13,
+      60,
+      118,
+      146,
+      180,
+      189,
+      363
+    ],
+    "played": [
+      14
+    ],
+    "crucial": [
+      16
+    ],
+    "role": [
+      17
+    ],
+    "in": [
+      18,
+      119,
+      181,
+      192,
+      242,
+      434,
+      445
+    ],
+    "providing": [
+      19
+    ],
+    "health": [
+      20,
+      51,
+      279,
+      373,
+      383
+    ],
+    "care": [
+      21
+    ],
+    "while": [
+      22
+    ],
+    "facing": [
+      23
+    ],
+    "risk": [
+      25
+    ],
+    "of": [
+      26,
+      87,
+      117,
+      137,
+      220,
+      255,
+      328,
+      342,
+      358,
+      418
+    ],
+    "contracting": [
+      27
+    ],
+    "virus": [
+      29
+    ],
+    "themselves.": [
+      30
+    ],
+    "While": [
+      31
+    ],
+    "working": [
+      32,
+      191,
+      221
+    ],
+    "frontlines,": [
+      35
+    ],
+    "they": [
+      36,
+      68,
+      71,
+      346
+    ],
+    "also": [
+      37
+    ],
+    "needed": [
+      38
+    ],
+    "to": [
+      39,
+      64,
+      84,
+      105,
+      112,
+      132,
+      217,
+      248,
+      306,
+      310,
+      365,
+      431,
+      451
+    ],
+    "protect": [
+      40
+    ],
+    "themselves": [
+      41
+    ],
+    "their": [
+      43,
+      49,
+      127,
+      156,
+      303,
+      307,
+      312,
+      316,
+      332,
+      337,
+      368
+    ],
+    "families": [
+      44
+    ],
+    "from": [
+      45,
+      198,
+      351
+    ],
+    "virus.": [
+      47
+    ],
+    "Unfortunately,": [
+      48
+    ],
+    "mental": [
+      50,
+      139,
+      276,
+      372,
+      380
+    ],
+    "was": [
+      52,
+      240
+    ],
+    "not": [
+      53,
+      102
+    ],
+    "given": [
+      54
+    ],
+    "attention": [
+      56
+    ],
+    "it": [
+      57,
+      442
+    ],
+    "deserved.": [
+      58
+    ],
+    "Many": [
+      59
+    ],
+    "experienced": [
+      61
+    ],
+    "burnout": [
+      62
+    ],
+    "due": [
+      63,
+      83
+    ],
+    "numerous": [
+      66
+    ],
+    "challenges": [
+      67
+    ],
+    "faced,": [
+      69
+    ],
+    "yet": [
+      70
+    ],
+    "received": [
+      72
+    ],
+    "little": [
+      73
+    ],
+    "support.": [
+      74,
+      374
+    ],
+    "Resource-limited": [
+      75
+    ],
+    "countries": [
+      76,
+      91,
+      121
+    ],
+    "such": [
+      77
+    ],
+    "as": [
+      78
+    ],
+    "Bangladesh": [
+      79
+    ],
+    "were": [
+      80,
+      196,
+      207,
+      257,
+      263
+    ],
+    "particularly": [
+      81
+    ],
+    "affected": [
+      82,
+      331
+    ],
+    "lack": [
+      86
+    ],
+    "resources.": [
+      88
+    ],
+    "Although": [
+      89
+    ],
+    "high-income": [
+      90
+    ],
+    "have": [
+      92
+    ],
+    "proposed": [
+      93
+    ],
+    "well-being": [
+      95,
+      281,
+      412
+    ],
+    "model": [
+      96,
+      100,
+      111,
+      408
+    ],
+    "for": [
+      97,
+      126,
+      439
+    ],
+    "physicians,": [
+      98,
+      440
+    ],
+    "this": [
+      99,
+      426
+    ],
+    "is": [
+      101,
+      430,
+      443
+    ],
+    "directly": [
+      103
+    ],
+    "applicable": [
+      104
+    ],
+    "resource-limited": [
+      106,
+      120
+    ],
+    "nations.": [
+      107
+    ],
+    "However,": [
+      108
+    ],
+    "redefining": [
+      109
+    ],
+    "suit": [
+      113
+    ],
+    "specific": [
+      115,
+      405
+    ],
+    "needs": [
+      116
+    ],
+    "could": [
+      122
+    ],
+    "provide": [
+      123
+    ],
+    "sustainable": [
+      124,
+      169,
+      444
+    ],
+    "support": [
+      125
+    ],
+    "well-being.": [
+      128,
+      157
+    ],
+    "OBJECTIVE:": [
+      129
+    ],
+    "We": [
+      130,
+      173,
+      270,
+      389,
+      414
+    ],
+    "aimed": [
+      131
+    ],
+    "gain": [
+      133
+    ],
+    "deeper": [
+      135
+    ],
+    "understanding": [
+      136,
+      159,
+      398
+    ],
+    "physical": [
+      141,
+      278,
+      382
+    ],
+    "burdens": [
+      142,
+      384
+    ],
+    "faced": [
+      143,
+      348
+    ],
+    "by": [
+      144,
+      410
+    ],
+    "Bangladeshi": [
+      145
+    ],
+    "during": [
+      147,
+      184,
+      282,
+      356
+    ],
+    "pandemic,": [
+      150
+    ],
+    "contextual": [
+      153,
+      170,
+      387,
+      396,
+      421
+    ],
+    "factors": [
+      154,
+      272
+    ],
+    "influencing": [
+      155
+    ],
+    "By": [
+      158
+    ],
+    "these": [
+      160,
+      391
+    ],
+    "aspects,": [
+      161
+    ],
+    "we": [
+      162,
+      245
+    ],
+    "can": [
+      163
+    ],
+    "recommend": [
+      164
+    ],
+    "an": [
+      165
+    ],
+    "adaptable,": [
+      166
+    ],
+    "effective,": [
+      167
+    ],
+    "model.": [
+      171
+    ],
+    "METHODS:": [
+      172
+    ],
+    "conducted": [
+      174,
+      241
+    ],
+    "semistructured": [
+      175
+    ],
+    "online": [
+      176
+    ],
+    "interviews": [
+      177
+    ],
+    "with": [
+      178,
+      289,
+      367,
+      385
+    ],
+    "Chattogram,": [
+      182
+    ],
+    "Bangladesh,": [
+      183
+    ],
+    "pandemic.": [
+      187,
+      285
+    ],
+    "actively": [
+      190
+    ],
+    "unit": [
+      195
+    ],
+    "recruited": [
+      197
+    ],
+    "public": [
+      199
+    ],
+    "private": [
+      201
+    ],
+    "hospitals": [
+      202
+    ],
+    "through": [
+      203
+    ],
+    "purposive": [
+      204
+    ],
+    "sampling.": [
+      205
+    ],
+    "Participants": [
+      206
+    ],
+    "aged": [
+      208
+    ],
+    "between": [
+      209
+    ],
+    "years": [
+      213,
+      219
+    ],
+    "up": [
+      216
+    ],
+    "experience,": [
+      222
+    ],
+    "including": [
+      223
+    ],
+    "43%": [
+      224
+    ],
+    "(6/14)": [
+      225
+    ],
+    "interns,": [
+      226
+    ],
+    "36%": [
+      227
+    ],
+    "(5/14)": [
+      228
+    ],
+    "medical": [
+      229
+    ],
+    "officers,": [
+      230
+    ],
+    "14%": [
+      231
+    ],
+    "(2/14)": [
+      232
+    ],
+    "researchers,": [
+      233
+    ],
+    "7%": [
+      235
+    ],
+    "(1/14)": [
+      236
+    ],
+    "surgeons.": [
+      237
+    ],
+    "Each": [
+      238
+    ],
+    "interview": [
+      239
+    ],
+    "Bengali,": [
+      243
+    ],
+    "obtained": [
+      246
+    ],
+    "consent": [
+      247
+    ],
+    "record": [
+      249
+    ],
+    "audio.": [
+      251
+    ],
+    "Overall,": [
+      252
+    ],
+    "minutes": [
+      254
+    ],
+    "discussion": [
+      256
+    ],
+    "translated": [
+      258
+    ],
+    "transcribed.": [
+      260
+    ],
+    "results": [
+      262
+    ],
+    "analyzed": [
+      264
+    ],
+    "using": [
+      265
+    ],
+    "reflexive": [
+      266
+    ],
+    "thematic": [
+      267
+    ],
+    "analysis.": [
+      268
+    ],
+    "RESULTS:": [
+      269
+    ],
+    "identified": [
+      271
+    ],
+    "that": [
+      273
+    ],
+    "impacted": [
+      274
+    ],
+    "physicians'": [
+      275,
+      379
+    ],
+    "They": [
+      286
+    ],
+    "frequently": [
+      287
+    ],
+    "dealt": [
+      288
+    ],
+    "undiagnosed": [
+      290
+    ],
+    "patients,": [
+      291
+    ],
+    "which": [
+      292
+    ],
+    "put": [
+      293
+    ],
+    "them": [
+      294
+    ],
+    "at": [
+      295
+    ],
+    "risk.": [
+      296
+    ],
+    "Physicians": [
+      297
+    ],
+    "often": [
+      298,
+      347
+    ],
+    "feared": [
+      299
+    ],
+    "potential": [
+      301
+    ],
+    "danger": [
+      302
+    ],
+    "profession": [
+      304
+    ],
+    "posed": [
+      305
+    ],
+    "families,": [
+      308
+    ],
+    "choosing": [
+      309
+    ],
+    "prioritize": [
+      311
+    ],
+    "family's": [
+      313
+    ],
+    "safety": [
+      314
+    ],
+    "over": [
+      315
+    ],
+    "own.": [
+      317
+    ],
+    "In": [
+      318,
+      354
+    ],
+    "addition,": [
+      319,
+      355
+    ],
+    "heavy": [
+      320
+    ],
+    "workloads,": [
+      321
+    ],
+    "excessive": [
+      322
+    ],
+    "duty": [
+      323
+    ],
+    "hours,": [
+      324
+    ],
+    "shortage": [
+      327
+    ],
+    "colleagues": [
+      329
+    ],
+    "substantially": [
+      330
+    ],
+    "sleep": [
+      333
+    ],
+    "patterns": [
+      334
+    ],
+    "disrupted": [
+      336
+    ],
+    "regular": [
+      338
+    ],
+    "work": [
+      339,
+      377,
+      437
+    ],
+    "schedules.": [
+      340
+    ],
+    "Instead": [
+      341
+    ],
+    "receiving": [
+      343
+    ],
+    "societal": [
+      344
+    ],
+    "support,": [
+      345
+    ],
+    "perceptions": [
+      350
+    ],
+    "public.": [
+      353
+    ],
+    "times": [
+      357
+    ],
+    "mass": [
+      359
+    ],
+    "patient": [
+      360
+    ],
+    "deaths,": [
+      361
+    ],
+    "many": [
+      362
+    ],
+    "struggled": [
+      364
+    ],
+    "cope": [
+      366
+    ],
+    "emotions": [
+      369
+    ],
+    "without": [
+      370
+    ],
+    "any": [
+      371
+    ],
+    "CONCLUSIONS:": [
+      375
+    ],
+    "Our": [
+      376
+    ],
+    "shows": [
+      378
+    ],
+    "various": [
+      386
+    ],
+    "difficulties.": [
+      388
+    ],
+    "understood": [
+      390
+    ],
+    "concerns": [
+      392
+    ],
+    "suggested": [
+      394
+    ],
+    "(emphasizes": [
+      397
+    ],
+    "addressing": [
+      400
+    ],
+    "users'": [
+      401
+    ],
+    "behavior": [
+      402
+    ],
+    "within": [
+      403
+    ],
+    "its": [
+      404
+    ],
+    "context)": [
+      406
+    ],
+    "intervention": [
+      407
+    ],
+    "inspired": [
+      409
+    ],
+    "framework.": [
+      413
+    ],
+    "emphasize": [
+      415
+    ],
+    "importance": [
+      417
+    ],
+    "integrating": [
+      419
+    ],
+    "both": [
+      420
+    ],
+    "technological": [
+      423
+    ],
+    "interventions.": [
+      424
+    ],
+    "Through": [
+      425
+    ],
+    "model,": [
+      427
+    ],
+    "our": [
+      428
+    ],
+    "goal": [
+      429
+    ],
+    "involve": [
+      432
+    ],
+    "stakeholders": [
+      433
+    ],
+    "redesigning": [
+      435
+    ],
+    "environment": [
+      438
+    ],
+    "ensuring": [
+      441
+    ],
+    "long": [
+      447
+    ],
+    "term": [
+      448
+    ],
+    "adaptable": [
+      450
+    ],
+    "different": [
+      452
+    ],
+    "situations.": [
+      453
+    ]
   },
   "counts_by_year": [],
   "updated_date": "2026-06-11T09:08:48.828518",

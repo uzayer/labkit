@@ -12,8 +12,8 @@ teamMembers:
 grants:
   - uiu-2022
 publications:
-  - 'Investigating Rhythmicity in App Usage to Predict Depressive Symptoms'
-  - 'A Fast and Minimal System to Identify Depression Using Smartphones'
+  - "Investigating Rhythmicity in App Usage to Predict Depressive Symptoms"
+  - "A Fast and Minimal System to Identify Depression Using Smartphones"
 ---
 
 ## Overview

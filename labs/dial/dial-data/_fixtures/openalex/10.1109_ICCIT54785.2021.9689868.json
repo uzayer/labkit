@@ -25,7 +25,9 @@
     "raw_type": "proceedings-article"
   },
   "type": "article",
-  "indexed_in": ["crossref"],
+  "indexed_in": [
+    "crossref"
+  ],
   "open_access": {
     "is_oa": false,
     "oa_status": "closed",
@@ -47,10 +49,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Kazi Rumman Reswan Turjo",
       "raw_affiliation_strings": [
@@ -61,11 +67,15 @@
       "affiliations": [
         {
           "raw_affiliation_string": "North South University,Electrical and Computer Engineering,Dhaka,Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         },
         {
           "raw_affiliation_string": "Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -83,10 +93,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Partho Anthony D’Costa",
       "raw_affiliation_strings": [
@@ -97,11 +111,15 @@
       "affiliations": [
         {
           "raw_affiliation_string": "North South University,Electrical and Computer Engineering,Dhaka,Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         },
         {
           "raw_affiliation_string": "Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -119,10 +137,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Surjo Bhowmick",
       "raw_affiliation_strings": [
@@ -133,11 +155,15 @@
       "affiliations": [
         {
           "raw_affiliation_string": "North South University,Electrical and Computer Engineering,Dhaka,Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         },
         {
           "raw_affiliation_string": "Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -155,10 +181,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Asadullah Galib",
       "raw_affiliation_strings": [
@@ -169,11 +199,15 @@
       "affiliations": [
         {
           "raw_affiliation_string": "North South University,Electrical and Computer Engineering,Dhaka,Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         },
         {
           "raw_affiliation_string": "Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -191,10 +225,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Sami Raian",
       "raw_affiliation_strings": [
@@ -205,11 +243,15 @@
       "affiliations": [
         {
           "raw_affiliation_string": "North South University,Electrical and Computer Engineering,Dhaka,Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         },
         {
           "raw_affiliation_string": "Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -227,10 +269,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Mst. Shapna Akter",
       "raw_affiliation_strings": [
@@ -241,11 +287,15 @@
       "affiliations": [
         {
           "raw_affiliation_string": "North South University,Electrical and Computer Engineering,Dhaka,Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         },
         {
           "raw_affiliation_string": "Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -263,10 +313,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Nova Ahmed",
       "raw_affiliation_strings": [
@@ -277,11 +331,15 @@
       "affiliations": [
         {
           "raw_affiliation_string": "North South University,Electrical and Computer Engineering,Dhaka,Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         },
         {
           "raw_affiliation_string": "Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -299,10 +357,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "M.R.C. Mahdy",
       "raw_affiliation_strings": [
@@ -313,11 +375,15 @@
       "affiliations": [
         {
           "raw_affiliation_string": "North South University,Electrical and Computer Engineering,Dhaka,Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         },
         {
           "raw_affiliation_string": "Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     }
@@ -326,7 +392,9 @@
   "countries_distinct_count": 1,
   "institutions_distinct_count": 1,
   "corresponding_author_ids": [],
-  "corresponding_institution_ids": ["https://openalex.org/I157386601"],
+  "corresponding_institution_ids": [
+    "https://openalex.org/I157386601"
+  ],
   "apc_list": null,
   "apc_paid": null,
   "fwci": 0.6102,
@@ -641,115 +709,397 @@
     "https://openalex.org/W3187081175"
   ],
   "abstract_inverted_index": {
-    "Physical": [0],
-    "abuse": [1],
-    "and": [2, 15, 49, 69, 74, 121, 168],
-    "sexual": [3],
-    "harassment": [4],
-    "are": [5],
-    "serious": [6],
-    "issues": [7],
-    "all": [8],
-    "over": [9],
-    "the": [10, 31, 59, 62, 75, 80, 118, 128, 144, 164],
-    "world.": [11],
-    "In": [12],
-    "Bangladesh,": [13],
-    "India,": [14],
-    "other": [16],
-    "south": [17],
-    "Asian": [18],
-    "countries,": [19],
-    "crimes": [20],
-    "of": [21, 61, 86, 97, 130, 156],
-    "these": [22],
-    "natures": [23],
-    "have": [24, 35],
-    "risen": [25],
-    "to": [26, 90, 116, 139, 162],
-    "a": [27, 51, 92, 95, 154],
-    "substantial": [28],
-    "number": [29],
-    "during": [30],
-    "past": [32],
-    "decade.": [33],
-    "We": [34],
-    "designed": [36, 110, 126],
-    "an": [37, 72, 102],
-    "Arduino-based": [38],
-    "simple": [39],
-    "safety-vest": [40],
-    "device": [41, 81, 93, 119, 134, 152],
-    "by": [42, 111],
-    "using": [43, 149],
-    "E-Textiles": [44],
-    "as": [45, 71, 94, 153],
-    "pressure": [46],
-    "sensing": [47],
-    "fabric": [48],
-    "incorporated": [50],
-    "mobile": [52],
-    "application": [53, 77],
-    "for": [54, 99, 170],
-    "women.": [55],
-    "This": [56, 105],
-    "paper": [57],
-    "explains": [58],
-    "details": [60],
-    "proposed": [63],
-    "smart": [64, 106],
-    "device,": [65],
-    "which": [66, 79],
-    "is": [67, 82, 89],
-    "cost-effective": [68, 151],
-    "re-usable": [70],
-    "undergarment,": [73],
-    "smartphone": [76],
-    "with": [78, 127],
-    "incorporated.": [83],
-    "The": [84, 133],
-    "aim": [85],
-    "this": [87, 150],
-    "idea": [88],
-    "provide": [91],
-    "sense": [96, 155],
-    "protection": [98],
-    "women": [100],
-    "at": [101],
-    "affordable": [103],
-    "range.": [104],
-    "vest": [107, 165],
-    "has": [108, 124, 135, 159],
-    "been": [109, 125, 137],
-    "conducting": [112],
-    "various": [113],
-    "real-life": [114],
-    "experiments": [115],
-    "make": [117, 163],
-    "efficient": [120],
-    "accurate.": [122],
-    "It": [123, 158],
-    "target": [129],
-    "commercial": [131],
-    "use.": [132],
-    "also": [136],
-    "beta-tested": [138],
-    "get": [140],
-    "some": [141],
-    "insights": [142],
-    "from": [143],
-    "people": [145],
-    "who": [146],
-    "will": [147],
-    "be": [148],
-    "protection.": [157],
-    "eventually": [160],
-    "helped": [161],
-    "more": [166],
-    "reliable": [167],
-    "user-friendly": [169],
-    "future": [171],
-    "commercialization.": [172]
+    "Physical": [
+      0
+    ],
+    "abuse": [
+      1
+    ],
+    "and": [
+      2,
+      15,
+      49,
+      69,
+      74,
+      121,
+      168
+    ],
+    "sexual": [
+      3
+    ],
+    "harassment": [
+      4
+    ],
+    "are": [
+      5
+    ],
+    "serious": [
+      6
+    ],
+    "issues": [
+      7
+    ],
+    "all": [
+      8
+    ],
+    "over": [
+      9
+    ],
+    "the": [
+      10,
+      31,
+      59,
+      62,
+      75,
+      80,
+      118,
+      128,
+      144,
+      164
+    ],
+    "world.": [
+      11
+    ],
+    "In": [
+      12
+    ],
+    "Bangladesh,": [
+      13
+    ],
+    "India,": [
+      14
+    ],
+    "other": [
+      16
+    ],
+    "south": [
+      17
+    ],
+    "Asian": [
+      18
+    ],
+    "countries,": [
+      19
+    ],
+    "crimes": [
+      20
+    ],
+    "of": [
+      21,
+      61,
+      86,
+      97,
+      130,
+      156
+    ],
+    "these": [
+      22
+    ],
+    "natures": [
+      23
+    ],
+    "have": [
+      24,
+      35
+    ],
+    "risen": [
+      25
+    ],
+    "to": [
+      26,
+      90,
+      116,
+      139,
+      162
+    ],
+    "a": [
+      27,
+      51,
+      92,
+      95,
+      154
+    ],
+    "substantial": [
+      28
+    ],
+    "number": [
+      29
+    ],
+    "during": [
+      30
+    ],
+    "past": [
+      32
+    ],
+    "decade.": [
+      33
+    ],
+    "We": [
+      34
+    ],
+    "designed": [
+      36,
+      110,
+      126
+    ],
+    "an": [
+      37,
+      72,
+      102
+    ],
+    "Arduino-based": [
+      38
+    ],
+    "simple": [
+      39
+    ],
+    "safety-vest": [
+      40
+    ],
+    "device": [
+      41,
+      81,
+      93,
+      119,
+      134,
+      152
+    ],
+    "by": [
+      42,
+      111
+    ],
+    "using": [
+      43,
+      149
+    ],
+    "E-Textiles": [
+      44
+    ],
+    "as": [
+      45,
+      71,
+      94,
+      153
+    ],
+    "pressure": [
+      46
+    ],
+    "sensing": [
+      47
+    ],
+    "fabric": [
+      48
+    ],
+    "incorporated": [
+      50
+    ],
+    "mobile": [
+      52
+    ],
+    "application": [
+      53,
+      77
+    ],
+    "for": [
+      54,
+      99,
+      170
+    ],
+    "women.": [
+      55
+    ],
+    "This": [
+      56,
+      105
+    ],
+    "paper": [
+      57
+    ],
+    "explains": [
+      58
+    ],
+    "details": [
+      60
+    ],
+    "proposed": [
+      63
+    ],
+    "smart": [
+      64,
+      106
+    ],
+    "device,": [
+      65
+    ],
+    "which": [
+      66,
+      79
+    ],
+    "is": [
+      67,
+      82,
+      89
+    ],
+    "cost-effective": [
+      68,
+      151
+    ],
+    "re-usable": [
+      70
+    ],
+    "undergarment,": [
+      73
+    ],
+    "smartphone": [
+      76
+    ],
+    "with": [
+      78,
+      127
+    ],
+    "incorporated.": [
+      83
+    ],
+    "The": [
+      84,
+      133
+    ],
+    "aim": [
+      85
+    ],
+    "this": [
+      87,
+      150
+    ],
+    "idea": [
+      88
+    ],
+    "provide": [
+      91
+    ],
+    "sense": [
+      96,
+      155
+    ],
+    "protection": [
+      98
+    ],
+    "women": [
+      100
+    ],
+    "at": [
+      101
+    ],
+    "affordable": [
+      103
+    ],
+    "range.": [
+      104
+    ],
+    "vest": [
+      107,
+      165
+    ],
+    "has": [
+      108,
+      124,
+      135,
+      159
+    ],
+    "been": [
+      109,
+      125,
+      137
+    ],
+    "conducting": [
+      112
+    ],
+    "various": [
+      113
+    ],
+    "real-life": [
+      114
+    ],
+    "experiments": [
+      115
+    ],
+    "make": [
+      117,
+      163
+    ],
+    "efficient": [
+      120
+    ],
+    "accurate.": [
+      122
+    ],
+    "It": [
+      123,
+      158
+    ],
+    "target": [
+      129
+    ],
+    "commercial": [
+      131
+    ],
+    "use.": [
+      132
+    ],
+    "also": [
+      136
+    ],
+    "beta-tested": [
+      138
+    ],
+    "get": [
+      140
+    ],
+    "some": [
+      141
+    ],
+    "insights": [
+      142
+    ],
+    "from": [
+      143
+    ],
+    "people": [
+      145
+    ],
+    "who": [
+      146
+    ],
+    "will": [
+      147
+    ],
+    "be": [
+      148
+    ],
+    "protection.": [
+      157
+    ],
+    "eventually": [
+      160
+    ],
+    "helped": [
+      161
+    ],
+    "more": [
+      166
+    ],
+    "reliable": [
+      167
+    ],
+    "user-friendly": [
+      169
+    ],
+    "future": [
+      171
+    ],
+    "commercialization.": [
+      172
+    ]
   },
   "counts_by_year": [
     {

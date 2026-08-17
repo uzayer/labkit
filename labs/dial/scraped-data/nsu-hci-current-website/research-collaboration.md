@@ -7,13 +7,13 @@ Skip to main content
 
 Skip to navigation
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/research-collaboration#h.p_tznmntD_pQ8k) Industry Collaboration
+## [Copy heading link](https://sites.google.com/view/nsuhci/research-collaboration\#h.p_tznmntD_pQ8k)    Industry Collaboration
 
 [![](https://lh3.googleusercontent.com/sitesv/APaQ0STtIzF8WiEFVffYZ5_bUAC0LwWwYPJfUWncaEI-9zEyjKHSRvSVhIZjGVt78f7sFMxxWv9KCm43csFk0uTzDsNqMf8pdD5n0eHAejZyC0_m3CV7rMTbrhmnBPUjN6drVju9jbKQQqtMuEeHgqXkWla0Qen2jDHBEGzX2SnDadlbRQ_svjP74JUzAG7xOHCV3le7hN720EShrn9EU92YUNOAzdovAbGgvFOl38U=w1280)](http://www.google.com/url?q=http%3A%2F%2Fmethopoth.org&sa=D&sntz=1&usg=AOvVaw3-OMMQyDBu4UfTwNiW9icj)
 
 ![](https://lh3.googleusercontent.com/sitesv/APaQ0STovsIpJG8_6Ek1rv6dt4UcGV-xbvwImhMKQ49T_zMFN_o4OCaMUe5laX3OctmGYmPw1ew_NUTuUjBjxBImrzlG8ahMD5P_5ECjNrTWCIj0JHRyGn0ywfrOm_yqnneF-SKwor_uycmFGKzPPv-fp5gsA4HlhPVCNtUhggrGps98QW5j28yjgjmkWNwaVy0eS3e6bc9fsAAb=w1280)
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/research-collaboration#h.p_pzkk69DWp0wl) Collaborative Research Programs
+## [Copy heading link](https://sites.google.com/view/nsuhci/research-collaboration\#h.p_pzkk69DWp0wl)    Collaborative Research Programs
 
 ![](https://lh3.googleusercontent.com/sitesv/APaQ0SRYUIZkUPCecFWrN5dlNXoymBbtz9863hRdOkBMwHShkwWOs3aLtMmpentfplgJFWHv7FWGHkyu9rxlLG6wcAFJaNb5sOVjKU9IUL-zb_8rx5xtTguxYHHKOcp3WQAOtWG0zR4R8Ovypkt-4SA_gSmzuFRez3IBAvH-gWXQpB3zgpxhFFNNgXDffKnbR0KjYeY_b2jhvOqH2MzoBVtRXteHgssCTBrIZW3EAc8=w1280)
 
@@ -35,7 +35,7 @@ Skip to navigation
 
 ![](https://lh3.googleusercontent.com/sitesv/APaQ0SS-XjxDiYCEc2I_EBKCE-edAQDBO9AScF5gp6dJLmDRKeSAETfpwUPmIPc4OB1gbRe8KUrYnrsPqaLjZr3Ms8g73vupEQ6YzAgnDAgXbkkJPtsHjqxu2850w7__GztaEYNwYeg8Dbvd32yiNxJTUMZiDd_VhdywHfDX44B1Rz4rlhoyz5we7_o4Dd-xyBozH6Q8FmFjHb2zuMZifkpna5XwkyoR3ZKP18qnrCQ=w1280)
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/research-collaboration#h.p_EjDU-h3wqKrO) Academic Research Collaboration
+## [Copy heading link](https://sites.google.com/view/nsuhci/research-collaboration\#h.p_EjDU-h3wqKrO)    Academic Research Collaboration
 
 ![](https://lh3.googleusercontent.com/sitesv/APaQ0SSX1EYrX-5CpCxpyDHGJOjRLicaUV-hWEIif3FZ5WvqSuwQbITVkmittz_AYkm1BVKZhTrceZMJxaB8xQkPvePYqKbGgvfMvO2imRp86LVIHv8PhrNC7LDOUZjPF2PS10R7C4PDtMuVmdpv41Q0agHmttEWtzUSRLISBJqTnaqEdAn25U2qSaJCGsQqz6LD2vdW0Q2FugdNAwqVmtamxu-CLPJwF-yLLJgDlc0=w1280)
 
@@ -61,7 +61,7 @@ Skip to navigation
 
 ![](https://lh3.googleusercontent.com/sitesv/APaQ0SSReIh2nDTvxYfH_CuulcY8yagysHspdbQB42f4fwNvB0uy2S8nnopFUskt_3ANzSS4zAM7hH_X7DIgtuBdLhY_8snmdCCje-ujt_WMUHK63u-VopEM5Y4x11X_FW_sx01MVbTWNmktM8qQVsXjY0fpJweqvexaOtyM3ud5Yu4gs3NWYyGqrN2fAGph_thoZBCfyYEaRbDj4nMf2zyjVCOYYHNBVNyn0BxCLFA=w1280)
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/research-collaboration#h.p_iYHbJSrBriHU) Financial, Community and Venue Support
+## [Copy heading link](https://sites.google.com/view/nsuhci/research-collaboration\#h.p_iYHbJSrBriHU)    Financial, Community and Venue Support
 
 ![](https://lh3.googleusercontent.com/sitesv/APaQ0SSAdEARsOxZNzPkyRmHWMBFCyiu7A2My0RpuYX46zT-MSTuomzoGnKi5yb3OJpoeZkdWeXSFYO69uYK91BRDw7uyzgA_zg7nZCjU3gBeHEspB8VS1ETuPo6jWzuLx2Ttwy2RiEEnEmIz9VPlxbYXsCmVR9iUMat=w1280)
 
@@ -71,9 +71,9 @@ Skip to navigation
 
 ![](https://lh3.googleusercontent.com/sitesv/APaQ0SQwRwnC7f54vwuu0OJY6lMtDl-F4eJPvv4TgDtxFImIYu7bR5pLaFJ-Wi6aDu7OPzdjeDOhze7Y4QgiTXhEF0GSycpC5m2t5ubYj2ORK1XdblgaT51PHFBPcUu3Kr9Cx1M00HWc3sAdS5Er8FvGdVkUl5ZMUiIMBCFAKV0FiI5NgHiumN0olm1hvy-1ye5UucigoUHPFaPn=w1280)
 
-# [Copy heading link](https://sites.google.com/view/nsuhci/research-collaboration#h.p_c7BCpGNksFgT) Dhaka ACM
+# [Copy heading link](https://sites.google.com/view/nsuhci/research-collaboration\#h.p_c7BCpGNksFgT)    Dhaka ACM
 
-# [Copy heading link](https://sites.google.com/view/nsuhci/research-collaboration#h.p_JDMA2eHmsRRR) SIGCHI Chapter
+# [Copy heading link](https://sites.google.com/view/nsuhci/research-collaboration\#h.p_JDMA2eHmsRRR)    SIGCHI Chapter
 
 ![](https://lh3.googleusercontent.com/sitesv/APaQ0SQC369aXneJay5ysm09Wy9_0DrtJaisAIi9i9TIctGqOT6GCFeB7q6titMDz_lYZN6bPizuTytbimXWo-FHA4s3xZ4Es0YIEV8nmvnw_Ti76j9XIJt3DQeoXE7TawWCcOIIydGkDmpwF3M6H_Rd9N_w9p21yeamWWMepRTcngORd4_2G0iYB-sK399LT-xw7DHbUJ_iyHu6F7Q=w1280)
 

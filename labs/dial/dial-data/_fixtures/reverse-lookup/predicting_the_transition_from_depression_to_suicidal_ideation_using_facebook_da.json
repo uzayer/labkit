@@ -8,7 +8,13 @@
     "items": [
       {
         "indexed": {
-          "date-parts": [[2026, 6, 30]],
+          "date-parts": [
+            [
+              2026,
+              6,
+              30
+            ]
+          ],
           "date-time": "2026-06-30T18:43:26Z",
           "timestamp": 1782845006246,
           "version": "3.54.5"
@@ -19,12 +25,20 @@
           "domain": [],
           "crossmark-restriction": false
         },
-        "short-container-title": ["JMIR Res Protoc"],
+        "short-container-title": [
+          "JMIR Res Protoc"
+        ],
         "abstract": "<jats:sec>\n                    <jats:title>Background</jats:title>\n                    <jats:p>Suicide stands as a global public health concern with a pronounced impact, especially in low- and middle-income countries, where it remains largely unnoticed as a significant health concern, leading to delays in diagnosis and intervention. South Asia, in particular, has seen limited development in this area of research, and applying existing models from other regions is challenging due to cost constraints and the region’s distinct linguistics and behavior. Social media analysis, notably on platforms such as Facebook (Meta Platforms Inc), offers the potential for detecting major depressive disorder and aiding individuals at risk of suicidal ideation.</jats:p>\n                  </jats:sec>\n                  <jats:sec>\n                    <jats:title>Objective</jats:title>\n                    <jats:p>This study primarily focuses on India and Bangladesh, both South Asian countries. It aims to construct a predictive model for suicidal ideation by incorporating unique, unexplored features along with masked content from both public and private Facebook profiles. Moreover, the research aims to fill the existing research gap by addressing the distinct challenges posed by South Asia’s unique behavioral patterns, socioeconomic conditions, and linguistic nuances. Ultimately, this research strives to enhance suicide prevention efforts in the region by offering a cost-effective solution.</jats:p>\n                  </jats:sec>\n                  <jats:sec>\n                    <jats:title>Methods</jats:title>\n                    <jats:p>This quantitative research study will gather data through a web-based platform. Initially, participants will be asked a few demographic questions and to complete the 9-item Patient Health Questionnaire assessment. Eligible participants who provide consent will receive an email requesting them to upload a ZIP file of their Facebook data. The study will begin by determining whether Facebook is the primary application for the participants based on their active hours and Facebook use duration. Subsequently, the predictive model will incorporate a wide range of previously unexplored variables, including anonymous postings, and textual analysis features, such as captions, biographic information, group membership, preferred pages, interactions with advertisement content, and search history. The model will also analyze the use of emojis and the types of games participants engage with on Facebook.</jats:p>\n                  </jats:sec>\n                  <jats:sec>\n                    <jats:title>Results</jats:title>\n                    <jats:p>The study obtained approval from the scientific review committee on October 2, 2023, and subsequently received institutional review committee ethical clearance on December 8, 2023. Our system is anticipated to automatically detect posts related to depression by analyzing the text and use pattern of the individual with the best accuracy possible. Ultimately, our research aims to have practical utility in identifying individuals who may be at risk of depression or in need of mental health support.</jats:p>\n                  </jats:sec>\n                  <jats:sec>\n                    <jats:title>Conclusions</jats:title>\n                    <jats:p>This initiative aims to enhance engagement in suicidal ideation medical care in South Asia to improve health outcomes. It is set to be the first study to consider predicting participants’ primary social application use before analyzing their content to forecast behavior and mental states. The study holds the potential to revolutionize strategies and offer insights for scalable, accessible interventions while maintaining quality through comprehensive Facebook feature analysis.</jats:p>\n                  </jats:sec>\n                  <jats:sec>\n                    <jats:title>International Registered Report Identifier (IRRID)</jats:title>\n                    <jats:p>DERR1-10.2196/55511</jats:p>\n                  </jats:sec>",
         "DOI": "10.2196/55511",
         "type": "journal-article",
         "created": {
-          "date-parts": [[2024, 2, 29]],
+          "date-parts": [
+            [
+              2024,
+              2,
+              29
+            ]
+          ],
           "date-time": "2024-02-29T03:52:00Z",
           "timestamp": 1709178720000
         },
@@ -96,7 +110,13 @@
         ],
         "member": "1010",
         "published-online": {
-          "date-parts": [[2024, 10, 7]]
+          "date-parts": [
+            [
+              2024,
+              10,
+              7
+            ]
+          ]
         },
         "reference": [
           {
@@ -578,7 +598,9 @@
             "DOI": "10.2196/jmir.7023"
           }
         ],
-        "container-title": ["JMIR Research Protocols"],
+        "container-title": [
+          "JMIR Research Protocols"
+        ],
         "language": "en",
         "link": [
           {
@@ -589,7 +611,13 @@
           }
         ],
         "deposited": {
-          "date-parts": [[2026, 6, 30]],
+          "date-parts": [
+            [
+              2026,
+              6,
+              30
+            ]
+          ],
           "date-time": "2026-06-30T17:43:24Z",
           "timestamp": 1782841404000
         },
@@ -600,7 +628,13 @@
           }
         },
         "issued": {
-          "date-parts": [[2024, 10, 7]]
+          "date-parts": [
+            [
+              2024,
+              10,
+              7
+            ]
+          ]
         },
         "references-count": 101,
         "URL": "https://doi.org/10.2196/55511",
@@ -613,7 +647,9 @@
             }
           ]
         },
-        "ISSN": ["1929-0748"],
+        "ISSN": [
+          "1929-0748"
+        ],
         "issn-type": [
           {
             "value": "1929-0748",
@@ -621,18 +657,36 @@
           }
         ],
         "published": {
-          "date-parts": [[2024, 10, 7]]
+          "date-parts": [
+            [
+              2024,
+              10,
+              7
+            ]
+          ]
         }
       },
       {
         "indexed": {
-          "date-parts": [[2025, 2, 21]],
+          "date-parts": [
+            [
+              2025,
+              2,
+              21
+            ]
+          ],
           "date-time": "2025-02-21T00:47:42Z",
           "timestamp": 1740098862747,
           "version": "3.37.3"
         },
         "posted": {
-          "date-parts": [[2023, 12, 15]]
+          "date-parts": [
+            [
+              2023,
+              12,
+              15
+            ]
+          ]
         },
         "group-title": "JMIR Research Protocols",
         "reference-count": 64,
@@ -645,7 +699,13 @@
         "DOI": "10.2196/preprints.55511",
         "type": "posted-content",
         "created": {
-          "date-parts": [[2023, 12, 15]],
+          "date-parts": [
+            [
+              2023,
+              12,
+              15
+            ]
+          ],
           "date-time": "2023-12-15T12:41:10Z",
           "timestamp": 1702644070000
         },
@@ -1037,7 +1097,13 @@
           }
         ],
         "deposited": {
-          "date-parts": [[2024, 10, 7]],
+          "date-parts": [
+            [
+              2024,
+              10,
+              7
+            ]
+          ],
           "date-time": "2024-10-07T14:00:39Z",
           "timestamp": 1728309639000
         },
@@ -1048,7 +1114,13 @@
           }
         },
         "issued": {
-          "date-parts": [[2023, 12, 15]]
+          "date-parts": [
+            [
+              2023,
+              12,
+              15
+            ]
+          ]
         },
         "references-count": 64,
         "URL": "https://doi.org/10.2196/preprints.55511",
@@ -1062,19 +1134,37 @@
           ]
         },
         "published": {
-          "date-parts": [[2023, 12, 15]]
+          "date-parts": [
+            [
+              2023,
+              12,
+              15
+            ]
+          ]
         },
         "subtype": "preprint"
       },
       {
         "indexed": {
-          "date-parts": [[2026, 2, 28]],
+          "date-parts": [
+            [
+              2026,
+              2,
+              28
+            ]
+          ],
           "date-time": "2026-02-28T01:47:38Z",
           "timestamp": 1772243258029,
           "version": "3.50.1"
         },
         "posted": {
-          "date-parts": [[2025, 7, 21]]
+          "date-parts": [
+            [
+              2025,
+              7,
+              21
+            ]
+          ]
         },
         "group-title": "PsyArXiv",
         "reference-count": 0,
@@ -1082,7 +1172,13 @@
         "license": [
           {
             "start": {
-              "date-parts": [[2025, 7, 21]],
+              "date-parts": [
+                [
+                  2025,
+                  7,
+                  21
+                ]
+              ],
               "date-time": "2025-07-21T00:00:00Z",
               "timestamp": 1753056000000
             },
@@ -1099,7 +1195,13 @@
         "DOI": "10.31234/osf.io/rqyvx_v1",
         "type": "posted-content",
         "created": {
-          "date-parts": [[2025, 7, 21]],
+          "date-parts": [
+            [
+              2025,
+              7,
+              21
+            ]
+          ],
           "date-time": "2025-07-21T18:03:27Z",
           "timestamp": 1753121007000
         },
@@ -1167,7 +1269,13 @@
         ],
         "member": "15934",
         "deposited": {
-          "date-parts": [[2025, 8, 25]],
+          "date-parts": [
+            [
+              2025,
+              8,
+              25
+            ]
+          ],
           "date-time": "2025-08-25T21:12:36Z",
           "timestamp": 1756156356000
         },
@@ -1178,7 +1286,13 @@
           }
         },
         "issued": {
-          "date-parts": [[2025, 7, 21]]
+          "date-parts": [
+            [
+              2025,
+              7,
+              21
+            ]
+          ]
         },
         "references-count": 0,
         "URL": "https://doi.org/10.31234/osf.io/rqyvx_v1",
@@ -1192,7 +1306,13 @@
           ]
         },
         "published": {
-          "date-parts": [[2025, 7, 21]]
+          "date-parts": [
+            [
+              2025,
+              7,
+              21
+            ]
+          ]
         },
         "subtype": "preprint"
       }

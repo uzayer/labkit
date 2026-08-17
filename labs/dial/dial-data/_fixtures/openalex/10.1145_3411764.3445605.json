@@ -26,7 +26,9 @@
     "raw_type": "proceedings-article"
   },
   "type": "article",
-  "indexed_in": ["crossref"],
+  "indexed_in": [
+    "crossref"
+  ],
   "open_access": {
     "is_oa": false,
     "oa_status": "closed",
@@ -48,10 +50,14 @@
           "ror": "https://ror.org/05b5x4a35",
           "country_code": "PK",
           "type": "education",
-          "lineage": ["https://openalex.org/I207789805"]
+          "lineage": [
+            "https://openalex.org/I207789805"
+          ]
         }
       ],
-      "countries": ["PK"],
+      "countries": [
+        "PK"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Maryam Mustafa",
       "raw_affiliation_strings": [
@@ -61,7 +67,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Computer Science Lahore University of Management Sciences, Pakistan",
-          "institution_ids": ["https://openalex.org/I207789805"]
+          "institution_ids": [
+            "https://openalex.org/I207789805"
+          ]
         }
       ]
     },
@@ -79,10 +87,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Kimia Tuz Zaman",
       "raw_affiliation_strings": [
@@ -92,7 +104,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Department of Electrical and Computer Engineering North South University, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -110,10 +124,14 @@
           "ror": "https://ror.org/05b5x4a35",
           "country_code": "PK",
           "type": "education",
-          "lineage": ["https://openalex.org/I207789805"]
+          "lineage": [
+            "https://openalex.org/I207789805"
+          ]
         }
       ],
-      "countries": ["PK"],
+      "countries": [
+        "PK"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Tallal Ahmad",
       "raw_affiliation_strings": [
@@ -123,7 +141,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Department of Computer Science Lahore University of Management Sciences, Pakistan",
-          "institution_ids": ["https://openalex.org/I207789805"]
+          "institution_ids": [
+            "https://openalex.org/I207789805"
+          ]
         }
       ]
     },
@@ -141,7 +161,9 @@
           "ror": "https://ror.org/00jmfr291",
           "country_code": "US",
           "type": "education",
-          "lineage": ["https://openalex.org/I27837315"]
+          "lineage": [
+            "https://openalex.org/I27837315"
+          ]
         },
         {
           "id": "https://openalex.org/I4210111179",
@@ -149,18 +171,27 @@
           "ror": "https://ror.org/0291ys696",
           "country_code": "US",
           "type": "nonprofit",
-          "lineage": ["https://openalex.org/I4210111179"]
+          "lineage": [
+            "https://openalex.org/I4210111179"
+          ]
         }
       ],
-      "countries": ["US"],
+      "countries": [
+        "US"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Amna Batool",
-      "raw_affiliation_strings": ["School of Information University of Michigan, United States"],
+      "raw_affiliation_strings": [
+        "School of Information University of Michigan, United States"
+      ],
       "raw_orcid": null,
       "affiliations": [
         {
           "raw_affiliation_string": "School of Information University of Michigan, United States",
-          "institution_ids": ["https://openalex.org/I27837315", "https://openalex.org/I4210111179"]
+          "institution_ids": [
+            "https://openalex.org/I27837315",
+            "https://openalex.org/I4210111179"
+          ]
         }
       ]
     },
@@ -178,10 +209,14 @@
           "ror": "https://ror.org/026w31v75",
           "country_code": "MY",
           "type": "education",
-          "lineage": ["https://openalex.org/I4576418"]
+          "lineage": [
+            "https://openalex.org/I4576418"
+          ]
         }
       ],
-      "countries": ["MY"],
+      "countries": [
+        "MY"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Masitah Ghazali",
       "raw_affiliation_strings": [
@@ -191,7 +226,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "UTM ViCubeLab Research Group Universiti Teknologi Malaysia and School of Computing, Malaysia",
-          "institution_ids": ["https://openalex.org/I4576418"]
+          "institution_ids": [
+            "https://openalex.org/I4576418"
+          ]
         }
       ]
     },
@@ -209,10 +246,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Nova Ahmed",
       "raw_affiliation_strings": [
@@ -222,7 +263,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Department of Electrical and Computer Engineering North South University, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     }
@@ -489,97 +532,336 @@
     "https://openalex.org/W4396696052"
   ],
   "abstract_inverted_index": {
-    "We": [0, 111],
-    "present": [1],
-    "findings": [2],
-    "from": [3],
-    "a": [4, 19, 89],
-    "three": [5, 31],
-    "country": [6],
-    "study": [7, 21, 51],
-    "exploring": [8],
-    "the": [9, 38, 53, 114, 128, 141],
-    "intersection": [10, 79],
-    "between": [11],
-    "female": [12, 24, 45, 83],
-    "intimate": [13, 46, 64, 132],
-    "health": [14, 47, 87, 107, 133, 144],
-    "and": [15, 29, 48, 56, 65, 74, 76, 82, 86, 94, 116, 125, 138],
-    "religious": [16],
-    "beliefs.": [17],
-    "Through": [18],
-    "qualitative": [20],
-    "with": [22, 104, 127],
-    "Muslim": [23, 33, 59, 109, 136],
-    "populations": [25],
-    "in": [26, 108],
-    "Pakistan,": [27],
-    "Bangladesh": [28],
-    "Malaysia,": [30],
-    "different": [32],
-    "majority": [34],
-    "contexts,": [35],
-    "we": [36, 95],
-    "examine": [37],
-    "deep": [39],
-    "impact": [40],
-    "Islamic": [41, 100],
-    "beliefs": [42, 124],
-    "have": [43],
-    "on": [44],
-    "well-being.": [49],
-    "Our": [50],
-    "investigates": [52],
-    "perceptions,": [54],
-    "attitudes": [55],
-    "behaviours": [57],
-    "of": [58, 71, 80, 118, 143],
-    "women": [60, 137],
-    "to": [61, 130, 139],
-    "their": [62, 69],
-    "own": [63],
-    "sexual": [66, 84],
-    "bodies": [67, 85],
-    "through": [68],
-    "experiences": [70],
-    "menarche,": [72],
-    "marriage": [73],
-    "reproduction": [75],
-    "menopause.": [77],
-    "The": [78],
-    "religion": [81],
-    "is": [88],
-    "neglected": [90],
-    "area": [91],
-    "within": [92, 146],
-    "HCI": [93],
-    "highlight": [96],
-    "how": [97],
-    "inextricably": [98],
-    "specific": [99],
-    "values": [101, 126],
-    "are": [102],
-    "linked": [103],
-    "women’s": [105],
-    "reproductive": [106],
-    "communities.": [110],
-    "further": [112],
-    "discuss": [113],
-    "opportunities": [115],
-    "challenges": [117],
-    "designing": [119],
-    "technologies": [120],
-    "for": [121],
-    "religious,": [122],
-    "non-secular": [123],
-    "aim": [129],
-    "improve": [131],
-    "practices": [134],
-    "amongst": [135],
-    "broaden": [140],
-    "scope": [142],
-    "design": [145],
-    "HCI.": [147]
+    "We": [
+      0,
+      111
+    ],
+    "present": [
+      1
+    ],
+    "findings": [
+      2
+    ],
+    "from": [
+      3
+    ],
+    "a": [
+      4,
+      19,
+      89
+    ],
+    "three": [
+      5,
+      31
+    ],
+    "country": [
+      6
+    ],
+    "study": [
+      7,
+      21,
+      51
+    ],
+    "exploring": [
+      8
+    ],
+    "the": [
+      9,
+      38,
+      53,
+      114,
+      128,
+      141
+    ],
+    "intersection": [
+      10,
+      79
+    ],
+    "between": [
+      11
+    ],
+    "female": [
+      12,
+      24,
+      45,
+      83
+    ],
+    "intimate": [
+      13,
+      46,
+      64,
+      132
+    ],
+    "health": [
+      14,
+      47,
+      87,
+      107,
+      133,
+      144
+    ],
+    "and": [
+      15,
+      29,
+      48,
+      56,
+      65,
+      74,
+      76,
+      82,
+      86,
+      94,
+      116,
+      125,
+      138
+    ],
+    "religious": [
+      16
+    ],
+    "beliefs.": [
+      17
+    ],
+    "Through": [
+      18
+    ],
+    "qualitative": [
+      20
+    ],
+    "with": [
+      22,
+      104,
+      127
+    ],
+    "Muslim": [
+      23,
+      33,
+      59,
+      109,
+      136
+    ],
+    "populations": [
+      25
+    ],
+    "in": [
+      26,
+      108
+    ],
+    "Pakistan,": [
+      27
+    ],
+    "Bangladesh": [
+      28
+    ],
+    "Malaysia,": [
+      30
+    ],
+    "different": [
+      32
+    ],
+    "majority": [
+      34
+    ],
+    "contexts,": [
+      35
+    ],
+    "we": [
+      36,
+      95
+    ],
+    "examine": [
+      37
+    ],
+    "deep": [
+      39
+    ],
+    "impact": [
+      40
+    ],
+    "Islamic": [
+      41,
+      100
+    ],
+    "beliefs": [
+      42,
+      124
+    ],
+    "have": [
+      43
+    ],
+    "on": [
+      44
+    ],
+    "well-being.": [
+      49
+    ],
+    "Our": [
+      50
+    ],
+    "investigates": [
+      52
+    ],
+    "perceptions,": [
+      54
+    ],
+    "attitudes": [
+      55
+    ],
+    "behaviours": [
+      57
+    ],
+    "of": [
+      58,
+      71,
+      80,
+      118,
+      143
+    ],
+    "women": [
+      60,
+      137
+    ],
+    "to": [
+      61,
+      130,
+      139
+    ],
+    "their": [
+      62,
+      69
+    ],
+    "own": [
+      63
+    ],
+    "sexual": [
+      66,
+      84
+    ],
+    "bodies": [
+      67,
+      85
+    ],
+    "through": [
+      68
+    ],
+    "experiences": [
+      70
+    ],
+    "menarche,": [
+      72
+    ],
+    "marriage": [
+      73
+    ],
+    "reproduction": [
+      75
+    ],
+    "menopause.": [
+      77
+    ],
+    "The": [
+      78
+    ],
+    "religion": [
+      81
+    ],
+    "is": [
+      88
+    ],
+    "neglected": [
+      90
+    ],
+    "area": [
+      91
+    ],
+    "within": [
+      92,
+      146
+    ],
+    "HCI": [
+      93
+    ],
+    "highlight": [
+      96
+    ],
+    "how": [
+      97
+    ],
+    "inextricably": [
+      98
+    ],
+    "specific": [
+      99
+    ],
+    "values": [
+      101,
+      126
+    ],
+    "are": [
+      102
+    ],
+    "linked": [
+      103
+    ],
+    "women’s": [
+      105
+    ],
+    "reproductive": [
+      106
+    ],
+    "communities.": [
+      110
+    ],
+    "further": [
+      112
+    ],
+    "discuss": [
+      113
+    ],
+    "opportunities": [
+      115
+    ],
+    "challenges": [
+      117
+    ],
+    "designing": [
+      119
+    ],
+    "technologies": [
+      120
+    ],
+    "for": [
+      121
+    ],
+    "religious,": [
+      122
+    ],
+    "non-secular": [
+      123
+    ],
+    "aim": [
+      129
+    ],
+    "improve": [
+      131
+    ],
+    "practices": [
+      134
+    ],
+    "amongst": [
+      135
+    ],
+    "broaden": [
+      140
+    ],
+    "scope": [
+      142
+    ],
+    "design": [
+      145
+    ],
+    "HCI.": [
+      147
+    ]
   },
   "counts_by_year": [
     {

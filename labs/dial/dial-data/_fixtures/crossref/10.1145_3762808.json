@@ -4,7 +4,13 @@
   "message-version": "1.0.0",
   "message": {
     "indexed": {
-      "date-parts": [[2026, 3, 13]],
+      "date-parts": [
+        [
+          2026,
+          3,
+          13
+        ]
+      ],
       "date-time": "2026-03-13T01:58:49Z",
       "timestamp": 1773367129340,
       "version": "3.50.1"
@@ -13,18 +19,34 @@
     "publisher": "Association for Computing Machinery (ACM)",
     "issue": "1",
     "content-domain": {
-      "domain": ["dl.acm.org"],
+      "domain": [
+        "dl.acm.org"
+      ],
       "crossmark-restriction": true
     },
-    "short-container-title": ["ACM Trans. Comput.-Hum. Interact."],
+    "short-container-title": [
+      "ACM Trans. Comput.-Hum. Interact."
+    ],
     "published-print": {
-      "date-parts": [[2026, 2, 28]]
+      "date-parts": [
+        [
+          2026,
+          2,
+          28
+        ]
+      ]
     },
     "abstract": "<jats:p>Gender disparity in computing is a well-explored concern. To complement existing research, we use a non-intrusive exploration method of Fictional Inquiry. Followed by co-design workshop to explore solution approaches to increase women’s participation in computing. The study involved n = 48 Women in Computing (WiC) students in computing from four universities across Bangladesh. Participants shared their challenges and desired solutions which we analyzed using qualitative methods along with Natural Language Processing based tools to illustrate the problems from various perspectives while minimizing potential biases. The research team reflects on methodological decisions, policy implications, and the need for culturally and contextually appropriate tools and datasets to better support WiC research in resource-limited settings.</jats:p>",
     "DOI": "10.1145/3762808",
     "type": "journal-article",
     "created": {
-      "date-parts": [[2025, 8, 25]],
+      "date-parts": [
+        [
+          2025,
+          8,
+          25
+        ]
+      ],
       "date-time": "2025-08-25T15:01:42Z",
       "timestamp": 1756134102000
     },
@@ -239,7 +261,13 @@
     ],
     "member": "320",
     "published-online": {
-      "date-parts": [[2026, 2, 25]]
+      "date-parts": [
+        [
+          2026,
+          2,
+          25
+        ]
+      ]
     },
     "reference": [
       {
@@ -925,7 +953,9 @@
         "unstructured": "Marta R. Costa-Jussà James Cross Onur Çelebi Maha Elbayad Kenneth Heafield Kevin Heffernan Elahe Kalbassi Janice Lam Daniel Licht Jean Maillard et al. 2022. No language left behind: Scaling human-centered machine translation. arXiv:2207.04672. Retrieved from http://arxiv.org/abs/2207.04672"
       }
     ],
-    "container-title": ["ACM Transactions on Computer-Human Interaction"],
+    "container-title": [
+      "ACM Transactions on Computer-Human Interaction"
+    ],
     "original-title": [],
     "language": "en",
     "link": [
@@ -937,7 +967,13 @@
       }
     ],
     "deposited": {
-      "date-parts": [[2026, 3, 12]],
+      "date-parts": [
+        [
+          2026,
+          3,
+          12
+        ]
+      ],
       "date-time": "2026-03-12T13:51:55Z",
       "timestamp": 1773323515000
     },
@@ -950,19 +986,36 @@
     "subtitle": [],
     "short-title": [],
     "issued": {
-      "date-parts": [[2026, 2, 25]]
+      "date-parts": [
+        [
+          2026,
+          2,
+          25
+        ]
+      ]
     },
     "references-count": 132,
     "journal-issue": {
       "issue": "1",
       "published-print": {
-        "date-parts": [[2026, 2, 28]]
+        "date-parts": [
+          [
+            2026,
+            2,
+            28
+          ]
+        ]
       }
     },
-    "alternative-id": ["10.1145/3762808"],
+    "alternative-id": [
+      "10.1145/3762808"
+    ],
     "URL": "https://doi.org/10.1145/3762808",
     "relation": {},
-    "ISSN": ["1073-0516", "1557-7325"],
+    "ISSN": [
+      "1073-0516",
+      "1557-7325"
+    ],
     "issn-type": [
       {
         "value": "1073-0516",
@@ -975,7 +1028,13 @@
     ],
     "subject": [],
     "published": {
-      "date-parts": [[2026, 2, 25]]
+      "date-parts": [
+        [
+          2026,
+          2,
+          25
+        ]
+      ]
     },
     "assertion": [
       {

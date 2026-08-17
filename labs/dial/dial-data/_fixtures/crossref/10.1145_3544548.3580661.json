@@ -4,7 +4,13 @@
   "message-version": "1.0.0",
   "message": {
     "indexed": {
-      "date-parts": [[2026, 4, 13]],
+      "date-parts": [
+        [
+          2026,
+          4,
+          13
+        ]
+      ],
       "date-time": "2026-04-13T19:35:34Z",
       "timestamp": 1776108934300,
       "version": "3.50.1"
@@ -15,7 +21,13 @@
     "license": [
       {
         "start": {
-          "date-parts": [[2023, 4, 19]],
+          "date-parts": [
+            [
+              2023,
+              4,
+              19
+            ]
+          ],
           "date-time": "2023-04-19T00:00:00Z",
           "timestamp": 1681862400000
         },
@@ -25,17 +37,31 @@
       }
     ],
     "content-domain": {
-      "domain": ["dl.acm.org"],
+      "domain": [
+        "dl.acm.org"
+      ],
       "crossmark-restriction": true
     },
     "short-container-title": [],
     "published-print": {
-      "date-parts": [[2023, 4, 19]]
+      "date-parts": [
+        [
+          2023,
+          4,
+          19
+        ]
+      ]
     },
     "DOI": "10.1145/3544548.3580661",
     "type": "proceedings-article",
     "created": {
-      "date-parts": [[2023, 4, 20]],
+      "date-parts": [
+        [
+          2023,
+          4,
+          20
+        ]
+      ],
       "date-time": "2023-04-20T04:27:20Z",
       "timestamp": 1681964840000
     },
@@ -123,7 +149,13 @@
     ],
     "member": "320",
     "published-online": {
-      "date-parts": [[2023, 4, 19]]
+      "date-parts": [
+        [
+          2023,
+          4,
+          19
+        ]
+      ]
     },
     "reference": [
       {
@@ -532,7 +564,9 @@
       "name": "CHI '23: CHI Conference on Human Factors in Computing Systems",
       "location": "Hamburg Germany",
       "acronym": "CHI '23",
-      "sponsor": ["SIGCHI ACM Special Interest Group on Computer-Human Interaction"]
+      "sponsor": [
+        "SIGCHI ACM Special Interest Group on Computer-Human Interaction"
+      ]
     },
     "container-title": [
       "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems"
@@ -553,7 +587,13 @@
       }
     ],
     "deposited": {
-      "date-parts": [[2025, 6, 17]],
+      "date-parts": [
+        [
+          2025,
+          6,
+          17
+        ]
+      ],
       "date-time": "2025-06-17T19:02:55Z",
       "timestamp": 1750186975000
     },
@@ -566,15 +606,30 @@
     "subtitle": [],
     "short-title": [],
     "issued": {
-      "date-parts": [[2023, 4, 19]]
+      "date-parts": [
+        [
+          2023,
+          4,
+          19
+        ]
+      ]
     },
     "references-count": 72,
-    "alternative-id": ["10.1145/3544548.3580661", "10.1145/3544548"],
+    "alternative-id": [
+      "10.1145/3544548.3580661",
+      "10.1145/3544548"
+    ],
     "URL": "https://doi.org/10.1145/3544548.3580661",
     "relation": {},
     "subject": [],
     "published": {
-      "date-parts": [[2023, 4, 19]]
+      "date-parts": [
+        [
+          2023,
+          4,
+          19
+        ]
+      ]
     },
     "assertion": [
       {

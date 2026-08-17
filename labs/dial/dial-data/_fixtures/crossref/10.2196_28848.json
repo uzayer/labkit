@@ -4,7 +4,13 @@
   "message-version": "1.0.0",
   "message": {
     "indexed": {
-      "date-parts": [[2026, 6, 30]],
+      "date-parts": [
+        [
+          2026,
+          6,
+          30
+        ]
+      ],
       "date-time": "2026-06-30T18:03:19Z",
       "timestamp": 1782842599138,
       "version": "3.54.5"
@@ -15,12 +21,20 @@
       "domain": [],
       "crossmark-restriction": false
     },
-    "short-container-title": ["JMIR Form Res"],
+    "short-container-title": [
+      "JMIR Form Res"
+    ],
     "abstract": "<jats:sec>\n                    <jats:title>Background</jats:title>\n                    <jats:p>Existing robust, pervasive device-based systems developed in recent years to detect depression require data collected over a long period and may not be effective in cases where early detection is crucial. Additionally, due to the requirement of running systems in the background for prolonged periods, existing systems can be resource inefficient. As a result, these systems can be infeasible in low-resource settings.</jats:p>\n                  </jats:sec>\n                  <jats:sec>\n                    <jats:title>Objective</jats:title>\n                    <jats:p>Our main objective was to develop a minimalistic system to identify depression using data retrieved in the fastest possible time. Another objective was to explain the machine learning (ML) models that were best for identifying depression.</jats:p>\n                  </jats:sec>\n                  <jats:sec>\n                    <jats:title>Methods</jats:title>\n                    <jats:p>We developed a fast tool that retrieves the past 7 days’ app usage data in 1 second (mean 0.31, SD 1.10 seconds). A total of 100 students from Bangladesh participated in our study, and our tool collected their app usage data and responses to the Patient Health Questionnaire-9. To identify depressed and nondepressed students, we developed a diverse set of ML models: linear, tree-based, and neural network–based models. We selected important features using the stable approach, along with 3 main types of feature selection (FS) approaches: filter, wrapper, and embedded methods. We developed and validated the models using the nested cross-validation method. Additionally, we explained the best ML models through the Shapley additive explanations (SHAP) method.</jats:p>\n                  </jats:sec>\n                  <jats:sec>\n                    <jats:title>Results</jats:title>\n                    <jats:p>Leveraging only the app usage data retrieved in 1 second, our light gradient boosting machine model used the important features selected by the stable FS approach and correctly identified 82.4% (n=42) of depressed students (precision=75%, F1-score=78.5%). Moreover, after comprehensive exploration, we presented a parsimonious stacking model where around 5 features selected by the all-relevant FS approach Boruta were used in each iteration of validation and showed a maximum precision of 77.4% (balanced accuracy=77.9%). Feature importance analysis suggested app usage behavioral markers containing diurnal usage patterns as being more important than aggregated data-based markers. In addition, a SHAP analysis of our best models presented behavioral markers that were related to depression. For instance, students who were not depressed spent more time on education apps on weekdays, whereas those who were depressed used a higher number of photo and video apps and also had a higher deviation in using photo and video apps over the morning, afternoon, evening, and night time periods of the weekend.</jats:p>\n                  </jats:sec>\n                  <jats:sec>\n                    <jats:title>Conclusions</jats:title>\n                    <jats:p>Due to our system’s fast and minimalistic nature, it may make a worthwhile contribution to identifying depression in underdeveloped and developing regions. In addition, our detailed discussion about the implication of our findings can facilitate the development of less resource-intensive systems to better understand students who are depressed and take steps for intervention.</jats:p>\n                  </jats:sec>",
     "DOI": "10.2196/28848",
     "type": "journal-article",
     "created": {
-      "date-parts": [[2023, 4, 26]],
+      "date-parts": [
+        [
+          2023,
+          4,
+          26
+        ]
+      ],
       "date-time": "2023-04-26T10:53:01Z",
       "timestamp": 1682506381000
     },
@@ -64,7 +78,13 @@
     ],
     "member": "1010",
     "published-online": {
-      "date-parts": [[2023, 8, 10]]
+      "date-parts": [
+        [
+          2023,
+          8,
+          10
+        ]
+      ]
     },
     "reference": [
       {
@@ -566,7 +586,9 @@
         "DOI": "10.1016/j.jad.2008.06.026"
       }
     ],
-    "container-title": ["JMIR Formative Research"],
+    "container-title": [
+      "JMIR Formative Research"
+    ],
     "original-title": [],
     "language": "en",
     "link": [
@@ -578,7 +600,13 @@
       }
     ],
     "deposited": {
-      "date-parts": [[2026, 6, 30]],
+      "date-parts": [
+        [
+          2026,
+          6,
+          30
+        ]
+      ],
       "date-time": "2026-06-30T17:42:29Z",
       "timestamp": 1782841349000
     },
@@ -591,7 +619,13 @@
     "subtitle": [],
     "short-title": [],
     "issued": {
-      "date-parts": [[2023, 8, 10]]
+      "date-parts": [
+        [
+          2023,
+          8,
+          10
+        ]
+      ]
     },
     "references-count": 101,
     "URL": "https://doi.org/10.2196/28848",
@@ -609,7 +643,9 @@
         }
       ]
     },
-    "ISSN": ["2561-326X"],
+    "ISSN": [
+      "2561-326X"
+    ],
     "issn-type": [
       {
         "value": "2561-326X",
@@ -618,7 +654,13 @@
     ],
     "subject": [],
     "published": {
-      "date-parts": [[2023, 8, 10]]
+      "date-parts": [
+        [
+          2023,
+          8,
+          10
+        ]
+      ]
     }
   }
 }

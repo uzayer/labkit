@@ -4,7 +4,13 @@
   "message-version": "1.0.0",
   "message": {
     "indexed": {
-      "date-parts": [[2025, 7, 15]],
+      "date-parts": [
+        [
+          2025,
+          7,
+          15
+        ]
+      ],
       "date-time": "2025-07-15T03:28:28Z",
       "timestamp": 1752550108445,
       "version": "3.41.0"
@@ -15,7 +21,13 @@
     "license": [
       {
         "start": {
-          "date-parts": [[2020, 4, 25]],
+          "date-parts": [
+            [
+              2020,
+              4,
+              25
+            ]
+          ],
           "date-time": "2020-04-25T00:00:00Z",
           "timestamp": 1587772800000
         },
@@ -25,17 +37,31 @@
       }
     ],
     "content-domain": {
-      "domain": ["dl.acm.org"],
+      "domain": [
+        "dl.acm.org"
+      ],
       "crossmark-restriction": true
     },
     "short-container-title": [],
     "published-print": {
-      "date-parts": [[2020, 4, 25]]
+      "date-parts": [
+        [
+          2020,
+          4,
+          25
+        ]
+      ]
     },
     "DOI": "10.1145/3391203.3391213",
     "type": "proceedings-article",
     "created": {
-      "date-parts": [[2020, 7, 31]],
+      "date-parts": [
+        [
+          2020,
+          7,
+          31
+        ]
+      ],
       "date-time": "2020-07-31T19:09:26Z",
       "timestamp": 1596222566000
     },
@@ -83,7 +109,13 @@
     ],
     "member": "320",
     "published-online": {
-      "date-parts": [[2020, 7, 31]]
+      "date-parts": [
+        [
+          2020,
+          7,
+          31
+        ]
+      ]
     },
     "reference": [
       {
@@ -237,7 +269,9 @@
     ],
     "event": {
       "name": "AsianCHI '20: Asian CHI Symposium 2020",
-      "sponsor": ["IPSJ"],
+      "sponsor": [
+        "IPSJ"
+      ],
       "location": "Honolulu HI USA",
       "acronym": "AsianCHI '20"
     },
@@ -260,7 +294,13 @@
       }
     ],
     "deposited": {
-      "date-parts": [[2025, 6, 17]],
+      "date-parts": [
+        [
+          2025,
+          6,
+          17
+        ]
+      ],
       "date-time": "2025-06-17T22:38:37Z",
       "timestamp": 1750199917000
     },
@@ -273,15 +313,30 @@
     "subtitle": [],
     "short-title": [],
     "issued": {
-      "date-parts": [[2020, 4, 25]]
+      "date-parts": [
+        [
+          2020,
+          4,
+          25
+        ]
+      ]
     },
     "references-count": 26,
-    "alternative-id": ["10.1145/3391203.3391213", "10.1145/3391203"],
+    "alternative-id": [
+      "10.1145/3391203.3391213",
+      "10.1145/3391203"
+    ],
     "URL": "https://doi.org/10.1145/3391203.3391213",
     "relation": {},
     "subject": [],
     "published": {
-      "date-parts": [[2020, 4, 25]]
+      "date-parts": [
+        [
+          2020,
+          4,
+          25
+        ]
+      ]
     },
     "assertion": [
       {

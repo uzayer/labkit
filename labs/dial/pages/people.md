@@ -5,7 +5,6 @@
 **Tone:** Nova's credibility anchors the page. Team depth and alumni placement tell the recruitment story.
 
 **Primary flows:**
-
 - Prospective student → stats strip (scale) → PI section (credibility) → team grid (culture) → CTA → /join-us
 - Peer researcher / collaborator → PI section → team grid (find a person) → /people/[slug]
 - Name-search visitor (organic) → lands directly on team grid; search finds person fast
@@ -18,12 +17,12 @@
 
 **Layout:** Thin horizontal strip (`py-10`), 4 counters in a row separated by vertical dividers. No heading. Compact — not a full stats1 section.
 
-| Counter              | Value | Source                                                   |
-| -------------------- | ----- | -------------------------------------------------------- |
-| Researchers mentored | 50+   | `payload.count()` Team collection (all non-alumni roles) |
-| Alumni placed        | [X]   | `payload.count()` Team `role = alumni`                   |
-| Active projects      | [X]   | Projects collection count                                |
-| Years of research    | [X]   | Derived from founding year (2017)                        |
+| Counter | Value | Source |
+| ------- | ----- | ------ |
+| Researchers mentored | 50+ | `payload.count()` Team collection (all non-alumni roles) |
+| Alumni placed | [X] | `payload.count()` Team `role = alumni` |
+| Active projects | [X] | Projects collection count |
+| Years of research | [X] | Derived from founding year (2017) |
 
 Numbers: `text-3xl font-semibold`. Labels: `text-sm text-muted-foreground` below each counter. Separated by `border-l border-border` on desktop, stacked on mobile.
 
@@ -36,16 +35,14 @@ Numbers: `text-3xl font-semibold`. Labels: `text-sm text-muted-foreground` below
 **Layout:** 2-column grid on desktop, `40/60` split. Left: portrait. Right: content stack. Single column on mobile (portrait above content).
 
 **Left column — portrait**
-
 - `Media` component, full column height on desktop
 - Square crop, `rounded-lg object-cover`
 - Source: Nova's Team record `photo` field
 
 **Right column — content stack**
-
 - Name: `h1 text-3xl font-bold` — "Dr. Nova Ahmed"
 - Title: `p text-muted-foreground` — "Professor, ECE, North South University"
-- Bio: 3–4 sentences. Beats in order: founded NSUHCI in 2017 through Google collaboration → leads DIAL's focus on technology design, inclusion, and access → Chair, Dhaka ACM SIGCHI Chapter (BanglaCHI) — community leadership signal, distinct from research collaborations → research focus: privacy, accessibility, financial inclusion, HCI for the Global South. Scale line woven in: "has mentored 50+ researchers since 2017, many now at PhD programmes at Cardiff, UMass Amherst, Ohio State, and beyond." _Copy to be written with Nova; avoid jargon and corporate superlatives._
+- Bio: 3–4 sentences. Beats in order: founded NSUHCI in 2017 through Google collaboration → leads DIAL's focus on technology design, inclusion, and access → Chair, Dhaka ACM SIGCHI Chapter (BanglaCHI) — community leadership signal, distinct from research collaborations → research focus: privacy, accessibility, financial inclusion, HCI for the Global South. Scale line woven in: "has mentored 50+ researchers since 2017, many now at PhD programmes at Cardiff, UMass Amherst, Ohio State, and beyond." *Copy to be written with Nova; avoid jargon and corporate superlatives.*
 - Awards row: 4 `Badge` components, `variant="outline"`, `border-amber-400/60 text-amber-700 dark:text-amber-400`. Positioned directly below bio:
   - Best of CHI 2019
   - IAPP Distinguished Privacy Award, SOUPS 2018
@@ -69,7 +66,6 @@ Numbers: `text-3xl font-semibold`. Labels: `text-sm text-muted-foreground` below
 ### ⚠️ Architecture change (required before this page ships)
 
 Current Team5_9 is a `'use client'` tab component driven by static `categories[].teamMembers[]` block data. New version:
-
 - `async` RSC — `payload.find()` queries per role group
 - No `categories` prop on block config — sections driven by role values in the collection
 - Block config stores only display options (`heading`, `description`, `initialCount`)
@@ -135,7 +131,6 @@ V2: research interest keyword search.
 ### ⚠️ Schema changes required
 
 **Add `research-staff` role** to Team collection `role` select in `src/collections/Team/index.ts`:
-
 ```ts
 { label: 'Research Staff', value: 'research-staff' }
 ```
@@ -153,7 +148,6 @@ Run `pnpm generate:types` after both changes.
 **Layout:** Section heading "Where our people go" + compact grid, `grid-cols-2 md:grid-cols-3 lg:grid-cols-4`.
 
 **Card design:**
-
 ```
 ┌──────────────────────────┬──────┐
 │ currentPosition          │ year │
@@ -172,7 +166,6 @@ Run `pnpm generate:types` after both changes.
 **Data source:** `payload.find({ collection: 'team', where: { role: { equals: 'alumni' } }, sort: '-alumniYear' })`
 
 **Data tasks before build:**
-
 - Infer `alumniYear` per record from publication co-authorship dates (import task)
 - Remove Rahat Jahangir Rony from alumni.md — now Core Team research staff post-PhD
 - Records with no `currentPosition` (Mohammad Rayed, Md. Tamjid Hosain, Md. Tamjid Hosain): will render name-only cards
@@ -193,12 +186,10 @@ Run `pnpm generate:types` after both changes.
 ## Awards on this page
 
 **Two placements only:**
-
 1. Nova's PI section — 4 gold-accented badge chips (see Section 1)
 2. Team cards — **cut from V1.** Award badge on cards requires an Award→Team relationship and join logic at render time with too little payoff at the card level. Awards surface more legibly on `/publications` (paper cards) and `/awards` (canonical). Revisit in V2.
 
 Full site awards touchpoint map:
-
 - `/` Hero stats + collage ✓ already planned
 - `/people` PI bio badges only (this page)
 - `/publications` award badge on winning paper cards — add when speccing
@@ -210,23 +201,23 @@ Full site awards touchpoint map:
 
 ## Data sources summary
 
-| Section                | Source                                                                  |
-| ---------------------- | ----------------------------------------------------------------------- |
-| Stats strip            | `payload.count()` queries — Team by role groups, Projects collection    |
-| PI bio                 | Team collection, `role = director`                                      |
-| Awards row             | Awards collection filtered by `associatedPerson = Nova`                 |
-| Social links           | `socials` array on Nova's Team record                                   |
-| Team grid              | Team collection queried by role group (4 groups)                        |
+| Section | Source |
+| ------- | ------ |
+| Stats strip | `payload.count()` queries — Team by role groups, Projects collection |
+| PI bio | Team collection, `role = director` |
+| Awards row | Awards collection filtered by `associatedPerson = Nova` |
+| Social links | `socials` array on Nova's Team record |
+| Team grid | Team collection queried by role group (4 groups) |
 | Research interest tags | Keywords collection via `researchInterests` relationship on Team record |
-| Alumni grid            | Team collection, `role = alumni`, sorted `-alumniYear`                  |
+| Alumni grid | Team collection, `role = alumni`, sorted `-alumniYear` |
 
 ---
 
 ## Schema changes summary
 
-| Change                                      | File                            | Prerequisite for                              |
-| ------------------------------------------- | ------------------------------- | --------------------------------------------- |
-| Add `research-staff` to role select         | `src/collections/Team/index.ts` | Importing Rahat, Ifti, Anik Sinha, Anik Saha  |
+| Change | File | Prerequisite for |
+| ------ | ---- | ---------------- |
+| Add `research-staff` to role select | `src/collections/Team/index.ts` | Importing Rahat, Ifti, Anik Sinha, Anik Saha |
 | Add `badge` text field (freeform, optional) | `src/collections/Team/index.ts` | On-leave and other affiliation notes on cards |
 
 Run `pnpm generate:types` after both.

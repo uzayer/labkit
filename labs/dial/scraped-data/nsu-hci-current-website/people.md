@@ -7,9 +7,9 @@ Skip to main content
 
 Skip to navigation
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/people#h.vujaltcimx5q) Researchers Pursuing Ph.D. and Postgraduate Studies
+## [Copy heading link](https://sites.google.com/view/nsuhci/people\#h.vujaltcimx5q)    Researchers Pursuing Ph.D. and Postgraduate Studies
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/people#h.fqa94oh9docb) 2025
+## [Copy heading link](https://sites.google.com/view/nsuhci/people\#h.fqa94oh9docb)    2025
 
 - Tahsin Mayeesha \- Ph.D in Information Science with a concentration in Data Science, from Fall 2025 @ University of North Texas, USA.
 
@@ -21,11 +21,13 @@ Skip to navigation
 
 - Zareen Tasnim-Ph.D in Computer Engineering, from 2025 @ University of Exeter, UK.
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/people#h.jw4bq3l68b6a) 2024
+
+## [Copy heading link](https://sites.google.com/view/nsuhci/people\#h.jw4bq3l68b6a)    2024
 
 - Monirul Islam Mahmud -MSc in Computer Engineering, from July 2024 @ Fordham, USA.
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/people#h.h2dynsdvfg0l) 2023
+
+## [Copy heading link](https://sites.google.com/view/nsuhci/people\#h.h2dynsdvfg0l)    2023
 
 - Ulfat Tahsin \- Ph.D. in Engineering Education from Fall 2023 @ The Ohio State University, USA.
 
@@ -39,7 +41,8 @@ Skip to navigation
 
 - Tawfique Elahi \- MSc in Information Systems, from August 2023 @ Lund University, Sweden.
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/people#h.amaq0rpq8eii) 2022
+
+## [Copy heading link](https://sites.google.com/view/nsuhci/people\#h.amaq0rpq8eii)    2022
 
 - [Rahat Jahangir Rony](https://sites.google.com/view/rahatjahangir/home)\- Ph.D. in Computer Science and Informatics, from Fall 2022 @ Cardiff University, Wales, UK
 
@@ -49,13 +52,15 @@ Skip to navigation
 
 - Zareen Tasnim \- MSc in Computer Science from February 2022 @ University of Exeter, England, UK
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/people#h.5lfa9ejka9rk) 2021
+
+## [Copy heading link](https://sites.google.com/view/nsuhci/people\#h.5lfa9ejka9rk)    2021
 
 - Kimia-tuz- Zaman \- Ph.D. in Computer Science from Fall 2021 @ North Dakota State University, USA
 
 - Sarah Binte Alam Shoilee \- Ph.D. in Computer Science from Fall 2021 @ Vrije Universiteit Amsterdam, Netherlands
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/people#h.wrykh2qhby2b) 2020
+
+## [Copy heading link](https://sites.google.com/view/nsuhci/people\#h.wrykh2qhby2b)    2020
 
 - Md. Tanvir Mushfique -  MSc in Electrical Engineering from Fall 2020 @ University of Windsor, Canada
 
@@ -63,11 +68,12 @@ Skip to navigation
 
 - Shahreen Shahjahan Psyche  - MSc in Computer Science from Fall 2020 @ The University of Texas Dallas, USA
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/people#h.fiysd0tmj9eg) Researchers
+
+## [Copy heading link](https://sites.google.com/view/nsuhci/people\#h.fiysd0tmj9eg)    Researchers
 
 ![](https://lh3.googleusercontent.com/sitesv/APaQ0STW3aSYf5idRSgqBk-bgH10zymBGM-9UXI2mk-RUPui2hXb0r6lgsBQx4vmFtV6GJ8JQE0Nq6psV8YxW9RuT3ot70z4X5wEsNbWs-f0yPtXQmvFhqzcKUGvImkio46UgR0wq2Ok0pq9M9yPSCZ8WqJSEsSzbSXgahn3XlmyDOy2MrZ99beRSL2cgsLa23ByNHzl-HaBGsDXHd0=w1280)
 
-### [Copy heading link](https://sites.google.com/view/nsuhci/people#h.p_ufiub1uNCtvD) [Dr. Nova Ahmed](https://ece.northsouth.edu/people/nova-ahmed/)
+### [Copy heading link](https://sites.google.com/view/nsuhci/people\#h.p_ufiub1uNCtvD)    [Dr. Nova Ahmed](https://ece.northsouth.edu/people/nova-ahmed/)
 
 Professor, ECE Department, North South University
 
@@ -77,7 +83,7 @@ nova.ahmed@northsouth.edu
 
 ![](https://lh3.googleusercontent.com/sitesv/APaQ0SRCX-Yk0iqf_dSq02qch3IQQR9ZJjckcWKWj-79yM8bJuohqw2EfvaSp0wltRP2hPfKdah1E0atdZUEGp4XALs1KT5grVXZ8_8RrRWcWkoo8A1xNlEhutiPTcxHuB-LqwIL--tHnsasWmnuHQkrmbXKrB4L5w0f713rxGRKSNsd9Xd1wo_a7IAz3ByeQl4jrtKBi2naJ3w1PM0NJvSFL7xqku5MmDYW6RFqS1U=w1280)
 
-### [Copy heading link](https://sites.google.com/view/nsuhci/people#h.p_S3ZCNEtqCtvG) Dr. [Tamanna Motahar](https://www.linkedin.com/in/tamanna-motahar-phd-696492153)
+### [Copy heading link](https://sites.google.com/view/nsuhci/people\#h.p_S3ZCNEtqCtvG)    Dr. [Tamanna Motahar](https://www.linkedin.com/in/tamanna-motahar-phd-696492153)
 
 Assistant Professor, School of Computing and Informatics, University of Louisiana at Lafayette
 
@@ -89,7 +95,7 @@ tamanna.motahar@louisiana.edu
 
 ![](https://lh3.googleusercontent.com/sitesv/APaQ0STdWj7S6kIk2axdVzEqsYTRysvn0d_Y64DqsxkuynUn6AJEIR7kgMzZ-9LS5K19NbarPuC5kfLwUWoi38bRwGW-g4SZBQq1xtxj8KSZ7zRox-5JU2EGiqfzqI5V6Mhu19mXd5b-AEAehrrvZnF_vY_Ca9lly62RLob-znUfU69Bmf0bpfhav8VDxI0VgJwvSsxYrGiYq7dcZzVRgtZSGSrWjgMgM9K9JAnW=w1280)
 
-### [Copy heading link](https://sites.google.com/view/nsuhci/people#h.kdp1pr9wogxn) [Rahat Jahangir Ron](https://sites.google.com/view/rahatjahangir/home) y
+### [Copy heading link](https://sites.google.com/view/nsuhci/people\#h.kdp1pr9wogxn)    [Rahat Jahangir Ron](https://sites.google.com/view/rahatjahangir/home) y
 
 PhD Student and Researcher, Cardiff University
 
@@ -141,7 +147,7 @@ North South University
 
 aniksaha@northsouth.edu
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/people#h.s59vflc6ujxc) Graduate Student Researchers
+## [Copy heading link](https://sites.google.com/view/nsuhci/people\#h.s59vflc6ujxc)    Graduate Student Researchers
 
 ![](https://lh3.googleusercontent.com/sitesv/APaQ0STgs_7mnt4nfkDM_GAvMjocI2dqoPFyUO3JVqbbt8CN38ChRTZjqkhF8z-n4qcIkMoFTQxBp6ryS7Esy7IJwPbYRJts-PBGlg4xMyCIW5VWkoL0MZNKeI8H_11QJJ1M84fAwPn3uVLBV2Scdtv9xoOYfBh1PvF8lhumGrQDQUUZnyilidvL678wEeWihm57Thu2LA-psupEIz_CcZKLa-nk0Oy43jedPdCETVg=w1280)
 
@@ -243,7 +249,7 @@ North South University
 
 fmabir2015@gmail.com
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/people#h.lyrmd4imuzup) Undergraduate Student Researchers
+## [Copy heading link](https://sites.google.com/view/nsuhci/people\#h.lyrmd4imuzup)    Undergraduate Student Researchers
 
 ![](https://lh3.googleusercontent.com/sitesv/APaQ0SQcXBrOW53TJjwH2DN-gbl9_tcZWCkMw7FtAm0o6ow2YvTrlRlA0cZVTZxiL-690PRN9z6yvL02T1XZUWWDGx4zAPzZzQRrYVBRwJlF_YCkRdiM9N3InGTZMTi9hlEv0H3GXxAllDSCugbPpRB86MVvKea77h5Kbv3h_rAesReovJecaPTZ6lTLgZdMnezxKlG-MDG-Vk8Dk8V1JXPsNRpEwhhA_HfZfN3ZnuM=w1280)
 
@@ -335,7 +341,7 @@ North South University
 
 mahirmorsh@gmail.com
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/people#h.ue0mhjmcekbw) Emerging Student Researchers
+## [Copy heading link](https://sites.google.com/view/nsuhci/people\#h.ue0mhjmcekbw)    Emerging Student Researchers
 
 ![](https://lh3.googleusercontent.com/sitesv/APaQ0STWn_Q7p3C6dv6wcBKb3EeM5XG9xaDEA8wC-HV8EPojXHamPK9lrt4yjK8vC8H_V6wZfmT5_CaIcsWTswk_xK6Ky7ifOymxgbGStH0Mbd8C4G9C9q_TZA7a9OCj7TKgfOr-WbaUuRSE2AaDh0dcoUt7qT9oVXTxslK8b3CkZrdewH4Q6Fz9o8uVD6p1T37byB2JTfYUO4CJn-y24laRcCne0XFx3ACU5mluvpI=w1280)
 
@@ -397,7 +403,7 @@ North South University
 
 samina.mim@northsouth.edu
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/people#h.p_aLh1_teJmHkt) Researchers: Study Leave
+## [Copy heading link](https://sites.google.com/view/nsuhci/people\#h.p_aLh1_teJmHkt)    Researchers: Study Leave
 
 ![](https://lh3.googleusercontent.com/sitesv/APaQ0SQc2Qy5tFi6MSTNMsQRnwATHN3GanwlAEQ7o1f06Qb53-qGgier72fVREvgAzpDjNwYvR9L4bV2wWxFda1IDV9GWFhTyBZwqYEIfq1R0F8fiOkXsuiUIceSUh24FIaoVh-0eTkhqx_tD3-4Fjy2YXug5G9C-TX2bKMFoBVwDRy0DFXVFjFwdh5LuGERis7wxTYoSgFBHOxTEF6xRww2s8Z93-zAbocCmbth=w1280)
 
@@ -607,7 +613,7 @@ North South University
 
 mahmudislam2025@gmail.com
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/people#h.c6ft477zzt41) Researchers: Professional Leave
+## [Copy heading link](https://sites.google.com/view/nsuhci/people\#h.c6ft477zzt41)    Researchers: Professional Leave
 
 ![](https://lh3.googleusercontent.com/sitesv/APaQ0SSsfyJ5EeCgUJq-wZPAdyMckuD0M3dInJSE7jWhzdh3tNhlNAScyHGDYfHhwjCfzgpMLGBt6XPPt-mIxyktKiXLNzUt3GihaiZiG8i0HOn2r6ArQWKnnzcGhecDs46ANyZvb_UKYmEco2NaQusjVH1nT9qyjnAlsQbJA7XpI06plbDGizDPO3k54qqBBjSW37q4L9A1ncXslKQ=w1280)
 

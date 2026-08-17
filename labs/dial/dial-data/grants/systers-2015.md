@@ -5,7 +5,7 @@ slug: systers-2015
 funder: Systers / Anita Borg Institute
 amountValue: 1000
 amountCurrency: USD
-startDate: '2015'
+startDate: "2015"
 status: completed
 investigators:
   - teamMember: nova-ahmed

@@ -4,7 +4,13 @@
   "message-version": "1.0.0",
   "message": {
     "indexed": {
-      "date-parts": [[2026, 5, 9]],
+      "date-parts": [
+        [
+          2026,
+          5,
+          9
+        ]
+      ],
       "date-time": "2026-05-09T16:43:54Z",
       "timestamp": 1778345034424,
       "version": "3.51.4"
@@ -15,7 +21,13 @@
     "license": [
       {
         "start": {
-          "date-parts": [[2021, 1, 6]],
+          "date-parts": [
+            [
+              2021,
+              1,
+              6
+            ]
+          ],
           "date-time": "2021-01-06T00:00:00Z",
           "timestamp": 1609891200000
         },
@@ -25,7 +37,13 @@
       },
       {
         "start": {
-          "date-parts": [[2021, 1, 6]],
+          "date-parts": [
+            [
+              2021,
+              1,
+              6
+            ]
+          ],
           "date-time": "2021-01-06T00:00:00Z",
           "timestamp": 1609891200000
         },
@@ -35,17 +53,32 @@
       }
     ],
     "content-domain": {
-      "domain": ["link.springer.com"],
+      "domain": [
+        "link.springer.com"
+      ],
       "crossmark-restriction": false
     },
-    "short-container-title": ["Qual User Exp"],
+    "short-container-title": [
+      "Qual User Exp"
+    ],
     "published-print": {
-      "date-parts": [[2021, 12]]
+      "date-parts": [
+        [
+          2021,
+          12
+        ]
+      ]
     },
     "DOI": "10.1007/s41233-020-00043-0",
     "type": "journal-article",
     "created": {
-      "date-parts": [[2021, 1, 6]],
+      "date-parts": [
+        [
+          2021,
+          1,
+          6
+        ]
+      ],
       "date-time": "2021-01-06T12:03:35Z",
       "timestamp": 1609934615000
     },
@@ -87,7 +120,13 @@
     ],
     "member": "297",
     "published-online": {
-      "date-parts": [[2021, 1, 6]]
+      "date-parts": [
+        [
+          2021,
+          1,
+          6
+        ]
+      ]
     },
     "reference": [
       {
@@ -1003,7 +1042,9 @@
         "journal-title": "Rev Gen Psychol"
       }
     ],
-    "container-title": ["Quality and User Experience"],
+    "container-title": [
+      "Quality and User Experience"
+    ],
     "original-title": [],
     "language": "en",
     "link": [
@@ -1027,7 +1068,13 @@
       }
     ],
     "deposited": {
-      "date-parts": [[2023, 10, 17]],
+      "date-parts": [
+        [
+          2023,
+          10,
+          17
+        ]
+      ],
       "date-time": "2023-10-17T01:48:11Z",
       "timestamp": 1697507291000
     },
@@ -1040,19 +1087,35 @@
     "subtitle": [],
     "short-title": [],
     "issued": {
-      "date-parts": [[2021, 1, 6]]
+      "date-parts": [
+        [
+          2021,
+          1,
+          6
+        ]
+      ]
     },
     "references-count": 110,
     "journal-issue": {
       "issue": "1",
       "published-print": {
-        "date-parts": [[2021, 12]]
+        "date-parts": [
+          [
+            2021,
+            12
+          ]
+        ]
       }
     },
-    "alternative-id": ["43"],
+    "alternative-id": [
+      "43"
+    ],
     "URL": "https://doi.org/10.1007/s41233-020-00043-0",
     "relation": {},
-    "ISSN": ["2366-0139", "2366-0147"],
+    "ISSN": [
+      "2366-0139",
+      "2366-0147"
+    ],
     "issn-type": [
       {
         "value": "2366-0139",
@@ -1065,7 +1128,13 @@
     ],
     "subject": [],
     "published": {
-      "date-parts": [[2021, 1, 6]]
+      "date-parts": [
+        [
+          2021,
+          1,
+          6
+        ]
+      ]
     },
     "assertion": [
       {

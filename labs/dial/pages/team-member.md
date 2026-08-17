@@ -3,7 +3,6 @@
 Mix of academic CV and human profile. Page auto-populates almost entirely from data model joins — no manual page editing needed per member.
 
 **Gating:**
-
 - Controlled by `Team.displayInWebsite` toggle. Nova decides per member.
 - **Alumni:** no detail pages — cards only on `/people` with `currentPosition` shown.
 - **Undergraduate RAs:** card only on `/people`, no detail page. Full profile for Graduate RAs and above.
@@ -71,24 +70,24 @@ Only shown for members with an investigator role on at least one grant.
 
 ## Data sources summary
 
-| Section        | Source                                                |
-| -------------- | ----------------------------------------------------- |
-| Profile header | `Team` doc (by slug)                                  |
-| Award badges   | `Awards` collection, `associatedPerson = this member` |
-| Publications   | `Team.publications` join                              |
-| Projects       | `Team.projects` join                                  |
-| Grants         | `Team.grants` join                                    |
+| Section | Source |
+| ------- | ------ |
+| Profile header | `Team` doc (by slug) |
+| Award badges | `Awards` collection, `associatedPerson = this member` |
+| Publications | `Team.publications` join |
+| Projects | `Team.projects` join |
+| Grants | `Team.grants` join |
 
 ---
 
 ## Schema gaps to address before building
 
-| Gap                                         | Action                                                                                                                                                                          |
-| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `research-staff` role missing               | Add `{ label: 'Research Staff', value: 'research-staff' }` to `Team.role` select in `src/collections/Team/index.ts`. Run `pnpm generate:types`. Already flagged in `people.md`. |
-| ORCID is plain text                         | Prefix `https://orcid.org/` at render time. No schema change needed.                                                                                                            |
-| NSU faculty page not in `socials` platforms | Add `{ label: 'NSU Faculty Page', value: 'nsu-faculty' }` to `Team.socials.platform` select options.                                                                            |
-| `Awards.associatedPerson` relationship      | Verify the Awards collection has this field pointing to Team before building the header badge. Check `src/collections/Awards/`.                                                 |
+| Gap | Action |
+| --- | ------ |
+| `research-staff` role missing | Add `{ label: 'Research Staff', value: 'research-staff' }` to `Team.role` select in `src/collections/Team/index.ts`. Run `pnpm generate:types`. Already flagged in `people.md`. |
+| ORCID is plain text | Prefix `https://orcid.org/` at render time. No schema change needed. |
+| NSU faculty page not in `socials` platforms | Add `{ label: 'NSU Faculty Page', value: 'nsu-faculty' }` to `Team.socials.platform` select options. |
+| `Awards.associatedPerson` relationship | Verify the Awards collection has this field pointing to Team before building the header badge. Check `src/collections/Awards/`. |
 
 ---
 

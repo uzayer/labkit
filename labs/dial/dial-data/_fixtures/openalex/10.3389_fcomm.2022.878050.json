@@ -19,14 +19,20 @@
       "id": "https://openalex.org/S2596093566",
       "display_name": "Frontiers in Communication",
       "issn_l": "2297-900X",
-      "issn": ["2297-900X"],
+      "issn": [
+        "2297-900X"
+      ],
       "is_oa": true,
       "is_in_doaj": true,
       "is_core": true,
       "host_organization": "https://openalex.org/P4310320527",
       "host_organization_name": "Frontiers Media",
-      "host_organization_lineage": ["https://openalex.org/P4310320527"],
-      "host_organization_lineage_names": ["Frontiers Media"],
+      "host_organization_lineage": [
+        "https://openalex.org/P4310320527"
+      ],
+      "host_organization_lineage_names": [
+        "Frontiers Media"
+      ],
       "type": "journal"
     },
     "license": "cc-by",
@@ -38,7 +44,10 @@
     "raw_type": "journal-article"
   },
   "type": "article",
-  "indexed_in": ["crossref", "doaj"],
+  "indexed_in": [
+    "crossref",
+    "doaj"
+  ],
   "open_access": {
     "is_oa": true,
     "oa_status": "gold",
@@ -60,10 +69,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": true,
       "raw_author_name": "Nova Ahmed",
       "raw_affiliation_strings": [
@@ -73,7 +86,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -91,10 +106,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Rahat Jahangir Rony",
       "raw_affiliation_strings": [
@@ -104,7 +123,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -122,10 +143,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Anik Sinha",
       "raw_affiliation_strings": [
@@ -135,7 +160,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -153,10 +180,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Md. Sabbir Ahmed",
       "raw_affiliation_strings": [
@@ -166,7 +197,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -184,10 +217,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Anik Saha",
       "raw_affiliation_strings": [
@@ -197,7 +234,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -215,10 +254,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Syeda Shabnam Khan",
       "raw_affiliation_strings": [
@@ -228,7 +271,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -246,10 +291,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Ifti Azad Abeer",
       "raw_affiliation_strings": [
@@ -259,7 +308,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -277,10 +328,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Shajnush Amir",
       "raw_affiliation_strings": [
@@ -290,7 +345,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -308,10 +365,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Tanvir Hasan Fuad",
       "raw_affiliation_strings": [
@@ -321,7 +382,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     }
@@ -329,8 +392,12 @@
   "institutions": [],
   "countries_distinct_count": 1,
   "institutions_distinct_count": 9,
-  "corresponding_author_ids": ["https://openalex.org/A5011009295"],
-  "corresponding_institution_ids": ["https://openalex.org/I157386601"],
+  "corresponding_author_ids": [
+    "https://openalex.org/A5011009295"
+  ],
+  "corresponding_institution_ids": [
+    "https://openalex.org/I157386601"
+  ],
   "apc_list": {
     "value": 950,
     "currency": "USD",
@@ -682,14 +749,20 @@
         "id": "https://openalex.org/S2596093566",
         "display_name": "Frontiers in Communication",
         "issn_l": "2297-900X",
-        "issn": ["2297-900X"],
+        "issn": [
+          "2297-900X"
+        ],
         "is_oa": true,
         "is_in_doaj": true,
         "is_core": true,
         "host_organization": "https://openalex.org/P4310320527",
         "host_organization_name": "Frontiers Media",
-        "host_organization_lineage": ["https://openalex.org/P4310320527"],
-        "host_organization_lineage_names": ["Frontiers Media"],
+        "host_organization_lineage": [
+          "https://openalex.org/P4310320527"
+        ],
+        "host_organization_lineage_names": [
+          "Frontiers Media"
+        ],
         "type": "journal"
       },
       "license": "cc-by",
@@ -715,7 +788,9 @@
         "is_core": false,
         "host_organization": "https://openalex.org/I79510175",
         "host_organization_name": "Cardiff University",
-        "host_organization_lineage": ["https://openalex.org/I79510175"],
+        "host_organization_lineage": [
+          "https://openalex.org/I79510175"
+        ],
         "host_organization_lineage_names": [],
         "type": "repository"
       },
@@ -764,14 +839,20 @@
       "id": "https://openalex.org/S2596093566",
       "display_name": "Frontiers in Communication",
       "issn_l": "2297-900X",
-      "issn": ["2297-900X"],
+      "issn": [
+        "2297-900X"
+      ],
       "is_oa": true,
       "is_in_doaj": true,
       "is_core": true,
       "host_organization": "https://openalex.org/P4310320527",
       "host_organization_name": "Frontiers Media",
-      "host_organization_lineage": ["https://openalex.org/P4310320527"],
-      "host_organization_lineage_names": ["Frontiers Media"],
+      "host_organization_lineage": [
+        "https://openalex.org/P4310320527"
+      ],
+      "host_organization_lineage_names": [
+        "Frontiers Media"
+      ],
       "type": "journal"
     },
     "license": "cc-by",
@@ -849,113 +930,397 @@
     "https://openalex.org/W2385251173"
   ],
   "abstract_inverted_index": {
-    "37": [54],
-    "Risk": [0],
-    "communication": [1, 21, 67, 85, 168],
-    "during": [2, 42, 124, 169],
-    "COVID-19": [3, 44, 171],
-    "is": [4, 11, 24, 160],
-    "essential": [5],
-    "to": [6, 17, 70, 98, 129, 149, 162],
-    "have": [7],
-    "support,": [8, 110],
-    "but": [9],
-    "it": [10],
-    "challenging": [12],
-    "in": [13, 35, 175],
-    "developing": [14, 36],
-    "countries": [15],
-    "due": [16],
-    "a": [18, 48],
-    "lack": [19, 84],
-    "of": [20, 80, 102, 145, 166],
-    "setup.": [22],
-    "It": [23, 75],
-    "more": [25],
-    "difficult": [26],
-    "for": [27, 118],
-    "the": [28, 43, 65, 78, 81, 94, 100, 103, 112, 125, 143, 164, 170],
-    "low-income,": [29],
-    "marginal": [30],
-    "communities,": [31],
-    "and": [32, 72, 135, 142],
-    "specifically,": [33],
-    "women": [34, 55, 174],
-    "countries.": [37],
-    "To": [38],
-    "understand": [39, 163],
-    "this,": [40],
-    "particularly": [41],
-    "pandemic,": [45],
-    "we": [46],
-    "conducted": [47],
-    "qualitative": [49],
-    "study": [50],
-    "among": [51, 173],
-    "N": [52],
-    "=": [53, 59],
-    "(urban": [56],
-    "20,": [57],
-    "rural": [58, 113],
-    "17)": [60],
-    "across": [61],
-    "Bangladesh": [62],
-    "that": [63, 77],
-    "presents": [64],
-    "risk": [66, 140, 155, 167],
-    "factors": [68],
-    "related": [69],
-    "social": [71],
-    "financial": [73, 109, 146, 152],
-    "challenges.": [74],
-    "reveals": [76],
-    "majority": [79, 101],
-    "urban": [82, 90, 104],
-    "communities": [83, 92],
-    "with": [86, 121],
-    "local": [87, 122],
-    "authorities,": [88],
-    "where": [89],
-    "low-income": [91],
-    "are": [93],
-    "worst": [95],
-    "sufferers.": [96],
-    "Due": [97],
-    "that,": [99],
-    "participants": [105, 114, 133],
-    "could": [106],
-    "not": [107],
-    "get": [108, 150],
-    "whereas": [111],
-    "received": [115],
-    "such": [116],
-    "support": [117, 153],
-    "having": [119],
-    "communications": [120],
-    "authorities": [123],
-    "pandemic.": [126],
-    "However,": [127],
-    "access": [128],
-    "technology": [130, 147],
-    "helped": [131, 148],
-    "some": [132],
-    "share": [134],
-    "receive": [136],
-    "pandemic-related": [137],
-    "information": [138],
-    "about": [139],
-    "communication,": [141],
-    "adoption": [144],
-    "emergency": [151],
-    "through": [154],
-    "communication.": [156],
-    "Moreover,": [157],
-    "this": [158],
-    "work": [159],
-    "expected": [161],
-    "role": [165],
-    "pandemic": [172],
-    "Bangladesh.": [176]
+    "37": [
+      54
+    ],
+    "Risk": [
+      0
+    ],
+    "communication": [
+      1,
+      21,
+      67,
+      85,
+      168
+    ],
+    "during": [
+      2,
+      42,
+      124,
+      169
+    ],
+    "COVID-19": [
+      3,
+      44,
+      171
+    ],
+    "is": [
+      4,
+      11,
+      24,
+      160
+    ],
+    "essential": [
+      5
+    ],
+    "to": [
+      6,
+      17,
+      70,
+      98,
+      129,
+      149,
+      162
+    ],
+    "have": [
+      7
+    ],
+    "support,": [
+      8,
+      110
+    ],
+    "but": [
+      9
+    ],
+    "it": [
+      10
+    ],
+    "challenging": [
+      12
+    ],
+    "in": [
+      13,
+      35,
+      175
+    ],
+    "developing": [
+      14,
+      36
+    ],
+    "countries": [
+      15
+    ],
+    "due": [
+      16
+    ],
+    "a": [
+      18,
+      48
+    ],
+    "lack": [
+      19,
+      84
+    ],
+    "of": [
+      20,
+      80,
+      102,
+      145,
+      166
+    ],
+    "setup.": [
+      22
+    ],
+    "It": [
+      23,
+      75
+    ],
+    "more": [
+      25
+    ],
+    "difficult": [
+      26
+    ],
+    "for": [
+      27,
+      118
+    ],
+    "the": [
+      28,
+      43,
+      65,
+      78,
+      81,
+      94,
+      100,
+      103,
+      112,
+      125,
+      143,
+      164,
+      170
+    ],
+    "low-income,": [
+      29
+    ],
+    "marginal": [
+      30
+    ],
+    "communities,": [
+      31
+    ],
+    "and": [
+      32,
+      72,
+      135,
+      142
+    ],
+    "specifically,": [
+      33
+    ],
+    "women": [
+      34,
+      55,
+      174
+    ],
+    "countries.": [
+      37
+    ],
+    "To": [
+      38
+    ],
+    "understand": [
+      39,
+      163
+    ],
+    "this,": [
+      40
+    ],
+    "particularly": [
+      41
+    ],
+    "pandemic,": [
+      45
+    ],
+    "we": [
+      46
+    ],
+    "conducted": [
+      47
+    ],
+    "qualitative": [
+      49
+    ],
+    "study": [
+      50
+    ],
+    "among": [
+      51,
+      173
+    ],
+    "N": [
+      52
+    ],
+    "=": [
+      53,
+      59
+    ],
+    "(urban": [
+      56
+    ],
+    "20,": [
+      57
+    ],
+    "rural": [
+      58,
+      113
+    ],
+    "17)": [
+      60
+    ],
+    "across": [
+      61
+    ],
+    "Bangladesh": [
+      62
+    ],
+    "that": [
+      63,
+      77
+    ],
+    "presents": [
+      64
+    ],
+    "risk": [
+      66,
+      140,
+      155,
+      167
+    ],
+    "factors": [
+      68
+    ],
+    "related": [
+      69
+    ],
+    "social": [
+      71
+    ],
+    "financial": [
+      73,
+      109,
+      146,
+      152
+    ],
+    "challenges.": [
+      74
+    ],
+    "reveals": [
+      76
+    ],
+    "majority": [
+      79,
+      101
+    ],
+    "urban": [
+      82,
+      90,
+      104
+    ],
+    "communities": [
+      83,
+      92
+    ],
+    "with": [
+      86,
+      121
+    ],
+    "local": [
+      87,
+      122
+    ],
+    "authorities,": [
+      88
+    ],
+    "where": [
+      89
+    ],
+    "low-income": [
+      91
+    ],
+    "are": [
+      93
+    ],
+    "worst": [
+      95
+    ],
+    "sufferers.": [
+      96
+    ],
+    "Due": [
+      97
+    ],
+    "that,": [
+      99
+    ],
+    "participants": [
+      105,
+      114,
+      133
+    ],
+    "could": [
+      106
+    ],
+    "not": [
+      107
+    ],
+    "get": [
+      108,
+      150
+    ],
+    "whereas": [
+      111
+    ],
+    "received": [
+      115
+    ],
+    "such": [
+      116
+    ],
+    "support": [
+      117,
+      153
+    ],
+    "having": [
+      119
+    ],
+    "communications": [
+      120
+    ],
+    "authorities": [
+      123
+    ],
+    "pandemic.": [
+      126
+    ],
+    "However,": [
+      127
+    ],
+    "access": [
+      128
+    ],
+    "technology": [
+      130,
+      147
+    ],
+    "helped": [
+      131,
+      148
+    ],
+    "some": [
+      132
+    ],
+    "share": [
+      134
+    ],
+    "receive": [
+      136
+    ],
+    "pandemic-related": [
+      137
+    ],
+    "information": [
+      138
+    ],
+    "about": [
+      139
+    ],
+    "communication,": [
+      141
+    ],
+    "adoption": [
+      144
+    ],
+    "emergency": [
+      151
+    ],
+    "through": [
+      154
+    ],
+    "communication.": [
+      156
+    ],
+    "Moreover,": [
+      157
+    ],
+    "this": [
+      158
+    ],
+    "work": [
+      159
+    ],
+    "expected": [
+      161
+    ],
+    "role": [
+      165
+    ],
+    "pandemic": [
+      172
+    ],
+    "Bangladesh.": [
+      176
+    ]
   },
   "counts_by_year": [
     {

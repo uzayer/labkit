@@ -5,8 +5,8 @@ slug: gates-foundation-2020
 funder: Bill & Melinda Gates Foundation
 amountValue: 231000
 amountCurrency: USD
-startDate: '2020'
-endDate: '2022'
+startDate: "2020"
+endDate: "2022"
 status: completed
 investigators:
   - teamMember: nova-ahmed

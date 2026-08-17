@@ -8,11 +8,11 @@ Lab activity chronicle — academic presence, hosted events, and community work.
 
 Three types, each with different description depth:
 
-| Type          | What it covers                                                                                                                                                  | Description                               |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| **Academic**  | Conference presentations, conference trips (students attending conferences, summer schools, winter schools — with or without a paper), invited talks / keynotes | 1 sentence; link optional, photo optional |
-| **Organised** | Events DIAL hosted or co-organised (SIGCHI Summer Schools, DIAL HCI Research Symposium, workshops)                                                              | 2–3 sentences; photo encouraged           |
-| **Community** | Civic and societal engagement (BanglaCHI organising, SIGCHI Dhaka chapter, Flood Relief 2024, July Movement support) — needs context for international visitors | 2–3 sentences; photo encouraged           |
+| Type | What it covers | Description |
+|---|---|---|
+| **Academic** | Conference presentations, conference trips (students attending conferences, summer schools, winter schools — with or without a paper), invited talks / keynotes | 1 sentence; link optional, photo optional |
+| **Organised** | Events DIAL hosted or co-organised (SIGCHI Summer Schools, DIAL HCI Research Symposium, workshops) | 2–3 sentences; photo encouraged |
+| **Community** | Civic and societal engagement (BanglaCHI organising, SIGCHI Dhaka chapter, Flood Relief 2024, July Movement support) — needs context for international visitors | 2–3 sentences; photo encouraged |
 
 ## What does not go here
 
@@ -32,20 +32,17 @@ Three types, each with different description depth:
 ### §1 Feed
 
 **Filter strip** (above feed)
-
 - Pill buttons: **All** | **Academic** | **Organised** | **Community**
 - Single-select; "All" is the default
 - Same pill pattern as `/awards` filter strip
 
 **Feed layout**
-
 - Single chronological list, **year-grouped** (year label as a horizontal-rule separator)
 - Within each year: newest date first
 - **Upcoming entries** (date > today): float to top of the current-year group; carry an "Upcoming" badge on the card; soonest upcoming shown first
 - When nothing is upcoming: no badge, no empty state — the feed reads cleanly as a pure archive
 
 **Entry card** (one template for all types)
-
 - Type badge (Academic / Organised / Community)
 - "Upcoming" badge when applicable (alongside type badge, not replacing it)
 - Title (linked to external URL if present, with ExternalLink icon)
@@ -60,14 +57,14 @@ Three types, each with different description depth:
 
 `News` collection — new, lightweight, separate from Posts.
 
-| Field       | Type             | Notes                                                      |
-| ----------- | ---------------- | ---------------------------------------------------------- |
-| title       | text             | —                                                          |
-| type        | select           | `academic` / `organised` / `community`                     |
-| date        | date             | Future date = upcoming; computed at render, no stored flag |
-| description | richText (short) | —                                                          |
-| photo       | media            | optional                                                   |
-| url         | text             | optional external link                                     |
+| Field | Type | Notes |
+|---|---|---|
+| title | text | — |
+| type | select | `academic` / `organised` / `community` |
+| date | date | Future date = upcoming; computed at render, no stored flag |
+| description | richText (short) | — |
+| photo | media | optional |
+| url | text | optional external link |
 
 ---
 

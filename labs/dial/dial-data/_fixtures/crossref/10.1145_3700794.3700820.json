@@ -4,7 +4,13 @@
   "message-version": "1.0.0",
   "message": {
     "indexed": {
-      "date-parts": [[2026, 6, 30]],
+      "date-parts": [
+        [
+          2026,
+          6,
+          30
+        ]
+      ],
       "date-time": "2026-06-30T06:53:21Z",
       "timestamp": 1782802401198,
       "version": "3.54.5"
@@ -15,7 +21,13 @@
     "license": [
       {
         "start": {
-          "date-parts": [[2024, 12, 9]],
+          "date-parts": [
+            [
+              2024,
+              12,
+              9
+            ]
+          ],
           "date-time": "2024-12-09T00:00:00Z",
           "timestamp": 1733702400000
         },
@@ -25,17 +37,31 @@
       }
     ],
     "content-domain": {
-      "domain": ["dl.acm.org"],
+      "domain": [
+        "dl.acm.org"
+      ],
       "crossmark-restriction": true
     },
     "short-container-title": [],
     "published-print": {
-      "date-parts": [[2024, 12, 9]]
+      "date-parts": [
+        [
+          2024,
+          12,
+          9
+        ]
+      ]
     },
     "DOI": "10.1145/3700794.3700820",
     "type": "proceedings-article",
     "created": {
-      "date-parts": [[2025, 3, 11]],
+      "date-parts": [
+        [
+          2025,
+          3,
+          11
+        ]
+      ],
       "date-time": "2025-03-11T11:26:21Z",
       "timestamp": 1741692381000
     },
@@ -105,7 +131,13 @@
     ],
     "member": "320",
     "published-online": {
-      "date-parts": [[2025, 3, 11]]
+      "date-parts": [
+        [
+          2025,
+          3,
+          11
+        ]
+      ]
     },
     "reference": [
       {
@@ -693,7 +725,9 @@
       "name": "ICTD 2024: The 13th International Conference on Information & Communication Technologies and Development",
       "location": "Nairobi Kenya",
       "acronym": "ICTD 2024",
-      "sponsor": ["SIGCAS ACM Special Interest Group on Computers and Society"]
+      "sponsor": [
+        "SIGCAS ACM Special Interest Group on Computers and Society"
+      ]
     },
     "container-title": [
       "Proceedings of the 13th International Conference on Information &amp; Communication Technologies and Development"
@@ -714,7 +748,13 @@
       }
     ],
     "deposited": {
-      "date-parts": [[2025, 6, 19]],
+      "date-parts": [
+        [
+          2025,
+          6,
+          19
+        ]
+      ],
       "date-time": "2025-06-19T01:17:29Z",
       "timestamp": 1750295849000
     },
@@ -727,15 +767,30 @@
     "subtitle": [],
     "short-title": [],
     "issued": {
-      "date-parts": [[2024, 12, 9]]
+      "date-parts": [
+        [
+          2024,
+          12,
+          9
+        ]
+      ]
     },
     "references-count": 108,
-    "alternative-id": ["10.1145/3700794.3700820", "10.1145/3700794"],
+    "alternative-id": [
+      "10.1145/3700794.3700820",
+      "10.1145/3700794"
+    ],
     "URL": "https://doi.org/10.1145/3700794.3700820",
     "relation": {},
     "subject": [],
     "published": {
-      "date-parts": [[2024, 12, 9]]
+      "date-parts": [
+        [
+          2024,
+          12,
+          9
+        ]
+      ]
     },
     "assertion": [
       {

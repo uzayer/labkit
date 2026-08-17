@@ -20,14 +20,20 @@
       "id": "https://openalex.org/S4210183893",
       "display_name": "Proceedings of the ACM on Human-Computer Interaction",
       "issn_l": "2573-0142",
-      "issn": ["2573-0142"],
+      "issn": [
+        "2573-0142"
+      ],
       "is_oa": false,
       "is_in_doaj": false,
       "is_core": true,
       "host_organization": "https://openalex.org/P4310319798",
       "host_organization_name": "Association for Computing Machinery",
-      "host_organization_lineage": ["https://openalex.org/P4310319798"],
-      "host_organization_lineage_names": ["Association for Computing Machinery"],
+      "host_organization_lineage": [
+        "https://openalex.org/P4310319798"
+      ],
+      "host_organization_lineage_names": [
+        "Association for Computing Machinery"
+      ],
       "type": "journal"
     },
     "license": null,
@@ -39,7 +45,9 @@
     "raw_type": "journal-article"
   },
   "type": "article",
-  "indexed_in": ["crossref"],
+  "indexed_in": [
+    "crossref"
+  ],
   "open_access": {
     "is_oa": false,
     "oa_status": "closed",
@@ -61,18 +69,26 @@
           "ror": "https://ror.org/037s24f05",
           "country_code": "US",
           "type": "education",
-          "lineage": ["https://openalex.org/I8078737"]
+          "lineage": [
+            "https://openalex.org/I8078737"
+          ]
         }
       ],
-      "countries": ["US"],
+      "countries": [
+        "US"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Anurata Prabha Hridi",
-      "raw_affiliation_strings": ["Clemson University, Clemson, SC, USA"],
+      "raw_affiliation_strings": [
+        "Clemson University, Clemson, SC, USA"
+      ],
       "raw_orcid": null,
       "affiliations": [
         {
           "raw_affiliation_string": "Clemson University, Clemson, SC, USA",
-          "institution_ids": ["https://openalex.org/I8078737"]
+          "institution_ids": [
+            "https://openalex.org/I8078737"
+          ]
         }
       ]
     },
@@ -90,18 +106,26 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Anik Saha",
-      "raw_affiliation_strings": ["North South University, Dhaka, Bangladesh"],
+      "raw_affiliation_strings": [
+        "North South University, Dhaka, Bangladesh"
+      ],
       "raw_orcid": null,
       "affiliations": [
         {
           "raw_affiliation_string": "North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -119,18 +143,26 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Anik Sinha",
-      "raw_affiliation_strings": ["North South University, Dhaka, Bangladesh"],
+      "raw_affiliation_strings": [
+        "North South University, Dhaka, Bangladesh"
+      ],
       "raw_orcid": null,
       "affiliations": [
         {
           "raw_affiliation_string": "North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -148,18 +180,26 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Ifti Azad Abeer",
-      "raw_affiliation_strings": ["North South University, Dhaka, Bangladesh"],
+      "raw_affiliation_strings": [
+        "North South University, Dhaka, Bangladesh"
+      ],
       "raw_orcid": null,
       "affiliations": [
         {
           "raw_affiliation_string": "North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -177,18 +217,26 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Nova Ahmed",
-      "raw_affiliation_strings": ["North South University, Dhaka, Bangladesh"],
+      "raw_affiliation_strings": [
+        "North South University, Dhaka, Bangladesh"
+      ],
       "raw_orcid": null,
       "affiliations": [
         {
           "raw_affiliation_string": "North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -206,18 +254,26 @@
           "ror": "https://ror.org/05wn7r715",
           "country_code": "US",
           "type": "education",
-          "lineage": ["https://openalex.org/I52669646"]
+          "lineage": [
+            "https://openalex.org/I52669646"
+          ]
         }
       ],
-      "countries": ["US"],
+      "countries": [
+        "US"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Shameem Ahmed",
-      "raw_affiliation_strings": ["Western Washington University, Bellingham, WA, USA"],
+      "raw_affiliation_strings": [
+        "Western Washington University, Bellingham, WA, USA"
+      ],
       "raw_orcid": null,
       "affiliations": [
         {
           "raw_affiliation_string": "Western Washington University, Bellingham, WA, USA",
-          "institution_ids": ["https://openalex.org/I52669646"]
+          "institution_ids": [
+            "https://openalex.org/I52669646"
+          ]
         }
       ]
     }
@@ -544,14 +600,20 @@
         "id": "https://openalex.org/S4210183893",
         "display_name": "Proceedings of the ACM on Human-Computer Interaction",
         "issn_l": "2573-0142",
-        "issn": ["2573-0142"],
+        "issn": [
+          "2573-0142"
+        ],
         "is_oa": false,
         "is_in_doaj": false,
         "is_core": true,
         "host_organization": "https://openalex.org/P4310319798",
         "host_organization_name": "Association for Computing Machinery",
-        "host_organization_lineage": ["https://openalex.org/P4310319798"],
-        "host_organization_lineage_names": ["Association for Computing Machinery"],
+        "host_organization_lineage": [
+          "https://openalex.org/P4310319798"
+        ],
+        "host_organization_lineage_names": [
+          "Association for Computing Machinery"
+        ],
         "type": "journal"
       },
       "license": null,
@@ -633,141 +695,467 @@
     "https://openalex.org/W2013497658"
   ],
   "abstract_inverted_index": {
-    "This": [0],
-    "paper": [1],
-    "aims": [2],
-    "to": [3, 29, 54, 61, 84, 156, 179],
-    "understand": [4, 30, 56],
-    "the": [5, 14, 26, 85, 97, 133, 136, 186],
-    "educational": [6, 47],
-    "settings": [7],
-    "of": [8, 17, 44, 114, 123, 139, 145],
-    "children": [9],
-    "with": [10],
-    "autism": [11, 106],
-    "(CWA)": [12],
-    "in": [13, 25, 68, 105, 148, 152, 175],
-    "specialized": [15],
-    "schools": [16, 86, 107],
-    "Bangladesh": [18, 149],
-    "from": [19, 125],
-    "their": [20, 189],
-    "parents'": [21],
-    "perspective.": [22],
-    "Sparse": [23],
-    "research": [24, 50],
-    "same": [27],
-    "context": [28],
-    "teachers'": [31],
-    "perceptions": [32],
-    "has": [33, 51],
-    "been": [34, 52],
-    "found.": [35],
-    "Though": [36],
-    "parents": [37, 76],
-    "and": [38, 57, 81, 100, 119, 142, 172, 188],
-    "teachers": [39],
-    "are": [40],
-    "an": [41, 64, 181],
-    "integral": [42],
-    "part": [43],
-    "these": [45],
-    "children's": [46],
-    "experience,": [48],
-    "limited": [49],
-    "conducted": [53],
-    "deeply": [55],
-    "facilitate": [58],
-    "parent-teacher": [59, 103],
-    "relationships": [60],
-    "offer": [62],
-    "CWA": [63, 187],
-    "improved": [65, 182],
-    "learning": [66, 183],
-    "experience": [67],
-    "Bangladesh.": [69],
-    "Our": [70],
-    "in-depth": [71],
-    "qualitative": [72],
-    "study": [73],
-    "on": [74],
-    "urban": [75],
-    "(N=10)": [77],
-    "showed": [78],
-    "current": [79],
-    "challenges": [80],
-    "opportunities": [82],
-    "relating": [83],
-    "designed": [87],
-    "for": [88, 169, 185],
-    "CWA.": [89],
-    "The": [90],
-    "work": [91],
-    "takes": [92],
-    "a": [93, 110, 153],
-    "closer": [94],
-    "look": [95],
-    "at": [96],
-    "existing": [98],
-    "concerns": [99],
-    "confirms": [101],
-    "that": [102],
-    "communication": [104],
-    "here": [108],
-    "is": [109],
-    "complex": [111],
-    "one": [112],
-    "because": [113],
-    "other": [115],
-    "interferences": [116],
-    "(e.g.,": [117],
-    "social,": [118],
-    "familial": [120],
-    "stigma,": [121],
-    "lack": [122],
-    "transparency": [124],
-    "administrators,": [126],
-    "insufficient": [127],
-    "qualified": [128],
-    "teachers)": [129],
-    "as": [130],
-    "felt": [131],
-    "by": [132, 160],
-    "parents.": [134],
-    "Nevertheless,": [135],
-    "remarkable": [137],
-    "coverage": [138],
-    "cellular": [140],
-    "networks": [141],
-    "increasing": [143],
-    "usage": [144],
-    "mobile": [146],
-    "phones": [147],
-    "places": [150],
-    "us": [151],
-    "unique": [154],
-    "position": [155],
-    "expect": [157],
-    "positive": [158],
-    "changes": [159],
-    "employing": [161],
-    "ICT,": [162],
-    "which": [163],
-    "we": [164],
-    "believe": [165],
-    "will": [166],
-    "open": [167],
-    "avenues": [168],
-    "future": [170],
-    "researchers": [171],
-    "guide": [173],
-    "them": [174],
-    "implementing": [176],
-    "robust": [177],
-    "technology": [178],
-    "support": [180],
-    "environment": [184],
-    "families.": [190]
+    "This": [
+      0
+    ],
+    "paper": [
+      1
+    ],
+    "aims": [
+      2
+    ],
+    "to": [
+      3,
+      29,
+      54,
+      61,
+      84,
+      156,
+      179
+    ],
+    "understand": [
+      4,
+      30,
+      56
+    ],
+    "the": [
+      5,
+      14,
+      26,
+      85,
+      97,
+      133,
+      136,
+      186
+    ],
+    "educational": [
+      6,
+      47
+    ],
+    "settings": [
+      7
+    ],
+    "of": [
+      8,
+      17,
+      44,
+      114,
+      123,
+      139,
+      145
+    ],
+    "children": [
+      9
+    ],
+    "with": [
+      10
+    ],
+    "autism": [
+      11,
+      106
+    ],
+    "(CWA)": [
+      12
+    ],
+    "in": [
+      13,
+      25,
+      68,
+      105,
+      148,
+      152,
+      175
+    ],
+    "specialized": [
+      15
+    ],
+    "schools": [
+      16,
+      86,
+      107
+    ],
+    "Bangladesh": [
+      18,
+      149
+    ],
+    "from": [
+      19,
+      125
+    ],
+    "their": [
+      20,
+      189
+    ],
+    "parents'": [
+      21
+    ],
+    "perspective.": [
+      22
+    ],
+    "Sparse": [
+      23
+    ],
+    "research": [
+      24,
+      50
+    ],
+    "same": [
+      27
+    ],
+    "context": [
+      28
+    ],
+    "teachers'": [
+      31
+    ],
+    "perceptions": [
+      32
+    ],
+    "has": [
+      33,
+      51
+    ],
+    "been": [
+      34,
+      52
+    ],
+    "found.": [
+      35
+    ],
+    "Though": [
+      36
+    ],
+    "parents": [
+      37,
+      76
+    ],
+    "and": [
+      38,
+      57,
+      81,
+      100,
+      119,
+      142,
+      172,
+      188
+    ],
+    "teachers": [
+      39
+    ],
+    "are": [
+      40
+    ],
+    "an": [
+      41,
+      64,
+      181
+    ],
+    "integral": [
+      42
+    ],
+    "part": [
+      43
+    ],
+    "these": [
+      45
+    ],
+    "children's": [
+      46
+    ],
+    "experience,": [
+      48
+    ],
+    "limited": [
+      49
+    ],
+    "conducted": [
+      53
+    ],
+    "deeply": [
+      55
+    ],
+    "facilitate": [
+      58
+    ],
+    "parent-teacher": [
+      59,
+      103
+    ],
+    "relationships": [
+      60
+    ],
+    "offer": [
+      62
+    ],
+    "CWA": [
+      63,
+      187
+    ],
+    "improved": [
+      65,
+      182
+    ],
+    "learning": [
+      66,
+      183
+    ],
+    "experience": [
+      67
+    ],
+    "Bangladesh.": [
+      69
+    ],
+    "Our": [
+      70
+    ],
+    "in-depth": [
+      71
+    ],
+    "qualitative": [
+      72
+    ],
+    "study": [
+      73
+    ],
+    "on": [
+      74
+    ],
+    "urban": [
+      75
+    ],
+    "(N=10)": [
+      77
+    ],
+    "showed": [
+      78
+    ],
+    "current": [
+      79
+    ],
+    "challenges": [
+      80
+    ],
+    "opportunities": [
+      82
+    ],
+    "relating": [
+      83
+    ],
+    "designed": [
+      87
+    ],
+    "for": [
+      88,
+      169,
+      185
+    ],
+    "CWA.": [
+      89
+    ],
+    "The": [
+      90
+    ],
+    "work": [
+      91
+    ],
+    "takes": [
+      92
+    ],
+    "a": [
+      93,
+      110,
+      153
+    ],
+    "closer": [
+      94
+    ],
+    "look": [
+      95
+    ],
+    "at": [
+      96
+    ],
+    "existing": [
+      98
+    ],
+    "concerns": [
+      99
+    ],
+    "confirms": [
+      101
+    ],
+    "that": [
+      102
+    ],
+    "communication": [
+      104
+    ],
+    "here": [
+      108
+    ],
+    "is": [
+      109
+    ],
+    "complex": [
+      111
+    ],
+    "one": [
+      112
+    ],
+    "because": [
+      113
+    ],
+    "other": [
+      115
+    ],
+    "interferences": [
+      116
+    ],
+    "(e.g.,": [
+      117
+    ],
+    "social,": [
+      118
+    ],
+    "familial": [
+      120
+    ],
+    "stigma,": [
+      121
+    ],
+    "lack": [
+      122
+    ],
+    "transparency": [
+      124
+    ],
+    "administrators,": [
+      126
+    ],
+    "insufficient": [
+      127
+    ],
+    "qualified": [
+      128
+    ],
+    "teachers)": [
+      129
+    ],
+    "as": [
+      130
+    ],
+    "felt": [
+      131
+    ],
+    "by": [
+      132,
+      160
+    ],
+    "parents.": [
+      134
+    ],
+    "Nevertheless,": [
+      135
+    ],
+    "remarkable": [
+      137
+    ],
+    "coverage": [
+      138
+    ],
+    "cellular": [
+      140
+    ],
+    "networks": [
+      141
+    ],
+    "increasing": [
+      143
+    ],
+    "usage": [
+      144
+    ],
+    "mobile": [
+      146
+    ],
+    "phones": [
+      147
+    ],
+    "places": [
+      150
+    ],
+    "us": [
+      151
+    ],
+    "unique": [
+      154
+    ],
+    "position": [
+      155
+    ],
+    "expect": [
+      157
+    ],
+    "positive": [
+      158
+    ],
+    "changes": [
+      159
+    ],
+    "employing": [
+      161
+    ],
+    "ICT,": [
+      162
+    ],
+    "which": [
+      163
+    ],
+    "we": [
+      164
+    ],
+    "believe": [
+      165
+    ],
+    "will": [
+      166
+    ],
+    "open": [
+      167
+    ],
+    "avenues": [
+      168
+    ],
+    "future": [
+      170
+    ],
+    "researchers": [
+      171
+    ],
+    "guide": [
+      173
+    ],
+    "them": [
+      174
+    ],
+    "implementing": [
+      176
+    ],
+    "robust": [
+      177
+    ],
+    "technology": [
+      178
+    ],
+    "support": [
+      180
+    ],
+    "environment": [
+      184
+    ],
+    "families.": [
+      190
+    ]
   },
   "counts_by_year": [
     {

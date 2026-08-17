@@ -13,8 +13,8 @@ teamMembers:
 grants:
   - gates-foundation-2020
 publications:
-  - 'The Necessary Ingredients for Success of Women in Computing'
-  - 'Meena Needs a Computer Now: Co-design Solutions to Barriers using Fictional Inquiry for Women in Computing'
+  - "The Necessary Ingredients for Success of Women in Computing"
+  - "Meena Needs a Computer Now: Co-design Solutions to Barriers using Fictional Inquiry for Women in Computing"
 ---
 
 ## Overview

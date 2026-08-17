@@ -4,7 +4,13 @@
   "message-version": "1.0.0",
   "message": {
     "indexed": {
-      "date-parts": [[2025, 8, 27]],
+      "date-parts": [
+        [
+          2025,
+          8,
+          27
+        ]
+      ],
       "date-time": "2025-08-27T00:17:52Z",
       "timestamp": 1756253872831,
       "version": "3.44.0"
@@ -14,7 +20,13 @@
     "license": [
       {
         "start": {
-          "date-parts": [[2021, 12, 18]],
+          "date-parts": [
+            [
+              2021,
+              12,
+              18
+            ]
+          ],
           "date-time": "2021-12-18T00:00:00Z",
           "timestamp": 1639785600000
         },
@@ -24,7 +36,13 @@
       },
       {
         "start": {
-          "date-parts": [[2021, 12, 18]],
+          "date-parts": [
+            [
+              2021,
+              12,
+              18
+            ]
+          ],
           "date-time": "2021-12-18T00:00:00Z",
           "timestamp": 1639785600000
         },
@@ -39,12 +57,24 @@
     },
     "short-container-title": [],
     "published-print": {
-      "date-parts": [[2021, 12, 18]]
+      "date-parts": [
+        [
+          2021,
+          12,
+          18
+        ]
+      ]
     },
     "DOI": "10.1109/iccit54785.2021.9689868",
     "type": "proceedings-article",
     "created": {
-      "date-parts": [[2022, 1, 28]],
+      "date-parts": [
+        [
+          2022,
+          1,
+          28
+        ]
+      ],
       "date-time": "2022-01-28T20:05:04Z",
       "timestamp": 1643400304000
     },
@@ -260,11 +290,23 @@
     "event": {
       "name": "2021 24th International Conference on Computer and Information Technology (ICCIT)",
       "start": {
-        "date-parts": [[2021, 12, 18]]
+        "date-parts": [
+          [
+            2021,
+            12,
+            18
+          ]
+        ]
       },
       "location": "Dhaka, Bangladesh",
       "end": {
-        "date-parts": [[2021, 12, 20]]
+        "date-parts": [
+          [
+            2021,
+            12,
+            20
+          ]
+        ]
       }
     },
     "container-title": [
@@ -280,7 +322,13 @@
       }
     ],
     "deposited": {
-      "date-parts": [[2025, 8, 26]],
+      "date-parts": [
+        [
+          2025,
+          8,
+          26
+        ]
+      ],
       "date-time": "2025-08-26T19:15:04Z",
       "timestamp": 1756235704000
     },
@@ -293,14 +341,26 @@
     "subtitle": [],
     "short-title": [],
     "issued": {
-      "date-parts": [[2021, 12, 18]]
+      "date-parts": [
+        [
+          2021,
+          12,
+          18
+        ]
+      ]
     },
     "references-count": 12,
     "URL": "https://doi.org/10.1109/iccit54785.2021.9689868",
     "relation": {},
     "subject": [],
     "published": {
-      "date-parts": [[2021, 12, 18]]
+      "date-parts": [
+        [
+          2021,
+          12,
+          18
+        ]
+      ]
     }
   }
 }

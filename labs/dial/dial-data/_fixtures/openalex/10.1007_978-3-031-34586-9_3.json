@@ -19,7 +19,10 @@
       "id": "https://openalex.org/S4393917809",
       "display_name": "Lecture notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering",
       "issn_l": "1867-8211",
-      "issn": ["1867-8211", "1867-822X"],
+      "issn": [
+        "1867-8211",
+        "1867-822X"
+      ],
       "is_oa": false,
       "is_in_doaj": false,
       "is_core": false,
@@ -38,7 +41,9 @@
     "raw_type": "book-chapter"
   },
   "type": "book-chapter",
-  "indexed_in": ["crossref"],
+  "indexed_in": [
+    "crossref"
+  ],
   "open_access": {
     "is_oa": false,
     "oa_status": "closed",
@@ -60,10 +65,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": true,
       "raw_author_name": "Md. Sabbir Ahmed",
       "raw_affiliation_strings": [
@@ -73,7 +82,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Design Inclusion and Access Lab (DIAL), North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -91,10 +102,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Shajnush Amir",
       "raw_affiliation_strings": [
@@ -104,7 +119,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Design Inclusion and Access Lab (DIAL), North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -122,10 +139,14 @@
           "ror": "https://ror.org/03kk7td41",
           "country_code": "GB",
           "type": "education",
-          "lineage": ["https://openalex.org/I79510175"]
+          "lineage": [
+            "https://openalex.org/I79510175"
+          ]
         }
       ],
-      "countries": ["GB"],
+      "countries": [
+        "GB"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Samuelson Atiba",
       "raw_affiliation_strings": [
@@ -135,7 +156,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "School of Computer Science and Informatics, Cardiff University, Cardiff, UK",
-          "institution_ids": ["https://openalex.org/I79510175"]
+          "institution_ids": [
+            "https://openalex.org/I79510175"
+          ]
         }
       ]
     },
@@ -153,10 +176,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Rahat Jahangir Rony",
       "raw_affiliation_strings": [
@@ -166,7 +193,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Design Inclusion and Access Lab (DIAL), North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -184,10 +213,14 @@
           "ror": "https://ror.org/03kk7td41",
           "country_code": "GB",
           "type": "education",
-          "lineage": ["https://openalex.org/I79510175"]
+          "lineage": [
+            "https://openalex.org/I79510175"
+          ]
         }
       ],
-      "countries": ["GB"],
+      "countries": [
+        "GB"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Nervo Verdezoto Dias",
       "raw_affiliation_strings": [
@@ -197,7 +230,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "School of Computer Science and Informatics, Cardiff University, Cardiff, UK",
-          "institution_ids": ["https://openalex.org/I79510175"]
+          "institution_ids": [
+            "https://openalex.org/I79510175"
+          ]
         }
       ]
     },
@@ -215,18 +250,26 @@
           "ror": "https://ror.org/03kk7td41",
           "country_code": "GB",
           "type": "education",
-          "lineage": ["https://openalex.org/I79510175"]
+          "lineage": [
+            "https://openalex.org/I79510175"
+          ]
         }
       ],
-      "countries": ["GB"],
+      "countries": [
+        "GB"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Valerie Sparkes",
-      "raw_affiliation_strings": ["School of Healthcare Sciences, Cardiff University, Cardiff, UK"],
+      "raw_affiliation_strings": [
+        "School of Healthcare Sciences, Cardiff University, Cardiff, UK"
+      ],
       "raw_orcid": null,
       "affiliations": [
         {
           "raw_affiliation_string": "School of Healthcare Sciences, Cardiff University, Cardiff, UK",
-          "institution_ids": ["https://openalex.org/I79510175"]
+          "institution_ids": [
+            "https://openalex.org/I79510175"
+          ]
         }
       ]
     },
@@ -244,10 +287,14 @@
           "ror": "https://ror.org/03kk7td41",
           "country_code": "GB",
           "type": "education",
-          "lineage": ["https://openalex.org/I79510175"]
+          "lineage": [
+            "https://openalex.org/I79510175"
+          ]
         }
       ],
-      "countries": ["GB"],
+      "countries": [
+        "GB"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Katarzyna Stawarz",
       "raw_affiliation_strings": [
@@ -257,7 +304,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "School of Computer Science and Informatics, Cardiff University, Cardiff, UK",
-          "institution_ids": ["https://openalex.org/I79510175"]
+          "institution_ids": [
+            "https://openalex.org/I79510175"
+          ]
         }
       ]
     },
@@ -275,10 +324,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Nova Ahmed",
       "raw_affiliation_strings": [
@@ -288,7 +341,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Design Inclusion and Access Lab (DIAL), North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     }
@@ -296,8 +351,12 @@
   "institutions": [],
   "countries_distinct_count": 2,
   "institutions_distinct_count": 8,
-  "corresponding_author_ids": ["https://openalex.org/A5052130889"],
-  "corresponding_institution_ids": ["https://openalex.org/I157386601"],
+  "corresponding_author_ids": [
+    "https://openalex.org/A5052130889"
+  ],
+  "corresponding_institution_ids": [
+    "https://openalex.org/I157386601"
+  ],
   "apc_list": null,
   "apc_paid": null,
   "fwci": 3.4841,
@@ -553,7 +612,10 @@
         "id": "https://openalex.org/S4393917809",
         "display_name": "Lecture notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering",
         "issn_l": "1867-8211",
-        "issn": ["1867-8211", "1867-822X"],
+        "issn": [
+          "1867-8211",
+          "1867-822X"
+        ],
         "is_oa": false,
         "is_in_doaj": false,
         "is_core": false,

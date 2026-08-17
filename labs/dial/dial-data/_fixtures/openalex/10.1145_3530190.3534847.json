@@ -25,7 +25,9 @@
     "raw_type": "proceedings-article"
   },
   "type": "article",
-  "indexed_in": ["crossref"],
+  "indexed_in": [
+    "crossref"
+  ],
   "open_access": {
     "is_oa": false,
     "oa_status": "closed",
@@ -47,10 +49,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Rahat Jahangir Rony",
       "raw_affiliation_strings": [
@@ -60,7 +66,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "DIAL (Design Inclusion and Access Lab), North South University, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -78,10 +86,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Anik Sinha",
       "raw_affiliation_strings": [
@@ -91,7 +103,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "DIAL (Design Inclusion and Access Lab), North South University, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -109,10 +123,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Shajnush Amir",
       "raw_affiliation_strings": [
@@ -122,7 +140,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "DIAL (Design Inclusion and Access Lab), North South University, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -140,10 +160,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Syeda Shabnam Khan",
       "raw_affiliation_strings": [
@@ -153,7 +177,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "DIAL (Design Inclusion and Access Lab), North South University, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -171,10 +197,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Anik Saha",
       "raw_affiliation_strings": [
@@ -184,7 +214,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "DIAL (Design Inclusion and Access Lab), North South University, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -202,10 +234,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Ifti Azad Abeer",
       "raw_affiliation_strings": [
@@ -215,7 +251,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "DIAL (Design Inclusion and Access Lab), North South University, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -233,10 +271,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Nova Ahmed",
       "raw_affiliation_strings": [
@@ -246,7 +288,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "DIAL (Design Inclusion and Access Lab), North South University, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     }
@@ -255,7 +299,9 @@
   "countries_distinct_count": 1,
   "institutions_distinct_count": 1,
   "corresponding_author_ids": [],
-  "corresponding_institution_ids": ["https://openalex.org/I157386601"],
+  "corresponding_institution_ids": [
+    "https://openalex.org/I157386601"
+  ],
   "apc_list": null,
   "apc_paid": null,
   "fwci": 0.9562,
@@ -585,7 +631,9 @@
         "is_core": false,
         "host_organization": "https://openalex.org/I79510175",
         "host_organization_name": "Cardiff University",
-        "host_organization_lineage": ["https://openalex.org/I79510175"],
+        "host_organization_lineage": [
+          "https://openalex.org/I79510175"
+        ],
         "host_organization_lineage_names": [],
         "type": "repository"
       },
@@ -642,129 +690,432 @@
     "https://openalex.org/W3024821741"
   ],
   "abstract_inverted_index": {
-    "26": [64],
-    "Indigenous": [0, 176],
-    "communities": [1, 21, 74, 177],
-    "in": [2, 53, 75, 80, 89, 114, 178],
-    "Bangladesh": [3],
-    "are": [4, 86],
-    "comparatively": [5],
-    "disadvantaged": [6],
-    "and": [7, 16, 26, 65, 77, 95, 105, 124, 160],
-    "face": [8],
-    "several": [9],
-    "barriers": [10],
-    "regarding": [11],
-    "rights.": [12],
-    "Access": [13],
-    "to": [14, 107],
-    "technology": [15, 34, 48, 93, 172],
-    "ICT": [17],
-    "can": [18],
-    "help": [19, 112],
-    "indigenous": [20, 44, 68, 73],
-    "open": [22],
-    "new": [23],
-    "economic,": [24],
-    "political,": [25],
-    "social": [27, 122],
-    "dimensions.": [28],
-    "The": [29, 128, 145],
-    "recent": [30],
-    "COVID-19": [31, 158],
-    "pandemic": [32],
-    "necessitated": [33],
-    "adoption": [35, 49, 173],
-    "for": [36, 43, 162],
-    "routine": [37],
-    "use,": [38],
-    "which": [39],
-    "is": [40],
-    "equally": [41],
-    "important": [42],
-    "communities,": [45, 90],
-    "but": [46, 137],
-    "their": [47, 115, 118, 143, 163],
-    "scenario": [50],
-    "remains": [51],
-    "unexplored": [52],
-    "HCI": [54, 168],
-    "research.": [55],
-    "Considering": [56],
-    "the": [57, 126, 149, 157, 171],
-    "research": [58, 166],
-    "gap,": [59],
-    "we": [60],
-    "interviewed": [61],
-    "n=36": [62],
-    "(Female": [63],
-    "Male": [66],
-    "10)": [67],
-    "people": [69],
-    "from": [70],
-    "six": [71],
-    "different": [72],
-    "Chattogarm": [76],
-    "Sylhet": [78],
-    "divisions": [79],
-    "Bangladesh.": [81, 179],
-    "We": [82],
-    "found": [83],
-    "that": [84, 111, 138, 152],
-    "they": [85],
-    "strongly": [87],
-    "connected": [88],
-    "have": [91, 96, 101],
-    "independent": [92],
-    "access,": [94],
-    "no": [97],
-    "gender": [98],
-    "differences.": [99],
-    "They": [100],
-    "a": [102],
-    "strong": [103],
-    "interest": [104],
-    "eagerness": [106],
-    "learn": [108],
-    "available": [109],
-    "technologies": [110],
-    "them": [113, 154],
-    "professions,": [116],
-    "enrich": [117],
-    "technical": [119],
-    "skills,": [120],
-    "communication,": [121],
-    "participation,": [123],
-    "expand": [125],
-    "business.": [127],
-    "study": [129, 146],
-    "also": [130, 147],
-    "revealed": [131],
-    "some": [132],
-    "challenges": [133],
-    "while": [134],
-    "using": [135],
-    "technology,": [136],
-    "did": [139],
-    "not": [140],
-    "negatively": [141],
-    "impact": [142],
-    "usage.": [144],
-    "discussed": [148],
-    "community-centric": [150],
-    "strengths": [151],
-    "helped": [153],
-    "fight": [155],
-    "against": [156],
-    "crisis": [159],
-    "work": [161],
-    "development.": [164],
-    "This": [165],
-    "impacts": [167],
-    "literature,": [169],
-    "revealing": [170],
-    "scenarios": [174],
-    "of": [175]
+    "26": [
+      64
+    ],
+    "Indigenous": [
+      0,
+      176
+    ],
+    "communities": [
+      1,
+      21,
+      74,
+      177
+    ],
+    "in": [
+      2,
+      53,
+      75,
+      80,
+      89,
+      114,
+      178
+    ],
+    "Bangladesh": [
+      3
+    ],
+    "are": [
+      4,
+      86
+    ],
+    "comparatively": [
+      5
+    ],
+    "disadvantaged": [
+      6
+    ],
+    "and": [
+      7,
+      16,
+      26,
+      65,
+      77,
+      95,
+      105,
+      124,
+      160
+    ],
+    "face": [
+      8
+    ],
+    "several": [
+      9
+    ],
+    "barriers": [
+      10
+    ],
+    "regarding": [
+      11
+    ],
+    "rights.": [
+      12
+    ],
+    "Access": [
+      13
+    ],
+    "to": [
+      14,
+      107
+    ],
+    "technology": [
+      15,
+      34,
+      48,
+      93,
+      172
+    ],
+    "ICT": [
+      17
+    ],
+    "can": [
+      18
+    ],
+    "help": [
+      19,
+      112
+    ],
+    "indigenous": [
+      20,
+      44,
+      68,
+      73
+    ],
+    "open": [
+      22
+    ],
+    "new": [
+      23
+    ],
+    "economic,": [
+      24
+    ],
+    "political,": [
+      25
+    ],
+    "social": [
+      27,
+      122
+    ],
+    "dimensions.": [
+      28
+    ],
+    "The": [
+      29,
+      128,
+      145
+    ],
+    "recent": [
+      30
+    ],
+    "COVID-19": [
+      31,
+      158
+    ],
+    "pandemic": [
+      32
+    ],
+    "necessitated": [
+      33
+    ],
+    "adoption": [
+      35,
+      49,
+      173
+    ],
+    "for": [
+      36,
+      43,
+      162
+    ],
+    "routine": [
+      37
+    ],
+    "use,": [
+      38
+    ],
+    "which": [
+      39
+    ],
+    "is": [
+      40
+    ],
+    "equally": [
+      41
+    ],
+    "important": [
+      42
+    ],
+    "communities,": [
+      45,
+      90
+    ],
+    "but": [
+      46,
+      137
+    ],
+    "their": [
+      47,
+      115,
+      118,
+      143,
+      163
+    ],
+    "scenario": [
+      50
+    ],
+    "remains": [
+      51
+    ],
+    "unexplored": [
+      52
+    ],
+    "HCI": [
+      54,
+      168
+    ],
+    "research.": [
+      55
+    ],
+    "Considering": [
+      56
+    ],
+    "the": [
+      57,
+      126,
+      149,
+      157,
+      171
+    ],
+    "research": [
+      58,
+      166
+    ],
+    "gap,": [
+      59
+    ],
+    "we": [
+      60
+    ],
+    "interviewed": [
+      61
+    ],
+    "n=36": [
+      62
+    ],
+    "(Female": [
+      63
+    ],
+    "Male": [
+      66
+    ],
+    "10)": [
+      67
+    ],
+    "people": [
+      69
+    ],
+    "from": [
+      70
+    ],
+    "six": [
+      71
+    ],
+    "different": [
+      72
+    ],
+    "Chattogarm": [
+      76
+    ],
+    "Sylhet": [
+      78
+    ],
+    "divisions": [
+      79
+    ],
+    "Bangladesh.": [
+      81,
+      179
+    ],
+    "We": [
+      82
+    ],
+    "found": [
+      83
+    ],
+    "that": [
+      84,
+      111,
+      138,
+      152
+    ],
+    "they": [
+      85
+    ],
+    "strongly": [
+      87
+    ],
+    "connected": [
+      88
+    ],
+    "have": [
+      91,
+      96,
+      101
+    ],
+    "independent": [
+      92
+    ],
+    "access,": [
+      94
+    ],
+    "no": [
+      97
+    ],
+    "gender": [
+      98
+    ],
+    "differences.": [
+      99
+    ],
+    "They": [
+      100
+    ],
+    "a": [
+      102
+    ],
+    "strong": [
+      103
+    ],
+    "interest": [
+      104
+    ],
+    "eagerness": [
+      106
+    ],
+    "learn": [
+      108
+    ],
+    "available": [
+      109
+    ],
+    "technologies": [
+      110
+    ],
+    "them": [
+      113,
+      154
+    ],
+    "professions,": [
+      116
+    ],
+    "enrich": [
+      117
+    ],
+    "technical": [
+      119
+    ],
+    "skills,": [
+      120
+    ],
+    "communication,": [
+      121
+    ],
+    "participation,": [
+      123
+    ],
+    "expand": [
+      125
+    ],
+    "business.": [
+      127
+    ],
+    "study": [
+      129,
+      146
+    ],
+    "also": [
+      130,
+      147
+    ],
+    "revealed": [
+      131
+    ],
+    "some": [
+      132
+    ],
+    "challenges": [
+      133
+    ],
+    "while": [
+      134
+    ],
+    "using": [
+      135
+    ],
+    "technology,": [
+      136
+    ],
+    "did": [
+      139
+    ],
+    "not": [
+      140
+    ],
+    "negatively": [
+      141
+    ],
+    "impact": [
+      142
+    ],
+    "usage.": [
+      144
+    ],
+    "discussed": [
+      148
+    ],
+    "community-centric": [
+      150
+    ],
+    "strengths": [
+      151
+    ],
+    "helped": [
+      153
+    ],
+    "fight": [
+      155
+    ],
+    "against": [
+      156
+    ],
+    "crisis": [
+      159
+    ],
+    "work": [
+      161
+    ],
+    "development.": [
+      164
+    ],
+    "This": [
+      165
+    ],
+    "impacts": [
+      167
+    ],
+    "literature,": [
+      169
+    ],
+    "revealing": [
+      170
+    ],
+    "scenarios": [
+      174
+    ],
+    "of": [
+      175
+    ]
   },
   "counts_by_year": [
     {

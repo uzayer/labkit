@@ -17,13 +17,11 @@ Light — no full hero block. Section heading + one-sentence purpose line. Stats
 **Block TBD** — adapt `feature295` (already planned for `/research/[theme-slug]`), unscoped.
 
 Filter bar:
-
 - **Research Theme** — chips or dropdown, sourced from ResearchThemes collection
 - **Status** — All / Ongoing / Completed
 - **Keywords** — sourced from Keywords collection
 
 Each project card:
-
 - Bengali project name as the visual headline (`Project.localName`) — English title as subtitle
 - `Project.abstract` — one line
 - Theme tag(s)
@@ -45,7 +43,6 @@ Data source: Projects collection, all records.
 **Block TBD.**
 
 Exit paths from this page differ from `/research`:
-
 - Student who found an interesting project → `/join-us`
 - Peer who wants the associated papers → `/publications`
 
@@ -53,14 +50,14 @@ Exit paths from this page differ from `/research`:
 
 ## Data sources summary
 
-| Section             | Source                                             |
-| ------------------- | -------------------------------------------------- |
-| Stats (header)      | Live counts: Projects collection                   |
-| Projects grid       | Projects collection, all records                   |
-| Filter: Theme chips | ResearchThemes collection                          |
-| Filter: Keywords    | Keywords collection                                |
-| Award badges        | Awards collection, filtered by `associatedProject` |
-| Lead researcher     | Team collection, via `Project.leadResearcher`      |
+| Section | Source |
+| ------- | ------ |
+| Stats (header) | Live counts: Projects collection |
+| Projects grid | Projects collection, all records |
+| Filter: Theme chips | ResearchThemes collection |
+| Filter: Keywords | Keywords collection |
+| Award badges | Awards collection, filtered by `associatedProject` |
+| Lead researcher | Team collection, via `Project.leadResearcher` |
 
 ---
 

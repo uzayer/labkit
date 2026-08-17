@@ -26,7 +26,9 @@
     "raw_type": "proceedings-article"
   },
   "type": "article",
-  "indexed_in": ["crossref"],
+  "indexed_in": [
+    "crossref"
+  ],
   "open_access": {
     "is_oa": false,
     "oa_status": "closed",
@@ -48,18 +50,26 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Rahat Jahangir Rony",
-      "raw_affiliation_strings": ["North South University, Dhaka, Bangladesh"],
+      "raw_affiliation_strings": [
+        "North South University, Dhaka, Bangladesh"
+      ],
       "raw_orcid": null,
       "affiliations": [
         {
           "raw_affiliation_string": "North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -77,18 +87,26 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Nova Ahmed",
-      "raw_affiliation_strings": ["North South University, Dhaka, Bangladesh"],
+      "raw_affiliation_strings": [
+        "North South University, Dhaka, Bangladesh"
+      ],
       "raw_orcid": null,
       "affiliations": [
         {
           "raw_affiliation_string": "North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     }
@@ -97,7 +115,9 @@
   "countries_distinct_count": 1,
   "institutions_distinct_count": 1,
   "corresponding_author_ids": [],
-  "corresponding_institution_ids": ["https://openalex.org/I157386601"],
+  "corresponding_institution_ids": [
+    "https://openalex.org/I157386601"
+  ],
   "apc_list": null,
   "apc_paid": null,
   "fwci": 0.6157,
@@ -375,7 +395,9 @@
         "is_core": false,
         "host_organization": "https://openalex.org/I79510175",
         "host_organization_name": "Cardiff University",
-        "host_organization_lineage": ["https://openalex.org/I79510175"],
+        "host_organization_lineage": [
+          "https://openalex.org/I79510175"
+        ],
         "host_organization_lineage_names": [],
         "type": "repository"
       },
@@ -428,85 +450,276 @@
     "https://openalex.org/W4312415459"
   ],
   "abstract_inverted_index": {
-    "Stress": [0],
-    "is": [1, 6, 14, 30, 35, 46],
-    "a": [2, 47, 61, 78, 84],
-    "mental": [3],
-    "state": [4],
-    "that": [5],
-    "responsible": [7, 36],
-    "for": [8],
-    "changing": [9],
-    "human": [10],
-    "behavior.": [11],
-    "Driving": [12],
-    "stress": [13, 34, 42, 71, 92],
-    "harmful": [15],
-    "because": [16],
-    "it": [17],
-    "may": [18],
-    "cause": [19],
-    "road": [20, 28, 95],
-    "accidents.": [21],
-    "In": [22],
-    "developing": [23, 104],
-    "countries,": [24],
-    "the": [25, 54, 69, 90, 109],
-    "rate": [26],
-    "of": [27, 53],
-    "accidents": [29],
-    "higher": [31],
-    "where": [32],
-    "driving": [33, 70, 91],
-    "very": [37],
-    "often.": [38],
-    "Today": [39],
-    "monitoring": [40],
-    "any": [41],
-    "by": [43, 97],
-    "using": [44],
-    "wearable": [45, 81],
-    "growing": [48],
-    "research": [49],
-    "area,": [50],
-    "but": [51],
-    "most": [52],
-    "commercially": [55],
-    "available": [56],
-    "wearables": [57, 63],
-    "are": [58, 64],
-    "expensive.": [59],
-    "Only": [60],
-    "few": [62],
-    "developed": [65, 73],
-    "to": [66, 88, 107],
-    "get": [67],
-    "specifically": [68],
-    "in": [72, 103],
-    "nations.": [74],
-    "We": [75],
-    "gradually": [76],
-    "develop": [77],
-    "low": [79],
-    "cost": [80],
-    "associated": [82],
-    "with": [83, 94],
-    "mobile": [85],
-    "sensing": [86],
-    "application": [87],
-    "detect": [89],
-    "along": [93],
-    "conditions": [96],
-    "analyzing": [98],
-    "HRV": [99],
-    "(Heart": [100],
-    "Rate": [101],
-    "Variability)": [102],
-    "country": [105],
-    "context": [106],
-    "support": [108],
-    "low-income": [110],
-    "community.": [111]
+    "Stress": [
+      0
+    ],
+    "is": [
+      1,
+      6,
+      14,
+      30,
+      35,
+      46
+    ],
+    "a": [
+      2,
+      47,
+      61,
+      78,
+      84
+    ],
+    "mental": [
+      3
+    ],
+    "state": [
+      4
+    ],
+    "that": [
+      5
+    ],
+    "responsible": [
+      7,
+      36
+    ],
+    "for": [
+      8
+    ],
+    "changing": [
+      9
+    ],
+    "human": [
+      10
+    ],
+    "behavior.": [
+      11
+    ],
+    "Driving": [
+      12
+    ],
+    "stress": [
+      13,
+      34,
+      42,
+      71,
+      92
+    ],
+    "harmful": [
+      15
+    ],
+    "because": [
+      16
+    ],
+    "it": [
+      17
+    ],
+    "may": [
+      18
+    ],
+    "cause": [
+      19
+    ],
+    "road": [
+      20,
+      28,
+      95
+    ],
+    "accidents.": [
+      21
+    ],
+    "In": [
+      22
+    ],
+    "developing": [
+      23,
+      104
+    ],
+    "countries,": [
+      24
+    ],
+    "the": [
+      25,
+      54,
+      69,
+      90,
+      109
+    ],
+    "rate": [
+      26
+    ],
+    "of": [
+      27,
+      53
+    ],
+    "accidents": [
+      29
+    ],
+    "higher": [
+      31
+    ],
+    "where": [
+      32
+    ],
+    "driving": [
+      33,
+      70,
+      91
+    ],
+    "very": [
+      37
+    ],
+    "often.": [
+      38
+    ],
+    "Today": [
+      39
+    ],
+    "monitoring": [
+      40
+    ],
+    "any": [
+      41
+    ],
+    "by": [
+      43,
+      97
+    ],
+    "using": [
+      44
+    ],
+    "wearable": [
+      45,
+      81
+    ],
+    "growing": [
+      48
+    ],
+    "research": [
+      49
+    ],
+    "area,": [
+      50
+    ],
+    "but": [
+      51
+    ],
+    "most": [
+      52
+    ],
+    "commercially": [
+      55
+    ],
+    "available": [
+      56
+    ],
+    "wearables": [
+      57,
+      63
+    ],
+    "are": [
+      58,
+      64
+    ],
+    "expensive.": [
+      59
+    ],
+    "Only": [
+      60
+    ],
+    "few": [
+      62
+    ],
+    "developed": [
+      65,
+      73
+    ],
+    "to": [
+      66,
+      88,
+      107
+    ],
+    "get": [
+      67
+    ],
+    "specifically": [
+      68
+    ],
+    "in": [
+      72,
+      103
+    ],
+    "nations.": [
+      74
+    ],
+    "We": [
+      75
+    ],
+    "gradually": [
+      76
+    ],
+    "develop": [
+      77
+    ],
+    "low": [
+      79
+    ],
+    "cost": [
+      80
+    ],
+    "associated": [
+      82
+    ],
+    "with": [
+      83,
+      94
+    ],
+    "mobile": [
+      85
+    ],
+    "sensing": [
+      86
+    ],
+    "application": [
+      87
+    ],
+    "detect": [
+      89
+    ],
+    "along": [
+      93
+    ],
+    "conditions": [
+      96
+    ],
+    "analyzing": [
+      98
+    ],
+    "HRV": [
+      99
+    ],
+    "(Heart": [
+      100
+    ],
+    "Rate": [
+      101
+    ],
+    "Variability)": [
+      102
+    ],
+    "country": [
+      105
+    ],
+    "context": [
+      106
+    ],
+    "support": [
+      108
+    ],
+    "low-income": [
+      110
+    ],
+    "community.": [
+      111
+    ]
   },
   "counts_by_year": [
     {

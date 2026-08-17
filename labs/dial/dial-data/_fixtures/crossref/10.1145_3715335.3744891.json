@@ -4,7 +4,13 @@
   "message-version": "1.0.0",
   "message": {
     "indexed": {
-      "date-parts": [[2025, 8, 2]],
+      "date-parts": [
+        [
+          2025,
+          8,
+          2
+        ]
+      ],
       "date-time": "2025-08-02T14:54:21Z",
       "timestamp": 1754146461486,
       "version": "3.41.2"
@@ -13,17 +19,31 @@
     "reference-count": 12,
     "publisher": "ACM",
     "content-domain": {
-      "domain": ["dl.acm.org"],
+      "domain": [
+        "dl.acm.org"
+      ],
       "crossmark-restriction": true
     },
     "short-container-title": [],
     "published-print": {
-      "date-parts": [[2025, 7, 22]]
+      "date-parts": [
+        [
+          2025,
+          7,
+          22
+        ]
+      ]
     },
     "DOI": "10.1145/3715335.3744891",
     "type": "proceedings-article",
     "created": {
-      "date-parts": [[2025, 7, 18]],
+      "date-parts": [
+        [
+          2025,
+          7,
+          18
+        ]
+      ],
       "date-time": "2025-07-18T09:31:52Z",
       "timestamp": 1752831112000
     },
@@ -31,7 +51,9 @@
     "update-policy": "https://doi.org/10.1145/crossmark-policy",
     "source": "Crossref",
     "is-referenced-by-count": 0,
-    "title": ["Jalli: System Level Support for Critical Real-Time Applications"],
+    "title": [
+      "Jalli: System Level Support for Critical Real-Time Applications"
+    ],
     "prefix": "10.1145",
     "author": [
       {
@@ -91,7 +113,13 @@
     ],
     "member": "320",
     "published-online": {
-      "date-parts": [[2025, 7, 21]]
+      "date-parts": [
+        [
+          2025,
+          7,
+          21
+        ]
+      ]
     },
     "reference": [
       {
@@ -174,7 +202,13 @@
     ],
     "original-title": [],
     "deposited": {
-      "date-parts": [[2025, 7, 18]],
+      "date-parts": [
+        [
+          2025,
+          7,
+          18
+        ]
+      ],
       "date-time": "2025-07-18T09:37:21Z",
       "timestamp": 1752831441000
     },
@@ -187,15 +221,30 @@
     "subtitle": [],
     "short-title": [],
     "issued": {
-      "date-parts": [[2025, 7, 21]]
+      "date-parts": [
+        [
+          2025,
+          7,
+          21
+        ]
+      ]
     },
     "references-count": 12,
-    "alternative-id": ["10.1145/3715335.3744891", "10.1145/3715335"],
+    "alternative-id": [
+      "10.1145/3715335.3744891",
+      "10.1145/3715335"
+    ],
     "URL": "https://doi.org/10.1145/3715335.3744891",
     "relation": {},
     "subject": [],
     "published": {
-      "date-parts": [[2025, 7, 21]]
+      "date-parts": [
+        [
+          2025,
+          7,
+          21
+        ]
+      ]
     },
     "assertion": [
       {

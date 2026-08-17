@@ -4,7 +4,13 @@
   "message-version": "1.0.0",
   "message": {
     "indexed": {
-      "date-parts": [[2026, 2, 26]],
+      "date-parts": [
+        [
+          2026,
+          2,
+          26
+        ]
+      ],
       "date-time": "2026-02-26T03:33:13Z",
       "timestamp": 1772076793091,
       "version": "3.50.1"
@@ -15,7 +21,13 @@
     "license": [
       {
         "start": {
-          "date-parts": [[2025, 5, 10]],
+          "date-parts": [
+            [
+              2025,
+              5,
+              10
+            ]
+          ],
           "date-time": "2025-05-10T00:00:00Z",
           "timestamp": 1746835200000
         },
@@ -25,18 +37,34 @@
       }
     ],
     "content-domain": {
-      "domain": ["dl.acm.org"],
+      "domain": [
+        "dl.acm.org"
+      ],
       "crossmark-restriction": true
     },
-    "short-container-title": ["ACM J. Comput. Sustain. Soc."],
+    "short-container-title": [
+      "ACM J. Comput. Sustain. Soc."
+    ],
     "published-print": {
-      "date-parts": [[2025, 6, 30]]
+      "date-parts": [
+        [
+          2025,
+          6,
+          30
+        ]
+      ]
     },
     "abstract": "<jats:p>The underrepresentation of women in computing in the workplace requires an understanding of the adequate elements needed for women to succeed in Bangladesh complementing the existing body of work. It uses a varied modality of communication Fictional inquiry (FI), where participants write letters to fictional characters followed by a Co-design of solutions. This research considers N=71 participants, 48 tertiary-level computer science and engineering students, and 23 stakeholders covering academics, computing professionals, and guardians of women in computing over a period of one and a half years. The study identifies three major elements for women in computing to succeed professionally: provision to improve skills and self-efficacy, ensuring ways to increase the sense of belonging, and providing transportation and safety aligning through the women’s empowerment framework of Naila Kabeer. The required elements for success and empowerment show that a collaborative approach of support is required from families, institutes, and authorities from a regional perspective that can be of interest to researchers from the HCI, CSCW, and ICTD fields. This work is further expected to provide a guideline for stakeholders, policymakers, institutions, and families eager to ensure inclusive learning and growing space for women in computing.</jats:p>",
     "DOI": "10.1145/3724502",
     "type": "journal-article",
     "created": {
-      "date-parts": [[2025, 3, 22]],
+      "date-parts": [
+        [
+          2025,
+          3,
+          22
+        ]
+      ],
       "date-time": "2025-03-22T09:30:20Z",
       "timestamp": 1742635820000
     },
@@ -143,7 +171,13 @@
     ],
     "member": "320",
     "published-online": {
-      "date-parts": [[2025, 5, 10]]
+      "date-parts": [
+        [
+          2025,
+          5,
+          10
+        ]
+      ]
     },
     "reference": [
       {
@@ -1515,7 +1549,9 @@
         "journal-title": "Journal of Research in Science Teaching: The Official Journal of the National Association for Research in Science Teaching"
       }
     ],
-    "container-title": ["ACM Journal on Computing and Sustainable Societies"],
+    "container-title": [
+      "ACM Journal on Computing and Sustainable Societies"
+    ],
     "original-title": [],
     "language": "en",
     "link": [
@@ -1533,7 +1569,13 @@
       }
     ],
     "deposited": {
-      "date-parts": [[2025, 6, 19]],
+      "date-parts": [
+        [
+          2025,
+          6,
+          19
+        ]
+      ],
       "date-time": "2025-06-19T01:19:16Z",
       "timestamp": 1750295956000
     },
@@ -1546,19 +1588,35 @@
     "subtitle": [],
     "short-title": [],
     "issued": {
-      "date-parts": [[2025, 5, 10]]
+      "date-parts": [
+        [
+          2025,
+          5,
+          10
+        ]
+      ]
     },
     "references-count": 139,
     "journal-issue": {
       "issue": "2",
       "published-print": {
-        "date-parts": [[2025, 6, 30]]
+        "date-parts": [
+          [
+            2025,
+            6,
+            30
+          ]
+        ]
       }
     },
-    "alternative-id": ["10.1145/3724502"],
+    "alternative-id": [
+      "10.1145/3724502"
+    ],
     "URL": "https://doi.org/10.1145/3724502",
     "relation": {},
-    "ISSN": ["2834-5533"],
+    "ISSN": [
+      "2834-5533"
+    ],
     "issn-type": [
       {
         "value": "2834-5533",
@@ -1567,7 +1625,13 @@
     ],
     "subject": [],
     "published": {
-      "date-parts": [[2025, 5, 10]]
+      "date-parts": [
+        [
+          2025,
+          5,
+          10
+        ]
+      ]
     },
     "assertion": [
       {

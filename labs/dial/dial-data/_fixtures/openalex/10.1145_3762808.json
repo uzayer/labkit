@@ -19,14 +19,21 @@
       "id": "https://openalex.org/S89276529",
       "display_name": "ACM Transactions on Computer-Human Interaction",
       "issn_l": "1073-0516",
-      "issn": ["1073-0516", "1557-7325"],
+      "issn": [
+        "1073-0516",
+        "1557-7325"
+      ],
       "is_oa": false,
       "is_in_doaj": false,
       "is_core": true,
       "host_organization": "https://openalex.org/P4310319798",
       "host_organization_name": "Association for Computing Machinery",
-      "host_organization_lineage": ["https://openalex.org/P4310319798"],
-      "host_organization_lineage_names": ["Association for Computing Machinery"],
+      "host_organization_lineage": [
+        "https://openalex.org/P4310319798"
+      ],
+      "host_organization_lineage_names": [
+        "Association for Computing Machinery"
+      ],
       "type": "journal"
     },
     "license": null,
@@ -38,7 +45,9 @@
     "raw_type": "journal-article"
   },
   "type": "article",
-  "indexed_in": ["crossref"],
+  "indexed_in": [
+    "crossref"
+  ],
   "open_access": {
     "is_oa": true,
     "oa_status": "bronze",
@@ -60,10 +69,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Nova Ahmed",
       "raw_affiliation_strings": [
@@ -74,11 +87,15 @@
       "affiliations": [
         {
           "raw_affiliation_string": "ECE, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         },
         {
           "raw_affiliation_string": "DIAL, ECE, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -96,7 +113,9 @@
           "ror": "https://ror.org/00v97ad02",
           "country_code": "US",
           "type": "education",
-          "lineage": ["https://openalex.org/I123534392"]
+          "lineage": [
+            "https://openalex.org/I123534392"
+          ]
         },
         {
           "id": "https://openalex.org/I157386601",
@@ -104,10 +123,15 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD", "US"],
+      "countries": [
+        "BD",
+        "US"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Tasmiah Tahsin Mayeesha",
       "raw_affiliation_strings": [
@@ -118,11 +142,15 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Information Science, University of North Texas, Denton, Texas, USA",
-          "institution_ids": ["https://openalex.org/I123534392"]
+          "institution_ids": [
+            "https://openalex.org/I123534392"
+          ]
         },
         {
           "raw_affiliation_string": "DIAL, ECE, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -140,18 +168,26 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Ifti Azad Abeer",
-      "raw_affiliation_strings": ["DIAL, ECE, North South University, Dhaka, Bangladesh"],
+      "raw_affiliation_strings": [
+        "DIAL, ECE, North South University, Dhaka, Bangladesh"
+      ],
       "raw_orcid": "https://orcid.org/0000-0002-0860-0444",
       "affiliations": [
         {
           "raw_affiliation_string": "DIAL, ECE, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -169,18 +205,26 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Sumit Kumar Kar",
-      "raw_affiliation_strings": ["DIAL, ECE, North South University, Dhaka, Bangladesh"],
+      "raw_affiliation_strings": [
+        "DIAL, ECE, North South University, Dhaka, Bangladesh"
+      ],
       "raw_orcid": "https://orcid.org/0009-0000-9469-3108",
       "affiliations": [
         {
           "raw_affiliation_string": "DIAL, ECE, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -198,18 +242,26 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Anik Saha",
-      "raw_affiliation_strings": ["DIAL, ECE, North South University, Dhaka, Bangladesh"],
+      "raw_affiliation_strings": [
+        "DIAL, ECE, North South University, Dhaka, Bangladesh"
+      ],
       "raw_orcid": "https://orcid.org/0000-0002-9240-2108",
       "affiliations": [
         {
           "raw_affiliation_string": "DIAL, ECE, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -227,18 +279,26 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Anik Sinha",
-      "raw_affiliation_strings": ["DIAL, ECE, North South University, Dhaka, Bangladesh"],
+      "raw_affiliation_strings": [
+        "DIAL, ECE, North South University, Dhaka, Bangladesh"
+      ],
       "raw_orcid": "https://orcid.org/0000-0003-4225-7413",
       "affiliations": [
         {
           "raw_affiliation_string": "DIAL, ECE, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -256,18 +316,26 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Sumaya Akter Ruhi",
-      "raw_affiliation_strings": ["DIAL, ECE, North South University, Dhaka, Bangladesh"],
+      "raw_affiliation_strings": [
+        "DIAL, ECE, North South University, Dhaka, Bangladesh"
+      ],
       "raw_orcid": "https://orcid.org/0009-0000-4759-0798",
       "affiliations": [
         {
           "raw_affiliation_string": "DIAL, ECE, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -285,18 +353,26 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Md. Hussain Shahriar",
-      "raw_affiliation_strings": ["DIAL, ECE, North South University, Dhaka, Bangladesh"],
+      "raw_affiliation_strings": [
+        "DIAL, ECE, North South University, Dhaka, Bangladesh"
+      ],
       "raw_orcid": "https://orcid.org/0009-0009-4384-4901",
       "affiliations": [
         {
           "raw_affiliation_string": "DIAL, ECE, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -314,10 +390,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Sumaya Yasmin",
       "raw_affiliation_strings": [
@@ -328,11 +408,15 @@
       "affiliations": [
         {
           "raw_affiliation_string": "ECE, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         },
         {
           "raw_affiliation_string": "DIAL, ECE, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -350,10 +434,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Nazmun Nahar",
       "raw_affiliation_strings": [
@@ -364,11 +452,15 @@
       "affiliations": [
         {
           "raw_affiliation_string": "ECE, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         },
         {
           "raw_affiliation_string": "DIAL, ECE, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -386,10 +478,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Syeda Shabnam Khan",
       "raw_affiliation_strings": [
@@ -400,11 +496,15 @@
       "affiliations": [
         {
           "raw_affiliation_string": "DIAL, ECE, North South University, Dhaka, Bangladesh and ECE, RMIT, Melbourne, Australia",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         },
         {
           "raw_affiliation_string": "DIAL, ECE, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     }
@@ -556,14 +656,21 @@
         "id": "https://openalex.org/S89276529",
         "display_name": "ACM Transactions on Computer-Human Interaction",
         "issn_l": "1073-0516",
-        "issn": ["1073-0516", "1557-7325"],
+        "issn": [
+          "1073-0516",
+          "1557-7325"
+        ],
         "is_oa": false,
         "is_in_doaj": false,
         "is_core": true,
         "host_organization": "https://openalex.org/P4310319798",
         "host_organization_name": "Association for Computing Machinery",
-        "host_organization_lineage": ["https://openalex.org/P4310319798"],
-        "host_organization_lineage_names": ["Association for Computing Machinery"],
+        "host_organization_lineage": [
+          "https://openalex.org/P4310319798"
+        ],
+        "host_organization_lineage_names": [
+          "Association for Computing Machinery"
+        ],
         "type": "journal"
       },
       "license": null,
@@ -584,14 +691,21 @@
       "id": "https://openalex.org/S89276529",
       "display_name": "ACM Transactions on Computer-Human Interaction",
       "issn_l": "1073-0516",
-      "issn": ["1073-0516", "1557-7325"],
+      "issn": [
+        "1073-0516",
+        "1557-7325"
+      ],
       "is_oa": false,
       "is_in_doaj": false,
       "is_core": true,
       "host_organization": "https://openalex.org/P4310319798",
       "host_organization_name": "Association for Computing Machinery",
-      "host_organization_lineage": ["https://openalex.org/P4310319798"],
-      "host_organization_lineage_names": ["Association for Computing Machinery"],
+      "host_organization_lineage": [
+        "https://openalex.org/P4310319798"
+      ],
+      "host_organization_lineage_names": [
+        "Association for Computing Machinery"
+      ],
       "type": "journal"
     },
     "license": null,
@@ -700,100 +814,306 @@
     "https://openalex.org/W4396696052"
   ],
   "abstract_inverted_index": {
-    "48": [40],
-    "Gender": [0],
-    "disparity": [1],
-    "in": [2, 33, 42, 46, 109],
-    "computing": [3, 47],
-    "is": [4],
-    "a": [5, 14],
-    "well-explored": [6],
-    "concern.": [7],
-    "To": [8],
-    "complement": [9],
-    "existing": [10],
-    "research,": [11],
-    "we": [12, 61],
-    "use": [13],
-    "non-intrusive": [15],
-    "exploration": [16],
-    "method": [17],
-    "of": [18],
-    "Fictional": [19],
-    "Inquiry.": [20],
-    "Followed": [21],
-    "by": [22],
-    "co-design": [23],
-    "workshop": [24],
-    "to": [25, 29, 73, 104],
-    "explore": [26],
-    "solution": [27],
-    "approaches": [28],
-    "increase": [30],
-    "women’s": [31],
-    "participation": [32],
-    "computing.": [34],
-    "The": [35, 84],
-    "study": [36],
-    "involved": [37],
-    "n": [38],
-    "=": [39],
-    "Women": [41],
-    "Computing": [43],
-    "(WiC)": [44],
-    "students": [45],
-    "from": [48, 77],
-    "four": [49],
-    "universities": [50],
-    "across": [51],
-    "Bangladesh.": [52],
-    "Participants": [53],
-    "shared": [54],
-    "their": [55],
-    "challenges": [56],
-    "and": [57, 93, 98, 102],
-    "desired": [58],
-    "solutions": [59],
-    "which": [60],
-    "analyzed": [62],
-    "using": [63],
-    "qualitative": [64],
-    "methods": [65],
-    "along": [66],
-    "with": [67],
-    "Natural": [68],
-    "Language": [69],
-    "Processing": [70],
-    "based": [71],
-    "tools": [72, 101],
-    "illustrate": [74],
-    "the": [75, 94],
-    "problems": [76],
-    "various": [78],
-    "perspectives": [79],
-    "while": [80],
-    "minimizing": [81],
-    "potential": [82],
-    "biases.": [83],
-    "research": [85, 108],
-    "team": [86],
-    "reflects": [87],
-    "on": [88],
-    "methodological": [89],
-    "decisions,": [90],
-    "policy": [91],
-    "implications,": [92],
-    "need": [95],
-    "for": [96],
-    "culturally": [97],
-    "contextually": [99],
-    "appropriate": [100],
-    "datasets": [103],
-    "better": [105],
-    "support": [106],
-    "WiC": [107],
-    "resource-limited": [110],
-    "settings.": [111]
+    "48": [
+      40
+    ],
+    "Gender": [
+      0
+    ],
+    "disparity": [
+      1
+    ],
+    "in": [
+      2,
+      33,
+      42,
+      46,
+      109
+    ],
+    "computing": [
+      3,
+      47
+    ],
+    "is": [
+      4
+    ],
+    "a": [
+      5,
+      14
+    ],
+    "well-explored": [
+      6
+    ],
+    "concern.": [
+      7
+    ],
+    "To": [
+      8
+    ],
+    "complement": [
+      9
+    ],
+    "existing": [
+      10
+    ],
+    "research,": [
+      11
+    ],
+    "we": [
+      12,
+      61
+    ],
+    "use": [
+      13
+    ],
+    "non-intrusive": [
+      15
+    ],
+    "exploration": [
+      16
+    ],
+    "method": [
+      17
+    ],
+    "of": [
+      18
+    ],
+    "Fictional": [
+      19
+    ],
+    "Inquiry.": [
+      20
+    ],
+    "Followed": [
+      21
+    ],
+    "by": [
+      22
+    ],
+    "co-design": [
+      23
+    ],
+    "workshop": [
+      24
+    ],
+    "to": [
+      25,
+      29,
+      73,
+      104
+    ],
+    "explore": [
+      26
+    ],
+    "solution": [
+      27
+    ],
+    "approaches": [
+      28
+    ],
+    "increase": [
+      30
+    ],
+    "women’s": [
+      31
+    ],
+    "participation": [
+      32
+    ],
+    "computing.": [
+      34
+    ],
+    "The": [
+      35,
+      84
+    ],
+    "study": [
+      36
+    ],
+    "involved": [
+      37
+    ],
+    "n": [
+      38
+    ],
+    "=": [
+      39
+    ],
+    "Women": [
+      41
+    ],
+    "Computing": [
+      43
+    ],
+    "(WiC)": [
+      44
+    ],
+    "students": [
+      45
+    ],
+    "from": [
+      48,
+      77
+    ],
+    "four": [
+      49
+    ],
+    "universities": [
+      50
+    ],
+    "across": [
+      51
+    ],
+    "Bangladesh.": [
+      52
+    ],
+    "Participants": [
+      53
+    ],
+    "shared": [
+      54
+    ],
+    "their": [
+      55
+    ],
+    "challenges": [
+      56
+    ],
+    "and": [
+      57,
+      93,
+      98,
+      102
+    ],
+    "desired": [
+      58
+    ],
+    "solutions": [
+      59
+    ],
+    "which": [
+      60
+    ],
+    "analyzed": [
+      62
+    ],
+    "using": [
+      63
+    ],
+    "qualitative": [
+      64
+    ],
+    "methods": [
+      65
+    ],
+    "along": [
+      66
+    ],
+    "with": [
+      67
+    ],
+    "Natural": [
+      68
+    ],
+    "Language": [
+      69
+    ],
+    "Processing": [
+      70
+    ],
+    "based": [
+      71
+    ],
+    "tools": [
+      72,
+      101
+    ],
+    "illustrate": [
+      74
+    ],
+    "the": [
+      75,
+      94
+    ],
+    "problems": [
+      76
+    ],
+    "various": [
+      78
+    ],
+    "perspectives": [
+      79
+    ],
+    "while": [
+      80
+    ],
+    "minimizing": [
+      81
+    ],
+    "potential": [
+      82
+    ],
+    "biases.": [
+      83
+    ],
+    "research": [
+      85,
+      108
+    ],
+    "team": [
+      86
+    ],
+    "reflects": [
+      87
+    ],
+    "on": [
+      88
+    ],
+    "methodological": [
+      89
+    ],
+    "decisions,": [
+      90
+    ],
+    "policy": [
+      91
+    ],
+    "implications,": [
+      92
+    ],
+    "need": [
+      95
+    ],
+    "for": [
+      96
+    ],
+    "culturally": [
+      97
+    ],
+    "contextually": [
+      99
+    ],
+    "appropriate": [
+      100
+    ],
+    "datasets": [
+      103
+    ],
+    "better": [
+      105
+    ],
+    "support": [
+      106
+    ],
+    "WiC": [
+      107
+    ],
+    "resource-limited": [
+      110
+    ],
+    "settings.": [
+      111
+    ]
   },
   "counts_by_year": [],
   "updated_date": "2026-06-11T09:08:48.828518",

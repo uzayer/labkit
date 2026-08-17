@@ -19,14 +19,20 @@
       "id": "https://openalex.org/S4387291547",
       "display_name": "ACM Journal on Computing and Sustainable Societies",
       "issn_l": "2834-5533",
-      "issn": ["2834-5533"],
+      "issn": [
+        "2834-5533"
+      ],
       "is_oa": false,
       "is_in_doaj": false,
       "is_core": true,
       "host_organization": "https://openalex.org/P4310319798",
       "host_organization_name": "Association for Computing Machinery",
-      "host_organization_lineage": ["https://openalex.org/P4310319798"],
-      "host_organization_lineage_names": ["Association for Computing Machinery"],
+      "host_organization_lineage": [
+        "https://openalex.org/P4310319798"
+      ],
+      "host_organization_lineage_names": [
+        "Association for Computing Machinery"
+      ],
       "type": "journal"
     },
     "license": "cc-by",
@@ -38,7 +44,9 @@
     "raw_type": "journal-article"
   },
   "type": "article",
-  "indexed_in": ["crossref"],
+  "indexed_in": [
+    "crossref"
+  ],
   "open_access": {
     "is_oa": true,
     "oa_status": "hybrid",
@@ -60,10 +68,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Ifti Azad Abeer",
       "raw_affiliation_strings": [
@@ -73,7 +85,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -91,10 +105,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Anik Saha",
       "raw_affiliation_strings": [
@@ -105,11 +123,15 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         },
         {
           "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -127,10 +149,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Anik Sinha",
       "raw_affiliation_strings": [
@@ -141,11 +167,15 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         },
         {
           "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -163,7 +193,9 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         },
         {
           "id": "https://openalex.org/I79510175",
@@ -171,10 +203,15 @@
           "ror": "https://ror.org/03kk7td41",
           "country_code": "GB",
           "type": "education",
-          "lineage": ["https://openalex.org/I79510175"]
+          "lineage": [
+            "https://openalex.org/I79510175"
+          ]
         }
       ],
-      "countries": ["BD", "GB"],
+      "countries": [
+        "BD",
+        "GB"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Rahat Jahangir Rony",
       "raw_affiliation_strings": [
@@ -185,11 +222,15 @@
       "affiliations": [
         {
           "raw_affiliation_string": "School of Computer Science and Informatics, Cardiff University, Cardiff, United Kingdom",
-          "institution_ids": ["https://openalex.org/I79510175"]
+          "institution_ids": [
+            "https://openalex.org/I79510175"
+          ]
         },
         {
           "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -207,10 +248,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Gazi Fakhrul Islam",
       "raw_affiliation_strings": [
@@ -221,11 +266,15 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         },
         {
           "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -243,10 +292,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Shajnush Amir",
       "raw_affiliation_strings": [
@@ -257,11 +310,15 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         },
         {
           "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -279,10 +336,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Md. Sabbir Ahmed",
       "raw_affiliation_strings": [
@@ -293,11 +354,15 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         },
         {
           "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -315,10 +380,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Syeda Shabnam Khan",
       "raw_affiliation_strings": [
@@ -329,11 +398,15 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         },
         {
           "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -351,10 +424,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Nova Ahmed",
       "raw_affiliation_strings": [
@@ -365,11 +442,15 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         },
         {
           "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Dhaka Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     }
@@ -571,14 +652,20 @@
         "id": "https://openalex.org/S4387291547",
         "display_name": "ACM Journal on Computing and Sustainable Societies",
         "issn_l": "2834-5533",
-        "issn": ["2834-5533"],
+        "issn": [
+          "2834-5533"
+        ],
         "is_oa": false,
         "is_in_doaj": false,
         "is_core": true,
         "host_organization": "https://openalex.org/P4310319798",
         "host_organization_name": "Association for Computing Machinery",
-        "host_organization_lineage": ["https://openalex.org/P4310319798"],
-        "host_organization_lineage_names": ["Association for Computing Machinery"],
+        "host_organization_lineage": [
+          "https://openalex.org/P4310319798"
+        ],
+        "host_organization_lineage_names": [
+          "Association for Computing Machinery"
+        ],
         "type": "journal"
       },
       "license": "cc-by",
@@ -604,7 +691,9 @@
         "is_core": false,
         "host_organization": "https://openalex.org/I79510175",
         "host_organization_name": "Cardiff University",
-        "host_organization_lineage": ["https://openalex.org/I79510175"],
+        "host_organization_lineage": [
+          "https://openalex.org/I79510175"
+        ],
         "host_organization_lineage_names": [],
         "type": "repository"
       },
@@ -626,14 +715,20 @@
       "id": "https://openalex.org/S4387291547",
       "display_name": "ACM Journal on Computing and Sustainable Societies",
       "issn_l": "2834-5533",
-      "issn": ["2834-5533"],
+      "issn": [
+        "2834-5533"
+      ],
       "is_oa": false,
       "is_in_doaj": false,
       "is_core": true,
       "host_organization": "https://openalex.org/P4310319798",
       "host_organization_name": "Association for Computing Machinery",
-      "host_organization_lineage": ["https://openalex.org/P4310319798"],
-      "host_organization_lineage_names": ["Association for Computing Machinery"],
+      "host_organization_lineage": [
+        "https://openalex.org/P4310319798"
+      ],
+      "host_organization_lineage_names": [
+        "Association for Computing Machinery"
+      ],
       "type": "journal"
     },
     "license": "cc-by",
@@ -723,121 +818,391 @@
     "https://openalex.org/W2070558560"
   ],
   "abstract_inverted_index": {
-    "313": [78],
-    "The": [0, 19, 60, 117],
-    "COVID-19": [1],
-    "pandemic": [2],
-    "increased": [3],
-    "the": [4, 99, 121, 136, 153],
-    "usage": [5, 22, 37, 48],
-    "of": [6, 21, 123],
-    "Mobile": [7],
-    "Financial": [8],
-    "Services": [9],
-    "(MFSs)": [10],
-    "everywhere,": [11],
-    "including": [12],
-    "in": [13, 30, 68],
-    "developing": [14],
-    "countries": [15],
-    "such": [16],
-    "as": [17],
-    "Bangladesh.": [18],
-    "increment": [20],
-    "is": [23],
-    "paired": [24],
-    "with": [25],
-    "continuing": [26],
-    "misuse": [27, 114],
-    "and": [28, 54, 70, 86, 93, 108, 115, 144],
-    "abuse": [29],
-    "several": [31, 58],
-    "ways": [32, 100],
-    "that": [33],
-    "impact": [34],
-    "users’": [35, 45],
-    "MFS": [36, 47, 106],
-    "behaviors.": [38],
-    "This": [39],
-    "qualitative": [40],
-    "study": [41, 61],
-    "aimed": [42],
-    "to": [43, 51, 112, 126, 151],
-    "understand": [44],
-    "adoptive": [46],
-    "behaviors": [49],
-    "due": [50],
-    "negative": [52, 140],
-    "experiences": [53],
-    "their": [55, 103],
-    "implications": [56],
-    "among": [57],
-    "communities.": [59],
-    "took": [62],
-    "place": [63],
-    "across": [64],
-    "all": [65],
-    "eight": [66],
-    "divisions": [67],
-    "Bangladesh": [69],
-    "did": [71],
-    "focus": [72],
-    "group": [73],
-    "discussions": [74],
-    "involving": [75],
-    "N": [76],
-    "=": [77, 81, 84, 88],
-    "participants": [79, 101],
-    "(female": [80],
-    "203,": [82],
-    "male": [83],
-    "108,": [85],
-    "transgender": [87],
-    "2)": [89],
-    "covering": [90],
-    "urban,": [91],
-    "suburban,": [92],
-    "rural": [94],
-    "regions.": [95],
-    "Study": [96],
-    "findings": [97],
-    "present": [98],
-    "limit": [102],
-    "usage,": [104],
-    "delegate": [105],
-    "operations,": [107],
-    "rely": [109],
-    "on": [110],
-    "others": [111],
-    "avoid": [113, 127],
-    "abuse.": [116],
-    "stories": [118],
-    "also": [119],
-    "indicate": [120],
-    "inability": [122],
-    "these": [124],
-    "measures": [125],
-    "monetary": [128],
-    "loss,": [129],
-    "which": [130],
-    "creates": [131],
-    "more": [132],
-    "negativity.": [133],
-    "We": [134, 146],
-    "discuss": [135],
-    "cyclic": [137],
-    "relationship": [138],
-    "between": [139],
-    "experiences,": [141],
-    "social": [142],
-    "constructs,": [143],
-    "confidence.": [145],
-    "suggest": [147],
-    "potential": [148],
-    "technology": [149],
-    "interventions": [150],
-    "break": [152],
-    "cycle.": [154]
+    "313": [
+      78
+    ],
+    "The": [
+      0,
+      19,
+      60,
+      117
+    ],
+    "COVID-19": [
+      1
+    ],
+    "pandemic": [
+      2
+    ],
+    "increased": [
+      3
+    ],
+    "the": [
+      4,
+      99,
+      121,
+      136,
+      153
+    ],
+    "usage": [
+      5,
+      22,
+      37,
+      48
+    ],
+    "of": [
+      6,
+      21,
+      123
+    ],
+    "Mobile": [
+      7
+    ],
+    "Financial": [
+      8
+    ],
+    "Services": [
+      9
+    ],
+    "(MFSs)": [
+      10
+    ],
+    "everywhere,": [
+      11
+    ],
+    "including": [
+      12
+    ],
+    "in": [
+      13,
+      30,
+      68
+    ],
+    "developing": [
+      14
+    ],
+    "countries": [
+      15
+    ],
+    "such": [
+      16
+    ],
+    "as": [
+      17
+    ],
+    "Bangladesh.": [
+      18
+    ],
+    "increment": [
+      20
+    ],
+    "is": [
+      23
+    ],
+    "paired": [
+      24
+    ],
+    "with": [
+      25
+    ],
+    "continuing": [
+      26
+    ],
+    "misuse": [
+      27,
+      114
+    ],
+    "and": [
+      28,
+      54,
+      70,
+      86,
+      93,
+      108,
+      115,
+      144
+    ],
+    "abuse": [
+      29
+    ],
+    "several": [
+      31,
+      58
+    ],
+    "ways": [
+      32,
+      100
+    ],
+    "that": [
+      33
+    ],
+    "impact": [
+      34
+    ],
+    "users’": [
+      35,
+      45
+    ],
+    "MFS": [
+      36,
+      47,
+      106
+    ],
+    "behaviors.": [
+      38
+    ],
+    "This": [
+      39
+    ],
+    "qualitative": [
+      40
+    ],
+    "study": [
+      41,
+      61
+    ],
+    "aimed": [
+      42
+    ],
+    "to": [
+      43,
+      51,
+      112,
+      126,
+      151
+    ],
+    "understand": [
+      44
+    ],
+    "adoptive": [
+      46
+    ],
+    "behaviors": [
+      49
+    ],
+    "due": [
+      50
+    ],
+    "negative": [
+      52,
+      140
+    ],
+    "experiences": [
+      53
+    ],
+    "their": [
+      55,
+      103
+    ],
+    "implications": [
+      56
+    ],
+    "among": [
+      57
+    ],
+    "communities.": [
+      59
+    ],
+    "took": [
+      62
+    ],
+    "place": [
+      63
+    ],
+    "across": [
+      64
+    ],
+    "all": [
+      65
+    ],
+    "eight": [
+      66
+    ],
+    "divisions": [
+      67
+    ],
+    "Bangladesh": [
+      69
+    ],
+    "did": [
+      71
+    ],
+    "focus": [
+      72
+    ],
+    "group": [
+      73
+    ],
+    "discussions": [
+      74
+    ],
+    "involving": [
+      75
+    ],
+    "N": [
+      76
+    ],
+    "=": [
+      77,
+      81,
+      84,
+      88
+    ],
+    "participants": [
+      79,
+      101
+    ],
+    "(female": [
+      80
+    ],
+    "203,": [
+      82
+    ],
+    "male": [
+      83
+    ],
+    "108,": [
+      85
+    ],
+    "transgender": [
+      87
+    ],
+    "2)": [
+      89
+    ],
+    "covering": [
+      90
+    ],
+    "urban,": [
+      91
+    ],
+    "suburban,": [
+      92
+    ],
+    "rural": [
+      94
+    ],
+    "regions.": [
+      95
+    ],
+    "Study": [
+      96
+    ],
+    "findings": [
+      97
+    ],
+    "present": [
+      98
+    ],
+    "limit": [
+      102
+    ],
+    "usage,": [
+      104
+    ],
+    "delegate": [
+      105
+    ],
+    "operations,": [
+      107
+    ],
+    "rely": [
+      109
+    ],
+    "on": [
+      110
+    ],
+    "others": [
+      111
+    ],
+    "avoid": [
+      113,
+      127
+    ],
+    "abuse.": [
+      116
+    ],
+    "stories": [
+      118
+    ],
+    "also": [
+      119
+    ],
+    "indicate": [
+      120
+    ],
+    "inability": [
+      122
+    ],
+    "these": [
+      124
+    ],
+    "measures": [
+      125
+    ],
+    "monetary": [
+      128
+    ],
+    "loss,": [
+      129
+    ],
+    "which": [
+      130
+    ],
+    "creates": [
+      131
+    ],
+    "more": [
+      132
+    ],
+    "negativity.": [
+      133
+    ],
+    "We": [
+      134,
+      146
+    ],
+    "discuss": [
+      135
+    ],
+    "cyclic": [
+      137
+    ],
+    "relationship": [
+      138
+    ],
+    "between": [
+      139
+    ],
+    "experiences,": [
+      141
+    ],
+    "social": [
+      142
+    ],
+    "constructs,": [
+      143
+    ],
+    "confidence.": [
+      145
+    ],
+    "suggest": [
+      147
+    ],
+    "potential": [
+      148
+    ],
+    "technology": [
+      149
+    ],
+    "interventions": [
+      150
+    ],
+    "break": [
+      152
+    ],
+    "cycle.": [
+      154
+    ]
   },
   "counts_by_year": [],
   "updated_date": "2026-06-11T09:08:48.828518",

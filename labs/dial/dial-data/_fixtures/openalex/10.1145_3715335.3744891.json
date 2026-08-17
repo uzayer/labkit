@@ -25,7 +25,9 @@
       "is_core": false,
       "host_organization": "https://openalex.org/I79510175",
       "host_organization_name": "Cardiff University",
-      "host_organization_lineage": ["https://openalex.org/I79510175"],
+      "host_organization_lineage": [
+        "https://openalex.org/I79510175"
+      ],
       "host_organization_lineage_names": [],
       "type": "repository"
     },
@@ -60,10 +62,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Ahmed, Nova",
       "raw_affiliation_strings": [
@@ -73,7 +79,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Design Inclusion and Access Lab (DIAL), North South University, Dhaka, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -91,18 +99,26 @@
           "ror": "https://ror.org/03kk7td41",
           "country_code": "GB",
           "type": "education",
-          "lineage": ["https://openalex.org/I79510175"]
+          "lineage": [
+            "https://openalex.org/I79510175"
+          ]
         }
       ],
-      "countries": ["GB"],
+      "countries": [
+        "GB"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Rony, Rahat Jahangir",
-      "raw_affiliation_strings": ["Cardiff University, Cardiff, Cardiff, United Kingdom"],
+      "raw_affiliation_strings": [
+        "Cardiff University, Cardiff, Cardiff, United Kingdom"
+      ],
       "raw_orcid": null,
       "affiliations": [
         {
           "raw_affiliation_string": "Cardiff University, Cardiff, Cardiff, United Kingdom",
-          "institution_ids": ["https://openalex.org/I79510175"]
+          "institution_ids": [
+            "https://openalex.org/I79510175"
+          ]
         }
       ]
     },
@@ -120,18 +136,26 @@
           "ror": "https://ror.org/05qbbf772",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I31669788"]
+          "lineage": [
+            "https://openalex.org/I31669788"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Rahman, Md. Majedur",
-      "raw_affiliation_strings": ["Independent Researcher, Dhaka, Dhaka, Bangladesh"],
+      "raw_affiliation_strings": [
+        "Independent Researcher, Dhaka, Dhaka, Bangladesh"
+      ],
       "raw_orcid": null,
       "affiliations": [
         {
           "raw_affiliation_string": "Independent Researcher, Dhaka, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I31669788"]
+          "institution_ids": [
+            "https://openalex.org/I31669788"
+          ]
         }
       ]
     }
@@ -261,7 +285,9 @@
         "is_core": false,
         "host_organization": "https://openalex.org/I79510175",
         "host_organization_name": "Cardiff University",
-        "host_organization_lineage": ["https://openalex.org/I79510175"],
+        "host_organization_lineage": [
+          "https://openalex.org/I79510175"
+        ],
         "host_organization_lineage_names": [],
         "type": "repository"
       },
@@ -308,83 +334,274 @@
     "https://openalex.org/W4396696052"
   ],
   "abstract_inverted_index": {
-    "System": [0],
-    "level": [1, 44],
-    "support": [2],
-    "is": [3, 92],
-    "required": [4],
-    "for": [5, 18, 28, 48],
-    "modern": [6],
-    "day": [7],
-    "Internet": [8],
-    "of": [9, 45, 69, 74, 110],
-    "Things": [10],
-    "(IoT)": [11],
-    "based": [12, 32],
-    "applications.": [13],
-    "It": [14],
-    "opens": [15],
-    "up": [16],
-    "opportunities": [17],
-    "low-cost": [19],
-    "solution": [20, 27, 63],
-    "approaches.": [21],
-    "We": [22, 57, 86],
-    "have": [23, 58],
-    "developed": [24, 59],
-    "a": [25, 60, 82, 89],
-    "system": [26, 76, 90, 105],
-    "real": [29, 36],
-    "time": [30, 37],
-    "IoT": [31, 62],
-    "applications": [33],
-    "that": [34, 88, 91],
-    "allows": [35, 43],
-    "access": [38],
-    "to": [39, 51, 64],
-    "location": [40, 50],
-    "information": [41],
-    "and": [42, 94],
-    "data": [46],
-    "abstraction": [47],
-    "tracing": [49],
-    "be": [52],
-    "used": [53],
-    "in": [54, 107],
-    "emergency": [55],
-    "situations.": [56],
-    "wearable": [61],
-    "deal": [65],
-    "with": [66],
-    "the": [67, 75, 97, 108],
-    "problem": [68],
-    "sexual": [70],
-    "harassment": [71],
-    "on": [72],
-    "top": [73],
-    "named": [77],
-    "Jalli.": [78],
-    "The": [79],
-    "application": [80],
-    "considers": [81],
-    "developing": [83],
-    "country": [84],
-    "context.": [85],
-    "hope": [87],
-    "aware": [93],
-    "sensitive": [95],
-    "about": [96],
-    "resource": [98, 112],
-    "limitations": [99],
-    "can": [100],
-    "bring": [101],
-    "out": [102],
-    "best": [103],
-    "possible": [104],
-    "performance": [106],
-    "context": [109],
-    "low": [111],
-    "regions.": [113]
+    "System": [
+      0
+    ],
+    "level": [
+      1,
+      44
+    ],
+    "support": [
+      2
+    ],
+    "is": [
+      3,
+      92
+    ],
+    "required": [
+      4
+    ],
+    "for": [
+      5,
+      18,
+      28,
+      48
+    ],
+    "modern": [
+      6
+    ],
+    "day": [
+      7
+    ],
+    "Internet": [
+      8
+    ],
+    "of": [
+      9,
+      45,
+      69,
+      74,
+      110
+    ],
+    "Things": [
+      10
+    ],
+    "(IoT)": [
+      11
+    ],
+    "based": [
+      12,
+      32
+    ],
+    "applications.": [
+      13
+    ],
+    "It": [
+      14
+    ],
+    "opens": [
+      15
+    ],
+    "up": [
+      16
+    ],
+    "opportunities": [
+      17
+    ],
+    "low-cost": [
+      19
+    ],
+    "solution": [
+      20,
+      27,
+      63
+    ],
+    "approaches.": [
+      21
+    ],
+    "We": [
+      22,
+      57,
+      86
+    ],
+    "have": [
+      23,
+      58
+    ],
+    "developed": [
+      24,
+      59
+    ],
+    "a": [
+      25,
+      60,
+      82,
+      89
+    ],
+    "system": [
+      26,
+      76,
+      90,
+      105
+    ],
+    "real": [
+      29,
+      36
+    ],
+    "time": [
+      30,
+      37
+    ],
+    "IoT": [
+      31,
+      62
+    ],
+    "applications": [
+      33
+    ],
+    "that": [
+      34,
+      88,
+      91
+    ],
+    "allows": [
+      35,
+      43
+    ],
+    "access": [
+      38
+    ],
+    "to": [
+      39,
+      51,
+      64
+    ],
+    "location": [
+      40,
+      50
+    ],
+    "information": [
+      41
+    ],
+    "and": [
+      42,
+      94
+    ],
+    "data": [
+      46
+    ],
+    "abstraction": [
+      47
+    ],
+    "tracing": [
+      49
+    ],
+    "be": [
+      52
+    ],
+    "used": [
+      53
+    ],
+    "in": [
+      54,
+      107
+    ],
+    "emergency": [
+      55
+    ],
+    "situations.": [
+      56
+    ],
+    "wearable": [
+      61
+    ],
+    "deal": [
+      65
+    ],
+    "with": [
+      66
+    ],
+    "the": [
+      67,
+      75,
+      97,
+      108
+    ],
+    "problem": [
+      68
+    ],
+    "sexual": [
+      70
+    ],
+    "harassment": [
+      71
+    ],
+    "on": [
+      72
+    ],
+    "top": [
+      73
+    ],
+    "named": [
+      77
+    ],
+    "Jalli.": [
+      78
+    ],
+    "The": [
+      79
+    ],
+    "application": [
+      80
+    ],
+    "considers": [
+      81
+    ],
+    "developing": [
+      83
+    ],
+    "country": [
+      84
+    ],
+    "context.": [
+      85
+    ],
+    "hope": [
+      87
+    ],
+    "aware": [
+      93
+    ],
+    "sensitive": [
+      95
+    ],
+    "about": [
+      96
+    ],
+    "resource": [
+      98,
+      112
+    ],
+    "limitations": [
+      99
+    ],
+    "can": [
+      100
+    ],
+    "bring": [
+      101
+    ],
+    "out": [
+      102
+    ],
+    "best": [
+      103
+    ],
+    "possible": [
+      104
+    ],
+    "performance": [
+      106
+    ],
+    "context": [
+      109
+    ],
+    "low": [
+      111
+    ],
+    "regions.": [
+      113
+    ]
   },
   "counts_by_year": [],
   "updated_date": "2026-07-02T09:51:11.867554",

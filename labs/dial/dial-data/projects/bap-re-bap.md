@@ -11,8 +11,8 @@ teamMembers:
   - nova-ahmed
 grants: []
 publications:
-  - 'Bap re Bap! Driving Experiences through Multimodal Unruly Traffic on Bumpy Roads'
-  - 'Understanding self-reported stress among drivers and designing stress monitor using heart rate variability'
+  - "Bap re Bap! Driving Experiences through Multimodal Unruly Traffic on Bumpy Roads"
+  - "Understanding self-reported stress among drivers and designing stress monitor using heart rate variability"
 ---
 
 ## Overview

@@ -25,7 +25,9 @@
     "raw_type": "proceedings-article"
   },
   "type": "article",
-  "indexed_in": ["crossref"],
+  "indexed_in": [
+    "crossref"
+  ],
   "open_access": {
     "is_oa": true,
     "oa_status": "gold",
@@ -47,18 +49,26 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Tasmiah Tahsin Mayeesha",
-      "raw_affiliation_strings": ["North South University, Dhaka, Bangladesh"],
+      "raw_affiliation_strings": [
+        "North South University, Dhaka, Bangladesh"
+      ],
       "raw_orcid": "https://orcid.org/0000-0002-4994-9458",
       "affiliations": [
         {
           "raw_affiliation_string": "North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -76,18 +86,26 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Farzana Islam",
-      "raw_affiliation_strings": ["North South University, Dhaka, Bangladesh"],
+      "raw_affiliation_strings": [
+        "North South University, Dhaka, Bangladesh"
+      ],
       "raw_orcid": "https://orcid.org/0000-0003-0286-8076",
       "affiliations": [
         {
           "raw_affiliation_string": "North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -105,18 +123,26 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Nova Ahmed",
-      "raw_affiliation_strings": ["North South University, Dhaka, Bangladesh"],
+      "raw_affiliation_strings": [
+        "North South University, Dhaka, Bangladesh"
+      ],
       "raw_orcid": "https://orcid.org/0000-0002-7715-1742",
       "affiliations": [
         {
           "raw_affiliation_string": "North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     }
@@ -125,7 +151,9 @@
   "countries_distinct_count": 1,
   "institutions_distinct_count": 1,
   "corresponding_author_ids": [],
-  "corresponding_institution_ids": ["https://openalex.org/I157386601"],
+  "corresponding_institution_ids": [
+    "https://openalex.org/I157386601"
+  ],
   "apc_list": null,
   "apc_paid": null,
   "fwci": 3.0262,

@@ -5,8 +5,8 @@ slug: google-research-2022
 funder: Google
 amountValue: 20000
 amountCurrency: USD
-startDate: '2021'
-endDate: '2022'
+startDate: "2021"
+endDate: "2022"
 status: completed
 investigators:
   - teamMember: nova-ahmed

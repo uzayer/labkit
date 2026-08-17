@@ -4,7 +4,13 @@
   "message-version": "1.0.0",
   "message": {
     "indexed": {
-      "date-parts": [[2026, 6, 3]],
+      "date-parts": [
+        [
+          2026,
+          6,
+          3
+        ]
+      ],
       "date-time": "2026-06-03T13:32:09Z",
       "timestamp": 1780493529423,
       "version": "3.54.1"
@@ -14,7 +20,13 @@
     "license": [
       {
         "start": {
-          "date-parts": [[2019, 1, 1]],
+          "date-parts": [
+            [
+              2019,
+              1,
+              1
+            ]
+          ],
           "date-time": "2019-01-01T00:00:00Z",
           "timestamp": 1546300800000
         },
@@ -24,7 +36,13 @@
       },
       {
         "start": {
-          "date-parts": [[2019, 1, 1]],
+          "date-parts": [
+            [
+              2019,
+              1,
+              1
+            ]
+          ],
           "date-time": "2019-01-01T00:00:00Z",
           "timestamp": 1546300800000
         },
@@ -34,7 +52,13 @@
       },
       {
         "start": {
-          "date-parts": [[2019, 1, 1]],
+          "date-parts": [
+            [
+              2019,
+              1,
+              1
+            ]
+          ],
           "date-time": "2019-01-01T00:00:00Z",
           "timestamp": 1546300800000
         },
@@ -49,19 +73,32 @@
     },
     "short-container-title": [],
     "published-print": {
-      "date-parts": [[2019, 1]]
+      "date-parts": [
+        [
+          2019,
+          1
+        ]
+      ]
     },
     "DOI": "10.1109/comsnets.2019.8711411",
     "type": "proceedings-article",
     "created": {
-      "date-parts": [[2019, 5, 13]],
+      "date-parts": [
+        [
+          2019,
+          5,
+          13
+        ]
+      ],
       "date-time": "2019-05-13T23:00:56Z",
       "timestamp": 1557788456000
     },
     "page": "417-419",
     "source": "Crossref",
     "is-referenced-by-count": 9,
-    "title": ["Monitoring Driving Stress using HRV"],
+    "title": [
+      "Monitoring Driving Stress using HRV"
+    ],
     "prefix": "10.1109",
     "author": [
       {
@@ -240,10 +277,22 @@
       "name": "2019 11th International Conference on Communication Systems & Networks (COMSNETS)",
       "location": "Bengaluru, India",
       "start": {
-        "date-parts": [[2019, 1, 7]]
+        "date-parts": [
+          [
+            2019,
+            1,
+            7
+          ]
+        ]
       },
       "end": {
-        "date-parts": [[2019, 1, 11]]
+        "date-parts": [
+          [
+            2019,
+            1,
+            11
+          ]
+        ]
       }
     },
     "container-title": [
@@ -259,7 +308,13 @@
       }
     ],
     "deposited": {
-      "date-parts": [[2022, 7, 15]],
+      "date-parts": [
+        [
+          2022,
+          7,
+          15
+        ]
+      ],
       "date-time": "2022-07-15T03:14:03Z",
       "timestamp": 1657854843000
     },
@@ -272,14 +327,24 @@
     "subtitle": [],
     "short-title": [],
     "issued": {
-      "date-parts": [[2019, 1]]
+      "date-parts": [
+        [
+          2019,
+          1
+        ]
+      ]
     },
     "references-count": 27,
     "URL": "https://doi.org/10.1109/comsnets.2019.8711411",
     "relation": {},
     "subject": [],
     "published": {
-      "date-parts": [[2019, 1]]
+      "date-parts": [
+        [
+          2019,
+          1
+        ]
+      ]
     }
   }
 }

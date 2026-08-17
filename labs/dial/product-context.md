@@ -31,12 +31,12 @@ Last updated: 2026-04-09
 
 Four layers, each with a distinct job. None duplicate each other.
 
-| Layer                      | URL                      | Unique job                                                                                                                                                                      |
-| -------------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Homepage § Research Themes | `/`                      | 3–4 cards — surface DIAL's intellectual areas, route visitors onward                                                                                                            |
-| Research overview          | `/research`              | Full scope — all themes with expanded descriptions + all projects in a filterable grid                                                                                          |
-| Research Theme detail      | `/research/[theme-slug]` | One theme, everything — scoped publications, scoped collaborators, scoped grants. This is the page for a collaborator or funder who wants the full picture on one specific area |
-| Project detail             | `/projects/[slug]`       | One project — problem, approach, outcomes, team, publications from this project                                                                                                 |
+| Layer | URL | Unique job |
+| ----- | --- | ---------- |
+| Homepage § Research Themes | `/` | 3–4 cards — surface DIAL's intellectual areas, route visitors onward |
+| Research overview | `/research` | Full scope — all themes with expanded descriptions + all projects in a filterable grid |
+| Research Theme detail | `/research/[theme-slug]` | One theme, everything — scoped publications, scoped collaborators, scoped grants. This is the page for a collaborator or funder who wants the full picture on one specific area |
+| Project detail | `/projects/[slug]` | One project — problem, approach, outcomes, team, publications from this project |
 
 `/publications` is separate — it's the full bibliography, not scoped to any theme. A funder reading the theme detail page gets "here are the 8 Mental Health papers"; a peer on `/publications` gets the full 40-paper list with filters.
 

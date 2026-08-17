@@ -11,9 +11,9 @@ teamMembers:
   - ifti-azad-abeer
 grants: []
 publications:
-  - 'A Platform for Connectivity and Synergy between Parents and Teachers of Children with Autism'
-  - 'A Personalized Communication Application for Children with Autism through Participatory Design'
-  - 'Understanding the Education of Children with Autism in Bangladesh'
+  - "A Platform for Connectivity and Synergy between Parents and Teachers of Children with Autism"
+  - "A Personalized Communication Application for Children with Autism through Participatory Design"
+  - "Understanding the Education of Children with Autism in Bangladesh"
 ---
 
 ## Overview

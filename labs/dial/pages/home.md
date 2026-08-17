@@ -86,4 +86,5 @@ Centered accent-background card. Headline + description + two buttons side by si
 - CTA 1 (primary): "Join the lab" → `/join-us`
 - CTA 2 (outline): "Explore our research" → `/research`
 
+
 Copy TBD with Nova. Description line serves as the universal pitch for both audiences.

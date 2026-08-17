@@ -8,7 +8,13 @@
     "items": [
       {
         "indexed": {
-          "date-parts": [[2025, 6, 19]],
+          "date-parts": [
+            [
+              2025,
+              6,
+              19
+            ]
+          ],
           "date-time": "2025-06-19T05:04:14Z",
           "timestamp": 1750309454633,
           "version": "3.41.0"
@@ -19,7 +25,13 @@
         "license": [
           {
             "start": {
-              "date-parts": [[2024, 11, 28]],
+              "date-parts": [
+                [
+                  2024,
+                  11,
+                  28
+                ]
+              ],
               "date-time": "2024-11-28T00:00:00Z",
               "timestamp": 1732752000000
             },
@@ -43,18 +55,34 @@
           }
         ],
         "content-domain": {
-          "domain": ["dl.acm.org"],
+          "domain": [
+            "dl.acm.org"
+          ],
           "crossmark-restriction": true
         },
-        "short-container-title": ["ACM J. Comput. Sustain. Soc."],
+        "short-container-title": [
+          "ACM J. Comput. Sustain. Soc."
+        ],
         "published-print": {
-          "date-parts": [[2024, 12, 31]]
+          "date-parts": [
+            [
+              2024,
+              12,
+              31
+            ]
+          ]
         },
         "abstract": "<jats:p>Collaboration between parents and teachers of Children with Autism (CWA) is emphasized for effective education while the communication gap between both sides impedes it. The lack of specially designed tools to supplement the collaboration process in low-resource settings led us to initiate the research to design a platform for facilitating the synergy between both parties. This qualitative research was conducted in two phases where Phase I interviewed n=10 participants (parent=5, teacher=5). They emphasized personalized communication, maintaining privacy and accountability, and school authority’s role in ensuring meaningful communication ideating three design guidelines. The prototype was developed accordingly and evaluated in Phase II with n=18 (parent=8, teacher=10) participants. They shared different use cases of the application, suggested modifications, and recommended new features. The work presents the parents and teachers of CWA with a platform to connect and synchronize their efforts and provides the HCI researchers contextual design considerations while designing for resource-constrained communities in Global South.</jats:p>",
         "DOI": "10.1145/3696434",
         "type": "journal-article",
         "created": {
-          "date-parts": [[2024, 9, 24]],
+          "date-parts": [
+            [
+              2024,
+              9,
+              24
+            ]
+          ],
           "date-time": "2024-09-24T07:33:58Z",
           "timestamp": 1727163238000
         },
@@ -161,7 +189,13 @@
         ],
         "member": "320",
         "published-online": {
-          "date-parts": [[2024, 11, 28]]
+          "date-parts": [
+            [
+              2024,
+              11,
+              28
+            ]
+          ]
         },
         "reference": [
           {
@@ -606,7 +640,9 @@
             "DOI": "10.1352/1944-7558-117.4.316"
           }
         ],
-        "container-title": ["ACM Journal on Computing and Sustainable Societies"],
+        "container-title": [
+          "ACM Journal on Computing and Sustainable Societies"
+        ],
         "language": "en",
         "link": [
           {
@@ -623,7 +659,13 @@
           }
         ],
         "deposited": {
-          "date-parts": [[2025, 6, 19]],
+          "date-parts": [
+            [
+              2025,
+              6,
+              19
+            ]
+          ],
           "date-time": "2025-06-19T01:10:13Z",
           "timestamp": 1750295413000
         },
@@ -634,18 +676,34 @@
           }
         },
         "issued": {
-          "date-parts": [[2024, 11, 28]]
+          "date-parts": [
+            [
+              2024,
+              11,
+              28
+            ]
+          ]
         },
         "references-count": 73,
         "journal-issue": {
           "issue": "4",
           "published-print": {
-            "date-parts": [[2024, 12, 31]]
+            "date-parts": [
+              [
+                2024,
+                12,
+                31
+              ]
+            ]
           }
         },
-        "alternative-id": ["10.1145/3696434"],
+        "alternative-id": [
+          "10.1145/3696434"
+        ],
         "URL": "https://doi.org/10.1145/3696434",
-        "ISSN": ["2834-5533"],
+        "ISSN": [
+          "2834-5533"
+        ],
         "issn-type": [
           {
             "type": "electronic",
@@ -653,7 +711,13 @@
           }
         ],
         "published": {
-          "date-parts": [[2024, 11, 28]]
+          "date-parts": [
+            [
+              2024,
+              11,
+              28
+            ]
+          ]
         },
         "assertion": [
           {
@@ -690,7 +754,13 @@
       },
       {
         "indexed": {
-          "date-parts": [[2024, 7, 23]],
+          "date-parts": [
+            [
+              2024,
+              7,
+              23
+            ]
+          ],
           "date-time": "2024-07-23T00:24:22Z",
           "timestamp": 1721694262070
         },
@@ -702,12 +772,22 @@
           "crossmark-restriction": false
         },
         "published-print": {
-          "date-parts": [[2024]]
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
         },
         "DOI": "10.3102/ip.24.2094602",
         "type": "proceedings-article",
         "created": {
-          "date-parts": [[2024, 7, 22]],
+          "date-parts": [
+            [
+              2024,
+              7,
+              22
+            ]
+          ],
           "date-time": "2024-07-22T08:00:31Z",
           "timestamp": 1721635231000
         },
@@ -740,9 +820,17 @@
           "name": "AERA 2024",
           "acronym": "AERA"
         },
-        "container-title": ["AERA 2024"],
+        "container-title": [
+          "AERA 2024"
+        ],
         "deposited": {
-          "date-parts": [[2024, 7, 22]],
+          "date-parts": [
+            [
+              2024,
+              7,
+              22
+            ]
+          ],
           "date-time": "2024-07-22T10:42:58Z",
           "timestamp": 1721644978000
         },
@@ -753,17 +841,31 @@
           }
         },
         "issued": {
-          "date-parts": [[2024]]
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
         },
         "references-count": 0,
         "URL": "https://doi.org/10.3102/ip.24.2094602",
         "published": {
-          "date-parts": [[2024]]
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
         }
       },
       {
         "indexed": {
-          "date-parts": [[2026, 7, 1]],
+          "date-parts": [
+            [
+              2026,
+              7,
+              1
+            ]
+          ],
           "date-time": "2026-07-01T09:21:03Z",
           "timestamp": 1782897663005,
           "version": "3.54.5"
@@ -774,7 +876,13 @@
         "license": [
           {
             "start": {
-              "date-parts": [[2015, 6, 11]],
+              "date-parts": [
+                [
+                  2015,
+                  6,
+                  11
+                ]
+              ],
               "date-time": "2015-06-11T00:00:00Z",
               "timestamp": 1433980800000
             },
@@ -784,18 +892,33 @@
           }
         ],
         "content-domain": {
-          "domain": ["journals.sagepub.com"],
+          "domain": [
+            "journals.sagepub.com"
+          ],
           "crossmark-restriction": true
         },
-        "short-container-title": ["Autism"],
+        "short-container-title": [
+          "Autism"
+        ],
         "published-print": {
-          "date-parts": [[2016, 5]]
+          "date-parts": [
+            [
+              2016,
+              5
+            ]
+          ]
         },
         "abstract": "<jats:p>Many consensus guidelines encourage parents and teachers to openly communicate about their concerns regarding their children. These guidelines attest to the importance of achieving consensus about what issues are most critical and how to address them. The purpose of this study was to examine whether parents and teachers (1) agree about their concerns for their children with autism and (2) when given the opportunity, whether they discussed these concerns. Participants were 39 parent–teacher dyads of children with autism in kindergarten-through-fifth grade autism support classrooms. Each parent and teacher was interviewed separately about their concerns and then observed together in a discussion about the child. Parents and teachers generally agreed about their primary and secondary concerns. When given an opportunity to communicate their concerns, 49% of the parent–teacher dyads discussed problems that neither reported as their primary concern, and 31% discussed problems that neither reported as their primary or secondary concern. These findings suggest that interventions should target parent–teacher communication, rather than agreement, to facilitate home–school collaboration.</jats:p>",
         "DOI": "10.1177/1362361315588199",
         "type": "journal-article",
         "created": {
-          "date-parts": [[2015, 6, 11]],
+          "date-parts": [
+            [
+              2015,
+              6,
+              11
+            ]
+          ],
           "date-time": "2015-06-11T21:59:41Z",
           "timestamp": 1434059981000
         },
@@ -803,7 +926,9 @@
         "update-policy": "https://doi.org/10.1177/sage-journals-update-policy",
         "source": "Crossref",
         "is-referenced-by-count": 83,
-        "title": ["Concerns of parents and teachers of children with autism in elementary school"],
+        "title": [
+          "Concerns of parents and teachers of children with autism in elementary school"
+        ],
         "prefix": "10.1177",
         "volume": "20",
         "author": [
@@ -842,7 +967,13 @@
         ],
         "member": "179",
         "published-online": {
-          "date-parts": [[2015, 6, 11]]
+          "date-parts": [
+            [
+              2015,
+              6,
+              11
+            ]
+          ]
         },
         "reference": [
           {
@@ -1027,7 +1158,9 @@
             "DOI": "10.1352/1944-7558-117.4.316"
           }
         ],
-        "container-title": ["Autism"],
+        "container-title": [
+          "Autism"
+        ],
         "language": "en",
         "link": [
           {
@@ -1050,7 +1183,13 @@
           }
         ],
         "deposited": {
-          "date-parts": [[2026, 4, 28]],
+          "date-parts": [
+            [
+              2026,
+              4,
+              28
+            ]
+          ],
           "date-time": "2026-04-28T12:51:17Z",
           "timestamp": 1777380677000
         },
@@ -1061,18 +1200,34 @@
           }
         },
         "issued": {
-          "date-parts": [[2015, 6, 11]]
+          "date-parts": [
+            [
+              2015,
+              6,
+              11
+            ]
+          ]
         },
         "references-count": 33,
         "journal-issue": {
           "issue": "4",
           "published-print": {
-            "date-parts": [[2016, 5]]
+            "date-parts": [
+              [
+                2016,
+                5
+              ]
+            ]
           }
         },
-        "alternative-id": ["10.1177/1362361315588199"],
+        "alternative-id": [
+          "10.1177/1362361315588199"
+        ],
         "URL": "https://doi.org/10.1177/1362361315588199",
-        "ISSN": ["1362-3613", "1461-7005"],
+        "ISSN": [
+          "1362-3613",
+          "1461-7005"
+        ],
         "issn-type": [
           {
             "value": "1362-3613",
@@ -1084,7 +1239,13 @@
           }
         ],
         "published": {
-          "date-parts": [[2015, 6, 11]]
+          "date-parts": [
+            [
+              2015,
+              6,
+              11
+            ]
+          ]
         }
       }
     ],

@@ -25,7 +25,9 @@
     "raw_type": "proceedings-article"
   },
   "type": "article",
-  "indexed_in": ["crossref"],
+  "indexed_in": [
+    "crossref"
+  ],
   "open_access": {
     "is_oa": false,
     "oa_status": "closed",
@@ -47,10 +49,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Mohammad Rayed",
       "raw_affiliation_strings": [
@@ -60,7 +66,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -78,10 +86,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Tawfique Elahi",
       "raw_affiliation_strings": [
@@ -91,7 +103,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -109,18 +123,26 @@
           "ror": "https://ror.org/01aff2v68",
           "country_code": "CA",
           "type": "education",
-          "lineage": ["https://openalex.org/I151746483"]
+          "lineage": [
+            "https://openalex.org/I151746483"
+          ]
         }
       ],
-      "countries": ["CA"],
+      "countries": [
+        "CA"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Shaikh Shawon Arefin Shimon",
-      "raw_affiliation_strings": ["School of Computer Science, University of Waterloo, Canada"],
+      "raw_affiliation_strings": [
+        "School of Computer Science, University of Waterloo, Canada"
+      ],
       "raw_orcid": "https://orcid.org/0000-0001-5007-2828",
       "affiliations": [
         {
           "raw_affiliation_string": "School of Computer Science, University of Waterloo, Canada",
-          "institution_ids": ["https://openalex.org/I151746483"]
+          "institution_ids": [
+            "https://openalex.org/I151746483"
+          ]
         }
       ]
     },
@@ -138,10 +160,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Nova Ahmed",
       "raw_affiliation_strings": [
@@ -151,7 +177,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     }
@@ -500,116 +528,372 @@
     "https://openalex.org/W2741781807"
   ],
   "abstract_inverted_index": {
-    "Mobile": [0],
-    "Financial": [1, 41],
-    "Services": [2],
-    "(MFS)": [3],
-    "has": [4, 53, 127],
-    "gained": [5],
-    "significant": [6],
-    "popularity": [7],
-    "during": [8],
-    "the": [9, 20, 128, 132],
-    "COVID-19": [10],
-    "pandemic,": [11],
-    "especially": [12],
-    "among": [13],
-    "marginalized": [14, 136],
-    "and": [15],
-    "low-income,": [16],
-    "low-literate": [17],
-    "communities": [18, 23, 137],
-    "around": [19],
-    "world.": [21],
-    "Such": [22],
-    "have": [24],
-    "not": [25],
-    "been": [26],
-    "traditionally": [27],
-    "considered": [28],
-    "while": [29, 83],
-    "designing": [30],
-    "MFS": [31, 60, 85, 103, 140],
-    "services": [32, 38],
-    "via": [33, 121, 142],
-    "smartphone": [34],
-    "apps": [35],
-    "or": [36],
-    "USSD": [37],
-    "in": [39, 73, 105, 138],
-    "featurephones.": [40, 145],
-    "constraints": [42],
-    "limit": [43],
-    "such": [44],
-    "end-users": [45, 82],
-    "towards": [46],
-    "basic": [47],
-    "featurephones,": [48],
-    "where": [49],
-    "recent": [50],
-    "appstore": [51],
-    "support": [52],
-    "made": [54],
-    "it": [55],
-    "possible": [56],
-    "to": [57, 80, 98, 130],
-    "deploy": [58],
-    "app-based": [59, 113],
-    "solutions": [61, 104],
-    "beyond": [62],
-    "USSD.": [63],
-    "This": [64, 125],
-    "new": [65],
-    "featurephone": [66, 118],
-    "platform": [67, 119],
-    "is": [68],
-    "a": [69, 110, 122],
-    "relatively": [70],
-    "underexplored": [71],
-    "area": [72],
-    "terms": [74],
-    "of": [75, 135],
-    "addressing": [76],
-    "design": [77],
-    "issues": [78],
-    "related": [79],
-    "aforementioned": [81],
-    "developing": [84],
-    "solutions.": [86],
-    "Our": [87],
-    "work": [88, 126],
-    "addresses": [89],
-    "this": [90],
-    "gap": [91],
-    "by": [92],
-    "presenting": [93],
-    "qualitative": [94],
-    "findings": [95],
-    "on": [96, 102, 115],
-    "barriers": [97],
-    "technology": [99],
-    "access": [100],
-    "focused": [101],
-    "marginal": [106],
-    "communities.": [107],
-    "We": [108],
-    "present": [109],
-    "prototype": [111],
-    "non-USSD,": [112],
-    "solution": [114],
-    "an": [116],
-    "appstore-supported": [117],
-    "designed": [120],
-    "human-centered": [123],
-    "approach.": [124],
-    "potential": [129],
-    "increase": [131],
-    "financial": [133],
-    "inclusivity": [134],
-    "cashless": [139],
-    "transactions": [141],
-    "low-cost,": [143],
-    "appstore-enabled": [144]
+    "Mobile": [
+      0
+    ],
+    "Financial": [
+      1,
+      41
+    ],
+    "Services": [
+      2
+    ],
+    "(MFS)": [
+      3
+    ],
+    "has": [
+      4,
+      53,
+      127
+    ],
+    "gained": [
+      5
+    ],
+    "significant": [
+      6
+    ],
+    "popularity": [
+      7
+    ],
+    "during": [
+      8
+    ],
+    "the": [
+      9,
+      20,
+      128,
+      132
+    ],
+    "COVID-19": [
+      10
+    ],
+    "pandemic,": [
+      11
+    ],
+    "especially": [
+      12
+    ],
+    "among": [
+      13
+    ],
+    "marginalized": [
+      14,
+      136
+    ],
+    "and": [
+      15
+    ],
+    "low-income,": [
+      16
+    ],
+    "low-literate": [
+      17
+    ],
+    "communities": [
+      18,
+      23,
+      137
+    ],
+    "around": [
+      19
+    ],
+    "world.": [
+      21
+    ],
+    "Such": [
+      22
+    ],
+    "have": [
+      24
+    ],
+    "not": [
+      25
+    ],
+    "been": [
+      26
+    ],
+    "traditionally": [
+      27
+    ],
+    "considered": [
+      28
+    ],
+    "while": [
+      29,
+      83
+    ],
+    "designing": [
+      30
+    ],
+    "MFS": [
+      31,
+      60,
+      85,
+      103,
+      140
+    ],
+    "services": [
+      32,
+      38
+    ],
+    "via": [
+      33,
+      121,
+      142
+    ],
+    "smartphone": [
+      34
+    ],
+    "apps": [
+      35
+    ],
+    "or": [
+      36
+    ],
+    "USSD": [
+      37
+    ],
+    "in": [
+      39,
+      73,
+      105,
+      138
+    ],
+    "featurephones.": [
+      40,
+      145
+    ],
+    "constraints": [
+      42
+    ],
+    "limit": [
+      43
+    ],
+    "such": [
+      44
+    ],
+    "end-users": [
+      45,
+      82
+    ],
+    "towards": [
+      46
+    ],
+    "basic": [
+      47
+    ],
+    "featurephones,": [
+      48
+    ],
+    "where": [
+      49
+    ],
+    "recent": [
+      50
+    ],
+    "appstore": [
+      51
+    ],
+    "support": [
+      52
+    ],
+    "made": [
+      54
+    ],
+    "it": [
+      55
+    ],
+    "possible": [
+      56
+    ],
+    "to": [
+      57,
+      80,
+      98,
+      130
+    ],
+    "deploy": [
+      58
+    ],
+    "app-based": [
+      59,
+      113
+    ],
+    "solutions": [
+      61,
+      104
+    ],
+    "beyond": [
+      62
+    ],
+    "USSD.": [
+      63
+    ],
+    "This": [
+      64,
+      125
+    ],
+    "new": [
+      65
+    ],
+    "featurephone": [
+      66,
+      118
+    ],
+    "platform": [
+      67,
+      119
+    ],
+    "is": [
+      68
+    ],
+    "a": [
+      69,
+      110,
+      122
+    ],
+    "relatively": [
+      70
+    ],
+    "underexplored": [
+      71
+    ],
+    "area": [
+      72
+    ],
+    "terms": [
+      74
+    ],
+    "of": [
+      75,
+      135
+    ],
+    "addressing": [
+      76
+    ],
+    "design": [
+      77
+    ],
+    "issues": [
+      78
+    ],
+    "related": [
+      79
+    ],
+    "aforementioned": [
+      81
+    ],
+    "developing": [
+      84
+    ],
+    "solutions.": [
+      86
+    ],
+    "Our": [
+      87
+    ],
+    "work": [
+      88,
+      126
+    ],
+    "addresses": [
+      89
+    ],
+    "this": [
+      90
+    ],
+    "gap": [
+      91
+    ],
+    "by": [
+      92
+    ],
+    "presenting": [
+      93
+    ],
+    "qualitative": [
+      94
+    ],
+    "findings": [
+      95
+    ],
+    "on": [
+      96,
+      102,
+      115
+    ],
+    "barriers": [
+      97
+    ],
+    "technology": [
+      99
+    ],
+    "access": [
+      100
+    ],
+    "focused": [
+      101
+    ],
+    "marginal": [
+      106
+    ],
+    "communities.": [
+      107
+    ],
+    "We": [
+      108
+    ],
+    "present": [
+      109
+    ],
+    "prototype": [
+      111
+    ],
+    "non-USSD,": [
+      112
+    ],
+    "solution": [
+      114
+    ],
+    "an": [
+      116
+    ],
+    "appstore-supported": [
+      117
+    ],
+    "designed": [
+      120
+    ],
+    "human-centered": [
+      123
+    ],
+    "approach.": [
+      124
+    ],
+    "potential": [
+      129
+    ],
+    "increase": [
+      131
+    ],
+    "financial": [
+      133
+    ],
+    "inclusivity": [
+      134
+    ],
+    "cashless": [
+      139
+    ],
+    "transactions": [
+      141
+    ],
+    "low-cost,": [
+      143
+    ],
+    "appstore-enabled": [
+      144
+    ]
   },
   "counts_by_year": [
     {

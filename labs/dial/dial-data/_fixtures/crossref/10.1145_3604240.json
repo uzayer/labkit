@@ -4,7 +4,13 @@
   "message-version": "1.0.0",
   "message": {
     "indexed": {
-      "date-parts": [[2025, 6, 18]],
+      "date-parts": [
+        [
+          2025,
+          6,
+          18
+        ]
+      ],
       "date-time": "2025-06-18T04:10:37Z",
       "timestamp": 1750219837285,
       "version": "3.41.0"
@@ -15,7 +21,13 @@
     "license": [
       {
         "start": {
-          "date-parts": [[2023, 9, 11]],
+          "date-parts": [
+            [
+              2023,
+              9,
+              11
+            ]
+          ],
           "date-time": "2023-09-11T00:00:00Z",
           "timestamp": 1694390400000
         },
@@ -25,18 +37,34 @@
       }
     ],
     "content-domain": {
-      "domain": ["dl.acm.org"],
+      "domain": [
+        "dl.acm.org"
+      ],
       "crossmark-restriction": true
     },
-    "short-container-title": ["Proc. ACM Hum.-Comput. Interact."],
+    "short-container-title": [
+      "Proc. ACM Hum.-Comput. Interact."
+    ],
     "published-print": {
-      "date-parts": [[2023, 9, 11]]
+      "date-parts": [
+        [
+          2023,
+          9,
+          11
+        ]
+      ]
     },
     "abstract": "<jats:p>Due to usage of self-reported data which may contain biasness, the existing studies may not unveil the exact relation between academic grades and app categories such as Video. Additionally, the existing systems' requirement for data of prolonged period to predict grades may not facilitate early intervention to improve it. Thus, we presented an app that retrieves past 7 days' actual app usage data within a second (Mean=0.31s, SD=1.1s). Our analysis on 124 Bangladeshi students' real-time data demonstrates app usage sessions have a significant (p&lt;0.05) negative association with CGPA. However, the Productivity and Books categories have a significant positive association whereas Video has a significant negative association. Moreover, the high and low CGPA holders have significantly different app usage behavior. Leveraging only the instantly accessed data, our machine learning model predicts CGPA within ±0.36 of the actual CGPA. We discuss the design implications that can be potential for students to improve grades.</jats:p>",
     "DOI": "10.1145/3604240",
     "type": "journal-article",
     "created": {
-      "date-parts": [[2023, 9, 13]],
+      "date-parts": [
+        [
+          2023,
+          9,
+          13
+        ]
+      ],
       "date-time": "2023-09-13T15:16:20Z",
       "timestamp": 1694618180000
     },
@@ -143,7 +171,13 @@
     ],
     "member": "320",
     "published-online": {
-      "date-parts": [[2023, 9, 13]]
+      "date-parts": [
+        [
+          2023,
+          9,
+          13
+        ]
+      ]
     },
     "reference": [
       {
@@ -813,7 +847,9 @@
         "DOI": "10.1038/s41592-019-0686--2"
       }
     ],
-    "container-title": ["Proceedings of the ACM on Human-Computer Interaction"],
+    "container-title": [
+      "Proceedings of the ACM on Human-Computer Interaction"
+    ],
     "original-title": [],
     "language": "en",
     "link": [
@@ -831,7 +867,13 @@
       }
     ],
     "deposited": {
-      "date-parts": [[2025, 6, 17]],
+      "date-parts": [
+        [
+          2025,
+          6,
+          17
+        ]
+      ],
       "date-time": "2025-06-17T16:46:43Z",
       "timestamp": 1750178803000
     },
@@ -844,19 +886,35 @@
     "subtitle": [],
     "short-title": [],
     "issued": {
-      "date-parts": [[2023, 9, 11]]
+      "date-parts": [
+        [
+          2023,
+          9,
+          11
+        ]
+      ]
     },
     "references-count": 115,
     "journal-issue": {
       "issue": "MHCI",
       "published-print": {
-        "date-parts": [[2023, 9, 11]]
+        "date-parts": [
+          [
+            2023,
+            9,
+            11
+          ]
+        ]
       }
     },
-    "alternative-id": ["10.1145/3604240"],
+    "alternative-id": [
+      "10.1145/3604240"
+    ],
     "URL": "https://doi.org/10.1145/3604240",
     "relation": {},
-    "ISSN": ["2573-0142"],
+    "ISSN": [
+      "2573-0142"
+    ],
     "issn-type": [
       {
         "type": "electronic",
@@ -865,7 +923,13 @@
     ],
     "subject": [],
     "published": {
-      "date-parts": [[2023, 9, 11]]
+      "date-parts": [
+        [
+          2023,
+          9,
+          11
+        ]
+      ]
     },
     "assertion": [
       {

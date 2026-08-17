@@ -26,7 +26,9 @@
     "raw_type": "proceedings-article"
   },
   "type": "article",
-  "indexed_in": ["crossref"],
+  "indexed_in": [
+    "crossref"
+  ],
   "open_access": {
     "is_oa": false,
     "oa_status": "closed",
@@ -48,10 +50,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Rahat Jahangir Rony",
       "raw_affiliation_strings": [
@@ -61,7 +67,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -79,10 +87,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Nova Ahmed",
       "raw_affiliation_strings": [
@@ -92,7 +104,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     }
@@ -101,7 +115,9 @@
   "countries_distinct_count": 1,
   "institutions_distinct_count": 1,
   "corresponding_author_ids": [],
-  "corresponding_institution_ids": ["https://openalex.org/I157386601"],
+  "corresponding_institution_ids": [
+    "https://openalex.org/I157386601"
+  ],
   "apc_list": null,
   "apc_paid": null,
   "fwci": 1.2164,
@@ -348,7 +364,9 @@
         "is_core": false,
         "host_organization": "https://openalex.org/I79510175",
         "host_organization_name": "Cardiff University",
-        "host_organization_lineage": ["https://openalex.org/I79510175"],
+        "host_organization_lineage": [
+          "https://openalex.org/I79510175"
+        ],
         "host_organization_lineage_names": [],
         "type": "repository"
       },
@@ -401,61 +419,189 @@
     "https://openalex.org/W2891266108"
   ],
   "abstract_inverted_index": {
-    "Driving": [0],
-    "stress": [1, 12, 46, 62],
-    "is": [2],
-    "responsible": [3],
-    "for": [4],
-    "bad": [5],
-    "driving": [6],
-    "behavior": [7],
-    "and": [8, 17, 37],
-    "fatal": [9],
-    "accidents.": [10],
-    "This": [11, 54],
-    "initiates": [13],
-    "from": [14],
-    "road": [15, 34, 71],
-    "factors": [16],
-    "keeps": [18],
-    "negative": [19],
-    "consequences": [20],
-    "in": [21, 28],
-    "overall": [22, 70],
-    "traffic": [23],
-    "management": [24],
-    "as": [25, 27],
-    "well": [26],
-    "transportation": [29],
-    "system.": [30, 53],
-    "Bangladesh": [31],
-    "has": [32],
-    "poor": [33],
-    "infrastructure,": [35],
-    "environment": [36],
-    "management.": [38],
-    "We": [39],
-    "explore": [40],
-    "to": [41, 59],
-    "know": [42],
-    "the": [43, 57, 67],
-    "Bangladeshi": [44],
-    "drivers": [45, 58, 68],
-    "level": [47],
-    "through": [48],
-    "HRV": [49],
-    "by": [50, 63],
-    "developing": [51],
-    "a": [52],
-    "system": [55],
-    "helps": [56],
-    "manage": [60],
-    "their": [61],
-    "creating": [64],
-    "self-awareness": [65],
-    "among": [66],
-    "regarding": [69],
-    "safety.": [72]
+    "Driving": [
+      0
+    ],
+    "stress": [
+      1,
+      12,
+      46,
+      62
+    ],
+    "is": [
+      2
+    ],
+    "responsible": [
+      3
+    ],
+    "for": [
+      4
+    ],
+    "bad": [
+      5
+    ],
+    "driving": [
+      6
+    ],
+    "behavior": [
+      7
+    ],
+    "and": [
+      8,
+      17,
+      37
+    ],
+    "fatal": [
+      9
+    ],
+    "accidents.": [
+      10
+    ],
+    "This": [
+      11,
+      54
+    ],
+    "initiates": [
+      13
+    ],
+    "from": [
+      14
+    ],
+    "road": [
+      15,
+      34,
+      71
+    ],
+    "factors": [
+      16
+    ],
+    "keeps": [
+      18
+    ],
+    "negative": [
+      19
+    ],
+    "consequences": [
+      20
+    ],
+    "in": [
+      21,
+      28
+    ],
+    "overall": [
+      22,
+      70
+    ],
+    "traffic": [
+      23
+    ],
+    "management": [
+      24
+    ],
+    "as": [
+      25,
+      27
+    ],
+    "well": [
+      26
+    ],
+    "transportation": [
+      29
+    ],
+    "system.": [
+      30,
+      53
+    ],
+    "Bangladesh": [
+      31
+    ],
+    "has": [
+      32
+    ],
+    "poor": [
+      33
+    ],
+    "infrastructure,": [
+      35
+    ],
+    "environment": [
+      36
+    ],
+    "management.": [
+      38
+    ],
+    "We": [
+      39
+    ],
+    "explore": [
+      40
+    ],
+    "to": [
+      41,
+      59
+    ],
+    "know": [
+      42
+    ],
+    "the": [
+      43,
+      57,
+      67
+    ],
+    "Bangladeshi": [
+      44
+    ],
+    "drivers": [
+      45,
+      58,
+      68
+    ],
+    "level": [
+      47
+    ],
+    "through": [
+      48
+    ],
+    "HRV": [
+      49
+    ],
+    "by": [
+      50,
+      63
+    ],
+    "developing": [
+      51
+    ],
+    "a": [
+      52
+    ],
+    "system": [
+      55
+    ],
+    "helps": [
+      56
+    ],
+    "manage": [
+      60
+    ],
+    "their": [
+      61
+    ],
+    "creating": [
+      64
+    ],
+    "self-awareness": [
+      65
+    ],
+    "among": [
+      66
+    ],
+    "regarding": [
+      69
+    ],
+    "safety.": [
+      72
+    ]
   },
   "counts_by_year": [
     {

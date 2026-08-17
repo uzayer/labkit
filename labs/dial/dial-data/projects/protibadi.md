@@ -10,8 +10,8 @@ teamMembers:
   - nova-ahmed
 grants: []
 publications:
-  - 'Protibadi: starting the fight against sexual abuse'
-  - 'ProtibaadiNext: A Low Cost Emergency Solution against the Perpetrators'
+  - "Protibadi: starting the fight against sexual abuse"
+  - "ProtibaadiNext: A Low Cost Emergency Solution against the Perpetrators"
 ---
 
 ## Overview

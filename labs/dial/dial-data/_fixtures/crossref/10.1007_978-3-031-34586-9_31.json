@@ -4,7 +4,13 @@
   "message-version": "1.0.0",
   "message": {
     "indexed": {
-      "date-parts": [[2026, 2, 26]],
+      "date-parts": [
+        [
+          2026,
+          2,
+          26
+        ]
+      ],
       "date-time": "2026-02-26T15:16:20Z",
       "timestamp": 1772118980076,
       "version": "3.50.1"
@@ -25,7 +31,13 @@
     "license": [
       {
         "start": {
-          "date-parts": [[2023, 1, 1]],
+          "date-parts": [
+            [
+              2023,
+              1,
+              1
+            ]
+          ],
           "date-time": "2023-01-01T00:00:00Z",
           "timestamp": 1672531200000
         },
@@ -35,7 +47,13 @@
       },
       {
         "start": {
-          "date-parts": [[2023, 1, 1]],
+          "date-parts": [
+            [
+              2023,
+              1,
+              1
+            ]
+          ],
           "date-time": "2023-01-01T00:00:00Z",
           "timestamp": 1672531200000
         },
@@ -45,17 +63,29 @@
       }
     ],
     "content-domain": {
-      "domain": ["link.springer.com"],
+      "domain": [
+        "link.springer.com"
+      ],
       "crossmark-restriction": false
     },
     "short-container-title": [],
     "published-print": {
-      "date-parts": [[2023]]
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
     },
     "DOI": "10.1007/978-3-031-34586-9_31",
     "type": "book-chapter",
     "created": {
-      "date-parts": [[2023, 6, 9]],
+      "date-parts": [
+        [
+          2023,
+          6,
+          9
+        ]
+      ],
       "date-time": "2023-06-09T23:27:04Z",
       "timestamp": 1686353224000
     },
@@ -95,7 +125,13 @@
     ],
     "member": "297",
     "published-online": {
-      "date-parts": [[2023, 6, 11]]
+      "date-parts": [
+        [
+          2023,
+          6,
+          11
+        ]
+      ]
     },
     "reference": [
       {
@@ -413,7 +449,13 @@
       }
     ],
     "deposited": {
-      "date-parts": [[2023, 6, 9]],
+      "date-parts": [
+        [
+          2023,
+          6,
+          9
+        ]
+      ],
       "date-time": "2023-06-09T23:34:48Z",
       "timestamp": 1686353688000
     },
@@ -426,9 +468,16 @@
     "subtitle": [],
     "short-title": [],
     "issued": {
-      "date-parts": [[2023]]
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
     },
-    "ISBN": ["9783031345852", "9783031345869"],
+    "ISBN": [
+      "9783031345852",
+      "9783031345869"
+    ],
     "references-count": 41,
     "URL": "https://doi.org/10.1007/978-3-031-34586-9_31",
     "relation": {
@@ -440,7 +489,10 @@
         }
       ]
     },
-    "ISSN": ["1867-8211", "1867-822X"],
+    "ISSN": [
+      "1867-8211",
+      "1867-822X"
+    ],
     "issn-type": [
       {
         "value": "1867-8211",
@@ -453,7 +505,11 @@
     ],
     "subject": [],
     "published": {
-      "date-parts": [[2023]]
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
     },
     "assertion": [
       {

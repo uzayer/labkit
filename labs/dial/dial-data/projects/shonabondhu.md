@@ -10,8 +10,8 @@ teamMembers:
   - nova-ahmed
 grants: []
 publications:
-  - 'ShonaBondhu: a cloud based system to handle flash flood'
-  - 'Cooperative deployment of Shonabondhu'
+  - "ShonaBondhu: a cloud based system to handle flash flood"
+  - "Cooperative deployment of Shonabondhu"
 ---
 
 ## Overview

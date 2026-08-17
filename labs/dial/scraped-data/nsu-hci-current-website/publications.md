@@ -7,11 +7,11 @@ Skip to main content
 
 Skip to navigation
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/publications#h.p_cJn_FnkHocRJ) Google Scholar
+## [Copy heading link](https://sites.google.com/view/nsuhci/publications\#h.p_cJn_FnkHocRJ)    Google Scholar
 
 ![](https://lh3.googleusercontent.com/sitesv/APaQ0SSSDRPd563W6RogwgiHLyoMHxGBGNaEIXj5vCBQkP5pRU6zbMynfbKmsIPijre7KYZQ1dHKviNgGL4-c23lRaPNUqlxaI3lMJg8n51Ko6BzC0KJilmPAzHyCFwFw2uefKc9Ns7lJaETqEmPRzXmTdnGrvinT2gMFdE7NjBpX3yYkFFr4CURL-f-roykHRBimcwiymcoa-A5eWM=w1280)
 
-### [Copy heading link](https://sites.google.com/view/nsuhci/publications#h.p_JAns3xlpnV8y) Please follow the Google Scholar Links below
+### [Copy heading link](https://sites.google.com/view/nsuhci/publications\#h.p_JAns3xlpnV8y)    Please follow the Google Scholar Links below
 
 - [Nova Ahmed](https://scholar.google.com/citations?user=rXMM2MwAAAAJ&hl=en)
 
@@ -25,9 +25,10 @@ Skip to navigation
 
 - [Ifti Azad Abeer](https://scholar.google.com/citations?user=aZESbPcAAAAJ&hl=en)
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/publications#h.p_grFm5LTupt1G) List of Publications
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/publications#h.b5gsmhzgbeos) 2025
+## [Copy heading link](https://sites.google.com/view/nsuhci/publications\#h.p_grFm5LTupt1G)    List of Publications
+
+## [Copy heading link](https://sites.google.com/view/nsuhci/publications\#h.b5gsmhzgbeos)    2025
 
 - Rony RJ, Aalok SA, Tisha LA, Mahatab M, Ahmed N. "Behind the White Coat: Understanding the Mental and Physical Burdens of Doctors and Support Interventions in Bangladesh: A Qualitative Study. Interactive Journal of Medical Research. JMIR. DOI: [10.2196/76934](https://doi.org/10.2196/76934)
 
@@ -45,7 +46,8 @@ Skip to navigation
 
 - Nova Ahmed, Tasmiah Tahsin, Ifti Azad Abeer, Sumit Kumar Kar, Anik Saha, Anik Sinha, Sumaya Akter Ruhi, Md. Hussain Shahriar, Sumaya Yasmin, Nazmun Nahar, and Syeda Shabnam. "Meena Needs a Computer Now: Co-design Solutions to Barriers using Fictional Inquiry for Women in Computing." ACM Transactions on Computer-Human Interaction, Just Accepted (August 2025). [https://doi.org/10.1145/3762808](https://doi.org/10.1145/3762808)
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/publications#h.dq37ou63tx4d) 2024
+
+## [Copy heading link](https://sites.google.com/view/nsuhci/publications\#h.dq37ou63tx4d)    2024
 
 - Tasmiah Tahsin Mayeesha, Farzana Islam, and Nova Ahmed. 2025. AI4Bangladesh: AI Ethics for Bangladesh - Challenges, Risks, Principles, and Suggestions. In Proceedings of the 13th International Conference on Information & Communication Technologies and Development (ICTD '24). Association for Computing Machinery, New York, NY, USA, 260–272. https://doi.org/10.1145/3700794.3700820
 
@@ -75,7 +77,8 @@ Skip to navigation
 
 - Ahmed, N., Wohab, A., & Dey, M. (2024, July). Nobody Can See Us: An Overview of Online Dating Site Experiences. In Proceedings of the 7th ACM SIGCAS/SIGCHI Conference on Computing and Sustainable Societies (pp. 179-185).
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/publications#h.26818laayl7h) 2022
+
+## [Copy heading link](https://sites.google.com/view/nsuhci/publications\#h.26818laayl7h)    2022
 
 - Nova Ahmed, Rahat Jahangir Rony, Anik Sinha, Md. Sabbir Ahmed, Anik Saha, Syeda Shabnam Khan, Ifti Azad Abeer, Shajnush Amir, Tanvir Hasan Fuad. 2022\. "Risk Communication during COVID-19 Pandemic: Impacting Women in Bangladesh". Frontiers in Communication:Disaster Communications. DOI: 10.3389/fcomm.2022.878050
 
@@ -119,7 +122,8 @@ Skip to navigation
 
 - Ahmed, Nova, Arshad M. Chowdhury, Tamanna Urmi, and Lafifa Jamal. "Impact of socio-economic factors on female students’ enrollments in science, technology, engineering and mathematics and workplace challenges in Bangladesh." American Behavioral Scientist (2022): 00027642221078517.
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/publications#h.1b1cey8gqs0g) 2021
+
+## [Copy heading link](https://sites.google.com/view/nsuhci/publications\#h.1b1cey8gqs0g)    2021
 
 - Hridi, A. P., Saha, A., Sinha, A., Abeer, I. A., Ahmed, N., & Ahmed, S. (2021). Understanding the Education of Children with Autism in Bangladesh: Parents' Perspective. Proceedings of the ACM on Human-Computer Interaction, 5(CSCW1), 1-30.
 
@@ -137,7 +141,8 @@ Skip to navigation
 
 - Ahmed, S., Rony, R. J.,  Khan, S. S., Sinha, A., Saha, A., and Ahmed N. 2021. "Towards Exploration of the Factors Affecting Mobile Banking of Bangladeshi Women During COVID". Human Computer Interaction Across the Border Symposium. CHI 2021.
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/publications#h.c98b6ocskys) 2020
+
+## [Copy heading link](https://sites.google.com/view/nsuhci/publications\#h.c98b6ocskys)    2020
 
 - Progga, F. T., Shahria, M. T., & Ahmed, N. (2020, December). The Effectiveness and Acceptance of Collaborative E-learning in the Context of Bangladesh. In 2020 IEEE International Conference on Teaching, Assessment, and Learning for Engineering (TALE) (pp. 554-558). IEEE.
 
@@ -171,7 +176,8 @@ Skip to navigation
 
 - Motahar, T., Jasim, M., Ahmed, S. I., & Mahyar, N. (2020, April). Exploring How International Graduate Students in the US Seek Support. In Extended Abstracts of the 2020 CHI Conference on Human Factors in Computing Systems (pp. 1-8).
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/publications#h.nmdjgi7572of) 2019
+
+## [Copy heading link](https://sites.google.com/view/nsuhci/publications\#h.nmdjgi7572of)    2019
 
 - Sambasivan, N., Batool, A., Ahmed, N., Matthews, T., Thomas, K., Gaytán-Lugo, L.S., Nemer, D., Bursztein, E., Churchill, E. and Consolvo, S., 2019, May. They Don't Leave Us Alone Anywhere We Go" Gender and Digital Abuse in South Asia. In proceedings of the 2019 CHI Conference on Human Factors in Computing Systems (pp. 1-14). (Best of CHI 2019)
 
@@ -219,7 +225,8 @@ Skip to navigation
 
 - Sojol, J. I., Alam, M. S., Hossain, N., & Motahar, T. (2019, February). Smart School Bus: Ensuring Safety On The Road For School Going Children. In 2019 21st International Conference on Advanced Communication Technology (ICACT) (pp. 734-739). IEEE.
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/publications#h.3yf6mand8hj7) 2018
+
+## [Copy heading link](https://sites.google.com/view/nsuhci/publications\#h.3yf6mand8hj7)    2018
 
 - Sambasivan, N., Checkley, G., Batool, A., Ahmed, N., Nemer, D., Gaytán-Lugo, L.S., Matthews, T., Consolvo, S. and Churchill, E., 2018. " Privacy is not for me, it's for those rich women": Performative Privacy Practices on Mobile Phones by Women in South Asia. In Fourteenth Symposium on Usable Privacy and Security ({SOUPS} 2018) (pp. 127-142). \[IAPP Distinguished Privacy Award\]
 
@@ -265,7 +272,8 @@ Skip to navigation
 
 - Burton, S., Acheson, D., Adair, J., Ali, K., Ahmed, N., Greenough, A., ... & Allnock, D. (2018). Non-accidental injury to children: A guide to management. In Safeguarding and Protecting Children in the Early Years (Vol. 2, No. 5, pp. 1-8). London: Wadsworth.
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/publications#h.8e230bwk3xx0) 2017
+
+## [Copy heading link](https://sites.google.com/view/nsuhci/publications\#h.8e230bwk3xx0)    2017
 
 - Kumar, N., Dray, S. M., Sturm, C., Sambasivan, N., Gaytán-Lugo, L. S., Morales Diaz, L. V., ... & Ahmed, N. (2017, May). HCI Across Borders. In Proceedings of the 2017 CHI Conference Extended Abstracts on Human Factors in Computing Systems (pp. 3065-3072).
 
@@ -291,7 +299,8 @@ Skip to navigation
 
 - Ohkubo, S., Limaye, R., Ahmed, N., & Ballard, A. (2017). Blended learning on family planning policy requirements: key findings and implications from a mixed methods study.Annals of Global Health, 1(83), 125.
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/publications#h.akycyxko3e39) 2016
+
+## [Copy heading link](https://sites.google.com/view/nsuhci/publications\#h.akycyxko3e39)    2016
 
 - Ahmed, S. I., Ahmed, N., Hussain, F., & Kumar, N. (2016, June). Computing beyond gender-imposed limits. In proceedings of the Second workshop on Computing within Limits (pp. 1-7).
 
@@ -315,7 +324,8 @@ Skip to navigation
 
 - Ahmed, N., Syrus, M. A., & Chowdhury, A. M. (2016, September). Softsense: sensing at software level. In Proceedings of the 2016 ACM International Joint Conference on Pervasive and Ubiquitous Computing: Adjunct (pp. 1-4).
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/publications#h.vadm3u44tx9a) 2015
+
+## [Copy heading link](https://sites.google.com/view/nsuhci/publications\#h.vadm3u44tx9a)    2015
 
 - Iftekhar, L., Ahmed, N., Chowdhury, F., & Rahman, R. (2015, July). Electrical and computer engineering laboratory education for female undergraduate students: Challenges and solutions from an urban perspective of Bangladesh. In 2015 10th International Conference on Computer Science & Education (ICCSE) (pp. 389-394). IEEE.
 
@@ -339,7 +349,8 @@ Skip to navigation
 
 - Azad, M. A. K., Islam, N., & Ahmed, N. (2015, May). BanglaCloud: A cloud infrastructure with abandoned computers. In 2015 International Conference on Electrical Engineering and Information Communication Technology (ICEEICT) (pp. 1-5). IEEE.
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/publications#h.tmrw68gbti83) 2014
+
+## [Copy heading link](https://sites.google.com/view/nsuhci/publications\#h.tmrw68gbti83)    2014
 
 - Ahmed, S. I., Jackson, S. J., Ahmed, N., Ferdous, H. S., Rifat, M. R., Rizvi, A. S. M., ... & Mansur, R. S. (2014, April). Protibadi: A platform for fighting sexual harassment in urban Bangladesh. In Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (pp. 2695-2704).
 
@@ -369,7 +380,8 @@ Skip to navigation
 
 - A. M. Masudul Haque, Fajilatun Nahar and Nova Ahmed (2014). Ifreephony: A Touchscreen Based User Interface for People with Visual Impairment. In 10th Global Engineering, Science and Technology Conference .
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/publications#h.faey42h34lbv) 2013
+
+## [Copy heading link](https://sites.google.com/view/nsuhci/publications\#h.faey42h34lbv)    2013
 
 - Islam, A. S., Ahmed, N., Hasan, K., & Jubayer, M. (2013, May). mHealth: Blood donation service in Bangladesh. In 2013 International Conference on Informatics, Electronics and Vision (ICIEV) (pp. 1-6). IEEE.
 
@@ -379,7 +391,8 @@ Skip to navigation
 
 - S Akhter, M Rahman, S Nobi, L Khondker, N Ahmed, SK Dey, MF Elahi (2013). Role of computed tomography in the evaluation of schwannoma in the posterior cranial fossa. Bangladesh Medical Journal, 42(3), 85-88.
 
-## [Copy heading link](https://sites.google.com/view/nsuhci/publications#h.xfhm6khqdoz) 2012
+
+## [Copy heading link](https://sites.google.com/view/nsuhci/publications\#h.xfhm6khqdoz)    2012
 
 - Zaman, N. (Ed.). (2012). Wireless Sensor Networks and Energy Efficiency: Protocols, Routing and Management: Protocols, Routing and Management. IGI Global.
 
@@ -396,6 +409,7 @@ Skip to navigation
 - Ahmed, N. (2012). Middleware Systems for Sensor Network: A Study on Different Middleware Systems. In Wireless Sensor Networks and Energy Efficiency: Protocols, Routing and Management (pp. 548-561). IGI Global.
 
 - Ranganathan, H. (2012). Wireless Sensor Network to Support Intelligent Transport Systems. In Wireless Sensor Networks and Energy Efficiency: Protocols, Routing and Management (pp. 528-547). IGI Global.
+
 
 Page updated
 

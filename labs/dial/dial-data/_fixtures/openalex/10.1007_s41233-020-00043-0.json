@@ -20,7 +20,10 @@
       "id": "https://openalex.org/S4210197207",
       "display_name": "Quality and User Experience",
       "issn_l": "2366-0139",
-      "issn": ["2366-0139", "2366-0147"],
+      "issn": [
+        "2366-0139",
+        "2366-0147"
+      ],
       "is_oa": false,
       "is_in_doaj": false,
       "is_core": true,
@@ -30,7 +33,10 @@
         "https://openalex.org/P4310319900",
         "https://openalex.org/P4310319965"
       ],
-      "host_organization_lineage_names": ["Springer Science+Business Media", "Springer Nature"],
+      "host_organization_lineage_names": [
+        "Springer Science+Business Media",
+        "Springer Nature"
+      ],
       "type": "journal"
     },
     "license": null,
@@ -42,7 +48,9 @@
     "raw_type": "journal-article"
   },
   "type": "article",
-  "indexed_in": ["crossref"],
+  "indexed_in": [
+    "crossref"
+  ],
   "open_access": {
     "is_oa": false,
     "oa_status": "closed",
@@ -64,18 +72,26 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Nova Ahmed",
-      "raw_affiliation_strings": ["North South University, Dhaka, Bangladesh"],
+      "raw_affiliation_strings": [
+        "North South University, Dhaka, Bangladesh"
+      ],
       "raw_orcid": null,
       "affiliations": [
         {
           "raw_affiliation_string": "North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -93,18 +109,26 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": true,
       "raw_author_name": "Rahat Jahangir Rony",
-      "raw_affiliation_strings": ["North South University, Dhaka, Bangladesh"],
+      "raw_affiliation_strings": [
+        "North South University, Dhaka, Bangladesh"
+      ],
       "raw_orcid": "https://orcid.org/0000-0001-5788-2145",
       "affiliations": [
         {
           "raw_affiliation_string": "North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     }
@@ -112,8 +136,12 @@
   "institutions": [],
   "countries_distinct_count": 1,
   "institutions_distinct_count": 2,
-  "corresponding_author_ids": ["https://openalex.org/A5051692316"],
-  "corresponding_institution_ids": ["https://openalex.org/I157386601"],
+  "corresponding_author_ids": [
+    "https://openalex.org/A5051692316"
+  ],
+  "corresponding_institution_ids": [
+    "https://openalex.org/I157386601"
+  ],
   "apc_list": {
     "value": 2590,
     "currency": "EUR",
@@ -430,7 +458,10 @@
         "id": "https://openalex.org/S4210197207",
         "display_name": "Quality and User Experience",
         "issn_l": "2366-0139",
-        "issn": ["2366-0139", "2366-0147"],
+        "issn": [
+          "2366-0139",
+          "2366-0147"
+        ],
         "is_oa": false,
         "is_in_doaj": false,
         "is_core": true,
@@ -440,7 +471,10 @@
           "https://openalex.org/P4310319900",
           "https://openalex.org/P4310319965"
         ],
-        "host_organization_lineage_names": ["Springer Science+Business Media", "Springer Nature"],
+        "host_organization_lineage_names": [
+          "Springer Science+Business Media",
+          "Springer Nature"
+        ],
         "type": "journal"
       },
       "license": null,
@@ -466,7 +500,9 @@
         "is_core": false,
         "host_organization": "https://openalex.org/I79510175",
         "host_organization_name": "Cardiff University",
-        "host_organization_lineage": ["https://openalex.org/I79510175"],
+        "host_organization_lineage": [
+          "https://openalex.org/I79510175"
+        ],
         "host_organization_lineage_names": [],
         "type": "repository"
       },

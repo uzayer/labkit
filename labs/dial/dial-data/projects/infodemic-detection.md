@@ -12,8 +12,8 @@ teamMembers:
   - rahat-jahangir-rony
 grants: []
 publications:
-  - 'Roles of technology for risk communication and community engagement in Bangladesh during COVID-19 Pandemic'
-  - 'Risk Communication during COVID-19 Pandemic: Impacting Women in Bangladesh'
+  - "Roles of technology for risk communication and community engagement in Bangladesh during COVID-19 Pandemic"
+  - "Risk Communication during COVID-19 Pandemic: Impacting Women in Bangladesh"
 ---
 
 ## Overview

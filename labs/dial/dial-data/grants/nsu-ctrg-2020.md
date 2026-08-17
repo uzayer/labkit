@@ -5,7 +5,7 @@ slug: nsu-ctrg-2020
 funder: North South University
 amountValue: 200000
 amountCurrency: BDT
-startDate: '2020'
+startDate: "2020"
 status: completed
 investigators:
   - teamMember: nova-ahmed

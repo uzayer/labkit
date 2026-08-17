@@ -19,14 +19,20 @@
       "id": "https://openalex.org/S4210183893",
       "display_name": "Proceedings of the ACM on Human-Computer Interaction",
       "issn_l": "2573-0142",
-      "issn": ["2573-0142"],
+      "issn": [
+        "2573-0142"
+      ],
       "is_oa": false,
       "is_in_doaj": false,
       "is_core": true,
       "host_organization": "https://openalex.org/P4310319798",
       "host_organization_name": "Association for Computing Machinery",
-      "host_organization_lineage": ["https://openalex.org/P4310319798"],
-      "host_organization_lineage_names": ["Association for Computing Machinery"],
+      "host_organization_lineage": [
+        "https://openalex.org/P4310319798"
+      ],
+      "host_organization_lineage_names": [
+        "Association for Computing Machinery"
+      ],
       "type": "journal"
     },
     "license": null,
@@ -38,7 +44,10 @@
     "raw_type": "journal-article"
   },
   "type": "article",
-  "indexed_in": ["arxiv", "crossref"],
+  "indexed_in": [
+    "arxiv",
+    "crossref"
+  ],
   "open_access": {
     "is_oa": true,
     "oa_status": "green",
@@ -60,18 +69,26 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Md Sabbir Ahmed",
-      "raw_affiliation_strings": ["North South University, Dhaka, Bangladesh"],
+      "raw_affiliation_strings": [
+        "North South University, Dhaka, Bangladesh"
+      ],
       "raw_orcid": "https://orcid.org/0000-0001-8668-0120",
       "affiliations": [
         {
           "raw_affiliation_string": "North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -89,18 +106,26 @@
           "ror": "https://ror.org/03kk7td41",
           "country_code": "GB",
           "type": "education",
-          "lineage": ["https://openalex.org/I79510175"]
+          "lineage": [
+            "https://openalex.org/I79510175"
+          ]
         }
       ],
-      "countries": ["GB"],
+      "countries": [
+        "GB"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Rahat Jahangir Rony",
-      "raw_affiliation_strings": ["Cardiff University, Cardiff, United Kingdom"],
+      "raw_affiliation_strings": [
+        "Cardiff University, Cardiff, United Kingdom"
+      ],
       "raw_orcid": "https://orcid.org/0000-0001-5788-2145",
       "affiliations": [
         {
           "raw_affiliation_string": "Cardiff University, Cardiff, United Kingdom",
-          "institution_ids": ["https://openalex.org/I79510175"]
+          "institution_ids": [
+            "https://openalex.org/I79510175"
+          ]
         }
       ]
     },
@@ -118,7 +143,9 @@
           "ror": "https://ror.org/03rmrcq20",
           "country_code": "CA",
           "type": "education",
-          "lineage": ["https://openalex.org/I141945490"]
+          "lineage": [
+            "https://openalex.org/I141945490"
+          ]
         },
         {
           "id": "https://openalex.org/I4405260628",
@@ -126,18 +153,28 @@
           "ror": "https://ror.org/04241wz75",
           "country_code": "CA",
           "type": "education",
-          "lineage": ["https://openalex.org/I141945490", "https://openalex.org/I4405260628"]
+          "lineage": [
+            "https://openalex.org/I141945490",
+            "https://openalex.org/I4405260628"
+          ]
         }
       ],
-      "countries": ["CA"],
+      "countries": [
+        "CA"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Mohammad Abdul Hadi",
-      "raw_affiliation_strings": ["University of British Columbia, Kelowna, BC, Canada"],
+      "raw_affiliation_strings": [
+        "University of British Columbia, Kelowna, BC, Canada"
+      ],
       "raw_orcid": "https://orcid.org/0000-0001-6241-9526",
       "affiliations": [
         {
           "raw_affiliation_string": "University of British Columbia, Kelowna, BC, Canada",
-          "institution_ids": ["https://openalex.org/I141945490", "https://openalex.org/I4405260628"]
+          "institution_ids": [
+            "https://openalex.org/I141945490",
+            "https://openalex.org/I4405260628"
+          ]
         }
       ]
     },
@@ -155,18 +192,26 @@
           "ror": "https://ror.org/022kthw22",
           "country_code": "US",
           "type": "education",
-          "lineage": ["https://openalex.org/I5388228"]
+          "lineage": [
+            "https://openalex.org/I5388228"
+          ]
         }
       ],
-      "countries": ["US"],
+      "countries": [
+        "US"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Ekram Hossain",
-      "raw_affiliation_strings": ["University of Rochester, Rochester, NY, USA"],
+      "raw_affiliation_strings": [
+        "University of Rochester, Rochester, NY, USA"
+      ],
       "raw_orcid": "https://orcid.org/0000-0002-0473-4453",
       "affiliations": [
         {
           "raw_affiliation_string": "University of Rochester, Rochester, NY, USA",
-          "institution_ids": ["https://openalex.org/I5388228"]
+          "institution_ids": [
+            "https://openalex.org/I5388228"
+          ]
         }
       ]
     },
@@ -184,18 +229,26 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Nova Ahmed",
-      "raw_affiliation_strings": ["North South University, Dhaka, Bangladesh"],
+      "raw_affiliation_strings": [
+        "North South University, Dhaka, Bangladesh"
+      ],
       "raw_orcid": "https://orcid.org/0000-0002-7715-1742",
       "affiliations": [
         {
           "raw_affiliation_string": "North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     }
@@ -429,14 +482,20 @@
         "id": "https://openalex.org/S4210183893",
         "display_name": "Proceedings of the ACM on Human-Computer Interaction",
         "issn_l": "2573-0142",
-        "issn": ["2573-0142"],
+        "issn": [
+          "2573-0142"
+        ],
         "is_oa": false,
         "is_in_doaj": false,
         "is_core": true,
         "host_organization": "https://openalex.org/P4310319798",
         "host_organization_name": "Association for Computing Machinery",
-        "host_organization_lineage": ["https://openalex.org/P4310319798"],
-        "host_organization_lineage_names": ["Association for Computing Machinery"],
+        "host_organization_lineage": [
+          "https://openalex.org/P4310319798"
+        ],
+        "host_organization_lineage_names": [
+          "Association for Computing Machinery"
+        ],
         "type": "journal"
       },
       "license": null,
@@ -456,7 +515,9 @@
         "id": "https://openalex.org/S4393918464",
         "display_name": "ArXiv.org",
         "issn_l": "2331-8422",
-        "issn": ["2331-8422"],
+        "issn": [
+          "2331-8422"
+        ],
         "is_oa": true,
         "is_in_doaj": false,
         "is_core": false,
@@ -489,7 +550,9 @@
         "is_core": false,
         "host_organization": "https://openalex.org/I79510175",
         "host_organization_name": "Cardiff University",
-        "host_organization_lineage": ["https://openalex.org/I79510175"],
+        "host_organization_lineage": [
+          "https://openalex.org/I79510175"
+        ],
         "host_organization_lineage_names": [],
         "type": "repository"
       },
@@ -511,7 +574,9 @@
       "id": "https://openalex.org/S4393918464",
       "display_name": "ArXiv.org",
       "issn_l": "2331-8422",
-      "issn": ["2331-8422"],
+      "issn": [
+        "2331-8422"
+      ],
       "is_oa": true,
       "is_in_doaj": false,
       "is_core": false,
@@ -649,111 +714,367 @@
     "https://openalex.org/W2900552970"
   ],
   "abstract_inverted_index": {
-    "7": [57],
-    "124": [71],
-    "Due": [0],
-    "to": [1, 38, 46, 148],
-    "usage": [2, 61, 78, 117],
-    "of": [3, 35, 133],
-    "self-reported": [4],
-    "data": [5, 34, 62, 75],
-    "which": [6],
-    "may": [7, 13, 41],
-    "contain": [8],
-    "biasness,": [9],
-    "the": [10, 16, 29, 89, 107, 121, 134, 139],
-    "existing": [11, 30],
-    "studies": [12],
-    "not": [14, 42],
-    "unveil": [15],
-    "exact": [17],
-    "relation": [18],
-    "between": [19],
-    "academic": [20],
-    "grades": [21, 40],
-    "and": [22, 91, 109],
-    "app": [23, 53, 60, 77, 116],
-    "categories": [24, 93],
-    "such": [25],
-    "as": [26],
-    "Video.": [27],
-    "Additionally,": [28],
-    "systems'": [31],
-    "requirement": [32],
-    "for": [33, 146],
-    "prolonged": [36],
-    "period": [37],
-    "predict": [39],
-    "facilitate": [43],
-    "early": [44],
-    "intervention": [45],
-    "improve": [47, 149],
-    "it.": [48],
-    "Thus,": [49],
-    "we": [50],
-    "presented": [51],
-    "an": [52],
-    "that": [54, 142],
-    "retrieves": [55],
-    "past": [56],
-    "days'": [58],
-    "actual": [59, 135],
-    "within": [63, 131],
-    "a": [64, 81, 95, 102],
-    "second": [65],
-    "(Mean=0.31s,": [66],
-    "SD=1.1s).": [67],
-    "Our": [68],
-    "analysis": [69],
-    "on": [70],
-    "Bangladeshi": [72],
-    "students'": [73],
-    "real-time": [74],
-    "demonstrates": [76],
-    "sessions": [79],
-    "have": [80, 94, 113],
-    "significant": [82, 96, 103],
-    "(p&lt;0.05)": [83],
-    "negative": [84, 104],
-    "association": [85, 98],
-    "with": [86],
-    "CGPA.": [87, 136],
-    "However,": [88],
-    "Productivity": [90],
-    "Books": [92],
-    "positive": [97],
-    "whereas": [99],
-    "Video": [100],
-    "has": [101],
-    "association.": [105],
-    "Moreover,": [106],
-    "high": [108],
-    "low": [110],
-    "CGPA": [111, 130],
-    "holders": [112],
-    "significantly": [114],
-    "different": [115],
-    "behavior.": [118],
-    "Leveraging": [119],
-    "only": [120],
-    "instantly": [122],
-    "accessed": [123],
-    "data,": [124],
-    "our": [125],
-    "machine": [126],
-    "learning": [127],
-    "model": [128],
-    "predicts": [129],
-    "±0.36": [132],
-    "We": [137],
-    "discuss": [138],
-    "design": [140],
-    "implications": [141],
-    "can": [143],
-    "be": [144],
-    "potential": [145],
-    "students": [147],
-    "grades.": [150]
+    "7": [
+      57
+    ],
+    "124": [
+      71
+    ],
+    "Due": [
+      0
+    ],
+    "to": [
+      1,
+      38,
+      46,
+      148
+    ],
+    "usage": [
+      2,
+      61,
+      78,
+      117
+    ],
+    "of": [
+      3,
+      35,
+      133
+    ],
+    "self-reported": [
+      4
+    ],
+    "data": [
+      5,
+      34,
+      62,
+      75
+    ],
+    "which": [
+      6
+    ],
+    "may": [
+      7,
+      13,
+      41
+    ],
+    "contain": [
+      8
+    ],
+    "biasness,": [
+      9
+    ],
+    "the": [
+      10,
+      16,
+      29,
+      89,
+      107,
+      121,
+      134,
+      139
+    ],
+    "existing": [
+      11,
+      30
+    ],
+    "studies": [
+      12
+    ],
+    "not": [
+      14,
+      42
+    ],
+    "unveil": [
+      15
+    ],
+    "exact": [
+      17
+    ],
+    "relation": [
+      18
+    ],
+    "between": [
+      19
+    ],
+    "academic": [
+      20
+    ],
+    "grades": [
+      21,
+      40
+    ],
+    "and": [
+      22,
+      91,
+      109
+    ],
+    "app": [
+      23,
+      53,
+      60,
+      77,
+      116
+    ],
+    "categories": [
+      24,
+      93
+    ],
+    "such": [
+      25
+    ],
+    "as": [
+      26
+    ],
+    "Video.": [
+      27
+    ],
+    "Additionally,": [
+      28
+    ],
+    "systems'": [
+      31
+    ],
+    "requirement": [
+      32
+    ],
+    "for": [
+      33,
+      146
+    ],
+    "prolonged": [
+      36
+    ],
+    "period": [
+      37
+    ],
+    "predict": [
+      39
+    ],
+    "facilitate": [
+      43
+    ],
+    "early": [
+      44
+    ],
+    "intervention": [
+      45
+    ],
+    "improve": [
+      47,
+      149
+    ],
+    "it.": [
+      48
+    ],
+    "Thus,": [
+      49
+    ],
+    "we": [
+      50
+    ],
+    "presented": [
+      51
+    ],
+    "an": [
+      52
+    ],
+    "that": [
+      54,
+      142
+    ],
+    "retrieves": [
+      55
+    ],
+    "past": [
+      56
+    ],
+    "days'": [
+      58
+    ],
+    "actual": [
+      59,
+      135
+    ],
+    "within": [
+      63,
+      131
+    ],
+    "a": [
+      64,
+      81,
+      95,
+      102
+    ],
+    "second": [
+      65
+    ],
+    "(Mean=0.31s,": [
+      66
+    ],
+    "SD=1.1s).": [
+      67
+    ],
+    "Our": [
+      68
+    ],
+    "analysis": [
+      69
+    ],
+    "on": [
+      70
+    ],
+    "Bangladeshi": [
+      72
+    ],
+    "students'": [
+      73
+    ],
+    "real-time": [
+      74
+    ],
+    "demonstrates": [
+      76
+    ],
+    "sessions": [
+      79
+    ],
+    "have": [
+      80,
+      94,
+      113
+    ],
+    "significant": [
+      82,
+      96,
+      103
+    ],
+    "(p&lt;0.05)": [
+      83
+    ],
+    "negative": [
+      84,
+      104
+    ],
+    "association": [
+      85,
+      98
+    ],
+    "with": [
+      86
+    ],
+    "CGPA.": [
+      87,
+      136
+    ],
+    "However,": [
+      88
+    ],
+    "Productivity": [
+      90
+    ],
+    "Books": [
+      92
+    ],
+    "positive": [
+      97
+    ],
+    "whereas": [
+      99
+    ],
+    "Video": [
+      100
+    ],
+    "has": [
+      101
+    ],
+    "association.": [
+      105
+    ],
+    "Moreover,": [
+      106
+    ],
+    "high": [
+      108
+    ],
+    "low": [
+      110
+    ],
+    "CGPA": [
+      111,
+      130
+    ],
+    "holders": [
+      112
+    ],
+    "significantly": [
+      114
+    ],
+    "different": [
+      115
+    ],
+    "behavior.": [
+      118
+    ],
+    "Leveraging": [
+      119
+    ],
+    "only": [
+      120
+    ],
+    "instantly": [
+      122
+    ],
+    "accessed": [
+      123
+    ],
+    "data,": [
+      124
+    ],
+    "our": [
+      125
+    ],
+    "machine": [
+      126
+    ],
+    "learning": [
+      127
+    ],
+    "model": [
+      128
+    ],
+    "predicts": [
+      129
+    ],
+    "±0.36": [
+      132
+    ],
+    "We": [
+      137
+    ],
+    "discuss": [
+      138
+    ],
+    "design": [
+      140
+    ],
+    "implications": [
+      141
+    ],
+    "can": [
+      143
+    ],
+    "be": [
+      144
+    ],
+    "potential": [
+      145
+    ],
+    "students": [
+      147
+    ],
+    "grades.": [
+      150
+    ]
   },
   "counts_by_year": [
     {

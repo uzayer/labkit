@@ -6,20 +6,22 @@ Last updated: 2026-04-22
 
 # Sitemap
 
+
 | Route                    | Description                                     | IA decided | Blocks decided |
 | ------------------------ | ----------------------------------------------- | ---------- | -------------- |
-| `/`                      | Home                                            | ✅         | ✅             |
-| `/people`                | People                                          | ✅         | ✅             |
-| `/people/[slug]`         | Team Member bio                                 | ✅         | ✅             |
-| `/research`              | Research — theme directory + spotlight projects | ✅         | ✅             |
-| `/research/[theme-slug]` | Research Theme detail                           | ✅         | ✅             |
-| `/projects`              | Projects — full filterable directory            | ✅         | ✅             |
-| `/projects/[slug]`       | Project detail                                  | ✅         | ✅             |
-| `/publications`          | Publications                                    | ✅         | ✅             |
-| `/awards`                | Awards                                          | ✅         | ✅             |
-| `/news`                  | News                                            | ✅         | ✅             |
-| `/join-us`               | Join Us                                         | ✅         | ✅             |
-| `/contact`               | Contact                                         | ✅         | ✅             |
+| `/`                      | Home                                            | ✅          | ✅              |
+| `/people`                | People                                          | ✅          | ✅              |
+| `/people/[slug]`         | Team Member bio                                 | ✅          | ✅              |
+| `/research`              | Research — theme directory + spotlight projects | ✅          | ✅              |
+| `/research/[theme-slug]` | Research Theme detail                           | ✅          | ✅              |
+| `/projects`              | Projects — full filterable directory            | ✅          | ✅              |
+| `/projects/[slug]`       | Project detail                                  | ✅          | ✅              |
+| `/publications`          | Publications                                    | ✅          | ✅              |
+| `/awards`                | Awards                                          | ✅          | ✅              |
+| `/news`                  | News                                            | ✅          | ✅              |
+| `/join-us`               | Join Us                                         | ✅          | ✅              |
+| `/contact`               | Contact                                         | ✅          | ✅              |
+
 
 **IA decided = sections and content structure locked. Blocks decided = specific shadcnblocks components chosen.**
 
@@ -29,6 +31,7 @@ Last updated: 2026-04-22
 - No `/publications/[slug]` detail route — dropped by design (titles link to DOI / venue).
 
 ## Blocks by Page (current decisions)
+
 
 | Route                    | Blocks / key components                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                                                                  |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -44,6 +47,7 @@ Last updated: 2026-04-22
 | `/awards`                | `hero262` (page hero — two-col, heading + stats list); `awards3` adapted (§2 Featured — hover list, 4 `isFeatured` entries, all gold indicators); `awards4` adapted (§3 Full list — table, org text badge, name, linked pub, year, category; custom filter badge strip above table)                                                                                                                                                             |                                                                                                                                                  |
 | `/join-us`               | `hero197` (page header, dotted bg pattern, recruitment status badge); `feature10` ("Why DIAL"); `feature37` (Life at DIAL — 5-col bento photo grid, 6 cards, alternating 2/3 col widths); `careers3` (openings); `cta4` ("Ready to join?" — 2-col card, mailto button + application checklist)                                                                                                                                                  |                                                                                                                                                  |
 | `/contact`               | `contact1`: split `[info sidebar                                                                                                                                                                                                                                                                                                                                                                                                                | form]`; no map; sidebar: Nova's email + address + Scholar + socials +` /join-us`signpost; form wired to Payload`form-submissions` with Turnstile |
+
 
 ---
 
@@ -75,6 +79,7 @@ Detail Pages:
 
 **Pages from the current DIAL site (nsuhci) — what changed:**
 
+
 | Old page               | Decision                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | DIAL Research          | → `/research` (renamed)                                                                                                                                                                                                                                                                                                                                                                                                                                             |
@@ -82,6 +87,7 @@ Detail Pages:
 | Events                 | → `/news` (renamed; navbar "Events" → "News"; scope redefined — 3 types: Academic / Organised / Community; no awards cross-posting; year-grouped feed — see [news.md](pages/news.md))                                                                                                                                                                                                                                                                               |
 | Research Collaboration | → Dropped as standalone page. Partner/funder information is distributed contextually: spotlight cards on `/research` carry per-project attribution; full scoped picture (collaborators + funding) lives on each `/research/[theme-slug]` detail page; site-wide first-impression signal is the home collaborators strip. Interdisciplinary collaborators also surface via the Collaborators tab on `/people`. Dhaka ACM SIGCHI Chapter → Nova's bio on People page. |
 | Contact Us             | → `/contact` (renamed, separated from Join Us)                                                                                                                                                                                                                                                                                                                                                                                                                      |
+
 
 ---
 
@@ -91,3 +97,4 @@ Detail Pages:
 > - [Site-Wide Features](site-wide-features.md) — ⌘K search, publication entry format, award visual treatment
 > - [Global Layout](global-layout.md) — header and footer specs
 > - [Page specs](pages/) — per-page IA breakdown
+

@@ -12,7 +12,7 @@ note: Student co-authors (e.g. Antara Saha) listed in publication metadata — a
 grants:
   - brac-ced-2020
 publications:
-  - '"We Are Just One Step Away" — Embracing 4IR with RMG manufacturing practices in Bangladesh'
+  - "\"We Are Just One Step Away\" — Embracing 4IR with RMG manufacturing practices in Bangladesh"
 ---
 
 ## Overview

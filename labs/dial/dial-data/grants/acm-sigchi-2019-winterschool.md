@@ -5,7 +5,7 @@ slug: acm-sigchi-2019-winterschool
 funder: ACM SIGCHI
 amountValue: 12000
 amountCurrency: USD
-startDate: '2019'
+startDate: "2019"
 status: completed
 investigators:
   - teamMember: nova-ahmed

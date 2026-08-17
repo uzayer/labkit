@@ -10,7 +10,7 @@ themes:
 teamMembers: []
 grants: []
 publications:
-  - 'Deep Learning Approach for Classifying the Aggressive Comments on Social Media'
+  - "Deep Learning Approach for Classifying the Aggressive Comments on Social Media"
 ---
 
 ## Overview

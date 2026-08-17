@@ -1,6 +1,6 @@
 # Research Theme Detail (`/research/[theme-slug]`)
 
-**What this page uniquely provides:** `/research` gives the overview of all themes + projects. `/publications` gives the full bibliography. This page is the only place that shows everything for _one specific theme_ in one view — scoped publications, scoped collaborators, scoped grants. It exists for collaborators and funders who care about one area deeply (e.g. a potential Cardiff partner interested specifically in DIAL's accessibility work).
+**What this page uniquely provides:** `/research` gives the overview of all themes + projects. `/publications` gives the full bibliography. This page is the only place that shows everything for *one specific theme* in one view — scoped publications, scoped collaborators, scoped grants. It exists for collaborators and funders who care about one area deeply (e.g. a potential Cardiff partner interested specifically in DIAL's accessibility work).
 
 Visual prototype built at `src/app/research/accessibility-inclusion/page.tsx` (dial-test). Renders almost entirely from data. Minimal manual content entry beyond description and icon.
 
@@ -27,17 +27,17 @@ Visual prototype built at `src/app/research/accessibility-inclusion/page.tsx` (d
 
 **Block: `Feature295`** (`src/components/feature295.tsx`) — adapted as follows:
 
-| Feature295 original                         | DIAL adaptation                                                                                                            |
-| ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Feature295 original | DIAL adaptation |
+| ------------------- | --------------- |
 | Category filter chips (React, TailwindCSS…) | Research keyword filters — from `Project.keywords` (Keywords collection). Chips are scrollable, "All" selected by default. |
-| Role dropdown (Author / Contributor)        | Status dropdown: All / Ongoing / Completed                                                                                 |
-| Stars stat                                  | Publication count for this project                                                                                         |
-| Pull requests stat                          | Team member count                                                                                                          |
-| Role badge on card                          | Status badge: Ongoing / Completed                                                                                          |
-| Card title                                  | Bengali project name (localName) as headline, English title as subtitle                                                    |
-| Card description                            | `Project.abstract` (one line)                                                                                              |
-| Card link                                   | `/projects/[slug]`                                                                                                         |
-| "View All Projects" expand                  | "Show all X projects" — triggers when project count exceeds 9                                                              |
+| Role dropdown (Author / Contributor) | Status dropdown: All / Ongoing / Completed |
+| Stars stat | Publication count for this project |
+| Pull requests stat | Team member count |
+| Role badge on card | Status badge: Ongoing / Completed |
+| Card title | Bengali project name (localName) as headline, English title as subtitle |
+| Card description | `Project.abstract` (one line) |
+| Card link | `/projects/[slug]` |
+| "View All Projects" expand | "Show all X projects" — triggers when project count exceeds 9 |
 
 Default sort: Ongoing first, then Completed, ordered by `updatedAt` desc within each group. Filter chips default to "All" — selecting a keyword filters to projects tagged with that keyword.
 

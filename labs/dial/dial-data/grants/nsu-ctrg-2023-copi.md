@@ -5,7 +5,7 @@ slug: nsu-ctrg-2023-copi
 funder: North South University
 amountValue: 200000
 amountCurrency: BDT
-startDate: '2023'
+startDate: "2023"
 status: completed
 investigators:
   - teamMember: nova-ahmed

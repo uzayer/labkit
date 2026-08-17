@@ -5,8 +5,8 @@ slug: nsu-ctrg-2022
 funder: North South University
 amountValue: 499999
 amountCurrency: BDT
-startDate: '2022'
-endDate: '2023'
+startDate: "2022"
+endDate: "2023"
 status: completed
 investigators:
   - teamMember: nova-ahmed

@@ -4,7 +4,13 @@
   "message-version": "1.0.0",
   "message": {
     "indexed": {
-      "date-parts": [[2026, 4, 13]],
+      "date-parts": [
+        [
+          2026,
+          4,
+          13
+        ]
+      ],
       "date-time": "2026-04-13T12:34:18Z",
       "timestamp": 1776083658784,
       "version": "3.50.1"
@@ -14,7 +20,13 @@
     "license": [
       {
         "start": {
-          "date-parts": [[2022, 5, 18]],
+          "date-parts": [
+            [
+              2022,
+              5,
+              18
+            ]
+          ],
           "date-time": "2022-05-18T00:00:00Z",
           "timestamp": 1652832000000
         },
@@ -24,22 +36,34 @@
       }
     ],
     "content-domain": {
-      "domain": ["frontiersin.org"],
+      "domain": [
+        "frontiersin.org"
+      ],
       "crossmark-restriction": true
     },
-    "short-container-title": ["Front. Commun."],
+    "short-container-title": [
+      "Front. Commun."
+    ],
     "abstract": "<jats:p>Risk communication during COVID-19 is essential to have support, but it is challenging in developing countries due to a lack of communication setup. It is more difficult for the low-income, marginal communities, and specifically, women in developing countries. To understand this, particularly during the COVID-19 pandemic, we conducted a qualitative study among <jats:italic>N</jats:italic> = 37 women (urban 20, rural = 17) across Bangladesh that presents the risk communication factors related to social and financial challenges. It reveals that the majority of the urban communities lack communication with local authorities, where urban low-income communities are the worst sufferers. Due to that, the majority of the urban participants could not get financial support, whereas the rural participants received such support for having communications with local authorities during the pandemic. However, access to technology helped some participants share and receive pandemic-related information about risk communication, and the adoption of financial technology helped to get emergency financial support through risk communication. Moreover, this work is expected to understand the role of risk communication during the COVID-19 pandemic among women in Bangladesh.</jats:p>",
     "DOI": "10.3389/fcomm.2022.878050",
     "type": "journal-article",
     "created": {
-      "date-parts": [[2022, 5, 18]],
+      "date-parts": [
+        [
+          2022,
+          5,
+          18
+        ]
+      ],
       "date-time": "2022-05-18T07:06:56Z",
       "timestamp": 1652857616000
     },
     "update-policy": "https://doi.org/10.3389/crossmark-policy",
     "source": "Crossref",
     "is-referenced-by-count": 8,
-    "title": ["Risk Communication During COVID-19 Pandemic: Impacting Women in Bangladesh"],
+    "title": [
+      "Risk Communication During COVID-19 Pandemic: Impacting Women in Bangladesh"
+    ],
     "prefix": "10.3389",
     "volume": "7",
     "author": [
@@ -154,7 +178,13 @@
     ],
     "member": "1965",
     "published-online": {
-      "date-parts": [[2022, 5, 18]]
+      "date-parts": [
+        [
+          2022,
+          5,
+          18
+        ]
+      ]
     },
     "reference": [
       {
@@ -477,7 +507,9 @@
         "journal-title": "Int. J. Infect. Dis"
       }
     ],
-    "container-title": ["Frontiers in Communication"],
+    "container-title": [
+      "Frontiers in Communication"
+    ],
     "original-title": [],
     "link": [
       {
@@ -488,7 +520,13 @@
       }
     ],
     "deposited": {
-      "date-parts": [[2022, 5, 18]],
+      "date-parts": [
+        [
+          2022,
+          5,
+          18
+        ]
+      ],
       "date-time": "2022-05-18T07:07:03Z",
       "timestamp": 1652857623000
     },
@@ -501,13 +539,23 @@
     "subtitle": [],
     "short-title": [],
     "issued": {
-      "date-parts": [[2022, 5, 18]]
+      "date-parts": [
+        [
+          2022,
+          5,
+          18
+        ]
+      ]
     },
     "references-count": 35,
-    "alternative-id": ["10.3389/fcomm.2022.878050"],
+    "alternative-id": [
+      "10.3389/fcomm.2022.878050"
+    ],
     "URL": "https://doi.org/10.3389/fcomm.2022.878050",
     "relation": {},
-    "ISSN": ["2297-900X"],
+    "ISSN": [
+      "2297-900X"
+    ],
     "issn-type": [
       {
         "value": "2297-900X",
@@ -516,7 +564,13 @@
     ],
     "subject": [],
     "published": {
-      "date-parts": [[2022, 5, 18]]
+      "date-parts": [
+        [
+          2022,
+          5,
+          18
+        ]
+      ]
     },
     "article-number": "878050"
   }

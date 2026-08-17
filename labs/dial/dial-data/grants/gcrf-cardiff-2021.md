@@ -5,8 +5,8 @@ slug: gcrf-cardiff-2021
 funder: UK Research and Innovation / Global Challenges Research Fund
 amountValue: 5000
 amountCurrency: EUR
-startDate: '2020'
-endDate: '2021'
+startDate: "2020"
+endDate: "2021"
 status: completed
 investigators:
   - teamMember: nova-ahmed

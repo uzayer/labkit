@@ -20,7 +20,9 @@
       "id": "https://openalex.org/S4210234749",
       "display_name": "JMIR Formative Research",
       "issn_l": "2561-326X",
-      "issn": ["2561-326X"],
+      "issn": [
+        "2561-326X"
+      ],
       "is_oa": true,
       "is_in_doaj": true,
       "is_core": true,
@@ -39,7 +41,12 @@
     "raw_type": "journal-article"
   },
   "type": "article",
-  "indexed_in": ["arxiv", "crossref", "doaj", "pubmed"],
+  "indexed_in": [
+    "arxiv",
+    "crossref",
+    "doaj",
+    "pubmed"
+  ],
   "open_access": {
     "is_oa": true,
     "oa_status": "gold",
@@ -61,10 +68,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Md Sabbir Ahmed",
       "raw_affiliation_strings": [
@@ -75,11 +86,15 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Design Inclusion and Access Lab, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         },
         {
           "raw_affiliation_string": "Design Inclusion and Access Lab North South University Plot #15, Block #B, Bashundhara Dhaka, 1229 Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -97,10 +112,14 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Nova Ahmed",
       "raw_affiliation_strings": [
@@ -111,11 +130,15 @@
       "affiliations": [
         {
           "raw_affiliation_string": "Design Inclusion and Access Lab, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         },
         {
           "raw_affiliation_string": "Design Inclusion and Access Lab North South University Plot #15, Block #B, Bashundhara Dhaka, 1229 Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     }
@@ -124,7 +147,9 @@
   "countries_distinct_count": 1,
   "institutions_distinct_count": 1,
   "corresponding_author_ids": [],
-  "corresponding_institution_ids": ["https://openalex.org/I157386601"],
+  "corresponding_institution_ids": [
+    "https://openalex.org/I157386601"
+  ],
   "apc_list": {
     "value": 1900,
     "currency": "USD",
@@ -395,7 +420,9 @@
         "id": "https://openalex.org/S4210234749",
         "display_name": "JMIR Formative Research",
         "issn_l": "2561-326X",
-        "issn": ["2561-326X"],
+        "issn": [
+          "2561-326X"
+        ],
         "is_oa": true,
         "is_in_doaj": true,
         "is_core": true,
@@ -428,7 +455,9 @@
         "is_core": false,
         "host_organization": "https://openalex.org/I1299303238",
         "host_organization_name": "National Institutes of Health",
-        "host_organization_lineage": ["https://openalex.org/I1299303238"],
+        "host_organization_lineage": [
+          "https://openalex.org/I1299303238"
+        ],
         "host_organization_lineage_names": [],
         "type": "repository"
       },
@@ -449,7 +478,9 @@
         "id": "https://openalex.org/S4393918464",
         "display_name": "ArXiv.org",
         "issn_l": "2331-8422",
-        "issn": ["2331-8422"],
+        "issn": [
+          "2331-8422"
+        ],
         "is_oa": true,
         "is_in_doaj": false,
         "is_core": false,
@@ -482,7 +513,9 @@
         "is_core": false,
         "host_organization": "https://openalex.org/I1299303238",
         "host_organization_name": "National Institutes of Health",
-        "host_organization_lineage": ["https://openalex.org/I1299303238"],
+        "host_organization_lineage": [
+          "https://openalex.org/I1299303238"
+        ],
         "host_organization_lineage_names": [],
         "type": "repository"
       },
@@ -531,7 +564,9 @@
       "id": "https://openalex.org/S4210234749",
       "display_name": "JMIR Formative Research",
       "issn_l": "2561-326X",
-      "issn": ["2561-326X"],
+      "issn": [
+        "2561-326X"
+      ],
       "is_oa": true,
       "is_in_doaj": true,
       "is_core": true,
@@ -661,264 +696,953 @@
     "https://openalex.org/W4293525103"
   ],
   "abstract_inverted_index": {
-    "1": [116, 226],
-    "3": [179],
-    "5": [266],
-    "7": [110],
-    "100": [126],
-    "BACKGROUND:": [0],
-    "Existing": [1],
-    "robust,": [2],
-    "pervasive": [3],
-    "device-based": [4],
-    "systems": [5, 39, 47, 56, 422],
-    "developed": [6, 102, 156, 193],
-    "in": [7, 25, 40, 60, 79, 115, 131, 225, 277, 363, 399],
-    "recent": [8],
-    "years": [9],
-    "to": [10, 34, 68, 73, 87, 144, 326, 383, 396, 423],
-    "detect": [11],
-    "depression": [12, 75, 398],
-    "require": [13],
-    "data": [14, 77, 114, 141, 223],
-    "collected": [15, 137],
-    "over": [16, 369],
-    "a": [17, 53, 70, 103, 157, 260, 284, 313, 349, 360, 393],
-    "long": [18],
-    "period": [19],
-    "and": [20, 134, 142, 152, 165, 189, 194, 244, 282, 354, 357, 366, 374, 387, 401, 430],
-    "may": [21, 391],
-    "not": [22, 333],
-    "be": [23, 49, 58],
-    "effective": [24],
-    "cases": [26],
-    "where": [27, 264],
-    "early": [28],
-    "detection": [29],
-    "is": [30],
-    "crucial.": [31],
-    "Additionally,": [32, 203],
-    "due": [33],
-    "the": [
-      35, 41, 80, 89, 108, 145, 174, 196, 199, 206, 211, 220, 235, 240, 270, 370, 379, 410, 417
+    "1": [
+      116,
+      226
     ],
-    "requirement": [36],
-    "of": [37, 125, 160, 182, 249, 280, 287, 316, 352, 378, 412, 419],
-    "running": [38],
-    "background": [42],
-    "for": [43, 97, 433],
-    "prolonged": [44],
-    "periods,": [45],
-    "existing": [46],
-    "can": [48, 57, 415],
-    "resource": [50],
-    "inefficient.": [51],
-    "As": [52],
-    "result,": [54],
-    "these": [55],
-    "infeasible": [59],
-    "low-resource": [61],
-    "settings.": [62],
-    "OBJECTIVE:": [63],
-    "Our": [64],
-    "main": [65, 180],
-    "objective": [66, 85],
-    "was": [67, 86],
-    "develop": [69],
-    "minimalistic": [71, 388],
-    "system": [72],
-    "identify": [74, 150],
-    "using": [76, 173, 198, 364],
-    "retrieved": [78, 224],
-    "fastest": [81],
-    "possible": [82],
-    "time.": [83],
-    "Another": [84],
-    "explain": [88],
-    "machine": [90, 232],
-    "learning": [91],
-    "(ML)": [92],
-    "models": [93, 197, 209, 319],
-    "that": [94, 106, 323],
-    "were": [95, 275, 324, 332, 346],
-    "best": [96, 207, 318],
-    "identifying": [98, 397],
-    "depression.": [99, 327],
-    "METHODS:": [100],
-    "We": [101, 169, 192],
-    "fast": [104, 386],
-    "tool": [105, 136],
-    "retrieves": [107],
-    "past": [109],
-    "days'": [111],
-    "app": [112, 139, 221, 295],
-    "usage": [113, 140, 222, 296, 301],
-    "second": [117],
-    "(mean": [118],
-    "0.31,": [119],
-    "SD": [120],
-    "1.10": [121],
-    "seconds).": [122],
-    "A": [123],
-    "total": [124],
-    "students": [127, 251, 330, 426],
-    "from": [128],
-    "Bangladesh": [129],
-    "participated": [130],
-    "our": [132, 135, 228, 317, 384, 406, 413],
-    "study,": [133],
-    "their": [138],
-    "responses": [143],
-    "Patient": [146],
-    "Health": [147],
-    "Questionnaire-9.": [148],
-    "To": [149],
-    "depressed": [151, 250, 334, 347, 429],
-    "nondepressed": [153],
-    "students,": [154],
-    "we": [155, 204, 258],
-    "diverse": [158],
-    "set": [159],
-    "ML": [161, 208],
-    "models:": [162],
-    "linear,": [163],
-    "tree-based,": [164],
-    "neural": [166],
-    "network-based": [167],
-    "models.": [168],
-    "selected": [170, 238, 268],
-    "important": [171, 236, 306],
-    "features": [172, 237, 267],
-    "stable": [175, 241],
-    "approach,": [176],
-    "along": [177],
-    "with": [178],
-    "types": [181],
-    "feature": [183],
-    "selection": [184],
-    "(FS)": [185],
-    "approaches:": [186],
-    "filter,": [187],
-    "wrapper,": [188],
-    "embedded": [190],
-    "methods.": [191],
-    "validated": [195],
-    "nested": [200],
-    "cross-validation": [201],
-    "method.": [202, 216],
-    "explained": [205],
-    "through": [210],
-    "Shapley": [212],
-    "additive": [213],
-    "explanations": [214],
-    "(SHAP)": [215],
-    "RESULTS:": [217],
-    "Leveraging": [218],
-    "only": [219],
-    "second,": [227],
-    "light": [229],
-    "gradient": [230],
-    "boosting": [231],
-    "model": [233, 263],
-    "used": [234, 276, 348],
-    "by": [239, 269],
-    "FS": [242, 272],
-    "approach": [243, 273],
-    "correctly": [245],
-    "identified": [246],
-    "82.4%": [247],
-    "(n=42)": [248],
-    "(precision=75%,": [252],
-    "F1-score=78.5%).": [253],
-    "Moreover,": [254],
-    "after": [255],
-    "comprehensive": [256],
-    "exploration,": [257],
-    "presented": [259, 320],
-    "parsimonious": [261],
-    "stacking": [262],
-    "around": [265],
-    "all-relevant": [271],
-    "Boruta": [274],
-    "each": [278],
-    "iteration": [279],
-    "validation": [281],
-    "showed": [283],
-    "maximum": [285],
-    "precision": [286],
-    "77.4%": [288],
-    "(balanced": [289],
-    "accuracy=77.9%).": [290],
-    "Feature": [291],
-    "importance": [292],
-    "analysis": [293, 315],
-    "suggested": [294],
-    "behavioral": [297, 321],
-    "markers": [298, 322],
-    "containing": [299],
-    "diurnal": [300],
-    "patterns": [302],
-    "as": [303],
-    "being": [304],
-    "more": [305, 336],
-    "than": [307],
-    "aggregated": [308],
-    "data-based": [309],
-    "markers.": [310],
-    "In": [311, 404],
-    "addition,": [312, 405],
-    "SHAP": [314],
-    "related": [325],
-    "For": [328],
-    "instance,": [329],
-    "who": [331, 345, 427],
-    "spent": [335],
-    "time": [337, 376],
-    "on": [338, 341],
-    "education": [339],
-    "apps": [340, 356, 368],
-    "weekdays,": [342],
-    "whereas": [343],
-    "those": [344],
-    "higher": [350, 361],
-    "number": [351],
-    "photo": [353, 365],
-    "video": [355, 367],
-    "also": [358],
-    "had": [359],
-    "deviation": [362],
-    "morning,": [371],
-    "afternoon,": [372],
-    "evening,": [373],
-    "night": [375],
-    "periods": [377],
-    "weekend.": [380],
-    "CONCLUSIONS:": [381],
-    "Due": [382],
-    "system's": [385],
-    "nature,": [389],
-    "it": [390],
-    "make": [392],
-    "worthwhile": [394],
-    "contribution": [395],
-    "underdeveloped": [400],
-    "developing": [402],
-    "regions.": [403],
-    "detailed": [407],
-    "discussion": [408],
-    "about": [409],
-    "implication": [411],
-    "findings": [414],
-    "facilitate": [416],
-    "development": [418],
-    "less": [420],
-    "resource-intensive": [421],
-    "better": [424],
-    "understand": [425],
-    "are": [428],
-    "take": [431],
-    "steps": [432],
-    "intervention.": [434]
+    "3": [
+      179
+    ],
+    "5": [
+      266
+    ],
+    "7": [
+      110
+    ],
+    "100": [
+      126
+    ],
+    "BACKGROUND:": [
+      0
+    ],
+    "Existing": [
+      1
+    ],
+    "robust,": [
+      2
+    ],
+    "pervasive": [
+      3
+    ],
+    "device-based": [
+      4
+    ],
+    "systems": [
+      5,
+      39,
+      47,
+      56,
+      422
+    ],
+    "developed": [
+      6,
+      102,
+      156,
+      193
+    ],
+    "in": [
+      7,
+      25,
+      40,
+      60,
+      79,
+      115,
+      131,
+      225,
+      277,
+      363,
+      399
+    ],
+    "recent": [
+      8
+    ],
+    "years": [
+      9
+    ],
+    "to": [
+      10,
+      34,
+      68,
+      73,
+      87,
+      144,
+      326,
+      383,
+      396,
+      423
+    ],
+    "detect": [
+      11
+    ],
+    "depression": [
+      12,
+      75,
+      398
+    ],
+    "require": [
+      13
+    ],
+    "data": [
+      14,
+      77,
+      114,
+      141,
+      223
+    ],
+    "collected": [
+      15,
+      137
+    ],
+    "over": [
+      16,
+      369
+    ],
+    "a": [
+      17,
+      53,
+      70,
+      103,
+      157,
+      260,
+      284,
+      313,
+      349,
+      360,
+      393
+    ],
+    "long": [
+      18
+    ],
+    "period": [
+      19
+    ],
+    "and": [
+      20,
+      134,
+      142,
+      152,
+      165,
+      189,
+      194,
+      244,
+      282,
+      354,
+      357,
+      366,
+      374,
+      387,
+      401,
+      430
+    ],
+    "may": [
+      21,
+      391
+    ],
+    "not": [
+      22,
+      333
+    ],
+    "be": [
+      23,
+      49,
+      58
+    ],
+    "effective": [
+      24
+    ],
+    "cases": [
+      26
+    ],
+    "where": [
+      27,
+      264
+    ],
+    "early": [
+      28
+    ],
+    "detection": [
+      29
+    ],
+    "is": [
+      30
+    ],
+    "crucial.": [
+      31
+    ],
+    "Additionally,": [
+      32,
+      203
+    ],
+    "due": [
+      33
+    ],
+    "the": [
+      35,
+      41,
+      80,
+      89,
+      108,
+      145,
+      174,
+      196,
+      199,
+      206,
+      211,
+      220,
+      235,
+      240,
+      270,
+      370,
+      379,
+      410,
+      417
+    ],
+    "requirement": [
+      36
+    ],
+    "of": [
+      37,
+      125,
+      160,
+      182,
+      249,
+      280,
+      287,
+      316,
+      352,
+      378,
+      412,
+      419
+    ],
+    "running": [
+      38
+    ],
+    "background": [
+      42
+    ],
+    "for": [
+      43,
+      97,
+      433
+    ],
+    "prolonged": [
+      44
+    ],
+    "periods,": [
+      45
+    ],
+    "existing": [
+      46
+    ],
+    "can": [
+      48,
+      57,
+      415
+    ],
+    "resource": [
+      50
+    ],
+    "inefficient.": [
+      51
+    ],
+    "As": [
+      52
+    ],
+    "result,": [
+      54
+    ],
+    "these": [
+      55
+    ],
+    "infeasible": [
+      59
+    ],
+    "low-resource": [
+      61
+    ],
+    "settings.": [
+      62
+    ],
+    "OBJECTIVE:": [
+      63
+    ],
+    "Our": [
+      64
+    ],
+    "main": [
+      65,
+      180
+    ],
+    "objective": [
+      66,
+      85
+    ],
+    "was": [
+      67,
+      86
+    ],
+    "develop": [
+      69
+    ],
+    "minimalistic": [
+      71,
+      388
+    ],
+    "system": [
+      72
+    ],
+    "identify": [
+      74,
+      150
+    ],
+    "using": [
+      76,
+      173,
+      198,
+      364
+    ],
+    "retrieved": [
+      78,
+      224
+    ],
+    "fastest": [
+      81
+    ],
+    "possible": [
+      82
+    ],
+    "time.": [
+      83
+    ],
+    "Another": [
+      84
+    ],
+    "explain": [
+      88
+    ],
+    "machine": [
+      90,
+      232
+    ],
+    "learning": [
+      91
+    ],
+    "(ML)": [
+      92
+    ],
+    "models": [
+      93,
+      197,
+      209,
+      319
+    ],
+    "that": [
+      94,
+      106,
+      323
+    ],
+    "were": [
+      95,
+      275,
+      324,
+      332,
+      346
+    ],
+    "best": [
+      96,
+      207,
+      318
+    ],
+    "identifying": [
+      98,
+      397
+    ],
+    "depression.": [
+      99,
+      327
+    ],
+    "METHODS:": [
+      100
+    ],
+    "We": [
+      101,
+      169,
+      192
+    ],
+    "fast": [
+      104,
+      386
+    ],
+    "tool": [
+      105,
+      136
+    ],
+    "retrieves": [
+      107
+    ],
+    "past": [
+      109
+    ],
+    "days'": [
+      111
+    ],
+    "app": [
+      112,
+      139,
+      221,
+      295
+    ],
+    "usage": [
+      113,
+      140,
+      222,
+      296,
+      301
+    ],
+    "second": [
+      117
+    ],
+    "(mean": [
+      118
+    ],
+    "0.31,": [
+      119
+    ],
+    "SD": [
+      120
+    ],
+    "1.10": [
+      121
+    ],
+    "seconds).": [
+      122
+    ],
+    "A": [
+      123
+    ],
+    "total": [
+      124
+    ],
+    "students": [
+      127,
+      251,
+      330,
+      426
+    ],
+    "from": [
+      128
+    ],
+    "Bangladesh": [
+      129
+    ],
+    "participated": [
+      130
+    ],
+    "our": [
+      132,
+      135,
+      228,
+      317,
+      384,
+      406,
+      413
+    ],
+    "study,": [
+      133
+    ],
+    "their": [
+      138
+    ],
+    "responses": [
+      143
+    ],
+    "Patient": [
+      146
+    ],
+    "Health": [
+      147
+    ],
+    "Questionnaire-9.": [
+      148
+    ],
+    "To": [
+      149
+    ],
+    "depressed": [
+      151,
+      250,
+      334,
+      347,
+      429
+    ],
+    "nondepressed": [
+      153
+    ],
+    "students,": [
+      154
+    ],
+    "we": [
+      155,
+      204,
+      258
+    ],
+    "diverse": [
+      158
+    ],
+    "set": [
+      159
+    ],
+    "ML": [
+      161,
+      208
+    ],
+    "models:": [
+      162
+    ],
+    "linear,": [
+      163
+    ],
+    "tree-based,": [
+      164
+    ],
+    "neural": [
+      166
+    ],
+    "network-based": [
+      167
+    ],
+    "models.": [
+      168
+    ],
+    "selected": [
+      170,
+      238,
+      268
+    ],
+    "important": [
+      171,
+      236,
+      306
+    ],
+    "features": [
+      172,
+      237,
+      267
+    ],
+    "stable": [
+      175,
+      241
+    ],
+    "approach,": [
+      176
+    ],
+    "along": [
+      177
+    ],
+    "with": [
+      178
+    ],
+    "types": [
+      181
+    ],
+    "feature": [
+      183
+    ],
+    "selection": [
+      184
+    ],
+    "(FS)": [
+      185
+    ],
+    "approaches:": [
+      186
+    ],
+    "filter,": [
+      187
+    ],
+    "wrapper,": [
+      188
+    ],
+    "embedded": [
+      190
+    ],
+    "methods.": [
+      191
+    ],
+    "validated": [
+      195
+    ],
+    "nested": [
+      200
+    ],
+    "cross-validation": [
+      201
+    ],
+    "method.": [
+      202,
+      216
+    ],
+    "explained": [
+      205
+    ],
+    "through": [
+      210
+    ],
+    "Shapley": [
+      212
+    ],
+    "additive": [
+      213
+    ],
+    "explanations": [
+      214
+    ],
+    "(SHAP)": [
+      215
+    ],
+    "RESULTS:": [
+      217
+    ],
+    "Leveraging": [
+      218
+    ],
+    "only": [
+      219
+    ],
+    "second,": [
+      227
+    ],
+    "light": [
+      229
+    ],
+    "gradient": [
+      230
+    ],
+    "boosting": [
+      231
+    ],
+    "model": [
+      233,
+      263
+    ],
+    "used": [
+      234,
+      276,
+      348
+    ],
+    "by": [
+      239,
+      269
+    ],
+    "FS": [
+      242,
+      272
+    ],
+    "approach": [
+      243,
+      273
+    ],
+    "correctly": [
+      245
+    ],
+    "identified": [
+      246
+    ],
+    "82.4%": [
+      247
+    ],
+    "(n=42)": [
+      248
+    ],
+    "(precision=75%,": [
+      252
+    ],
+    "F1-score=78.5%).": [
+      253
+    ],
+    "Moreover,": [
+      254
+    ],
+    "after": [
+      255
+    ],
+    "comprehensive": [
+      256
+    ],
+    "exploration,": [
+      257
+    ],
+    "presented": [
+      259,
+      320
+    ],
+    "parsimonious": [
+      261
+    ],
+    "stacking": [
+      262
+    ],
+    "around": [
+      265
+    ],
+    "all-relevant": [
+      271
+    ],
+    "Boruta": [
+      274
+    ],
+    "each": [
+      278
+    ],
+    "iteration": [
+      279
+    ],
+    "validation": [
+      281
+    ],
+    "showed": [
+      283
+    ],
+    "maximum": [
+      285
+    ],
+    "precision": [
+      286
+    ],
+    "77.4%": [
+      288
+    ],
+    "(balanced": [
+      289
+    ],
+    "accuracy=77.9%).": [
+      290
+    ],
+    "Feature": [
+      291
+    ],
+    "importance": [
+      292
+    ],
+    "analysis": [
+      293,
+      315
+    ],
+    "suggested": [
+      294
+    ],
+    "behavioral": [
+      297,
+      321
+    ],
+    "markers": [
+      298,
+      322
+    ],
+    "containing": [
+      299
+    ],
+    "diurnal": [
+      300
+    ],
+    "patterns": [
+      302
+    ],
+    "as": [
+      303
+    ],
+    "being": [
+      304
+    ],
+    "more": [
+      305,
+      336
+    ],
+    "than": [
+      307
+    ],
+    "aggregated": [
+      308
+    ],
+    "data-based": [
+      309
+    ],
+    "markers.": [
+      310
+    ],
+    "In": [
+      311,
+      404
+    ],
+    "addition,": [
+      312,
+      405
+    ],
+    "SHAP": [
+      314
+    ],
+    "related": [
+      325
+    ],
+    "For": [
+      328
+    ],
+    "instance,": [
+      329
+    ],
+    "who": [
+      331,
+      345,
+      427
+    ],
+    "spent": [
+      335
+    ],
+    "time": [
+      337,
+      376
+    ],
+    "on": [
+      338,
+      341
+    ],
+    "education": [
+      339
+    ],
+    "apps": [
+      340,
+      356,
+      368
+    ],
+    "weekdays,": [
+      342
+    ],
+    "whereas": [
+      343
+    ],
+    "those": [
+      344
+    ],
+    "higher": [
+      350,
+      361
+    ],
+    "number": [
+      351
+    ],
+    "photo": [
+      353,
+      365
+    ],
+    "video": [
+      355,
+      367
+    ],
+    "also": [
+      358
+    ],
+    "had": [
+      359
+    ],
+    "deviation": [
+      362
+    ],
+    "morning,": [
+      371
+    ],
+    "afternoon,": [
+      372
+    ],
+    "evening,": [
+      373
+    ],
+    "night": [
+      375
+    ],
+    "periods": [
+      377
+    ],
+    "weekend.": [
+      380
+    ],
+    "CONCLUSIONS:": [
+      381
+    ],
+    "Due": [
+      382
+    ],
+    "system's": [
+      385
+    ],
+    "nature,": [
+      389
+    ],
+    "it": [
+      390
+    ],
+    "make": [
+      392
+    ],
+    "worthwhile": [
+      394
+    ],
+    "contribution": [
+      395
+    ],
+    "underdeveloped": [
+      400
+    ],
+    "developing": [
+      402
+    ],
+    "regions.": [
+      403
+    ],
+    "detailed": [
+      407
+    ],
+    "discussion": [
+      408
+    ],
+    "about": [
+      409
+    ],
+    "implication": [
+      411
+    ],
+    "findings": [
+      414
+    ],
+    "facilitate": [
+      416
+    ],
+    "development": [
+      418
+    ],
+    "less": [
+      420
+    ],
+    "resource-intensive": [
+      421
+    ],
+    "better": [
+      424
+    ],
+    "understand": [
+      425
+    ],
+    "are": [
+      428
+    ],
+    "take": [
+      431
+    ],
+    "steps": [
+      432
+    ],
+    "intervention.": [
+      434
+    ]
   },
   "counts_by_year": [
     {

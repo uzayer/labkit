@@ -13,14 +13,14 @@ When the two disagree, the personal site’s detail is preferred for funding and
 
 ## Layout
 
-| Path            | Purpose                                                                                                 |
-| --------------- | ------------------------------------------------------------------------------------------------------- |
-| `_reference/`   | Lookup tables: organizations, venues, keywords, research-themes                                         |
-| `team/`         | Faculty profiles, named researchers, RA lists, alumni, collaborators                                    |
-| `grants/`       | One file per major grant or funding line                                                                |
-| `awards/`       | Consolidated award list                                                                                 |
-| `projects/`     | One file per research project (stubs flagged `needs-research: true` where only a Bengali name is known) |
-| `publications/` | Papers grouped by year (`2019-and-earlier.md` bundles older work)                                       |
+| Path | Purpose |
+|------|---------|
+| `_reference/` | Lookup tables: organizations, venues, keywords, research-themes |
+| `team/` | Faculty profiles, named researchers, RA lists, alumni, collaborators |
+| `grants/` | One file per major grant or funding line |
+| `awards/` | Consolidated award list |
+| `projects/` | One file per research project (stubs flagged `needs-research: true` where only a Bengali name is known) |
+| `publications/` | Papers grouped by year (`2019-and-earlier.md` bundles older work) |
 
 ## Verification (manual)
 

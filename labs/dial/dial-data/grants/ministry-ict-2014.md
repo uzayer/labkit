@@ -5,7 +5,7 @@ slug: ministry-ict-2014
 funder: Ministry of ICT, Government of Bangladesh
 amountValue: 1000000
 amountCurrency: BDT
-startDate: '2014'
+startDate: "2014"
 status: completed
 investigators:
   - teamMember: nova-ahmed

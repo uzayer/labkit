@@ -5,8 +5,8 @@ slug: next-billion-users-2017
 funder: Google
 amountValue: 10000
 amountCurrency: USD
-startDate: '2017'
-endDate: '2018'
+startDate: "2017"
+endDate: "2018"
 status: completed
 investigators:
   - teamMember: nova-ahmed

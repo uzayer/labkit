@@ -19,14 +19,20 @@
       "id": "https://openalex.org/S4387291547",
       "display_name": "ACM Journal on Computing and Sustainable Societies",
       "issn_l": "2834-5533",
-      "issn": ["2834-5533"],
+      "issn": [
+        "2834-5533"
+      ],
       "is_oa": false,
       "is_in_doaj": false,
       "is_core": true,
       "host_organization": "https://openalex.org/P4310319798",
       "host_organization_name": "Association for Computing Machinery",
-      "host_organization_lineage": ["https://openalex.org/P4310319798"],
-      "host_organization_lineage_names": ["Association for Computing Machinery"],
+      "host_organization_lineage": [
+        "https://openalex.org/P4310319798"
+      ],
+      "host_organization_lineage_names": [
+        "Association for Computing Machinery"
+      ],
       "type": "journal"
     },
     "license": "cc-by-nc-sa",
@@ -38,7 +44,9 @@
     "raw_type": "journal-article"
   },
   "type": "article",
-  "indexed_in": ["crossref"],
+  "indexed_in": [
+    "crossref"
+  ],
   "open_access": {
     "is_oa": true,
     "oa_status": "hybrid",
@@ -60,18 +68,26 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Nova Ahmed",
-      "raw_affiliation_strings": ["DIAL, ECE, North South University, Dhaka, Bangladesh"],
+      "raw_affiliation_strings": [
+        "DIAL, ECE, North South University, Dhaka, Bangladesh"
+      ],
       "raw_orcid": "https://orcid.org/0000-0002-7715-1742",
       "affiliations": [
         {
           "raw_affiliation_string": "DIAL, ECE, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -89,10 +105,14 @@
           "ror": "https://ror.org/01d7y2240",
           "country_code": "BD",
           "type": "government",
-          "lineage": ["https://openalex.org/I4210102865"]
+          "lineage": [
+            "https://openalex.org/I4210102865"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Tasmiah Tahsin Mayeesha",
       "raw_affiliation_strings": [
@@ -103,7 +123,9 @@
       "affiliations": [
         {
           "raw_affiliation_string": "ICT Ministry, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I4210102865"]
+          "institution_ids": [
+            "https://openalex.org/I4210102865"
+          ]
         },
         {
           "raw_affiliation_string": "ICT Ministry,  Dhaka, Bangladesh",
@@ -125,18 +147,26 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Ifti Azad Abeer",
-      "raw_affiliation_strings": ["DIAL, ECE, North South University, Dhaka, Bangladesh"],
+      "raw_affiliation_strings": [
+        "DIAL, ECE, North South University, Dhaka, Bangladesh"
+      ],
       "raw_orcid": "https://orcid.org/0000-0002-0860-0444",
       "affiliations": [
         {
           "raw_affiliation_string": "DIAL, ECE, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -154,18 +184,26 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Anik Sinha",
-      "raw_affiliation_strings": ["DIAL, ECE, North South University, Dhaka, Bangladesh"],
+      "raw_affiliation_strings": [
+        "DIAL, ECE, North South University, Dhaka, Bangladesh"
+      ],
       "raw_orcid": "https://orcid.org/0009-0001-9246-5942",
       "affiliations": [
         {
           "raw_affiliation_string": "DIAL, ECE, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     },
@@ -183,18 +221,26 @@
           "ror": "https://ror.org/05wdbfp45",
           "country_code": "BD",
           "type": "education",
-          "lineage": ["https://openalex.org/I157386601"]
+          "lineage": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ],
-      "countries": ["BD"],
+      "countries": [
+        "BD"
+      ],
       "is_corresponding": false,
       "raw_author_name": "Anik Saha",
-      "raw_affiliation_strings": ["DIAL, ECE, North South University, Dhaka, Bangladesh"],
+      "raw_affiliation_strings": [
+        "DIAL, ECE, North South University, Dhaka, Bangladesh"
+      ],
       "raw_orcid": "https://orcid.org/0000-0002-9240-2108",
       "affiliations": [
         {
           "raw_affiliation_string": "DIAL, ECE, North South University, Dhaka, Bangladesh",
-          "institution_ids": ["https://openalex.org/I157386601"]
+          "institution_ids": [
+            "https://openalex.org/I157386601"
+          ]
         }
       ]
     }
@@ -413,14 +459,20 @@
         "id": "https://openalex.org/S4387291547",
         "display_name": "ACM Journal on Computing and Sustainable Societies",
         "issn_l": "2834-5533",
-        "issn": ["2834-5533"],
+        "issn": [
+          "2834-5533"
+        ],
         "is_oa": false,
         "is_in_doaj": false,
         "is_core": true,
         "host_organization": "https://openalex.org/P4310319798",
         "host_organization_name": "Association for Computing Machinery",
-        "host_organization_lineage": ["https://openalex.org/P4310319798"],
-        "host_organization_lineage_names": ["Association for Computing Machinery"],
+        "host_organization_lineage": [
+          "https://openalex.org/P4310319798"
+        ],
+        "host_organization_lineage_names": [
+          "Association for Computing Machinery"
+        ],
         "type": "journal"
       },
       "license": "cc-by-nc-sa",
@@ -441,14 +493,20 @@
       "id": "https://openalex.org/S4387291547",
       "display_name": "ACM Journal on Computing and Sustainable Societies",
       "issn_l": "2834-5533",
-      "issn": ["2834-5533"],
+      "issn": [
+        "2834-5533"
+      ],
       "is_oa": false,
       "is_in_doaj": false,
       "is_core": true,
       "host_organization": "https://openalex.org/P4310319798",
       "host_organization_name": "Association for Computing Machinery",
-      "host_organization_lineage": ["https://openalex.org/P4310319798"],
-      "host_organization_lineage_names": ["Association for Computing Machinery"],
+      "host_organization_lineage": [
+        "https://openalex.org/P4310319798"
+      ],
+      "host_organization_lineage_names": [
+        "Association for Computing Machinery"
+      ],
       "type": "journal"
     },
     "license": "cc-by-nc-sa",
@@ -590,132 +648,451 @@
     "https://openalex.org/W2149537132"
   ],
   "abstract_inverted_index": {
-    "23": [65],
-    "48": [57],
-    "The": [0, 86, 127],
-    "underrepresentation": [1],
-    "of": [2, 12, 27, 34, 50, 73, 80, 111, 124, 139, 155],
-    "women": [3, 18, 74, 93, 190],
-    "in": [4, 6, 21, 75, 94, 191],
-    "computing": [5, 69, 76, 95],
-    "the": [7, 13, 24, 109, 120, 160],
-    "workplace": [8],
-    "requires": [9],
-    "an": [10],
-    "understanding": [11],
-    "adequate": [14],
-    "elements": [15, 91, 129],
-    "needed": [16],
-    "for": [17, 92, 130, 175, 189],
-    "to": [19, 43, 96, 100, 107, 157, 171, 182],
-    "succeed": [20, 97],
-    "Bangladesh": [22],
-    "complementing": [23],
-    "existing": [25],
-    "body": [26],
-    "work.": [28],
-    "It": [29],
-    "uses": [30],
-    "a": [31, 48, 78, 83, 136, 149, 173],
-    "varied": [32],
-    "modality": [33],
-    "communication": [35],
-    "Fictional": [36],
-    "inquiry": [37],
-    "(FI),": [38],
-    "where": [39],
-    "participants": [40],
-    "write": [41],
-    "letters": [42],
-    "fictional": [44],
-    "characters": [45],
-    "followed": [46],
-    "by": [47],
-    "Co-design": [49],
-    "solutions.": [51],
-    "This": [52, 166],
-    "research": [53],
-    "considers": [54],
-    "N=71": [55],
-    "participants,": [56],
-    "tertiary-level": [58],
-    "computer": [59],
-    "science": [60],
-    "and": [61, 64, 71, 82, 103, 113, 116, 132, 146, 163, 179, 186],
-    "engineering": [62],
-    "students,": [63],
-    "stakeholders": [66],
-    "covering": [67],
-    "academics,": [68],
-    "professionals,": [70],
-    "guardians": [72],
-    "over": [77],
-    "period": [79],
-    "one": [81],
-    "half": [84],
-    "years.": [85],
-    "study": [87],
-    "identifies": [88],
-    "three": [89],
-    "major": [90],
-    "professionally:": [98],
-    "provision": [99],
-    "improve": [101],
-    "skills": [102],
-    "self-efficacy,": [104],
-    "ensuring": [105],
-    "ways": [106],
-    "increase": [108],
-    "sense": [110],
-    "belonging,": [112],
-    "providing": [114],
-    "transportation": [115],
-    "safety": [117],
-    "aligning": [118],
-    "through": [119],
-    "women’s": [121],
-    "empowerment": [122, 133],
-    "framework": [123],
-    "Naila": [125],
-    "Kabeer.": [126],
-    "required": [128, 142],
-    "success": [131],
-    "show": [134],
-    "that": [135, 152],
-    "collaborative": [137],
-    "approach": [138],
-    "support": [140],
-    "is": [141, 168],
-    "from": [143, 148, 159],
-    "families,": [144],
-    "institutes,": [145],
-    "authorities": [147],
-    "regional": [150],
-    "perspective": [151],
-    "can": [153],
-    "be": [154],
-    "interest": [156],
-    "researchers": [158],
-    "HCI,": [161],
-    "CSCW,": [162],
-    "ICTD": [164],
-    "fields.": [165],
-    "work": [167],
-    "further": [169],
-    "expected": [170],
-    "provide": [172],
-    "guideline": [174],
-    "stakeholders,": [176],
-    "policymakers,": [177],
-    "institutions,": [178],
-    "families": [180],
-    "eager": [181],
-    "ensure": [183],
-    "inclusive": [184],
-    "learning": [185],
-    "growing": [187],
-    "space": [188],
-    "computing.": [192]
+    "23": [
+      65
+    ],
+    "48": [
+      57
+    ],
+    "The": [
+      0,
+      86,
+      127
+    ],
+    "underrepresentation": [
+      1
+    ],
+    "of": [
+      2,
+      12,
+      27,
+      34,
+      50,
+      73,
+      80,
+      111,
+      124,
+      139,
+      155
+    ],
+    "women": [
+      3,
+      18,
+      74,
+      93,
+      190
+    ],
+    "in": [
+      4,
+      6,
+      21,
+      75,
+      94,
+      191
+    ],
+    "computing": [
+      5,
+      69,
+      76,
+      95
+    ],
+    "the": [
+      7,
+      13,
+      24,
+      109,
+      120,
+      160
+    ],
+    "workplace": [
+      8
+    ],
+    "requires": [
+      9
+    ],
+    "an": [
+      10
+    ],
+    "understanding": [
+      11
+    ],
+    "adequate": [
+      14
+    ],
+    "elements": [
+      15,
+      91,
+      129
+    ],
+    "needed": [
+      16
+    ],
+    "for": [
+      17,
+      92,
+      130,
+      175,
+      189
+    ],
+    "to": [
+      19,
+      43,
+      96,
+      100,
+      107,
+      157,
+      171,
+      182
+    ],
+    "succeed": [
+      20,
+      97
+    ],
+    "Bangladesh": [
+      22
+    ],
+    "complementing": [
+      23
+    ],
+    "existing": [
+      25
+    ],
+    "body": [
+      26
+    ],
+    "work.": [
+      28
+    ],
+    "It": [
+      29
+    ],
+    "uses": [
+      30
+    ],
+    "a": [
+      31,
+      48,
+      78,
+      83,
+      136,
+      149,
+      173
+    ],
+    "varied": [
+      32
+    ],
+    "modality": [
+      33
+    ],
+    "communication": [
+      35
+    ],
+    "Fictional": [
+      36
+    ],
+    "inquiry": [
+      37
+    ],
+    "(FI),": [
+      38
+    ],
+    "where": [
+      39
+    ],
+    "participants": [
+      40
+    ],
+    "write": [
+      41
+    ],
+    "letters": [
+      42
+    ],
+    "fictional": [
+      44
+    ],
+    "characters": [
+      45
+    ],
+    "followed": [
+      46
+    ],
+    "by": [
+      47
+    ],
+    "Co-design": [
+      49
+    ],
+    "solutions.": [
+      51
+    ],
+    "This": [
+      52,
+      166
+    ],
+    "research": [
+      53
+    ],
+    "considers": [
+      54
+    ],
+    "N=71": [
+      55
+    ],
+    "participants,": [
+      56
+    ],
+    "tertiary-level": [
+      58
+    ],
+    "computer": [
+      59
+    ],
+    "science": [
+      60
+    ],
+    "and": [
+      61,
+      64,
+      71,
+      82,
+      103,
+      113,
+      116,
+      132,
+      146,
+      163,
+      179,
+      186
+    ],
+    "engineering": [
+      62
+    ],
+    "students,": [
+      63
+    ],
+    "stakeholders": [
+      66
+    ],
+    "covering": [
+      67
+    ],
+    "academics,": [
+      68
+    ],
+    "professionals,": [
+      70
+    ],
+    "guardians": [
+      72
+    ],
+    "over": [
+      77
+    ],
+    "period": [
+      79
+    ],
+    "one": [
+      81
+    ],
+    "half": [
+      84
+    ],
+    "years.": [
+      85
+    ],
+    "study": [
+      87
+    ],
+    "identifies": [
+      88
+    ],
+    "three": [
+      89
+    ],
+    "major": [
+      90
+    ],
+    "professionally:": [
+      98
+    ],
+    "provision": [
+      99
+    ],
+    "improve": [
+      101
+    ],
+    "skills": [
+      102
+    ],
+    "self-efficacy,": [
+      104
+    ],
+    "ensuring": [
+      105
+    ],
+    "ways": [
+      106
+    ],
+    "increase": [
+      108
+    ],
+    "sense": [
+      110
+    ],
+    "belonging,": [
+      112
+    ],
+    "providing": [
+      114
+    ],
+    "transportation": [
+      115
+    ],
+    "safety": [
+      117
+    ],
+    "aligning": [
+      118
+    ],
+    "through": [
+      119
+    ],
+    "women’s": [
+      121
+    ],
+    "empowerment": [
+      122,
+      133
+    ],
+    "framework": [
+      123
+    ],
+    "Naila": [
+      125
+    ],
+    "Kabeer.": [
+      126
+    ],
+    "required": [
+      128,
+      142
+    ],
+    "success": [
+      131
+    ],
+    "show": [
+      134
+    ],
+    "that": [
+      135,
+      152
+    ],
+    "collaborative": [
+      137
+    ],
+    "approach": [
+      138
+    ],
+    "support": [
+      140
+    ],
+    "is": [
+      141,
+      168
+    ],
+    "from": [
+      143,
+      148,
+      159
+    ],
+    "families,": [
+      144
+    ],
+    "institutes,": [
+      145
+    ],
+    "authorities": [
+      147
+    ],
+    "regional": [
+      150
+    ],
+    "perspective": [
+      151
+    ],
+    "can": [
+      153
+    ],
+    "be": [
+      154
+    ],
+    "interest": [
+      156
+    ],
+    "researchers": [
+      158
+    ],
+    "HCI,": [
+      161
+    ],
+    "CSCW,": [
+      162
+    ],
+    "ICTD": [
+      164
+    ],
+    "fields.": [
+      165
+    ],
+    "work": [
+      167
+    ],
+    "further": [
+      169
+    ],
+    "expected": [
+      170
+    ],
+    "provide": [
+      172
+    ],
+    "guideline": [
+      174
+    ],
+    "stakeholders,": [
+      176
+    ],
+    "policymakers,": [
+      177
+    ],
+    "institutions,": [
+      178
+    ],
+    "families": [
+      180
+    ],
+    "eager": [
+      181
+    ],
+    "ensure": [
+      183
+    ],
+    "inclusive": [
+      184
+    ],
+    "learning": [
+      185
+    ],
+    "growing": [
+      187
+    ],
+    "space": [
+      188
+    ],
+    "computing.": [
+      192
+    ]
   },
   "counts_by_year": [],
   "updated_date": "2026-06-11T09:08:48.828518",
