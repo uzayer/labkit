@@ -5,6 +5,9 @@ import { cn } from '@/utils'
 
 import '../[[...slugs]]/globals.css'
 
+// This route shares frontend providers that can read live CMS configuration.
+export const dynamic = 'force-dynamic'
+
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 const robotoSerif = Roboto_Serif({ subsets: ['latin'], variable: '--font-serif' })
 const robotoMono = Roboto_Mono({ subsets: ['latin'], variable: '--font-mono' })

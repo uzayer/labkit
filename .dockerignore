@@ -1,0 +1,18 @@
+# Dependencies and generated output are created inside the image.
+node_modules/
+.pnpm-store/
+.next/
+dist/
+
+# Never include environment files or local credentials in the build context.
+.env
+.env.*
+!.env.example
+
+# Development-only and repository metadata.
+.git/
+.github/
+docs/
+dial-test/
+*.log
+.DS_Store

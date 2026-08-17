@@ -26,11 +26,21 @@ export type Args = {
   params: Promise<Params>
 }
 
+// CMS-backed pages and their shared layout must read live Payload data.
+export const dynamic = 'force-dynamic'
+export const dynamicParams = true
+
 function generateUrl(locale: string, cleanSlugs: string[]) {
   return locale !== localization.defaultLocale ? `/${locale}/` : '/' + cleanSlugs.join('/')
 }
 
 export async function generateStaticParams(): Promise<Array<Params>> {
+  // A Docker image is built before its Compose MongoDB service starts. Return
+  // no paths in that context so Next.js renders CMS pages on their first request.
+  if (process.env.SKIP_STATIC_GENERATION === 'true') {
+    return []
+  }
+
   const payload = await getPayload({ config: configPromise })
   const pages = await payload.find({
     collection: 'pages',
