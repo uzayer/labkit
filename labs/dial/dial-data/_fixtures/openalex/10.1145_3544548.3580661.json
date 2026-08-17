@@ -1,0 +1,630 @@
+{
+  "id": "https://openalex.org/W4366549125",
+  "doi": "https://doi.org/10.1145/3544548.3580661",
+  "title": "MFS Design in Appstore-enabled Smart Featurephones for Low-literate, Marginalized Communities",
+  "display_name": "MFS Design in Appstore-enabled Smart Featurephones for Low-literate, Marginalized Communities",
+  "publication_year": 2023,
+  "publication_date": "2023-04-19",
+  "ids": {
+    "openalex": "https://openalex.org/W4366549125",
+    "doi": "https://doi.org/10.1145/3544548.3580661"
+  },
+  "language": "en",
+  "primary_location": {
+    "id": "doi:10.1145/3544548.3580661",
+    "is_oa": false,
+    "landing_page_url": "https://doi.org/10.1145/3544548.3580661",
+    "pdf_url": null,
+    "source": null,
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+    "raw_type": "proceedings-article"
+  },
+  "type": "article",
+  "indexed_in": ["crossref"],
+  "open_access": {
+    "is_oa": false,
+    "oa_status": "closed",
+    "oa_url": null,
+    "any_repository_has_fulltext": false
+  },
+  "authorships": [
+    {
+      "author_position": "first",
+      "author": {
+        "id": "https://openalex.org/A5082828034",
+        "display_name": "Mohammad Rayed",
+        "orcid": "https://orcid.org/0000-0002-0373-6676"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": ["https://openalex.org/I157386601"]
+        }
+      ],
+      "countries": ["BD"],
+      "is_corresponding": false,
+      "raw_author_name": "Mohammad Rayed",
+      "raw_affiliation_strings": [
+        "Department of Electrical and Computer Engineering, North South University, Bangladesh"
+      ],
+      "raw_orcid": "https://orcid.org/0000-0002-0373-6676",
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Bangladesh",
+          "institution_ids": ["https://openalex.org/I157386601"]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5015203051",
+        "display_name": "Tawfique Elahi",
+        "orcid": "https://orcid.org/0000-0001-9336-9584"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": ["https://openalex.org/I157386601"]
+        }
+      ],
+      "countries": ["BD"],
+      "is_corresponding": false,
+      "raw_author_name": "Tawfique Elahi",
+      "raw_affiliation_strings": [
+        "Department of Electrical and Computer Engineering, North South University, Bangladesh"
+      ],
+      "raw_orcid": "https://orcid.org/0000-0001-9336-9584",
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Bangladesh",
+          "institution_ids": ["https://openalex.org/I157386601"]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5066716564",
+        "display_name": "Shaikh Shawon Arefin Shimon",
+        "orcid": "https://orcid.org/0000-0001-5007-2828"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I151746483",
+          "display_name": "University of Waterloo",
+          "ror": "https://ror.org/01aff2v68",
+          "country_code": "CA",
+          "type": "education",
+          "lineage": ["https://openalex.org/I151746483"]
+        }
+      ],
+      "countries": ["CA"],
+      "is_corresponding": false,
+      "raw_author_name": "Shaikh Shawon Arefin Shimon",
+      "raw_affiliation_strings": ["School of Computer Science, University of Waterloo, Canada"],
+      "raw_orcid": "https://orcid.org/0000-0001-5007-2828",
+      "affiliations": [
+        {
+          "raw_affiliation_string": "School of Computer Science, University of Waterloo, Canada",
+          "institution_ids": ["https://openalex.org/I151746483"]
+        }
+      ]
+    },
+    {
+      "author_position": "last",
+      "author": {
+        "id": "https://openalex.org/A5011009295",
+        "display_name": "Nova Ahmed",
+        "orcid": "https://orcid.org/0000-0002-7715-1742"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": ["https://openalex.org/I157386601"]
+        }
+      ],
+      "countries": ["BD"],
+      "is_corresponding": false,
+      "raw_author_name": "Nova Ahmed",
+      "raw_affiliation_strings": [
+        "Department of Electrical and Computer Engineering, North South University, Bangladesh"
+      ],
+      "raw_orcid": "https://orcid.org/0000-0002-7715-1742",
+      "affiliations": [
+        {
+          "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Bangladesh",
+          "institution_ids": ["https://openalex.org/I157386601"]
+        }
+      ]
+    }
+  ],
+  "institutions": [],
+  "countries_distinct_count": 2,
+  "institutions_distinct_count": 4,
+  "corresponding_author_ids": [],
+  "corresponding_institution_ids": [],
+  "apc_list": null,
+  "apc_paid": null,
+  "fwci": 3.4508,
+  "has_fulltext": false,
+  "cited_by_count": 8,
+  "citation_normalized_percentile": {
+    "value": 0.93205431,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": true
+  },
+  "cited_by_percentile_year": {
+    "min": 95,
+    "max": 98
+  },
+  "biblio": {
+    "volume": null,
+    "issue": null,
+    "first_page": "1",
+    "last_page": "19"
+  },
+  "is_retracted": false,
+  "is_paratext": false,
+  "is_xpac": false,
+  "primary_topic": {
+    "id": "https://openalex.org/T13194",
+    "display_name": "ICT in Developing Communities",
+    "score": 0.9998000264167786,
+    "subfield": {
+      "id": "https://openalex.org/subfields/1710",
+      "display_name": "Information Systems"
+    },
+    "field": {
+      "id": "https://openalex.org/fields/17",
+      "display_name": "Computer Science"
+    },
+    "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+    }
+  },
+  "topics": [
+    {
+      "id": "https://openalex.org/T13194",
+      "display_name": "ICT in Developing Communities",
+      "score": 0.9998000264167786,
+      "subfield": {
+        "id": "https://openalex.org/subfields/1710",
+        "display_name": "Information Systems"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/17",
+        "display_name": "Computer Science"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/3",
+        "display_name": "Physical Sciences"
+      }
+    },
+    {
+      "id": "https://openalex.org/T10987",
+      "display_name": "Microfinance and Financial Inclusion",
+      "score": 0.9502000212669373,
+      "subfield": {
+        "id": "https://openalex.org/subfields/2002",
+        "display_name": "Economics and Econometrics"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/20",
+        "display_name": "Economics, Econometrics and Finance"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/2",
+        "display_name": "Social Sciences"
+      }
+    },
+    {
+      "id": "https://openalex.org/T12060",
+      "display_name": "Child Development and Digital Technology",
+      "score": 0.9218000173568726,
+      "subfield": {
+        "id": "https://openalex.org/subfields/3304",
+        "display_name": "Education"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/33",
+        "display_name": "Social Sciences"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/2",
+        "display_name": "Social Sciences"
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "https://openalex.org/keywords/popularity",
+      "display_name": "Popularity",
+      "score": 0.7818611860275269
+    },
+    {
+      "id": "https://openalex.org/keywords/work",
+      "display_name": "Work (physics)",
+      "score": 0.6035375595092773
+    },
+    {
+      "id": "https://openalex.org/keywords/low-income",
+      "display_name": "Low income",
+      "score": 0.4867534637451172
+    },
+    {
+      "id": "https://openalex.org/keywords/computer-science",
+      "display_name": "Computer science",
+      "score": 0.45245301723480225
+    },
+    {
+      "id": "https://openalex.org/keywords/financial-services",
+      "display_name": "Financial services",
+      "score": 0.4480314254760742
+    },
+    {
+      "id": "https://openalex.org/keywords/internet-privacy",
+      "display_name": "Internet privacy",
+      "score": 0.4455142319202423
+    },
+    {
+      "id": "https://openalex.org/keywords/business",
+      "display_name": "Business",
+      "score": 0.43105366826057434
+    },
+    {
+      "id": "https://openalex.org/keywords/computer-security",
+      "display_name": "Computer security",
+      "score": 0.3343888521194458
+    },
+    {
+      "id": "https://openalex.org/keywords/engineering",
+      "display_name": "Engineering",
+      "score": 0.246694415807724
+    },
+    {
+      "id": "https://openalex.org/keywords/sociology",
+      "display_name": "Sociology",
+      "score": 0.21801459789276123
+    },
+    {
+      "id": "https://openalex.org/keywords/political-science",
+      "display_name": "Political science",
+      "score": 0.19909697771072388
+    },
+    {
+      "id": "https://openalex.org/keywords/finance",
+      "display_name": "Finance",
+      "score": 0.11979296803474426
+    }
+  ],
+  "concepts": [
+    {
+      "id": "https://openalex.org/C2780586970",
+      "wikidata": "https://www.wikidata.org/wiki/Q1357284",
+      "display_name": "Popularity",
+      "level": 2,
+      "score": 0.7818611860275269
+    },
+    {
+      "id": "https://openalex.org/C18762648",
+      "wikidata": "https://www.wikidata.org/wiki/Q42213",
+      "display_name": "Work (physics)",
+      "level": 2,
+      "score": 0.6035375595092773
+    },
+    {
+      "id": "https://openalex.org/C3018804484",
+      "wikidata": "https://www.wikidata.org/wiki/Q10294",
+      "display_name": "Low income",
+      "level": 2,
+      "score": 0.4867534637451172
+    },
+    {
+      "id": "https://openalex.org/C41008148",
+      "wikidata": "https://www.wikidata.org/wiki/Q21198",
+      "display_name": "Computer science",
+      "level": 0,
+      "score": 0.45245301723480225
+    },
+    {
+      "id": "https://openalex.org/C139043278",
+      "wikidata": "https://www.wikidata.org/wiki/Q837171",
+      "display_name": "Financial services",
+      "level": 2,
+      "score": 0.4480314254760742
+    },
+    {
+      "id": "https://openalex.org/C108827166",
+      "wikidata": "https://www.wikidata.org/wiki/Q175975",
+      "display_name": "Internet privacy",
+      "level": 1,
+      "score": 0.4455142319202423
+    },
+    {
+      "id": "https://openalex.org/C144133560",
+      "wikidata": "https://www.wikidata.org/wiki/Q4830453",
+      "display_name": "Business",
+      "level": 0,
+      "score": 0.43105366826057434
+    },
+    {
+      "id": "https://openalex.org/C38652104",
+      "wikidata": "https://www.wikidata.org/wiki/Q3510521",
+      "display_name": "Computer security",
+      "level": 1,
+      "score": 0.3343888521194458
+    },
+    {
+      "id": "https://openalex.org/C127413603",
+      "wikidata": "https://www.wikidata.org/wiki/Q11023",
+      "display_name": "Engineering",
+      "level": 0,
+      "score": 0.246694415807724
+    },
+    {
+      "id": "https://openalex.org/C144024400",
+      "wikidata": "https://www.wikidata.org/wiki/Q21201",
+      "display_name": "Sociology",
+      "level": 0,
+      "score": 0.21801459789276123
+    },
+    {
+      "id": "https://openalex.org/C17744445",
+      "wikidata": "https://www.wikidata.org/wiki/Q36442",
+      "display_name": "Political science",
+      "level": 0,
+      "score": 0.19909697771072388
+    },
+    {
+      "id": "https://openalex.org/C10138342",
+      "wikidata": "https://www.wikidata.org/wiki/Q43015",
+      "display_name": "Finance",
+      "level": 1,
+      "score": 0.11979296803474426
+    },
+    {
+      "id": "https://openalex.org/C78519656",
+      "wikidata": "https://www.wikidata.org/wiki/Q101333",
+      "display_name": "Mechanical engineering",
+      "level": 1,
+      "score": 0
+    },
+    {
+      "id": "https://openalex.org/C45355965",
+      "wikidata": "https://www.wikidata.org/wiki/Q1643441",
+      "display_name": "Socioeconomics",
+      "level": 1,
+      "score": 0
+    },
+    {
+      "id": "https://openalex.org/C199539241",
+      "wikidata": "https://www.wikidata.org/wiki/Q7748",
+      "display_name": "Law",
+      "level": 1,
+      "score": 0
+    }
+  ],
+  "mesh": [],
+  "locations_count": 1,
+  "locations": [
+    {
+      "id": "doi:10.1145/3544548.3580661",
+      "is_oa": false,
+      "landing_page_url": "https://doi.org/10.1145/3544548.3580661",
+      "pdf_url": null,
+      "source": null,
+      "license": null,
+      "license_id": null,
+      "version": "publishedVersion",
+      "is_accepted": true,
+      "is_published": true,
+      "raw_source_name": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+      "raw_type": "proceedings-article"
+    }
+  ],
+  "best_oa_location": null,
+  "sustainable_development_goals": [],
+  "awards": [],
+  "funders": [],
+  "has_content": {
+    "grobid_xml": false,
+    "pdf": false
+  },
+  "content_urls": null,
+  "referenced_works_count": 34,
+  "referenced_works": [
+    "https://openalex.org/W109937755",
+    "https://openalex.org/W147872735",
+    "https://openalex.org/W189620268",
+    "https://openalex.org/W1556808170",
+    "https://openalex.org/W1951008065",
+    "https://openalex.org/W1997922838",
+    "https://openalex.org/W2000603455",
+    "https://openalex.org/W2022336873",
+    "https://openalex.org/W2022915591",
+    "https://openalex.org/W2085975490",
+    "https://openalex.org/W2104652891",
+    "https://openalex.org/W2109648405",
+    "https://openalex.org/W2120109170",
+    "https://openalex.org/W2121369258",
+    "https://openalex.org/W2139268763",
+    "https://openalex.org/W2151973791",
+    "https://openalex.org/W2211754794",
+    "https://openalex.org/W2498103008",
+    "https://openalex.org/W2796034586",
+    "https://openalex.org/W2911013585",
+    "https://openalex.org/W2911428659",
+    "https://openalex.org/W2941038574",
+    "https://openalex.org/W3028509183",
+    "https://openalex.org/W3039982061",
+    "https://openalex.org/W3144739221",
+    "https://openalex.org/W3158682321",
+    "https://openalex.org/W3159771342",
+    "https://openalex.org/W3163566506",
+    "https://openalex.org/W3197649032",
+    "https://openalex.org/W4235278727",
+    "https://openalex.org/W4252354300",
+    "https://openalex.org/W4253467718",
+    "https://openalex.org/W4283448160",
+    "https://openalex.org/W4297970680"
+  ],
+  "related_works": [
+    "https://openalex.org/W2368605798",
+    "https://openalex.org/W2518037665",
+    "https://openalex.org/W2348524959",
+    "https://openalex.org/W2477036161",
+    "https://openalex.org/W2368049389",
+    "https://openalex.org/W2384861574",
+    "https://openalex.org/W4294565801",
+    "https://openalex.org/W2170801710",
+    "https://openalex.org/W2952704802",
+    "https://openalex.org/W2741781807"
+  ],
+  "abstract_inverted_index": {
+    "Mobile": [0],
+    "Financial": [1, 41],
+    "Services": [2],
+    "(MFS)": [3],
+    "has": [4, 53, 127],
+    "gained": [5],
+    "significant": [6],
+    "popularity": [7],
+    "during": [8],
+    "the": [9, 20, 128, 132],
+    "COVID-19": [10],
+    "pandemic,": [11],
+    "especially": [12],
+    "among": [13],
+    "marginalized": [14, 136],
+    "and": [15],
+    "low-income,": [16],
+    "low-literate": [17],
+    "communities": [18, 23, 137],
+    "around": [19],
+    "world.": [21],
+    "Such": [22],
+    "have": [24],
+    "not": [25],
+    "been": [26],
+    "traditionally": [27],
+    "considered": [28],
+    "while": [29, 83],
+    "designing": [30],
+    "MFS": [31, 60, 85, 103, 140],
+    "services": [32, 38],
+    "via": [33, 121, 142],
+    "smartphone": [34],
+    "apps": [35],
+    "or": [36],
+    "USSD": [37],
+    "in": [39, 73, 105, 138],
+    "featurephones.": [40, 145],
+    "constraints": [42],
+    "limit": [43],
+    "such": [44],
+    "end-users": [45, 82],
+    "towards": [46],
+    "basic": [47],
+    "featurephones,": [48],
+    "where": [49],
+    "recent": [50],
+    "appstore": [51],
+    "support": [52],
+    "made": [54],
+    "it": [55],
+    "possible": [56],
+    "to": [57, 80, 98, 130],
+    "deploy": [58],
+    "app-based": [59, 113],
+    "solutions": [61, 104],
+    "beyond": [62],
+    "USSD.": [63],
+    "This": [64, 125],
+    "new": [65],
+    "featurephone": [66, 118],
+    "platform": [67, 119],
+    "is": [68],
+    "a": [69, 110, 122],
+    "relatively": [70],
+    "underexplored": [71],
+    "area": [72],
+    "terms": [74],
+    "of": [75, 135],
+    "addressing": [76],
+    "design": [77],
+    "issues": [78],
+    "related": [79],
+    "aforementioned": [81],
+    "developing": [84],
+    "solutions.": [86],
+    "Our": [87],
+    "work": [88, 126],
+    "addresses": [89],
+    "this": [90],
+    "gap": [91],
+    "by": [92],
+    "presenting": [93],
+    "qualitative": [94],
+    "findings": [95],
+    "on": [96, 102, 115],
+    "barriers": [97],
+    "technology": [99],
+    "access": [100],
+    "focused": [101],
+    "marginal": [106],
+    "communities.": [107],
+    "We": [108],
+    "present": [109],
+    "prototype": [111],
+    "non-USSD,": [112],
+    "solution": [114],
+    "an": [116],
+    "appstore-supported": [117],
+    "designed": [120],
+    "human-centered": [123],
+    "approach.": [124],
+    "potential": [129],
+    "increase": [131],
+    "financial": [133],
+    "inclusivity": [134],
+    "cashless": [139],
+    "transactions": [141],
+    "low-cost,": [143],
+    "appstore-enabled": [144]
+  },
+  "counts_by_year": [
+    {
+      "year": 2026,
+      "cited_by_count": 1
+    },
+    {
+      "year": 2025,
+      "cited_by_count": 3
+    },
+    {
+      "year": 2024,
+      "cited_by_count": 4
+    }
+  ],
+  "updated_date": "2026-06-11T09:08:48.828518",
+  "created_date": "2025-10-10T00:00:00"
+}

@@ -1,0 +1,774 @@
+{
+  "id": "https://openalex.org/W4210475786",
+  "doi": "https://doi.org/10.1109/iccit54785.2021.9689868",
+  "title": "Design of Low-Cost Smart Safety Vest for the Prevention of Physical Abuse and Sexual Harassment",
+  "display_name": "Design of Low-Cost Smart Safety Vest for the Prevention of Physical Abuse and Sexual Harassment",
+  "publication_year": 2021,
+  "publication_date": "2021-12-18",
+  "ids": {
+    "openalex": "https://openalex.org/W4210475786",
+    "doi": "https://doi.org/10.1109/iccit54785.2021.9689868"
+  },
+  "language": "en",
+  "primary_location": {
+    "id": "doi:10.1109/iccit54785.2021.9689868",
+    "is_oa": false,
+    "landing_page_url": "https://doi.org/10.1109/iccit54785.2021.9689868",
+    "pdf_url": null,
+    "source": null,
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "2021 24th International Conference on Computer and Information Technology (ICCIT)",
+    "raw_type": "proceedings-article"
+  },
+  "type": "article",
+  "indexed_in": ["crossref"],
+  "open_access": {
+    "is_oa": false,
+    "oa_status": "closed",
+    "oa_url": null,
+    "any_repository_has_fulltext": false
+  },
+  "authorships": [
+    {
+      "author_position": "first",
+      "author": {
+        "id": "https://openalex.org/A5057932618",
+        "display_name": "Kazi Rumman Reswan Turjo",
+        "orcid": null
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": ["https://openalex.org/I157386601"]
+        }
+      ],
+      "countries": ["BD"],
+      "is_corresponding": false,
+      "raw_author_name": "Kazi Rumman Reswan Turjo",
+      "raw_affiliation_strings": [
+        "North South University,Electrical and Computer Engineering,Dhaka,Bangladesh",
+        "Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+      ],
+      "raw_orcid": null,
+      "affiliations": [
+        {
+          "raw_affiliation_string": "North South University,Electrical and Computer Engineering,Dhaka,Bangladesh",
+          "institution_ids": ["https://openalex.org/I157386601"]
+        },
+        {
+          "raw_affiliation_string": "Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+          "institution_ids": ["https://openalex.org/I157386601"]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5043392493",
+        "display_name": "Partho Anthony D’Costa",
+        "orcid": null
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": ["https://openalex.org/I157386601"]
+        }
+      ],
+      "countries": ["BD"],
+      "is_corresponding": false,
+      "raw_author_name": "Partho Anthony D’Costa",
+      "raw_affiliation_strings": [
+        "North South University,Electrical and Computer Engineering,Dhaka,Bangladesh",
+        "Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+      ],
+      "raw_orcid": null,
+      "affiliations": [
+        {
+          "raw_affiliation_string": "North South University,Electrical and Computer Engineering,Dhaka,Bangladesh",
+          "institution_ids": ["https://openalex.org/I157386601"]
+        },
+        {
+          "raw_affiliation_string": "Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+          "institution_ids": ["https://openalex.org/I157386601"]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5055910714",
+        "display_name": "Surjo Bhowmick",
+        "orcid": null
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": ["https://openalex.org/I157386601"]
+        }
+      ],
+      "countries": ["BD"],
+      "is_corresponding": false,
+      "raw_author_name": "Surjo Bhowmick",
+      "raw_affiliation_strings": [
+        "North South University,Electrical and Computer Engineering,Dhaka,Bangladesh",
+        "Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+      ],
+      "raw_orcid": null,
+      "affiliations": [
+        {
+          "raw_affiliation_string": "North South University,Electrical and Computer Engineering,Dhaka,Bangladesh",
+          "institution_ids": ["https://openalex.org/I157386601"]
+        },
+        {
+          "raw_affiliation_string": "Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+          "institution_ids": ["https://openalex.org/I157386601"]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5056746922",
+        "display_name": "Asadullah Al Galib",
+        "orcid": null
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": ["https://openalex.org/I157386601"]
+        }
+      ],
+      "countries": ["BD"],
+      "is_corresponding": false,
+      "raw_author_name": "Asadullah Galib",
+      "raw_affiliation_strings": [
+        "North South University,Electrical and Computer Engineering,Dhaka,Bangladesh",
+        "Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+      ],
+      "raw_orcid": null,
+      "affiliations": [
+        {
+          "raw_affiliation_string": "North South University,Electrical and Computer Engineering,Dhaka,Bangladesh",
+          "institution_ids": ["https://openalex.org/I157386601"]
+        },
+        {
+          "raw_affiliation_string": "Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+          "institution_ids": ["https://openalex.org/I157386601"]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5036590566",
+        "display_name": "Sami Raian",
+        "orcid": null
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": ["https://openalex.org/I157386601"]
+        }
+      ],
+      "countries": ["BD"],
+      "is_corresponding": false,
+      "raw_author_name": "Sami Raian",
+      "raw_affiliation_strings": [
+        "North South University,Electrical and Computer Engineering,Dhaka,Bangladesh",
+        "Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+      ],
+      "raw_orcid": null,
+      "affiliations": [
+        {
+          "raw_affiliation_string": "North South University,Electrical and Computer Engineering,Dhaka,Bangladesh",
+          "institution_ids": ["https://openalex.org/I157386601"]
+        },
+        {
+          "raw_affiliation_string": "Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+          "institution_ids": ["https://openalex.org/I157386601"]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5015055011",
+        "display_name": "Mst Shapna Akter",
+        "orcid": "https://orcid.org/0000-0002-9859-6265"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": ["https://openalex.org/I157386601"]
+        }
+      ],
+      "countries": ["BD"],
+      "is_corresponding": false,
+      "raw_author_name": "Mst. Shapna Akter",
+      "raw_affiliation_strings": [
+        "North South University,Electrical and Computer Engineering,Dhaka,Bangladesh",
+        "Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+      ],
+      "raw_orcid": null,
+      "affiliations": [
+        {
+          "raw_affiliation_string": "North South University,Electrical and Computer Engineering,Dhaka,Bangladesh",
+          "institution_ids": ["https://openalex.org/I157386601"]
+        },
+        {
+          "raw_affiliation_string": "Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+          "institution_ids": ["https://openalex.org/I157386601"]
+        }
+      ]
+    },
+    {
+      "author_position": "middle",
+      "author": {
+        "id": "https://openalex.org/A5011009295",
+        "display_name": "Nova Ahmed",
+        "orcid": "https://orcid.org/0000-0002-7715-1742"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": ["https://openalex.org/I157386601"]
+        }
+      ],
+      "countries": ["BD"],
+      "is_corresponding": false,
+      "raw_author_name": "Nova Ahmed",
+      "raw_affiliation_strings": [
+        "North South University,Electrical and Computer Engineering,Dhaka,Bangladesh",
+        "Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+      ],
+      "raw_orcid": null,
+      "affiliations": [
+        {
+          "raw_affiliation_string": "North South University,Electrical and Computer Engineering,Dhaka,Bangladesh",
+          "institution_ids": ["https://openalex.org/I157386601"]
+        },
+        {
+          "raw_affiliation_string": "Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+          "institution_ids": ["https://openalex.org/I157386601"]
+        }
+      ]
+    },
+    {
+      "author_position": "last",
+      "author": {
+        "id": "https://openalex.org/A5012837694",
+        "display_name": "M. R. C. Mahdy",
+        "orcid": "https://orcid.org/0000-0003-3737-0315"
+      },
+      "institutions": [
+        {
+          "id": "https://openalex.org/I157386601",
+          "display_name": "North South University",
+          "ror": "https://ror.org/05wdbfp45",
+          "country_code": "BD",
+          "type": "education",
+          "lineage": ["https://openalex.org/I157386601"]
+        }
+      ],
+      "countries": ["BD"],
+      "is_corresponding": false,
+      "raw_author_name": "M.R.C. Mahdy",
+      "raw_affiliation_strings": [
+        "North South University,Electrical and Computer Engineering,Dhaka,Bangladesh",
+        "Electrical and Computer Engineering, North South University, Dhaka, Bangladesh"
+      ],
+      "raw_orcid": null,
+      "affiliations": [
+        {
+          "raw_affiliation_string": "North South University,Electrical and Computer Engineering,Dhaka,Bangladesh",
+          "institution_ids": ["https://openalex.org/I157386601"]
+        },
+        {
+          "raw_affiliation_string": "Electrical and Computer Engineering, North South University, Dhaka, Bangladesh",
+          "institution_ids": ["https://openalex.org/I157386601"]
+        }
+      ]
+    }
+  ],
+  "institutions": [],
+  "countries_distinct_count": 1,
+  "institutions_distinct_count": 1,
+  "corresponding_author_ids": [],
+  "corresponding_institution_ids": ["https://openalex.org/I157386601"],
+  "apc_list": null,
+  "apc_paid": null,
+  "fwci": 0.6102,
+  "has_fulltext": false,
+  "cited_by_count": 7,
+  "citation_normalized_percentile": {
+    "value": 0.68454356,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": false
+  },
+  "cited_by_percentile_year": {
+    "min": 90,
+    "max": 97
+  },
+  "biblio": {
+    "volume": null,
+    "issue": null,
+    "first_page": "1",
+    "last_page": "6"
+  },
+  "is_retracted": false,
+  "is_paratext": false,
+  "is_xpac": false,
+  "primary_topic": {
+    "id": "https://openalex.org/T12222",
+    "display_name": "IoT-based Smart Home Systems",
+    "score": 0.9864000082015991,
+    "subfield": {
+      "id": "https://openalex.org/subfields/2208",
+      "display_name": "Electrical and Electronic Engineering"
+    },
+    "field": {
+      "id": "https://openalex.org/fields/22",
+      "display_name": "Engineering"
+    },
+    "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+    }
+  },
+  "topics": [
+    {
+      "id": "https://openalex.org/T12222",
+      "display_name": "IoT-based Smart Home Systems",
+      "score": 0.9864000082015991,
+      "subfield": {
+        "id": "https://openalex.org/subfields/2208",
+        "display_name": "Electrical and Electronic Engineering"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/22",
+        "display_name": "Engineering"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/3",
+        "display_name": "Physical Sciences"
+      }
+    },
+    {
+      "id": "https://openalex.org/T12406",
+      "display_name": "IoT and GPS-based Vehicle Safety Systems",
+      "score": 0.9854000210762024,
+      "subfield": {
+        "id": "https://openalex.org/subfields/2210",
+        "display_name": "Mechanical Engineering"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/22",
+        "display_name": "Engineering"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/3",
+        "display_name": "Physical Sciences"
+      }
+    },
+    {
+      "id": "https://openalex.org/T10803",
+      "display_name": "Innovative Human-Technology Interaction",
+      "score": 0.9376999735832214,
+      "subfield": {
+        "id": "https://openalex.org/subfields/1709",
+        "display_name": "Human-Computer Interaction"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/17",
+        "display_name": "Computer Science"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/3",
+        "display_name": "Physical Sciences"
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "https://openalex.org/keywords/vest",
+      "display_name": "VEST",
+      "score": 0.7422925233840942
+    },
+    {
+      "id": "https://openalex.org/keywords/usable",
+      "display_name": "USable",
+      "score": 0.7039083242416382
+    },
+    {
+      "id": "https://openalex.org/keywords/harassment",
+      "display_name": "Harassment",
+      "score": 0.6541919708251953
+    },
+    {
+      "id": "https://openalex.org/keywords/arduino",
+      "display_name": "Arduino",
+      "score": 0.5861497521400452
+    },
+    {
+      "id": "https://openalex.org/keywords/computer-security",
+      "display_name": "Computer security",
+      "score": 0.5588346719741821
+    },
+    {
+      "id": "https://openalex.org/keywords/computer-science",
+      "display_name": "Computer science",
+      "score": 0.5129958987236023
+    },
+    {
+      "id": "https://openalex.org/keywords/commercialization",
+      "display_name": "Commercialization",
+      "score": 0.5031558871269226
+    },
+    {
+      "id": "https://openalex.org/keywords/internet-privacy",
+      "display_name": "Internet privacy",
+      "score": 0.3959766924381256
+    },
+    {
+      "id": "https://openalex.org/keywords/business",
+      "display_name": "Business",
+      "score": 0.24895280599594116
+    },
+    {
+      "id": "https://openalex.org/keywords/embedded-system",
+      "display_name": "Embedded system",
+      "score": 0.1840059757232666
+    },
+    {
+      "id": "https://openalex.org/keywords/multimedia",
+      "display_name": "Multimedia",
+      "score": 0.14155977964401245
+    },
+    {
+      "id": "https://openalex.org/keywords/psychology",
+      "display_name": "Psychology",
+      "score": 0.09169423580169678
+    }
+  ],
+  "concepts": [
+    {
+      "id": "https://openalex.org/C37536845",
+      "wikidata": "https://www.wikidata.org/wiki/Q4052503",
+      "display_name": "VEST",
+      "level": 2,
+      "score": 0.7422925233840942
+    },
+    {
+      "id": "https://openalex.org/C2780615836",
+      "wikidata": "https://www.wikidata.org/wiki/Q2471869",
+      "display_name": "USable",
+      "level": 2,
+      "score": 0.7039083242416382
+    },
+    {
+      "id": "https://openalex.org/C2778976716",
+      "wikidata": "https://www.wikidata.org/wiki/Q3240539",
+      "display_name": "Harassment",
+      "level": 2,
+      "score": 0.6541919708251953
+    },
+    {
+      "id": "https://openalex.org/C136501162",
+      "wikidata": "https://www.wikidata.org/wiki/Q175957",
+      "display_name": "Arduino",
+      "level": 2,
+      "score": 0.5861497521400452
+    },
+    {
+      "id": "https://openalex.org/C38652104",
+      "wikidata": "https://www.wikidata.org/wiki/Q3510521",
+      "display_name": "Computer security",
+      "level": 1,
+      "score": 0.5588346719741821
+    },
+    {
+      "id": "https://openalex.org/C41008148",
+      "wikidata": "https://www.wikidata.org/wiki/Q21198",
+      "display_name": "Computer science",
+      "level": 0,
+      "score": 0.5129958987236023
+    },
+    {
+      "id": "https://openalex.org/C2780625559",
+      "wikidata": "https://www.wikidata.org/wiki/Q5152592",
+      "display_name": "Commercialization",
+      "level": 2,
+      "score": 0.5031558871269226
+    },
+    {
+      "id": "https://openalex.org/C108827166",
+      "wikidata": "https://www.wikidata.org/wiki/Q175975",
+      "display_name": "Internet privacy",
+      "level": 1,
+      "score": 0.3959766924381256
+    },
+    {
+      "id": "https://openalex.org/C144133560",
+      "wikidata": "https://www.wikidata.org/wiki/Q4830453",
+      "display_name": "Business",
+      "level": 0,
+      "score": 0.24895280599594116
+    },
+    {
+      "id": "https://openalex.org/C149635348",
+      "wikidata": "https://www.wikidata.org/wiki/Q193040",
+      "display_name": "Embedded system",
+      "level": 1,
+      "score": 0.1840059757232666
+    },
+    {
+      "id": "https://openalex.org/C49774154",
+      "wikidata": "https://www.wikidata.org/wiki/Q131765",
+      "display_name": "Multimedia",
+      "level": 1,
+      "score": 0.14155977964401245
+    },
+    {
+      "id": "https://openalex.org/C15744967",
+      "wikidata": "https://www.wikidata.org/wiki/Q9418",
+      "display_name": "Psychology",
+      "level": 0,
+      "score": 0.09169423580169678
+    },
+    {
+      "id": "https://openalex.org/C162853370",
+      "wikidata": "https://www.wikidata.org/wiki/Q39809",
+      "display_name": "Marketing",
+      "level": 1,
+      "score": 0
+    },
+    {
+      "id": "https://openalex.org/C77805123",
+      "wikidata": "https://www.wikidata.org/wiki/Q161272",
+      "display_name": "Social psychology",
+      "level": 1,
+      "score": 0
+    }
+  ],
+  "mesh": [],
+  "locations_count": 1,
+  "locations": [
+    {
+      "id": "doi:10.1109/iccit54785.2021.9689868",
+      "is_oa": false,
+      "landing_page_url": "https://doi.org/10.1109/iccit54785.2021.9689868",
+      "pdf_url": null,
+      "source": null,
+      "license": null,
+      "license_id": null,
+      "version": "publishedVersion",
+      "is_accepted": true,
+      "is_published": true,
+      "raw_source_name": "2021 24th International Conference on Computer and Information Technology (ICCIT)",
+      "raw_type": "proceedings-article"
+    }
+  ],
+  "best_oa_location": null,
+  "sustainable_development_goals": [
+    {
+      "display_name": "Gender equality",
+      "id": "https://metadata.un.org/sdg/5",
+      "score": 0.75
+    }
+  ],
+  "awards": [],
+  "funders": [],
+  "has_content": {
+    "pdf": false,
+    "grobid_xml": false
+  },
+  "content_urls": null,
+  "referenced_works_count": 10,
+  "referenced_works": [
+    "https://openalex.org/W92214784",
+    "https://openalex.org/W1493453592",
+    "https://openalex.org/W2051812525",
+    "https://openalex.org/W2260390615",
+    "https://openalex.org/W2559272579",
+    "https://openalex.org/W2610193927",
+    "https://openalex.org/W2910399088",
+    "https://openalex.org/W2921447058",
+    "https://openalex.org/W3004148242",
+    "https://openalex.org/W6780592114"
+  ],
+  "related_works": [
+    "https://openalex.org/W2015721596",
+    "https://openalex.org/W4386136016",
+    "https://openalex.org/W3159014699",
+    "https://openalex.org/W4207047620",
+    "https://openalex.org/W2064673031",
+    "https://openalex.org/W2221356301",
+    "https://openalex.org/W4389023291",
+    "https://openalex.org/W932338100",
+    "https://openalex.org/W4234093800",
+    "https://openalex.org/W3187081175"
+  ],
+  "abstract_inverted_index": {
+    "Physical": [0],
+    "abuse": [1],
+    "and": [2, 15, 49, 69, 74, 121, 168],
+    "sexual": [3],
+    "harassment": [4],
+    "are": [5],
+    "serious": [6],
+    "issues": [7],
+    "all": [8],
+    "over": [9],
+    "the": [10, 31, 59, 62, 75, 80, 118, 128, 144, 164],
+    "world.": [11],
+    "In": [12],
+    "Bangladesh,": [13],
+    "India,": [14],
+    "other": [16],
+    "south": [17],
+    "Asian": [18],
+    "countries,": [19],
+    "crimes": [20],
+    "of": [21, 61, 86, 97, 130, 156],
+    "these": [22],
+    "natures": [23],
+    "have": [24, 35],
+    "risen": [25],
+    "to": [26, 90, 116, 139, 162],
+    "a": [27, 51, 92, 95, 154],
+    "substantial": [28],
+    "number": [29],
+    "during": [30],
+    "past": [32],
+    "decade.": [33],
+    "We": [34],
+    "designed": [36, 110, 126],
+    "an": [37, 72, 102],
+    "Arduino-based": [38],
+    "simple": [39],
+    "safety-vest": [40],
+    "device": [41, 81, 93, 119, 134, 152],
+    "by": [42, 111],
+    "using": [43, 149],
+    "E-Textiles": [44],
+    "as": [45, 71, 94, 153],
+    "pressure": [46],
+    "sensing": [47],
+    "fabric": [48],
+    "incorporated": [50],
+    "mobile": [52],
+    "application": [53, 77],
+    "for": [54, 99, 170],
+    "women.": [55],
+    "This": [56, 105],
+    "paper": [57],
+    "explains": [58],
+    "details": [60],
+    "proposed": [63],
+    "smart": [64, 106],
+    "device,": [65],
+    "which": [66, 79],
+    "is": [67, 82, 89],
+    "cost-effective": [68, 151],
+    "re-usable": [70],
+    "undergarment,": [73],
+    "smartphone": [76],
+    "with": [78, 127],
+    "incorporated.": [83],
+    "The": [84, 133],
+    "aim": [85],
+    "this": [87, 150],
+    "idea": [88],
+    "provide": [91],
+    "sense": [96, 155],
+    "protection": [98],
+    "women": [100],
+    "at": [101],
+    "affordable": [103],
+    "range.": [104],
+    "vest": [107, 165],
+    "has": [108, 124, 135, 159],
+    "been": [109, 125, 137],
+    "conducting": [112],
+    "various": [113],
+    "real-life": [114],
+    "experiments": [115],
+    "make": [117, 163],
+    "efficient": [120],
+    "accurate.": [122],
+    "It": [123, 158],
+    "target": [129],
+    "commercial": [131],
+    "use.": [132],
+    "also": [136],
+    "beta-tested": [138],
+    "get": [140],
+    "some": [141],
+    "insights": [142],
+    "from": [143],
+    "people": [145],
+    "who": [146],
+    "will": [147],
+    "be": [148],
+    "protection.": [157],
+    "eventually": [160],
+    "helped": [161],
+    "more": [166],
+    "reliable": [167],
+    "user-friendly": [169],
+    "future": [171],
+    "commercialization.": [172]
+  },
+  "counts_by_year": [
+    {
+      "year": 2025,
+      "cited_by_count": 1
+    },
+    {
+      "year": 2024,
+      "cited_by_count": 1
+    },
+    {
+      "year": 2023,
+      "cited_by_count": 1
+    },
+    {
+      "year": 2022,
+      "cited_by_count": 4
+    }
+  ],
+  "updated_date": "2026-06-26T08:34:08.712188",
+  "created_date": "2025-10-10T00:00:00"
+}

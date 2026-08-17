@@ -21,7 +21,7 @@ Everything below this section is context and future work. If a task does not mov
 
 Plus two things that are not code and block launches anyway:
 
-- **Media.** Team photos and project images. Nothing in the ingestion pipeline produces them and `docs/clients/dial/dial-data/` is markdown — this is manual collection and upload, and it is the classic final-day blocker.
+- **Media.** Team photos and project images. Nothing in the ingestion pipeline produces them and `labs/dial/dial-data/` is markdown — this is manual collection and upload, and it is the classic final-day blocker.
 - **The URL decision.** Does this replace DIAL's site at its current address, or launch on a subdomain? DNS plus NSU's IT has real lead time. Settle it early.
 
 ### Explicitly out
@@ -48,9 +48,9 @@ Pilot pool, hand-onboarded: **DIAL → MI Lab (NSU) → BRAC.** NSU and BRAC are
 
 ## DIAL Launch Plan
 
-The blocker chain was: frontend churn was really a symptom of an unfrozen schema, and the schema was unfrozen because nobody had pushed real data through it yet. The fix was to probe real APIs (Crossref + OpenAlex, 21 of DIAL's actual DOIs) to see the data shape and freeze the schema against that. A one-time hydrate script (`scripts/ingestion/hydrate-dial.ts`) over hand-curated markdown did that job and is done — it does **not** become DIAL's ongoing data source. This is still a greenfield project; there's no reason to carry a stepping-stone script forward as permanent infrastructure. DIAL's actual launch data comes from the general ingestion pipeline (below) once it exists, run against DIAL's own ORCIDs and citation lists like any other lab would be.
+The blocker chain was: frontend churn was really a symptom of an unfrozen schema, and the schema was unfrozen because nobody had pushed real data through it yet. The fix was to probe real APIs (Crossref + OpenAlex, 21 of DIAL's actual DOIs) to see the data shape and freeze the schema against that. A one-time hydrate script (`scripts/ingestion/hydrate-dial.ts`) over hand-curated markdown did that job and is done — it does **not** become DIAL's ongoing data source. DIAL's launch data comes from the shared ingestion pipeline, run against DIAL's own ORCID and Google Scholar BibTeX sources like any other Lab.
 
-Sequence: **probe real APIs to see the data shape → freeze schema against that shape → build the general ingestion pipeline → run DIAL's real data through it → wire dial-test to the frozen schema → launch + get the testimonial.** The first two steps are done as of 2026-07-02; the pipeline is next.
+Sequence: **probe real APIs to see the data shape → freeze schema against that shape → build and rehearse the shared ingestion pipeline → run DIAL's real data through it → work the Review Items to presentable → wire dial-test to the frozen schema → launch + get the testimonial.** The pipeline and dry-run verification are done. AUT-141 is the first real write; AUT-142 is the review pass. Record both in the [onboarding runbook](../operator/onboard-a-lab.md).
 
 **Why this mattered, concretely:** the DOI probe (21 real DIAL papers against Crossref + OpenAlex) settled several design questions that would otherwise have been guesses — Crossref abstracts are missing more often than not (OpenAlex's `abstract_inverted_index` reconstruction is load-bearing, not a nice-to-have), ACM/IEEE proceedings don't carry ISSNs so venue matching has to key on curated `shortName` rather than API data, and `funder` is null across the board so grant↔publication auto-linking isn't happening for this corpus. Running the hydrate script against the real 250+ records (not sample data) is what surfaced the schema gaps that mattered: Awards had no way to represent multiple recipients, Grants' investigators couldn't represent a non-team-member PI, and several fields (`doi`, `orcid`, `openalex_id`, `ror_id`) had no uniqueness enforced at all, which would have let duplicate imports silently corrupt the data on a re-run.
 
@@ -99,7 +99,7 @@ One shared engine (`src/lib/ingestion/`: Crossref/OpenAlex field mapping, fuzzy 
 - **arXiv API** — preprints. Useful as an earlier-than-Crossref pull for CS/physics/math papers that don't have a publisher DOI yet, or whose only DOI is the arXiv one.
 - **PubMed/NCBI E-utilities** — biomed/health-sciences metadata. Relevant for labs publishing in medical-informatics venues (JMIR-type venues already appear in DIAL's real corpus).
 
-**Which collections ingestion actually touches** (confirmed against real DIAL data, not assumed). Two different axes matter here and were previously conflated under one "ingestible?" column: whether the engine ever **writes** a record to the collection, versus whether it **reads/matches against** an existing collection while writing somewhere else. A collection can be a match target without ever being a write target — that's Team's situation, and it's worth keeping separate so "ingestible" doesn't quietly come to mean "the engine touches it in some way."
+**Which collections ingestion actually touches** (confirmed against real DIAL data, not assumed). Two different axes matter here: whether the engine **writes** records to a collection, and whether it **reads or matches** existing records while writing somewhere else. Supporting records are created conservatively and hidden from the public site until reviewed.
 
 | Collection | Write target? | Read/match target? | How |
 |---|---|---|---|
@@ -107,16 +107,16 @@ One shared engine (`src/lib/ingestion/`: Crossref/OpenAlex field mapping, fuzzy 
 | Venues | Yes, gated | Yes (during Publications writes) | Auto-creates only when OpenAlex gives a Source ID or ISSN and nothing existing matches — a bare `container-title` string is never enough to auto-create (mirrors the Organizations gate below). No safe identifier → flagged for review, `venueLabel` free-text fallback. Conference proceedings routinely lack both (~35 flagged per real ORCID-driven run) |
 | Organizations — partner institutions | Yes, gated | Yes (during Team/Publications writes) | Co-author affiliations via OpenAlex `authorships` (paper-scoped, doesn't inherit the author-search risk). Auto-creates only when OpenAlex supplies a ROR ID and nothing existing matches it by ROR; no ROR → flagged for review, never guessed from the bare name |
 | Organizations — funders | No | No | Confirmed dead on DIAL's real corpus: Crossref `funder` 2/21, OpenAlex `grants` 0/21 |
-| **Team** | **No, never** | **Yes (during Publications writes)** | See "Team's shared surface" below — this is the collection most likely to be misread as ingestible |
+| **Team** | **Yes, hidden by default** | **Yes (during Publications writes)** | Existing people match only by ORCID, DBLP ID, or an unambiguous exact full name. An unmatched co-author becomes a Team record with `source: 'import'` and `displayInWebsite: false`; fuzzy similarity produces a merge suggestion, never an automatic merge |
 | Grants, Awards | No | No | No external bibliographic source tracks either; always manual |
 | Research Themes | No, but low-cost | No | Small, one-time taxonomy setup (5-10 entries typically), not an ongoing ingestion problem; per-publication tagging happens at review time |
 | Projects | No, and optional | No | LabKit-internal organizing concept some labs won't use — should be toggleable on/off, including on the frontend |
 
-**Team's shared surface, precisely:** the engine never creates or updates a Team record. What it does is *consult* Team while resolving `Publications.authors[]` — for each author on an ingested work, decide whether the name matches an existing Team record (link `teamMember`) or falls through to a structured `customAuthor` (`src/lib/ingestion/people.ts`'s `matchPersonToTeam`: ORCID-exact or exact-full-name-only, never fuzzy — homonym risk against a real person's public profile). That match step is the only place Team and the ingestion engine touch. `customAuthor` is no longer a dead end: it's a group (`name`/`orcid`/`affiliation`), and `dedupeCustomAuthor` recognizes the same non-Team co-author across multiple ingested papers — ORCID-exact reuses the identity automatically, a fuzzy name match is surfaced as a review suggestion, never auto-applied. The reverse direction — surfacing existing `customAuthor` entries as suggestions when a human creates a new Team record — is still the distinct, not-yet-built AUT-133 feature (see Open Questions); this pipeline only feeds it better-structured raw material.
+**Team's shared surface, precisely:** while resolving `Publications.authors[]`, the engine first tries to link an existing Team Member by ORCID, DBLP ID, or an unambiguous exact full name. If none matches, it creates a real hidden Team record and links the Publication to it. A high-similarity name is written as a `person-merge-suggestion` Review Item with both Team IDs; it is never auto-applied. This preserves a relationship-backed author model without making an uncertain identity public. The remaining workflow gap is a batch review for all newly imported hidden people, including role assignment; today the Operator edits those records individually in Payload.
 
 Cross-cutting:
 
-- **Review step from rung 1, not just citation-wall.** Can start as a CLI dry-run report (extend `ImportReport`'s created/updated/skipped + unmatched-relations pattern) rather than a full UI — acceptable while the operator is the concierge, not yet the PI self-serving. The UI becomes necessary once this is PI-facing.
+- **Review starts at rung 1, not only for citation text.** Import Runs persist the report and Review Items persist the mutable queue. The current Operator surface is Payload's admin panel; both custom dashboards are parked. Person merges have a real resolution path, while several other Review Item kinds can only be acknowledged and handled manually.
 - **Provenance on imported records** — original citation string, match source, confidence. Bad matches must be auditable.
 - **External IDs as dedup anchors** — Venues store OpenAlex Source ID + ISSN (+ `alternateNames`, `acronym`); Organizations store ROR ID; Team stores ORCID. Dedup by ID equality, not string matching.
 - **Idempotent re-import** — DOI as unique key; fuzzy-title dedup for DOI-less works; import report ("42 matched, 38 skipped, 4 need review").
@@ -136,11 +136,11 @@ Weekly poll by team ORCIDs → "N new papers found" email → PI approves/reject
 
 ## Open Questions
 
-- ~~External co-authors: Team docs with an `isExternal` flag vs. hybrid authors field (relationship + free-text)?~~ **Resolved** — hybrid pattern (relationship + free-text fallback) shipped on `Publications.authors`, `Awards.recipients`, `Grants.investigators`.
-- ~~Team `customAuthor` → `teamMember` promotion UX~~ **Tracked** — [AUT-133](https://linear.app/autana-systems/issue/AUT-133/team-promotion-flow-suggest-linking-customauthor-entries-to-new-team), blocked by AUT-131. Needs a new matcher (structurally like `resolveByName`, but for people) and a "promote" admin action. Not built.
+- ~~External co-authors in Publications: Team relationship vs. free text?~~ **Resolved** — ingestion creates hidden Team records for unmatched co-authors, then surfaces uncertain duplicates for deliberate review. Awards and Grants retain their own relationship + free-text fallback because their external recipients and investigators do not imply Team membership.
+- **Imported-people review** — hidden Team records are safe by default, but there is no batch accept/deny and role-assignment flow. The Operator currently reviews them one record at a time in Payload.
 - LabKit CLI / MCP server / Claude Code skill — undecided which shape the manual-entry tooling (Projects, Awards, Grants, Themes) takes. Whichever it is, it wraps the Payload Local API the same way `hydrate-dial.ts` already does; the admin dashboard is reserved for surgical single-record edits, not primary data entry.
 - Pricing/packaging — deferred until real usage data exists
-- Fork-per-client (upstream waterfall) vs. eventual hosted multi-tenant — deferred, but avoid schema decisions that assume one-lab-per-database forever
+- Fork-per-Lab (upstream waterfall) vs. eventual hosted multi-Lab — deferred, but avoid schema decisions that assume one Lab per database forever
 - DOI-less long tail (workshop papers, theses, regional venues, arXiv-only) — manual entry must stay pleasant; matters especially for Global South labs like DIAL
 - ~~CERIF alignment — adopt the standard model or stay bespoke?~~ **Resolved 2026-08-18** — deferred with an explicit tripwire, see [ADR-0001](../adr/0001-defer-cerif-alignment.md)
 - ~~Positioning — is LabKit a website product or a research information system?~~ **Resolved 2026-08-18** — both, as two claims for two audiences; see [VISION.md](./VISION.md#two-claims-two-audiences)

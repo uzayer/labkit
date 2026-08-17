@@ -1,74 +1,43 @@
-# Roles and Permissions
-Learn about roles and permissions in LabKit.
+# Roles and permissions
 
-LabKit implements a robust role-based access control system to manage user permissions effectively.
+LabKit starts with two Roles for the people who operate a Lab website.
 
-## Default Roles
-The system comes with two pre-configured roles:
-- Admin: full access to all features; can manage content; can publish content; can manage users.
-- Editor: can create and edit content; cannot publish content; cannot manage users; the most common role for content creators.
+| Role | Use it for | Effective access |
+| --- | --- | --- |
+| Admin | Instance administration and sensitive import work | content, redirects, Users, Roles, Import Runs, Review Items, and Admin-only globals |
+| Editor | Day-to-day work by a Lab Editor | routine content collections and authenticated draft reads |
 
-## User Creation Policy
+Assign the least-powerful Role that still lets someone do their work. Most Lab Editors should be Editors; keep the Admin group small.
 
-- New users default to the `Editor` role unless an existing admin explicitly assigns roles.
-- Google sign-in domain allowlisting (`ALLOWED_EMAIL_DOMAINS`) controls who may authenticate, not who becomes an admin.
-- If the system has no admins yet, LabKit promotes exactly one bootstrap admin: the oldest created user.
-- The last remaining admin cannot be demoted or deleted.
+## How users receive a Role
 
-## Role Permissions
-Each role has specific permissions that can be configured:
+- A new user receives the Editor role by default.
+- An Admin creating a user may assign a Role explicitly.
+- If the instance has no Admin, the oldest user is promoted once to bootstrap it.
+- Google sign-in domain allowlisting controls who may authenticate. It does not make an allowed user an Admin.
 
-| Permission | Description |
-|---|---|
-| `canManageContent` | Ability to create and edit content |
-| `canPublish` | Ability to publish content |
-| `canManageUsers` | Ability to manage user accounts |
-| `canManageRedirects` | Ability to manage URL redirects |
+The system prevents a user from deleting their own account and prevents the last Admin from being demoted or deleted.
 
-## Managing Roles
-### Admin Panel
-- Access the roles section at `/admin/collections/roles`
-- Create, edit, or delete roles
-- Configure permissions for each role
+## Manage Roles
 
-### Role Fields
-- Name: display name of the role (e.g., “Admin”, “Editor”)
-- Slug: unique identifier (automatically generated from name)
-- Description: detailed explanation of the role’s purpose
-- Permissions: group of specific permissions assigned to the role
+Admins manage Role documents at `/admin/collections/roles` and Users at `/admin/collections/users`.
 
-## Access Control
-The role system is used throughout LabKit to control access to various features:
+Each Role stores these flags:
 
-### Content Management
-- Only users with `canManageContent` permission can create and edit content
-- Publishing requires `canPublish`
-- Admins have unrestricted access to all content
+| Flag | Enforced today |
+| --- | --- |
+| `canManageContent` | Yes — create, update, and delete on the main content collections |
+| `canManageRedirects` | Yes — redirect writes |
+| `canPublish` | No — stored for a future policy, not currently consulted |
+| `canManageUsers` | No — User and Role management currently require the Admin role slug |
 
-### User Management
-- Only admins can create new roles
-- User role assignment is restricted to users with `canManageUsers`
-- Users can only be assigned roles by administrators
+Do not create a custom Role based only on the labels in the Admin Panel. Verify the affected operation in a fresh session; an unused flag grants nothing.
 
-## Best Practices
-### Role Assignment
-- Keep the number of admin users minimal
-- Assign the most restrictive role that still allows users to perform their tasks
-- Regularly audit user roles
+## After changing access
 
-### Custom Roles
-- Create custom roles for specific needs rather than modifying existing ones
-- Document the purpose and scope of custom roles
-- Consider the principle of least privilege when defining permissions
+1. Have the affected user sign out and back in.
+2. Test the exact create, edit, publish, delete, or administrative action they need.
+3. Confirm an Editor still cannot reach Admin-only collections.
+4. Keep at least one verified Admin account.
 
-### Security
-- Regularly review role assignments
-- Audit role permissions periodically
-- Remove unused roles to maintain security
-
-## Role Initialization
-When LabKit starts for the first time, it automatically creates the default roles (`Admin` and `Editor`) if they don't exist. This ensures that the basic role structure is always available.
-
-## For Developers
-
-Roles are a custom collection, not Payload's standard `select`-field RBAC pattern — this has implications for JWT reliability and which permission-check utility to use where. See [Architecture: Access Control](../architecture/access-control.md) for the full technical explanation.
+For implementation details and current gaps, see [Access control](../architecture/access-control.md). For Google login and domain allowlisting, see [Authentication](./authentication.md).

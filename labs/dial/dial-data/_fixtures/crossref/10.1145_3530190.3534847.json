@@ -1,0 +1,460 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [[2025, 7, 4]],
+      "date-time": "2025-07-04T06:16:25Z",
+      "timestamp": 1751609785057,
+      "version": "3.41.0"
+    },
+    "publisher-location": "New York, NY, USA",
+    "reference-count": 38,
+    "publisher": "ACM",
+    "license": [
+      {
+        "start": {
+          "date-parts": [[2022, 6, 29]],
+          "date-time": "2022-06-29T00:00:00Z",
+          "timestamp": 1656460800000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "https://www.acm.org/publications/policies/copyright_policy#Background"
+      }
+    ],
+    "funder": [
+      {
+        "name": "Gates Foundation",
+        "award": ["INV005970_2020"],
+        "award-info": [
+          {
+            "award-number": ["INV005970_2020"]
+          }
+        ]
+      }
+    ],
+    "content-domain": {
+      "domain": ["dl.acm.org"],
+      "crossmark-restriction": true
+    },
+    "short-container-title": [],
+    "published-print": {
+      "date-parts": [[2022, 6, 29]]
+    },
+    "DOI": "10.1145/3530190.3534847",
+    "type": "proceedings-article",
+    "created": {
+      "date-parts": [[2022, 6, 24]],
+      "date-time": "2022-06-24T16:21:57Z",
+      "timestamp": 1656087717000
+    },
+    "page": "596-602",
+    "update-policy": "https://doi.org/10.1145/crossmark-policy",
+    "source": "Crossref",
+    "is-referenced-by-count": 2,
+    "title": [
+      "“I Use YouTube Now in COVID”: Understanding Technology Adoption of Indigenous Communities during COVID-19 Pandemic in Bangladesh"
+    ],
+    "prefix": "10.1145",
+    "author": [
+      {
+        "given": "Rahat Jahangir",
+        "family": "Rony",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "DIAL (Design Inclusion and Access Lab), North South University, Bangladesh"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Anik",
+        "family": "Sinha",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "DIAL (Design Inclusion and Access Lab), North South University, Bangladesh"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Shajnush",
+        "family": "Amir",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "DIAL (Design Inclusion and Access Lab), North South University, Bangladesh"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Syeda Shabnam",
+        "family": "Khan",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "DIAL (Design Inclusion and Access Lab), North South University, Bangladesh"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Anik",
+        "family": "Saha",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "DIAL (Design Inclusion and Access Lab), North South University, Bangladesh"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Ifti Azad",
+        "family": "Abeer",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "DIAL (Design Inclusion and Access Lab), North South University, Bangladesh"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Nova",
+        "family": "Ahmed",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "DIAL (Design Inclusion and Access Lab), North South University, Bangladesh"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "member": "320",
+    "published-online": {
+      "date-parts": [[2022, 6, 29]]
+    },
+    "reference": [
+      {
+        "volume-title": "Discovery of grounded theory: Strategies for qualitative research",
+        "author": "Barney G",
+        "key": "e_1_3_2_1_1_1",
+        "unstructured": "Barney G Glaser and Anselm L Strauss . 2017. Discovery of grounded theory: Strategies for qualitative research . Routledge . Barney G Glaser and Anselm L Strauss. 2017. Discovery of grounded theory: Strategies for qualitative research. Routledge."
+      },
+      {
+        "key": "e_1_3_2_1_2_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/j.1365-2648.2007.04569.x"
+      },
+      {
+        "key": "e_1_3_2_1_3_1",
+        "volume-title": "Accessed on",
+        "author": "The",
+        "year": "2020",
+        "unstructured": "The shadow of COVID-19 lingers over Bangladesh's economy. Accessed on March 2020 from, https://www.eastasiaforum.org/2020/11/07/the-shadow-of-covid-19-lingers-over-bangladeshs-economy/ The shadow of COVID-19 lingers over Bangladesh's economy. Accessed on March 2020 from, https://www.eastasiaforum.org/2020/11/07/the-shadow-of-covid-19-lingers-over-bangladeshs-economy/"
+      },
+      {
+        "key": "e_1_3_2_1_4_1",
+        "unstructured": "World Health Organization Bangladesh https://www.who.int/countries/bgd/ Accessed on March 2021  World Health Organization Bangladesh https://www.who.int/countries/bgd/ Accessed on March 2021"
+      },
+      {
+        "volume-title": "accessed on",
+        "year": "2021",
+        "key": "e_1_3_2_1_5_1",
+        "unstructured": "https://atlasti.com/ , accessed on December , 2021 https://atlasti.com/, accessed on December, 2021"
+      },
+      {
+        "key": "e_1_3_2_1_6_1",
+        "unstructured": "Ministry of Health and Family Welfare http://www.mohfw.gov.bd/ Accessed on March 2021  Ministry of Health and Family Welfare http://www.mohfw.gov.bd/ Accessed on March 2021"
+      },
+      {
+        "key": "e_1_3_2_1_7_1",
+        "unstructured": "Rakhine People Accessed from https://en.wikipedia.org/wiki/Rakhine_people  Rakhine People Accessed from https://en.wikipedia.org/wiki/Rakhine_people"
+      },
+      {
+        "key": "e_1_3_2_1_8_1",
+        "unstructured": "Chakma People Accessed from https://en.wikipedia.org/wiki/Chakma_people  Chakma People Accessed from https://en.wikipedia.org/wiki/Chakma_people"
+      },
+      {
+        "key": "e_1_3_2_1_9_1",
+        "unstructured": "Marma People accessed from https://en.wikipedia.org/wiki/Marma_people  Marma People accessed from https://en.wikipedia.org/wiki/Marma_people"
+      },
+      {
+        "key": "e_1_3_2_1_10_1",
+        "unstructured": "Tripuris accessed from https://en.banglapedia.org/index.php/Tripuris _The  Tripuris accessed from https://en.banglapedia.org/index.php/Tripuris _The"
+      },
+      {
+        "key": "e_1_3_2_1_11_1",
+        "unstructured": "Bishnupriya Manipuri People Accessed from https://en.wikipedia.org/wiki/Bishnupriya_Manipuri_people  Bishnupriya Manipuri People Accessed from https://en.wikipedia.org/wiki/Bishnupriya_Manipuri_people"
+      },
+      {
+        "key": "e_1_3_2_1_12_1",
+        "unstructured": "Khasi People Wiki 2021. Accessed from https://en.wikipedia.org/wiki/Khasi_people  Khasi People Wiki 2021. Accessed from https://en.wikipedia.org/wiki/Khasi_people"
+      },
+      {
+        "key": "e_1_3_2_1_13_1",
+        "unstructured": "Indigenous people in Bangladesh Accessed from https://en.wikipedia.org/wiki/Indigenous_peoples_in_Bangladesh  Indigenous people in Bangladesh Accessed from https://en.wikipedia.org/wiki/Indigenous_peoples_in_Bangladesh"
+      },
+      {
+        "key": "e_1_3_2_1_14_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.4324/9781315759364"
+      },
+      {
+        "issue": "1",
+        "key": "e_1_3_2_1_15_1",
+        "first-page": "24",
+        "article-title": "Livelihoods, household income and indigenous technology in South Sumatra Wetlands",
+        "volume": "2",
+        "author": "Wildayana E.",
+        "year": "2017",
+        "unstructured": "Wildayana , E. , Adriani , D. , & Armanto , M. E. ( 2017 ). Livelihoods, household income and indigenous technology in South Sumatra Wetlands . Sriwijaya Journal of Environment , 2 ( 1 ), 24 - 29 . Wildayana, E., Adriani, D., & Armanto, M. E. (2017). Livelihoods, household income and indigenous technology in South Sumatra Wetlands. Sriwijaya Journal of Environment, 2(1), 24-29.",
+        "journal-title": "Sriwijaya Journal of Environment"
+      },
+      {
+        "issue": "4",
+        "key": "e_1_3_2_1_16_1",
+        "first-page": "1",
+        "article-title": "The Effect of Technology on an Indigenous People: The Case of the Norwegian Sami",
+        "volume": "14",
+        "author": "Muga D. A.",
+        "year": "1987",
+        "unstructured": "Muga , D. A. ( 1987 ). The Effect of Technology on an Indigenous People: The Case of the Norwegian Sami . The Journal of Ethnic Studies , 14 ( 4 ), 1 . Muga, D. A. (1987). The Effect of Technology on an Indigenous People: The Case of the Norwegian Sami. The Journal of Ethnic Studies, 14(4), 1.",
+        "journal-title": "The Journal of Ethnic Studies"
+      },
+      {
+        "key": "e_1_3_2_1_17_1",
+        "volume-title": "Indigenous technology for adapting to water logging situation for sustainable livelihood security in low-lying areas of Bangladesh",
+        "author": "Hossain M. A.",
+        "year": "2010",
+        "unstructured": "Hossain , M. A. ( 2010 ). Indigenous technology for adapting to water logging situation for sustainable livelihood security in low-lying areas of Bangladesh . Soil Resource Development Institute , Ministry of Agriculture, Krishi Khamar Sarak, Farmgate, Dhaka-1215, Bangladesh. Hossain, M. A. (2010). Indigenous technology for adapting to water logging situation for sustainable livelihood security in low-lying areas of Bangladesh. Soil Resource Development Institute, Ministry of Agriculture, Krishi Khamar Sarak, Farmgate, Dhaka-1215, Bangladesh."
+      },
+      {
+        "key": "e_1_3_2_1_18_1",
+        "first-page": "1",
+        "article-title": "Exploring the impact of ICT usage among indigenous people and their quality of life: operationalizing Sen's capability approach",
+        "author": "Hasan N.",
+        "year": "2021",
+        "unstructured": "Hasan , N. , Bao , Y. , & Miah , S. J. ( 2021 ). Exploring the impact of ICT usage among indigenous people and their quality of life: operationalizing Sen's capability approach . Information Technology for Development , 1 - 21 . Hasan, N., Bao, Y., & Miah, S. J. (2021). Exploring the impact of ICT usage among indigenous people and their quality of life: operationalizing Sen's capability approach. Information Technology for Development, 1-21.",
+        "journal-title": "Information Technology for Development"
+      },
+      {
+        "key": "e_1_3_2_1_19_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1002/j.1681-4835.2015.tb00480.x"
+      },
+      {
+        "key": "e_1_3_2_1_20_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.is.2017.01.001"
+      },
+      {
+        "key": "e_1_3_2_1_21_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1353/jda.2016.0061"
+      },
+      {
+        "key": "e_1_3_2_1_22_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1371/journal.pone.0247957"
+      },
+      {
+        "key": "e_1_3_2_1_23_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.5555/1238820.1238827"
+      },
+      {
+        "key": "e_1_3_2_1_24_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/24750158.2017.1397857"
+      },
+      {
+        "key": "e_1_3_2_1_25_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1186/s12939-016-0366-0"
+      },
+      {
+        "key": "e_1_3_2_1_26_1",
+        "unstructured": "Godinho V. & Singh S. (2013 September). Technology-enabled financial inclusion and evidence-based policy for the underbanked: A study of remote Indigenous Australia. In CPRsouth8/CPRafrica2013 conference.  Godinho V. & Singh S. (2013 September). Technology-enabled financial inclusion and evidence-based policy for the underbanked: A study of remote Indigenous Australia. In CPRsouth8/CPRafrica2013 conference."
+      },
+      {
+        "key": "e_1_3_2_1_27_1",
+        "unstructured": "Alamgir M. (2021 January 19). Education During Pandemic: Digital divide wreaks damage. The Daily Star. https://www.thedailystar.net/frontpage/news/educationduring-pandemic-digital-divide-wreaks-damage-2030637  Alamgir M. (2021 January 19). Education During Pandemic: Digital divide wreaks damage. The Daily Star. https://www.thedailystar.net/frontpage/news/educationduring-pandemic-digital-divide-wreaks-damage-2030637"
+      },
+      {
+        "key": "e_1_3_2_1_28_1",
+        "unstructured": "Bangladesh IWGIA. Accessed from https://www.iwgia.org/en/bangladesh.html  Bangladesh IWGIA. Accessed from https://www.iwgia.org/en/bangladesh.html"
+      },
+      {
+        "issue": "1",
+        "key": "e_1_3_2_1_29_1",
+        "first-page": "13",
+        "article-title": "Analysing the Sentiments towards Work-From-Home Experience during COVID-19 Pandemic - Letter from Academia",
+        "volume": "8",
+        "author": "Dubey A.",
+        "year": "2020",
+        "unstructured": "Dubey , A. , Tripathi , S. , ( 2020 ). Analysing the Sentiments towards Work-From-Home Experience during COVID-19 Pandemic - Letter from Academia , Journal of Innovation Management, www.open-jim.org , 8 ( 1 ), 13 - 19 . Dubey, A., Tripathi, S., (2020). Analysing the Sentiments towards Work-From-Home Experience during COVID-19 Pandemic - Letter from Academia, Journal of Innovation Management, www.open-jim.org, 8(1), 13-19.",
+        "journal-title": "Journal of Innovation Management, www.open-jim.org"
+      },
+      {
+        "key": "e_1_3_2_1_30_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3429360.3468212"
+      },
+      {
+        "key": "e_1_3_2_1_31_1",
+        "volume-title": "Commodities and capabilities: Oxford University Press",
+        "author": "Sen A.",
+        "year": "1999",
+        "unstructured": "Sen , A. ( 1999 ). Commodities and capabilities: Oxford University Press . Sen, A. (1999). Commodities and capabilities: Oxford University Press."
+      },
+      {
+        "key": "e_1_3_2_1_32_1",
+        "volume-title": "50 lakh poor households to get cash aid through MFS from May 14, Accessed on February, 2022,https://www.thedailystar.net/business/news/50-lakh-poor-households-get-cash-aid-through-mfs-may-14-1901455",
+        "author": "The Daily Star",
+        "year": "2020",
+        "unstructured": "The Daily Star , ( 2020 ). 50 lakh poor households to get cash aid through MFS from May 14, Accessed on February, 2022,https://www.thedailystar.net/business/news/50-lakh-poor-households-get-cash-aid-through-mfs-may-14-1901455 , The Daily Star, (2020). 50 lakh poor households to get cash aid through MFS from May 14, Accessed on February, 2022,https://www.thedailystar.net/business/news/50-lakh-poor-households-get-cash-aid-through-mfs-may-14-1901455,"
+      },
+      {
+        "key": "e_1_3_2_1_33_1",
+        "volume-title": "Mobile money in the COVID-19, Accessed on March 2021, from https://www.thedailystar.net/supplements/mobile-financial-services/news/mobile-money-the-covid-19-pandemic-2028889",
+        "author": "The Daily Star",
+        "year": "2021",
+        "unstructured": "The Daily Star , ( 2021 ). Mobile money in the COVID-19, Accessed on March 2021, from https://www.thedailystar.net/supplements/mobile-financial-services/news/mobile-money-the-covid-19-pandemic-2028889 The Daily Star, (2021). Mobile money in the COVID-19, Accessed on March 2021, from https://www.thedailystar.net/supplements/mobile-financial-services/news/mobile-money-the-covid-19-pandemic-2028889"
+      },
+      {
+        "key": "e_1_3_2_1_34_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/isj.12301"
+      },
+      {
+        "key": "e_1_3_2_1_35_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/isj.12331"
+      },
+      {
+        "key": "e_1_3_2_1_36_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3415201"
+      },
+      {
+        "key": "e_1_3_2_1_37_1",
+        "first-page": "127",
+        "volume-title": "Fourteenth Symposium on Usable Privacy and Security ({SOUPS} 2018)",
+        "author": "Sambasivan N.",
+        "year": "2018",
+        "unstructured": "Sambasivan , N. , Checkley , G. , Batool , A. , Ahmed , N. , Nemer , D. , Gaytán-Lugo , L. S., . .. & Churchill , E. ( 2018 ). \" Privacy is not for me, it's for those rich women\": Performative Privacy Practices on Mobile Phones by Women in South Asia . In Fourteenth Symposium on Usable Privacy and Security ({SOUPS} 2018) (pp. 127 - 142 ). Sambasivan, N., Checkley, G., Batool, A., Ahmed, N., Nemer, D., Gaytán-Lugo, L. S., ... & Churchill, E. (2018). \" Privacy is not for me, it's for those rich women\": Performative Privacy Practices on Mobile Phones by Women in South Asia. In Fourteenth Symposium on Usable Privacy and Security ({SOUPS} 2018) (pp. 127-142)."
+      },
+      {
+        "key": "e_1_3_2_1_38_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3155050"
+      }
+    ],
+    "event": {
+      "name": "COMPASS '22: ACM SIGCAS/SIGCHI Conference on Computing and Sustainable Societies",
+      "sponsor": [
+        "SIGCHI ACM Special Interest Group on Computer-Human Interaction",
+        "SIGCAS ACM Special Interest Group on Computers and Society"
+      ],
+      "location": "Seattle WA USA",
+      "acronym": "COMPASS '22"
+    },
+    "container-title": [
+      "ACM SIGCAS/SIGCHI Conference on Computing and Sustainable Societies (COMPASS)"
+    ],
+    "original-title": [],
+    "link": [
+      {
+        "URL": "https://dl.acm.org/doi/10.1145/3530190.3534847",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://dl.acm.org/doi/pdf/10.1145/3530190.3534847",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [[2025, 6, 17]],
+      "date-time": "2025-06-17T18:09:24Z",
+      "timestamp": 1750183764000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://dl.acm.org/doi/10.1145/3530190.3534847"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [[2022, 6, 29]]
+    },
+    "references-count": 38,
+    "alternative-id": ["10.1145/3530190.3534847", "10.1145/3530190"],
+    "URL": "https://doi.org/10.1145/3530190.3534847",
+    "relation": {},
+    "subject": [],
+    "published": {
+      "date-parts": [[2022, 6, 29]]
+    },
+    "assertion": [
+      {
+        "value": "2022-06-29",
+        "order": 2,
+        "name": "published",
+        "label": "Published",
+        "group": {
+          "name": "publication_history",
+          "label": "Publication History"
+        }
+      }
+    ]
+  }
+}

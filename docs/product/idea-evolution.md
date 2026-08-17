@@ -1,53 +1,27 @@
-# The Evolution of ResearchNet: A Thought Process
+# Why LabKit is data-first
 
-This document traces the step-by-step evolution of the ResearchNet idea, from the initial observation to the core insights that define its current direction.
+LabKit began as a research-lab website assembled from a general-purpose Payload page-builder template. That was useful for exploring visual directions, but it put the wrong decision in front of a Lab Editor: choose and configure page blocks instead of maintaining the Lab's research record.
 
-### Phase 1: The Initial Observation
+The product pivot was to treat Publications, Team Members, Projects, Grants, Awards, Research Themes, Venues, and Organizations as first-class domain data. Public pages render those records through deliberate templates.
 
-The journey began with a practical goal: building a better website for a university HCI lab. I observed that most academic websites fall into two categories:
-1.  **Outdated:** They look and feel like they were built in 2004.
-2.  **Inaccessible:** The few impressive ones (like MIT Media Lab's) are expensive, custom-commissioned projects unavailable to the average lab.
+## What changed
 
-My initial assumption was that professors and lab staff are too focused on research to invest time in web development, and their outdated websites, while ugly, must still serve their core purpose.
+- The general page-builder block library was removed.
+- Pages were reduced to a narrow Hero and SEO shape.
+- Research collections became the primary content model.
+- Publication ingestion and a review queue became core workflows.
+- The public frontend became a projection of reviewed research data, not a collection of editor-arranged sections.
 
-### Phase 2: Deconstructing the "Good Enough" Website
+Rich-text embeds and a small number of explicitly supported layout blocks remain where they serve a specific content need. They are not a return to a generic site builder.
 
-To understand *why* these sites were still functional, I analyzed their purpose and structure.
+## Why this boundary matters
 
--   **Core Functions:** They successfully facilitate research dissemination, establish academic credibility through publications and awards, attract student talent, and serve as a point of contact for collaborators.
--   **Structural Predictability:** Despite bad UX, the sites are highly structured and predictable. Most stick to a few common pages: Home, Research, Publications, Team, News, and Awards. This consistency makes them easy for users to scan and navigate.
--   **Technical Simplicity:** Old, static HTML sites are incredibly easy for search engines and academic indexers (like Google Scholar) to scrape and index. In contrast, modern Client-Side Rendered (CSR) sites can harm discoverability if not perfectly optimized for SEO.
+A structured research record can support more than one page and, eventually, more than one output. The same reviewed Publication can appear in a publication index, a Team Member profile, a Project page, an export, or a future reporting workflow without being copied into each page.
 
-The conclusion was that the 2004-style site succeeds based on its simple, predictable information architecture, not its visual design.
+This also makes onboarding measurable. An Operator can record which sources produced which records, what needed human review, and how much manual work remained. Lab #2 can then test whether the model and runbook generalize.
 
-### Phase 3: The First Attempt - "Shadcn for Science"
+## Current product boundary
 
-My first solution was to create a more polished version of the same lab sites—a "Shadcn for science."
+LabKit is not trying to become a generic CMS template. Generic website-builder documentation and features belong upstream. The current MVP is narrower: launch DIAL's public website using real Payload data, learn from that onboarding, and preserve the repeatable procedure for the next Lab.
 
-I chose a modern tech stack based on the shadcnblocks Payload template:
--   **Framework:** Next.js
--   **CMS:** Payload CMS
--   **Components:** shadcn/ui, with pre-built blocks from shadcnblocks.com
--   **Infrastructure:** Native support for MongoDB and Vercel hosting.
-
-I began by creating rudimentary data models in Payload (e.g., Research Themes, Publications, Projects, Team) and building out the front-end with layout blocks that could display this data.
-
-### Phase 4: The Pivot - Uncovering the Deeper Problem
-
-While implementing auto-populated blocks, I hit a wall and uncovered the true reason academic websites are stale: **data entry is a massive hindrance.**
-
-I realized the block-based, layout-focused approach was fundamentally wrong for this context:
--   **Static Layouts:** An academic lab's website structure rarely changes. Only the content within it does. A flexible block-based layout is overkill.
--   **Cumbersome Editing:** Editing content on a page-by-page, block-by-block basis is tedious and inefficient.
--   **Disconnected Data:** Most of a lab's data (projects, papers, people) is deeply interconnected, but a block-based system treats it as separate, unstructured content on a webpage.
-
-This was the key insight: the problem wasn't the visual presentation, but the friction of manually maintaining the site's content.
-
-### Phase 5: The New Direction - A Data-Centric, Template-Driven Model
-
-This realization prompted a pivot away from a flexible page-builder to a more rigid, data-centric model.
-
--   **From Blocks to Templates:** The new approach was to build static page templates (e.g., a "Publications" page, a "Team" page) that are fed from a centralized, structured database, similar to how a typical blog renders posts from a database. The admin panel would be for managing the data, not the page layout.
--   **A Schema for Academia:** The data schema itself should reflect the mental models researchers already use. By structuring the data around concepts from grant applications and research papers, the system becomes more intuitive and purpose-built for the academic workflow.
-
-The idea evolved from simply making a "prettier website" to building a smart, structured data management system that happens to output a clean, professional website as one of its functions.
+See [Product vision](./VISION.md), [Roadmap](./ROADMAP.md), and [Onboard a Lab](../operator/onboard-a-lab.md).

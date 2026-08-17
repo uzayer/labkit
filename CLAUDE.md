@@ -50,7 +50,7 @@ No test framework is configured. Verify changes with `pnpm tsc` and `pnpm lint`,
 
 **`dial-test/` is a separate app, not part of this build.** It has its own `package.json`, `node_modules`, lockfiles, and `CLAUDE.md`, and is excluded from the root typecheck, lint, and Next build. Run its commands from inside that directory.
 
-`pnpm ii` is the sanctioned install (`pnpm --ignore-workspace install`) — `pnpm-workspace.yaml` exists for its `overrides`/`allowBuilds`/`peerDependencyRules` config, not because this is a real monorepo.
+`pnpm ii` is the sanctioned install (`pnpm install`) — `pnpm-workspace.yaml` exists for its `overrides`/`allowBuilds`/`peerDependencyRules` config, not because this is a real monorepo. The workspace-aware command is required to enforce the reviewed `allowBuilds` policy.
 
 A Husky `pre-commit` hook runs `oxlint --fix` + `oxfmt` on staged files (lint-staged) and `commit-msg` enforces Conventional Commits via commitlint — a non-conforming commit message is rejected, not just warned about.
 
@@ -130,7 +130,7 @@ Both are Next.js private folders (`_`-prefixed): they compile and their exports 
 
 See `.env.example` for all variables. Key ones: `MONGODB_URI`, `PAYLOAD_SECRET`, `NEXT_PRIVATE_DRAFT_SECRET`, `REVALIDATION_KEY`. `NEXT_PUBLIC_SERVER_URL` auto-derives from Vercel or defaults to `http://localhost:3000`.
 
-Node: `>=20.9.0` — pnpm 11.9.0 (pinned via `packageManager`).
+Node: `>=20.9.0` — pnpm 11.22.0 (pinned via `packageManager`).
 
 ## Context7
 

@@ -1,5 +1,5 @@
 /**
- * One-off probe: fetch every DOI in docs/clients/dial/dial-data/publications/*.md
+ * One-off probe: fetch every DOI in labs/dial/dial-data/publications/*.md
  * from Crossref + OpenAlex, save raw JSON fixtures, and print a field-coverage
  * report. Also demos reverse title lookup for a handful of DOI-less 2024 works.
  *
@@ -19,8 +19,8 @@ import {
   searchCrossrefByTitle,
 } from '@/lib/ingestion/fetch'
 
-const PUBLICATIONS_DIR = path.resolve(process.cwd(), 'docs/clients/dial/dial-data/publications')
-const FIXTURES_DIR = path.resolve(process.cwd(), 'docs/clients/dial/dial-data/_fixtures')
+const PUBLICATIONS_DIR = path.resolve(process.cwd(), 'labs/dial/dial-data/publications')
+const FIXTURES_DIR = path.resolve(process.cwd(), 'labs/dial/dial-data/_fixtures')
 
 interface PublicationRecord {
   title: string

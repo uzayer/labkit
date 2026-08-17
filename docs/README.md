@@ -1,51 +1,45 @@
-# Documentation
+# LabKit documentation
 
-This is the documentation for the LabKit codebase: a PayloadCMS product for research lab websites and, later, lab-level research information workflows.
+This directory is the content source for LabKit documentation. It stays as plain Markdown until the Fumadocs work in AUT-120 and AUT-121 begins.
 
-Docs in this repo should explain LabKit-specific intent, constraints, and operating decisions. Generic website-builder or template documentation belongs upstream with the template it came from, not here.
+Keep durable, reusable LabKit knowledge here: product intent, Operator and Lab Editor workflows, and architecture that a contributor must understand. The code remains the source of truth for mechanics.
 
-## Navigation
+## Start here
 
-### Getting Started
-New to the project? Start here to get your development environment running.
-- [Installation](./getting-started/installation.md) - Set up the project locally
-- [Database Setup](./getting-started/database-setup.md) - Configure MongoDB
-- [First Steps](./getting-started/first-steps.md) - Seed the database and explore
+- [Product vision](./product/VISION.md) — the product thesis and the two audiences LabKit serves
+- [Roadmap](./product/ROADMAP.md) — current scope, sequencing, and explicit non-goals
+- [Lab onboarding runbook](./operator/onboard-a-lab.md) — the evolving Operator procedure for taking a Lab from source material to a live site
 
-### Guides
-Task-oriented how-tos for common operations.
-- [Deploying](./guides/deploying.md) - Deploy to Vercel or other platforms
-- [Authentication](./guides/authentication.md) - Set up Google OAuth and authentication
-- [Email Configuration](./guides/email-configuration.md) - Configure email providers
-- [Roles and Permissions](./guides/roles-and-permissions.md) - Manage user access control
-- [Forms](./guides/forms.md) - Form submissions, Turnstile, and wiring standalone forms to Payload
+## Operate LabKit
 
-### Architecture
-Understanding-oriented explanations of how the system works.
-- [Data Schema](./architecture/data-schema.md) - Why the research-domain collections exist and how they should be used
-- [Access Control](./architecture/access-control.md) - Custom RBAC extension and permissions system
-- [Theming System](./architecture/theming-system.md) - Current theming approach and known limits
+- [Authentication](./guides/authentication.md) — email/password login, optional Google login, and domain allowlisting
+- [Roles and permissions](./guides/roles-and-permissions.md) — the effective Admin and Editor policy
+- [Forms and submissions](./guides/forms.md) — CMS-backed forms, Turnstile, and standalone form wiring
 
-### Product
-- [Vision](./product/VISION.md) - Current product thesis and long-term direction
-- [Roadmap](./product/ROADMAP.md) - Product decisions and sequencing
-- [Idea Evolution](./product/idea-evolution.md) - How the product pivoted from page-builder to data-centric CMS
-- [OpenAlex Automation Notes](./product/automation-notes.md) - Raw notes on what OpenAlex sync can and can't automate
+## Understand the architecture
 
-### Clients
-Per-client working material: specs, content data, and reference scrapes.
-- [DIAL](./clients/dial/) - DIAL Lab (North South University) — the first LabKit instance
-  - [Sitemap](./clients/dial/sitemap.md) - Page-by-page block and data source mapping
-  - [Product Context](./clients/dial/product-context.md) - Client background and goals
-  - [Site-wide Features](./clients/dial/site-wide-features.md) / [Global Layout](./clients/dial/global-layout.md) - Cross-page requirements
-  - `pages/` - Per-page content specs (home, research, publications, people, ...)
-  - `dial-data/` - Structured lab data (projects, publications, grants, team, awards) for CMS entry
-  - `scraped-data/` - Scrapes of the existing NSU HCI site and the PI's personal site (also future test fixtures for the ingestion pipeline)
+- [Data schema](./architecture/data-schema.md) — the research-domain collections and their boundaries
+- [Access control](./architecture/access-control.md) — role documents, permission checks, user lifecycle rules, and known gaps
+- [Theming system](./architecture/theming-system.md) — the current theming approach and its limits
+- [Why LabKit is data-first](./product/idea-evolution.md) — why the inherited page-builder model was removed
 
-## Documentation Philosophy
+Standing architecture decisions live in [`adr/`](./adr/). ADR-0001 records why CERIF alignment is deferred.
 
-- **Guides** answer "How do I...?" questions with step-by-step instructions
-- **Architecture** answers "Why does it work this way?" with explanations and context
-- **Development** answers "How do I extend this?" with patterns and examples
+## Repository operations
 
-Documentation should explain decisions, not just describe code. The code is the source of truth for mechanics; docs should justify intent, scope, and tradeoffs.
+The files in [`agents/`](./agents/) document this repository's issue-tracker and triage conventions. They are operational inputs for contributors and coding agents, not Lab Editor guidance.
+
+## What lives elsewhere
+
+- [`../README.md`](../README.md) is the current developer setup and command reference. Do not duplicate it here.
+- [`../CONTEXT.md`](../CONTEXT.md) is the canonical domain glossary; [`../LOG.md`](../LOG.md) is the chronological decision record.
+- [`../labs/dial/`](../labs/dial/) contains DIAL-specific source material, content specs, reference scrapes, and ingestion fixtures. It is an active Lab workspace, not reusable documentation.
+- [`../dial-test/`](../dial-test/) is DIAL's standalone static frontend prototype and keeps its own app-local notes.
+
+## Content rules
+
+- Use the domain terms in `CONTEXT.md`, including **Lab**, **Lab Editor**, and **Operator**.
+- Prefer a missing page over copied template documentation that does not describe LabKit.
+- Write task steps from a real execution. Mark unverified instructions as a plan, not as established procedure.
+- Keep Lab-specific evidence in that Lab's workspace. Promote only the repeatable lesson into this directory.
+- Delete obsolete snapshots; git history is the archive. Use `LOG.md` when the reasoning must remain visible.

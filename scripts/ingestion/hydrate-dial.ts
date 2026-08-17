@@ -1,6 +1,6 @@
 /**
  * One-time hydrate: reads DIAL's curated markdown data
- * (docs/clients/dial/dial-data/) and upserts it into PayloadCMS via the
+ * (labs/dial/dial-data/) and upserts it into PayloadCMS via the
  * Local API, in dependency order (themes -> orgs -> venues -> team ->
  * grants -> publications -> awards -> projects).
  *
@@ -37,7 +37,7 @@ import { ImportReport } from '@/lib/ingestion/report'
 import { hydrateTeamMember, splitTeamMemberName } from '@/lib/ingestion/team'
 
 const DRY_RUN = process.argv.includes('dry-run')
-const DATA_DIR = path.resolve(process.cwd(), 'docs/clients/dial/dial-data')
+const DATA_DIR = path.resolve(process.cwd(), 'labs/dial/dial-data')
 const FIXTURES_DIR = path.join(DATA_DIR, '_fixtures')
 
 type Payload = Awaited<ReturnType<typeof getPayload>>

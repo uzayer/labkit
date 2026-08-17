@@ -1,432 +1,119 @@
-# Access Control & RBAC Extension
+# Access control
 
-**Last Updated:** March 2026  
-**Status:** Stable — Custom extension on top of PayloadCMS
+LabKit uses Payload authentication with two layers of authorization:
 
-## Overview
+1. role slugs answer identity questions such as “is this user an Admin?”; and
+2. permission flags answer capability questions such as “may this user manage content?”
 
-This codebase extends PayloadCMS's standard RBAC (Role-Based Access Control) with a custom **Roles collection** that provides database-driven, configurable permissions. This differs from Payload's official pattern of using a simple `select` field on Users.
+This page documents the current implementation. It does not prescribe Payload's generic RBAC pattern.
 
-**Key differences:**
-- Official Payload: Roles are strings in a `select` field (`['admin', 'editor']`)
-- This codebase: Roles are full MongoDB documents with configurable permission flags
+## Role documents
 
-## Why We Extended Payload's RBAC
+`Users.roles` is a many-to-many relationship to the `Roles` collection. Each Role has a stable `slug` and a `permissions` group.
 
-The standard Payload pattern (documented in their guides) looks like this:
+The default roles are created during Payload initialization:
 
-```typescript
-// Standard Payload approach
-{
-  name: 'roles',
-  type: 'select',
-  hasMany: true,
-  saveToJWT: true,
-  options: ['admin', 'editor', 'user'],
-  defaultValue: ['user'],
-}
+| Role | Intended use | Default permissions |
+| --- | --- | --- |
+| `admin` | Instance administration | all four flags enabled |
+| `editor` | Routine content work | `canManageContent` only |
+
+The four stored flags are:
+
+- `canManageContent`
+- `canPublish`
+- `canManageUsers`
+- `canManageRedirects`
+
+Stored flags and enforced capabilities are not currently identical. `canManageContent` guards writes to content collections, and `canManageRedirects` guards redirect writes. `canPublish` and `canManageUsers` are stored but are not consulted by current access functions; user and Role management use the `admin` slug directly. Do not describe those two flags as enforced until the code uses them.
+
+## The two checks
+
+`checkRole()` reads a Role slug. It works with populated Role objects or slug strings. A relationship ID string does not contain a slug and therefore cannot prove a role. The check is used for Admin-only boundaries such as Users, Roles, Import Runs, Review Items, and admin-panel access.
+
+`hasPermission()` reads a permission flag from populated Role objects. It fails closed and warns when a Role is only a string ID, because an ID does not contain permission data. Content collections use `hasPermission('canManageContent')`; redirect writes use `hasPermission('canManageRedirects')`.
+
+The distinction is intentional: use a role check for a stable administrative identity, and a permission check for a configurable capability. Do not silently substitute one for the other.
+
+## Effective policy
+
+### Public and content reads
+
+Versioned public collections such as Pages, Posts, and Projects use `authenticatedOrPublished`: unauthenticated readers see published documents, while authenticated users may read drafts.
+
+Other research collections define their own public-read behavior. Their collection configuration is authoritative.
+
+### Content writes
+
+Pages, Posts, Media, Categories, Projects, Publications, Team, Grants, Awards, and Research Themes require `canManageContent` for create, update, and delete operations.
+
+The Header and Footer globals currently allow any authenticated user to update them. PageConfig and ThemeConfig use Admin checks. These are current implementation boundaries, not a generalized promise that all globals follow one policy.
+
+### Administrative records
+
+- Import Runs and Review Items are Admin-only.
+- Roles are readable by authenticated users and writable only by Admins.
+- Users are readable by authenticated users, creatable and deletable only by Admins, and updatable by an Admin or the user themself.
+- The `roles` field is assignable on creation only during first-user bootstrap or by an Admin. Only an Admin may update it afterward.
+- A user cannot delete their own account.
+- The last remaining Admin cannot be demoted or deleted.
+
+## User creation and bootstrap
+
+New users receive the Editor role unless an Admin intentionally supplies roles during creation.
+
+If no Admin exists after the first user is created, the oldest user is promoted to Admin once. Google domain allowlisting controls who may authenticate through Google; it does not grant the Admin role.
+
+See [Authentication](../guides/authentication.md) for sign-in configuration and [Roles and permissions](../guides/roles-and-permissions.md) for the Lab Editor-facing policy.
+
+## Payload Local API rule
+
+Payload's Local API bypasses access control by default. Any operation performed on behalf of a user must pass both the user and `overrideAccess: false`:
+
+```ts
+await payload.find({
+  collection: 'pages',
+  user,
+  overrideAccess: false,
+})
 ```
 
-This works well for simple role checks, but has limitations:
-- Permissions are hardcoded in application code
-- Adding new permissions requires code changes and deployment
-- No fine-grained control without editing access functions
+Trusted system work such as ingestion may intentionally override access. That choice must be explicit at the call site.
 
-**Our approach** uses a separate `Roles` collection where each role is a document with configurable permissions:
+## Known constraints
 
-```typescript
-{
-  _id: "abc123",
-  name: "Admin",
-  slug: "admin",
-  permissions: {
-    canManageContent: true,
-    canPublish: true,
-    canManageUsers: true,
-    canManageRedirects: true
-  }
-}
-```
+### Permission checks need populated Roles
 
-**Trade-off:** This is more flexible but relies on undocumented Payload behavior (see "The JWT Reliability Question" below).
+`hasPermission()` cannot evaluate a string relationship ID. The `roles` relationship uses `saveToJWT: true`, and the runtime expects `req.user.roles` to contain Role objects when permission checks run. If logs show “Role ID provided as string,” permission checks are denying access and the authentication/population path must be investigated.
 
-## The Roles Collection Structure
+### Permission changes can outlive a session
 
-**File:** `src/collections/Roles/index.ts`
+Role data is included in authentication state. After changing a Role's permissions, have affected users sign out and back in before testing the new policy.
 
-Each role document contains:
-- `name`: Display name (e.g., "Admin", "Editor")
-- `slug`: Unique identifier (e.g., "admin", "editor")
-- `permissions`: Group of boolean flags:
-  - `canManageContent`: Create/edit content collections
-  - `canPublish`: Publish content
-  - `canManageUsers`: User administration
-  - `canManageRedirects`: Manage URL redirects
+### Unused flags can mislead
 
-Roles are assigned to users via a `relationship` field in the Users collection:
+`canPublish` and `canManageUsers` look authoritative but currently do not gate those operations. Either wire them into access rules or remove them in a focused authorization change; documentation alone must not pretend they work.
 
-```typescript
-// src/collections/Users/index.ts
-{
-  name: 'roles',
-  type: 'relationship',
-  relationTo: 'roles',
-  hasMany: true,
-  saveToJWT: true,  // ⚠️ Undocumented behavior for relationships
-}
-```
+## Verification checklist
 
-## The Two Permission Check Utilities
+When changing authorization:
 
-### `checkRole` — Official Pattern (Reliable)
+1. test with a fresh Admin session and a fresh Editor session;
+2. test REST or browser requests, not only trusted Local API calls;
+3. test create, read, update, and delete separately;
+4. verify draft versus published reads;
+5. verify the last-Admin safeguards; and
+6. check logs for unpopulated Role warnings.
 
-**File:** `src/utilities/checkRole.ts`
+No automated authorization test suite exists today, so record the manual cases run with the change.
 
-Checks if a user has any of the specified role **slugs**:
+## Related code
 
-```typescript
-export const checkRole = (allRoles: string[], user) => {
-  const userRoles = user.roles.map(role => {
-    if (typeof role === 'string') return role
-    return role.slug
-  })
-  return allRoles.some(role => userRoles.includes(role))
-}
-```
-
-**Usage:**
-```typescript
-// Check if user is admin
-checkRole(['admin'], user)
-
-// Check if user is admin OR editor
-checkRole(['admin', 'editor'], user)
-```
-
-**Reliability:** ✅ Works regardless of whether roles are strings or objects in the JWT.
-
-### `hasPermission` — Custom Pattern (Requires Full Objects)
-
-**File:** `src/utilities/checkPermission.ts`
-
-Checks if a user has a specific permission flag:
-
-```typescript
-export const checkPermission = (permissionKey: string, user) => {
-  return user.roles.some(role => {
-    if (typeof role === 'string') {
-      console.warn('Role ID provided as string, cannot check permissions.')
-      return false  // Fails closed — denies access if uncertain
-    }
-    return role.permissions?.[permissionKey] === true
-  })
-}
-
-// Wrapper for use in access control config
-export const hasPermission = (permissionKey: string) => {
-  return ({ req }) => checkPermission(permissionKey, req.user)
-}
-```
-
-**Usage:**
-```typescript
-// In collection access control
-access: {
-  create: hasPermission('canManageContent'),
-  update: hasPermission('canManageContent'),
-  delete: hasPermission('canManageContent'),
-}
-```
-
-**Reliability:** ⚠️ Requires roles to be **full objects** in the JWT, not just IDs.
-
-### Comparison
-
-| Aspect | `checkRole` | `hasPermission` |
-|--------|-------------|-----------------|
-| **What it checks** | Role slug (e.g. "admin") | Permission flag (e.g. `canManageContent`) |
-| **Works with string IDs?** | ✅ Yes | ❌ No — warns and denies |
-| **Works with slug strings?** | ✅ Yes | ❌ No — no `.permissions` property |
-| **Works with full objects?** | ✅ Yes | ✅ Yes |
-| **Follows Payload docs?** | ✅ Yes | ❌ Custom extension |
-| **Configurable via CMS?** | No — hardcoded in code | Yes — edit in admin UI |
-
-## The JWT Reliability Question
-
-**Critical question:** When a user logs in, what does Payload actually put in the JWT for the `roles` field?
-
-### Option A: Just the IDs (breaks `hasPermission`)
-```json
-{
-  "id": "6671",
-  "email": "user@example.com",
-  "roles": ["abc123def456"]  // MongoDB ObjectId strings
-}
-```
-
-If this is what's stored, `hasPermission` always returns `false` for everyone.
-
-### Option B: Full populated objects (works)
-```json
-{
-  "id": "6671",
-  "email": "user@example.com",
-  "roles": [
-    {
-      "id": "abc123def456",
-      "slug": "admin",
-      "permissions": {
-        "canManageContent": true,
-        "canPublish": true,
-        "canManageUsers": true,
-        "canManageRedirects": true
-      }
-    }
-  ]
-}
-```
-
-If this is what's stored, `hasPermission` works correctly.
-
-### What Payload Actually Does
-
-PayloadCMS's documentation explicitly mentions `saveToJWT` works for `select`, `group`, and `tab` fields. **Relationship fields are not mentioned.** This means the behavior is **undocumented**.
-
-**Why it probably works anyway:** When Payload generates the JWT at login time, it likely fetches the user document at depth 1 (which populates one level of relationships), so the roles come out as full objects.
-
-**The risk:** This is inferred behavior, not guaranteed. Payload upgrades could change this without warning.
-
-### JWT Staleness Problem
-
-JWTs cache data. When permissions change in the database, existing JWTs still have the old values:
-
-```
-User logs in → JWT created with roles as full objects ✓
-Admin changes Editor role permissions in CMS
-→ MongoDB "roles" document updated ✓
-→ Existing JWTs still have OLD permissions ✗
-→ User must log out and back in to get new permissions
-```
-
-This staleness is inherent to JWTs (not unique to this pattern), but the Roles collection adds a second cacheable layer.
-
-## How This is Used in the Codebase
-
-### Collection Access Control
-
-Most collections use `hasPermission`:
-
-```typescript
-// src/collections/Pages/index.ts
-access: {
-  create: hasPermission('canManageContent'),
-  update: hasPermission('canManageContent'),
-  delete: hasPermission('canManageContent'),
-  read: authenticatedOrPublished,
-}
-```
-
-All research collections (Publications, Team, Projects, Grants, etc.) follow the same pattern.
-
-### Admin Dashboard Access
-
-The admin dashboard uses `checkRole` (the reliable pattern):
-
-```typescript
-// src/collections/Users/index.ts
-admin: {
-  useAsTitle: 'name',
-  defaultColumns: ['name', 'email'],
-  group: 'Admin',
-  condition: (user) => checkRole(['admin', 'editor'], user),
-}
-```
-
-### Field-Level Access
-
-The `roles` field itself has special access rules:
-
-```typescript
-// src/collections/Users/index.ts
-{
-  name: 'roles',
-  access: {
-    create: () => true,  // ⚠️ SECURITY ISSUE: Anyone can set roles on create
-    update: isAdminFieldLevel,
-  }
-}
-```
-
-**Note:** The `create: () => true` is mitigated by a `beforeValidate` hook that overwrites submitted roles, but this is fragile. Any code path that bypasses the hook (OAuth plugins, server actions, Local API calls) could be exploited.
-
-## Default Roles Initialization
-
-**File:** `src/utilities/initRoles.ts`
-
-When the server starts, `initializeRoles()` checks if the roles collection is empty. If so, it creates two default roles:
-
-```typescript
-const defaultRoles = [
-  {
-    name: 'Admin',
-    slug: 'admin',
-    permissions: {
-      canManageContent: true,
-      canPublish: true,
-      canManageUsers: true,
-      canManageRedirects: true,
-    },
-  },
-  {
-    name: 'Editor',
-    slug: 'editor',
-    permissions: {
-      canManageContent: true,
-      canPublish: false,
-      canManageUsers: false,
-      canManageRedirects: false,
-    },
-  },
-]
-```
-
-**Called from:** `src/payload.config.ts` in the `onInit` hook.
-
-## How Users Get Roles
-
-**File:** `src/collections/Users/index.ts` (lines 36-77)
-
-A `beforeValidate` hook runs when users are created. It assigns roles based on:
-
-1. **First user ever:** Gets admin role automatically
-2. **Email domain match:** If `ALLOWED_EMAIL_DOMAINS` includes the user's domain, gets admin role
-3. **All others:** Get editor role
-
-```typescript
-beforeValidate: [
-  async ({ data, req, operation }) => {
-    if (operation === 'create' && !data.roles) {
-      const { totalDocs } = await req.payload.count({
-        collection: 'users',
-        limit: 0,
-      })
-      
-      if (totalDocs === 0) {
-        // First user → admin
-        const adminRole = await req.payload.find({
-          collection: 'roles',
-          where: { slug: { equals: 'admin' } },
-        })
-        return { ...data, roles: [adminRole.docs[0].id] }
-      }
-      
-      // Check allowed domains...
-    }
-  }
-]
-```
-
-## Comparison to Official Payload Pattern
-
-### What the Official Pattern Looks Like
-
-```typescript
-// Official Payload RBAC (from docs)
-{
-  name: 'roles',
-  type: 'select',
-  hasMany: true,
-  saveToJWT: true,  // Documented and reliable
-  options: ['admin', 'editor'],
-  defaultValue: ['editor'],
-}
-
-// Access control
-access: {
-  create: ({ req: { user } }) => checkRole(['admin', 'editor'], user),
-  delete: ({ req: { user } }) => checkRole(['admin'], user),
-}
-```
-
-No Roles collection. No `hasPermission`. No undocumented JWT behavior.
-
-### Side-by-Side Comparison
-
-| Aspect | This Codebase | Official Payload Pattern |
-|--------|---------------|--------------------------|
-| **Role storage** | Separate MongoDB collection | Field on Users (`type: select`) |
-| **Permissions** | Configurable checkboxes per role | Fixed in code |
-| **JWT content** | Full role objects (probably) | Role slug strings (documented) |
-| **Check utility** | `hasPermission` (custom) | `checkRole` (standard) |
-| **Change process** | Edit in admin UI, no deploy | Edit code, commit, deploy |
-| **Reliability** | Depends on undocumented behavior | Fully documented |
-| **Complexity** | High (5 files, extra collection) | Low (1 field, 1 utility) |
-| **Use case** | Large systems, many roles | Simple multi-role CMS |
-
-### Would Switching Lose Anything?
-
-Currently, the distinction is:
-- Admin: All permissions enabled
-- Editor: Only `canManageContent` enabled
-
-This can be expressed with `checkRole`:
-
-```typescript
-// canManageContent (admin + editor can write)
-create: ({ req: { user } }) => checkRole(['admin', 'editor'], user)
-
-// canManageRedirects (admin only)
-create: ({ req: { user } }) => checkRole(['admin'], user)
-
-// canManageUsers (admin only) — already uses isAdmin → checkRole
-```
-
-**Conclusion:** Nothing is lost. The official pattern is simpler and doesn't depend on undocumented behavior.
-
-## Best Practices
-
-### When to Use Each Utility
-
-- **Use `checkRole`** for:
-  - Admin dashboard access
-  - Simple role checks (is user admin?)
-  - Any security-critical checks
-  - **Reason:** Reliable, documented, fail-safe
-
-- **Use `hasPermission`** for:
-  - Content collection access control
-  - When you need CMS-configurable permissions
-  - Non-critical permission checks
-  - **Reason:** Flexible, but be aware of JWT reliability concerns
-
-### Security Considerations
-
-1. **Fail closed:** If `hasPermission` can't read permissions, it denies access (good)
-2. **JWT staleness:** Changing role permissions requires users to re-login
-3. **Field-level access bug:** The `roles` field has `create: () => true` — risky if hooks are bypassed
-4. **No audit trail:** Changing permissions in the CMS leaves no git history
-
-### Testing Permissions
-
-Always test permission changes with:
-1. Fresh login (not cached JWT)
-2. Both admin and editor roles
-3. Verify the warning "Role ID provided as string" doesn't appear in logs
-
-If you see that warning, the JWT doesn't contain full role objects and `hasPermission` is failing for everyone.
-
-## Related Files
-
-- `src/collections/Roles/index.ts` — Roles collection definition
-- `src/collections/Users/index.ts` — User-role relationship, auto-assignment logic
-- `src/utilities/checkRole.ts` — Official pattern utility
-- `src/utilities/checkPermission.ts` — Custom pattern utility
-- `src/utilities/initRoles.ts` — Default roles seeding
-- `src/access/isAdmin.ts` — Uses `checkRole`
-- `src/access/authenticated.ts` — Simplest access function
-
-## Further Reading
-
-- [PayloadCMS Access Control](https://payloadcms.com/docs/access-control/overview)
-- [PayloadCMS Authentication](https://payloadcms.com/docs/authentication/overview)
-- [JWT Introduction](https://jwt.io/introduction)
+- `src/collections/Roles/index.ts`
+- `src/collections/Users/index.ts`
+- `src/utilities/initRoles.ts`
+- `src/utilities/checkRole.ts`
+- `src/utilities/checkPermission.ts`
+- `src/access/isAdmin.ts`
+- `src/access/isAdminOrCreatedBy.ts`
+- `src/access/authenticatedOrPublished.ts`

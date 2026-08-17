@@ -1,0 +1,175 @@
+# Onboard a Lab
+
+This is the Operator runbook for turning a Lab's existing sources into a reviewed LabKit dataset and a launchable public website. It is both the current concierge procedure and the evidence base for future automation.
+
+The rule is simple: append each manual step, result, exception, and elapsed time while doing the work. Do not reconstruct an onboarding from memory afterward.
+
+## Scope and ownership
+
+The **Operator** executes the import, records evidence, and coordinates launch. The **PI** decides what belongs to the Lab. The **Lab Editor** reviews and maintains content in Payload.
+
+Each Lab gets a workspace outside this documentation tree:
+
+```text
+labs/<lab-slug>/
+  product-context.md
+  source-inventory.md
+  content/
+  scraped-data/
+  fixtures/
+```
+
+The exact folders may follow the source material. The invariant is that Lab-specific data stays in `labs/<lab-slug>/`; this runbook keeps only the reusable procedure and execution log.
+
+## Definition of done
+
+A Lab is onboarded when:
+
+- the PI-approved publication set and the supporting Team, Venue, and Organization records exist in Payload;
+- import-created records are hidden from the public site until reviewed;
+- person-merge suggestions have been explicitly confirmed or rejected;
+- unresolved Review Items are consciously deferred with a reason;
+- manual collections and media required by the launch scope are present;
+- the Lab Editor can sign in and perform the agreed maintenance tasks;
+- the public routes have been checked against the reviewed data; and
+- domain, deployment, ownership, and handover are recorded.
+
+## 1. Open the execution log
+
+Before collecting or importing anything, add an entry under [Execution log](#execution-log) with:
+
+- Lab name and workspace path;
+- Operator and decision-making PI;
+- intended public domain;
+- start date;
+- relevant issue links;
+- source owners and access constraints; and
+- a running elapsed-time total.
+
+Never put credentials, tokens, private connection strings, or personal data that is not intended for publication in this file.
+
+## 2. Inventory the sources
+
+Record which sources exist and who decides conflicts between them.
+
+| Content | Preferred source | Fallback or manual source |
+| --- | --- | --- |
+| Publications | PI ORCID record | Google Scholar export as BibTeX, DOI list, citation text |
+| Team | Lab-approved roster | Existing site and PI confirmation |
+| Venues | DOI enrichment | Human review of the publication's venue label |
+| Organizations | ROR-backed author affiliations | Manual entry |
+| Projects, Grants, Awards, Research Themes | Lab-provided material | Existing site, proposals, and PI confirmation |
+| Images | Lab-provided originals | Explicitly licensed assets |
+
+An ORCID record represents a person's career, not automatically a Lab's output. Record the rule used to include or exclude works before the real import.
+
+## 3. Prepare and rehearse the import
+
+1. Confirm the environment points to the intended database.
+2. Back up an existing database before any non-dry-run import.
+3. Confirm the Admin and Editor roles exist.
+4. Save source exports inside the Lab workspace.
+5. Run the relevant importer in `dry-run` mode and attach or link its report from the execution log.
+6. Compare totals and samples against the source before authorizing writes.
+
+Ingestion scripts run through Payload's runner. The runner forwards positional arguments but swallows flags, so `dry-run` is a bare positional word:
+
+```bash
+pnpm payload run scripts/ingestion/import-orcid.ts <orcid-id> dry-run
+pnpm payload run scripts/ingestion/import-bibtex.ts <file.bib> dry-run
+pnpm payload run scripts/ingestion/import-citations.ts <file.txt> dry-run
+```
+
+For each rehearsal, record candidates, selected and deselected works, created/updated/skipped projections, Review Item counts by kind, errors, and elapsed time.
+
+## 4. Select the Lab's publication set
+
+Review career-spanning sources with the PI or their explicit inclusion rule. Deselect pre-Lab work, work from unrelated appointments, duplicates, and anything the Lab does not claim as its output.
+
+Record the rule and any borderline decisions. A future Operator must be able to explain why a work was included without repeating the whole review.
+
+## 5. Run the real import
+
+Remove the `dry-run` positional argument only after the rehearsal has been checked. Use the same source artifact and selection rule that were rehearsed.
+
+After the run:
+
+1. Record the terminal Import Run status and `reportSummary`.
+2. Record counts for Publications, Team Members, Venues, Organizations, and Review Items.
+3. Confirm imported supporting records carry `source: 'import'` and `displayInWebsite: false` where that field applies.
+4. Spot-check several Publications against the source.
+5. Stop and investigate if the observed totals differ materially from the rehearsal.
+
+Do not report a write as complete merely because the command returned. The persisted Import Run and sampled records are the evidence.
+
+## 6. Work the review queue to presentable
+
+Use Payload's admin collections at `/admin`; the custom dashboards are parked and are not part of the current workflow.
+
+The launch bar is **presentable**, not a perfectly normalized research graph:
+
+1. Confirm or reject every person-merge suggestion deliberately. A wrong match corrupts a real person's public profile.
+2. Fix a missing or visibly wrong venue label. A correct free-text venue is acceptable when a Venue record cannot be matched safely.
+3. Inspect no-DOI and failed-DOI works individually.
+4. Defer non-visible normalization work when it does not affect the launch, but record the reason and owner.
+5. Record queue counts before and after, the decisions by kind, and elapsed time.
+
+Do not use fuzzy identity matching as an automatic decision. LabKit intentionally auto-links people only on ORCID, DBLP ID, or an unambiguous exact full name.
+
+## 7. Add manual content and media
+
+The bibliographic pipeline does not create Projects, Grants, Awards, Research Themes, or launch-ready images. Enter and review the items required by the Lab's launch scope, then record which source supported each batch.
+
+Collect team portraits and project images early. Record consent or licensing, attribution requirements, crop/original locations, and any missing assets that affect launch.
+
+## 8. Verify the public site
+
+Check every in-scope route against Payload data rather than fixtures. At minimum:
+
+- no fabricated or placeholder research content remains;
+- hidden import-created records do not appear publicly;
+- names, publication titles, venues, years, links, and images render correctly;
+- prose routes use the approved Lab copy; and
+- forms, navigation, metadata, empty states, and responsive layouts behave as expected.
+
+Record defects in the issue tracker and link them from the Lab's execution entry.
+
+## 9. Launch and hand over
+
+Record the final domain decision, DNS owner, deployment target, production environment owner, backup owner, Lab Editor accounts, handover date, and any deferred work. Never copy secrets into the runbook.
+
+Walk the Lab Editor through the actual tasks they own. Capture the gaps they encounter; those are inputs to the next revision of this runbook.
+
+## Execution log
+
+Append new entries. Do not rewrite older results to match later behavior.
+
+### DIAL — rehearsal evidence
+
+**Workspace:** `labs/dial/`  
+**Issues:** AUT-140, AUT-141, AUT-142  
+**Status on 2026-08-18:** source preparation and dry-run evidence exist; the first real non-dry-run ingestion and its review pass have not happened.
+
+- **2026-07-05 — real ORCID rehearsal:** a dry run over a 122-work ORCID record produced 108 publication candidates, 261 people, 94 organizations, and 23 venues. This established that the ingestion path works against real source data; it did not write DIAL's production records.
+- **2026-07-05 — review fallout observed:** the rehearsal produced 77 Review Items: 68 unmatched venues, 5 no-DOI works, and 4 person-merge suggestions. The result established the review priority used above: identity decisions first, visible venue correctness second, graph cleanup only when it affects launch.
+- **2026-07-05 — DOI coverage probe:** a 21-DOI DIAL sample confirmed strong Publication and Venue coverage. Partner affiliations were sometimes recoverable through OpenAlex/ROR, while funder coverage was too sparse to automate. Grants, Awards, Research Themes, Projects, and media remain manual.
+- **2026-08-18 — real import queued:** AUT-141 defines ORCID first and Google Scholar BibTeX second, with career-spanning works explicitly deselected. No production-write counts are recorded yet because the run has not occurred.
+- **2026-08-18 — review pass queued:** AUT-142 timeboxes cleanup to one day and requires every person-merge suggestion to be decided. Remaining items may be deferred only with a recorded reason. No elapsed review time is recorded yet because the pass has not occurred.
+
+### Entry template
+
+```markdown
+### <Lab> — <stage> — <YYYY-MM-DD>
+
+- Operator:
+- Issues:
+- Source artifact and checksum or stable path:
+- Environment (no secrets):
+- Command or manual action:
+- Selection rule:
+- Result and persisted evidence:
+- Review Items before/after:
+- Decisions and deferrals:
+- Elapsed time:
+- Next action and owner:
+```
