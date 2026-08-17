@@ -1,31 +1,51 @@
-build
-dist / media
-node_modules
-.DS_Store
+# Dependencies
+/node_modules/
+
+# Next.js build output and deployment metadata
+/.next/
+/out/
+/.vercel/
+/.turbo/
+/.swc/
+
+# Generated build artifacts
+/build/
+/dist/
+/coverage/
+*.tsbuildinfo
+
+# Environment files (keep the committed template)
 .env
-.next
-.vercel
 .env.*
+!.env.example
 
-# Payload default media upload directory
-public/media/
-tsconfig.tsbuildinfo
-.env*.local
+# Payload-generated files and uploaded media
+/public/media/
+/src/payload-types.ts
+/src/app/(payload)/admin/importMap.js
 
-dump
-src/payload-types.ts
-src/app/(payload)/admin/importMap.js
-docs/scratch/
-.firecrawl/
+# Local data, scratch space, and tooling caches
+/dump/
+/docs/scratch/
+/.firecrawl/
+/.atlas/
+/.codex/
+/.understand-anything/
 
-# Local agent tooling (machine-specific config/cache)
-.codex/
-.claude/settings.local.json
-.understand-anything/
-.atlas/
-.agents/skills/shadcn/
-.claude/skills/shadcn/
-.agents/skills/playwright-cli/
-.claude/skills/playwright-cli
-.agents/skills/codex/
-.claude/skills/codex
+# Local agent configuration and installed skills
+/.claude/settings.local.json
+/.agents/skills/shadcn/
+/.claude/skills/shadcn/
+/.agents/skills/playwright-cli/
+/.claude/skills/playwright-cli
+/.agents/skills/codex/
+/.claude/skills/codex
+
+# Logs and operating-system files
+*.log
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.DS_Store
