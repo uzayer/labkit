@@ -1,15 +1,9 @@
-import localization from '@/localization.config'
 import { Breadcrumb } from '@payloadcms/plugin-nested-docs/types'
-import { CollectionSlug, PayloadRequest } from 'payload'
-
-const collectionPrefixMap: Partial<Record<CollectionSlug, string>> = {
-  posts: '/posts',
-  pages: '',
-  projects: '/projects',
-}
+import { PayloadRequest } from 'payload'
+import { generateDocumentPath, PublicDocumentCollection } from './generateDocumentPath'
 
 type Props = {
-  collection: keyof typeof collectionPrefixMap
+  collection: PublicDocumentCollection
   slug: string
   locale: string
   breadcrumbs: Breadcrumb[] | undefined
@@ -17,7 +11,7 @@ type Props = {
 }
 
 export const generatePreviewPath = ({ collection, slug, locale, breadcrumbs }: Props) => {
-  const path = `${locale !== localization.defaultLocale ? `/${locale}` : ''}${collectionPrefixMap[collection]}${slug === 'home' ? '/' : breadcrumbs?.[breadcrumbs.length - 1]?.url || `/${slug}`}`
+  const path = generateDocumentPath({ breadcrumbs, collection, locale, slug })
 
   const params = {
     slug,

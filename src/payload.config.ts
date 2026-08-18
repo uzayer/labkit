@@ -67,6 +67,7 @@ import { LabInfo } from './globals/LabInfo/config'
 import { Telephone } from './fields/formBuilder/telephone'
 import { assertStrongCronSecret } from './components/AdminDashboard/BackupDashboard/security'
 import { validateRuntimeSecrets } from '@/utilities/validateSecrets'
+import { generateDocumentPath } from '@/utilities/generateDocumentPath'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -76,9 +77,22 @@ const generateTitle: GenerateTitle<Post | Page> = ({ doc }) => {
   return doc?.title ? `${doc.title} | LabKit Website Template` : 'LabKit Website Template'
 }
 
-const generateURL: GenerateURL<Post | Page> = ({ doc }) => {
-  // TODO: add multi slug
-  return doc?.slug ? `${NEXT_PUBLIC_SERVER_URL!}/${doc.slug}` : NEXT_PUBLIC_SERVER_URL!
+const generateURL: GenerateURL<Post | Page> = ({ collectionConfig, doc, locale }) => {
+  if (!doc?.slug || !collectionConfig) return NEXT_PUBLIC_SERVER_URL!
+
+  const collection = collectionConfig.slug
+  if (collection !== 'pages' && collection !== 'posts' && collection !== 'projects') {
+    return NEXT_PUBLIC_SERVER_URL!
+  }
+
+  const path = generateDocumentPath({
+    breadcrumbs: 'breadcrumbs' in doc ? doc.breadcrumbs : undefined,
+    collection,
+    locale,
+    slug: doc.slug,
+  })
+
+  return new URL(path, NEXT_PUBLIC_SERVER_URL).toString()
 }
 
 /**

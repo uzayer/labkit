@@ -4,6 +4,7 @@ import { revalidatePath } from 'next/cache'
 
 import type { Page } from '../../../payload-types'
 import localization from '@/localization.config'
+import { generateDocumentPath } from '@/utilities/generateDocumentPath'
 
 const nonDefaultLocale = localization.locales.filter(
   (locale) => locale !== localization.defaultLocale,
@@ -14,35 +15,26 @@ export const revalidatePage: CollectionAfterChangeHook<Page> = ({
   previousDoc,
   req: { payload },
 }) => {
-  // TODO: update with multilevel slug
-  if (doc._status === 'published') {
-    const url =
-      (doc?.breadcrumbs ? doc?.breadcrumbs[doc?.breadcrumbs?.length - 1].url : `/${doc.slug}`) ||
-      `/${doc.slug}`
-    const path = doc.slug === 'home' ? '/' : url
+  const publishedPages = [doc, previousDoc].filter(
+    (page): page is Page => page?._status === 'published',
+  )
+  const paths = new Set(
+    publishedPages.flatMap((page) => [
+      generateDocumentPath({ breadcrumbs: page.breadcrumbs, collection: 'pages', slug: page.slug }),
+      ...nonDefaultLocale.map((locale) =>
+        generateDocumentPath({
+          breadcrumbs: page.breadcrumbs,
+          collection: 'pages',
+          locale: String(locale),
+          slug: page.slug,
+        }),
+      ),
+    ]),
+  )
 
+  for (const path of paths) {
     payload.logger.info(`Revalidating page at path: ${path}`)
-
     revalidatePath(path)
-    nonDefaultLocale.forEach((locale) => {
-      revalidatePath(`/${locale}${path}`)
-    })
-  }
-
-  // If the page was previously published, we need to revalidate the old path
-  if (previousDoc?._status === 'published' && doc._status !== 'published') {
-    const url =
-      (previousDoc?.breadcrumbs
-        ? previousDoc?.breadcrumbs[previousDoc?.breadcrumbs?.length - 1].url
-        : `/${previousDoc.slug}`) || `/${previousDoc.slug}`
-    const oldPath = previousDoc.slug === 'home' ? '/' : url
-
-    payload.logger.info(`Revalidating old page at path: ${oldPath}`)
-
-    revalidatePath(oldPath)
-    nonDefaultLocale.forEach((locale) => {
-      revalidatePath(`/${locale}${oldPath}`)
-    })
   }
 
   return doc
