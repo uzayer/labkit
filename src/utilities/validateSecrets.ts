@@ -55,5 +55,14 @@ export function validateRuntimeSecrets(environment = process.env) {
     assertStrongSecret('CRON_SECRET', environment.CRON_SECRET)
   }
 
+  if (
+    !environment.NEXT_PUBLIC_TURNSTILE_SITE_KEY ||
+    !environment.NEXT_PRIVATE_TURNSTILE_SECRET_KEY
+  ) {
+    console.warn(
+      'Turnstile is not configured. Public form submissions will be unavailable in production.',
+    )
+  }
+
   return payloadSecret
 }
