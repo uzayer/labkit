@@ -7,9 +7,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev       # Start dev server
-npm run build     # Production build
-npm run lint      # Run ESLint
+bun run dev       # Start dev server
+bun run build     # Production build
+bun run lint      # Run ESLint
 ```
 
 No test runner is configured yet.

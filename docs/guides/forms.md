@@ -143,7 +143,7 @@ To add a custom field type (like the existing `telephone` field):
 1. Create the Payload Block definition in `src/fields/formBuilder/` (see `telephone.ts` for the pattern — define `name`, `label`, `width`, `defaultValue`, `required` fields)
 2. Register it in `src/payload.config.ts` under `formBuilderPlugin({ fields: { myField: MyField } })`
 3. Update the frontend form renderer when one exists.
-4. Run `pnpm generate:types`.
+4. Run `bun run generate:types`.
 
 ## Further reading
 

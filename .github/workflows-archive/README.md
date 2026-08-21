@@ -4,9 +4,9 @@ This directory stores workflows that are intentionally disabled. Nothing in `.gi
 
 ## Paused release automation (until LabKit exits alpha)
 
-Release automation is intentionally paused while LabKit is in alpha. Keep recording changes with `pnpm changeset` as you work — entries accumulate in `.changeset/` and will all roll into the first automated release.
+Release automation is intentionally paused while LabKit is in alpha. Keep recording changes with `bunx changeset` as you work — entries accumulate in `.changeset/` and will all roll into the first automated release.
 
-The workflows are already modernized (pnpm/action-setup@v4, Node 22) and ready to go:
+The workflows are already modernized for Bun and ready to go:
 
 - `release.yml` — on push to main, the changesets action opens a version PR; merging it bumps `package.json`, updates `CHANGELOG.md`, tags, and publishes a GitHub Release with a zip archive
 - `validate-changesets.yml` — requires PRs against main to include a changeset (skippable with the `no-changeset` label)

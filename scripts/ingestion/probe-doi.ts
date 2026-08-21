@@ -3,7 +3,7 @@
  * from Crossref + OpenAlex, save raw JSON fixtures, and print a field-coverage
  * report. Also demos reverse title lookup for a handful of DOI-less 2024 works.
  *
- * Run: pnpm payload run scripts/ingestion/probe-doi.ts
+ * Run: bun run payload -- run scripts/ingestion/probe-doi.ts
  */
 import fs from 'node:fs'
 import path from 'node:path'

@@ -5,7 +5,7 @@ services:
     ports:
       - '3000:3000'
     volumes:
-      - ./public/media:/home/node/app/public/media
+      - ./public/media:/home/bun/app/public/media
     depends_on:
       mongo:
         condition: service_healthy
@@ -15,7 +15,7 @@ services:
     read_only: true
     tmpfs:
       - /tmp
-      - /home/node/app/.next/cache:uid=1000,gid=1000,mode=1777
+      - /home/bun/app/.next/cache:uid=1000,gid=1000,mode=1777
     cap_drop:
       - ALL
     security_opt:

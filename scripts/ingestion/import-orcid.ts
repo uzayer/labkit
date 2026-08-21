@@ -1,7 +1,7 @@
 /**
  * Pull an ORCID iD's works and import them as Publications.
  *
- * Run: pnpm payload run scripts/ingestion/import-orcid.ts <orcid-id> [dry-run]
+ * Run: bun run payload -- run scripts/ingestion/import-orcid.ts <orcid-id> [dry-run]
  *
  * Gotcha: `payload run` parses argv through minimist and only forwards
  * positional args to the script — use the bare word `dry-run`, not `--dry-run`.
@@ -58,7 +58,9 @@ function bucketAction(progress: RunProgress, action: UpsertAction) {
 
 async function main() {
   if (!orcidId) {
-    console.error('Usage: pnpm payload run scripts/ingestion/import-orcid.ts <orcid-id> [dry-run]')
+    console.error(
+      'Usage: bun run payload -- run scripts/ingestion/import-orcid.ts <orcid-id> [dry-run]',
+    )
     process.exit(1)
   }
 

@@ -5,7 +5,7 @@
  * publications/team/venues/organizations — only import-runs, review-items,
  * and payload-jobs, all cleaned up at the end.
  *
- * Run: pnpm payload run scripts/ingestion/__verify-jobs-fixes.ts
+ * Run: bun run payload -- run scripts/ingestion/verify-jobs-queue.ts
  */
 import { getPayload } from 'payload'
 
