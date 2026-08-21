@@ -148,7 +148,7 @@ Linear, via the `linear-autana` MCP — `autana systems` team, `LabKit` project.
 
 ### Triage labels
 
-5 canonical state labels (needs-triage/needs-info/ready-for-agent/ready-for-human/wontfix) plus category labels Bug/Feature. See `docs/agents/triage-labels.md`.
+4 labels total: state labels ready-for-agent/ready-for-human plus category labels Bug/Feature. The skills' other three state roles (needs-triage/needs-info/wontfix) map to workflow state, not a label. See `docs/agents/triage-labels.md`.
 
 ### Domain docs
 
