@@ -158,7 +158,7 @@
   "packageManager": "pnpm@11.24.0",
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
-      "oxlint --fix",
+      "oxlint --fix --no-error-on-unmatched-pattern",
       "oxfmt --no-error-on-unmatched-pattern"
     ],
     "*.{json,md,css}": [
