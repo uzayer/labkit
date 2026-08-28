@@ -17,7 +17,7 @@
  * can safely normalize legacy `''` values to "field absent" (via $unset)
  * ahead of the index ever being built.
  *
- * Run: bun run payload -- run scripts/migrations/backfill-unique-fields.ts
+ * Run: pnpm payload run scripts/migrations/backfill-unique-fields.ts
  * (No DB access happens via Payload — `payload run` is used here purely for
  * its .env loading + TS support, not for its Local API.)
  */

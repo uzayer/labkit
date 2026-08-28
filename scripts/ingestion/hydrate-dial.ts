@@ -4,7 +4,7 @@
  * Local API, in dependency order (themes -> orgs -> venues -> team ->
  * grants -> publications -> awards -> projects).
  *
- * Run: bun run payload -- run scripts/ingestion/hydrate-dial.ts [dry-run]
+ * Run: pnpm payload run scripts/ingestion/hydrate-dial.ts [dry-run]
  *
  * Gotcha: `payload run` parses argv through minimist and only forwards
  * positional args to the script — a `--dry-run` flag is silently swallowed

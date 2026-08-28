@@ -17,40 +17,40 @@ Also read @CONTEXT.md — the domain glossary. Use its terms exactly; it is opin
 ## Commands
 
 ```bash
-bun run dev                 # Dev server (Turbopack)
-bun run build               # Generate types + Next.js build
-bun run tsc                 # Type check only
-bun run lint                # oxlint
-bun run lint:fix            # oxlint --fix
-bun run format              # oxfmt
-bun run format:check        # oxfmt --check
-bun run generate:types      # Regenerate src/payload-types.ts
-bun run generate:importmap  # Regenerate Payload admin import map
-bun run dev:debug           # Dev with Bun inspector
-bun run backup              # Export MongoDB pages → backup/pages.json
-bun run backup:apply        # Import backup/pages.json → MongoDB
-bun install                 # Install locked dependencies
+pnpm dev                 # Dev server (Turbopack)
+pnpm build               # Generate types + Next.js build
+pnpm tsc                 # Type check only
+pnpm lint                # oxlint
+pnpm lint:fix            # oxlint --fix
+pnpm format              # oxfmt
+pnpm format:check        # oxfmt --check
+pnpm generate:types      # Regenerate src/payload-types.ts
+pnpm generate:importmap  # Regenerate Payload admin import map
+pnpm dev:debug           # Dev with Node inspector
+pnpm backup              # Export MongoDB pages → backup/pages.json
+pnpm backup:apply        # Import backup/pages.json → MongoDB
+pnpm install              # Install locked dependencies
 ```
 
 Ingestion and migration scripts run through Payload's own runner, not `tsx`/`node`:
 
 ```bash
-bun run payload -- run scripts/ingestion/import-orcid.ts <orcid-id> [dry-run]
-bun run payload -- run scripts/ingestion/import-bibtex.ts <file.bib> [dry-run]
-bun run payload -- run scripts/ingestion/import-citations.ts <file.txt> [dry-run]
-bun run payload -- run scripts/ingestion/probe-doi.ts <doi>...    # onboarding diagnostic
-bun run payload -- run scripts/ingestion/verify-jobs-queue.ts     # jobs-queue regression check (writes only bookkeeping)
+pnpm payload run scripts/ingestion/import-orcid.ts <orcid-id> [dry-run]
+pnpm payload run scripts/ingestion/import-bibtex.ts <file.bib> [dry-run]
+pnpm payload run scripts/ingestion/import-citations.ts <file.txt> [dry-run]
+pnpm payload run scripts/ingestion/probe-doi.ts <doi>...    # onboarding diagnostic
+pnpm payload run scripts/ingestion/verify-jobs-queue.ts     # jobs-queue regression check (writes only bookkeeping)
 ```
 
 **`payload run` swallows flags.** It parses argv through minimist and forwards only _positional_ args, so `--dry-run` silently vanishes — every script takes the bare word `dry-run` instead. It also exits after module evaluation without awaiting a floating promise: script entrypoints must use top-level `await main()`, never `void main()`.
 
-No test framework is configured. Verify changes with `bun run tsc` and `bun run lint`, plus `verify-jobs-queue.ts` when touching the ingestion job path (13 live checks against real MongoDB — contention, stale-lease takeover, checkpoint visibility, watchdog drain).
+No test framework is configured. Verify changes with `pnpm tsc` and `pnpm lint`, plus `verify-jobs-queue.ts` when touching the ingestion job path (13 live checks against real MongoDB — contention, stale-lease takeover, checkpoint visibility, watchdog drain).
 
-**What the checks don't cover:** the root `tsconfig.json` excludes `scripts/` and `dial-test/`, and `.oxlintrc.json` ignores `dial-test/**` and `docs/**`. So `bun run tsc` does _not_ type-check the ingestion scripts — use `bun run tsc -- -p scripts/tsconfig.json` for those.
+**What the checks don't cover:** the root `tsconfig.json` excludes `scripts/` and `dial-test/`, and `.oxlintrc.json` ignores `dial-test/**` and `docs/**`. So `pnpm tsc` does _not_ type-check the ingestion scripts — use `pnpm tsc -p scripts/tsconfig.json` for those.
 
 **`dial-test/` is a separate app, not part of this build.** It has its own `package.json`, `node_modules`, lockfiles, and `CLAUDE.md`, and is excluded from the root typecheck, lint, and Next build. Run its commands from inside that directory.
 
-`bun install` is the sanctioned install. The root `bun.lock` is the single source of dependency resolution, and `bunfig.toml` sets Bun's isolated linker.
+`pnpm install` is the sanctioned install. The root `pnpm-lock.yaml` is the single source of dependency resolution, and `pnpm-workspace.yaml`'s `allowBuilds` allowlists native build scripts per-package.
 
 A Husky `pre-commit` hook runs `oxlint --fix` + `oxfmt` on staged files (lint-staged) and `commit-msg` enforces Conventional Commits via commitlint — a non-conforming commit message is rejected, not just warned about.
 
@@ -110,7 +110,7 @@ Both are Next.js private folders (`_`-prefixed): they compile and their exports 
 - **Tailwind bg-\* classes:** `RenderBlocks.tsx` has a manual switch statement enumerating every `bg-{color}` class so Tailwind's compiler includes them. If you add a new theme color, you must add a case there too.
 - **`overrideAccess` defaults to `true`** in Payload's Local API — always set `overrideAccess: false` when access control should apply.
 - **Conditional fields:** Blocks hide/show fields based on `designVersion` using `admin.condition`. Pattern: `condition: (_, { designVersion = '' } = {}) => ['1', '2'].includes(designVersion)`.
-- **Bun runs every project script.** Scripts invoke package CLIs through `bun --bun` so development, builds, type checks, and Payload's CLI share the same runtime.
+- **pnpm, not Bun.** Payload's own docs list pnpm as the preferred package manager and don't mention Bun at all — see [LOG.md](LOG.md) (2026-08-29) for why this reverted a brief Bun experiment. A fresh `pnpm install` on a new machine will block on native build scripts for a handful of packages (`@google/genai`, `esbuild`, `protobufjs` as of this writing) — run `pnpm approve-builds` once; approvals are recorded in `pnpm-workspace.yaml`'s `allowBuilds` and committed.
 - **TypeScript:** `strict: false` but `strictNullChecks: true`. ESLint has `no-explicit-any: off` and `no-unused-vars: off` (uses `unused-imports` plugin instead).
 - **Localization:** English enabled, German commented out. Both admin i18n and content localization configured in `src/localization.config.ts`.
 - **Default roles** are auto-created on startup via `onInit` → `initializeRoles()`.
@@ -130,7 +130,7 @@ Both are Next.js private folders (`_`-prefixed): they compile and their exports 
 
 See `.env.example` for all variables. Key ones: `MONGODB_URI`, `PAYLOAD_SECRET`, `NEXT_PRIVATE_DRAFT_SECRET`, `REVALIDATION_KEY`. `NEXT_PUBLIC_SERVER_URL` auto-derives from Vercel or defaults to `http://localhost:3000`.
 
-Bun: `>=1.3.14` (pinned via `packageManager`).
+Node: `>=24`. pnpm: `11.24.0` (pinned via `packageManager`).
 
 ## Context7
 
@@ -167,3 +167,13 @@ Single-context — no monorepo signals. See `docs/agents/domain.md`.
 - @docs/agents/issue-tracker.md — Linear issue tracker config for agent skills
 - @docs/agents/triage-labels.md — triage label vocabulary mapping
 - @docs/agents/domain.md — domain doc consumer rules for agent skills
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

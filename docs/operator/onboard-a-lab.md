@@ -75,9 +75,9 @@ An ORCID record represents a person's career, not automatically a Lab's output. 
 Ingestion scripts run through Payload's runner. The runner forwards positional arguments but swallows flags, so `dry-run` is a bare positional word:
 
 ```bash
-bun run payload -- run scripts/ingestion/import-orcid.ts <orcid-id> dry-run
-bun run payload -- run scripts/ingestion/import-bibtex.ts <file.bib> dry-run
-bun run payload -- run scripts/ingestion/import-citations.ts <file.txt> dry-run
+pnpm payload run scripts/ingestion/import-orcid.ts <orcid-id> dry-run
+pnpm payload run scripts/ingestion/import-bibtex.ts <file.bib> dry-run
+pnpm payload run scripts/ingestion/import-citations.ts <file.txt> dry-run
 ```
 
 For each rehearsal, record candidates, selected and deselected works, created/updated/skipped projections, Review Item counts by kind, errors, and elapsed time.

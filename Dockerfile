@@ -1,3 +1,8 @@
+# STALE / UNSUPPORTED as of 2026-08-29: this file still targets Bun, which the
+# project has moved off of (see LOG.md, 2026-08-29). Never actually built or run —
+# not part of any working deploy path. Needs a full rewrite (node:24-alpine base,
+# pnpm via Corepack, COPY package.json pnpm-lock.yaml pnpm-workspace.yaml) before
+# it's trustworthy. Do not assume this works.
 FROM oven/bun:1.3.14-alpine AS base
 
 FROM base AS dependencies
