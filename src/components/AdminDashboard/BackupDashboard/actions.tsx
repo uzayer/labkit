@@ -292,7 +292,7 @@ function resolveTarGzip(fileBuffer: Buffer) {
 
     extract.on('entry', (header, stream, next) => {
       const chunks: Buffer[] = []
-      stream.on('data', (chunk) => chunks.push(chunk))
+      stream.on('data', (chunk: Buffer) => chunks.push(chunk))
       stream.on('end', () => {
         files.push({
           name: header.name,
