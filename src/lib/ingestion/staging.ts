@@ -1,4 +1,4 @@
-import { parse, type BibtexCreator } from '@retorquere/bibtex-parser'
+import { parse, type Creator } from '@retorquere/bibtex-parser'
 
 import { extractDois } from './doi'
 import { segmentCitations } from './llm'
@@ -15,7 +15,7 @@ export interface StagedCandidate {
   raw?: Record<string, unknown>
 }
 
-function creatorFullName(creator: BibtexCreator): string | undefined {
+function creatorFullName(creator: Creator): string | undefined {
   if (creator.name) return creator.name
   const parts = [creator.firstName, creator.lastName].filter(Boolean)
   return parts.length > 0 ? parts.join(' ') : undefined
@@ -89,7 +89,7 @@ export async function stageBibtexCandidates(bibtexText: string): Promise<StagedC
     const year = Number.isFinite(yearRaw) ? yearRaw : undefined
 
     const authorField = Array.isArray(entry.fields.author) ? entry.fields.author : []
-    const authors = (authorField as BibtexCreator[]).flatMap((creator) => {
+    const authors = (authorField as Creator[]).flatMap((creator) => {
       const fullName = creatorFullName(creator)
       return fullName ? [{ fullName }] : []
     })

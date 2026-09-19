@@ -32,7 +32,21 @@ export async function fetchJsonWithRetry(url: string, init: RequestInit): Promis
     try {
       const response = await fetch(url, init)
       if (response.ok) {
-        return response.json()
+        // A 200 that isn't JSON is an interstitial, not data — DBLP serves an
+        // anti-bot challenge page this way. Treat it as a miss rather than
+        // letting `.json()` reject: this helper is the shared path for
+        // Crossref, OpenAlex and DBLP, and a throw here kills the whole run.
+        const contentType = response.headers.get('content-type') ?? ''
+        if (!contentType.toLowerCase().includes('json')) {
+          return null
+        }
+
+        try {
+          return await response.json()
+        } catch {
+          // Malformed body — retrying will not repair it.
+          return null
+        }
       }
 
       if (attempt === MAX_ATTEMPTS || !isRetryableStatus(response.status)) {
