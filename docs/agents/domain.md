@@ -10,7 +10,7 @@ How the engineering skills should consume this repo's domain documentation when 
 
 If any of these files don't exist, **proceed silently**. Don't flag their absence; don't suggest creating them upfront. The `/domain-modeling` skill (reached via `/grill-with-docs` and `/improve-codebase-architecture`) creates them lazily when terms or decisions actually get resolved.
 
-Note: this repo already has @LOG.md — a running decision log distinct from `CONTEXT.md`/ADRs. `LOG.md` captures *why* non-obvious decisions were made (chronological); `CONTEXT.md`/ADRs (once they exist) would capture the domain's *current* vocabulary and standing architectural decisions (structural, not chronological). Read `LOG.md` too when it's relevant — it's not a replacement for `CONTEXT.md`/ADRs, but until those exist it's the closest thing this repo has.
+Note: this repo already has `LOG.md` — a running decision log distinct from `CONTEXT.md`/ADRs. `LOG.md` captures *why* non-obvious decisions were made (chronological); `CONTEXT.md`/ADRs (once they exist) would capture the domain's *current* vocabulary and standing architectural decisions (structural, not chronological). Read `LOG.md` too when it's relevant (newest-first — read from the top, not the whole file; older entries are in `docs/LOG-ARCHIVE.md`) — it's not a replacement for `CONTEXT.md`/ADRs, but until those exist it's the closest thing this repo has.
 
 ## File structure
 

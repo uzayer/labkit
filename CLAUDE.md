@@ -8,7 +8,7 @@ LabKit is a PayloadCMS content platform for research lab websites: research-doma
 
 Generic website-builder concerns belong upstream with the template; this repo should stay focused on LabKit-specific product and implementation work.
 
-Before starting nontrivial work, check @LOG.md — a running record of non-obvious product/architecture decisions and the reasoning behind them. It catches things a fresh read of the code can't (why a rejected approach was rejected, what a prior session confirmed against real data). When you make or learn a decision that isn't obvious from the diff alone, append an entry.
+Before starting nontrivial work, read `LOG.md` — a running record of non-obvious product/architecture decisions and the reasoning behind them. It catches things a fresh read of the code can't (why a rejected approach was rejected, what a prior session confirmed against real data). **Do not read it whole.** Entries are newest-first, so read from the top and stop once you have the context you need; older material is in `docs/LOG-ARCHIVE.md` and is usually not worth opening. When you make or learn a decision that isn't obvious from the diff alone, add an entry **at the top**, under today's date.
 
 Also read @CONTEXT.md — the domain glossary. Use its terms exactly; it is opinionated about which words to avoid. `LOG.md` is chronological (_why_ a decision was made), `CONTEXT.md` is structural (_what a word means today_), and `docs/adr/` holds standing architectural decisions.
 
@@ -88,11 +88,11 @@ Role-based via `Users` ↔ `Roles` (many-to-many). Permission flags: `canManageC
 
 ### Ingestion pipeline
 
-`src/lib/ingestion/` is the engine that pulls Publications (and the Venues/Organizations/Team records they reference) from external sources — ORCID, DOI/Crossref/OpenAlex, DBLP, BibTeX, and citation-list paste (LLM-assisted via `llm.ts`, Gemini-gated). Front doors are `scripts/ingestion/{import-orcid,import-citations,import-bibtex}.ts`, all funneling into the same `hydratePublicationFromDoi`/`hydratePublicationFromFields` core in `publications.ts`. Runs are tracked in the `ImportRuns` collection (immutable history) and flagged items land in `ReviewItems` (a mutable work queue) via `run-persistence.ts`. The async path (`src/lib/ingestion/jobs/import-hydrate.ts`, registered under `jobs.tasks` in `payload.config.ts`) uses a lease-lock + watchdog crash-recovery model, not Payload's default job retry — see @LOG.md (2026-07-05) for why and how. Person-matching is deliberately conservative (ORCID/DBLP-exact or exact-name only, never fuzzy) — see the safety-tier notes at the top of `people.ts`.
+`src/lib/ingestion/` is the engine that pulls Publications (and the Venues/Organizations/Team records they reference) from external sources — ORCID, DOI/Crossref/OpenAlex, DBLP, BibTeX, and citation-list paste (LLM-assisted via `llm.ts`, Gemini-gated). Front doors are `scripts/ingestion/{import-orcid,import-citations,import-bibtex}.ts`, all funneling into the same `hydratePublicationFromDoi`/`hydratePublicationFromFields` core in `publications.ts`. Runs are tracked in the `ImportRuns` collection (immutable history) and flagged items land in `ReviewItems` (a mutable work queue) via `run-persistence.ts`. The async path (`src/lib/ingestion/jobs/import-hydrate.ts`, registered under `jobs.tasks` in `payload.config.ts`) uses a lease-lock + watchdog crash-recovery model, not Payload's default job retry — see `docs/LOG-ARCHIVE.md` (2026-07-05) for why and how. Person-matching is deliberately conservative (ORCID/DBLP-exact or exact-name only, never fuzzy) — see the safety-tier notes at the top of `people.ts`.
 
 ### Frontend
 
-`dial-test/` is a **fully static design prototype**, not a wired frontend — ~20 routes, zero `fetch` calls, no data layer, and hardcoded placeholder publication data. `src/app/(frontend)/` has no lab-facing routes at all (15 files, all infrastructure). Porting dial-test's routes onto the Payload Local API is MVP item 1 and ~90% of the remaining MVP work. Note `Pages` has no body-content field (Hero + SEO only), so prose routes stay hardcoded by design — see ROADMAP's "split routes by churn" rule.
+`dial-test/` is a **static design prototype**, not a wired frontend — ~20 routes, zero `fetch` calls. Its data lives in `dial-test/src/data/`: a deliberately small **fixture** subset of DIAL records (~7 projects, ~23 people, ~23 publications) shaped like the LabKit collections, mapped to component view models in `views.ts`. Keep it small — it exists for rapid frontend iteration, and the data shape itself is still in question. The full scraped set is archived in `labs/dial/dial-test-full-data/`; real launch data comes from the ingestion pipeline, not from here. Porting a page means replacing those record imports with Payload Local API queries. `src/app/(frontend)/` has no lab-facing routes at all (15 files, all infrastructure). Porting dial-test's routes onto the Payload Local API is MVP item 1 and ~90% of the remaining MVP work. Note `Pages` has no body-content field (Hero + SEO only), so prose routes stay hardcoded by design — see ROADMAP's "split routes by churn" rule.
 
 ### Dashboard
 
@@ -117,7 +117,7 @@ Both are Next.js private folders (`_`-prefixed): they compile and their exports 
 - **Nested docs URL generation:** Runs on save. Changing the `generateURL` function in config requires re-saving all pages to update URLs.
 - **Turnstile on form submissions:** `src/app/(payload)/api/[...slug]/route.ts` wraps `POST` for `form-submissions` with Cloudflare Turnstile verification when `NEXT_PUBLIC_TURNSTILE_SITE_KEY` is set. The middleware is in the catch-all API route, not the Form block component — easy to miss. Frontend must send a `cf-turnstile-token` header or the request is silently rejected with 400.
 - **Standalone form components ≠ Payload forms:** Components in `src/components/` like `contact10.tsx`, `waitlist*.tsx`, and `wishlist*.tsx` use react-hook-form but only `console.log` on submit. They are **not** wired to Payload's `form-submissions` collection. To wire them up, see @docs/guides/forms.md.
-- **Tailwind v4 arbitrary-value syntax silently produces no CSS:** vendored/older shadcn components use `w-[--sidebar-width]`-style syntax; Tailwind v4 only recognizes the parenthesized form `w-(--sidebar-width)` as `var()` shorthand. The bracket form compiles and lints clean but generates zero CSS — a real, previously-shipped bug. Grep for `-[--` when importing any older shadcn component. See @LOG.md (2026-07-05).
+- **Tailwind v4 arbitrary-value syntax silently produces no CSS:** vendored/older shadcn components use `w-[--sidebar-width]`-style syntax; Tailwind v4 only recognizes the parenthesized form `w-(--sidebar-width)` as `var()` shorthand. The bracket form compiles and lints clean but generates zero CSS — a real, previously-shipped bug. Grep for `-[--` when importing any older shadcn component. See `docs/LOG-ARCHIVE.md` (2026-07-05).
 
 ## Code style
 
@@ -157,7 +157,8 @@ Single-context — no monorepo signals. See `docs/agents/domain.md`.
 ## Further reading
 
 - @CONTEXT.md — domain glossary: canonical terms and words to avoid
-- @LOG.md — decision log: why, not just what
+- `LOG.md` — decision log: why, not just what. Newest-first; read from the top, not whole
+- `docs/LOG-ARCHIVE.md` — older decisions (2026-07 and earlier); open only when `LOG.md` falls short
 - @docs/adr/ — standing architectural decisions (0001: why CERIF alignment is deferred)
 - @docs/product/ROADMAP.md — **start here for scope**: the MVP definition and what's explicitly out
 - @docs/product/VISION.md — product vision, positioning, competitive landscape
