@@ -15,10 +15,15 @@ export const Posts: CollectionConfig = {
   },
   admin: {
     useAsTitle: 'title',
-    defaultColumns: ['title', 'author', 'status', 'createdAt'],
+    // _status comes from versions.drafts below — no custom status field needed
+    defaultColumns: ['title', 'author', '_status', 'createdAt'],
     group: 'Content', // Organize in admin sidebar
     description: 'Blog posts and articles',
     listSearchableFields: ['title', 'slug'],
+  },
+  // Enable drafts by default — auto-injects the _status field (draft/published/changed)
+  versions: {
+    drafts: true,
   },
   fields: [
     {
@@ -27,24 +32,49 @@ export const Posts: CollectionConfig = {
       required: true,
       index: true,
     },
-    {
-      name: 'slug',
-      type: 'text',
-      unique: true,
-      index: true,
-      admin: { position: 'sidebar' },
-    },
-    {
-      name: 'status',
-      type: 'select',
-      options: ['draft', 'published'],
-      defaultValue: 'draft',
-    },
+    { name: 'slug', type: 'slug', useAsSlug: 'title' }, // unique + indexed, sidebar position — don't hand-roll a slug text field
   ],
   defaultSort: '-createdAt',
   timestamps: true,
 }
 ```
+
+> Don't add a custom `status` select for publish state — enabling
+> `versions: { drafts: true }` injects a managed `_status` field
+> (`draft` / `published` / `changed`) that the admin UI and Draft Preview already
+> understand. Use it in `defaultColumns` and access control directly.
+
+## `useAsTitle`
+
+Set `admin.useAsTitle` to a stored top-level field. Do not use a computed field configured with `virtual: true`: it is not queryable, and
+Payload rejects it as `useAsTitle`.
+
+A relationship-path virtual field is supported when the title must come from a
+related document:
+
+```ts
+export const Articles: CollectionConfig = {
+  slug: 'articles',
+  admin: {
+    useAsTitle: 'authorName',
+  },
+  fields: [
+    {
+      name: 'author',
+      type: 'relationship',
+      relationTo: 'authors',
+    },
+    {
+      name: 'authorName',
+      type: 'text',
+      virtual: 'author.name',
+    },
+  ],
+}
+```
+
+This string-path form is queryable. It is different from a computed
+`virtual: true` field populated by an `afterRead` hook.
 
 ## Auth Collection
 
@@ -166,7 +196,7 @@ export const Pages: CollectionConfig = {
   },
   fields: [
     { name: 'title', type: 'text' },
-    { name: 'slug', type: 'text' },
+    { name: 'slug', type: 'slug', useAsSlug: 'title' },
   ],
 }
 ```
