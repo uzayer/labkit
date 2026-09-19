@@ -13,6 +13,7 @@ import {
   ShieldCheck,
   TriangleAlert,
   Users,
+  type LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -24,108 +25,32 @@ interface SectionProps {
   className?: string;
 }
 
-const researchStats = [
-  {
-    value: "20+",
-    label: "active projects",
-    detail: "Across accessibility, safety, health, development, and AI.",
-  },
-  {
-    value: "65+",
-    label: "publications",
-    detail:
-      "Peer-reviewed work in HCI, ICTD, privacy, CSCW, and systems venues.",
-  },
-  {
-    value: "6",
-    label: "best paper awards",
-    detail: "Recognition from CHI, CSCW, UIST, COMPASS, and adjacent venues.",
-  },
-];
+/** A theme card in the bento: title/description from the record, counts derived. */
+export interface ResearchThemeCard {
+  slug: string;
+  title: string;
+  description: string;
+  publicationCount: number;
+  projectCount: number;
+}
 
-const researchThemes = [
-  {
-    title: "Accessibility & Inclusion",
-    description:
-      "Voice interfaces, rehabilitation tools, and accessible systems for users mainstream design leaves behind.",
-    href: "/research/accessibility-inclusion",
-    icon: Accessibility,
-    meta: "18 publications",
-    size: "large",
-  },
-  {
-    title: "Gender & Feminist HCI",
-    description:
-      "Research on safety, agency, digital abuse, labour, and the politics of technology in South Asia.",
-    href: "/research/gender-feminist-hci",
-    icon: Users,
-    meta: "14 publications",
-    size: "wide",
-  },
-  {
-    title: "ICT for Development",
-    description:
-      "Systems and methods for financial inclusion, information access, agriculture, and civic life.",
-    href: "/research/ictd",
-    icon: MapPinned,
-    meta: "20 publications",
-    size: "small",
-  },
-  {
-    title: "Mental Health & Wellbeing",
-    description:
-      "Low-resource care, passive sensing, peer support, and culturally grounded interventions.",
-    href: "/research/mental-health-wellbeing",
-    icon: Heart,
-    meta: "12 publications",
-    size: "small",
-  },
-  {
-    title: "Explainable AI & ML",
-    description:
-      "Making model behaviour understandable in health, finance, and other high-stakes settings.",
-    href: "/research/explainable-ai-ml",
-    icon: Brain,
-    meta: "10 publications",
-    size: "small",
-  },
-  {
-    title: "Safety & Security",
-    description:
-      "Threat modelling and personal safety technology for people facing real-world risk.",
-    href: "/research/safety-security",
-    icon: ShieldCheck,
-    meta: "9 publications",
-    size: "small",
-  },
-  {
-    title: "IoT & Low-cost Hardware",
-    description:
-      "Affordable sensing and interaction systems for clinics, classrooms, and communities.",
-    href: "/research/iot-low-cost-hardware",
-    icon: Cpu,
-    meta: "7 publications",
-    size: "small",
-  },
-  {
-    title: "Infodemic & Misinformation",
-    description:
-      "How low-literacy communities encounter, trust, share, and correct harmful information.",
-    href: "/research/infodemic-misinformation",
-    icon: TriangleAlert,
-    meta: "8 publications",
-    size: "small",
-  },
-  {
-    title: "Computing Education & Community",
-    description:
-      "Broadening participation in computing through curriculum, outreach, and mentorship.",
-    href: "/research/computing-education-community",
-    icon: GraduationCap,
-    meta: "11 publications",
-    size: "wide",
-  },
-];
+const THEME_ICONS: Record<string, LucideIcon> = {
+  "accessibility-inclusion": Accessibility,
+  "gender-feminist-hci": Users,
+  ictd: MapPinned,
+  "mental-health-wellbeing": Heart,
+  "explainable-ai-ml": Brain,
+  "safety-security": ShieldCheck,
+  "iot-low-cost-hardware": Cpu,
+  "infodemic-misinformation": TriangleAlert,
+  "computing-education-community": GraduationCap,
+};
+
+// Bento sizing is presentation: the three themes with the most publications
+// get the larger cards.
+function bentoSize(index: number) {
+  return index === 0 ? "large" : index < 3 ? "wide" : "small";
+}
 
 const methods = [
   {
@@ -145,38 +70,22 @@ const methods = [
   },
 ];
 
-const spotlightProjects = [
-  {
-    title: "Protibadi",
-    localName: "প্রতিবাদী",
-    description:
-      "Personal safety research with women navigating harassment in Bangladesh.",
-    href: "/projects/protibadi",
-    badge: "Best of CHI",
-    image:
-      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
-  },
-  {
-    title: "Jyoti",
-    localName: "জ্যোতি",
-    description:
-      "A low-literacy voice interface for rural health information access.",
-    href: "/projects/jyoti",
-    badge: "Best Paper",
-    image:
-      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-2.svg",
-  },
-  {
-    title: "Mon Majhi",
-    localName: "মন মাঝি",
-    description:
-      "Explainable passive sensing for stress and depression screening.",
-    href: "/projects/monmajhi",
-    badge: "Mental Health",
-    image:
-      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-3.svg",
-  },
-];
+/** A Project in the spotlight bento. */
+export interface SpotlightProject {
+  title: string;
+  localName?: string | null;
+  description: string;
+  href: string;
+  badge: string;
+  image: string;
+}
+
+/** A figure in the research stats strip; values are computed by the page. */
+export interface ResearchStat {
+  value: string;
+  label: string;
+  detail: string;
+}
 
 function themeCardClass(size: string) {
   return cn(
@@ -186,7 +95,10 @@ function themeCardClass(size: string) {
   );
 }
 
-export function ResearchStats({ className }: SectionProps) {
+export function ResearchStats({
+  stats: researchStats,
+  className,
+}: SectionProps & { stats: ResearchStat[] }) {
   return (
     <section className={cn("py-10 md:py-14", className)}>
       <div className="container">
@@ -211,7 +123,19 @@ export function ResearchStats({ className }: SectionProps) {
   );
 }
 
-export function ResearchThemesBento({ className }: SectionProps) {
+export function ResearchThemesBento({
+  themes,
+  className,
+}: SectionProps & { themes: ResearchThemeCard[] }) {
+  const researchThemes = [...themes]
+    .sort((a, b) => b.publicationCount - a.publicationCount)
+    .map((theme, index) => ({
+      ...theme,
+      href: `/research/${theme.slug}`,
+      icon: THEME_ICONS[theme.slug] ?? MapPinned,
+      meta: `${theme.publicationCount} publications`,
+      size: bentoSize(index),
+    }));
   return (
     <section className={cn("py-16 md:py-24", className)}>
       <div className="container">
@@ -243,7 +167,7 @@ export function ResearchThemesBento({ className }: SectionProps) {
                     <span className="rounded-2xl border bg-background p-3">
                       <Icon className="size-6 text-primary" strokeWidth={1.5} />
                     </span>
-                    <ArrowRight className="size-5 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-foreground" />
+                    <ArrowRight className="size-5 text-muted-foreground arrow-ne group-hover:text-foreground" />
                   </div>
                   <h3 className="text-2xl font-semibold tracking-tight">
                     {theme.title}
@@ -311,7 +235,10 @@ export function ResearchMethod({ className }: SectionProps) {
   );
 }
 
-export function ResearchSpotlightBento({ className }: SectionProps) {
+export function ResearchSpotlightBento({
+  projects: spotlightProjects,
+  className,
+}: SectionProps & { projects: SpotlightProject[] }) {
   return (
     <section className={cn("py-16 md:py-24", className)}>
       <div className="container">
@@ -357,7 +284,7 @@ export function ResearchSpotlightBento({ className }: SectionProps) {
                       {project.badge}
                     </Badge>
                     <h3 className="text-2xl font-semibold tracking-tight">
-                      {project.localName} · {project.title}
+                      {project.localName ? `${project.localName} · ${project.title}` : project.title}
                     </h3>
                     <p className="mt-4 text-sm leading-6 text-muted-foreground">
                       {project.description}
@@ -365,7 +292,7 @@ export function ResearchSpotlightBento({ className }: SectionProps) {
                   </div>
                   <span className="mt-8 inline-flex items-center text-sm font-medium">
                     Read project
-                    <ArrowRight className="ml-1.5 size-4 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="ml-1.5 size-4 arrow-ne" />
                   </span>
                 </div>
               </div>

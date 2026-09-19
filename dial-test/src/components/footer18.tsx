@@ -1,6 +1,11 @@
 import Link from "next/link";
+import type { ReactElement } from "react";
 
 import { Button } from "@/components/ui/button";
+import { labInfo } from "@/data/lab-info";
+import { researchThemes } from "@/data/research-themes";
+import { RegistrationMark, StampRing } from "@/components/marks";
+import { label } from "@/lib/typography";
 import { cn } from "@/lib/utils";
 
 const IconGithub = () => (
@@ -27,27 +32,26 @@ const IconFacebook = () => (
   </svg>
 );
 
-const SOCIAL_LINKS = [
-  { icon: IconX, href: "#", label: "X / Twitter" },
-  { icon: IconLinkedin, href: "#", label: "LinkedIn" },
-  { icon: IconGithub, href: "#", label: "GitHub" },
-  { icon: IconFacebook, href: "#", label: "Facebook" },
-];
+const SOCIAL_ICONS: Record<string, { icon: () => ReactElement; label: string }> = {
+  x: { icon: IconX, label: "X / Twitter" },
+  linkedin: { icon: IconLinkedin, label: "LinkedIn" },
+  github: { icon: IconGithub, label: "GitHub" },
+  facebook: { icon: IconFacebook, label: "Facebook" },
+};
+
+// Only the accounts LabInfo records; platforms without an icon are skipped.
+const SOCIAL_LINKS = (labInfo.socials ?? []).flatMap((social) => {
+  const meta = SOCIAL_ICONS[social.platform];
+  return meta ? [{ ...meta, href: social.url }] : [];
+});
 
 const NAVIGATION = [
   {
     title: "Research",
-    links: [
-      { name: "Accessibility & Inclusion", href: "/research/accessibility-inclusion" },
-      { name: "Gender & Feminist HCI", href: "/research/gender-feminist-hci" },
-      { name: "Mental Health & Wellbeing", href: "/research/mental-health-wellbeing" },
-      { name: "Explainable AI & ML", href: "/research/explainable-ai-ml" },
-      { name: "ICT for Development", href: "/research/ictd" },
-      { name: "Safety & Security", href: "/research/safety-security" },
-      { name: "IoT & Low-cost Hardware", href: "/research/iot-low-cost-hardware" },
-      { name: "Infodemic & Misinformation", href: "/research/infodemic-misinformation" },
-      { name: "Computing Education", href: "/research/computing-education-community" },
-    ],
+    links: researchThemes.map((theme) => ({
+      name: theme.title,
+      href: `/research/${theme.slug}`,
+    })),
   },
   {
     title: "Work",
@@ -75,17 +79,18 @@ interface Footer18Props {
 
 const Footer18 = ({ className }: Footer18Props) => {
   return (
-    <section className={cn("py-20", className)}>
-      <footer className="container">
+    <section className={cn("pt-8 pb-12", className)}>
+      <footer className="container border-t border-border pt-12">
         <nav className="flex flex-col gap-9 lg:flex-row">
           <div className="flex w-full flex-col gap-9 lg:w-1/4">
             <Link href="/">
               <img
                 src="/dial-logo.svg"
                 alt="DIAL"
-                className="w-28 max-w-none dark:invert"
+                className="w-40 max-w-none dark:invert"
               />
             </Link>
+            <StampRing className="my-2 size-28" />
             <p className="text-sm leading-relaxed text-muted-foreground">
               HCI research from Bangladesh.
               <br />
@@ -110,7 +115,7 @@ const Footer18 = ({ className }: Footer18Props) => {
                 className="flex flex-col items-start gap-[.4rem]"
               >
                 <li className="mb-1">
-                  <p className="text-[0.9375rem] leading-normal font-semibold text-foreground">
+                  <p className={label}>
                     {section.title}
                   </p>
                 </li>
@@ -118,7 +123,7 @@ const Footer18 = ({ className }: Footer18Props) => {
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-[0.9375rem] leading-normal text-muted-foreground hover:underline"
+                      className="text-sm leading-normal text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {link.name}
                     </a>
@@ -128,9 +133,10 @@ const Footer18 = ({ className }: Footer18Props) => {
             ))}
           </div>
         </nav>
-        <div className="mt-10 border-t border-border pt-8">
+        <div className="mt-10 flex items-center gap-4 border-t border-border pt-8">
+          <RegistrationMark className="shrink-0 opacity-70" />
           <p className="text-sm leading-normal text-muted-foreground">
-            &copy; 2026 DIAL &mdash; Design Inclusion and Access Lab, North South University
+            &copy; 2026 {labInfo.shortName} &mdash; {labInfo.name}, {labInfo.institution}
           </p>
         </div>
       </footer>

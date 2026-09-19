@@ -28,17 +28,25 @@ interface FeatureArea {
   pubCount: number;
 }
 
-const features: FeatureArea[] = [
+/** A Research Theme as the page supplies it: record title and derived counts. */
+export interface Feature199Theme {
+  slug: string;
+  title: string;
+  projectCount: number;
+  pubCount: number;
+}
+
+// Prose per theme (tagline, description, keywords) and placeholder images,
+// keyed by slug. Titles and counts come from the records via props.
+const AREA_COPY: Omit<FeatureArea, "projectCount" | "pubCount">[] = [
   {
     title: "Accessibility & Inclusion",
     slug: "accessibility-inclusion",
     image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
     tagline: "Technology for users mainstream design leaves behind.",
     description:
-      "DIAL investigates how people with disabilities, low literacy, and other barriers navigate technology — and designs systems that include them rather than assume them away. Work spans voice interfaces for low-literacy users, stroke rehabilitation, and accessible financial tools.",
-    keywords: ["Voice Interfaces", "Low-literacy", "Stroke Rehab"],
-    projectCount: 6,
-    pubCount: 18,
+      "DIAL investigates how people with disabilities, low literacy, and other barriers navigate technology — and designs systems that include them rather than assume them away. Work spans assistive technology for visually impaired people, low-cost wearables for stroke rehabilitation, and tools for children with autism and their caregivers.",
+    keywords: ["Autism", "Visual Impairment", "Stroke Rehab"],
   },
   {
     title: "Gender & Feminist HCI",
@@ -48,8 +56,6 @@ const features: FeatureArea[] = [
     description:
       "Research on online harassment, digital safety, and women's experiences with technology in South Asia. Projects use participatory design and feminist theory to build systems that centre women's safety and agency.",
     keywords: ["Online Safety", "Gender", "Co-design"],
-    projectCount: 5,
-    pubCount: 14,
   },
   {
     title: "Mental Health & Wellbeing",
@@ -59,8 +65,6 @@ const features: FeatureArea[] = [
     description:
       "Digital tools and platforms for mental health support built for contexts where clinical infrastructure is limited. Projects use passive smartphone sensing, peer networks, and co-design with students and practitioners.",
     keywords: ["Mental Health", "Passive Sensing", "Peer Support"],
-    projectCount: 4,
-    pubCount: 12,
   },
   {
     title: "Explainable AI & Machine Learning",
@@ -70,8 +74,6 @@ const features: FeatureArea[] = [
     description:
       "Research on explainability, fairness, and interpretability of ML systems — especially in high-stakes domains like health and finance. DIAL focuses on what explainability means for non-expert users in low-resource settings.",
     keywords: ["Explainability", "Fairness", "ML"],
-    projectCount: 4,
-    pubCount: 10,
   },
   {
     title: "ICT for Development (ICTD)",
@@ -79,10 +81,8 @@ const features: FeatureArea[] = [
     image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-5.svg",
     tagline: "Technology interventions designed from the Global South.",
     description:
-      "DIAL applies HCI and participatory methods to development challenges — financial inclusion, agricultural information, civic participation. All work is grounded in long-term fieldwork with communities in Bangladesh.",
+      "DIAL applies HCI and participatory methods to development challenges — financial inclusion, garment workers' lives, refugee health, and ride-sharing livelihoods. All work is grounded in long-term fieldwork with communities in Bangladesh.",
     keywords: ["ICTD", "Fieldwork", "Financial Inclusion"],
-    projectCount: 7,
-    pubCount: 20,
   },
   {
     title: "Safety & Security",
@@ -92,8 +92,6 @@ const features: FeatureArea[] = [
     description:
       "Wearable safety systems, digital threat modelling, and surveillance resistance for vulnerable populations. DIAL builds safety tools with — not just for — people who face real, ongoing threats.",
     keywords: ["Online Safety", "Wearables", "Co-design"],
-    projectCount: 3,
-    pubCount: 9,
   },
   {
     title: "IoT & Low-cost Hardware",
@@ -101,10 +99,8 @@ const features: FeatureArea[] = [
     image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
     tagline: "Affordable sensing and interaction for resource-constrained contexts.",
     description:
-      "Projects that push the limits of low-cost hardware — Raspberry Pi deployments, DIY sensors, and novel interaction modalities — for health monitoring, agricultural sensing, and classroom technology in Bangladesh.",
+      "Projects that push the limits of low-cost hardware — distributed sensing for flash floods, wearables for driver stress and stroke rehabilitation, and a medicine-reminder bot for older people in Bangladesh.",
     keywords: ["IoT", "Low-cost Hardware", "Sensing"],
-    projectCount: 3,
-    pubCount: 7,
   },
   {
     title: "Infodemic & Misinformation",
@@ -114,8 +110,6 @@ const features: FeatureArea[] = [
     description:
       "Research into how health misinformation spreads through social networks in South Asia, and what community-led and technology-assisted counter-measures look like in practice.",
     keywords: ["Misinformation", "Health", "Social Networks"],
-    projectCount: 3,
-    pubCount: 8,
   },
   {
     title: "Computing Education & Community",
@@ -125,17 +119,20 @@ const features: FeatureArea[] = [
     description:
       "DIAL investigates barriers to computing education for women and underrepresented groups in Bangladesh, and builds community-based programs and tools to widen participation.",
     keywords: ["Computing Education", "Gender", "Community"],
-    projectCount: 4,
-    pubCount: 11,
   },
 ];
 
 
 interface Feature199Props {
+  themes: Feature199Theme[];
   className?: string;
 }
 
-const Feature199 = ({ className }: Feature199Props) => {
+const Feature199 = ({ themes, className }: Feature199Props) => {
+  const features: FeatureArea[] = themes.flatMap((theme) => {
+    const copy = AREA_COPY.find((area) => area.slug === theme.slug);
+    return copy ? [{ ...copy, ...theme }] : [];
+  });
   const [activeFeature, setActiveFeature] = useState(0);
   const [openArea, setOpenArea] = useState<FeatureArea | null>(null);
   // Keeps content stable during close animation
@@ -226,7 +223,7 @@ const Feature199 = ({ className }: Feature199Props) => {
 
           <div className="sticky bottom-3 left-3 col-span-2 h-72 w-fit border md:top-20 md:h-fit">
             <img
-              src={features[clampedActive]?.image ?? features[0].image}
+              src={features[clampedActive]?.image ?? features[0]?.image}
               alt={features[clampedActive]?.title ?? ""}
               className="h-72 md:h-auto"
             />

@@ -1,36 +1,25 @@
 import { cn } from "@/lib/utils";
 
 interface Logos1Props {
+  /** Venue names, most-published first. */
+  venues: string[];
   className?: string;
 }
 
-const Logos1 = ({ className }: Logos1Props) => {
-  const partners = [
-    {
-      name: "ACM CHI",
-      logo: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/astro-wordmark.svg",
-    },
-    {
-      name: "ACM CSCW",
-      logo: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/vercel-wordmark.svg",
-    },
-    {
-      name: "ACM ASSETS",
-      logo: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/supabase-wordmark.svg",
-    },
-    {
-      name: "ACM COMPASS",
-      logo: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/figma-wordmark.svg",
-    },
-    {
-      name: "ACM UbiComp",
-      logo: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/astro-wordmark.svg",
-    },
-    {
-      name: "ACM ICTD",
-      logo: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/vercel-wordmark.svg",
-    },
+const Logos1 = ({ venues, className }: Logos1Props) => {
+  // Placeholder wordmark images (DIAL has not supplied venue logos); the venue
+  // names come from Venue records via props and are used as alt text.
+  const placeholderLogos = [
+    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/astro-wordmark.svg",
+    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/vercel-wordmark.svg",
+    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/supabase-wordmark.svg",
+    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/figma-wordmark.svg",
   ];
+  const partners = venues.map((name, index) => ({
+    name,
+    logo: placeholderLogos[index % placeholderLogos.length],
+  }));
+  if (partners.length === 0) return null;
 
   return (
     <section

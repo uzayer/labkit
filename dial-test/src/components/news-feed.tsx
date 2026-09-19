@@ -1,9 +1,12 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { ExternalLink } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
+import { ArrowUpRight } from "lucide-react";
+
+import { SectionHeader, SegmentedControl } from "@/components/editorial";
+import { OptionalImage } from "@/components/optional-image";
+import { listEnter, listStagger } from "@/lib/motion";
+import { displaySectionTitle } from "@/lib/typography";
 import { cn } from "@/lib/utils";
 
 export type NewsType = "academic" | "event" | "community";
@@ -11,8 +14,10 @@ export type NewsType = "academic" | "event" | "community";
 export interface NewsEntry {
   type: NewsType;
   title: string;
-  /** ISO date string: "YYYY-MM-DD" */
+  /** ISO date string: "YYYY-MM-DD", or "YYYY-MM" / "YYYY" when that is all the source gives. */
   date: string;
+  /** How much of `date` is known; defaults to "day". */
+  datePrecision?: "day" | "month" | "year";
   description: string;
   photo?: string;
   url?: string;
@@ -24,87 +29,72 @@ const TYPE_LABELS: Record<NewsType, string> = {
   community: "Community",
 };
 
-const TYPE_COLORS: Record<NewsType, string> = {
-  academic: "bg-blue-500",
-  event: "bg-purple-500",
-  community: "bg-emerald-500",
+/** One press ink per kind of activity, so the archive reads at a glance. */
+const TYPE_INK: Record<NewsType, string> = {
+  academic: "text-ink-blue",
+  event: "text-ink-violet",
+  community: "text-brand",
 };
 
 function isUpcoming(dateStr: string): boolean {
   return new Date(dateStr) > new Date();
 }
 
-function formatShort(dateStr: string): string {
+// Dates are formatted in UTC so a year- or month-only ISO string never shifts
+// into the previous day/month in western time zones.
+function formatFull(dateStr: string, precision: NewsEntry["datePrecision"] = "day"): string {
+  if (precision === "year") return String(getYear(dateStr));
   return new Date(dateStr).toLocaleDateString("en-US", {
-    month: "short",
+    month: "long",
+    ...(precision === "day" ? { day: "numeric" as const } : {}),
     year: "numeric",
+    timeZone: "UTC",
   });
 }
 
-function formatFull(dateStr: string): string {
+/** Date without its year, for rows already grouped under a year heading. */
+function formatInYear(dateStr: string, precision: NewsEntry["datePrecision"] = "day"): string {
+  if (precision === "year") return "Date not recorded";
   return new Date(dateStr).toLocaleDateString("en-US", {
     month: "long",
-    day: "numeric",
-    year: "numeric",
+    ...(precision === "day" ? { day: "numeric" as const } : {}),
+    timeZone: "UTC",
   });
 }
 
 function getYear(dateStr: string): number {
-  return new Date(dateStr).getFullYear();
+  return new Date(dateStr).getUTCFullYear();
 }
 
-function UpcomingCard({ entry }: { entry: NewsEntry }) {
+function EntryTitle({ entry, className }: { entry: NewsEntry; className?: string }) {
   return (
-    <div className="group flex flex-col justify-between rounded-xl border border-border bg-accent p-6">
-      {entry.photo && (
-        <div className="mb-4 flex aspect-3/2 overflow-clip rounded-xl">
-          <div className="flex-1">
-            <div className="relative h-full w-full origin-bottom transition duration-300 group-hover:scale-105">
-              <img
-                src={entry.photo}
-                alt={entry.title}
-                className="h-full w-full object-cover object-center"
-              />
-            </div>
-          </div>
-        </div>
+    <h3 className={cn("font-display text-2xl leading-snug text-balance", className)}>
+      {entry.url ? (
+        <a
+          href={entry.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="decoration-border underline-offset-4 hover:underline"
+        >
+          {entry.title}
+          <ArrowUpRight aria-label="(external link)" className="ml-1 inline size-4 align-baseline text-muted-foreground" />
+        </a>
+      ) : (
+        entry.title
       )}
-      <div
-        className={cn(
-          "line-clamp-3 font-medium break-words",
-          entry.photo ? "mb-2 text-xl md:mb-3 md:text-2xl" : "mb-2 text-lg",
-        )}
-      >
-        {entry.url ? (
-          <a
-            href={entry.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-start gap-1.5 hover:underline"
-          >
-            {entry.title}
-            <ExternalLink className="mt-1 h-3.5 w-3.5 shrink-0 text-muted-foreground" />
-          </a>
-        ) : (
-          entry.title
-        )}
-      </div>
-      <div className="mb-6 line-clamp-3 text-sm text-muted-foreground md:text-base">
-        {entry.description}
-      </div>
-      <div className="flex flex-wrap items-center gap-2">
-        <Badge variant="outline">{TYPE_LABELS[entry.type]}</Badge>
-        <Badge variant="secondary">Upcoming</Badge>
-        <span className="ml-auto text-xs text-muted-foreground">
-          {formatShort(entry.date)}
-        </span>
-      </div>
-    </div>
+    </h3>
   );
 }
 
+const FILTERS: { value: NewsType | "all"; label: string }[] = [
+  { value: "all", label: "All" },
+  { value: "academic", label: TYPE_LABELS.academic },
+  { value: "event", label: TYPE_LABELS.event },
+  { value: "community", label: TYPE_LABELS.community },
+];
+
 export function NewsFeed({ entries }: { entries: NewsEntry[] }) {
-  const [activeType, setActiveType] = useState<NewsType | null>(null);
+  const [activeType, setActiveType] = useState<NewsType | "all">("all");
 
   const upcoming = useMemo(
     () =>
@@ -114,155 +104,98 @@ export function NewsFeed({ entries }: { entries: NewsEntry[] }) {
     [entries],
   );
 
-  const archive = useMemo(() => {
-    const past = entries.filter((e) => !isUpcoming(e.date));
-    const filtered = activeType
-      ? past.filter((e) => e.type === activeType)
-      : past;
-    return [...filtered].sort(
-      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
-    );
-  }, [entries, activeType]);
+  const past = useMemo(() => entries.filter((e) => !isUpcoming(e.date)), [entries]);
+  const archive = useMemo(
+    () =>
+      [...past.filter((e) => activeType === "all" || e.type === activeType)].sort(
+        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+      ),
+    [past, activeType],
+  );
+
+  const years = [...new Set(archive.map((e) => getYear(e.date)))];
 
   return (
     <>
-      {/* §1 Upcoming — photo cards */}
+      {/* §1 Upcoming */}
       {upcoming.length > 0 && (
-        <section className="border-b py-16">
-          <div className="container">
-            <h2 className="mb-8 text-sm font-semibold tracking-wider text-muted-foreground uppercase">
-              Upcoming
-            </h2>
-            <div className="grid gap-4 md:grid-cols-2 lg:gap-6 2xl:grid-cols-3">
-              {upcoming.map((entry, i) => (
-                <UpcomingCard key={i} entry={entry} />
-              ))}
-            </div>
-          </div>
+        <section className="container pb-16">
+          <SectionHeader label="Upcoming" title="Coming up" className="mb-6" />
+          <ul className="grid gap-x-8 md:grid-cols-2">
+            {upcoming.map((entry) => (
+              <li key={`${entry.date}-${entry.title}`} className="border-t border-border py-6">
+                <p className="text-sm text-brand">
+                  {formatFull(entry.date, entry.datePrecision)} · {TYPE_LABELS[entry.type]}
+                </p>
+                <EntryTitle entry={entry} className="mt-2" />
+                <p className="mt-2 text-pretty text-muted-foreground">{entry.description}</p>
+              </li>
+            ))}
+          </ul>
         </section>
       )}
 
-      {/* §2 Archive — changelog-style list */}
-      <section className="py-16">
-        <div className="container">
-          {/* Filter strip */}
-          <div className="mb-12 flex flex-wrap gap-2">
-            <button
-              onClick={() => setActiveType(null)}
-              className={cn(
-                "rounded-full border px-3 py-1.5 text-sm transition-colors",
-                !activeType
-                  ? "border-foreground bg-foreground text-background"
-                  : "border-border hover:bg-accent",
-              )}
-            >
-              All
-            </button>
-            {(["academic", "event", "community"] as NewsType[]).map((type) => (
-              <button
-                key={type}
-                onClick={() => setActiveType(activeType === type ? null : type)}
-                className={cn(
-                  "rounded-full border px-3 py-1.5 text-sm transition-colors",
-                  activeType === type
-                    ? "border-foreground bg-foreground text-background"
-                    : "border-border hover:bg-accent",
-                )}
-              >
-                {TYPE_LABELS[type]}
-              </button>
-            ))}
-          </div>
-
-          {/* Entries */}
-          <div className="space-y-10">
-            {archive.map((entry, i) => {
-              const thisYear = getYear(entry.date);
-              const prevYear = i > 0 ? getYear(archive[i - 1].date) : null;
-              const showYearHeader = i === 0 || prevYear !== thisYear;
-              const nextIsSameYear =
-                i < archive.length - 1 &&
-                getYear(archive[i + 1].date) === thisYear;
-
-              return (
-                <div key={i}>
-                  {showYearHeader && (
-                    <div
-                      className={cn(
-                        "flex items-center gap-4",
-                        i > 0 && "pt-6",
-                      )}
-                    >
-                      <span className="text-sm font-semibold tracking-wider text-muted-foreground uppercase">
-                        {thisYear}
-                      </span>
-                      <div className="flex-1 border-t border-border" />
-                    </div>
-                  )}
-
-                  <article
-                    className={cn(
-                      "relative mx-auto flex max-w-3xl flex-col gap-6 md:flex-row md:gap-10",
-                      showYearHeader && "mt-8",
-                    )}
-                  >
-                    <time className="h-fit shrink-0 text-sm text-muted-foreground md:sticky md:top-10 md:w-36">
-                      {formatFull(entry.date)}
-                    </time>
-
-                    <div className="flex-1">
-                      <div className="flex items-center gap-1.5">
-                        <span
-                          className={cn(
-                            "h-2.5 w-2.5 rounded-full",
-                            TYPE_COLORS[entry.type],
-                          )}
-                        />
-                        <p className="text-sm font-medium text-muted-foreground">
-                          {TYPE_LABELS[entry.type]}
-                        </p>
-                      </div>
-
-                      <h3 className="mt-2 text-lg font-semibold leading-snug">
-                        {entry.url ? (
-                          <a
-                            href={entry.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-start gap-1.5 hover:underline"
-                          >
-                            {entry.title}
-                            <ExternalLink className="mt-1 h-3.5 w-3.5 shrink-0 text-muted-foreground" />
-                          </a>
-                        ) : (
-                          entry.title
-                        )}
-                      </h3>
-
-                      <p className="mt-2 text-sm text-muted-foreground md:text-base">
-                        {entry.description}
-                      </p>
-
-                      {entry.photo && (
-                        <img
-                          src={entry.photo}
-                          alt={entry.title}
-                          className="mt-6 aspect-video w-full rounded-xl border border-border object-cover"
-                        />
-                      )}
-                    </div>
-                  </article>
-
-                  {nextIsSameYear && (
-                    <div className="mx-auto mt-10 max-w-3xl">
-                      <Separator />
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
+      {/* §2 Archive */}
+      <section className="container pb-24">
+        <div className="flex flex-col gap-4 border-t border-border pt-6 md:flex-row md:items-end md:justify-between">
+          <h2 className={displaySectionTitle}>Archive</h2>
+          <SegmentedControl
+            label="Filter by type"
+            options={FILTERS.map((f) => ({
+              ...f,
+              count: f.value === "all" ? past.length : past.filter((e) => e.type === f.value).length,
+            }))}
+            value={activeType}
+            onChange={setActiveType}
+          />
         </div>
+
+        {years.map((year) => (
+          <div key={year} className={cn("mt-12 grid gap-x-8 md:grid-cols-[8rem_1fr]", listEnter)}>
+            <h3 className="font-display text-3xl tabular-nums md:sticky md:top-24 md:h-fit">{year}</h3>
+            <ol className="divide-y divide-border">
+              {archive
+                .filter((e) => getYear(e.date) === year)
+                .map((entry, i) => (
+                  <li
+                    key={`${entry.date}-${entry.title}`}
+                    className={cn("grid gap-x-8 gap-y-2 py-6 first:pt-2 lg:grid-cols-[9rem_1fr]", listEnter)}
+                    style={listStagger(i)}
+                  >
+                    <div className="text-sm text-muted-foreground">
+                      <time dateTime={entry.date}>{formatInYear(entry.date, entry.datePrecision)}</time>
+                      <span className={cn("mt-1 flex items-center gap-1.5", TYPE_INK[entry.type])}>
+                        <span className="size-1.5 rounded-full bg-current" />
+                        {TYPE_LABELS[entry.type]}
+                      </span>
+                    </div>
+                    <div className="max-w-prose">
+                      <EntryTitle entry={entry} />
+                      <p className="mt-2 text-pretty text-muted-foreground">{entry.description}</p>
+                      {entry.photo && (
+                        <div className="relative mt-6 w-fit">
+                          {/* Tape rides with the photograph (see OptionalImage);
+                              as a sibling it outlived a failed load and left a
+                              strip of tape stuck to nothing. */}
+                          <OptionalImage
+                            src={entry.photo}
+                            alt={entry.title}
+                            overlay={<span aria-hidden className="tape -top-3 left-10 z-10" />}
+                            frameClassName="sticker-alt rounded-sm shadow-[0_12px_28px_-20px_rgba(0,0,0,0.6)]"
+                            className="aspect-video"
+                          />
+                        </div>
+                      )}
+                    </div>
+                  </li>
+                ))}
+            </ol>
+          </div>
+        ))}
+
+        {archive.length === 0 && (
+          <p className="mt-12 text-muted-foreground">Nothing recorded for this type yet.</p>
+        )}
       </section>
     </>
   );

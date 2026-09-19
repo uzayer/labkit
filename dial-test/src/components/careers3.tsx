@@ -1,6 +1,7 @@
 import { ArrowRight, MapPin } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
+import { labInfo } from "@/data/lab-info";
 import { cn } from "@/lib/utils";
 
 interface Careers3Props {
@@ -16,15 +17,15 @@ const Careers3 = ({ className }: Careers3Props) => {
           title: "HCI Research Assistant — Mental Health & Wellbeing",
           description:
             "Conduct qualitative research exploring mental health support systems for urban youth in Bangladesh. Co-author publications at CHI, CSCW, and JMIR.",
-          location: "North South University, Dhaka",
-          link: "mailto:nsuhci.research@gmail.com",
+          location: `${labInfo.institution}, Dhaka`,
+          link: `mailto:${labInfo.email}`,
         },
         {
           title: "HCI Research Assistant — Accessibility & Inclusion",
           description:
             "Design and evaluate accessible technologies for marginalised communities. Involves field research and participatory user studies across Bangladesh.",
-          location: "North South University, Dhaka",
-          link: "mailto:nsuhci.research@gmail.com",
+          location: `${labInfo.institution}, Dhaka`,
+          link: `mailto:${labInfo.email}`,
         },
       ],
     },
@@ -35,8 +36,8 @@ const Careers3 = ({ className }: Careers3Props) => {
           title: "Research Assistant (Emerging Researcher)",
           description:
             "Entry-level position for undergraduates curious about HCI research. Work alongside graduate researchers on active lab projects. No prior research experience required.",
-          location: "North South University, Dhaka",
-          link: "mailto:nsuhci.research@gmail.com",
+          location: `${labInfo.institution}, Dhaka`,
+          link: `mailto:${labInfo.email}`,
         },
       ],
     },

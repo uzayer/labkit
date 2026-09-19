@@ -1,33 +1,39 @@
 "use client";
 
 import {
-  Accessibility,
-  TriangleAlert,
   ArrowLeft,
   ArrowRight,
   BookOpen,
-  Brain,
   Calendar,
-  Cpu,
   Globe,
   GraduationCap,
-  Heart,
   Lightbulb,
   Menu,
   Moon,
   Search,
-  ShieldCheck,
   Sun,
   Tag,
-  Trophy,
   UserPlus,
   UserRound,
   Users,
   X,
+  type LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { useState, useSyncExternalStore, type ReactElement } from "react";
 
+import { COMMUNITY_INK, CommunityMark } from "@/components/community-marks";
+import {
+  AsteriskMark,
+  CropMarks,
+  RegistrationMark,
+  SquiggleUnderline,
+  TickMark,
+} from "@/components/marks";
+import { OptionalImage } from "@/components/optional-image";
+import { RisoArt } from "@/components/riso";
+import { ThemeGlyph, themeInk } from "@/components/theme-marks";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -39,139 +45,38 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 
-// ── Research data ──────────────────────────────────────────────────────────
+// ── Navigation data ────────────────────────────────────────────────────────
+// Records arrive as a server-computed `nav` prop (see getNavData in
+// src/data/views.ts), so this client component never imports the data module.
 
-const researchThemes = [
-  {
-    id: "rt-1",
-    title: "Accessibility & Inclusion",
-    slug: "accessibility-inclusion",
-    description: "Technology for blind, low-literacy, and stroke-affected users.",
-    icon: Accessibility,
-  },
-  {
-    id: "rt-2",
-    title: "Gender & Feminist HCI",
-    slug: "gender-feminist-hci",
-    description: "Centering women's safety, agency, and digital voice.",
-    icon: Users,
-  },
-  {
-    id: "rt-3",
-    title: "Mental Health & Wellbeing",
-    slug: "mental-health-wellbeing",
-    description: "Digital tools for underserved mental health contexts.",
-    icon: Heart,
-  },
-  {
-    id: "rt-4",
-    title: "Explainable AI & ML",
-    slug: "explainable-ai-ml",
-    description: "Making algorithmic decisions legible to non-experts.",
-    icon: Brain,
-  },
-  {
-    id: "rt-5",
-    title: "ICT for Development",
-    slug: "ictd",
-    description: "Technology in low-resource and rural community contexts.",
-    icon: Globe,
-  },
-  {
-    id: "rt-6",
-    title: "Safety & Security",
-    slug: "safety-security",
-    description: "Online safety tools for at-risk groups in the Global South.",
-    icon: ShieldCheck,
-  },
-  {
-    id: "rt-7",
-    title: "IoT & Low-cost Hardware",
-    slug: "iot-low-cost-hardware",
-    description: "Affordable device design for resource-constrained settings.",
-    icon: Cpu,
-  },
-  {
-    id: "rt-8",
-    title: "Infodemic & Misinformation",
-    slug: "infodemic-misinformation",
-    description: "Fighting health misinformation in low-literacy communities.",
-    icon: TriangleAlert,
-  },
-  {
-    id: "rt-9",
-    title: "Computing Education & Community",
-    slug: "computing-education-community",
-    description: "Building CS capacity and community at the margins.",
-    icon: GraduationCap,
-  },
-];
+export interface NavData {
+  researchThemes: { id: string; title: string; slug: string; description: string }[];
+  awardedProjects: { id: string; title: string; award: string; slug: string }[];
+  projectCategories: {
+    title: string;
+    projects: { id: string; title: string; description: string; href: string }[];
+  }[];
+  /** The most recent featured Lab award, for the Publications promo card. */
+  headlineAward: { title: string; body: string } | null;
+  publicationRecognition: { id: string; title: string; body: string; href: string }[];
+  teamCategories: { id: string; title: string; description: string; href: string }[];
+  alumniTeaser: { name: string; placement: string }[];
+  alumniCount: number;
+  pi: { name: string; title: string; photo: string | null } | null;
+}
 
-const awardedProjects = [
-  { id: "ap-1", title: "Jyoti", award: "Best Paper · CHI 2024", slug: "jyoti" },
-  { id: "ap-2", title: "Protibadi", award: "Best of CHI · 2019", slug: "protibadi" },
-  { id: "ap-3", title: "Shikkha", award: "Best Journal Paper · COMPASS 2023", slug: "shikkha" },
-];
+interface MenuProps {
+  nav: NavData;
+}
 
-// ── Projects data ──────────────────────────────────────────────────────────
+const TEAM_CATEGORY_ICONS: Record<string, LucideIcon> = {
+  graduate: GraduationCap,
+  undergraduate: UserRound,
+  emerging: Lightbulb,
+  everyone: Users,
+};
 
-const projectCategories = [
-  {
-    title: "People & Society",
-    projects: [
-      {
-        id: "p-1",
-        title: "Jyoti",
-        description: "Best Paper · CHI 2024",
-        href: "/projects/jyoti",
-        image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-1.svg",
-      },
-      {
-        id: "p-2",
-        title: "Protibadi",
-        description: "Best of CHI · 2019",
-        href: "/projects/protibadi",
-        image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-2.svg",
-      },
-      {
-        id: "p-3",
-        title: "Mon",
-        description: "Mental Health & Wellbeing",
-        href: "/projects/mon",
-        image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-3.svg",
-      },
-    ],
-  },
-  {
-    title: "Technology & Development",
-    projects: [
-      {
-        id: "p-4",
-        title: "Satya",
-        description: "Infodemic & Misinformation",
-        href: "/projects/satya",
-        image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-4.svg",
-      },
-      {
-        id: "p-5",
-        title: "Rashmi",
-        description: "IoT & Low-cost Hardware",
-        href: "/projects/rashmi",
-        image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-5.svg",
-      },
-      {
-        id: "p-6",
-        title: "Bodhgamya",
-        description: "Explainable AI & ML",
-        href: "/projects/bodhgamya",
-        image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-1.svg",
-      },
-    ],
-  },
-];
-
-// ── Publications data ──────────────────────────────────────────────────────
-
+// Browse modes are site navigation, not records.
 const publicationsBrowse = [
   { id: "pb-1", title: "All Publications", description: "Complete bibliography.", href: "/publications", icon: BookOpen },
   { id: "pb-2", title: "By Year", description: "Chronological view of our output.", href: "/publications", icon: Calendar },
@@ -181,201 +86,210 @@ const publicationsBrowse = [
   { id: "pb-6", title: "Collaborations", description: "Cross-institutional work.", href: "/publications?collab=1", icon: Users },
 ];
 
-const publicationRecognition = [
-  { id: "pr-1", title: "10-Year Impact Award", body: "USENIX SOUPS · 2024", href: "/awards" },
-  { id: "pr-2", title: "Best Journal Paper Award", body: "ACM COMPASS · 2023", href: "/awards" },
-  { id: "pr-3", title: "Google Research Award", body: "Google · 2022", href: "/awards" },
-  { id: "pr-4", title: "Best Paper Award", body: "ACM CHI · 2019", href: "/awards" },
-  { id: "pr-5", title: "Distinguished Privacy Award", body: "IAPP / SOUPS · 2018", href: "/awards" },
-];
-
-// ── People data ────────────────────────────────────────────────────────────
-
-const teamCategories = [
-  { id: "pm-1", title: "Graduate Research Assistants", description: "10 active researchers at NSU", href: "/people", icon: GraduationCap },
-  { id: "pm-2", title: "Undergraduate Assistants", description: "9 student researchers at NSU", href: "/people", icon: UserRound },
-  { id: "pm-3", title: "Emerging Researchers", description: "6 early-career lab members", href: "/people", icon: Lightbulb },
-  { id: "pm-4", title: "Meet Everyone", description: "Full team directory", href: "/people", icon: Users },
-];
-
-const alumniTeaser = [
-  { name: "Mahbuba Tasmin", placement: "PhD · UMass Amherst" },
-  { name: "Sarah Binte Alam Shoilee", placement: "PhD · Vrije Universiteit Amsterdam" },
-  { name: "Ulfat Tahsin", placement: "PhD · The Ohio State University" },
-  { name: "Shahreen Shahjahan Psyche", placement: "Engineer · Amazon" },
-];
-
+// The drawing for each group lives in community-marks.tsx, keyed by title.
 const communities = [
   {
     title: "Accessibility",
-    groups: [
-      { title: "Blind users", icon: "👁️" },
-      { title: "Stroke patients", icon: "❤️" },
-      { title: "Low-literacy users", icon: "📖" },
-    ],
+    groups: ["Blind users", "Stroke patients", "Low-literacy users"],
   },
   {
     title: "At-risk Groups",
-    groups: [
-      { title: "Garment workers", icon: "🧵" },
-      { title: "Rohingya refugees", icon: "🏕️" },
-      { title: "Domestic workers", icon: "🏠" },
-    ],
+    groups: ["Garment workers", "Rohingya refugees", "Domestic workers"],
   },
   {
     title: "Digital Society",
-    groups: [
-      { title: "Social media users", icon: "📱" },
-      { title: "Online journalists", icon: "📰" },
-      { title: "Rural communities", icon: "🌾" },
-    ],
+    groups: ["Social media users", "Teenagers online", "Rural communities"],
   },
   {
     title: "Education",
-    groups: [
-      { title: "University students", icon: "🎓" },
-      { title: "School teachers", icon: "✏️" },
-      { title: "STEM learners", icon: "🔬" },
-    ],
+    groups: ["University students", "School teachers", "STEM learners"],
   },
 ];
 
+// ── Menu furniture ─────────────────────────────────────────────────────────
+// The panels are printed sheets, not cards: a ruled label over each column and
+// a paper promo block with crop marks, the same vocabulary the pages use.
+
+const PanelLabel = ({
+  children,
+  action,
+}: {
+  children: React.ReactNode;
+  action?: React.ReactNode;
+}) => (
+  <div className="mb-5 flex items-center justify-between gap-4 border-b border-border pb-2.5">
+    <strong className="flex items-center gap-2 text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase">
+      <TickMark className="size-3 text-ink" />
+      {children}
+    </strong>
+    {action}
+  </div>
+);
+
+/**
+ * The promo block at the head of a panel. It is paper with a printed
+ * composition in it rather than a photograph: nothing here claims to be a
+ * picture of DIAL's work until DIAL supplies one.
+ */
+const PromoCard = ({
+  href,
+  art,
+  eyebrow,
+  title,
+  body,
+  className,
+}: {
+  href: string;
+  art: React.ComponentProps<typeof RisoArt>["variant"];
+  eyebrow?: string;
+  title: string;
+  body: string;
+  className?: string;
+}) => (
+  <a
+    href={href}
+    className={cn(
+      "group relative flex h-full flex-col justify-between overflow-hidden rounded-md border border-border bg-muted/40 p-6",
+      className,
+    )}
+  >
+    <CropMarks className="text-ink/50" />
+    <span aria-hidden className="halftone absolute inset-0 opacity-[0.07]" />
+    <RisoArt
+      variant={art}
+      className="pointer-events-none absolute -right-10 -bottom-10 size-48 opacity-70"
+    />
+    <div className="relative">
+      {eyebrow && (
+        <span className="mb-3 block text-[0.65rem] font-medium tracking-[0.2em] text-muted-foreground uppercase">
+          {eyebrow}
+        </span>
+      )}
+      <span className="font-display relative inline-block text-xl leading-tight">
+        {title}
+        <SquiggleUnderline />
+      </span>
+      <p className="mt-2 max-w-[22rem] text-xs text-pretty text-muted-foreground">{body}</p>
+    </div>
+    <span className="relative mt-8 inline-flex items-center gap-1.5 text-xs font-medium">
+      Open
+      <ArrowRight className="arrow-ne size-4" />
+    </span>
+  </a>
+);
+
 // ── Menu components ────────────────────────────────────────────────────────
 
-const ResearchMenu = () => (
+const ResearchMenu = ({ nav }: MenuProps) => (
   <div className="grid gap-8 sm:grid-cols-2">
-    {/* Featured promo */}
-    <a
+    <PromoCard
       href="/research"
-      className="group relative flex h-full flex-row overflow-hidden rounded-lg bg-primary px-0 pt-8 text-primary-foreground lg:rounded-xl lg:px-6"
-    >
-      <div className="relative flex w-full flex-col space-y-12 text-left md:space-y-8 lg:w-full lg:flex-row lg:justify-between lg:space-y-0 lg:space-x-6 xl:space-x-8">
-        <div className="relative flex flex-col px-6 lg:mb-6 lg:px-0">
-          <span className="mb-6 text-xs font-medium tracking-wider uppercase md:mb-8">
-            HCI Research from Bangladesh
-          </span>
-          <div className="mt-auto flex items-center space-x-1 text-xs">
-            Explore our research
-            <ArrowRight className="ml-1 size-4 transition-transform group-hover:translate-x-1" />
-          </div>
-          <p className="mt-2 text-xs text-primary-foreground/85">
-            Participatory design with communities that mainstream technology largely ignores.
-          </p>
-        </div>
-        <div className="relative aspect-2/1 overflow-clip rounded-t pl-6 lg:max-w-64 lg:pl-0 xl:max-w-96">
-          <img
-            src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
-            alt="DIAL fieldwork"
-            className="aspect-2/1 h-full w-full translate-y-px object-cover object-center"
-          />
-        </div>
-      </div>
-    </a>
+      art="orbit"
+      eyebrow="HCI Research from Bangladesh"
+      title="Where social need and technical systems meet"
+      body="Participatory design with communities that mainstream technology largely ignores."
+    />
 
     {/* Award-winning project callouts */}
-    <div className="order-last mt-3 sm:order-none sm:mt-0 sm:py-2 md:p-6">
-      <div className="mb-4 text-left lg:mb-6">
-        <strong className="text-xs font-medium tracking-wider text-muted-foreground uppercase">
-          Award-winning Projects
-        </strong>
-      </div>
-      <div className="grid gap-4">
-        {awardedProjects.map((project) => (
+    <div>
+      <PanelLabel>Award-winning Projects</PanelLabel>
+      <div className="grid gap-1">
+        {nav.awardedProjects.map((project) => (
           <NavigationMenuLink
             key={project.id}
             href={`/projects/${project.slug}`}
-            className="group flex flex-row items-center gap-4"
+            className="group flex flex-row items-baseline gap-3 border-b border-border/60 py-3 last:border-0"
           >
-            <Trophy className="size-4 shrink-0 text-muted-foreground" />
+            <AsteriskMark className="size-3.5 shrink-0 translate-y-0.5 text-ink" />
             <div className="flex-1">
-              <span className="text-sm font-medium">{project.title}</span>
-              <span className="ml-2 text-xs text-muted-foreground">{project.award}</span>
+              <span className="relative text-sm font-medium">
+                {project.title}
+                <SquiggleUnderline />
+              </span>
+              <span className="mt-0.5 block text-xs text-muted-foreground">{project.award}</span>
             </div>
-            <ArrowRight className="size-4 transition-transform group-hover:translate-x-1 lg:hidden" />
+            <ArrowRight className="arrow-ne size-4 shrink-0 self-center text-muted-foreground" />
           </NavigationMenuLink>
         ))}
       </div>
     </div>
 
-    {/* 9 theme boxes */}
-    <div className="col-span-full grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-      {researchThemes.map((theme) => (
-        <div key={theme.id} className="rounded-md border border-border p-5">
-          <div className="border-b border-border pb-4">
-            <a href={`/research/${theme.slug}`} className="group flex items-center text-left">
-              <theme.icon className="size-4 shrink-0 mr-2" />
-              <strong className="text-sm font-medium">{theme.title}</strong>
-              <ArrowRight className="ml-1 size-4 transition-transform group-hover:translate-x-1" />
-            </a>
-            <p className="mt-1 text-xs text-muted-foreground">{theme.description}</p>
-          </div>
-        </div>
-      ))}
+    {/* The nine Themes, each with its own drawing and its own ink — the same
+        set the Research index prints, so the menu and the page agree. */}
+    <div className="col-span-full">
+      <PanelLabel>Research Themes</PanelLabel>
+      <div className="grid grid-cols-1 gap-x-8 md:grid-cols-2 lg:grid-cols-3">
+        {nav.researchThemes.map((theme, i) => (
+          <NavigationMenuLink
+            key={theme.id}
+            href={`/research/${theme.slug}`}
+            className="group flex items-start gap-4 border-b border-border/60 py-4 text-left"
+          >
+            <span className="font-mono text-[0.65rem] text-muted-foreground tabular-nums">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <ThemeGlyph slug={theme.slug} className="size-8 shrink-0" />
+            <span className="flex-1">
+              <strong
+                className={cn(
+                  "font-display relative text-base font-normal",
+                  themeInk(theme.slug),
+                )}
+              >
+                {theme.title}
+                <SquiggleUnderline />
+              </strong>
+              <span className="mt-0.5 block text-xs text-pretty text-muted-foreground">
+                {theme.description}
+              </span>
+            </span>
+          </NavigationMenuLink>
+        ))}
+      </div>
     </div>
   </div>
 );
 
-const ProjectsMenu = () => (
-  <div className="grid gap-y-12 lg:flex lg:space-x-8">
-    {/* Sidebar promo card */}
-    <div className="w-full shrink-0 lg:max-w-[18rem]">
-      <Link
-        href="/projects"
-        className="group relative flex h-full flex-row overflow-hidden rounded-lg px-0 text-primary-foreground lg:rounded-xl"
-      >
-        <div className="relative z-10 flex w-full flex-col text-left">
-          <div className="relative flex aspect-2/1 max-h-[11rem] w-full flex-1 justify-center">
-            <img
-              src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg"
-              alt="DIAL projects"
-              className="h-full w-full object-cover object-center"
-            />
-          </div>
-          <div className="relative z-20 flex flex-col rounded-b-xl bg-primary p-6">
-            <div className="flex items-center space-x-1 text-xs">
-              20 Projects
-              <ArrowRight className="ml-1 size-4 transition-transform group-hover:translate-x-1" />
-            </div>
-            <p className="mt-2 text-xs text-primary-foreground/70">
-              Participatory technology interventions built with communities across Bangladesh.
-            </p>
-          </div>
-        </div>
-      </Link>
-    </div>
+const ProjectsMenu = ({ nav }: MenuProps) => (
+  <div className="grid gap-y-10 lg:flex lg:space-x-10">
+    <PromoCard
+      href="/projects"
+      art="field"
+      eyebrow="The project directory"
+      title="Built with communities, not for them"
+      body="Participatory technology interventions across Bangladesh, each one a long relationship with the people it is for."
+      className="w-full shrink-0 lg:max-w-[20rem]"
+    />
 
-    {/* Project categories */}
-    <div className="grid w-full gap-y-12 lg:gap-y-6">
-      {projectCategories.map((category) => (
-        <div key={category.title} className="grid gap-y-2 lg:gap-y-6">
-          <div className="border-border text-left lg:border-b lg:pb-3">
-            <strong className="text-left text-xs font-medium tracking-wider text-muted-foreground uppercase">
-              {category.title}
-            </strong>
-          </div>
-          <menu className="grid md:grid-cols-3 md:gap-x-5 lg:gap-y-7">
+    {/* Project categories. The cover mark is the project's own initial, set in
+        the display serif on a halftone block — the same mark the directory
+        prints, and honest where a stock photograph would not be. */}
+    <div className="grid w-full gap-y-10">
+      {nav.projectCategories.map((category) => (
+        <div key={category.title}>
+          <PanelLabel>{category.title}</PanelLabel>
+          <menu className="grid md:grid-cols-3 md:gap-x-6">
             {category.projects.map((project) => (
               <NavigationMenuLink
                 key={project.id}
                 href={project.href}
-                className="group flex flex-row items-center space-x-6 border-b border-border py-5 text-left sm:py-7 lg:space-x-4 lg:border-0 lg:py-2"
+                className="group flex flex-row items-center gap-4 border-b border-border/60 py-4 text-left"
               >
-                <div className="relative flex aspect-square w-6 shrink-0 items-center justify-center overflow-clip rounded md:size-9 md:p-2">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="dark:invert"
-                  />
-                </div>
+                <span
+                  aria-hidden
+                  className="sticker font-display relative grid size-11 shrink-0 place-items-center overflow-hidden rounded-[0.6rem] bg-muted text-xl leading-none text-foreground/70 group-hover:rotate-0"
+                >
+                  <span aria-hidden className="halftone absolute inset-0 opacity-25" />
+                  <span className="relative">{[...project.title][0]}</span>
+                </span>
                 <div className="flex-1">
-                  <div className="text-sm font-medium text-foreground/85 group-hover:text-foreground">
+                  <div className="relative inline-block text-sm font-medium text-foreground/85 group-hover:text-foreground">
                     {project.title}
+                    <SquiggleUnderline />
                   </div>
-                  <p className="mt-1 text-xs text-muted-foreground group-hover:text-foreground">
-                    {project.description}
-                  </p>
+                  <p className="mt-0.5 text-xs text-muted-foreground">{project.description}</p>
                 </div>
-                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1 lg:hidden" />
+                <ArrowRight className="arrow-ne size-4 shrink-0 text-muted-foreground" />
               </NavigationMenuLink>
             ))}
           </menu>
@@ -385,89 +299,59 @@ const ProjectsMenu = () => (
   </div>
 );
 
-const PublicationsMenu = () => (
+const PublicationsMenu = ({ nav }: MenuProps) => (
   <div className="grid gap-y-12 md:grid-cols-2 md:gap-x-6 lg:grid-cols-4 lg:gap-6">
-    {/* Promo card */}
-    <div className="col-span-1">
-      <a
-        href="/awards"
-        className="group relative flex h-full flex-row overflow-hidden rounded-lg bg-primary p-0 text-primary-foreground lg:rounded-xl"
-      >
-        <div className="relative z-10 flex w-full flex-col-reverse text-left">
-          <div className="relative z-20 flex flex-col px-6 pt-6 pb-[14rem] md:pt-40 md:pb-6">
-            <div className="mt-auto flex items-center space-x-1 text-xs">
-              10-Year Impact Award
-              <ArrowRight className="ml-1 size-4 transition-transform group-hover:translate-x-1" />
-            </div>
-            <p className="mt-2 text-xs">
-              USENIX SOUPS 2024 — one of 11 venue honours since 2014.
-            </p>
-          </div>
-          <div className="absolute inset-0">
-            <img
-              src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-4.svg"
-              alt="publications"
-              className="h-full w-full object-cover object-center invert"
-            />
-          </div>
-          <div className="absolute inset-x-0 top-0 z-10 h-[60%] bg-gradient-to-b from-primary to-transparent md:top-auto md:bottom-[-10%] md:h-[50%] md:bg-gradient-to-t md:from-primary md:to-transparent" />
-        </div>
-      </a>
-    </div>
+    <PromoCard
+      href="/awards"
+      art="strata"
+      eyebrow="Recognition"
+      title={nav.headlineAward?.title ?? "Awards & recognition"}
+      body={nav.headlineAward?.body ?? "What the Lab's work has been recognised for."}
+      className="col-span-1"
+    />
 
     {/* Browse modes */}
     <div className="lg:col-span-2 lg:flex lg:flex-col">
-      <div className="mb-4 border-border pb-3 text-left md:mb-6 lg:border-b">
-        <strong className="text-left text-xs font-medium tracking-wider text-muted-foreground uppercase">
-          Browse Publications
-        </strong>
-      </div>
-      <menu className="grid gap-y-4 lg:h-full lg:grid-cols-2 lg:gap-6">
+      <PanelLabel>Browse Publications</PanelLabel>
+      <menu className="grid gap-y-2 lg:h-full lg:grid-cols-2 lg:gap-x-6">
         {publicationsBrowse.map((item) => (
           <NavigationMenuLink
             key={item.id}
             href={item.href}
-            className="group flex flex-row items-center space-x-4 rounded-md border-border bg-accent px-6 py-5 text-left md:space-x-5 lg:border lg:bg-background lg:p-5"
+            className="group flex flex-row items-center gap-4 border-b border-border/60 py-3.5 text-left"
           >
-            <item.icon className="size-6 sm:size-7" />
-            <div className="ml-4 flex-1">
-              <div className="text-sm font-medium text-foreground/85 group-hover:text-foreground">
+            <item.icon className="size-5 shrink-0 text-ink" />
+            <div className="flex-1">
+              <div className="relative inline-block text-sm font-medium text-foreground/85 group-hover:text-foreground">
                 {item.title}
+                <SquiggleUnderline />
               </div>
-              <p className="mt-1 text-xs text-muted-foreground group-hover:text-foreground">
-                {item.description}
-              </p>
+              <p className="mt-0.5 text-xs text-muted-foreground">{item.description}</p>
             </div>
-            <ArrowRight className="size-4 transition-transform group-hover:translate-x-1 lg:hidden" />
+            <ArrowRight className="arrow-ne size-4 shrink-0 text-muted-foreground" />
           </NavigationMenuLink>
         ))}
       </menu>
     </div>
 
-    {/* Recognition */}
+    {/* Recognition. The stamp ring is the Awards page's own mark. */}
     <div className="col-span-1 md:col-span-2 lg:col-span-1">
-      <div className="mb-4 border-border pb-3 text-left md:mb-7 lg:border-b">
-        <strong className="text-left text-xs font-medium tracking-wider text-muted-foreground uppercase">
-          Recognition
-        </strong>
-      </div>
-      <menu className="mb-7 grid md:grid-cols-2 md:gap-x-6 lg:grid-cols-1 lg:gap-x-0">
-        {publicationRecognition.map((award) => (
+      <PanelLabel>Honours</PanelLabel>
+      <menu className="grid md:grid-cols-2 lg:grid-cols-1">
+        {nav.publicationRecognition.map((award) => (
           <NavigationMenuLink
             key={award.id}
             href={award.href}
-            className="group flex flex-row items-center space-x-6 border-b border-border py-5 text-left sm:py-8 lg:space-x-4 lg:border-0 lg:py-3"
+            className="group flex flex-row items-baseline gap-3 border-b border-border/60 py-3 text-left"
           >
-            <div className="flex aspect-square size-9 shrink-0 items-center justify-center">
-              <Trophy className="size-5" />
-            </div>
+            <AsteriskMark className="size-3.5 shrink-0 translate-y-0.5 text-ink" />
             <div className="flex-1">
-              <div className="text-xs font-medium text-foreground/85 group-hover:text-foreground md:text-sm">
+              <div className="relative inline-block text-sm font-medium text-foreground/85 group-hover:text-foreground">
                 {award.title}
+                <SquiggleUnderline />
               </div>
               <p className="mt-0.5 text-xs text-muted-foreground">{award.body}</p>
             </div>
-            <ArrowRight className="size-4 transition-transform group-hover:translate-x-1 lg:hidden" />
           </NavigationMenuLink>
         ))}
       </menu>
@@ -475,32 +359,46 @@ const PublicationsMenu = () => (
   </div>
 );
 
-const PeopleMenu = () => (
+const PeopleMenu = ({ nav }: MenuProps) => (
   <div>
     <div className="space-y-6 lg:flex lg:space-y-0 lg:space-x-8">
-      {/* PI card */}
+      {/* PI card. The photograph is taped on when there is one; there is no
+          stock portrait standing in for a real person. */}
       <div className="w-full shrink-0 lg:max-w-[18rem]">
         <Link
           href="/people"
-          className="group relative flex h-full flex-row overflow-hidden rounded-lg p-0 text-primary-foreground lg:rounded-xl"
+          className="group relative flex h-full flex-col overflow-hidden rounded-md border border-border bg-muted/40 p-5"
         >
-          <div className="relative z-10 flex w-full flex-col text-left">
-            <div className="relative flex aspect-4/3 max-h-[18rem] w-full flex-1 justify-center">
-              <img
-                src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/photos/annie-spratt-MChSQHxGZrQ-unsplash.jpg"
-                alt="Dr. Nova Ahmed"
-                className="h-full w-full object-cover object-center"
-              />
-            </div>
-            <div className="relative z-20 flex flex-col rounded-b-xl bg-primary p-6">
-              <div className="flex items-center space-x-1 text-xs">
-                Dr. Nova Ahmed · Principal Investigator
-                <ArrowRight className="ml-1 size-4 transition-transform group-hover:translate-x-1" />
-              </div>
-              <p className="mt-2 text-xs text-primary-foreground/85">
-                Professor, ECE — North South University, Dhaka.
-              </p>
-            </div>
+          <CropMarks className="text-ink/50" />
+          <span aria-hidden className="halftone absolute inset-0 opacity-[0.07]" />
+          <div className="relative">
+            {nav.pi?.photo ? (
+              <span className="relative block">
+                {/* Tape rides with the photograph (see OptionalImage): if the
+                    photo fails, the composition replaces it untaped. */}
+                <OptionalImage
+                  src={nav.pi.photo}
+                  alt={`Dr. ${nav.pi.name}`}
+                  overlay={<span aria-hidden className="tape -top-2.5 left-6 z-10" />}
+                  frameClassName="aspect-4/3 w-full -rotate-1 rounded-sm"
+                  className="h-full w-full object-cover object-top"
+                  fallback={<RisoArt variant="bloom" className="mx-auto size-40" />}
+                />
+              </span>
+            ) : (
+              <RisoArt variant="bloom" className="mx-auto size-40" />
+            )}
+          </div>
+          <div className="relative mt-5">
+            <span className="font-display relative inline-block text-lg leading-tight">
+              {nav.pi ? `Dr. ${nav.pi.name}` : "Principal Investigator"}
+              <SquiggleUnderline />
+            </span>
+            <p className="mt-1 text-xs text-muted-foreground">{nav.pi?.title}</p>
+            <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium">
+              The whole team
+              <ArrowRight className="arrow-ne size-4" />
+            </span>
           </div>
         </Link>
       </div>
@@ -515,14 +413,16 @@ const PeopleMenu = () => (
             </strong>
           </div>
           <menu className="grid md:grid-cols-3 md:gap-x-6 lg:gap-y-6">
-            {teamCategories.map((member) => (
+            {nav.teamCategories.map((member) => {
+              const CategoryIcon = TEAM_CATEGORY_ICONS[member.id] ?? Users;
+              return (
               <NavigationMenuLink
                 key={member.id}
                 href={member.href}
                 className="group flex flex-row items-center space-x-4 border-b border-border py-5 text-left sm:py-7 lg:border-0 lg:py-0"
               >
                 <div className="flex aspect-square size-9 shrink-0 items-center justify-center">
-                  <member.icon className="size-5" />
+                  <CategoryIcon className="size-5" />
                 </div>
                 <div className="flex-1">
                   <div className="text-sm font-medium text-foreground/85 group-hover:text-foreground">
@@ -532,9 +432,10 @@ const PeopleMenu = () => (
                     {member.description}
                   </p>
                 </div>
-                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1 lg:hidden" />
+                <ArrowRight className="size-4 arrow-ne lg:hidden" />
               </NavigationMenuLink>
-            ))}
+              );
+            })}
           </menu>
         </div>
 
@@ -548,11 +449,11 @@ const PeopleMenu = () => (
               href="/people"
               className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground"
             >
-              21 alumni <ArrowRight className="size-3" />
+              {nav.alumniCount} alumni <ArrowRight className="size-3" />
             </NavigationMenuLink>
           </div>
           <menu className="grid md:grid-cols-2 md:gap-x-6 lg:gap-y-3">
-            {alumniTeaser.map((alum) => (
+            {nav.alumniTeaser.map((alum) => (
               <NavigationMenuLink
                 key={alum.name}
                 href="/people"
@@ -569,28 +470,30 @@ const PeopleMenu = () => (
       </div>
     </div>
 
-    {/* Communities we design with */}
-    <div className="mt-8">
-      <div className="mb-6 border-border pb-1 text-left lg:border-b">
-        <strong className="text-left text-xs font-medium tracking-wider text-muted-foreground uppercase">
-          Communities We Design With
-        </strong>
-      </div>
-      <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-4">
+    {/* Communities we design with. Each group carries a drawing of what is in
+        its hands or around it, never a drawing of the people themselves. */}
+    <div className="mt-10">
+      <PanelLabel>Communities We Design With</PanelLabel>
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
         {communities.map((community) => (
-          <div
-            key={community.title}
-            className="space-y-6 rounded-md border border-border p-6 lg:border-0 lg:p-0"
-          >
-            <div className="text-left text-xs text-muted-foreground">{community.title}</div>
-            <menu className="grid gap-y-3 border-t border-border pt-6 lg:border-0 lg:pt-0">
+          <div key={community.title}>
+            <div className="flex items-center gap-2 text-left text-[0.65rem] font-medium tracking-[0.18em] text-muted-foreground uppercase">
+              <RegistrationMark
+                className={cn("size-3", COMMUNITY_INK[community.title] ?? "text-ink")}
+              />
+              {community.title}
+            </div>
+            <menu className="mt-4 grid gap-y-3.5">
               {community.groups.map((group) => (
                 <div
-                  key={group.title}
-                  className="flex flex-row items-center space-x-4 text-left text-foreground/85"
+                  key={group}
+                  className="flex flex-row items-center gap-3 text-left text-foreground/85"
                 >
-                  <div className="flex size-4 items-center justify-center">{group.icon}</div>
-                  <div className="flex-1 text-sm font-medium">{group.title}</div>
+                  <CommunityMark
+                    label={group}
+                    className={cn("size-6 shrink-0", COMMUNITY_INK[community.title] ?? "text-ink")}
+                  />
+                  <div className="flex-1 text-sm">{group}</div>
                 </div>
               ))}
             </menu>
@@ -603,76 +506,44 @@ const PeopleMenu = () => (
 
 const LabMenu = () => (
   <div className="grid gap-y-6 md:grid-cols-2 md:gap-x-6 lg:grid-cols-4">
-    {/* News — big card */}
-    <div className="md:col-span-2">
-      <a
-        href="/news"
-        className="group relative flex h-full flex-row overflow-hidden rounded-lg bg-primary p-0 text-primary-foreground lg:rounded-xl"
-      >
-        <div className="relative z-10 flex w-full flex-col-reverse text-left">
-          <div className="relative z-20 flex flex-col px-6 pt-6 pb-[14rem] md:pt-40 md:pb-6">
-            <div className="mt-auto flex items-center space-x-1 text-xs font-medium">
-              News & Lab Activity
-              <ArrowRight className="ml-1 size-4 transition-transform group-hover:translate-x-1" />
-            </div>
-            <p className="mt-2 text-xs">
-              Conference trips, invited talks, community events, and fieldwork — all in photos.
-            </p>
-          </div>
-          <div className="absolute inset-0 top-[32%] bg-accent invert md:top-0">
-            <img
-              src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
-              alt="Lab news"
-              className="object-fit h-full w-full object-top-right opacity-100 md:h-2/3 md:object-top"
-            />
-          </div>
-        </div>
-      </a>
-    </div>
+    <PromoCard
+      href="/news"
+      art="signal"
+      eyebrow="News & Lab Activity"
+      title="What the Lab has been doing"
+      body="Conference trips, invited talks, community events and fieldwork, as they happen."
+      className="md:col-span-2"
+    />
 
-    {/* About — medium card */}
-    <div className="md:col-span-1">
-      <a
-        href="/about"
-        className="group relative flex h-full flex-row overflow-hidden rounded-lg bg-accent p-0 text-accent-foreground lg:rounded-xl"
-      >
-        <div className="relative z-10 flex w-full flex-col-reverse text-left">
-          <div className="relative z-20 flex flex-col px-6 pt-6 pb-[14rem] md:pt-40 md:pb-6">
-            <div className="mt-auto flex items-center space-x-1 text-xs font-medium">
-              About DIAL
-              <ArrowRight className="ml-1 size-4 transition-transform group-hover:translate-x-1" />
-            </div>
-            <p className="mt-2 text-xs text-muted-foreground">
-              The Design Inclusion and Access Lab at North South University.
-            </p>
-          </div>
-          <div className="absolute inset-0 top-[32%] md:top-0">
-            <img
-              src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg"
-              alt="About DIAL"
-              className="object-fit h-full w-full object-top-right md:h-2/3 md:object-top"
-            />
-          </div>
-        </div>
-      </a>
-    </div>
+    <PromoCard
+      href="/about"
+      art="bloom"
+      eyebrow="About"
+      title="The Design Inclusion and Access Lab"
+      body="An HCI lab at North South University, Dhaka."
+      className="md:col-span-1"
+    />
 
-    {/* Join Us — bordered card */}
+    {/* Join Us */}
     <div className="grid gap-4 md:col-span-1">
       <NavigationMenuLink
         href="/join-us"
-        className="group flex w-full flex-row items-center rounded-lg border border-border lg:rounded-xl"
+        className="group relative flex w-full flex-row items-start gap-4 overflow-hidden rounded-md border border-border p-6"
       >
-        <div className="flex items-start p-6 text-left">
-          <UserPlus className="size-8" />
-          <div className="ml-4">
-            <div className="mt-auto mb-1 text-sm font-bold text-foreground/85 group-hover:text-foreground">
-              Join the Lab
-            </div>
-            <p className="text-xs text-muted-foreground group-hover:text-foreground">
-              Open positions for graduate and undergraduate researchers.
-            </p>
+        <span aria-hidden className="halftone absolute inset-0 opacity-[0.07]" />
+        <UserPlus className="relative size-7 shrink-0 text-ink" />
+        <div className="relative">
+          <div className="font-display relative inline-block text-base leading-tight">
+            Join the Lab
+            <SquiggleUnderline />
           </div>
+          <p className="mt-1 text-xs text-muted-foreground">
+            Open positions for graduate and undergraduate researchers.
+          </p>
+          <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium">
+            How to apply
+            <ArrowRight className="arrow-ne size-4" />
+          </span>
         </div>
       </NavigationMenuLink>
     </div>
@@ -686,49 +557,69 @@ const navigationMenuItems = [
   { key: "projects", label: "Projects", component: ProjectsMenu },
   { key: "publications", label: "Publications", component: PublicationsMenu },
   { key: "people", label: "People", component: PeopleMenu },
-  { key: "lab", label: "Lab", component: LabMenu },
+  // LabMenu is static; it ignores the nav prop the other menus take.
+  { key: "lab", label: "Lab", component: LabMenu as (props: MenuProps) => ReactElement },
 ] as const;
 
 type NavigationMenuKey = (typeof navigationMenuItems)[number]["key"];
 
+// ── Theme ──────────────────────────────────────────────────────────────────
+
+function subscribeToThemeClass(onChange: () => void) {
+  const observer = new MutationObserver(onChange);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+  return () => observer.disconnect();
+}
+
+const readIsDark = () => document.documentElement.classList.contains("dark");
+
 // ── Component ──────────────────────────────────────────────────────────────
 
 interface Navbar4Props {
+  nav: NavData;
   className?: string;
 }
 
-const Navbar4 = ({ className }: Navbar4Props) => {
+const Navbar4 = ({ nav, className }: Navbar4Props) => {
   const [open, setOpen] = useState(false);
   const [submenu, setSubmenu] = useState<NavigationMenuKey | null>(null);
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    const stored = localStorage.getItem("dial-theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const initialDark = stored === "dark" || (!stored && prefersDark);
-    setIsDark(initialDark);
-    document.documentElement.classList.toggle("dark", initialDark);
-  }, []);
+  // The <head> script in layout.tsx applies the stored theme before paint;
+  // this just mirrors the <html> class.
+  const isDark = useSyncExternalStore(subscribeToThemeClass, readIsDark, () => false);
+  const reduceMotion = useReducedMotion();
 
   const toggleDark = () => {
     const next = !isDark;
-    setIsDark(next);
     document.documentElement.classList.toggle("dark", next);
     localStorage.setItem("dial-theme", next ? "dark" : "light");
   };
 
   return (
-    <section className={cn("inset-x-0 top-0 z-20 bg-background", className)}>
+    <section
+      data-site-nav
+      className={cn("inset-x-0 top-0 z-20 bg-background text-foreground", className)}
+    >
       <div className="container">
         <NavigationMenu className="min-w-full [&>div:last-child]:left-auto">
           <div className="flex w-full justify-between gap-2 py-4">
-            {/* Logo */}
-            <Link href="/" className="flex items-center gap-2">
+            {/* Logo. The wordmark used to carry "NSU HCI" as part of the
+                drawing, which made the DIAL letters themselves small; the
+                mark now stands alone and the university is named quietly
+                beside it. */}
+            <Link href="/" className="flex items-center gap-3">
               <img
                 src="/dial-logo.svg"
-                className="w-28 max-w-none dark:invert sm:w-32 lg:w-28"
+                className="w-28 max-w-none dark:invert sm:w-32"
                 alt="DIAL"
               />
+              {/* The old lockup set "NSU HCI" in wide-tracked capitals under
+                  the mark, which shrank the DIAL letters. It now sits beside
+                  the mark and spells the university out — named, but quiet. */}
+              <span className="hidden border-l border-border pl-3 text-[0.65rem] leading-[1.35] tracking-[0.16em] text-muted-foreground uppercase sm:block">
+                North South
+                <br />
+                University HCI
+              </span>
             </Link>
 
             {/* Desktop nav */}
@@ -740,7 +631,7 @@ const Navbar4 = ({ className }: Navbar4Props) => {
                       {item.label}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent className="min-w-[calc(100vw-4rem)] p-12 2xl:min-w-[calc(1400px-4rem)]">
-                      <item.component />
+                      <item.component nav={nav} />
                     </NavigationMenuContent>
                   </NavigationMenuItem>
                 ))}
@@ -749,8 +640,8 @@ const Navbar4 = ({ className }: Navbar4Props) => {
 
             {/* CTA + dark toggle + mobile toggle */}
             <div className="flex items-center gap-2">
-              <a href="/contact" className={cn(buttonVariants(), "hidden md:inline-flex")}>
-                Contact Us
+              <a href="/contact" className={cn(buttonVariants(), "hidden rounded-full px-4 transition-transform duration-150 ease-snappy active:scale-[0.97] md:inline-flex")}>
+                Contact
               </a>
               <Button
                 variant="ghost"
@@ -781,8 +672,22 @@ const Navbar4 = ({ className }: Navbar4Props) => {
           </div>
 
           {/* Mobile menu */}
+          {/* The menu unrolls down from the nav bar (clip-path, iOS sheet
+              curve) and rolls back up faster on close; reduced motion fades. */}
+          <AnimatePresence>
           {open && (
-            <div className="fixed inset-0 top-[77px] container flex h-[calc(100vh-77px)] w-full flex-col overflow-auto border-t border-border bg-background lg:hidden">
+            <motion.div
+              key="mobile-menu"
+              initial={reduceMotion ? { opacity: 0 } : { clipPath: "inset(0 0 100% 0)" }}
+              animate={reduceMotion ? { opacity: 1 } : { clipPath: "inset(0 0 0% 0)" }}
+              exit={
+                reduceMotion
+                  ? { opacity: 0, transition: { duration: 0.15 } }
+                  : { clipPath: "inset(0 0 100% 0)", transition: { duration: 0.18, ease: [0.23, 1, 0.32, 1] } }
+              }
+              transition={{ duration: reduceMotion ? 0.15 : 0.3, ease: [0.32, 0.72, 0, 1] }}
+              className="fixed inset-0 top-[77px] container flex h-[calc(100vh-77px)] w-full flex-col overflow-auto border-t border-border bg-background lg:hidden"
+            >
               {submenu && (
                 <div className="mt-3">
                   <Button
@@ -797,11 +702,12 @@ const Navbar4 = ({ className }: Navbar4Props) => {
               )}
               {submenu === null && (
                 <div>
-                  {navigationMenuItems.map((item) => (
+                  {navigationMenuItems.map((item, i) => (
                     <button
                       key={item.key}
                       type="button"
-                      className="flex w-full items-center border-b border-border py-6 text-left"
+                      className="enter flex w-full items-center border-b border-border py-6 text-left [animation-duration:300ms]"
+                      style={{ animationDelay: `${80 + i * 40}ms` }}
                       onClick={() => setSubmenu(item.key)}
                     >
                       <span className="flex-1 text-sm font-medium">{item.label}</span>
@@ -817,17 +723,18 @@ const Navbar4 = ({ className }: Navbar4Props) => {
                   submenu === item.key && (
                     <div key={item.key}>
                       <h2 className="pt-4 pb-6 text-lg font-medium">{item.label}</h2>
-                      <item.component />
+                      <item.component nav={nav} />
                     </div>
                   ),
               )}
               <div className="mx-[2rem] mt-auto flex flex-col items-center gap-8 py-24">
-                <a href="/contact" className={cn(buttonVariants())}>
-                  Contact Us
+                <a href="/contact" className={cn(buttonVariants(), "rounded-full px-5")}>
+                  Contact
                 </a>
               </div>
-            </div>
+            </motion.div>
           )}
+          </AnimatePresence>
         </NavigationMenu>
       </div>
     </section>

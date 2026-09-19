@@ -1,36 +1,81 @@
 import { AlumniGrid } from "@/components/alumni-grid";
-import { Cta32 } from "@/components/cta32";
+import { ScrollRuler } from "@/components/scroll-ruler";
+import { ClosingNote } from "@/components/closing-note";
+import { SectionHeader, sectionSpacing } from "@/components/editorial";
+import { FaqSection } from "@/components/faq-section";
+import { PageHeader } from "@/components/page-header";
+import { PeopleRoster } from "@/components/people-roster";
 import { PIProfile } from "@/components/pi-profile";
-import { PeopleStats } from "@/components/people-stats";
-import { Team5_9 } from "@/components/team5-9";
+import { labStats } from "@/data";
+import { peopleFaqs } from "@/data/faqs";
+import { alumniList, peopleGroups, toPIProfile } from "@/data/views";
+import { cn } from "@/lib/utils";
 
 export const metadata = {
-  title: "People — DIAL",
+  title: "People",
   description:
     "Meet the researchers, students, and collaborators behind the Design Inclusion and Access Lab at North South University.",
 };
 
 export default function PeoplePage() {
+  const stats = labStats();
+  const pi = toPIProfile();
+  const groups = peopleGroups();
+  const alumni = alumniList();
+
   return (
     <>
-      <PeopleStats />
-      <PIProfile className="border-b border-border" />
-      <Team5_9 />
-      <AlumniGrid className="border-t border-border" />
-      <Cta32
-        heading="No prerequisites. "
-        highlightHeading="Passionate about HCI."
-        description="Ready to do fieldwork in Bangladesh. If you want to work on technology that actually matters to the people using it, DIAL is where that work happens."
-        buttons={{
-          primary: { text: "Apply to join", url: "/join-us" },
-          secondary: { text: "Contact the lab", url: "/contact" },
-        }}
-        stats={[
-          { label: "50+", description: "researchers mentored since 2017" },
-          { label: "21", description: "alumni in PhD programmes and industry" },
-          { label: "6", description: "best paper awards at CHI, COMPASS, SOUPS" },
+      <PageHeader
+        eyebrow="Lab"
+        art="bloom"
+        title="People"
+        description="Faculty, research assistants, and collaborators who run DIAL's fieldwork, build its systems, and write its papers, and the alumni who have moved on."
+        facts={[
+          { value: String(stats.researchersMentored), label: "Researchers mentored" },
+          { value: String(stats.alumniPlaced), label: "Alumni placed" },
         ]}
-        className="py-24"
+      />
+
+      {pi && <PIProfile pi={pi} />}
+
+      <section className={cn("container", sectionSpacing)}>
+        <SectionHeader title="The team" className="mb-8" />
+        <PeopleRoster
+          groups={[
+            { title: "Faculty & research staff", members: groups.facultyStaff },
+            { title: "Graduate research assistants", members: groups.graduateRAs },
+            {
+              title: "Undergraduate research assistants",
+              members: groups.undergraduateRAs,
+              initialCount: 9,
+            },
+            { title: "Collaborators", members: groups.collaborators },
+          ]}
+        />
+      </section>
+
+      {alumni.length > 0 && (
+        <section className={cn("container", sectionSpacing)}>
+          <SectionHeader
+            label="Alumni"
+            title="Where our people go"
+            description="DIAL alumni are in PhD programmes, research institutions, and industry."
+            className="mb-8"
+          />
+          <AlumniGrid alumni={alumni} />
+        </section>
+      )}
+
+      <FaqSection items={peopleFaqs} title="About the roster" />
+
+      <ScrollRuler />
+
+      <ClosingNote
+        heading="No prerequisites. Curious about HCI and ready for fieldwork in Bangladesh?"
+        links={[
+          { text: "Apply to join", href: "/join-us" },
+          { text: "Contact the lab", href: "/contact" },
+        ]}
       />
     </>
   );

@@ -1,17 +1,18 @@
 'use client'
 
 import { ArrowUpRight, Check, Copy, FileText, LockOpen, Quote, Trophy, Users } from 'lucide-react'
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect, useRef, useState } from 'react'
+import Link from 'next/link'
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
+import { motion, useReducedMotion } from 'motion/react'
 
-
-import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
 import { Separator } from '@/components/ui/separator'
+import { SegmentedControl } from '@/components/editorial'
+import { AsteriskMark } from '@/components/marks'
+import { displaySectionTitle } from '@/lib/typography'
 import { cn } from '@/lib/utils'
-
-const LAB_PIS = ['Nova Ahmed', 'Ishtiaque Ahmed']
 
 export type Publication = {
   id: string
@@ -21,6 +22,7 @@ export type Publication = {
   award?: string | null
   pdfLink?: string | null
   projectLink?: string | null
+  doi?: string | null
   citationText?: string | null
   themes?: string[] | null
   isOpenAccess?: boolean | null
@@ -32,75 +34,6 @@ export type PublicationYear = {
   year: number
   publications: Publication[]
 }
-
-export const SAMPLE_PUBLICATIONS: PublicationYear[] = [
-  {
-    year: 2024,
-    publications: [
-      {
-        id: '1',
-        title: 'Jyoti: Designing a Low-Literacy Voice Interface for Rural Health Information Access in Bangladesh',
-        authors: 'Nova Ahmed, Raisa Islam, Tanvir Hossain, Md. Shafiul Alam',
-        venue: 'CHI',
-        award: 'Best Paper',
-        pdfLink: '#',
-        projectLink: '#',
-        citationText: `Ahmed, N., Islam, R., Hossain, T., & Alam, M. S. (2024). Jyoti: Designing a Low-Literacy Voice Interface for Rural Health Information Access in Bangladesh. In Proceedings of CHI 2024. ACM.`,
-        themes: ['ICTD', 'Accessibility & Inclusion'],
-        isOpenAccess: true,
-        isCollaboration: false,
-        type: 'conference',
-      },
-      {
-        id: '2',
-        title: 'Shathi: Understanding Financial Inclusion Barriers for Women Garment Workers Through a Participatory Lens',
-        authors: 'Nova Ahmed, Fariha Chowdhury, Sabbir Rahman',
-        venue: 'CSCW',
-        award: null,
-        pdfLink: '#',
-        projectLink: null,
-        citationText: `Ahmed, N., Chowdhury, F., & Rahman, S. (2024). Shathi: Understanding Financial Inclusion Barriers for Women Garment Workers Through a Participatory Lens. In Proceedings of CSCW 2024. ACM.`,
-        themes: ['ICTD', 'Gender & Feminist HCI'],
-        isOpenAccess: false,
-        isCollaboration: true,
-        type: 'conference',
-      },
-    ],
-  },
-  {
-    year: 2023,
-    publications: [
-      {
-        id: '3',
-        title: 'Mon Bina: Investigating Mental Health Help-Seeking Behaviors Among University Students in Bangladesh',
-        authors: 'Nova Ahmed, Lamia Alam, Ishtiaque Ahmed',
-        venue: 'SOUPS',
-        award: 'Impact Award',
-        pdfLink: '#',
-        projectLink: '#',
-        citationText: `Ahmed, N., Alam, L., & Ahmed, I. (2023). Mon Bina: Investigating Mental Health Help-Seeking Behaviors Among University Students in Bangladesh. In Proceedings of SOUPS 2023. USENIX.`,
-        themes: ['Mental Health & Wellbeing'],
-        isOpenAccess: true,
-        isCollaboration: true,
-        type: 'conference',
-      },
-      {
-        id: '4',
-        title: 'Poisha: Toward Explainable Mobile Money Interfaces for Underserved Communities',
-        authors: 'Nova Ahmed, Tanvir Hossain, Md. Rifat Hasan',
-        venue: 'UIST',
-        award: null,
-        pdfLink: '#',
-        projectLink: '#',
-        citationText: `Ahmed, N., Hossain, T., & Hasan, M. R. (2023). Poisha: Toward Explainable Mobile Money Interfaces for Underserved Communities. In Proceedings of UIST 2023. ACM.`,
-        themes: ['ICTD', 'Explainable AI & ML'],
-        isOpenAccess: false,
-        isCollaboration: false,
-        type: 'conference',
-      },
-    ],
-  },
-]
 
 const TYPE_LABELS: Record<string, string> = {
   conference: 'Conference',
@@ -180,12 +113,13 @@ function generateBibTeX(pub: Publication, year: number): string {
   return lines.join('\n')
 }
 
-function AuthorList({ authors }: { authors: string }) {
+/** Names to emphasise in author lists (the Lab's PI); supplied by the page. */
+function AuthorList({ authors, highlight = [] }: { authors: string; highlight?: string[] }) {
   const parts = authors.split(', ')
   return (
     <>
       {parts.map((name, i) => {
-        const bold = LAB_PIS.includes(name.trim())
+        const bold = highlight.includes(name.trim())
         return (
           <Fragment key={i}>
             {i > 0 && ', '}
@@ -236,18 +170,41 @@ function CiteDialog({ pub, year }: { pub: Publication; year: number }) {
         <pre className={cn('rounded-md bg-muted p-3 text-sm whitespace-pre-wrap break-words', fmt === 'bib' && 'font-mono')}>
           {text}
         </pre>
-        <Button variant="outline" onClick={handleCopy} className="w-full">
-          {copied ? (
-            <>
-              <Check className="size-4" />
-              Copied!
-            </>
-          ) : (
-            <>
+        {/* Both labels stay mounted and crossfade, with a 2px blur on the one
+            leaving so the swap reads as one change rather than two overlapping
+            words. The check pops in from 0.8. */}
+        <Button
+          variant="outline"
+          onClick={handleCopy}
+          className="w-full transition-transform duration-150 ease-snappy active:scale-[0.97]"
+        >
+          <span className="grid place-items-center [&>*]:col-start-1 [&>*]:row-start-1">
+            <span
+              aria-hidden={copied}
+              className={cn(
+                'inline-flex items-center gap-2 transition-[opacity,filter] duration-150 ease-snappy',
+                copied ? 'opacity-0 blur-[2px]' : 'opacity-100',
+              )}
+            >
               <Copy className="size-4" />
               Copy
-            </>
-          )}
+            </span>
+            <span
+              aria-hidden={!copied}
+              className={cn(
+                'inline-flex items-center gap-2 transition-[opacity,filter] duration-150 ease-snappy',
+                copied ? 'opacity-100' : 'opacity-0 blur-[2px]',
+              )}
+            >
+              <Check
+                className={cn(
+                  'size-4 text-brand transition-transform duration-200 ease-snappy',
+                  copied ? 'scale-100' : 'scale-80',
+                )}
+              />
+              Copied
+            </span>
+          </span>
         </Button>
       </DialogContent>
     </Dialog>
@@ -265,6 +222,14 @@ function PubActions({ pub, year }: { pub: Publication; year: number }) {
           </a>
         </Button>
       )}
+      {pub.doi && (
+        <Button variant="ghost" size="sm" asChild>
+          <a href={`https://doi.org/${pub.doi}`} target="_blank" rel="noopener noreferrer">
+            <ArrowUpRight className="size-4" />
+            DOI
+          </a>
+        </Button>
+      )}
       {pub.citationText && <CiteDialog pub={pub} year={year} />}
       {pub.projectLink && (
         <Button variant="ghost" size="sm" asChild>
@@ -278,6 +243,59 @@ function PubActions({ pub, year }: { pub: Publication; year: number }) {
   )
 }
 
+// One publication, as listed everywhere. This is the unit that maps to a
+// Payload Publication, so it exists exactly once.
+function PublicationRow({
+  pub,
+  year,
+  showYear = false,
+  highlightAuthors,
+}: {
+  pub: Publication
+  year: number
+  showYear?: boolean
+  highlightAuthors?: string[]
+}) {
+  return (
+    <div className="py-6">
+      <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-2">
+          <p className="max-w-4xl font-display text-xl leading-snug text-pretty md:text-2xl">{pub.title}</p>
+          <p className="text-sm text-muted-foreground">
+            <AuthorList authors={pub.authors} highlight={highlightAuthors} />
+            {showYear && <span className="before:mx-2 before:content-['·']">{year}</span>}
+          </p>
+        </div>
+        <div className="flex flex-col gap-2 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+            {pub.venue && <span className="font-medium text-foreground">{pub.venue}</span>}
+            {pub.type && <span>{TYPE_LABELS[pub.type] ?? pub.type}</span>}
+            {pub.award && (
+              <span className="sticker-alt inline-flex items-center gap-1.5 rounded-[0.8rem] border border-ink/35 bg-ink/8 px-2.5 py-0.5 text-ink">
+                <AsteriskMark className="size-3" />
+                {pub.award}
+              </span>
+            )}
+            {pub.isOpenAccess && (
+              <span title="Open Access" className="inline-flex items-center gap-1">
+                <LockOpen className="size-3.5" aria-hidden />
+                Open access
+              </span>
+            )}
+            {pub.isCollaboration && (
+              <span title="External Collaboration" className="inline-flex items-center gap-1">
+                <Users className="size-3.5" aria-hidden />
+                Collaboration
+              </span>
+            )}
+          </div>
+          <PubActions pub={pub} year={year} />
+        </div>
+      </div>
+    </div>
+  )
+}
+
 type ViewMode = 'all' | 'venue' | 'theme' | 'type'
 
 type Group = {
@@ -285,9 +303,76 @@ type Group = {
   publications: Publication[]
 }
 
+// Sticky "you are here" header for the grouped list (after skiper74): tracks
+// which group section is under the header's bottom edge.
+const ACTIVE_GROUP_LINE = 80 // px — the sticky header's height (h-20)
+
+function useActiveGroup(groupKeys: string) {
+  const sectionRefs = useRef(new Map<string, HTMLElement>())
+  const [active, setActive] = useState<string | null>(null)
+
+  useEffect(() => {
+    const intersecting = new Set<string>()
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const key = (entry.target as HTMLElement).dataset.groupKey!
+          if (entry.isIntersecting) intersecting.add(key)
+          else intersecting.delete(key)
+        }
+        setActive(intersecting.values().next().value ?? null)
+      },
+      { rootMargin: `-${ACTIVE_GROUP_LINE}px 0px -${Math.max(window.innerHeight - ACTIVE_GROUP_LINE - 1, 0)}px 0px` },
+    )
+    for (const el of sectionRefs.current.values()) observer.observe(el)
+    return () => observer.disconnect()
+  }, [groupKeys])
+
+  const register = (key: string) => (el: HTMLElement | null) => {
+    if (el) sectionRefs.current.set(key, el)
+    else sectionRefs.current.delete(key)
+  }
+
+  return { active, register }
+}
+
+function groupCountLabel(group: Group) {
+  const n = group.publications.length
+  return `${n} ${n === 1 ? 'publication' : 'publications'}`
+}
+
+// The skiper74 header: active group in full colour, its count muted. It sits
+// in flow at the top of the list and pins while the list scrolls under it.
+function ActiveGroupHeader({ group }: { group: Group | undefined }) {
+  const reduceMotion = useReducedMotion()
+  return (
+    <header
+      aria-hidden
+      className="sticky top-0 z-10 flex h-20 items-end border-b border-foreground/20 bg-background pb-4 font-display text-3xl text-foreground/45"
+    >
+      {group && (
+        <>
+          <motion.span
+            key={group.label}
+            initial={reduceMotion ? { opacity: 0 } : { x: -5, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            className="mr-2 inline-block text-foreground"
+          >
+            {group.label}
+          </motion.span>
+          {groupCountLabel(group)}
+        </>
+      )}
+    </header>
+  )
+}
+
 interface PublicationsSectionProps {
   yearGroups: PublicationYear[]
-  heading?: string
+  highlightAuthors?: string[]
+  /** null when the page header already names the list. */
+  heading?: string | null
   viewAllHref?: string
   viewAllLabel?: string
   showFilters?: boolean
@@ -301,6 +386,7 @@ interface PublicationsSectionProps {
 
 const PublicationsSection = ({
   yearGroups,
+  highlightAuthors,
   heading = 'Publications',
   viewAllHref,
   viewAllLabel = 'View all publications',
@@ -394,67 +480,68 @@ const PublicationsSection = ({
       .map(([type, pubs]) => ({ label: TYPE_GROUP_LABELS[type] ?? 'Other', publications: pubs }))
   }
 
+  const { active, register } = useActiveGroup(groups.map((g) => g.label).join('\u0000'))
+  const activeGroup = groups.find((g) => g.label === active) ?? groups[0]
+
   return (
     <>
       <section className="pt-8 lg:pt-16">
         <div className="container flex items-center justify-between">
-          <h2 className="text-3xl font-semibold">{heading}</h2>
+          {heading ? <h2 className={displaySectionTitle}>{heading}</h2> : <span />}
           {viewAllHref && (
-            <Button variant="outline" asChild>
-              <a href={viewAllHref}>
+            <Button variant="outline" asChild className="rounded-full">
+              <Link href={viewAllHref}>
                 {viewAllLabel}
                 <ArrowUpRight className="size-4" />
-              </a>
+              </Link>
             </Button>
           )}
         </div>
 
         {showFilters && (
           <>
-            <div className="container mt-6 flex flex-wrap items-center gap-2">
-              <Button
-                variant={viewMode === 'all' ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => handleViewMode('all')}
-              >
-                All
-              </Button>
-              <Button
-                variant={viewMode === 'venue' ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => handleViewMode('venue')}
-              >
-                By Venue
-              </Button>
-              <Button
-                variant={viewMode === 'theme' ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => handleViewMode('theme')}
-              >
-                By Theme
-              </Button>
-              <Button
-                variant={viewMode === 'type' ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => handleViewMode('type')}
-              >
-                By Type
-              </Button>
-              <Separator orientation="vertical" className="mx-1 h-5" />
-              <Button
-                variant={openAccessOnly ? 'default' : 'ghost'}
-                size="sm"
-                onClick={() => handleOpenAccess(!openAccessOnly)}
-              >
-                Open Access
-              </Button>
-              <Button
-                variant={collaborationsOnly ? 'default' : 'ghost'}
-                size="sm"
-                onClick={() => handleCollaborations(!collaborationsOnly)}
-              >
-                Collaborations
-              </Button>
+            <div className="container mt-6">
+            <div className="flex flex-col gap-3 border-b border-border pb-4 sm:flex-row sm:items-center sm:justify-between">
+              <SegmentedControl
+                label="Group publications"
+                options={[
+                  { value: 'all' as ViewMode, label: 'By year' },
+                  { value: 'venue' as ViewMode, label: 'By venue' },
+                  { value: 'theme' as ViewMode, label: 'By theme' },
+                  { value: 'type' as ViewMode, label: 'By type' },
+                ]}
+                value={viewMode}
+                onChange={handleViewMode}
+              />
+              <div className="flex gap-4 text-sm">
+                {[
+                  { label: 'Open access only', on: openAccessOnly, toggle: () => handleOpenAccess(!openAccessOnly) },
+                  { label: 'Collaborations only', on: collaborationsOnly, toggle: () => handleCollaborations(!collaborationsOnly) },
+                ].map((f) => (
+                  <button
+                    key={f.label}
+                    type="button"
+                    aria-pressed={f.on}
+                    onClick={f.toggle}
+                    className={cn(
+                      'inline-flex items-center gap-2 transition-colors duration-150 ease-snappy',
+                      f.on ? 'text-foreground' : 'text-muted-foreground hover:text-foreground',
+                    )}
+                  >
+                    <span
+                      aria-hidden
+                      className={cn(
+                        'grid size-3.5 place-items-center rounded-[3px] border transition-colors duration-150',
+                        f.on ? 'border-brand bg-brand text-brand-foreground' : 'border-border',
+                      )}
+                    >
+                      {f.on && <Check className="size-2.5" strokeWidth={3} />}
+                    </span>
+                    {f.label}
+                  </button>
+                ))}
+              </div>
+            </div>
             </div>
             {isFiltered && (
               <div className="container mt-3">
@@ -476,74 +563,39 @@ const PublicationsSection = ({
           </div>
         </section>
       ) : (
-        groups.map((group, groupIdx) => (
-          <section key={groupIdx} className="py-8 lg:py-16">
-            <div className="container">
-              <div className="flex flex-col items-start justify-between gap-5 lg:flex-row lg:gap-2">
-                <div className="flex w-full max-w-56 items-center gap-3 text-2xl">
-                  <span className="bg-primary size-2 rounded-full" />
-                  <span>{group.label}</span>
-                  <span className="text-base font-normal text-muted-foreground">({group.publications.length})</span>
-                </div>
-                <div className="w-full min-w-0 flex-1">
-                  <Separator />
-                  {group.publications.map((pub, pubIdx) => {
-                    const pubYear = pubYearMap.get(pub.id) ?? 0
-                    return (
-                      <Fragment key={`${pub.id}-${groupIdx}` || pubIdx}>
-                        <div className="py-6">
-                          <div className="flex flex-col gap-4">
-                            <div className="flex flex-col gap-2">
-                              <p className="text-primary inline text-xl text-pretty">{pub.title}</p>
-                              <p className="text-sm text-muted-foreground">
-                                <AuthorList authors={pub.authors} />
-                                {viewMode !== 'all' && pubYearMap.has(pub.id) && (
-                                  <span className="before:mx-2 before:content-['·']">{pubYear}</span>
-                                )}
-                              </p>
-                            </div>
-                            <div className="flex flex-col gap-2 lg:flex-row lg:items-center lg:justify-between">
-                              <div className="flex flex-wrap items-center gap-2">
-                                {pub.venue && (
-                                  <Button variant="ghost" size="sm" className="bg-black text-white hover:bg-gray-900 dark:bg-white dark:text-black dark:hover:bg-gray-100">
-                                    {pub.venue}
-                                  </Button>
-                                )}
-                                {pub.type && (
-                                  <Badge variant="outline" className="font-normal">
-                                    {TYPE_LABELS[pub.type] ?? pub.type}
-                                  </Badge>
-                                )}
-                                {pub.award && (
-                                  <Button variant="ghost" size="sm" className="bg-amber-500 text-amber-950 hover:bg-amber-600">
-                                    <Trophy className="size-4" />
-                                    {pub.award}
-                                  </Button>
-                                )}
-                                {pub.isOpenAccess && (
-                                  <span title="Open Access" className="text-muted-foreground">
-                                    <LockOpen className="size-4" />
-                                  </span>
-                                )}
-                                {pub.isCollaboration && (
-                                  <span title="External Collaboration" className="text-muted-foreground">
-                                    <Users className="size-4" />
-                                  </span>
-                                )}
-                              </div>
-                              <PubActions pub={pub} year={pubYear} />
-                            </div>
-                          </div>
-                        </div>
-                        <Separator />
-                      </Fragment>
-                    )
-                  })}
-                </div>
-              </div>
+        <div className="container pt-8 pb-16 lg:pb-32">
+          <div className="max-w-4xl">
+            <ActiveGroupHeader group={activeGroup} />
+            {/* Pulled up under the sticky header so the first group's own
+                heading is hidden behind it, as in skiper74. */}
+            <div className="-mt-20">
+              {groups.map((group, groupIdx) => (
+                <section
+                  key={groupIdx}
+                  ref={register(group.label)}
+                  data-group-key={group.label}
+                  className="pt-8 first:pt-0 lg:pt-16"
+                >
+                  <header className="flex h-20 items-end border-b border-foreground/20 pb-2 text-xl font-medium tracking-tight text-foreground/50">
+                    <span className="mr-1 text-foreground">{group.label}</span>/ {groupCountLabel(group)}
+                  </header>
+                  <ul>
+                    {group.publications.map((pub) => (
+                      <li key={`${pub.id}-${groupIdx}`}>
+                        <PublicationRow
+                          pub={pub}
+                          year={pubYearMap.get(pub.id) ?? 0}
+                          showYear={viewMode !== 'all' && pubYearMap.has(pub.id)}
+                          highlightAuthors={highlightAuthors}
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ))}
             </div>
-          </section>
-        ))
+          </div>
+        </div>
       )}
     </>
   )
@@ -551,10 +603,13 @@ const PublicationsSection = ({
 
 interface FlatPublicationListProps {
   yearGroups: PublicationYear[]
+  highlightAuthors?: string[]
+  /** Show each row's year inline, for lists that are not grouped by year. */
+  showYear?: boolean
   className?: string
 }
 
-const FlatPublicationList = ({ yearGroups, className }: FlatPublicationListProps) => {
+const FlatPublicationList = ({ yearGroups, highlightAuthors, showYear = false, className }: FlatPublicationListProps) => {
   const pubYearMap = new Map<string, number>()
   for (const yg of yearGroups) {
     for (const pub of yg.publications) {
@@ -570,47 +625,7 @@ const FlatPublicationList = ({ yearGroups, className }: FlatPublicationListProps
         const year = pubYearMap.get(pub.id) ?? 0
         return (
           <Fragment key={pub.id ?? i}>
-            <div className="py-6">
-              <div className="flex flex-col gap-4">
-                <div className="flex flex-col gap-2">
-                  <p className="text-primary inline text-xl text-pretty">{pub.title}</p>
-                  <p className="text-sm text-muted-foreground">
-                    <AuthorList authors={pub.authors} />
-                  </p>
-                </div>
-                <div className="flex flex-col gap-2 lg:flex-row lg:items-center lg:justify-between">
-                  <div className="flex flex-wrap items-center gap-2">
-                    {pub.venue && (
-                      <Button variant="ghost" size="sm" className="bg-black text-white hover:bg-gray-900 dark:bg-white dark:text-black dark:hover:bg-gray-100">
-                        {pub.venue}
-                      </Button>
-                    )}
-                    {pub.type && (
-                      <Badge variant="outline" className="font-normal">
-                        {TYPE_LABELS[pub.type] ?? pub.type}
-                      </Badge>
-                    )}
-                    {pub.award && (
-                      <Button variant="ghost" size="sm" className="bg-amber-500 text-amber-950 hover:bg-amber-600">
-                        <Trophy className="size-4" />
-                        {pub.award}
-                      </Button>
-                    )}
-                    {pub.isOpenAccess && (
-                      <span title="Open Access" className="text-muted-foreground">
-                        <LockOpen className="size-4" />
-                      </span>
-                    )}
-                    {pub.isCollaboration && (
-                      <span title="External Collaboration" className="text-muted-foreground">
-                        <Users className="size-4" />
-                      </span>
-                    )}
-                  </div>
-                  <PubActions pub={pub} year={year} />
-                </div>
-              </div>
-            </div>
+            <PublicationRow pub={pub} year={year} highlightAuthors={highlightAuthors} showYear={showYear} />
             <Separator />
           </Fragment>
         )

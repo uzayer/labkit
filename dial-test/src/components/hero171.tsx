@@ -1,5 +1,6 @@
 "use client";
-import { AudioLines, Signal } from "lucide-react";
+import { AudioLines, BookOpen, Signal, Users } from "lucide-react";
+import Link from "next/link";
 import { Fragment } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -9,6 +10,34 @@ interface Hero171Props {
   className?: string;
 }
 
+// Real destinations in the collage's bottom-right slot, which used to hold
+// loading-skeleton placeholders. In LabKit these can become the latest
+// Publication and a Team Member count from Payload.
+const heroLinks = [
+  {
+    label: "Publications",
+    detail: "Browse by year and theme",
+    href: "/publications",
+    icon: BookOpen,
+  },
+  {
+    label: "People",
+    detail: "Meet the researchers",
+    href: "/people",
+    icon: Users,
+  },
+];
+
+/** CTA label that flips up to reveal a copy of itself on hover. */
+const FlipLabel = ({ text }: { text: string }) => (
+  <span
+    data-text={text}
+    className="relative inline-block origin-[50%_0%] transition-transform duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] [transform-style:preserve-3d] group-hover:[transform:rotateX(90deg)] before:absolute before:top-full before:left-0 before:h-full before:w-full before:origin-[50%_0%] before:[transform:rotateX(-90deg)] before:text-center before:content-[attr(data-text)]"
+  >
+    {text}
+  </span>
+);
+
 const Hero171 = ({ className }: Hero171Props) => {
   return (
     <Fragment>
@@ -16,7 +45,7 @@ const Hero171 = ({ className }: Hero171Props) => {
         <div className="container">
           <div className="flex flex-col items-center gap-20 lg:flex-row lg:items-start">
             <div className="max-w-[28.125rem]">
-              <h1 className="text-6xl font-medium text-foreground lg:text-7xl">
+              <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
                 Technology for communities design usually misses.
               </h1>
               <p className="mt-6 text-lg text-muted-foreground">
@@ -24,39 +53,29 @@ const Hero171 = ({ className }: Hero171Props) => {
                 high-stakes settings, then builds inclusive systems with the
                 communities who will use them.
               </p>
-              <div className="mt-11 flex gap-5">
+              <div className="mt-11 flex flex-wrap gap-5">
                 <Button
                   asChild
                   className="group block h-fit w-fit rounded-full px-7 py-6 text-base leading-none font-bold"
                 >
-                  <a href="/research">
-                    <span
-                      data-text="Explore our research"
-                      className="text-red relative inline-block origin-[50%_0%] p-0 transition-all [transform-style:preserve-3d] group-hover:[transform:rotateX(90deg)] before:absolute before:top-full before:left-0 before:h-full before:w-full before:origin-[50%_0%] before:[transform:rotateX(-90deg)] before:p-0 before:text-center before:content-[attr(data-text)]"
-                    >
-                      Explore our research
-                    </span>
-                  </a>
+                  <Link href="/research" aria-label="Explore our research">
+                    <FlipLabel text="Explore our research" />
+                  </Link>
                 </Button>
                 <Button
                   asChild
                   variant="secondary"
                   className="group block h-fit w-fit rounded-full px-7 py-6 text-base leading-none font-bold"
                 >
-                  <a href="/join-us">
-                    <span
-                      data-text="Join the lab"
-                      className="text-red relative inline-block origin-[50%_0%] p-0 transition-all [transform-style:preserve-3d] group-hover:[transform:rotateX(90deg)] before:absolute before:top-full before:left-0 before:h-full before:w-full before:origin-[50%_0%] before:[transform:rotateX(-90deg)] before:p-0 before:text-center before:content-[attr(data-text)]"
-                    >
-                      Join the lab
-                    </span>
-                  </a>
+                  <Link href="/join-us" aria-label="Join the lab">
+                    <FlipLabel text="Join the lab" />
+                  </Link>
                 </Button>
               </div>
             </div>
             <div className="mx-auto">
               <div className="grid grid-cols-[4.8rem_5.625rem_10.75rem] grid-rows-[9.3rem_8.68rem_1.125rem_3.875rem] gap-[0.625rem] sm:grid-cols-[5.3rem_6.25rem_12rem] sm:grid-rows-[10.3rem_9.625rem_1.25rem_4.3rem] sm:gap-[0.8rem] xl:grid-cols-[8.5rem_10rem_19.3rem] xl:grid-rows-[16.625rem_15.5rem_1.375rem_6.9rem] xl:gap-[1.25rem]">
-                <div className="col-[2/-1] overflow-hidden rounded-3xl bg-blue-200">
+                <div className="col-[2/-1] overflow-hidden rounded-3xl bg-muted">
                   <img
                     src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
                     alt="DIAL research in Bangladesh"
@@ -65,6 +84,7 @@ const Hero171 = ({ className }: Hero171Props) => {
                 </div>
                 <div className="col-[1/2] row-[1/2] self-end">
                   <svg
+                    aria-hidden
                     className="w-[4.375rem] fill-muted-foreground xl:w-[8rem]"
                     viewBox="0 0 131 174"
                     fill="none"
@@ -111,6 +131,7 @@ const Hero171 = ({ className }: Hero171Props) => {
                     />
                   </div>
                   <svg
+                    aria-hidden
                     className="absolute -right-10 -bottom-20 w-12 rotate-45 fill-muted-foreground xl:-right-14 xl:-bottom-24 xl:w-16"
                     viewBox="0 0 90 184"
                     fill="none"
@@ -123,21 +144,26 @@ const Hero171 = ({ className }: Hero171Props) => {
                     />
                   </svg>
                 </div>
-                <div className="col-[-2/-1] row-[-1/-2]">
-                  <div className="flex w-full items-center gap-3">
-                    <div className="h-12 w-12 shrink-0 rounded-full bg-muted"></div>
-                    <div className="flex w-full flex-col gap-1">
-                      <div className="h-6 w-[70%] rounded-lg bg-muted"></div>
-                      <div className="h-3 w-[40%] rounded-lg bg-muted"></div>
-                    </div>
-                  </div>
-                  <div className="mt-3 flex w-full items-center gap-3">
-                    <div className="h-12 w-12 shrink-0 rounded-full bg-muted"></div>
-                    <div className="flex w-full flex-col gap-1">
-                      <div className="h-6 w-[70%] rounded-lg bg-muted"></div>
-                      <div className="h-3 w-[40%] rounded-lg bg-muted"></div>
-                    </div>
-                  </div>
+                <div className="col-[-2/-1] row-[-1/-2] flex flex-col gap-3">
+                  {heroLinks.map(({ label, detail, href, icon: Icon }) => (
+                    <Link
+                      key={href}
+                      href={href}
+                      className="group/row flex items-center gap-3 rounded-full transition-transform duration-150 ease-out active:scale-[0.98]"
+                    >
+                      <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-muted">
+                        <Icon className="size-5 stroke-foreground" />
+                      </span>
+                      <span className="flex min-w-0 flex-col">
+                        <span className="text-sm font-medium text-foreground underline-offset-4 group-hover/row:underline xl:text-base">
+                          {label}
+                        </span>
+                        <span className="text-xs text-muted-foreground xl:text-sm">
+                          {detail}
+                        </span>
+                      </span>
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>

@@ -1,108 +1,83 @@
-import Link from "next/link";
-
-import { Badge } from "@/components/ui/badge";
+import { TextLink } from "@/components/editorial";
+import { label } from "@/lib/typography";
+import { InitialTile } from "@/components/initial-tile";
+import { OptionalImage } from "@/components/optional-image";
 import { cn } from "@/lib/utils";
-import { GraduationCap, Mail } from "lucide-react";
+
+export interface PIProfileData {
+  name: string;
+  title: string;
+  photo?: string | null;
+  bio?: string | null;
+  awards: string[];
+  scholarUrl?: string | null;
+  email?: string | null;
+  profileHref: string;
+}
 
 interface PIProfileProps {
+  pi: PIProfileData;
   className?: string;
 }
 
-const awards = [
-  "Best of CHI 2019",
-  "IAPP Distinguished Privacy Award, SOUPS 2018",
-  "COMPASS Best Paper 2023",
-  "Google Research Award 2023",
-];
+/** The Lab's director, featured above the roster. */
+const PIProfile = ({ pi, className }: PIProfileProps) => (
+  <section className={cn("container", className)}>
+    <div className="grid gap-10 border-t border-border pt-6 md:grid-cols-[minmax(0,20rem)_1fr] md:gap-16">
+      {pi.photo ? (
+        <div className="relative w-full max-w-80">
+          <OptionalImage
+            src={pi.photo}
+            alt={pi.name}
+            overlay={<span aria-hidden className="tape -top-3 left-8 z-10" />}
+            frameClassName="aspect-[4/5] w-full rounded-sm shadow-[0_1px_0_0_var(--paper-line),0_12px_28px_-18px_rgba(0,0,0,0.55)]"
+            className="h-full w-full object-cover object-top"
+            fallback={<InitialTile name={pi.name} className="aspect-[4/5] h-auto w-full max-w-80 rounded-lg font-display text-7xl" />}
+          />
+        </div>
+      ) : (
+        <InitialTile
+          name={pi.name}
+          className="aspect-[4/5] h-auto w-full max-w-80 rounded-lg font-display text-7xl"
+        />
+      )}
 
-const links = [
-  {
-    label: "Google Scholar",
-    href: "https://scholar.google.com/citations?user=rXMM2MwAAAAJ&hl=en",
-    icon: <GraduationCap className="size-4" />,
-  },
-  {
-    label: "nova.ahmed@northsouth.edu",
-    href: "mailto:nova.ahmed@northsouth.edu",
-    icon: <Mail className="size-4" />,
-  },
-];
+      <div className="flex flex-col">
+        <p className={label}>Director</p>
+        <h2 className="mt-3 font-display text-4xl leading-tight md:text-5xl">Dr. {pi.name}</h2>
+        <p className="mt-2 text-muted-foreground">{pi.title}</p>
 
-const PIProfile = ({ className }: PIProfileProps) => {
-  return (
-    <section className={cn("py-16", className)}>
-      <div className="container">
-        <div className="grid gap-10 md:grid-cols-[2fr_3fr]">
-          {/* Portrait */}
-          <div>
-            <img
-              src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/photos/annie-spratt-MChSQHxGZrQ-unsplash.jpg"
-              alt="Dr. Nova Ahmed"
-              className="w-full rounded-lg object-cover aspect-square"
-            />
-          </div>
+        {pi.bio && <p className="mt-6 max-w-prose text-pretty leading-relaxed md:text-lg">{pi.bio}</p>}
 
-          {/* Content */}
-          <div className="flex flex-col justify-center gap-5">
-            <div>
-              <h1 className="text-3xl font-bold">Dr. Nova Ahmed</h1>
-              <p className="mt-1 text-muted-foreground">
-                Professor, Department of Electrical and Computer Engineering,
-                North South University
-              </p>
-            </div>
+        {pi.awards.length > 0 && (
+          <ul className="mt-8 max-w-prose divide-y divide-border border-y border-border text-sm">
+            {pi.awards.map((award) => (
+              <li key={award} className="py-2.5">
+                {award}
+              </li>
+            ))}
+          </ul>
+        )}
 
-            <p className="text-base leading-relaxed">
-              Dr. Nova Ahmed founded NSUHCI in 2017 through collaboration with
-              Google, establishing DIAL as a research home for technology design
-              that centres inclusion and access. She leads the lab&apos;s focus
-              on privacy, accessibility, financial inclusion, and HCI for the
-              Global South — work grounded in feminist methodology and
-              participatory design. As Chair of the Dhaka ACM SIGCHI Chapter
-              (BanglaCHI), she anchors Bangladesh&apos;s HCI community in the
-              global conversation. She has mentored 50+ researchers since 2017,
-              many now in PhD programmes at Cardiff, UMass Amherst, Ohio State,
-              and beyond.
-            </p>
-
-            {/* Award badges */}
-            <div className="flex flex-wrap gap-2">
-              {awards.map((award) => (
-                <Badge
-                  key={award}
-                  variant="outline"
-                  className="border-amber-400/60 text-amber-700 dark:text-amber-400"
-                >
-                  {award}
-                </Badge>
-              ))}
-            </div>
-
-            {/* Links */}
-            <div className="flex flex-wrap gap-4">
-              {links.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {link.icon}
-                  {link.label}
-                </a>
-              ))}
-            </div>
-
-            <Link
-              href="/people/nova-ahmed"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+        <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
+          <TextLink href={pi.profileHref}>Full profile</TextLink>
+          {pi.scholarUrl && (
+            <TextLink href={pi.scholarUrl} external className="text-muted-foreground hover:text-foreground">
+              Google Scholar
+            </TextLink>
+          )}
+          {pi.email && (
+            <a
+              href={`mailto:${pi.email}`}
+              className="text-sm text-muted-foreground underline decoration-border underline-offset-[6px] transition-colors hover:text-foreground"
             >
-              → Full profile
-            </Link>
-          </div>
+              {pi.email}
+            </a>
+          )}
         </div>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export { PIProfile };

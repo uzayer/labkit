@@ -1,17 +1,11 @@
 import { cn } from "@/lib/utils";
 
 interface PeopleStatsProps {
+  stats: { value: string; label: string }[];
   className?: string;
 }
 
-const stats = [
-  { value: "50+", label: "Researchers mentored" },
-  { value: "21", label: "Alumni placed" },
-  { value: "20+", label: "Active projects" },
-  { value: "9", label: "Years of research" },
-];
-
-const PeopleStats = ({ className }: PeopleStatsProps) => {
+const PeopleStats = ({ stats, className }: PeopleStatsProps) => {
   return (
     <section className={cn("py-12 md:py-20", className)}>
       <div className="mx-auto max-w-5xl px-6">

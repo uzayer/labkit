@@ -20,11 +20,13 @@ export interface ProjectAward {
 
 export interface ResearchProject {
   id: string
-  localName: string
+  /** Bengali/local name, when the source gives one. */
+  localName?: string | null
   title: string
   abstract: string
   keywords: string[]
-  status: 'ongoing' | 'completed'
+  /** null when no source states the status. */
+  status: 'ongoing' | 'completed' | null
   publicationCount: number
   teamMemberCount: number
   award?: ProjectAward
@@ -129,8 +131,8 @@ const ProjectCard = ({ project }: { project: ResearchProject }) => (
     <div className="flex flex-col gap-1.5">
       <div className="flex items-start justify-between gap-2">
         <div>
-          <p className="text-xl font-medium leading-tight">{project.localName}</p>
-          <p className="text-sm text-muted-foreground">{project.title}</p>
+          <p className="text-xl font-medium leading-tight">{project.localName ?? project.title}</p>
+          {project.localName && <p className="text-sm text-muted-foreground">{project.title}</p>}
         </div>
         <ArrowUpRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
       </div>
@@ -139,17 +141,19 @@ const ProjectCard = ({ project }: { project: ResearchProject }) => (
 
     <div className="flex items-center justify-between gap-2">
       <div className="flex flex-wrap gap-1.5">
-        <Badge
-          variant="outline"
-          className={cn(
-            'text-xs',
-            project.status === 'ongoing'
-              ? 'border-green-500/30 bg-green-50 text-green-700 dark:bg-green-950/20 dark:text-green-400'
-              : 'bg-muted text-muted-foreground',
-          )}
-        >
-          {project.status === 'ongoing' ? 'Ongoing' : 'Completed'}
-        </Badge>
+        {project.status && (
+          <Badge
+            variant="outline"
+            className={cn(
+              'text-xs',
+              project.status === 'ongoing'
+                ? 'border-green-500/30 bg-green-50 text-green-700 dark:bg-green-950/20 dark:text-green-400'
+                : 'bg-muted text-muted-foreground',
+            )}
+          >
+            {project.status === 'ongoing' ? 'Ongoing' : 'Completed'}
+          </Badge>
+        )}
         {project.award && (
           <Badge
             variant="outline"

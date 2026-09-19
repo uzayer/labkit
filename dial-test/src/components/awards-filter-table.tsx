@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { SegmentedControl } from "@/components/editorial";
+import { displaySectionTitle } from "@/lib/typography";
 import { cn } from "@/lib/utils";
 
 export type AwardCategory =
@@ -12,7 +14,8 @@ export type AwardCategory =
   | "fellowship"
   | "recognition"
   | "competition"
-  | "scholarship";
+  | "scholarship"
+  | "other";
 
 export interface Award {
   title: string;
@@ -35,31 +38,8 @@ const categoryLabels: Record<AwardCategory, string> = {
   recognition: "Recognition",
   competition: "Competition",
   scholarship: "Scholarship",
+  other: "Other",
 };
-
-function categoryBadgeClass(category: AwardCategory) {
-  switch (category) {
-    case "best-paper":
-    case "impact":
-      return "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300";
-    case "best-poster":
-      return "bg-amber-50 text-amber-700 dark:bg-amber-950/30 dark:text-amber-400";
-    case "honorable-mention":
-      return "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300";
-    default:
-      return "bg-muted text-muted-foreground";
-  }
-}
-
-function rowAccentClass(category: AwardCategory) {
-  if (category === "best-paper" || category === "impact") {
-    return "border-l-2 border-l-amber-400";
-  }
-  if (category === "honorable-mention") {
-    return "border-l-2 border-l-slate-400";
-  }
-  return "";
-}
 
 interface AwardsFilterTableProps {
   awards: Award[];
@@ -86,50 +66,26 @@ export function AwardsFilterTable({ awards, yearRange }: AwardsFilterTableProps)
   const sortedYears = Object.keys(byYear).sort((a, b) => Number(b) - Number(a));
 
   return (
-    <section className="py-32">
-      <div className="container space-y-10 lg:space-y-20">
-        <div className="flex w-full items-end justify-between">
-          <h1 className="text-5xl font-semibold tracking-tighter lg:text-8xl">
-            Awards
-          </h1>
-          <p className="text-lg font-semibold tracking-tighter text-muted-foreground lg:text-3xl">
-            ({yearRange}©)
-          </p>
+    <section className="pb-24">
+      <div className="container space-y-8">
+        <div className="flex w-full items-baseline justify-between gap-4 border-t border-border pt-6">
+          <h2 className={displaySectionTitle}>Every award</h2>
+          <p className="text-sm tabular-nums text-muted-foreground">{yearRange}</p>
         </div>
 
-        <div className="flex flex-wrap gap-2">
-          <button
-            onClick={() => setActiveCategory(null)}
-            className={cn(
-              "rounded-full border px-3 py-1.5 text-sm transition-colors",
-              !activeCategory
-                ? "border-foreground bg-foreground text-background"
-                : "border-border hover:bg-accent",
-            )}
-          >
-            All
-          </button>
-          {uniqueCategories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() =>
-                setActiveCategory(activeCategory === cat ? null : cat)
-              }
-              className={cn(
-                "rounded-full border px-3 py-1.5 text-sm transition-colors",
-                activeCategory === cat
-                  ? "border-foreground bg-foreground text-background"
-                  : "border-border hover:bg-accent",
-              )}
-            >
-              {categoryLabels[cat]}
-            </button>
-          ))}
-        </div>
+        <SegmentedControl
+          label="Filter by category"
+          options={[
+            { value: "all", label: "All" },
+            ...uniqueCategories.map((cat) => ({ value: cat, label: categoryLabels[cat] })),
+          ]}
+          value={activeCategory ?? "all"}
+          onChange={(value) => setActiveCategory(value === "all" ? null : (value as AwardCategory))}
+        />
 
         <table className="w-full border-collapse">
           <thead>
-            <tr className="h-12 border-b text-left text-foreground/40">
+            <tr className="h-10 border-b text-left text-sm text-muted-foreground">
               <th className="hidden min-w-28 pr-4 font-normal lg:table-cell">
                 Organization
               </th>
@@ -137,18 +93,17 @@ export function AwardsFilterTable({ awards, yearRange }: AwardsFilterTableProps)
               <th className="hidden pr-4 font-normal md:table-cell">
                 Publication
               </th>
-              <th className="hidden pr-4 font-normal sm:table-cell">
+              <th className="hidden text-right font-normal sm:table-cell">
                 Category
               </th>
-              <th className="text-right font-normal">Year</th>
             </tr>
           </thead>
           {sortedYears.map((year) => (
             <tbody key={year}>
               <tr>
                 <td
-                  colSpan={5}
-                  className="border-b pt-8 pb-2 text-sm font-semibold text-muted-foreground"
+                  colSpan={4}
+                  className="border-b pt-8 pb-2 font-mono text-xs tabular-nums text-muted-foreground"
                 >
                   {year}
                 </td>
@@ -156,36 +111,24 @@ export function AwardsFilterTable({ awards, yearRange }: AwardsFilterTableProps)
               {byYear[year].map((award, i) => (
                 <tr
                   key={i}
-                  className={cn("h-20 border-b", rowAccentClass(award.category))}
+                  className="border-b"
                 >
-                  <td className="hidden pr-4 align-middle lg:table-cell">
-                    <span className="inline-block rounded border border-border px-2 py-0.5 text-xs font-medium text-foreground/60">
-                      {award.organization}
-                    </span>
+                  <td className="hidden py-5 pr-6 align-top text-sm text-muted-foreground lg:table-cell">
+                    {award.organization}
                   </td>
-                  <td className="pr-4 align-middle text-base font-medium tracking-tight text-foreground lg:text-lg">
+                  <td className="py-5 pr-6 align-top font-display text-lg leading-snug text-foreground lg:text-xl">
                     {award.title}
-                    <span className="mt-0.5 block text-xs font-normal text-muted-foreground lg:hidden">
+                    <span className="mt-1 block font-sans text-xs text-muted-foreground lg:hidden">
                       {award.organization}
                     </span>
                   </td>
-                  <td className="hidden pr-4 align-middle text-sm text-muted-foreground md:table-cell">
+                  <td className="hidden py-5 pr-6 align-top text-sm text-pretty text-muted-foreground md:table-cell">
                     {award.linkedPublication
                       ? `"${award.linkedPublication}"`
                       : "—"}
                   </td>
-                  <td className="hidden pr-4 align-middle sm:table-cell">
-                    <span
-                      className={cn(
-                        "inline-block rounded px-2 py-0.5 text-xs font-medium",
-                        categoryBadgeClass(award.category),
-                      )}
-                    >
-                      {categoryLabels[award.category]}
-                    </span>
-                  </td>
-                  <td className="text-right align-middle text-sm text-foreground">
-                    {award.year}
+                  <td className="hidden py-5 text-right align-top text-sm whitespace-nowrap text-muted-foreground sm:table-cell">
+                    {categoryLabels[award.category]}
                   </td>
                 </tr>
               ))}

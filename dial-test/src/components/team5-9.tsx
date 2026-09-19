@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 
-interface TeamMember {
+export interface TeamMember {
   name: string
   title: string
   affiliation: string
@@ -16,96 +16,6 @@ interface TeamMember {
   site?: string
   slug: string
 }
-
-const facultyStaff: TeamMember[] = [
-  {
-    name: 'Nabil Bin Hannan',
-    title: 'Assistant Professor, Department of Electrical and Computer Engineering',
-    affiliation: 'NSU',
-    slug: 'nabil-bin-hannan',
-  },
-  {
-    name: 'Salekul Islam',
-    title: 'Professor, Department of Electrical and Computer Engineering',
-    affiliation: 'NSU',
-    interests: ['XAI / ML', 'Mental Health'],
-    slug: 'salekul-islam',
-  },
-  {
-    name: 'Rahat Jahangir Rony',
-    title: 'PhD Student and Researcher',
-    affiliation: 'Cardiff University',
-    interests: ['IoT / Hardware', 'Mental Health', 'Safety & Security'],
-    scholar: 'https://scholar.google.com/citations?hl=en&user=BfxlMtoAAAAJ',
-    slug: 'rahat-jahangir-rony',
-  },
-  {
-    name: 'Anik Saha',
-    title: 'Project Planning & Implementation Coordinator, DIAL',
-    affiliation: 'NSU',
-    interests: ['Computing Education', 'Feminist HCI'],
-    scholar: 'https://scholar.google.com/citations?hl=en&user=fllXTssAAAAJ',
-    slug: 'anik-saha',
-  },
-  {
-    name: 'Anik Sinha',
-    title: 'Lab Coordinator and Treasurer, DIAL',
-    affiliation: 'NSU',
-    interests: ['Accessibility', 'Misinformation'],
-    scholar: 'https://scholar.google.com/citations?user=nSORcjEAAAAJ&hl=en',
-    slug: 'anik-sinha',
-  },
-  {
-    name: 'Ifti Azad Abeer',
-    title: 'Research Coordinator, DIAL',
-    affiliation: 'NSU',
-    interests: ['ICTD', 'Accessibility', 'Autism'],
-    scholar: 'https://scholar.google.com/citations?user=aZESbPcAAAAJ&hl=en',
-    slug: 'ifti-azad-abeer',
-  },
-]
-
-const graduateRAs: TeamMember[] = [
-  { name: 'Antara Saha', title: 'Graduate Research Assistant', affiliation: 'NSU', slug: 'antara-saha' },
-  { name: 'Manoshi Das Turjo', title: 'Graduate Research Assistant', affiliation: 'NSU', slug: 'manoshi-das-turjo' },
-  { name: 'Monisha Dey', title: 'Graduate Research Assistant', affiliation: 'NSU', slug: 'monisha-dey' },
-  { name: 'Moostazi Maisha', title: 'Graduate Research Assistant', affiliation: 'NSU', slug: 'moostazi-maisha' },
-  { name: 'Sumit Kumar Kar', title: 'Graduate Research Assistant', affiliation: 'NSU', slug: 'sumit-kumar-kar' },
-  { name: 'Md. Jahidul Islam', title: 'Graduate Research Assistant', affiliation: 'NSU', slug: 'md-jahidul-islam' },
-  { name: 'Md. Shihab Reza', title: 'Graduate Research Assistant', affiliation: 'NSU', slug: 'md-shihab-reza' },
-  { name: 'Shahariar Ifti', title: 'Graduate Research Assistant', affiliation: 'NSU', slug: 'shahariar-ifti' },
-  { name: 'Shuvashish Chakraborty', title: 'Graduate Research Assistant', affiliation: 'NSU', slug: 'shuvashish-chakraborty' },
-  { name: 'F. M. Abir Hossain', title: 'Graduate Research Assistant', affiliation: 'NSU', slug: 'abir-hossain' },
-]
-
-const undergraduateRAs: TeamMember[] = [
-  { name: 'Farhan Ahmed Fahim', title: 'Undergraduate Research Assistant', affiliation: 'NSU', slug: 'farhan-ahmed-fahim' },
-  { name: 'Shams Akbar Aalok', title: 'Undergraduate Research Assistant', affiliation: 'NSU', slug: 'shams-akbar-aalok' },
-  { name: 'Lamia Amin', title: 'Undergraduate Research Assistant', affiliation: 'NSU', slug: 'lamia-amin' },
-  { name: 'Sami Uddin', title: 'Undergraduate Research Assistant', affiliation: 'NSU', slug: 'sami-uddin' },
-  { name: 'Ashfaq Mahee Siddiky', title: 'Undergraduate Research Assistant', affiliation: 'NSU', slug: 'ashfaq-mahee-siddiky' },
-  { name: 'Obayed Ur Rahman', title: 'Undergraduate Research Assistant', affiliation: 'NSU', slug: 'obayed-ur-rahman' },
-  { name: 'Asif Mahbub', title: 'Undergraduate Research Assistant', affiliation: 'NSU', slug: 'asif-mahbub' },
-  { name: 'Eusra Amreen', title: 'Undergraduate Research Assistant', affiliation: 'NSU', slug: 'eusra-amreen' },
-  { name: 'Mahir Morshed', title: 'Undergraduate Research Assistant', affiliation: 'NSU', slug: 'mahir-morshed' },
-  { name: 'Arefa Khandaker Rifa', title: 'Emerging Researcher', affiliation: 'NSU', badge: 'Emerging', slug: 'arefa-khandaker-rifa' },
-  { name: 'Marzia Mahian Hridi', title: 'Emerging Researcher', affiliation: 'NSU', badge: 'Emerging', slug: 'marzia-mahian-hridi' },
-  { name: 'Md. Azmine Amin Mormo', title: 'Emerging Researcher', affiliation: 'NSU', badge: 'Emerging', slug: 'md-azmine-amin-mormo' },
-  { name: 'Tasnim Sharif Rowla', title: 'Emerging Researcher', affiliation: 'NSU', badge: 'Emerging', slug: 'tasnim-sharif-rowla' },
-  { name: 'Ridwan Ur Rahman', title: 'Emerging Researcher', affiliation: 'NSU', badge: 'Emerging', slug: 'ridwan-ur-rahman' },
-  { name: 'Samina Islam Mim', title: 'Emerging Researcher', affiliation: 'NSU', badge: 'Emerging', slug: 'samina-islam-mim' },
-]
-
-const collaborators: TeamMember[] = [
-  { name: 'Dr. Lamia Iftekhar', title: 'Women in STEM Collaboration', affiliation: 'NSU', slug: 'lamia-iftekhar' },
-  { name: 'Ms. Silvia Ahmed', title: 'Women in STEM Collaboration', affiliation: 'NSU', slug: 'silvia-ahmed' },
-  { name: 'Tamanna Motahar', title: 'Associate Professor', affiliation: 'University of Louisiana at Lafayette', badge: 'On Leave', slug: 'tamanna-motahar' },
-  { name: 'Moinuddin Bhuiyan', title: 'Collaborator', affiliation: 'Grameenphone', slug: 'moinuddin-bhuiyan' },
-  { name: 'Nithya Sambasivan', title: 'Research Scientist', affiliation: 'Google', slug: 'nithya-sambasivan' },
-  { name: 'Munir Hasan', title: 'ICT & Policy Collaboration', affiliation: 'ICT Division, Bangladesh', slug: 'munir-hasan' },
-  { name: 'Abdul Wohab', title: 'Co-PI, SIPG Projects', affiliation: 'NSU', slug: 'abdul-wohab' },
-  { name: 'Shameem Ahmed', title: 'Co-PI, Autism Parent–Teacher Project', affiliation: 'NSU', slug: 'shameem-ahmed' },
-]
 
 function initials(name: string) {
   return name
@@ -244,10 +154,20 @@ function CompactGroup({ title, members }: { title: string; members: TeamMember[]
 }
 
 interface Team5_9Props {
+  facultyStaff: TeamMember[]
+  graduateRAs: TeamMember[]
+  undergraduateRAs: TeamMember[]
+  collaborators: TeamMember[]
   className?: string
 }
 
-const Team5_9 = ({ className }: Team5_9Props) => {
+const Team5_9 = ({
+  facultyStaff,
+  graduateRAs,
+  undergraduateRAs,
+  collaborators,
+  className,
+}: Team5_9Props) => {
   const [query, setQuery] = useState('')
   const [ugExpanded, setUgExpanded] = useState(false)
 

@@ -1,8 +1,9 @@
-import type { ReactNode } from 'react'
-import { GraduationCap, ExternalLink, Mail, Globe, X } from 'lucide-react'
-
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Badge } from '@/components/ui/badge'
+import { CropMarks, Squiggle } from '@/components/marks'
+import { InitialTile } from '@/components/initial-tile'
+import { OptionalImage } from '@/components/optional-image'
+import { RisoArt } from '@/components/riso'
+import { enterStep } from '@/lib/motion'
+import { label, pageTitle } from '@/lib/typography'
 import { cn } from '@/lib/utils'
 
 export type Social = {
@@ -34,149 +35,131 @@ interface MemberProfileProps {
 const ROLE_LABELS: Record<string, string> = {
   director: 'Director',
   faculty: 'Faculty',
-  'research-staff': 'Research Staff',
-  'graduate-ra': 'Graduate RA',
-  'undergrad-ra': 'Undergraduate RA',
+  'research-staff': 'Research staff',
+  'graduate-ra': 'Graduate research assistant',
+  'undergrad-ra': 'Undergraduate research assistant',
   alumni: 'Alumni',
 }
 
-const SOCIAL_META: Record<string, { label: string; icon: ReactNode }> = {
-  'google-scholar': { label: 'Google Scholar', icon: <GraduationCap className="size-4" /> },
-  linkedin: { label: 'LinkedIn', icon: <ExternalLink className="size-4" /> },
-  github: { label: 'GitHub', icon: <ExternalLink className="size-4" /> },
-  x: { label: 'X', icon: <X className="size-4" /> },
-  'nsu-faculty': { label: 'NSU Faculty Page', icon: <Globe className="size-4" /> },
-  'personal-site': { label: 'Website', icon: <Globe className="size-4" /> },
+const SOCIAL_LABELS: Record<Social['platform'], string> = {
+  'google-scholar': 'Google Scholar',
+  linkedin: 'LinkedIn',
+  github: 'GitHub',
+  x: 'X',
+  'nsu-faculty': 'NSU faculty page',
+  'personal-site': 'Website',
 }
 
-function InitialsAvatar({ name }: { name: string }) {
-  const initials = name
-    .split(' ')
-    .map((n) => n[0])
-    .join('')
-    .slice(0, 2)
-    .toUpperCase()
+const linkClass =
+  'underline decoration-border underline-offset-[6px] transition-colors hover:text-foreground hover:decoration-current'
+
+/** Team Member profile header: the same shape as PageHeader, with a portrait. */
+const MemberProfile = ({ member, className }: MemberProfileProps) => {
+  const links = [
+    ...member.socials.map((s) => ({ label: SOCIAL_LABELS[s.platform], href: s.url, external: true })),
+    ...(member.orcid ? [{ label: 'ORCID', href: `https://orcid.org/${member.orcid}`, external: true }] : []),
+  ]
+
   return (
-    <Avatar className="size-full rounded-full border border-transparent shadow ring-1 ring-foreground/10">
-      <AvatarFallback className="rounded-full bg-muted text-5xl font-semibold text-muted-foreground">
-        {initials}
-      </AvatarFallback>
-    </Avatar>
-  )
-}
+    <header className={cn('relative isolate container pt-16 pb-12 md:pt-24 md:pb-16', className)}>
+      <CropMarks className="ink-mark-soft top-8 md:top-10" />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-y-0 -right-5 -z-10 w-[26rem] overflow-x-clip overflow-y-visible max-lg:hidden xl:w-[32rem]"
+      >
+        <RisoArt
+          variant="bloom"
+          className="absolute -top-10 -right-32 size-[34rem] opacity-90 xl:-right-36 xl:size-[40rem]"
+        />
+      </div>
+      <p className={cn(label, 'enter')} style={enterStep(0)}>
+        {ROLE_LABELS[member.role] ?? member.role}
+      </p>
+      <div className="enter relative mt-4 w-fit" style={enterStep(1)}>
+        <h1 className={pageTitle}>{member.name}</h1>
+        <Squiggle className="ink-mark mt-1 max-w-md" />
+      </div>
 
-const MemberProfile = ({ member, className }: MemberProfileProps) => (
-  <section className={cn('py-16', className)}>
-    <div className="container">
-      <div className="grid gap-10 md:grid-cols-[2fr_3fr]">
-        {/* Portrait */}
-        <div>
-          {member.photo ? (
-            <Avatar className="size-full rounded-full border border-transparent shadow ring-1 ring-foreground/10">
-              <AvatarImage
-                src={member.photo}
-                alt={member.name}
-                className="aspect-square object-cover object-top"
-              />
-              <AvatarFallback className="rounded-full bg-muted text-5xl font-semibold text-muted-foreground">
-                {member.name.split(' ').map((n) => n[0]).join('').slice(0, 2).toUpperCase()}
-              </AvatarFallback>
-            </Avatar>
-          ) : (
-            <InitialsAvatar name={member.name} />
-          )}
-        </div>
+      <div className="relative mt-10 grid gap-10 pt-6 md:grid-cols-[minmax(0,16rem)_1fr] md:gap-16">
+        <span aria-hidden className="ink-rule enter-rule absolute inset-x-0 top-0 h-px" style={enterStep(2)} />
+        {member.photo ? (
+          <span className="enter relative block w-full max-w-64" style={enterStep(3)}>
+            {/* `tape` is the strip itself, laid over the corner of a relative
+                parent — never applied to the frame, which would collapse it,
+                and passed as `overlay` so it comes down with a failed photo. */}
+            <OptionalImage
+              src={member.photo}
+              alt={member.name}
+              overlay={<span aria-hidden className="tape -top-2.5 left-6 z-10" />}
+              frameClassName="aspect-[4/5] w-full -rotate-1 rounded-sm"
+              className="h-full w-full object-cover object-top"
+              fallback={<InitialTile name={member.name} className="aspect-[4/5] h-auto w-full rounded-lg font-display text-7xl" />}
+            />
+          </span>
+        ) : (
+          // No photograph: the printed initial tile the roster already uses,
+          // rather than a grey box with a letter in it.
+          <InitialTile
+            name={member.name}
+            className="aspect-[4/5] h-auto w-full max-w-64 rounded-lg font-display text-7xl max-md:hidden"
+          />
+        )}
 
-        {/* Content */}
-        <div className="flex flex-col justify-center gap-5">
-          <div className="flex flex-col gap-2">
-            <div className="flex flex-wrap items-center gap-3">
-              <h1 className="text-3xl font-bold">{member.name}</h1>
-              <Badge variant="secondary">{ROLE_LABELS[member.role] ?? member.role}</Badge>
-            </div>
-            <p className="text-muted-foreground">{member.title}</p>
-            <p className="text-sm text-muted-foreground">
-              {member.affiliation.url ? (
-                <a
-                  href={member.affiliation.url}
-                  className="underline underline-offset-2 hover:text-foreground transition-colors"
-                >
-                  {member.affiliation.name}
-                </a>
-              ) : (
-                member.affiliation.name
-              )}
-            </p>
-          </div>
-
-          {member.researchInterests.length > 0 && (
-            <div className="flex flex-wrap gap-1.5">
-              {member.researchInterests.map((interest) => (
-                <Badge key={interest} variant="outline" className="text-xs">
-                  {interest}
-                </Badge>
-              ))}
-            </div>
-          )}
-
-          <p className="text-base leading-relaxed">{member.bio}</p>
-
-          {member.awards.length > 0 && (
-            <div className="flex flex-wrap gap-2">
-              {member.awards.map((award) => (
-                <Badge
-                  key={award.title}
-                  variant="outline"
-                  className="border-amber-400/60 text-amber-700 dark:text-amber-400"
-                >
-                  {award.title}
-                </Badge>
-              ))}
-            </div>
-          )}
-
-          <div className="flex flex-wrap gap-x-5 gap-y-2">
-            {member.email && (
-              <a
-                href={`mailto:${member.email}`}
-                className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Mail className="size-4" />
-                {member.email}
+        <div className="enter flex max-w-prose flex-col" style={enterStep(4)}>
+          <p className="text-lg">{member.title}</p>
+          <p className="mt-1 text-muted-foreground">
+            {member.affiliation.url ? (
+              <a href={member.affiliation.url} className={linkClass}>
+                {member.affiliation.name}
               </a>
+            ) : (
+              member.affiliation.name
             )}
-            {member.socials.map((social) => {
-              const meta = SOCIAL_META[social.platform]
-              if (!meta) return null
-              return (
-                <a
-                  key={social.platform}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {meta.icon}
-                  {meta.label}
-                </a>
-              )
-            })}
-            {member.orcid && (
-              <a
-                href={`https://orcid.org/${member.orcid}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Globe className="size-4" />
-                ORCID
-              </a>
+          </p>
+
+          {member.bio && <p className="mt-6 text-pretty leading-relaxed text-muted-foreground md:text-lg">{member.bio}</p>}
+
+          <dl className="mt-8 text-sm">
+            {member.researchInterests.length > 0 && (
+              <div className="grid grid-cols-[7rem_1fr] gap-4 border-t border-border py-3">
+                <dt className="text-muted-foreground">Interests</dt>
+                <dd>{member.researchInterests.join(', ')}</dd>
+              </div>
             )}
-          </div>
+            {member.awards.length > 0 && (
+              <div className="grid grid-cols-[7rem_1fr] gap-4 border-t border-border py-3">
+                <dt className="text-muted-foreground">Awards</dt>
+                <dd>
+                  <ul className="flex flex-col gap-1">
+                    {member.awards.map((award) => (
+                      <li key={award.title}>{award.title}</li>
+                    ))}
+                  </ul>
+                </dd>
+              </div>
+            )}
+            {(member.email || links.length > 0) && (
+              <div className="grid grid-cols-[7rem_1fr] gap-4 border-y border-border py-3">
+                <dt className="text-muted-foreground">Elsewhere</dt>
+                <dd className="flex flex-wrap gap-x-4 gap-y-1">
+                  {member.email && (
+                    <a href={`mailto:${member.email}`} className={linkClass}>
+                      {member.email}
+                    </a>
+                  )}
+                  {links.map((link) => (
+                    <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                      {link.label}
+                    </a>
+                  ))}
+                </dd>
+              </div>
+            )}
+          </dl>
         </div>
       </div>
-    </div>
-  </section>
-)
+    </header>
+  )
+}
 
 export { MemberProfile }

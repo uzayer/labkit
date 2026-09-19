@@ -1,17 +1,23 @@
-import { Cta12 } from "@/components/cta12";
-import { Logos1 } from "@/components/logos1";
-import { Badge } from "@/components/ui/badge";
+import { ClosingNote } from "@/components/closing-note";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+  InkBand,
+  NameLine,
+  NumberedSteps,
+  PullQuote,
+  SectionHeader,
+  sectionSpacing,
+} from "@/components/editorial";
+import { PageHeader } from "@/components/page-header";
+import { PhotoSlot } from "@/components/photo-slot";
+import { ScrollStroke } from "@/components/scroll-stroke";
+import { labInfo, labStats, venuesByPublicationCount } from "@/data";
+import { displaySectionTitle, label } from "@/lib/typography";
+import { cn } from "@/lib/utils";
+
+const stats_ = labStats();
 
 export const metadata = {
-  title: "About — DIAL",
+  title: "About",
   description:
     "DIAL is a research lab at North South University, Dhaka, focused on inclusivity and access for marginalised communities through participatory design and fieldwork.",
 };
@@ -31,15 +37,14 @@ const values = [
   },
   {
     title: "Mentorship as mission",
-    body: "Fifty-plus researchers mentored since 2017. Many now in PhD programmes at Cardiff, Ohio State, UMass, and VU Amsterdam. The lab is a launchpad.",
+    body: `${stats_.researchersMentored} researchers mentored since ${labInfo.hciResearchSince}. Many now in PhD programmes at Cardiff, Ohio State, UMass, and VU Amsterdam. The lab is a launchpad.`,
   },
 ];
 
-const stats = [
-  { value: "2017", label: "Founded at NSU" },
-  { value: "50+", label: "Researchers mentored" },
-  { value: "20+", label: "Active projects" },
-  { value: "65+", label: "Publications" },
+const facts = [
+  ...(labInfo.foundedYear ? [{ value: String(labInfo.foundedYear), label: "Founded" }] : []),
+  { value: String(stats_.researchersMentored), label: "Researchers mentored" },
+  { value: String(stats_.publications), label: "Publications" },
 ];
 
 const methods = [
@@ -59,14 +64,19 @@ const methods = [
 
 const milestones = [
   {
-    year: "2017",
-    title: "Lab foundations",
-    body: "DIAL starts at North South University with a focus on locally grounded HCI research.",
+    year: String(labInfo.hciResearchSince),
+    title: "HCI research begins",
+    body: "NSUHCI starts focusing on HCI research at North South University through a collaboration with Google.",
   },
   {
     year: "2019",
     title: "Global HCI recognition",
     body: "Community-centered safety and inclusion work earns attention at leading HCI venues.",
+  },
+  {
+    year: String(labInfo.foundedYear),
+    title: "DIAL founded",
+    body: "NSUHCI establishes DIAL, the Design Inclusion and Access Lab, focused on technology design, inclusion, and access.",
   },
   {
     year: "2024",
@@ -78,171 +88,108 @@ const milestones = [
 export default function AboutPage() {
   return (
     <>
-      <section className="border-b py-20 lg:py-28">
-        <div className="container">
-          <div className="grid gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
-            <div className="max-w-4xl">
-              <Badge variant="outline" className="mb-5">
-                North South University · Dhaka, Bangladesh
-              </Badge>
-              <h1 className="max-w-3xl text-5xl font-semibold tracking-tighter text-balance lg:text-7xl">
-                HCI research from the margins, built with the people it serves.
-              </h1>
-              <p className="mt-6 max-w-2xl text-xl text-muted-foreground lg:text-2xl">
-                DIAL studies access, inclusion, safety, wellbeing, and development
-                in real-world Bangladeshi contexts where constraints shape the work.
-              </p>
-            </div>
+      <PageHeader
+        eyebrow="North South University · Dhaka"
+        art="orbit"
+        title="HCI research from the margins, built with the people it serves."
+        description="DIAL studies access, inclusion, safety, wellbeing, and development in real-world Bangladeshi contexts where constraints shape the work."
+        facts={facts}
+      >
+        <NameLine
+          label="Published at"
+          names={venuesByPublicationCount()
+            .slice(0, 6)
+            .map((v) => v.shortName ?? v.name)}
+          className="mt-8"
+        />
+      </PageHeader>
 
-            <Card className="bg-accent/50">
-              <CardHeader>
-                <CardTitle>Design Inclusion and Access Lab</CardTitle>
-                <CardDescription>
-                  Participatory technology research at North South University.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <blockquote className="border-l-2 border-primary pl-4 text-lg leading-relaxed text-muted-foreground">
-                  We design with communities, not around them.
-                </blockquote>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-b py-10">
-        <div className="container grid grid-cols-2 gap-px overflow-hidden rounded-xl border bg-border md:grid-cols-4">
-          {stats.map((stat) => (
-            <div key={stat.label} className="bg-background p-6">
-              <div className="text-3xl font-semibold tracking-tight lg:text-4xl">
-                {stat.value}
-              </div>
-              <div className="mt-2 text-sm text-muted-foreground">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="py-20 lg:py-24">
-        <div className="container grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
-          <div className="lg:sticky lg:top-28 lg:self-start">
-            <p className="mb-3 text-xs font-semibold tracking-widest text-muted-foreground uppercase">
-              What We Do
-            </p>
-            <h2 className="text-3xl font-semibold tracking-tight lg:text-5xl">
+      <section className={cn("container", sectionSpacing, "pt-0 md:pt-0")}>
+        <div data-reveal className="relative grid gap-10 pt-6 lg:grid-cols-[minmax(0,22rem)_1fr] lg:gap-24">
+          <span aria-hidden className="reveal-rule absolute inset-x-0 top-0 h-px bg-border" />
+          <div className="reveal-item lg:sticky lg:top-28 lg:self-start">
+            <p className={cn(label, "mb-3")}>What we do</p>
+            <h2 className={cn(displaySectionTitle, "text-balance")}>
               Research that treats constraints as design material.
             </h2>
           </div>
 
-          <div className="space-y-8">
-            <div className="space-y-5 text-base leading-relaxed text-muted-foreground lg:text-lg">
-              <p>
-                DIAL (Design Inclusion and Access Lab) was founded in 2017 by Dr.
-                Nova Ahmed through a collaboration with Google. We are based in
-                the Department of Electrical and Computer Engineering at North
-                South University, Dhaka.
-              </p>
-              <p>
-                Our research focuses on inclusivity and access for marginalised
-                communities — building technology that is locally appropriate,
-                low-cost, and explainable. We use participatory design and
-                long-term fieldwork to understand problems from the inside, then
-                build and evaluate technology interventions with the people who
-                will use them.
-              </p>
-              <p>
-                Based in Dhaka, we collaborate across universities, funders, and
-                partners to study inclusion, safety, wellbeing, and development
-                — always with attention to constraints like language, bandwidth,
-                devices, and trust.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {values.map((value) => (
-                <Card key={value.title}>
-                  <CardHeader>
-                    <CardTitle>{value.title}</CardTitle>
-                    <CardDescription>{value.body}</CardDescription>
-                  </CardHeader>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y bg-accent/40 py-20">
-        <div className="container">
-          <div className="mb-12 max-w-2xl">
-            <p className="mb-3 text-xs font-semibold tracking-widest text-muted-foreground uppercase">
-              How the Work Happens
+          <div className="reveal-item max-w-prose space-y-5 text-pretty leading-relaxed text-muted-foreground md:text-lg">
+            <p>
+              <span className="text-foreground">DIAL—the Design Inclusion and Access Lab at North South University—</span>
+              was established in {labInfo.foundedYear} by NSUHCI, the HCI research group Dr. Nova
+              Ahmed and her colleagues began in {labInfo.hciResearchSince} through a collaboration
+              with Google. We are based in the Department of Electrical and Computer Engineering.
             </p>
-            <h2 className="text-3xl font-semibold tracking-tight lg:text-5xl">
-              From field insight to usable systems.
-            </h2>
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-3">
-            {methods.map((method, index) => (
-              <div key={method.title}>
-                <div className="mb-5 flex items-center gap-4">
-                  <Badge variant="outline">0{index + 1}</Badge>
-                  <Separator className="flex-1" />
-                </div>
-                <h3 className="text-xl font-semibold">{method.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {method.body}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 lg:py-24">
-        <div className="container grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-24">
-          <div>
-            <p className="mb-3 text-xs font-semibold tracking-widest text-muted-foreground uppercase">
-              Lab Story
+            <p>
+              Our research focuses on inclusivity and access for marginalised communities, building
+              technology that is locally appropriate, low-cost, and explainable. We use participatory
+              design and long-term fieldwork to understand problems from the inside, then build and
+              evaluate technology with the people who will use it.
             </p>
-            <h2 className="text-3xl font-semibold tracking-tight lg:text-5xl">
-              A compact timeline for the prototype.
-            </h2>
-          </div>
-
-          <div className="space-y-0">
-            {milestones.map((milestone, index) => (
-              <div key={milestone.year}>
-                <div className="grid gap-6 py-7 sm:grid-cols-[8rem_1fr]">
-                  <div className="text-2xl font-semibold tracking-tight">
-                    {milestone.year}
-                  </div>
-                  <div>
-                    <h3 className="font-semibold">{milestone.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                      {milestone.body}
-                    </p>
-                  </div>
-                </div>
-                {index < milestones.length - 1 && <Separator />}
-              </div>
-            ))}
+            <p>
+              We collaborate across universities, funders, and partners to study inclusion, safety,
+              wellbeing, and development, always with attention to constraints like language,
+              bandwidth, devices, and trust.
+            </p>
           </div>
         </div>
       </section>
 
-      <Logos1 className="border-t py-16" />
+      {/* Slots for the Lab's own photographs of how it works; printed
+          compositions stand in until DIAL supplies them. */}
+      <section className={cn("container", sectionSpacing)}>
+        <div className="grid gap-6 md:grid-cols-[1.4fr_1fr]">
+          <PhotoSlot alt="The Lab at work" art="orbit" aspect="aspect-16/9" />
+          <PhotoSlot alt="A community workshop" art="strata" aspect="aspect-16/9" />
+        </div>
+      </section>
 
-      <Cta12
+      {/* The page's one full-bleed section; see InkBand — at most one. */}
+      <InkBand>
+        <PullQuote>We design with communities, not around them.</PullQuote>
+      </InkBand>
+
+      <section className={cn("container", sectionSpacing)}>
+        <SectionHeader label="Values" title="What the lab holds to" className="mb-2" />
+        <dl className="grid gap-x-12 md:grid-cols-2">
+          {values.map((value) => (
+            <div key={value.title} className="border-b border-border py-6">
+              <dt className="font-display text-2xl leading-snug">{value.title}</dt>
+              <dd className="mt-2 text-pretty text-muted-foreground">{value.body}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      <section className={cn("container", sectionSpacing)}>
+        <SectionHeader label="Method" title="From field insight to usable systems" className="mb-10" />
+        <NumberedSteps steps={methods} />
+      </section>
+
+      <section className={cn("container", sectionSpacing, "relative")}>
+        <ScrollStroke variant="loop" className="right-0 hidden w-24 xl:block" />
+        <SectionHeader label="Lab story" title="How DIAL got here" className="mb-2" />
+        <ol className="divide-y divide-border border-b border-border">
+          {milestones.map((milestone) => (
+            <li key={milestone.title} className="grid gap-2 py-6 sm:grid-cols-[8rem_1fr] sm:gap-8">
+              <span className="font-display text-3xl tabular-nums">{milestone.year}</span>
+              <div className="max-w-prose">
+                <h3 className="font-medium">{milestone.title}</h3>
+                <p className="mt-1 text-pretty text-muted-foreground">{milestone.body}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+
+      <ClosingNote
         heading="Curious about the work?"
-        description="Browse our research areas, explore ongoing projects, or reach out to collaborate."
-        buttons={{
-          primary: { text: "Explore research", url: "/research" },
-          secondary: { text: "Contact us", url: "/contact" },
-        }}
-        className="py-16"
+        links={[
+          { text: "Explore research", href: "/research" },
+          { text: "Contact us", href: "/contact" },
+        ]}
       />
     </>
   );

@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 843.772727 407.443369">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 843.772727 264">
   <defs>
     <style>
-      .cls-1 {
-        letter-spacing: .749998em;
-      }
-
-      .cls-1, .cls-2 {
-        font-family: DINCondensed-Regular, 'DIN Condensed';
-        font-size: 87.400002px;
-      }
-
-      .cls-2 {
-        letter-spacing: .750003em;
-      }
 
       .cls-3 {
         fill: none;
@@ -23,8 +11,6 @@
       }
     </style>
   </defs>
-  <text class="cls-1" transform="translate(71.606846 385.069376)"><tspan x="0" y="0">NSU</tspan></text>
-  <text class="cls-2" transform="translate(547.821049 384.195841)"><tspan x="0" y="0">HCI</tspan></text>
   <g>
     <g>
       <rect class="cls-3" x="271.565201" y="30.906209" width="21.336971" height="202.809721"/>

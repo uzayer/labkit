@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { GraduationCap, LoaderIcon, Mail, MapPin } from "lucide-react";
+import { LoaderIcon } from "lucide-react";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
@@ -15,7 +15,14 @@ import {
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { TextLink } from "@/components/editorial";
+import { CropMarks, MarginNote, Squiggle, StampRing } from "@/components/marks";
+import { enterStep } from "@/lib/motion";
+import { label, lede, pageTitle } from "@/lib/typography";
 import { cn } from "@/lib/utils";
+
+const linkClass =
+  "underline decoration-border underline-offset-[6px] transition-colors hover:decoration-current";
 
 const contactFormSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -29,11 +36,15 @@ const contactFormSchema = z.object({
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
 interface Contact1Props {
+  /** Lab contact details, from LabInfo. */
+  email: string;
+  address: string;
+  scholarUrl?: string | null;
   className?: string;
   onSubmit?: (data: ContactFormData) => Promise<void>;
 }
 
-const Contact1 = ({ className, onSubmit }: Contact1Props) => {
+const Contact1 = ({ email, address, scholarUrl, className, onSubmit }: Contact1Props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
 
@@ -80,100 +91,87 @@ const Contact1 = ({ className, onSubmit }: Contact1Props) => {
   };
 
   return (
-    <section className={cn("relative py-32", className)}>
-      <div className="pointer-events-none absolute inset-x-0 -top-20 -bottom-20 bg-[radial-gradient(ellipse_35%_15%_at_40%_55%,var(--accent)_0%,transparent_100%)] lg:bg-[radial-gradient(ellipse_12%_20%_at_60%_45%,var(--accent)_0%,transparent_100%)]" />
-      <div className="pointer-events-none absolute inset-x-0 -top-20 -bottom-20 bg-[radial-gradient(ellipse_35%_20%_at_70%_75%,var(--accent)_0%,transparent_80%)] lg:bg-[radial-gradient(ellipse_15%_30%_at_70%_65%,var(--accent)_0%,transparent_80%)]" />
-      <div className="pointer-events-none absolute inset-x-0 -top-20 -bottom-20 bg-[radial-gradient(var(--accent-foreground)_1px,transparent_1px)] opacity-10 [mask-image:radial-gradient(ellipse_60%_60%_at_65%_50%,#000_0%,transparent_80%)] [background-size:8px_8px]" />
+    // Contact was the last surface still outside the system: no crop marks, no
+    // composition, no drawn marks. It is a printed sheet like every other page.
+    <section className={cn("relative isolate container pt-16 pb-24 md:pt-24", className)}>
+      {/* No bleeding composition here, deliberately: every other page has an
+          open right margin for one, and this page has a form in it. The stamp
+          does the work instead — which is the right mark for a contact page. */}
+      <CropMarks className="ink-mark-soft top-8 md:top-10" />
+      <p className={cn(label, "enter")} style={enterStep(0)}>
+        Contact
+      </p>
+      <div className="enter relative mt-4 w-fit" style={enterStep(1)}>
+        <h1 className={pageTitle}>Get in touch</h1>
+        <Squiggle className="ink-mark mt-1 max-w-md" />
+      </div>
 
-      <div className="container grid w-full grid-cols-1 gap-x-32 overflow-hidden lg:grid-cols-2">
-        {/* Info sidebar */}
-        <div className="w-full pb-10 md:pb-0">
-          <div className="flex h-full flex-col justify-between gap-12 md:max-w-[40rem]">
-            <div className="space-y-8">
-              <div className="space-y-3">
-                <h1 className="text-4xl font-medium lg:text-5xl">
-                  Get in touch
-                </h1>
-                <p className="text-muted-foreground md:text-base lg:text-lg">
-                  For collaboration, media, and general enquiries.
-                </p>
-              </div>
+      <div className="relative mt-10 grid gap-12 pt-6 lg:grid-cols-[1fr_minmax(0,30rem)] lg:gap-24">
+        <span aria-hidden className="enter-rule absolute inset-x-0 top-0 h-px bg-border" style={enterStep(2)} />
+        <div className="enter flex flex-col gap-10" style={enterStep(3)}>
+          <p className={lede}>For collaboration, media, and general enquiries.</p>
 
-              <a
-                href="mailto:nova.ahmed@northsouth.edu"
-                className="flex items-center gap-2.5 text-lg font-medium transition-colors hover:text-muted-foreground"
-              >
-                <Mail className="size-5 shrink-0" />
-                nova.ahmed@northsouth.edu
-              </a>
-
-              <div className="flex items-start gap-2.5 text-muted-foreground">
-                <MapPin className="mt-0.5 size-5 shrink-0" />
-                <span>
-                  SAC 1060, North South University, Dhaka, Bangladesh
-                </span>
-              </div>
-
-              <div className="space-y-3">
-                <a
-                  href="https://scholar.google.com/citations?user=rXMM2MwAAAAJ&hl=en"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  <GraduationCap className="size-4" />
-                  Google Scholar
+          <dl className="text-sm">
+            <div className="grid grid-cols-[7rem_1fr] gap-4 border-t border-border py-3">
+              <dt className="text-muted-foreground">Email</dt>
+              <dd>
+                <a href={`mailto:${email}`} className={linkClass}>
+                  {email}
                 </a>
+              </dd>
+            </div>
+            <div className="grid grid-cols-[7rem_1fr] gap-4 border-t border-border py-3">
+              <dt className="text-muted-foreground">Address</dt>
+              <dd className="text-pretty">{address}</dd>
+            </div>
+            <div className="grid grid-cols-[7rem_1fr] gap-4 border-y border-border py-3">
+              <dt className="text-muted-foreground">Elsewhere</dt>
+              <dd className="flex flex-wrap gap-x-4 gap-y-1">
+                {scholarUrl && (
+                  <a href={scholarUrl} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                    Google Scholar
+                  </a>
+                )}
                 <a
                   href="https://www.researchgate.net/profile/Nova_Ahmed"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  className={linkClass}
                 >
-                  <svg
-                    className="size-4"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 0 0-.112.437 8.365 8.365 0 0 0-.078.53 9 9 0 0 0-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.123 0 0 0 .014 1.017 9 9 0 0 0 .05.727 7.946 7.946 0 0 0 .077.53 3.198 3.198 0 0 0 .115.438c.243.743.65 1.303 1.214 1.68.565.376 1.256.564 2.075.564.8 0 1.536-.213 2.105-.603.57-.39.94-.916 1.163-1.544a4.224 4.224 0 0 0 .107-.358c.037-.157.07-.325.098-.508.028-.18.05-.37.062-.567.013-.197.02-.408.02-.624a31.129 31.123 0 0 0-.014-1.017 9 9 0 0 0-.05-.727 7.946 7.946 0 0 0-.077-.53 3.198 3.198 0 0 0-.115-.438c-.243-.743-.65-1.303-1.214-1.68C21.092.19 20.401 0 19.586 0zM12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm6.586 3.875c.484 0 .906.089 1.264.267.36.178.648.45.864.82.215.37.324.82.324 1.35v.072c0 .53-.109.98-.324 1.35-.216.37-.504.64-.864.82-.358.178-.78.267-1.264.267s-.906-.089-1.264-.267c-.36-.178-.648-.45-.864-.82C17.323 7.352 17.214 6.9 17.214 6.384v-.072c0-.53.109-.98.324-1.35.216-.37.504-.64.864-.82.358-.178.78-.267 1.264-.267zm-9.172.04h2.758c.98 0 1.748.248 2.304.744.556.496.834 1.193.834 2.09 0 .656-.16 1.212-.48 1.668-.32.456-.78.796-1.378 1.02l2.164 4.044H13.5l-1.926-3.712h-1.024v3.712H8.938V3.915zm1.612 1.358v2.64h1.02c.504 0 .888-.124 1.152-.37.264-.248.396-.6.396-1.056 0-.456-.13-.8-.39-1.032-.26-.232-.65-.348-1.17-.348H11.026z" />
-                  </svg>
                   ResearchGate
                 </a>
-              </div>
+              </dd>
             </div>
+          </dl>
 
-            <p className="text-sm text-muted-foreground">
-              Looking to join the lab?{" "}
-              <a
-                href="/join-us"
-                className="underline underline-offset-2 transition-colors hover:text-foreground"
-              >
-                See open positions →
-              </a>
-            </p>
+          <div className="flex flex-wrap items-end gap-x-4 gap-y-3">
+            <TextLink href="/join-us" className="text-muted-foreground hover:text-foreground">
+              Looking to join the lab? See open positions
+            </TextLink>
+            {/* Restates the line above it; the note adds no new claim. */}
+            <MarginNote className="pb-0.5">that is a different door</MarginNote>
           </div>
+
+          {/* The Lab's own stamp, in the open space under the address. */}
+          <StampRing className="sticker ink-mark-soft mt-4 size-52 max-lg:hidden" />
         </div>
 
-        {/* Form */}
-        <div className="flex w-full justify-center lg:mt-2.5">
-          <div className="relative flex w-full max-w-[30rem] min-w-[20rem] flex-col items-center overflow-visible md:min-w-[24rem]">
             <form
               onSubmit={form.handleSubmit(handleFormSubmit)}
-              className="z-10 w-full"
+              className="enter z-10 w-full"
+              style={enterStep(4)}
             >
-              <div className="w-full rounded-xl border border-border bg-card px-6 py-8 shadow-sm">
+              <div className="w-full">
                 {isSubmitted && (
-                  <div
+                  <p
+                    role="status"
                     className={cn(
-                      "mb-6 rounded-lg border border-green-500/20 bg-green-500/10 p-4 text-center transition-opacity duration-500",
+                      "mb-6 border-l-2 border-brand py-1 pl-3 text-sm text-brand transition-opacity duration-300",
                       showSuccess ? "opacity-100" : "opacity-0",
                     )}
                   >
-                    <p className="text-sm font-medium text-green-600 dark:text-green-400">
-                      Thank you — we&apos;ll be in touch soon.
-                    </p>
-                  </div>
+                    Thank you. We&apos;ll be in touch soon.
+                  </p>
                 )}
 
                 <FieldGroup className="gap-6">
@@ -250,7 +248,8 @@ const Contact1 = ({ className, onSubmit }: Contact1Props) => {
 
                   <Button
                     type="submit"
-                    className="w-full"
+                    size="lg"
+                    className="w-fit rounded-full px-5 transition-transform duration-150 ease-snappy active:scale-[0.97]"
                     disabled={form.formState.isSubmitting}
                   >
                     {form.formState.isSubmitting ? (
@@ -265,8 +264,6 @@ const Contact1 = ({ className, onSubmit }: Contact1Props) => {
                 </FieldGroup>
               </div>
             </form>
-          </div>
-        </div>
       </div>
     </section>
   );
