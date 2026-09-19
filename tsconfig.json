@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "ignoreDeprecations": "6.0",
     "esModuleInterop": true,
     "target": "es6",

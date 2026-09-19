@@ -1,7 +1,7 @@
 'use client'
 
-import type { MotionTextBlock as MotionTextBlockProps } from 'src/payload-types'
-import { motion } from 'framer-motion'
+import type { MotionTextBlock as MotionTextBlockProps } from '@/payload-types'
+import { motion } from 'motion/react'
 import { cn } from '@/utils'
 import React, { createElement } from 'react'
 import { PublicContextProps } from '@/utilities/publicContextProps'

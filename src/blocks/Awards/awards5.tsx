@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useSpring } from 'framer-motion'
+import { motion, useSpring } from 'motion/react'
 import React, { useState } from 'react'
 
 const Awards5 = () => {

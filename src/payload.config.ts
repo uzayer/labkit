@@ -51,7 +51,7 @@ import { Header } from './globals/Header/config'
 import { ThemeConfig } from './globals/ThemeConfig/config'
 import { revalidateRedirects } from './hooks/revalidateRedirects'
 import { GenerateTitle, GenerateURL } from '@payloadcms/plugin-seo/types'
-import { Page, Post } from 'src/payload-types'
+import { Page, Post } from '@/payload-types'
 
 import { searchFields } from '@/search/fieldOverrides'
 import { beforeSyncWithSearch } from '@/search/beforeSync'
