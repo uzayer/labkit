@@ -38,7 +38,7 @@ Until confirmed, these values may be used as realistic prototype material but mu
 ## Factual-source policy
 
 - `scraped-data/` preserves what the current Lab site, the PI's personal site, and the DIAL proposal said when captured.
-- `dial-data/` is a normalized interpretation of those sources. Normalization can introduce mistakes.
+- `organized-from-scrapes/` and `dial-test/src/data/` are normalized interpretations of those sources. Normalization can introduce mistakes.
 - Crossref, OpenAlex, ORCID, and DBLP can support bibliographic facts but do not decide Lab membership, Project ownership, Research Themes, or editorial prominence.
 - Payload becomes the operational source of truth only after the Operator has reviewed the imported records.
 - Direct confirmation from DIAL overrides scraped and inferred material. Record consequential corrections in `LOG.md`.

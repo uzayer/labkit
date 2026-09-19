@@ -1,4 +1,3 @@
-Scrape ID: 019d33aa-77dd-74cb-8963-38cd72aca87d
 Search this site
 
 Embedded Files
@@ -7,9 +6,73 @@ Skip to main content
 
 Skip to navigation
 
+[![](https://sites.google.com/sitesv-images-rt/AMxu72t7BCPmdgHspDqbeqMMzd2T18okWlFK6CpUIghKPBPMu9IePM08l2FlO0TY9Ta58GHntIndu_Ef8GLNvvMORBQ3PTmImd_bkf9o08S_V8_OMFzgdhA1UFD-6VyaZqRj7BpvydTsK5YG0rvr4ZqAMTrRntfYe_xs-tB_=w16383)](https://sites.google.com/view/nsuhci/home)[NSUHCI-DIAL](https://sites.google.com/view/nsuhci/home)
+
+- [Home](https://sites.google.com/view/nsuhci/home)
+
+- [DIAL Research](https://sites.google.com/view/nsuhci/dial-research)
+
+- [People](https://sites.google.com/view/nsuhci/people)
+
+- [Publications](https://sites.google.com/view/nsuhci/publications)
+
+- [Awards](https://sites.google.com/view/nsuhci/awards)
+
+- [Events](https://sites.google.com/view/nsuhci/events)
+
+- [Research Collaboration](https://sites.google.com/view/nsuhci/research-collaboration)
+
+- [Contact Us](https://sites.google.com/view/nsuhci/contact-us)
+
+
+[![](https://sites.google.com/sitesv-images-rt/AMxu72t7BCPmdgHspDqbeqMMzd2T18okWlFK6CpUIghKPBPMu9IePM08l2FlO0TY9Ta58GHntIndu_Ef8GLNvvMORBQ3PTmImd_bkf9o08S_V8_OMFzgdhA1UFD-6VyaZqRj7BpvydTsK5YG0rvr4ZqAMTrRntfYe_xs-tB_=w16383)NSUHCI-DIAL](https://sites.google.com/view/nsuhci/home)
+
+- [Home](https://sites.google.com/view/nsuhci/home)
+
+- [DIAL Research](https://sites.google.com/view/nsuhci/dial-research)
+
+- [People](https://sites.google.com/view/nsuhci/people)
+
+- [Publications](https://sites.google.com/view/nsuhci/publications)
+
+- [Awards](https://sites.google.com/view/nsuhci/awards)
+
+- [Events](https://sites.google.com/view/nsuhci/events)
+
+- [Research Collaboration](https://sites.google.com/view/nsuhci/research-collaboration)
+
+- [Contact Us](https://sites.google.com/view/nsuhci/contact-us)
+
+- More
+
+
+
+
+
+
+
+
+
+  - [Home](https://sites.google.com/view/nsuhci/home)
+
+  - [DIAL Research](https://sites.google.com/view/nsuhci/dial-research)
+
+  - [People](https://sites.google.com/view/nsuhci/people)
+
+  - [Publications](https://sites.google.com/view/nsuhci/publications)
+
+  - [Awards](https://sites.google.com/view/nsuhci/awards)
+
+  - [Events](https://sites.google.com/view/nsuhci/events)
+
+  - [Research Collaboration](https://sites.google.com/view/nsuhci/research-collaboration)
+
+  - [Contact Us](https://sites.google.com/view/nsuhci/contact-us)
+
+
 ## [Copy heading link](https://sites.google.com/view/nsuhci/publications\#h.p_cJn_FnkHocRJ)    Google Scholar
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0SSSDRPd563W6RogwgiHLyoMHxGBGNaEIXj5vCBQkP5pRU6zbMynfbKmsIPijre7KYZQ1dHKviNgGL4-c23lRaPNUqlxaI3lMJg8n51Ko6BzC0KJilmPAzHyCFwFw2uefKc9Ns7lJaETqEmPRzXmTdnGrvinT2gMFdE7NjBpX3yYkFFr4CURL-f-roykHRBimcwiymcoa-A5eWM=w1280)
+![](https://sites.google.com/sitesv-images-rt/AMxu72tgj66mSiZ-6hSjHAlw04qTqISK1p6uPfx3WsT-aJ44Qym3HAJH7sd8yBWgIUaWjSpgenvI4DD87Fi2rcWiDR5Ol9Au1xa3fNH7Z_-blqPfk2mWLASgBHn3XPZu14zu8d3EozkCS7J6oxv7mip4mJXVJU3gEyMY6U5QJ9noZah7WrWJgVRVrSh9HUpNsdofqeQmcNrYGla7dWlSchI=w1280)
 
 ### [Copy heading link](https://sites.google.com/view/nsuhci/publications\#h.p_JAns3xlpnV8y)    Please follow the Google Scholar Links below
 
@@ -410,6 +473,14 @@ Skip to navigation
 
 - Ranganathan, H. (2012). Wireless Sensor Network to Support Intelligent Transport Systems. In Wireless Sensor Networks and Energy Efficiency: Protocols, Routing and Management (pp. 528-547). IGI Global.
 
+
+Follow NSUHCI:
+
+[![](https://sites.google.com/sitesv-images-rt/AMxu72vwKJ6_KUvEG4UlhBXpx13IaDxR2hHuqzQCiI_V2hv-lnPFxcaP1Z3ZjqRsTtaVMO2a0vYhoyKSKsV_BxsGNEC2n8Z8FaAPSMeTvrUxruM8KtlMGVOhIiWfBYiJufsM_AmsM85wjB6gU2jx9QKD8MGh6TksrQbHjVmoz8SOWnUkPRZWLO78YttY-GKMxIg=w1280)](https://www.google.com/url?q=https%3A%2F%2Fwww.facebook.com%2FResearch.NSUHCI&sa=D&sntz=1&usg=AOvVaw3f_AhM8zHtG4gLv-wj1r5s)
+
+[![](https://sites.google.com/sitesv-images-rt/AMxu72uFZzjxlebEa6SvrR9-at2RQg_8rIFyTJPk8YwgvR6PWMYB66HzARCU8Ca5k7bYxqHqaVSkVyXm1JokiapxX4sl4YBnoKDmpsFU2J7LLdruIKijblzs3fMUbYTuLc5780lJOEgvmghItrpKz6D1o-VHWMyEgmRxJx5QTOzMRNrFzbY1ZBmSEGbCtvtDtRi14UwcFB5edidSsl-_25Cpc7irqk_ivhRxu4K1HWYs7O8=w1280)](https://www.google.com/url?q=https%3A%2F%2Ftwitter.com%2FNSUHCI_DIAL&sa=D&sntz=1&usg=AOvVaw1-7sNtwhczQQI06fNIqWvv)
+
+[![](https://sites.google.com/sitesv-images-rt/AMxu72tccZZhN5pVjbn4AAl65_YRPv-cKfSfxlIQu9kDmCKr6XNbKMpqiO_PpDyiSi9wmojcMaAm9dWzkwtF4XpW4HUM6-R0Lu4B3Pb6_t_z3mH-v-3CaYCZJvr9dTfEK_C17SGTk3Sb0SPysVeFURPdzVSWA8-hRKeyIyjEP5oV5Czra-pdl8-Ed8GYlSI3u90=w1280)](https://www.google.com/url?q=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fnsuhcidial%2F&sa=D&sntz=1&usg=AOvVaw1j3J8yFNLy9uZYzaQwV5W3)
 
 Page updated
 

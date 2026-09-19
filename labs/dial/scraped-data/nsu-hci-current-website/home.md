@@ -1,4 +1,3 @@
-Scrape ID: 019d33aa-619e-7559-9d26-b20f30ee3f84
 Search this site
 
 Embedded Files
@@ -6,6 +5,70 @@ Embedded Files
 Skip to main content
 
 Skip to navigation
+
+[![](https://lh3.googleusercontent.com/sitesv/AG8ngQW9L4mztuqiQ9XPk1fPV4qN-Hd8yTO-qpgIjRpXFBS_JmjcDug9k4mYJ7CclrnMguTa6DjXLZHpYHrKGdgSNARN74micaxlQRX-hAF9J_WOsygEAm5ZEqhJx4GG_sLUu7OeCi_egIz5CekhgHZI2i2QPgiyoYXqJSq7=w16383)](https://sites.google.com/view/nsuhci/home)[NSUHCI-DIAL](https://sites.google.com/view/nsuhci/home)
+
+- [Home](https://sites.google.com/view/nsuhci/home)
+
+- [DIAL Research](https://sites.google.com/view/nsuhci/dial-research)
+
+- [People](https://sites.google.com/view/nsuhci/people)
+
+- [Publications](https://sites.google.com/view/nsuhci/publications)
+
+- [Awards](https://sites.google.com/view/nsuhci/awards)
+
+- [Events](https://sites.google.com/view/nsuhci/events)
+
+- [Research Collaboration](https://sites.google.com/view/nsuhci/research-collaboration)
+
+- [Contact Us](https://sites.google.com/view/nsuhci/contact-us)
+
+
+[![](https://lh3.googleusercontent.com/sitesv/AG8ngQW9L4mztuqiQ9XPk1fPV4qN-Hd8yTO-qpgIjRpXFBS_JmjcDug9k4mYJ7CclrnMguTa6DjXLZHpYHrKGdgSNARN74micaxlQRX-hAF9J_WOsygEAm5ZEqhJx4GG_sLUu7OeCi_egIz5CekhgHZI2i2QPgiyoYXqJSq7=w16383)NSUHCI-DIAL](https://sites.google.com/view/nsuhci/home)
+
+- [Home](https://sites.google.com/view/nsuhci/home)
+
+- [DIAL Research](https://sites.google.com/view/nsuhci/dial-research)
+
+- [People](https://sites.google.com/view/nsuhci/people)
+
+- [Publications](https://sites.google.com/view/nsuhci/publications)
+
+- [Awards](https://sites.google.com/view/nsuhci/awards)
+
+- [Events](https://sites.google.com/view/nsuhci/events)
+
+- [Research Collaboration](https://sites.google.com/view/nsuhci/research-collaboration)
+
+- [Contact Us](https://sites.google.com/view/nsuhci/contact-us)
+
+- More
+
+
+
+
+
+
+
+
+
+  - [Home](https://sites.google.com/view/nsuhci/home)
+
+  - [DIAL Research](https://sites.google.com/view/nsuhci/dial-research)
+
+  - [People](https://sites.google.com/view/nsuhci/people)
+
+  - [Publications](https://sites.google.com/view/nsuhci/publications)
+
+  - [Awards](https://sites.google.com/view/nsuhci/awards)
+
+  - [Events](https://sites.google.com/view/nsuhci/events)
+
+  - [Research Collaboration](https://sites.google.com/view/nsuhci/research-collaboration)
+
+  - [Contact Us](https://sites.google.com/view/nsuhci/contact-us)
+
 
 # [Copy heading link](https://sites.google.com/view/nsuhci/home\#h.p_XxM93iEd7h4Z)    North South University HCI Research - DIAL
 
@@ -15,13 +78,87 @@ NSUHCI continuously engages in research projects under these domains: Health, Ac
 
 In 2020, NSUHCI established a lab named DIAL: Design Inclusion and Access Lab, focusing specifically on technology design, inclusion, and access. In recent years, the community has secured multiple research grants from organizations such as Google, the Gates Foundation, GCRF-UKRI, BRAC, UIU, and NSU CTRG. NSUHCI has also organized several international ACM programs in collaboration with the Dhaka ACM SIGCHI Chapter and participates in BanglaCHI. Now, DIAL has 50+ research assistants and mentors.
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0SQZu2wf09CsiJV0GrQA4OpZMN9ZG0lMqGAMcdzWTp58VBeybL3FGzd34nDrRBHB08b538PyDau8GS9kZwcxfBL14cVcXj6XYvEt0Rd9u7ebuU8WUDZ2Ingbx2-znKcUpWKrjQXY2Eq609LOlVyg6SP6nNRuAMDWCcs1K8KFXe37lk6TvAPVfiaSeZppv9FrEjcgwTd51nyfUGGW071EYsLuHD_VkP1rpcyCGKk=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQXIWDMcc0P-jAE4wWRPelrccwhHkvRWMJNKBr48FeBWRB37M7FNDiv5koGJhxKTivmkNf_cg4wV4KLvBmlI5ijswJlmyozozFnLfUVwzRlKMSbPlkH_ZZn8pQvlUD1R7WQ2POOMD5FydHoGzdv70fGlaxbwOsMo7VaJYD4-oU-P14g6dd99CSDhJ5u1GhWO8KsBx5mN96tqabODii5Qf49p6sfKakdfT7XMUrwXjRc=w1280)
 
 The Lifetime Members of NSUHCI-DIAL
 
 Good Memories.mp4 - Google Drive
 
-![](https://www.google.com/images/icons/product/drive-32.png)Good Memories.mp4
+[Sign in](https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://drive.google.com/file/d/16ZhgYwc2Q62NuodW0dCbVhBfChw9DcYG/preview&followup=https://drive.google.com/file/d/16ZhgYwc2Q62NuodW0dCbVhBfChw9DcYG/preview&ec=GAZAGQ)
+
+Error 401 (Bad Request)!!1
+
+**401.** That’s an error.
+
+The server cannot process the request because it is malformed. It should not be retried. That’s all we know.
+
+Request a review
+
+Learn more
+
+Signature pending
+
+Sign
+
+Reject
+
+View details
+
+Review
+
+Not Spam
+
+Remove forever
+
+Not Spam
+
+Loading…
+
+{"id": "16ZhgYwc2Q62NuodW0dCbVhBfChw9DcYG", "title": "Good Memories.mp4", "mimeType": "video\\/mp4"}
+
+Loading…
+
+Play (k)
+
+Play (k)
+
+Picture-in-picture is in beta
+
+You can still use it while work is being done. Click anywhere to open it.
+
+Open
+
+Playing in picture-in-picture
+
+Closing this window will close the player
+
+YouTube
+
+Play (k)
+
+Rewind 10 seconds (j)
+
+Fast forward 10 seconds (l)
+
+0:00/0:00
+
+Unmute (m)
+
+Subtitles/Closed captions (c)
+
+1x
+
+Playback speed
+
+Settings
+
+Full screen (f)
+
+Loading…
+
+Displaying Good Memories.mp4.
+
+![](https://www.gstatic.com/images/icons/material/product/1x/drive_2026_32dp.png)Good Memories.mp4
 
 ## [Copy heading link](https://sites.google.com/view/nsuhci/home\#h.p_K_c462tXlzW0)    DIAL Announcement
 
@@ -84,6 +221,14 @@ SAC 1060
 
 - All members must complete the human factor course from [TRREE](https://elearning.trree.org/). This course is free, and to become a certified Human Factor Researcher, a member must complete Modules 1, 2.1, and 3.1. This module is in a total of around 7 hours, and the certificate will be given with the 80% of marks in each module. One can obtain multiple times to obtain the marks.
 
+
+Follow NSUHCI:
+
+[![](https://lh3.googleusercontent.com/sitesv/AG8ngQWzdhDHHxnBvUWosrLzI_HJPClwpI26CToyuF5nxk1NPneyfpABWmkS_m7UwpCRXqrGo8_xyVgq1LYxaMkSESfh07Vq31gYVkVxnLGVy7oIvTsekrQ149uJ22TgZOfHtNX8intGhtRInntcgAio2DQW7gXSxIIv8oe1vMTG55EHaE9sxZxB54_B_msApV0=w1280)](https://www.google.com/url?q=https%3A%2F%2Fwww.facebook.com%2FResearch.NSUHCI&sa=D&sntz=1&usg=AOvVaw3f_AhM8zHtG4gLv-wj1r5s)
+
+[![](https://lh3.googleusercontent.com/sitesv/AG8ngQUXJhK6DTKXN8T7MlvxVoMEovZhVeuU_QlIM8d7XZspTZpB8TzwQ79GqnTXLTLWg17BGUJvtP36eahtZpvrEOGyQRFEIys5JSH-aKuUa6ssb1hIi3q0hp1cZMIy7SnNegJKrEVBY-4mwFBMIMzQOkeSiFda1FWn5cAtwp9jZuYcFx0ZX7hHXXpH6pxsV23FKbnVI-DewDz8Rn0FrgTsvNqYM9ifGXekJJgndnlofWk=w1280)](https://www.google.com/url?q=https%3A%2F%2Ftwitter.com%2FNSUHCI_DIAL&sa=D&sntz=1&usg=AOvVaw1-7sNtwhczQQI06fNIqWvv)
+
+[![](https://lh3.googleusercontent.com/sitesv/AG8ngQVaYzy7P62Lx2qJ9jr8IUSTZXctYDYwB3DmOr1aTns23aowsLGYLRroXDoaj9nzhY_CQtRPL4sHi2F5GbK5DkLc3ztBLM0r9F2i2sEqDfoWPax8vWgzPQ1GTDDQovVmFcY23vmSBL-jJ_QEac0cpK07jrjU5gfUdMZGzVSlXsexxhTpzYZodM18WK95ihM=w1280)](https://www.google.com/url?q=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fnsuhcidial%2F&sa=D&sntz=1&usg=AOvVaw1j3J8yFNLy9uZYzaQwV5W3)
 
 Page updated
 

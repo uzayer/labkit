@@ -4,11 +4,13 @@ These files preserve material captured from DIAL's current public site, Dr. Nova
 
 ## Sources
 
-- `nsu-hci-current-website/` — eight captures from the current NSU HCI/DIAL site
-- `nova-ahmed-personal-site/` — 18 captures from the PI's personal site
+- `nsu-hci-current-website/` — eight pages from the current NSU HCI/DIAL site, captured 2026-09-12
+- `nova-ahmed-personal-site/` — 19 pages from the PI's personal site (including the `/home` alias), captured 2026-09-12
 - `DIAL Proposal.md` — a proposal containing Lab background, people, Projects, Publications, and plans
 
-The source set is intentionally messy. Pages may be stale, disagree with one another, mix personal and Lab records, or omit capture dates and canonical URLs.
+See [`CRAWL-2026-09-12.md`](./CRAWL-2026-09-12.md) for crawl coverage.
+
+The source set is intentionally messy. Pages may be stale, disagree with one another, mix personal and Lab records, or omit canonical URLs.
 
 ## How to use it
 
@@ -18,4 +20,4 @@ The source set is intentionally messy. Pages may be stale, disagree with one ano
 - Preserve the raw capture even after a normalized record is corrected; record the correction in the curated layer or `LOG.md`.
 - Do not edit raw captures to make them agree with the current model.
 
-`../dial-data/` is the normalized working interpretation of this material. It is more convenient for realistic development and import, but not more authoritative merely because it is structured.
+`../organized-from-scrapes/` maps these captures onto LabKit's collections as candidate records with source citations. It is more convenient to work from, but not more authoritative merely because it is structured.

@@ -1,4 +1,3 @@
-Scrape ID: 019d33aa-817b-708c-955a-f847d212ba35
 Search this site
 
 Embedded Files
@@ -6,6 +5,70 @@ Embedded Files
 Skip to main content
 
 Skip to navigation
+
+[![](https://lh3.googleusercontent.com/sitesv/AG8ngQXWtI2fHOzw9HMNu5wVcbyWFq1HcHgRZSyu0GVGLy13FKEID0flQ5DMeJ-WGxBPn1Pv78-anh4-pInOcXcVAu56EAzbznDgdU_JNnyppDLlnPhFuzQzOP-8BtQZShuNVY7BnxAUXBY4xBVyXzQ1G4dTf1QPmqV1pyvx=w16383)](https://sites.google.com/view/nsuhci/home)[NSUHCI-DIAL](https://sites.google.com/view/nsuhci/home)
+
+- [Home](https://sites.google.com/view/nsuhci/home)
+
+- [DIAL Research](https://sites.google.com/view/nsuhci/dial-research)
+
+- [People](https://sites.google.com/view/nsuhci/people)
+
+- [Publications](https://sites.google.com/view/nsuhci/publications)
+
+- [Awards](https://sites.google.com/view/nsuhci/awards)
+
+- [Events](https://sites.google.com/view/nsuhci/events)
+
+- [Research Collaboration](https://sites.google.com/view/nsuhci/research-collaboration)
+
+- [Contact Us](https://sites.google.com/view/nsuhci/contact-us)
+
+
+[![](https://lh3.googleusercontent.com/sitesv/AG8ngQXWtI2fHOzw9HMNu5wVcbyWFq1HcHgRZSyu0GVGLy13FKEID0flQ5DMeJ-WGxBPn1Pv78-anh4-pInOcXcVAu56EAzbznDgdU_JNnyppDLlnPhFuzQzOP-8BtQZShuNVY7BnxAUXBY4xBVyXzQ1G4dTf1QPmqV1pyvx=w16383)NSUHCI-DIAL](https://sites.google.com/view/nsuhci/home)
+
+- [Home](https://sites.google.com/view/nsuhci/home)
+
+- [DIAL Research](https://sites.google.com/view/nsuhci/dial-research)
+
+- [People](https://sites.google.com/view/nsuhci/people)
+
+- [Publications](https://sites.google.com/view/nsuhci/publications)
+
+- [Awards](https://sites.google.com/view/nsuhci/awards)
+
+- [Events](https://sites.google.com/view/nsuhci/events)
+
+- [Research Collaboration](https://sites.google.com/view/nsuhci/research-collaboration)
+
+- [Contact Us](https://sites.google.com/view/nsuhci/contact-us)
+
+- More
+
+
+
+
+
+
+
+
+
+  - [Home](https://sites.google.com/view/nsuhci/home)
+
+  - [DIAL Research](https://sites.google.com/view/nsuhci/dial-research)
+
+  - [People](https://sites.google.com/view/nsuhci/people)
+
+  - [Publications](https://sites.google.com/view/nsuhci/publications)
+
+  - [Awards](https://sites.google.com/view/nsuhci/awards)
+
+  - [Events](https://sites.google.com/view/nsuhci/events)
+
+  - [Research Collaboration](https://sites.google.com/view/nsuhci/research-collaboration)
+
+  - [Contact Us](https://sites.google.com/view/nsuhci/contact-us)
+
 
 # [Copy heading link](https://sites.google.com/view/nsuhci/awards\#h.p_Pz4shv7QmWKu)    Research Grants, Funding, and Awards
 
@@ -48,6 +111,14 @@ Sambasivan, N., Checkley, G., Batool, A., Ahmed, N., Nemer, D., Gaytán-Lugo, L.
 ### [Copy heading link](https://sites.google.com/view/nsuhci/awards\#h.p_np8W3GhzZofu)    CHI HCIxB Symposium 2018 Best Poster
 
 Nova Ahmed, Tamanna Motahar, Sharmin Kabir and Munir Hasan, “Supporting Missing Daughters”, HCI Across Borders, CHI 2018, Montreal, Canada , April 21, 2018. \\*\\* Best Poster Award\*\*
+
+Follow NSUHCI:
+
+[![](https://lh3.googleusercontent.com/sitesv/AG8ngQW6OPkQEhMEPG7fUbK8q3jnuGpazcJ6oZVax4g8XeVUyr1SqwcC2iDrBOVAtkdP4s6f7Y_CyGYe2bTnZxtfcz05Jfh8p-gu150wWvIebgkxJ-aXhi19-9P2UsM0xuktehKwXSktId1F-gsKNRQ_wprowF0x-_eWPplGVe0BynGLfD1AgHRkD4o6ZVxJ0t4=w1280)](https://www.google.com/url?q=https%3A%2F%2Fwww.facebook.com%2FResearch.NSUHCI&sa=D&sntz=1&usg=AOvVaw3f_AhM8zHtG4gLv-wj1r5s)
+
+[![](https://lh3.googleusercontent.com/sitesv/AG8ngQV-e-52D5j8spfmNl4kC_gQkrdne25boGtr7hucdggNGTg5Yx233ViZX1xooYJ1ZzfrPGQ19wC19oSMItssAkwfuYCQJW7cSOLXJXknQVRQ1S5SYOCBIaXC9ZF7u8jraFwq9RsocEv1fYJQ8S7unaBZS4hGvjHUPg1kfuI7M6sfX54yAkj8BwkhrblfJpnnVf77owKzumcQBoW_gT-lQG196hNK5a69otW1WTK5niE=w1280)](https://www.google.com/url?q=https%3A%2F%2Ftwitter.com%2FNSUHCI_DIAL&sa=D&sntz=1&usg=AOvVaw1-7sNtwhczQQI06fNIqWvv)
+
+[![](https://lh3.googleusercontent.com/sitesv/AG8ngQWIbYYbaRghjk1bwP3fRa3MJTLWwbytTSFfpCPHomAIZoowPyQ0cjtXDDI907esR-a-Nkq6grxzmHrFlgttMn-CprH8toY8UdjvKOtHl4dlVOVQuAE99Xomj-PEpyUlveFHAjRdLHNmYJvb67l_KLX7W_nuY_EE939ev1AAC5gu4tmIBNXih-P0ATbLjiA=w1280)](https://www.google.com/url?q=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fnsuhcidial%2F&sa=D&sntz=1&usg=AOvVaw1j3J8yFNLy9uZYzaQwV5W3)
 
 Page updated
 

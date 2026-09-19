@@ -22,7 +22,6 @@
     "**/node_modules",
     "**/temp",
     "**/docs/**",
-    "labs/dial/dial-data/**",
     "labs/dial/scraped-data/**",
     "tsconfig.json",
     "dial-test/**",

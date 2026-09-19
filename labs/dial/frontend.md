@@ -2,7 +2,7 @@
 
 This is the canonical content and porting contract for DIAL's public frontend. It records three things separately: what the prototype already establishes, where production data comes from, and what remains a decision.
 
-The prototype in `dial-test/` is visual and behavioral ground truth. Its inline datasets are not factual ground truth.
+The prototype in `dial-test/` is visual and behavioral ground truth. Its data lives in `dial-test/src/data/`: records shaped like the LabKit collections, built from the 2026-09-12 captures and Nova Ahmed's ORCID. They are realistic but unverified, not factual ground truth. Porting a page means replacing those imports with Payload queries while keeping the page's view-model mappers.
 
 ## Global layout
 
@@ -20,21 +20,21 @@ There is no `/events` route. Lab activity lives at `/news`. `/design-system` is 
 
 ## Route contracts
 
-| Route | Prototype composition | Production mapping and launch requirement |
-| --- | --- | --- |
-| `/` | Hero, impact stats, collaborator strip, About preview, Research Theme cards, selected Publications, closing invitation | Prose remains hardcoded. Derive counts from Payload; query featured Research Themes, Publications, and Organizations. Replace all placeholder media. |
-| `/about` | Identity hero, Lab description, values, method, milestones, Venue strip, CTA | Hardcoded prose reviewed by DIAL; Payload Media and selected Venues/Organizations where useful. Confirm founding story before launch. |
-| `/people` | Stats, PI feature, searchable/expandable Team groups, alumni, CTA | Query public Team Members only. Derive groups from current roles and `displayInWebsite`; query Projects and Awards where relationships exist. Do not copy prototype people. |
-| `/people/[slug]` | Profile, Publications, Projects, Grants, CTA | Resolve the requested Team Member and return 404 when absent or hidden. Use Team joins for Publications, Projects, and Grants. Decide whether alumni and undergraduate profiles route publicly. |
-| `/research` | Hero, Venue strip, stats, nine-theme directory, method, Project spotlights, selected Publications, CTA | Hardcode narrative/method copy; query Research Themes, featured Projects, Publications, and representative Venues. Avoid duplicate stat sections unless deliberately retained. |
-| `/research/[theme-slug]` | Breadcrumb, theme header/stats, filterable Projects, Publications, collaborators, funders, related themes | DIAL launches with nine explicit theme routes. Map each route to its Research Theme record; query related records and use shared Project/Publication components. Return 404 for unknown slugs. |
-| `/projects` | Hero, URL-backed Theme/keyword/status filters, Project grid, CTA | Query all publishable Projects. Preserve URL-backed filtering. `localName`, `abstract`, `status`, `themes`, `teamMembers`, `grants`, `publications`, `awards`, and `featured` exist; keyword filtering needs an explicit model decision. |
-| `/projects/[slug]` | Case-study header, sidebar, problem/approach/outcomes, rich content, Team, timeline | Resolve the requested Project; never use the prototype's `MobileVoice` dummy record. Render `localName`, relationships, rich content, media, and optional append blocks. Return 404 when absent. |
-| `/publications` | Header, Scholar links, URL-backed grouping and filters, reusable Publication entries, citation dialog | Query Publications and populated Venue, author, Award, Theme, and Project relationships. Link titles to DOI/publisher URLs. Remove `#` actions and render only available actions. |
-| `/awards` | Derived hero stats, featured Awards, category-filtered complete table | Query Lab-scoped Awards. Use current `featured` field, recipient rows, Organization label/relationship, and reverse Project/Publication joins. Personal Awards belong on the relevant Team Member profile. |
-| `/news` | Patterned hero, date-derived upcoming cards, typed/filterable archive | A News collection does not exist yet. Decide whether to add the lightweight collection or launch with reviewed hardcoded entries. Canonical type values remain open: prototype uses `academic`, `event`, `community`. |
-| `/join-us` | Recruitment-status hero, reasons to join, Lab-life gallery, openings, email application instructions | Hardcoded, DIAL-reviewed copy and Media. Recruitment dates and openings require an owner and expiry check before every launch. No new collection is required for MVP. |
-| `/contact` | Contact details, social/profile links, Join Us signpost, three-field form | Use reviewed Lab contact details. Submit to Payload Forms and include Turnstile token when configured. Verify the actual Form record and success/error path in production. |
+| Route                    | Prototype composition                                                                                                                   | Production mapping and launch requirement                                                                                                                                                                                                |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/`                      | Scroll hero, band with PageHeader (derived facts, collaborator names), About, Research Theme index, selected Publications, invitation   | Prose remains hardcoded. Derive counts from Payload; query featured Research Themes, Publications, and Organizations. Replace all placeholder media.                                                                                     |
+| `/about`                 | PageHeader with Venue names, Lab description, values, method, milestones, closing note                                                  | Hardcoded prose reviewed by DIAL; Payload Media and selected Venues/Organizations where useful. Confirm founding story before launch.                                                                                                    |
+| `/people`                | PageHeader, Director feature, searchable ruled roster by role, alumni table, closing note                                               | Query public Team Members only. Derive groups from current roles and `displayInWebsite`; query Projects and Awards where relationships exist. Do not copy prototype people.                                                              |
+| `/people/[slug]`         | Profile, Publications, Projects, Grants, CTA                                                                                            | Resolve the requested Team Member and return 404 when absent or hidden. Use Team joins for Publications, Projects, and Grants. Decide whether alumni and undergraduate profiles route publicly.                                          |
+| `/research`              | PageHeader with Venue names, nine-theme index, method, featured Projects (shared Project row), award-winning Publications, closing note | Hardcode narrative/method copy; query Research Themes, featured Projects, Publications, and representative Venues. Avoid duplicate stat sections unless deliberately retained.                                                           |
+| `/research/[theme-slug]` | Breadcrumb, theme header/stats, filterable Projects, Publications, collaborators, funders, related themes                               | DIAL launches with nine explicit theme routes. Map each route to its Research Theme record; query related records and use shared Project/Publication components. Return 404 for unknown slugs.                                           |
+| `/projects`              | PageHeader, URL-backed Theme/status filters, ruled Project index, closing note                                                          | Query all publishable Projects. Preserve URL-backed filtering. `localName`, `abstract`, `status`, `themes`, `teamMembers`, `grants`, `publications`, `awards`, and `featured` exist; keyword filtering needs an explicit model decision. |
+| `/projects/[slug]`       | Case-study header, sidebar, problem/approach/outcomes, rich content, Team, timeline                                                     | Resolve the requested Project; never use the prototype's `MobileVoice` dummy record. Render `localName`, relationships, rich content, media, and optional append blocks. Return 404 when absent.                                         |
+| `/publications`          | Header, Scholar links, URL-backed grouping and filters, reusable Publication entries, citation dialog                                   | Query Publications and populated Venue, author, Award, Theme, and Project relationships. Link titles to DOI/publisher URLs. Remove `#` actions and render only available actions.                                                        |
+| `/awards`                | Derived hero stats, featured Awards, category-filtered complete table                                                                   | Query Lab-scoped Awards. Use current `featured` field, recipient rows, Organization label/relationship, and reverse Project/Publication joins. Personal Awards belong on the relevant Team Member profile.                               |
+| `/news`                  | PageHeader, date-derived upcoming list, typed/filterable archive grouped by year                                                        | A News collection does not exist yet. Decide whether to add the lightweight collection or launch with reviewed hardcoded entries. Canonical type values remain open: prototype uses `academic`, `event`, `community`.                    |
+| `/join-us`               | PageHeader with recruitment status, reasons to join, openings, Lab-life captions (photos pending), how to apply                         | Hardcoded, DIAL-reviewed copy and Media. Recruitment dates and openings require an owner and expiry check before every launch. No new collection is required for MVP.                                                                    |
+| `/contact`               | Contact details, social/profile links, Join Us signpost, three-field form                                                               | Use reviewed Lab contact details. Submit to Payload Forms and include Turnstile token when configured. Verify the actual Form record and success/error path in production.                                                               |
 
 ## Production data rules
 
@@ -50,7 +50,7 @@ Home, About, Contact, Join Us, the Research introduction, and method copy may re
 
 ### Unverified working data
 
-`dial-data/` may seed realistic development and manual import even when it has not been approved. A record sourced from it must retain provenance and remain subject to Operator review. Imported co-authorship does not make someone publicly visible.
+`organized-from-scrapes/` and the prototype's `dial-test/src/data/` may seed realistic development and manual import even when it has not been approved. A record sourced from it must retain provenance and remain subject to Operator review. Imported co-authorship does not make someone publicly visible.
 
 ### Derived values
 
@@ -98,7 +98,6 @@ Counts, year ranges, active/completed totals, and per-theme totals are computed 
 ## Open decisions
 
 - Whether the six-card Home Research Theme treatment is better than the earlier three-card editorial treatment.
-- Whether Research keeps both hero stats and the separate impact strip.
 - Whether Awards tables show recipients inline.
 - Whether Project keywords deserve a field or Theme/status filtering is sufficient for MVP.
 - Whether News warrants a collection before launch.

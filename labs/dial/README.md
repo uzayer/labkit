@@ -9,8 +9,8 @@ This is an active delivery workspace, not part of the future Fumadocs content tr
 - [`identity.md`](./identity.md) — confirmed identity and the facts that still require Lab approval
 - [`frontend.md`](./frontend.md) — canonical route, composition, data-mapping, and launch contract
 - [`design-principles.md`](./design-principles.md) — DIAL-specific editorial and visual principles
-- [`dial-data/`](./dial-data/) — unverified, real-world working data derived from the captured sites and proposal
-- [`scraped-data/`](./scraped-data/) — raw source captures and provenance notes
+- [`organized-from-scrapes/`](./organized-from-scrapes/) — unverified candidate records, mapped to LabKit's collection fields, derived from the captures
+- [`scraped-data/`](./scraped-data/) — raw source captures (Firecrawl, 2026-09-12) and provenance notes
 
 The standalone prototype lives in [`dial-test/`](../../dial-test/). It is authoritative for layout and interaction, not for factual content. The production frontend belongs in `src/app/(frontend)/` and must read real Payload records for data-driven routes.
 
@@ -19,7 +19,7 @@ The standalone prototype lives in [`dial-test/`](../../dial-test/). It is author
 1. `dial-test/` for implemented composition and interaction.
 2. `src/collections/` and `src/lib/ingestion/` for the current data contract.
 3. Raw captures plus direct confirmation from DIAL for factual claims.
-4. `dial-data/` as useful but unverified working material.
+4. `organized-from-scrapes/` and `dial-test/src/data/` as useful but unverified working material.
 5. This workspace's open decisions where neither implementation nor source material settles the question.
 
 ## Working rules

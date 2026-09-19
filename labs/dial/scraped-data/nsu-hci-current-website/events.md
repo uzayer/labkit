@@ -1,4 +1,3 @@
-Scrape ID: 019d33aa-88a0-73d1-bd81-658912d8f81b
 Search this site
 
 Embedded Files
@@ -6,6 +5,70 @@ Embedded Files
 Skip to main content
 
 Skip to navigation
+
+[![](https://lh3.googleusercontent.com/sitesv/AG8ngQXWtI2fHOzw9HMNu5wVcbyWFq1HcHgRZSyu0GVGLy13FKEID0flQ5DMeJ-WGxBPn1Pv78-anh4-pInOcXcVAu56EAzbznDgdU_JNnyppDLlnPhFuzQzOP-8BtQZShuNVY7BnxAUXBY4xBVyXzQ1G4dTf1QPmqV1pyvx=w16383)](https://sites.google.com/view/nsuhci/home)[NSUHCI-DIAL](https://sites.google.com/view/nsuhci/home)
+
+- [Home](https://sites.google.com/view/nsuhci/home)
+
+- [DIAL Research](https://sites.google.com/view/nsuhci/dial-research)
+
+- [People](https://sites.google.com/view/nsuhci/people)
+
+- [Publications](https://sites.google.com/view/nsuhci/publications)
+
+- [Awards](https://sites.google.com/view/nsuhci/awards)
+
+- [Events](https://sites.google.com/view/nsuhci/events)
+
+- [Research Collaboration](https://sites.google.com/view/nsuhci/research-collaboration)
+
+- [Contact Us](https://sites.google.com/view/nsuhci/contact-us)
+
+
+[![](https://lh3.googleusercontent.com/sitesv/AG8ngQXWtI2fHOzw9HMNu5wVcbyWFq1HcHgRZSyu0GVGLy13FKEID0flQ5DMeJ-WGxBPn1Pv78-anh4-pInOcXcVAu56EAzbznDgdU_JNnyppDLlnPhFuzQzOP-8BtQZShuNVY7BnxAUXBY4xBVyXzQ1G4dTf1QPmqV1pyvx=w16383)NSUHCI-DIAL](https://sites.google.com/view/nsuhci/home)
+
+- [Home](https://sites.google.com/view/nsuhci/home)
+
+- [DIAL Research](https://sites.google.com/view/nsuhci/dial-research)
+
+- [People](https://sites.google.com/view/nsuhci/people)
+
+- [Publications](https://sites.google.com/view/nsuhci/publications)
+
+- [Awards](https://sites.google.com/view/nsuhci/awards)
+
+- [Events](https://sites.google.com/view/nsuhci/events)
+
+- [Research Collaboration](https://sites.google.com/view/nsuhci/research-collaboration)
+
+- [Contact Us](https://sites.google.com/view/nsuhci/contact-us)
+
+- More
+
+
+
+
+
+
+
+
+
+  - [Home](https://sites.google.com/view/nsuhci/home)
+
+  - [DIAL Research](https://sites.google.com/view/nsuhci/dial-research)
+
+  - [People](https://sites.google.com/view/nsuhci/people)
+
+  - [Publications](https://sites.google.com/view/nsuhci/publications)
+
+  - [Awards](https://sites.google.com/view/nsuhci/awards)
+
+  - [Events](https://sites.google.com/view/nsuhci/events)
+
+  - [Research Collaboration](https://sites.google.com/view/nsuhci/research-collaboration)
+
+  - [Contact Us](https://sites.google.com/view/nsuhci/contact-us)
+
 
 # [Copy heading link](https://sites.google.com/view/nsuhci/events\#h.p_3IpaUUYNm8HX)    Upcoming Events...
 
@@ -19,11 +82,11 @@ Members from NSUHCI and Dhaka ACM SIGCHI Chapter are successfully attended and o
 
 The ACM SIGCHI Winter School 2024, held in Colombo, Sri Lanka from 2nd–4th January 2024, brought together students, researchers, and practitioners to explore emerging directions in Human-Computer Interaction (HCI) within the South Asian context. Through keynote talks, interactive workshops, and collaborative discussions, the program emphasized user-centered design, accessibility, inclusive technologies, and socially impactful research. We attended the winter school with our colleagues from DIAL Lab, where our supervisor, Dr. Nova Ahmed, contributed as a speaker, sharing valuable insights from her work in HCI. The experience enriched our understanding of context-driven research and strengthened our engagement with the broader SIGCHI community.
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0SQJFqBw_DnZTIfh8EqKQlIIsSDrzL1CMmVXUaGSlftycIs00Kv5OVWV_kVx6AnAbduxEAbojwtBEfCqFqy8GIi0sYU5WWGYx11REo8KHuiC2Llz_ycZ0BOadotHaX_vIRkgLLJNd1zXGm1K6Do9-gJFd_ix9buZ2xauCwq1ENkmaTdJUzoKN13DcRvVaFFr0Aa17XSMo56qp2-spP_iQhUc_N7POJ5eeKttEpM=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQU-zqxOjTLyRobuNadv79KT4C1_ucKqS8mWwm6iSb2JqxDG-F-KUJlQ30BkbUa80RT2GmEaIVwIBhiZyfsiKk8qAyt8MXQny-XLlnbrAMLOG2j2HiGLDMnNXbuxg9OgXLWBLWaHEkTybN3L5hVyxutJtgkWxX_AZqwwjyFtFTZUXTiZTDV5AgddBDLJ_uHs_i809Gi08jci0oWjvLskQpNoCcVtpUW-yUoswb2RhKk=w1280)
 
 Photo: ACM SIGCHI Winter School, January 4, 2024, Colombo, Sri Lanka
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0SQMnB6hSaXu_yBj2Lj5mEZEH-ypy8SBQ9mvaCoad9xgpTbrUZ_wP5HFSeMP9Qrz4UUb19RTpH-PnEoSoXU2F-w5qcIdxYBhTclHAZfapeyH-_1eJwWMhuVtgWgii61IHTpYd1ih9fZl-wDa_RhuSEDeEUU8wO1nWS9mZvpbSrfuQLKw8jaMEf0j6CHW4AuYqdUzjO0XUL3YYzrhB6Ra-FzMuEuQjmemFjCp=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQXs-Swyu9JLJy_G6Ec-aB5pGMzkbzgheABB4iBVT4znEBf7PRUOo7VjGXTm6hBom3o-eKNGYyCp_d-6UaBo58yOWy47c_8mfCia-2lDV_ezepDzqGsTdMivdcJukN_BoKUYECoZ3qPpc1LmK0oUi6rYiVoDBeRvEZJeWP50N1HXLNLZZlbxwN_ry3H5SzYz6iUVZ73XHR6Va5MHc0Q0_1u2lURKsy-FiJVtKCCS=w1280)
 
 DIAL HCI Research Symposium, 1 June,2023, North South University, Dhaka, Bangladesh
 
@@ -37,11 +100,11 @@ Google Gender and Technology Research in Bangladesh is the HCI Research Project 
 
 ### [Copy heading link](https://sites.google.com/view/nsuhci/events\#h.p_1bZnrfd7V9-2)    ( [Event Photos](https://drive.google.com/drive/folders/1x75MOylw38caVWELV7eT4OE6pdEKxheI?usp=sharing))
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0SSpKPf-OBhwb55DiKQD-GKukyutfgqejpzpgWPfdfwb3jjW3MaB_xSE2doMCexFJIULzPbwwkncC83Vr8t9MpdcH4Ylp9ZprS654t6X7IcZnqGrIUWtzCaoHb7tbZkK2xOJ_8L0S4JHqc6J6o920biFBUCEMdAU1kU04PGER77NYCbvog3jvgdKsBpXMXAz_1bCulWduj8S=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQX3PDwIjhiwBy6D_qhgMURb66Ngll35o23Y7g0SYtMv3bVLzCw8sGgJN6CQlaJQ9denVtv1O4uwoD8jTkai4NtNYTOEx0QZStdsFD-lKJ7Xy_MV3RlECHOUS9vgJu6rYZFax_XW4Hu6oSEgC1RSQmabzZpHN93sqPa1Hf6oBuE9HHxrzwxp3X4-lH_Jby7KkSEloXuTp00_dHuN=w1280)
 
 Photo: Online Conversation with Dr. Nithya (Google) from North South University
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0SRniHLnKNJDNuuqUaCAhkX86sHwhqqsQVuf5ATw_SYxxj27Wz2TCmlJzGBiwXOSyNbgTbpDNp3W-HHotnzCBRCzElmqdyiUJULGSROVpV0AeSIg08TADBxn-N9dzcEBu5-RF9K8giWihTx4TCo47pWpdqJATuIJLV5hfNO1dXgx6sy0Md1kt-TjPA1G9KCHYb_SvXLElGSLdOE=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQUyeIZDHVOlC3jNZIrF6LjLN-y5n3l0v6Oaq_uLwT_NHYJ1av9EzxDVyLJNR9xDFMoFIxundf0ijwwth82k-FlozC0LoVaY-ZdzWp7LpWBtvHJS5hEFzrqzEy4aeZo-wU7LAbmpsbprZ38koPhuzEpZZG8qqNjZcIU_ld3BwLhI9i6jU9y5r6iIE58ulooHlP85_4cafeOr_1J9__I=w1280)
 
 Photo: ASSET, January 9, 2018, IISC, Bangalore, India.
 
@@ -55,11 +118,11 @@ COMSNETS is a premier international conference dedicated to advances in Networki
 
 This symposium at CHI has evolved into a critical collaborative effort to bring together researchers working in under-represented contexts around the world. The mission has been to foster community across geographies, backgrounds, methodologies, and other borders. To achieve this, this symposium explored building bridges with the larger HCI community, and creating concrete mentorship opportunities for supporting HCIxB researchers in publishing at impactful venues such as CHI.
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0SQ7ENng7qu1NSQ-lPEty88ircP8kaqyqMUvkN7-mVCG9PSiAHVsUwZ4oUaZ9rKG7podUxleTrv53A0BFnK5qvSvoqBjunhylGcae_s5ao9hhpv_wvZeE2LV88VlIWzz-XJwQ-PIB16YEdDBtwpfsieEjncmIRvmdZPQ9Q-ZSo8y2CqmHYmkd8AIbeXu95PLrJW50ceBcLIb_Ew=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQWgzWQ_iztODVlwMDLT-IftRru8cf8TiEQEKceTdIolyOhgKDYoPSSwD156etvvjXLn68dfvGhbcPqXfKUhXBc1szi355zW3z-LY63SkO7a2AdlpTLMhjDETinUYE7St1StMvy_-jsfiHXb_JjOz240W5F85gTsJF40lLjz1D20y7HfynjVIjHN6T68FdrLRzl4UgnNxwzu54AEqok=w1280)
 
 Photo: HCIxB, CHI 2018, Canada
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0SRy9NIP4Cr5t-_zBOMDDhcsOZ7K0Ro7K2LhAxahjr8CXam4XQovbs6ylzdXUIZ9hRs5_Uk4mJXQN1Jvoph4E7cze5f3HuKRpuDkqa7fZvcFxYV2pxDQM3OusmhKBE-cXhXMUg0oJxIhBSt6RaJu8ubRA-hQ_NIboIBpDecz7b9hkRL53z9xFo6ob3bB38QQoDMouboUwpxTqw4=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQUEpS2lcOZnlQQVYlFJQEgM1emeb9qHCAjHcNLs1cQldYJ2FK2YzItF1KN0cUzYmlukz_NXUnHEDPQH4IkgRmbZUgLhAtXe7YqxBT_Bdq3bF53iQz-6gwvsoUO1RIy_3bYjTvpZgaa3L32cTlLE4RGTOPB0atSmqB-XiDaSXmrRPKi1Oc87NotRbW7pmsE5_0ixOS-DNHrM2DjPNkM=w1280)
 
 Photo: Summer School of HCI Research, May 25, 2018, IIT Mumbai, India
 
@@ -77,11 +140,11 @@ This Symposium aims to bring together all researchers and scholars to exchange a
 
 ### [Copy heading link](https://sites.google.com/view/nsuhci/events\#h.p_rI-7k814ABJx)    ( [Event Photos](https://drive.google.com/open?id=12rRr1jSNc7ft8gAIwQJc-ngHovZDixGg))
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0SSR62-Z4N3UJIvvm595jWArWLWAr_QggIbV1hxvbF3G9-6VNNkr3mMgrEzl5YEZT6xT3gdsZf5AH57jbEMzhyhRYcCvGe6lsx1UL9lpiWBLMeKTYa5jLWiE4cEgtyFHNr2UOXiuAQQ2wU44fzVVmOxF-POAs4KLHniHMUbQGU_72_WSLXB2q9HAGAOE7GgGGSoCYhFONsPB2tQ=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQV5JCqhrFDSoKzUzP_rbZBBCHlWfCilwDkV5TaaCi-IvcpPLbcav7Uk61_KZqiVOWtxf9Rm9BFH0bfrnoCVP6Gavvii3kEhQz5vQxEsBKdrXX82gPtMIV6yYo6E_zOcAnTuyHjX-zcH0EiEUt7sETRytza3J5TG1y2WC6ChocbXLoeo7AAFQhxvUxJjlFgh90oq7DOltLiFaSWOe9s=w1280)
 
 Photo: Symposium Venue, SUST, Sylhet, Bangladesh
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0SSR_ezNqCYLfgYYCRUerZlG6DgoqnVcuYze-DbPxPmidGzicGp-4zlA3SwIK2Naig4XbkeA5WcBRsuFL_azTKJSexEw6jN2YAFHvcNbNPDPYVuulL_m5svGkgNwMXyJbJ0WvrVUQC4ItumrMABublrdDN9LVIBOfC9QxbBIHPPBbT08Pjd6dGf1hAjYDn0pgyGInIjOgVOHY_0=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQU2WbVaqmJKupVLAcjNEktztTZpeVjTRECXj-XmLuP2muKf7oPiv2ftq66xeBWK0JoIhzqqPj0qRcOvYJ3yELmFFdG0Gz-DuspNnaNSrQvLDvccvj5Tg3YRBiWrkaZIhATCUdNvJtdpsybLe3TkzQrNeMFGv-s-Th8-499tFFvOJOl14m0vyd3m4oJ8gQNkV5g-8IYdOTPd9EQin2k=w1280)
 
 Photo: HCI Workshop at North South University
 
@@ -97,11 +160,11 @@ Mobile interaction is expanding its horizon beyond the interaction between human
 
 ### [Copy heading link](https://sites.google.com/view/nsuhci/events\#h.p_fWIjGnqmAXTR)    ( [Event Photos](https://drive.google.com/open?id=1bvi1JpHmF81QkWc9UZeuHogJwPvL-zW4))
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0SSBMdDTWQgXtLD248y405JUeEb_CywzTTTFyia8NP-2YNQbQUt0EMV8UEhl1NucVefPyq8RBxiIgmjCmc-udiupVtkNsmxXSe61qLRoYjQMvs-Ggr-5zy52uPKJxVo89Sg7uyuGuoRYtudoEZZL3EQ7Jz7S-WR9r7vMTPrwPwl5_AAK6JfrTCNE3o6pQtfAirycUANiGpNW=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQVFqAtqlwgjEeZhYkwB9_t7d4kNsR-VDWyJU5nKNU8KWabdn6s_DfsPZWWoEvP1GZiauHFSoL9dOgimUnyHACabFs7QpT71_VBlpktITeSwrVz_BRCZQZr-9XlZf3mhWW0zmxgdXIsTrnAmHla3fNjN08t3OtVvDQsj0qesUzctTKqMekO-LpMvqRL0nz_Br6JPek2TwsEmggdi=w1280)
 
 Photo: Keynote Session in Mobile HCI 2018, University of Pompeu Fabra, Barcelona, Spain
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0STiqGrXrJInlk8jrF65-Bt21d6GyIliLVXwqd1o16DRzxO3B5WFRtAnMmusG3yS71lSmifn_45p821NabSaYZly7bKBgUwDEdtkctGga5mMkiQ1OL0PVUXh-VyJStBD41BNGWHSkekFzbyEAi7ZcrThexPiccSwIshLgeufI7a1bJ6R5Pkt5WlC6jr5wc6DAL7v0_Fi6A4C4fw=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQWWCqVo0QhH1aIu458mLKjugJ01lSnBmTXL-FGxw0BCUpzv9mr1ggJbduovxfMM1aJbG6IAfCSz6kZWGrRsxLBSu30pezRba3LzhHCYRg6ZfxYPPzxy8Kpwhn7OOwRL_aRiQ_oPOCmwEZ7--jaU2ez7juyCZi0bJYT6r9fm6taWek8YSKhlpxvMH9ygNx2uMP133Wue97dYYh8haiA=w1280)
 
 Photo: UbiComp 2018, Singapore
 
@@ -117,9 +180,9 @@ This workshop was for student and early career researcher participants. This is 
 
 ### [Copy heading link](https://sites.google.com/view/nsuhci/events\#h.p_YgAUwyNusd6_)    ( [Event Photos](https://drive.google.com/open?id=1paIW5ZwegRnJ2cICE-r6nS0i2HEte6VO))
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0SQGwnfdpI0Rnx76WAoavz9H43qKVQXp0IfuXXpKj6H-95f3GBMqPwuL6sd9kkW6y2zPV22UZdfaqKsohh5qN5XGuXOuSTgIAcCkPeU5ssWvqs-qYPvOKs4IsWNTgtBtFaR_CHCkkpAye41mCe5OFqS1JBdSzHPB5-eVvwju-z3NR_W318pbZ2PeGEEdEBXTGei2oVcyxIhmDZ4=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQV_mJizKmeKlVM1FTBpGOQdB5Bz96dEIu-A_5GYPFWRD-pc3Q8vA7L9zT-qCOiS58FDk7y97ASQcbBnPqjs84CZjdTpXqM0BB9-_WnlBk9hJxCSSQInT2HsbcxF_j9C5-Y91IAVNWuKVywUXGA7sYEFz6Dn8CYdI8_qfQlxlgIk2004qMXZuuT0farOgu0VzchwjfizlizDq98wgqw=w1280)
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0ST6rFoL8ue9CuZ9SYX8uHeUPqAWYYoabkX5AmTfWLi4xb2xhYkLnQiivPdbnFlPFBmsbTFQEt4Ytp_D46Itn78pXjue5bN7EE-hJiTL-Z8UOV488i3iPKuSM-iyyiNl7fKsGdJJvT5_3xAncBqki8LNbSEKjz2ZeOWaOpQiJeFXzZq4B99LLHGXscyJkclrzXRgNTe-vEw0rEc=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQWcjyvsSCjrt2ed9XPL3xBedZe-fOAxwPI_EwhEbVaEokeU8sP2grfJIn_pfpr2q1ilons0WzyncDX63BxN_hlvxXRNm6U1VHmw_sygP-tYoCjPiLrIps9kZeEcnsotOUgl-l9HyptOqrJd7afiXdWLL7lu4erGpFgDUyz_Af79OLozpBBWEIlyBmi2NY1Ck_m9ktfJS4R-SqycDpc=w1280)
 
 Photo: Best Poster Award, COMSNETS 2019, Bangalore, India
 
@@ -137,11 +200,11 @@ This Summer school aims to fill the knowledge and skill gaps of students interes
 
 ### [Copy heading link](https://sites.google.com/view/nsuhci/events\#h.p_NeW8S3XRCP96)    ( [Event Photos](https://drive.google.com/drive/u/0/folders/1ilDQcKBqyOAV2Hm36Y2bXsT77CtRrgOl))
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0SQi_kFw9A4CAcwgK2AJWnGlny1BJe9gnNI6OHTXAQ9uZ9NBSjByeoHTUb-AeVyVcm4BEZOW02z-qkX3txQOgB90-G13Q1D9-1mvdbZwOFaBkAemUJoezGQ4w0Tps2760_gdFQ3I-h6gnKaKOK9LRqbZvWdGKYgRoEhI5oSerwDgpQgqXoEo06l4Z3xzhlp8-0zuSOziUq8k2v0=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQXc_CxlAHEyoyoh_MYhby5BHxNfRlxUNWCmDgt88Idi5jR1EgcwZU8V9Rh7YLIjaO5XMNAVAvBS3zXzboaTnpqLPQlZYj9hgjIaO4mB2E-qGDkalQe97ghylCB9OomrfoFmL3Nl1vytlHwJn38lv-Mj4xAO4ZpL4gYOuHQP9YutbSIHoJkKxPJONBDz6Ff6WD320eFnJEHFHvO0TiE=w1280)
 
 Photo: ACM SIGCHI Summer School 2019 at NSU, Dhaka
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0STrlmLabK23zGtxi33_f3XfGvOODjOAkI9yWQRhXz9c9qrvAif2d38rqXRSstPEGrQXTeywjtzmQWUgaA0dy-52HnZxv3WCy6gqtLYoRpkgGFjVgafUzSyoV1BqYiIlYZ1JUhJ2XiJga4gcFNgrDsIY3qxPbJ3AOjDz3bKCqavWHAPVPaFfz89g70mHOhp4TRtGv0cUwSAf=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQXyaVqmKtbekPUw1fi69HY68qeV9h35aHBAv1eBasrFBxl0jXEsfuFiZ1FOA545ohfuy9V4Uuu1DC6DuVGaeWCsoxvwdL8wFIaeN-haZ1izdlkD2XSwyIangdWSEFk6Bd_ZZmdUPjDpiajCn90Fvj7bH4xWv8e3eeu6H-w_j_J8bwshPAX06qJh7NOSbeqsEc__AmEnz79TD8hK=w1280)
 
 Photo: Discussion on Design 2019, NSU, Bangladesh
 
@@ -155,11 +218,11 @@ The focus of traditional HCI research has largely been on relatively homogenized
 
 The HCI Across Borders (HCIxB) community, still strong, and continues its dream to build bridges across all these differences within HCI.
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0SSLdCvIs__85_jbapPIMmdLXW3XYvIOueHexUrC5i_3A9GfL-a5Zz2i8PVUnSgDCU6KmXWwE-k-W44m25hiPXF8NhpK0m5s1UgvRVDSM898jjqYxH1Z4gKAB6MnMKB8OFj7dEDOYd72tMLH8K90LWm--oVe0TaKo7nQywNBEnMSsf8oweG3gA9puQ0e4M3LpFFEoA6xRby44vs=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQWx0rT0wZk67ucVDIzSwcWYHCEn_ZNoeRSivcoBwizDx_2GrHXdQYCIubB64wDy_z9NY6wVbCgQ6O9B8dTQRyv7yM53srE3j2wkHAweO0vR3YbLSufpkVV-OYl9FXbXdXDf4CqseodMmNcnS2ZAKFpSYrsYnDNcOyY4L4qM9p_2U1k0StCvpNDjZnKV8c6TDfPk1y_YNykZHi8Lsec=w1280)
 
 Photo: HCI Across Borders Symposium at CHI 2019, Scotland
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0SSCxuvn8Vm1HsxotGphe4LACaG-4MWHAoRblsL-IRIHnq4Pz9XDBxAJ4B8Ny1EOBSBlNe5JYMwtd83IVm8pmYv0puoW_9g0YMiJ161JQq5u3de-M40lX29sYzBlovVUeHfrzad9Kdy9NZAjXJUuUoCoDukGNVT3eOivFvtAhO1WEOWLVwx3aUR_FzhNEqrJ2dRk2ImGb8Bq=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQViJFhcq9guR3B6C08X9cbHJzDEOHMjf6iz2e9HjleXkqYKrT-_dmXM7bVKx-8KdfkKTQlr3eHpWlQ_TXFKnn7ZlECLoDM0GHZrIzpGGCxf8Aokw8_3IPBRFwgZgEPANeAxjWgfUYkKmpKM_Yh64kHIcSlh-Umh2QmwwYfVZYtTZqeyhWJAEOgF_410ZLqn1yyzTss4ibbnd76t=w1280)
 
 Photo: CHI 2019 Meetup, Scotland
 
@@ -171,11 +234,11 @@ ACM SIGCHI Summer School Attendees met and discussed regarding future researches
 
 The ACM CHI Conference on Human Factors in Computing Systems is the premier international conference of Human-Computer Interaction. CHI is a place where researchers and practitioners gather from across the world to discuss the latest in interactive technology. CHI is also a multicultural community from highly diverse backgrounds who together investigate and design new and creative ways for people to interact using technology.
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0STDk5wGctmJifi12GvTLg_ludkaAVk0b35lZ_5UJovwF04gOuei_TMgqhzRG1fjW-S-MbEEZUfmkarzT5_elPlaezilEFeyoq3qe9kSKTY6zQq0O93sPDrh6yGt4VbF3Jfii-CDPbk6vzmr6hg0XprusnXf126SQRIUEopmDlGBqfySwflLpKwH0fG8QefwlJjugBiZCg=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQXdKSkJeY6Fp04RQSTt9Hr0OmcJfl717TSFPLtdxD7X7Wqwi3hW7YyiW2N3UXyEjnLf6fBdiRU1brdHDTOmzKl6F_VmisjmQCFr1g15br-crEsdkSyl56NsWpKj8hzFY5XuWTc2Ish7zwfMvPBTgqgx4b8KEcbxo97nOi1UkOuSbFw-bmy-7eRLvazpv_NTh7rJGUnq26AFlw=w1280)
 
 Photo: Bangladeshi Researchers at CHI 2019, Scotland
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0SQF6TdasdHYyDmU8delorCJWMUm5U0KAnIrO8GUmrK6vpLqon_Z7jglfIFwnSVZ2uLtf1FBWduYaekpojelKjhy-VgJcAX63eroGfSEyPVnkMeKxeJgU4_2QAJDLxGVlGm-Ur5Pzujx0KLindrZHEXYI6IwqSiPvObWA8tj3OaIxKmGmwjxyrigXHxK88dn9gcbeK_AhN_7c4c=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQV0RZbkIUnkbhOG4Wz9vKwEnHgOyvkISuQIrhbuteFQBs1DEyQqawFz7uGjij4-6-uL5gAqhR32_enr6uAsUz7jhKObRw40gqwtHLZA4tHmhVCVlJ275x2j8RD6byhMEQq-Rzd3vFIf2XfoG9pXhYPKVBYh4s-3LBlqCvcHDv8HUyxxSsy8wiyV_mBx6nijXC2hXiE5wyESwxH0-z4=w1280)
 
 Photo:  Asian CHI Symposium 2019, Scotland
 
@@ -189,11 +252,11 @@ AI is receiving, alongside the challenges around inequity, fairness, and bias, a
 
 This summer school tried to support current and future HCI researchers who are drawn to work on/with AI-related research and/or products.
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0SQ7_qqlCkNRw1mNmO-NRhkHGo707G3Im80z9B4YA-WVTr8XRNJ76QlkUV460BCnwiIsPmymo-dlY5tIyNl12rYIrYzNVaEL4CBbVNzozbnm4hZGKMkqQLwIT8uQiWDTGx9w_lsNfA6s1Q38GatJjjquGcPWgwZiH9C1otSqiWsRWPnyfb6dFLMd9mlVkc_rsLdroen4sm7I=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQVIuywDFtXr6VWwqooaKj22r03jJmmpcwU9dd74z8MTLmtdavDwPZH1oEmbcvGjV5cKp_58Jbibc4J--eP29YPTCUhFVBXer-otyhbgkidQtTsU0AC6yDR8nIsHnLc6Fdq4SKgwWHODeewm7bDrCtYEsWTB5JIyKcqIxuA2yFUCXRsWDlOt6eiRPEK-jIrOsuXKKC1jJ6O38pN4=w1280)
 
 Photo: HCAI Summer School 2019 at New Delhi, India
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0SQD81XOeUiTKg5eBY-3kf51p9YCs4fQLg0XB1MynqQg0Q7SNsDXYV4PbRPYRQm8yZZemSbkCrtCo1zzASMP4YKaxHfQo3gwtUlMuf1bx3frcqX3raE9JM1pWdDEQxcURBZQUDYxmU0hpi8Lp9eNxvDc3mjNPd6h6alH8SHCRO9_8N3aboBhyl4x4niajtu4wi-D3K6YBQ3Y=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQXBvWvKJOzryJB4UFEVXxvu7qWAMa4xF8aTlrmVTcAzYrQZO6RYVTo8pYixPuHNFhrSDCHgM8CdMdzEZi1HXJMQw5SOK53E70ppA19iCm6y5sdRQQtpby-fCRm3slflv4RrAjIEowvNk2GTTG9E-kvsJnh0uYvCzIaUjO1I5qobrzK6wPDOq-8MtTRY_661aG9ISKJ07ijbztTC=w1280)
 
 Photo: Bangladeshi Researchers in GHC 2019, Florida, USA
 
@@ -207,11 +270,11 @@ TENCON is the flagship premier international technical conference of IEEE Region
 
 TENCON 2019 is expected to bring together researchers, educators, students, practitioners, technocrats and policymakers from across academia, government, industry and non-governmental organizations to discuss, share and promote current works and recent accomplishments across all aspects of its theme. The regular sessions in the following tracks is combined with special sessions and workshops. The Special Sessions & Workshops is offering the opportunity for a more focused exchange of ideas and presentation of ongoing research trends in emerging areas.
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0SQIeBF0xGo1RDy94vfOmkPfXOaOGzX2BkqmypUBYBCDlinW9r_dN5HdlwgJuXRCpKLQ8XpnVbKwr01Ccj1It5WhK_Iygv708-lA8JdvXqcgp3AsCovEVw5XDuig9VISIoGTQmg2MNiN1-C27uK7qb8F4xWGRGbG9SgGiyfA7nIckKNP4kkrtLvHC9EfdJl9qtQ49uzYqNVMYTg=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQWhb7meEUNiGtHq9W432Ai_YLXx8cOjBcdYg9GOvVfFCMgCZCHPBdL2u3hZ5wAvkODpH6uwZ7JmInwzUAVt0SYnAOrTDNkNE_FHL6d5sYyOsl5qA-gQVHdkoq4WTu4IvDgj5EF06LIokfPgtQP5BiqcFVL1ePTqwSPFFAVO8gdzkBy9a7Yl_FUptbI3WOAR1j4ddDqxhJPEsjU0EHA=w1280)
 
 Photo: Presentation at IEEE TENCON 2019, India
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0STb7VOTk9c03KLKkML3gc__Tno-DagEdH0YTsjo3vfcIlh5mQG22beKm5kRvk2y1WKrWV_Vy5kINthCfbA-GZfBtr4btEhNgCyffvA_7MZ5z71xwzwlxz0aTGIWUprzppO1pCkUXZ9Oe5qfDSG8QkaDn_2EV99ZuRC1eWHUafhqjZT_6nm2xDo9Mc7Xf9nE_77-Ac_xEAl6bVg=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQXm8_Ht1OrK-0jkdeag3i4JlTxBltKVVvuOzTMIlBobZmZQIKSDn25-xkQKiq6PDcZMNzNpuuz6KOydH_rDR-JSiuZbfVa16JWXHzAqwGQkVY3eO6_42wJ-s9LRFUYjDnmAV751_0NB84_wyybX1qAD5NFnLpXS6oyHei2tgHKgGHwi4ckm3kNELo3DKapehlTzufU2t97MSrY36TI=w1280)
 
 Photo: ACM SIGCHI Winter School 2019 at NSU, Dhaka
 
@@ -225,11 +288,11 @@ ACM SIGCHI is increasing its engagement with practitioners and researchers from 
 
 The CSCW Asia Winter School 2019 was to provide students and researchers from diverse academic backgrounds of the Asia-Pacific region with a broad understanding of the topics, issues, methods and values of research in Computer-Supported Cooperative Work and Social Computing (CSCW). They promoted a better understanding of CSCW research as well as scholarly networking and community formation.
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0STHlsBytoCLDDnOYuglX21xKZZLqUvaMoeKKpDum3_ZxCJHIjRDHIwMR65hp1-gKLgqep3NLuX5AjJACzDUvjA-qsF7PN7mNM1dQXtS2odTKq2OTGmWZ_SbgTHIzKKLPGt7W8jliZDsUVD8MUJc3uJ6oBB64UrmR_UN0jC9-Esy_Tpp8D3NIE_TMbzGHlnt8z7xi1wScqSdCHs=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQVHnVaIm-ur6uE9b54CEoxSGpVVGtypjoUfC9lgJwZh_p18T6-zzX-m9W7xsMg1MbNKkvC0pAjeaFbDH7wZRpfOOp8RlM9pkrFCgyJP0F3CTpg2qqQkanoqZFHABidRfqcAYwdZL9ZpfWGW3jav83Ol-L8mQfbHH0Zilz8BDNujOaOeHFtimmq7y6UcX-XQxF_Av8Xtrl9K-0FIaEM=w1280)
 
 Photo: CSCW Asia Winter School 2019, Kyoto, Japan
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0STisFLQgfOeDlaaAGL8oNfG20Zf0KXR13UHD-_dWXeZ7eXfznHGb-x3iwH7U5-c8CS4bdEXp43k1vNymVLSRLjZd0YAATUfVoXLBOjtjQT1rRcjrwPTH9vQ2EN_jyXt7TRefzTgCyVA7p_OLyenTuzUCWWk_xlDybxJljYvsivHLZOrIxmAOj3Y7_CoDIuyazkZp2rO1S8b2Ts=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQVyV_o52X19RFXNkqUgvfu7uOAjFF_WWzFj9F9njIU51v5DIGkmuPTY59hz_HR2dHyjL1iDyUy8PEqGDooZ0h8LCn1Jv0mk1gMGL0fgff1wbr2DpgwaryMd_E7snVNheNWvm4bTyd1VW2qMP-76suq26JZ0zu-MzUCLLJTTtAGBU1VNTW1Aupe52rJc4WzViHlSnegD4gbAelJ6gNQ=w1280)
 
 Photo: Planning Discussion During Sharashwati Puja 2020, NSU, Bangladesh
 
@@ -243,11 +306,11 @@ We visited Pakutia Zamindar Bari, Baliati Zamindar Bari and Teota Zamindar Bari 
 
 ### [Copy heading link](https://sites.google.com/view/nsuhci/events\#h.p_Dd4_P7gYZdyg)    [(Event Photos)](https://drive.google.com/drive/folders/1dUHH2r2jzj0qNtZdSPY4QSxiC6c4nANb?usp=sharing)
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0SSqYy5vblOAS1nxZiLmLhNQlS8Ur6g9k4nKvho4L9jm2FJOxTnP0cgSNQT0KMT2G2LMPu7s6AJBLcBKycq1QV6Xv1vzOBDz-AyQfogJ096Xrjf2qa7HsS02qYYVlxxNvOLqDRWpOp7JvP55S32yWYJUvfDOBYGLsRym01hBU_TArbez1seOHli8ufJhRG_0nUEViNp1pTuVOtU=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQXQHkx7VwfDdRZMJTaZNXzO0VG7_awMet0vJLjO2BcTRF96c5fBp6Fc1odzQ8LBIP4XLu3VhY_OgJ8vp3c4MPjQp3vqMbyHKsGNtv0ZSbMQFADkMpi8WDFthPYEOOqPvmTxCMCJIYxU9sHyfXN5GM9DR3e1WF3A9J9J7-SWLZegAQipQYbjzdbYrYVspmLKYMc5tPE1TRAs1tAW1K4=w1280)
 
 Photo: Historical Places Visit 2020, Manikganj, Bangladesh
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0STCY8HP4NIb75Jv3fEP0a1MCkYbKy0SolUEtOWGZcXb_LoVQN56PbF_Cwb_Ku6M4P9YPWBjqZeDHuVZBGGT2Wr4e9PRiVxvWAgoWe1DkxH8X6obKDFXO4EsUbUT2MYoX8ymPP989C1lPimLOOxq81VkWq66iqoeO4kwZVFCXM6lHlg5t96gBglwI_cA4_nuIKuNvHDa41gYELo=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQVDpDTQ5RRe6zTxi78NXvb4UKknqL-nT09XeQNUzeUrs9CI7kIayUSlect-r2YM0ToXNA1sTA-dtUuww-opELQXhmk4iOdXvymILHabIkxkEnxW9GsVlUeGY73rj3rqjCuM305Ov7qgAlr7i3tzx9MPR2D-nMHHYu_Z5jFwPHQTdwrqoLDKlfM5vF8GBgHK9GqmS6Y6TadrsjHrsPs=w1280)
 
 ## [Copy heading link](https://sites.google.com/view/nsuhci/events\#h.p_m_aO8InlYPLj)    Virtual Asian CHI 2020
 
@@ -257,7 +320,15 @@ The Asian CHI Symposium showcases the latest HCI work from Asia, the Asian diasp
 
 We organize the Virtual Summer School (due to COVID-19 outbreak it was postponed in March 2020) and follow-up activities in the month of June 2020 in Bangladesh. This Summer School is a continuation of June-July Summer Schools and November Winter School of How to Write a Paper for CHI 2021 that held in India, China, and Bangladesh as well. The objective of this Summer school is to support and encourage young researchers, practitioners and research students from Asia (more focus to global south) to understand the research methodologies that will help in getting into new research design and new researches relevant to CHI and CSCW.
 
-![](https://lh3.googleusercontent.com/sitesv/APaQ0STtJirwar5uQ6sU13xH0PXbQekMyMP7UmRoAcVSy12sKtoekj-wUEKmyzyrdXc5Otc0I_v6JWZReMdTWeSZbLtXHIoXtP52zyJGMp9diK7UB-Za_b-gRqFDiitcYqDznSRr859bZAz9JjsS6PRRfgNbY23ylHv2DzoEYc7y0WZ7UZSRuN8lUFS980Ti8TGkM4_H8lrTY0D0Sj0=w1280)
+![](https://lh3.googleusercontent.com/sitesv/AG8ngQU_ojXHIeC3acZEbQwnnoTS0TjnNxalxn-5oTCaiaBqQT3S_Qw5_ILxT4_GBMAzmA1gXsA9OJlTMZp4O17UEbdc0qALiOeEwroj8Q4b1e0tLjDtkwzNEmhJ04Lie99PwWZxleGMSIrhQRNKK3ubpyjxcRPfLmBaDYFnzlFeALuWIUqyJBaxUaLBL4LUW42ZBvDQVSwaszjQ05xnXCU=w1280)
+
+Follow NSUHCI:
+
+[![](https://lh3.googleusercontent.com/sitesv/AG8ngQW6OPkQEhMEPG7fUbK8q3jnuGpazcJ6oZVax4g8XeVUyr1SqwcC2iDrBOVAtkdP4s6f7Y_CyGYe2bTnZxtfcz05Jfh8p-gu150wWvIebgkxJ-aXhi19-9P2UsM0xuktehKwXSktId1F-gsKNRQ_wprowF0x-_eWPplGVe0BynGLfD1AgHRkD4o6ZVxJ0t4=w1280)](https://www.google.com/url?q=https%3A%2F%2Fwww.facebook.com%2FResearch.NSUHCI&sa=D&sntz=1&usg=AOvVaw3f_AhM8zHtG4gLv-wj1r5s)
+
+[![](https://lh3.googleusercontent.com/sitesv/AG8ngQV-e-52D5j8spfmNl4kC_gQkrdne25boGtr7hucdggNGTg5Yx233ViZX1xooYJ1ZzfrPGQ19wC19oSMItssAkwfuYCQJW7cSOLXJXknQVRQ1S5SYOCBIaXC9ZF7u8jraFwq9RsocEv1fYJQ8S7unaBZS4hGvjHUPg1kfuI7M6sfX54yAkj8BwkhrblfJpnnVf77owKzumcQBoW_gT-lQG196hNK5a69otW1WTK5niE=w1280)](https://www.google.com/url?q=https%3A%2F%2Ftwitter.com%2FNSUHCI_DIAL&sa=D&sntz=1&usg=AOvVaw1-7sNtwhczQQI06fNIqWvv)
+
+[![](https://lh3.googleusercontent.com/sitesv/AG8ngQXB-b03qmIDj4mI4BRQHj-waHQIo_k5veNwNwvaF9JDj2JDMoU52lE8wo5KozZecyzBfkos_9j24qFCWgXIaGF08EEJ4xh4HsLBo8Vrl01qf5tzkPmCcr0reF0fH1umSRZ3es7B0QTV4P9blhhGmmp8bdK-EP1GFQ1iM2ztH4-B4PlP94g_borfe_FCnT0=w1280)](https://www.google.com/url?q=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fnsuhcidial%2F&sa=D&sntz=1&usg=AOvVaw1j3J8yFNLy9uZYzaQwV5W3)
 
 Page updated
 
