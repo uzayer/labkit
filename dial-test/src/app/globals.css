@@ -353,6 +353,9 @@ body:is(.dark)::after {
    `text-${x}/45` would never reach the stylesheet at all; a variable does. */
 :root {
   --header-ink: var(--ink);
+  /* One cycle of the wave, at the aspect it is tiled at. White so it reads the
+     same whether the mask is taken as alpha or as luminance. */
+  --squiggle-wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 10' preserveAspectRatio='none'%3E%3Cpath d='M0 5c5.5-3 16.5-3 22 0s16.5 3 22 0' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 .ink-mark {
   color: var(--header-ink);
@@ -395,25 +398,70 @@ body:is(.dark)::after {
 .enter .ink-draw {
   animation: ink-draw 900ms var(--ease-in-out-strong) 420ms both;
 }
+/* The wavy underline is one wave tiled at a fixed size, not a single path
+   stretched to the element. Stretching made the wavelength a function of how
+   long the words were: under a short title the same four cycles compressed
+   into a zigzag with near-vertical strokes, which reads as a scribble rather
+   than a pen stroke. Tiling means a two-word link and a headline are drawn
+   with the same hand.
+
+   The tile is sized in px on both axes, so the stroke stays an even weight
+   instead of thickening on the diagonals, and it is seamless: the wave leaves
+   the right edge on the same tangent it enters the left one. */
+.ink-squiggle {
+  --squiggle-size: 2.75rem 0.625rem;
+  display: block;
+  background-color: currentColor;
+  -webkit-mask-image: var(--squiggle-wave);
+  mask-image: var(--squiggle-wave);
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+  -webkit-mask-size: var(--squiggle-size);
+  mask-size: var(--squiggle-size);
+  -webkit-mask-position: left center;
+  mask-position: left center;
+}
+/* Drawn by wiping left to right, which is what the stroke-dash reveal on the
+   other marks looks like anyway — a mask has no stroke to dash. */
+.ink-squiggle-draw {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 900ms var(--ease-in-out-strong) 150ms;
+}
+.js [data-reveal]:not([data-revealed]) .ink-squiggle-draw {
+  clip-path: inset(0 100% 0 0);
+}
+@keyframes ink-squiggle-draw {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+.enter .ink-squiggle-draw {
+  animation: ink-squiggle-draw 900ms var(--ease-in-out-strong) 420ms both;
+}
 /* The hover state: the stroke is drawn on as the pointer arrives, and
    un-drawn when it leaves. Keyboard focus gets the same mark. */
-.squiggle-hover {
-  stroke-dasharray: var(--ink-len, 330);
-  stroke-dashoffset: var(--ink-len, 330);
-  transition: stroke-dashoffset 450ms var(--ease-snappy);
+.ink-squiggle-hover {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 450ms var(--ease-snappy);
 }
-.group:hover .squiggle-hover,
-.group:focus-visible .squiggle-hover,
-a:hover > .squiggle-hover,
-a:focus-visible > .squiggle-hover {
-  stroke-dashoffset: 0;
+.group:hover .ink-squiggle-hover,
+.group:focus-visible .ink-squiggle-hover,
+a:hover > .ink-squiggle-hover,
+a:focus-visible > .ink-squiggle-hover {
+  clip-path: inset(0 0 0 0);
 }
 
 /* A right-pointing arrow turns north-east when its link is hovered, so the
-   mark shows the direction of travel rather than just nudging along. Paired
-   with the squiggle, it is the site's whole hover vocabulary. */
+   mark shows the direction of travel rather than just nudging along. It pivots
+   on its own centre — travelling up and to the right as well turned a quiet
+   turn into a jump. Paired with the squiggle, it is the site's whole hover
+   vocabulary. */
 .arrow-ne {
-  transition: transform 200ms var(--ease-snappy);
+  transform-origin: center;
+  transition: rotate 260ms var(--ease-snappy);
 }
 .group:hover .arrow-ne,
 .group:focus-visible .arrow-ne,
@@ -421,12 +469,17 @@ a:hover .arrow-ne,
 a:focus-visible .arrow-ne,
 button:hover .arrow-ne,
 button:focus-visible .arrow-ne {
-  transform: translate(0.2rem, -0.2rem) rotate(-45deg);
+  rotate: -45deg;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .squiggle-hover {
+  .ink-squiggle-hover {
     transition-duration: 1ms;
+  }
+  .ink-squiggle-draw {
+    clip-path: none;
+    transition: none;
+    animation: none;
   }
   /* The turn still happens; it just arrives without the travel. */
   .arrow-ne {

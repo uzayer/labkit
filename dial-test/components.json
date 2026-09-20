@@ -13,11 +13,14 @@
   "iconLibrary": "lucide",
   "rtl": false,
   "aliases": {
+    "app": "@/app",
     "components": "@/components",
     "utils": "@/lib/utils",
     "ui": "@/components/ui",
     "lib": "@/lib",
-    "hooks": "@/hooks"
+    "hooks": "@/hooks",
+    "types": "@/types",
+    "content": "@/content"
   },
   "menuColor": "default",
   "menuAccent": "subtle",
@@ -29,7 +32,10 @@
       }
     },
     "@tailark-pro": {
-      "url": "https://tailark.com/r/{name}.json"
+      "url": "https://pro.tailark.com/registry/{name}",
+      "headers": {
+        "Authorization": "Bearer ${TAILARK_API_KEY}"
+      }
     },
     "@skiper-ui": {
       "url": "https://skiper-ui.com/r/{name}.json",

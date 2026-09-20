@@ -15,7 +15,7 @@ interface PageHeaderProps {
   /** A node, so a word can be circled or otherwise marked. */
   title: React.ReactNode
   description?: string
-  /** Derived counts. Keep to two or three; they sit beside the description. */
+  /** Derived counts. Keep to two or three; they sit under the description. */
   facts?: PageFact[]
   children?: React.ReactNode
   /**
@@ -113,29 +113,39 @@ const PageHeader = ({
       </div>
 
       {(description || facts?.length) && (
-        <div className="relative mt-10 grid gap-8 pt-6 md:grid-cols-[1fr_auto] md:items-start md:gap-20 lg:gap-28">
+        // Lede and figures both stack down the left measure. They used to sit
+        // in a second column, which put the numbers inside the composition
+        // bleeding through the right margin — a halftone field behind a figure
+        // is the one thing on this page that cannot be allowed to be pretty.
+        <div className="relative mt-10 flex flex-col gap-10 pt-6">
           <span
             aria-hidden
             {...rule}
             className={cn('ink-rule absolute inset-x-0 top-0 h-px', rule.className)}
           />
-          {description ? (
+          {description && (
             <p {...step(3)} className={cn(lede, step(3).className)}>
               {description}
             </p>
-          ) : (
-            <span />
           )}
           {facts && facts.length > 0 && (
-            // Each figure gets a drawn mark above it and room around it: the
-            // numbers sit clear of the printed composition rather than in it.
+            // Capped short of the margin the art bleeds into, so a fourth
+            // figure wraps rather than running under it.
             <dl
               {...step(4)}
-              className={cn('relative z-10 flex flex-wrap gap-x-12 gap-y-8', step(4).className)}
+              className={cn(
+                'relative z-10 flex flex-wrap gap-x-12 gap-y-8 lg:max-w-2xl',
+                step(4).className,
+              )}
             >
               {facts.map((fact) => (
                 <div key={fact.label} className="flex flex-col gap-2.5">
-                  <FactMark label={fact.label} className="ink-mark size-7" />
+                  {/* The slot is held open whether or not this figure's label
+                      has a mark drawn for it, so a marked figure and an
+                      unmarked one still sit on the same baseline. */}
+                  <span aria-hidden className="block h-7">
+                    <FactMark label={fact.label} className="ink-mark size-7" />
+                  </span>
                   <dd className="font-display text-4xl leading-none tabular-nums">{fact.value}</dd>
                   <dt className="text-sm text-muted-foreground">{fact.label}</dt>
                 </div>

@@ -253,9 +253,12 @@ const ResearchScrollHero = ({ className, children }: ResearchScrollHeroProps) =>
         style={reduceMotion ? undefined : { transform: panelTransform }}
         className={cn(
           bandScope,
-          // pt clears the fixed nav plus breathing room, so the second hero
-          // does not arrive tight under it.
-          "relative z-20 min-h-screen w-full overflow-hidden rounded-4xl bg-background pt-28 text-foreground md:pt-32",
+          // The band has to be a full viewport tall for its rise to finish, so
+          // its contents are centred in it rather than parked at the top with
+          // the remainder left as dead space under them. pt clears the fixed
+          // nav plus breathing room, so the second hero does not arrive tight
+          // under it, and is a floor on the centring rather than a gap.
+          "relative z-20 flex min-h-screen w-full flex-col justify-center overflow-hidden rounded-4xl bg-background pt-28 pb-16 text-foreground md:pt-32 md:pb-20",
           !reduceMotion && "-mt-[100vh]",
         )}
       >

@@ -18,32 +18,30 @@ const strokeProps = {
 } as const
 
 /**
- * Wavy underline; stretches to its container's width.
+ * Wavy underline; runs the full width of its container.
+ *
+ * Not one path stretched to fit but a single wave tiled at a fixed size (see
+ * `.ink-squiggle`), so the wavelength is the same under two words as under a
+ * headline. Stretching made short links come out as a compressed zigzag.
  *
  * `hover`: sits undrawn until the nearest `group` is hovered or focused, which
  * makes it the site's hover state for links and row titles — a pen stroke
  * under the words rather than a border.
  */
 export const Squiggle = ({ className, hover }: { className?: string; hover?: boolean }) => (
-  <svg
+  <span
     aria-hidden
-    viewBox="0 0 300 14"
-    preserveAspectRatio="none"
-    className={cn('h-2.5 w-full text-ink', className)}
-  >
-    <path
-      {...strokeProps}
-      strokeWidth={3}
-      className={hover ? 'squiggle-hover' : 'ink-draw'}
-      style={{ ['--ink-len' as string]: 330 }}
-      d="M3 9c26-8 49 4 74-1s44-9 70-2 47 9 72 3 52-6 78 1"
-    />
-  </svg>
+    className={cn(
+      'ink-squiggle h-2.5 w-full text-ink',
+      hover ? 'ink-squiggle-hover' : 'ink-squiggle-draw',
+      className,
+    )}
+  />
 )
 
 /** A squiggle positioned as an underline under the text of a `group`. */
 export const SquiggleUnderline = ({ className }: { className?: string }) => (
-  <Squiggle hover className={cn('pointer-events-none absolute -bottom-1.5 left-0 h-2 w-full', className)} />
+  <Squiggle hover className={cn('pointer-events-none absolute -bottom-1.5 left-0 w-full', className)} />
 )
 
 /** Loop around a word: absolutely positioned over the text it circles. */

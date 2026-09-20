@@ -1,6 +1,5 @@
 import {
   InkBand,
-  NameLine,
   PrimaryLink,
   PullQuote,
   SectionHeader,
@@ -10,7 +9,7 @@ import {
 } from "@/components/editorial";
 import { CircleMark, MarginNote } from "@/components/marks";
 import { PageHeader } from "@/components/page-header";
-import { PhotoSlot } from "@/components/photo-slot";
+import { PartnerStrip } from "@/components/partner-strip";
 import { FlatPublicationList } from "@/components/publications1";
 import { ResearchScrollHero } from "@/components/research-scroll-hero";
 import {
@@ -80,19 +79,11 @@ export default function Home() {
               Join the lab
             </TextLink>
           </div>
-          <NameLine
+          <PartnerStrip
             label="In collaboration with"
-            names={homePartnerOrganizations().map((org) => org.name)}
+            partners={homePartnerOrganizations()}
             className="mt-12 border-t border-border pt-6"
           />
-          {/* Where the Lab's own photographs go. Until DIAL supplies them the
-              slots print riso compositions, which is also what fills the band
-              to its full height instead of leaving it empty. */}
-          <div className="mt-10 grid gap-5 sm:grid-cols-3">
-            <PhotoSlot alt="Fieldwork with a partner community" art="field" aspect="aspect-4/3" />
-            <PhotoSlot alt="A co-design session at the Lab" art="bloom" aspect="aspect-4/3" />
-            <PhotoSlot alt="A device built and tested in place" art="signal" aspect="aspect-4/3" />
-          </div>
         </PageHeader>
       </ResearchScrollHero>
 
