@@ -19,6 +19,7 @@
  * re-parsing) solely to preserve the original "N entries found, M parse
  * errors" console output, since StagedCandidate doesn't carry parser errors.
  */
+import path from 'node:path'
 import fs from 'node:fs'
 import { parse } from '@retorquere/bibtex-parser'
 import { getPayload } from 'payload'
@@ -193,6 +194,13 @@ async function main() {
   }
 
   report.print(DRY_RUN)
+  const previewPath = report.writePreview(`bibtex-${path.basename(bibPath ?? '')}`, {
+    bibPath,
+    dryRun: DRY_RUN,
+  })
+  console.log(
+    `\nPreview: ${previewPath}\n  pnpm payload run scripts/ingestion/preview-report.ts ${previewPath}`,
+  )
   await finalizeRun(payload, runId, report, 'completed')
   process.exit(0)
 }

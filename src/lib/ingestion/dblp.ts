@@ -44,12 +44,39 @@ function asArray<T>(value: T | T[] | undefined): T[] {
   return Array.isArray(value) ? value : [value]
 }
 
+const DBLP_FAILURES_BEFORE_DISABLE = 3
+let consecutiveDblpFailures = 0
+let dblpDisabled = false
+
 export async function fetchDblpRecordByTitle(
   title: string,
   year: number,
 ): Promise<DblpMatch | null> {
+  if (dblpDisabled) return null
+
   const url = `https://dblp.org/search/publ/api?q=${encodeURIComponent(title)}&format=json&h=5`
-  const json = await fetchJsonWithRetry(url, { headers: defaultHeaders() })
+  // DBLP is optional enrichment (author pids only) and the slowest, least
+  // reliable source: measured stalling ~40s then dropping the connection. One
+  // short attempt, and a circuit breaker so a DBLP outage costs a run a few
+  // seconds instead of minutes.
+  const json = await fetchJsonWithRetry(
+    url,
+    { headers: defaultHeaders() },
+    { attempts: 1, timeoutMs: 8_000 },
+  )
+  if (json === null) {
+    consecutiveDblpFailures++
+    // `!dblpDisabled`: prefetch runs lookups concurrently, so requests already
+    // in flight when the breaker trips would otherwise each log it again.
+    if (!dblpDisabled && consecutiveDblpFailures >= DBLP_FAILURES_BEFORE_DISABLE) {
+      dblpDisabled = true
+      console.warn(
+        `[dblp] ${consecutiveDblpFailures} consecutive failures — skipping DBLP for the rest of this run`,
+      )
+    }
+    return null
+  }
+  consecutiveDblpFailures = 0
 
   const hits = asArray(
     (json as { result?: { hits?: { hit?: DblpHit | DblpHit[] } } })?.result?.hits?.hit,

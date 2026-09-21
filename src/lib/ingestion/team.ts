@@ -7,6 +7,7 @@ import { ImportReport } from './report'
 const VALID_ROLES = new Set([
   'director',
   'faculty',
+  'research-staff',
   'graduate-ra',
   'undergraduate-ra',
   'alumni',
@@ -35,7 +36,7 @@ export interface TeamMemberInput {
 export function mapTeamRole(rawRole: string | undefined, hasAlumniNote: boolean): string {
   if (hasAlumniNote) return 'alumni'
   if (rawRole && VALID_ROLES.has(rawRole)) return rawRole
-  if (rawRole === 'researcher') return 'graduate-ra'
+  if (rawRole === 'researcher') return 'research-staff'
   if (rawRole === 'collaborator') return 'external-collaborator'
   return 'external-collaborator'
 }

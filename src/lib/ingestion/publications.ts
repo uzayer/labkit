@@ -3,7 +3,7 @@ import { mapCrossrefToPublicationFields } from './crossref'
 import { fetchDblpRecordByTitle } from './dblp'
 import { fetchCrossrefByDoi, fetchOpenAlexByDoi } from './fetch'
 import type { RorLookupEntry } from './match'
-import { normalizeDoi } from './normalize'
+import { normalizeDoi, normalizeVenueName } from './normalize'
 import { mapOpenAlexToPublicationFields } from './openalex'
 import {
   attachDblpPids,
@@ -29,6 +29,7 @@ function normalizeIssn(raw: unknown): string[] | undefined {
 export interface VenueLookupEntry {
   id: string
   name: string
+  alternateNames?: string[]
   issn?: string[]
   openalexSourceId?: string
 }
@@ -50,6 +51,7 @@ export async function loadPublicationIndexes(payload: Payload): Promise<Publicat
     teamIndex: teamDocs.docs.map((doc) => ({
       id: doc.id,
       name: doc.name ?? '',
+      alternateNames: doc.alternateNames ?? undefined,
       orcid: doc.orcid ?? undefined,
       dblpPid: doc.dblp_pid ?? undefined,
     })),
@@ -61,6 +63,7 @@ export async function loadPublicationIndexes(payload: Payload): Promise<Publicat
     venueIndex: venueDocs.docs.map((doc) => ({
       id: doc.id,
       name: doc.name,
+      alternateNames: doc.alternateNames ?? undefined,
       // `issn` was widened from a single text field to hasMany — existing
       // Mongo docs written before that change still store a bare string, and
       // Payload doesn't migrate historical data on a schema change. Normalize
@@ -118,6 +121,17 @@ function mergeIssn(a?: string[], b?: string[]): string[] | undefined {
   return merged.length > 0 ? merged : undefined
 }
 
+function matchVenueByName(name: string, venueIndex: VenueLookupEntry[]): string | undefined {
+  const key = normalizeVenueName(name)
+  if (!key) return undefined
+  const ids = new Set<string>()
+  for (const entry of venueIndex) {
+    const names = [entry.name, ...(entry.alternateNames ?? [])]
+    if (names.some((candidate) => normalizeVenueName(candidate) === key)) ids.add(entry.id)
+  }
+  return ids.size === 1 ? [...ids][0] : undefined
+}
+
 async function resolveVenue(
   payload: Payload,
   report: ImportReport,
@@ -141,6 +155,14 @@ async function resolveVenue(
     if (existing) return { venue: existing.id }
   }
 
+  // Curated name match: the Operator seeds recurring venues with their
+  // per-year spellings as alternateNames (scripts/ingestion/seed-venues.ts).
+  // Exact after normalizeVenueName, and only when exactly one venue matches —
+  // never fuzzy. Runs before the auto-create gate so a seeded venue (with its
+  // shortName) wins over a fresh per-edition record keyed to an OpenAlex ID.
+  const curated = matchVenueByName(venue.name, venueIndex)
+  if (curated) return { venue: curated }
+
   // Safe-identifier gate, same posture as Organizations: only auto-create
   // when OpenAlex gives a Source ID or ISSN to key on. A bare container-title
   // string is exactly the "guess from a name" risk avoided for Organizations.
@@ -160,7 +182,11 @@ async function resolveVenue(
       },
       dryRun,
     })
-    report.record('venues', action)
+    report.record('venues', action, {
+      id,
+      data: { name: venue.name, openalex_id: venue.openalexSourceId, issn: venue.issn },
+      sourceContext,
+    })
     if (id) {
       venueIndex.push({
         id,
@@ -179,6 +205,45 @@ async function resolveVenue(
     value: venue.name,
   })
   return { venueLabel: venue.name }
+}
+
+/**
+ * Warms the fetch cache for a batch of DOIs — Crossref + OpenAlex, then DBLP by
+ * the resolved title — with bounded concurrency, so the sequential hydrate loop
+ * that follows reads from memory.
+ *
+ * Hydration itself must stay sequential: it appends newly created people,
+ * venues, and organizations to shared in-memory indexes, and two works
+ * hydrating at once could each create the same co-author. Only the network is
+ * parallel. A no-op unless `configureFetchCache` was called — without a cache
+ * the prefetched responses would simply be discarded.
+ */
+export async function prefetchDoiSources(
+  dois: string[],
+  {
+    concurrency = 4,
+    onProgress,
+  }: { concurrency?: number; onProgress?: (done: number) => void } = {},
+): Promise<void> {
+  const queue = [...new Set(dois.map(normalizeDoi))]
+  let done = 0
+
+  async function worker() {
+    for (let doi = queue.shift(); doi !== undefined; doi = queue.shift()) {
+      const [crossrefJson, openalexJson] = await Promise.all([
+        fetchCrossrefByDoi(doi),
+        fetchOpenAlexByDoi(doi),
+      ])
+      const crossref = crossrefJson ? mapCrossrefToPublicationFields(crossrefJson) : {}
+      const openalex = openalexJson ? mapOpenAlexToPublicationFields(openalexJson) : {}
+      const title = crossref.title ?? openalex.title
+      const year = crossref.year ?? openalex.year
+      if (title && year) await fetchDblpRecordByTitle(title, year)
+      onProgress?.(++done)
+    }
+  }
+
+  await Promise.all(Array.from({ length: Math.max(1, concurrency) }, worker))
 }
 
 export async function hydratePublicationFromDoi(
@@ -307,6 +372,7 @@ export async function hydratePublicationFromDoi(
     publicationDate: crossrefFields.publicationDate,
     openalex_id: openalexFields.openalex_id,
     isOpenAccess: openalexFields.isOpenAccess,
+    ...(openalexFields.pdfUrl ? { pdf: { type: 'link', link: openalexFields.pdfUrl } } : {}),
     authors,
     ...venueFields,
     provenance: {
@@ -323,7 +389,7 @@ export async function hydratePublicationFromDoi(
     data,
     dryRun,
   })
-  report.record('publications', action)
+  report.record('publications', action, { id, data, sourceContext })
 
   return id ? { id, action } : null
 }
@@ -398,7 +464,7 @@ export async function hydratePublicationFromFields(
     data,
     dryRun,
   })
-  report.record('publications', action)
+  report.record('publications', action, { id, data, sourceContext })
 
   report.flagUnmatched({
     collection: 'publications',

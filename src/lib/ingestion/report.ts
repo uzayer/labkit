@@ -1,4 +1,5 @@
 import fs from 'node:fs'
+import path from 'node:path'
 import type { CollectionSlug } from 'payload'
 import type { UpsertAction } from './upsert'
 
@@ -24,17 +25,37 @@ interface DedupeSuggestion {
   score?: number
 }
 
+/**
+ * The record a write site would have written (or did write). Kept so a dry
+ * run can be judged on what it *would produce*, not only on its counts — see
+ * `writePreview` and scripts/ingestion/preview-report.ts.
+ */
+export interface CapturedRecord {
+  collection: CollectionSlug
+  /** Real id, or a DRY_RUN_PLACEHOLDER id that other captured records reference. */
+  id: string | null
+  action: UpsertAction
+  sourceContext: string
+  data: Record<string, unknown>
+}
+
 export class ImportReport {
   private counts: Record<string, Record<UpsertAction, number>> = {}
   private unmatched: UnmatchedRelation[] = []
   private suggestions: DedupeSuggestion[] = []
+  private captured: CapturedRecord[] = []
 
-  record(collection: CollectionSlug, action: UpsertAction) {
+  record(
+    collection: CollectionSlug,
+    action: UpsertAction,
+    capture?: { id: string | null; data: Record<string, unknown>; sourceContext: string },
+  ) {
     const key = collection
     if (!this.counts[key]) {
       this.counts[key] = { created: 0, updated: 0, 'skipped-dry-run': 0, 'skipped-existing': 0 }
     }
     this.counts[key][action]++
+    if (capture) this.captured.push({ collection, action, ...capture })
   }
 
   flagUnmatched(entry: UnmatchedRelation) {
@@ -86,5 +107,27 @@ export class ImportReport {
 
   writeJson(filePath: string) {
     fs.writeFileSync(filePath, JSON.stringify(this.toJSON(), null, 2))
+  }
+
+  /**
+   * Writes the report plus every captured record to `ingestion-previews/`
+   * (gitignored) and returns the path. The file is the input to
+   * scripts/ingestion/preview-report.ts; it is meant to be summarised, not read.
+   */
+  writePreview(label: string, meta: Record<string, unknown> = {}): string {
+    const dir = path.resolve(process.cwd(), 'ingestion-previews')
+    fs.mkdirSync(dir, { recursive: true })
+    const stamp = new Date().toISOString().replace(/[:.]/g, '-')
+    const safeLabel = label.replace(/[^a-z0-9-]+/gi, '-').toLowerCase()
+    const filePath = path.join(dir, `${stamp}-${safeLabel}.json`)
+    fs.writeFileSync(
+      filePath,
+      JSON.stringify(
+        { meta: { label, ...meta }, ...this.toJSON(), captured: this.captured },
+        null,
+        2,
+      ),
+    )
+    return filePath
   }
 }

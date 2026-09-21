@@ -27,6 +27,7 @@
 
 # Local data, scratch space, and tooling caches
 /dump/
+/ingestion-previews/
 /docs/scratch/
 /.firecrawl/
 /.atlas/

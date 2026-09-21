@@ -80,6 +80,8 @@ pnpm payload run scripts/ingestion/import-bibtex.ts <file.bib> dry-run
 pnpm payload run scripts/ingestion/import-citations.ts <file.txt> dry-run
 ```
 
+Before the ORCID import: the Lab roster must already be in Team (the ORCID owner with their `orcid` set — a live run refuses otherwise), and recurring Venues should be seeded (`pnpm payload run scripts/ingestion/seed-venues.ts`). Scope career-spanning ORCID records with a bare `since=YYYY` positional. Each Lab's range is decided with its PI and is separate from `LabInfo.foundingDate`: DIAL is imported with `since=2017` (its NSUHCI lineage) even though its founding date is 2020.
+
 For each rehearsal, record candidates, selected and deselected works, created/updated/skipped projections, Review Item counts by kind, errors, and elapsed time.
 
 ## 4. Select the Lab's publication set

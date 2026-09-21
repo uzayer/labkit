@@ -17,6 +17,7 @@
  * every staged candidate is processed automatically regardless of its
  * `selected` flag.
  */
+import path from 'node:path'
 import fs from 'node:fs'
 import { getPayload } from 'payload'
 import config from '@payload-config'
@@ -163,6 +164,13 @@ async function main() {
   }
 
   report.print(DRY_RUN)
+  const previewPath = report.writePreview(`citations-${path.basename(filePath ?? '')}`, {
+    filePath,
+    dryRun: DRY_RUN,
+  })
+  console.log(
+    `\nPreview: ${previewPath}\n  pnpm payload run scripts/ingestion/preview-report.ts ${previewPath}`,
+  )
   await finalizeRun(payload, runId, report, 'completed')
   process.exit(0)
 }

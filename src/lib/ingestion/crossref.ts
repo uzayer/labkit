@@ -1,4 +1,4 @@
-import { normalizeOrcid } from './normalize'
+import { cleanText, normalizeOrcid } from './normalize'
 
 // Mirrors Publications.type / Publications.status select options exactly
 // (src/collections/Publications/index.ts) — never invent a value outside these.
@@ -74,7 +74,9 @@ export function mapCrossrefToPublicationFields(json: unknown): CrossrefPublicati
   const fields: CrossrefPublicationFields = {}
 
   if (typeof message.abstract === 'string') {
-    fields.abstract = stripJats(message.abstract)
+    // JATS first, then cleanText for (multiply) escaped entities and any
+    // tags that only appear once those are decoded.
+    fields.abstract = cleanText(stripJats(message.abstract)) || undefined
   }
   if (typeof message.volume === 'string') {
     fields.volume = message.volume
@@ -94,7 +96,7 @@ export function mapCrossrefToPublicationFields(json: unknown): CrossrefPublicati
     Array.isArray(message['container-title']) &&
     typeof message['container-title'][0] === 'string'
   ) {
-    fields.venueName = message['container-title'][0]
+    fields.venueName = cleanText(message['container-title'][0]) || undefined
   }
   if (Array.isArray(message.ISSN)) {
     const issn = message.ISSN.filter((value): value is string => typeof value === 'string')
@@ -103,7 +105,7 @@ export function mapCrossrefToPublicationFields(json: unknown): CrossrefPublicati
     }
   }
   if (Array.isArray(message.title) && typeof message.title[0] === 'string') {
-    fields.title = message.title[0]
+    fields.title = cleanText(message.title[0]) || undefined
   }
   if (typeof message.type === 'string') {
     const mapped = CROSSREF_TYPE_MAP[message.type]

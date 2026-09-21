@@ -1,5 +1,5 @@
 import type { PublicationType } from './crossref'
-import { normalizeOrcid } from './normalize'
+import { cleanText, normalizeOrcid } from './normalize'
 
 // OpenAlex work types with no equivalent Publications.type value are left
 // unmapped, same policy as CROSSREF_TYPE_MAP in crossref.ts.
@@ -44,6 +44,8 @@ export interface OpenAlexPublicationFields {
   authorships?: OpenAlexAuthorship[]
   venueOpenAlexSourceId?: string
   venueIssn?: string[]
+  /** Direct link to a full-text PDF, when OpenAlex knows an open copy. */
+  pdfUrl?: string
 }
 
 interface OpenAlexWork {
@@ -58,7 +60,12 @@ interface OpenAlexWork {
     author?: { id?: string; orcid?: string; display_name?: string }
     institutions?: Array<{ display_name?: string; ror?: string; country_code?: string }>
   }>
-  primary_location?: { source?: { id?: string; issn?: string[] } }
+  primary_location?: {
+    is_oa?: boolean
+    pdf_url?: string | null
+    source?: { id?: string; issn?: string[] }
+  }
+  best_oa_location?: { pdf_url?: string | null } | null
 }
 
 export function mapOpenAlexToPublicationFields(json: unknown): OpenAlexPublicationFields {
@@ -68,7 +75,7 @@ export function mapOpenAlexToPublicationFields(json: unknown): OpenAlexPublicati
   const fields: OpenAlexPublicationFields = {}
 
   if (work.abstract_inverted_index) {
-    fields.abstract = reconstructAbstract(work.abstract_inverted_index)
+    fields.abstract = cleanText(reconstructAbstract(work.abstract_inverted_index)) || undefined
   }
   if (typeof work.id === 'string') {
     fields.openalex_id = work.id
@@ -77,7 +84,7 @@ export function mapOpenAlexToPublicationFields(json: unknown): OpenAlexPublicati
     fields.isOpenAccess = work.open_access.is_oa
   }
   if (typeof work.title === 'string') {
-    fields.title = work.title
+    fields.title = cleanText(work.title) || undefined
   }
   if (typeof work.publication_year === 'number') {
     fields.year = work.publication_year
@@ -114,6 +121,13 @@ export function mapOpenAlexToPublicationFields(json: unknown): OpenAlexPublicati
     )
     if (issn.length > 0) fields.venueIssn = issn
   }
+  // best_oa_location is OpenAlex's pick of the most open copy. The primary
+  // location's PDF is only a fallback when that location is itself open —
+  // otherwise it is usually a paywalled publisher URL that 403s for readers.
+  const pdfUrl =
+    work.best_oa_location?.pdf_url ||
+    (work.primary_location?.is_oa ? work.primary_location.pdf_url : undefined)
+  if (typeof pdfUrl === 'string' && /^https?:\/\//i.test(pdfUrl)) fields.pdfUrl = pdfUrl
 
   return fields
 }

@@ -1,7 +1,16 @@
 /**
  * Pull an ORCID iD's works and import them as Publications.
  *
- * Run: pnpm payload run scripts/ingestion/import-orcid.ts <orcid-id> [dry-run]
+ * Run: pnpm payload run scripts/ingestion/import-orcid.ts <orcid-id> [dry-run] [since=YYYY]
+ *
+ * `since=YYYY` drops works whose ORCID year is earlier, before any
+ * Crossref/OpenAlex call. Works ORCID gives no year for are kept — there is
+ * nothing to judge them by, and dropping them would silently lose papers.
+ *
+ * Roster first: the ORCID owner must already exist as a Team Member with this
+ * ORCID. Otherwise hydration would create them as a hidden imported co-author
+ * on their own papers. A live run refuses; a dry run warns and records
+ * `ownerMissing` in the preview so preview-report.ts repeats the warning.
  *
  * Gotcha: `payload run` parses argv through minimist and only forwards
  * positional args to the script — use the bare word `dry-run`, not `--dry-run`.
@@ -21,22 +30,25 @@
 import { getPayload } from 'payload'
 import config from '@payload-config'
 
+import path from 'node:path'
+
+import { configureFetchCache } from '@/lib/ingestion/fetch'
 import {
   hydratePublicationFromDoi,
   loadPublicationIndexes,
+  prefetchDoiSources,
   type HydratePublicationResult,
 } from '@/lib/ingestion/publications'
 import { ImportReport } from '@/lib/ingestion/report'
 import { finalizeRun, persistRunProgress, type RunProgress } from '@/lib/ingestion/run-persistence'
+import { normalizeOrcid } from '@/lib/ingestion/normalize'
 import { stageOrcidCandidates } from '@/lib/ingestion/staging'
 import type { UpsertAction } from '@/lib/ingestion/upsert'
 
-const DRY_RUN = process.argv.includes('dry-run')
-const orcidId = process.argv.slice(2).find((arg) => arg !== 'dry-run')
-
-async function sleep(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms))
-}
+const args = process.argv.slice(2)
+const DRY_RUN = args.includes('dry-run')
+const sinceArg = args.find((arg) => arg.startsWith('since='))
+const orcidId = args.find((arg) => arg !== 'dry-run' && !arg.startsWith('since='))
 
 function bucketAction(progress: RunProgress, action: UpsertAction) {
   switch (action) {
@@ -58,7 +70,14 @@ function bucketAction(progress: RunProgress, action: UpsertAction) {
 
 async function main() {
   if (!orcidId) {
-    console.error('Usage: pnpm payload run scripts/ingestion/import-orcid.ts <orcid-id> [dry-run]')
+    console.error(
+      'Usage: pnpm payload run scripts/ingestion/import-orcid.ts <orcid-id> [dry-run] [since=YYYY]',
+    )
+    process.exit(1)
+  }
+  const since = sinceArg ? Number(sinceArg.slice('since='.length)) : undefined
+  if (sinceArg && !(Number.isInteger(since) && since! >= 1900 && since! <= 2100)) {
+    console.error(`Invalid ${sinceArg} — expected since=YYYY`)
     process.exit(1)
   }
 
@@ -66,8 +85,46 @@ async function main() {
   const report = new ImportReport()
   const indexes = await loadPublicationIndexes(payload)
 
-  const candidates = await stageOrcidCandidates(orcidId)
-  console.log(`ORCID ${orcidId}: ${candidates.length} works found.`)
+  // Owner preflight (roster first) — see the header comment.
+  const ownerOrcid = normalizeOrcid(orcidId)
+  const owner = indexes.teamIndex.find((entry) => normalizeOrcid(entry.orcid) === ownerOrcid)
+  const ownerMissing = !owner
+  if (ownerMissing) {
+    const message =
+      `No Team Member has ORCID ${ownerOrcid}. Import the lab roster first — the ORCID owner ` +
+      'would otherwise be created as a hidden external collaborator on their own papers.'
+    if (!DRY_RUN) {
+      console.error(`ERROR: ${message}`)
+      process.exit(1)
+    }
+    console.warn(`\n!!! WARNING (dry run continues): ${message}\n`)
+  }
+
+  const staged = await stageOrcidCandidates(orcidId)
+  const withoutYear = staged.filter((candidate) => candidate.year === undefined).length
+  const candidates =
+    since === undefined
+      ? staged
+      : staged.filter((candidate) => candidate.year === undefined || candidate.year >= since)
+  console.log(
+    since === undefined
+      ? `ORCID ${orcidId}: ${staged.length} works found.`
+      : `ORCID ${orcidId}: ${staged.length} works found, ${candidates.length} in range (since ${since}), ` +
+          `${withoutYear} without a year (kept).`,
+  )
+
+  // Network in parallel into the cache, then hydrate sequentially from it.
+  // Cached answers persist across runs, so re-running a dry run after a fix
+  // costs seconds, not minutes.
+  configureFetchCache({ dir: path.resolve(process.cwd(), 'ingestion-previews/.cache') })
+  const dois = candidates.flatMap((candidate) => (candidate.doi ? [candidate.doi] : []))
+  const prefetchStarted = Date.now()
+  await prefetchDoiSources(dois, {
+    onProgress: (done) => {
+      if (done % 20 === 0 || done === dois.length) console.log(`  fetched ${done}/${dois.length}`)
+    },
+  })
+  console.log(`Sources fetched in ${Math.round((Date.now() - prefetchStarted) / 1000)}s.`)
 
   const progress: RunProgress = {
     total: candidates.length,
@@ -83,7 +140,7 @@ async function main() {
       label: `ORCID import — ${orcidId}`,
       source: 'cli',
       status: 'running',
-      params: { orcidId, dryRun: DRY_RUN },
+      params: { orcidId, dryRun: DRY_RUN, since },
       candidates,
       progress,
       startedAt: new Date().toISOString(),
@@ -106,7 +163,6 @@ async function main() {
           DRY_RUN,
           `ORCID ${orcidId}`,
         )
-        await sleep(150)
       } else {
         // ORCID's own title/sourceName isn't enough to build a Publication —
         // Crossref/OpenAlex stays the source of truth.
@@ -132,6 +188,15 @@ async function main() {
   }
 
   report.print(DRY_RUN)
+  const previewPath = report.writePreview(`orcid-${orcidId}`, {
+    orcidId,
+    dryRun: DRY_RUN,
+    since,
+    ownerMissing,
+  })
+  console.log(
+    `\nPreview: ${previewPath}\n  pnpm payload run scripts/ingestion/preview-report.ts ${previewPath}`,
+  )
   await finalizeRun(payload, runId, report, 'completed')
   process.exit(0)
 }

@@ -12,7 +12,8 @@ import { upsertByKey, type UpsertAction } from './upsert'
  * Author identity matching, split into two safety tiers:
  *
  * 1. matchPersonToTeam — may auto-link to a real Team profile, so it only
- *    ever uses ORCID equality or exact full-name equality. Never fuzzy —
+ *    ever uses ORCID equality or exact full-name equality (against `name` or
+ *    a curated Team.alternateNames spelling). Never fuzzy —
  *    match.ts's resolveByName fuzzy tier is documented as unsafe for people
  *    (homonym risk) and that risk is even higher here since a wrong match
  *    changes a real person's public site.
@@ -35,6 +36,8 @@ import { upsertByKey, type UpsertAction } from './upsert'
 export interface TeamLookupEntry {
   id: string
   name: string
+  /** Curated exact spellings from Team.alternateNames — matched exactly, like `name`. */
+  alternateNames?: string[]
   orcid?: string
   dblpPid?: string
 }
@@ -67,7 +70,11 @@ export function matchPersonToTeam(
   }
 
   const normalizedName = person.fullName.trim().toLowerCase()
-  const nameMatches = team.filter((member) => member.name.trim().toLowerCase() === normalizedName)
+  const nameMatches = team.filter((member) =>
+    [member.name, ...(member.alternateNames ?? [])].some(
+      (name) => name.trim().toLowerCase() === normalizedName,
+    ),
+  )
   if (nameMatches.length === 1) {
     return { method: 'name-exact', team: nameMatches[0] }
   }
@@ -313,7 +320,7 @@ export async function resolveOrCreateTeamMember(
     id = (created as { id: string }).id
     action = 'created'
   }
-  report.record('team', action)
+  report.record('team', action, { id, data, sourceContext })
 
   if (!id) return null
 

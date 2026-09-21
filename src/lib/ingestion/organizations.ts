@@ -55,7 +55,11 @@ export async function resolveOrCreatePartnerOrg(
     },
     dryRun,
   })
-  report.record('organizations', action)
+  report.record('organizations', action, {
+    id,
+    data: { name: institution.name, ror_id: institution.ror },
+    sourceContext,
+  })
 
   if (id) {
     orgIndex.push({ id, name: institution.name, rorId: institution.ror })

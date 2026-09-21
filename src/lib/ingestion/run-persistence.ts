@@ -80,6 +80,19 @@ export async function finalizeRun(
 ): Promise<void> {
   const { unmatched, suggestions } = report.toJSON()
 
+  // A dry run's Review Items would land in the same open queue the Operator
+  // works from, indistinguishable from real ones, and point at records that
+  // were never written. The run keeps its reportSummary (and the importer
+  // writes a preview file), so nothing is lost by not queueing them.
+  const run = await payload.findByID({
+    collection: 'import-runs',
+    id: runId,
+    depth: 0,
+    overrideAccess: true,
+  })
+  const params = run.params as { dryRun?: unknown } | null | undefined
+  const isDryRun = params?.dryRun === true
+
   // Idempotency: a finalize that crashed halfway (or a double-finalize from a
   // requeued job) must not leave duplicate review items. Review items for a
   // run only ever exist once finalize has run, so wiping the run's items and
@@ -92,7 +105,7 @@ export async function finalizeRun(
     context: { disableRevalidate: true },
   })
 
-  for (const entry of unmatched) {
+  for (const entry of isDryRun ? [] : unmatched) {
     await payload.create({
       collection: 'review-items',
       data: {
@@ -108,7 +121,7 @@ export async function finalizeRun(
     })
   }
 
-  for (const entry of suggestions) {
+  for (const entry of isDryRun ? [] : suggestions) {
     await payload.create({
       collection: 'review-items',
       data: {
