@@ -4,18 +4,16 @@ The shadcnblocks page-builder block library was removed from LabKit. What remain
 renders collection content, not pages:
 
 **Collection template renderers** (`Component.tsx` + variant `.tsx` files, no `config.ts`)
-`BlogPost/` (+ `CaseStudy/`, one of its design versions), `ProjectPost/`, `RelatedPosts/` —
-render a Post or Project document as a full detail page. Schema lives on the collection.
-Entry points: `RenderPostDetailPage.tsx`, `RenderProjectDetailPage.tsx`.
+`BlogPost/` (+ `CaseStudy/`, one of its design versions), `RelatedPosts/` — render a Post
+as a full detail page. Schema lives on the collection. Entry point: `RenderPostDetailPage.tsx`.
+`RenderProjectDetailPage.tsx` is a minimal stand-in for Projects until the dial-test port
+(AUT-147); the template's `ProjectPost/` case-study renderer was removed in the schema freeze
+(ADR-0002).
 
 **Rich-text embed blocks** (`config.ts` + `Component.tsx`)
 `Code/`, `MediaBlock/`, `LexicalBlocks/Banner`, `LexicalBlocks/MotionText` — registered via
 `BlocksFeature` in Posts/Projects richText editors (and the hero config for MotionText),
 rendered by `src/components/RichText/serialize.tsx`.
-
-**Project content blocks** (`config.ts` + `Component.tsx` + variant `.tsx` files)
-`Stats/`, `Awards/` — the only blocks still selectable in a `blocks` field: Projects'
-`appendLayoutBlock`. `RenderBlocks.tsx` is the (now tiny) component map for them.
 
 ## Adding a new blog post template
 
@@ -24,10 +22,3 @@ rendered by `src/components/RichText/serialize.tsx`.
 3. Register in `src/blocks/BlogPost/Component.tsx`
 
 No `config.ts` or `variants.ts` needed.
-
-## Utilities
-
-- `src/blocks/utils.ts` — `VariantManifest`, `variantsToOptions()`, `applyVariantConditions()`
-  (still used by `Stats/` and `Awards/` configs)
-- `src/utilities/parentLayoutCondition.ts` — parent-block lookup for admin `condition`
-  functions on fields nested inside blocks (searches `appendLayoutBlock`)

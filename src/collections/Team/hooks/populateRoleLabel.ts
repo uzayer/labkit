@@ -8,6 +8,7 @@ export const populateRoleLabel: CollectionAfterReadHook<Team> = async ({ doc }) 
   const roleLabelMap: Record<string, string> = {
     director: 'Director',
     faculty: 'Faculty Member',
+    'research-staff': 'Research Staff',
     'graduate-ra': 'Graduate RA',
     'undergraduate-ra': 'Undergraduate RA',
     alumni: 'Alumni',

@@ -1,3 +1,4 @@
+import { isAdminHidden } from '@/access/isAdmin'
 import type { CollectionConfig } from 'payload'
 
 import {
@@ -61,6 +62,7 @@ export const Posts: CollectionConfig = {
     update: hasPermission('canManageContent'),
   },
   admin: {
+    hidden: isAdminHidden,
     defaultColumns: ['title', 'slug', 'updatedAt'],
     livePreview: {
       url: ({ data, locale }) => {

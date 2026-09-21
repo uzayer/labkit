@@ -1,4 +1,4 @@
-import type { CollectionConfig, Field } from 'payload'
+import type { CollectionConfig } from 'payload'
 
 import {
   BlocksFeature,
@@ -19,12 +19,7 @@ import { Banner } from '@/blocks/LexicalBlocks/Banner/config'
 import { Code } from '@/blocks/Code/config'
 import { MediaBlock } from '@/blocks/MediaBlock/config'
 import { generatePreviewPath } from '@/utilities/generatePreviewPath'
-import { StatsBlock } from '@/blocks/Stats/config'
-import { AwardsBlock } from '@/blocks/Awards/config'
 import { revalidateProject } from './hooks/revalidateProject'
-import { populateAuthors } from './hooks/populateAuthors'
-import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
-import { calculateReadTime } from '@/collections/Posts/hooks/calculcateReadTime'
 
 import {
   MetaDescriptionField,
@@ -37,100 +32,6 @@ import { slugField } from '@/fields/slug'
 import { serverUrl as NEXT_PUBLIC_SERVER_URL } from '@/config/server'
 import { Breadcrumb } from '@payloadcms/plugin-nested-docs/types'
 import { isValidExternalHttpUrl } from '@/utilities/validation'
-
-const PROJECT_CASE_STUDY_DESIGN = 'ProjectPost1'
-
-const projectPost1Fields: Field[] = [
-  {
-    name: 'heroImage',
-    type: 'upload',
-    relationTo: 'media',
-    label: 'Featured Image',
-    admin: {
-      description: 'Primary illustration displayed beside the intro content',
-    },
-  },
-  {
-    name: 'overview',
-    type: 'textarea',
-    label: 'Abstract Override',
-    admin: {
-      description:
-        'Optional override: Only used if the main Abstract field (above) is empty. If both are filled, the main Abstract field takes priority.',
-      placeholder:
-        'Describe the company or initiative this project covers (e.g. "A modern platform…")',
-    },
-  },
-  {
-    name: 'metaItems',
-    type: 'array',
-    label: 'Sidebar Metadata',
-    labels: {
-      singular: 'Meta item',
-      plural: 'Meta items',
-    },
-    admin: {
-      description: 'Add sidebar metadata such as Sector, Team size, Location, Funding, etc.',
-    },
-    fields: [
-      {
-        name: 'label',
-        type: 'text',
-        required: true,
-      },
-      {
-        name: 'value',
-        type: 'text',
-        required: true,
-      },
-    ],
-  },
-  {
-    name: 'problem',
-    type: 'textarea',
-    label: 'Problem Statement',
-    admin: {
-      placeholder: 'Describe the challenge or friction this project addresses',
-    },
-  },
-  {
-    name: 'approach',
-    type: 'textarea',
-    label: 'Approach Description',
-    admin: {
-      placeholder: 'Explain the solution, methodology, or strategy that was applied',
-    },
-  },
-  {
-    name: 'outcomes',
-    type: 'array',
-    labels: {
-      singular: 'Outcome',
-      plural: 'Outcomes',
-    },
-    admin: {
-      description: 'List impact statements or results (e.g. “Accelerated growth initiatives”).',
-    },
-    fields: [
-      {
-        name: 'headline',
-        type: 'text',
-        required: true,
-        label: 'Outcome',
-      },
-    ],
-  },
-  {
-    name: 'shareLabel',
-    type: 'text',
-    label: 'Share Label',
-    admin: {
-      placeholder: 'Share this content:',
-    },
-  },
-]
-
-const projectDesignVersions = [{ label: 'Case Study', value: PROJECT_CASE_STUDY_DESIGN }]
 
 export const Projects: CollectionConfig = {
   slug: 'projects',
@@ -336,22 +237,6 @@ export const Projects: CollectionConfig = {
                 ],
               }),
             },
-            {
-              name: 'appendLayoutBlock',
-              type: 'blocks',
-              label: 'Additional Blocks',
-              blocks: [StatsBlock, AwardsBlock],
-            },
-            // Case study fields - only show when design version selected
-            {
-              name: 'projectLayoutSettings',
-              type: 'group',
-              label: 'Case Study Fields',
-              admin: {
-                condition: (data) => data?.designVersion === PROJECT_CASE_STUDY_DESIGN,
-              },
-              fields: projectPost1Fields,
-            },
           ],
         },
 
@@ -402,11 +287,6 @@ export const Projects: CollectionConfig = {
         position: 'sidebar',
       },
     },
-    designVersionPreview(projectDesignVersions, {
-      admin: {
-        position: 'sidebar',
-      },
-    }),
     {
       name: 'publishedAt',
       type: 'date',
@@ -425,57 +305,15 @@ export const Projects: CollectionConfig = {
         ],
       },
     },
-    {
-      name: 'pageAuthor',
-      type: 'relationship',
-      relationTo: 'users',
-      hasMany: true,
-      admin: {
-        position: 'sidebar',
-        description: 'Content author (internal)',
-      },
-    },
-
-    // Hidden/system fields
-    {
-      name: 'readTime',
-      type: 'number',
-      admin: { hidden: true },
-    },
-    {
-      name: 'populatedAuthors',
-      type: 'array',
-      admin: { hidden: true },
-      access: { update: () => false },
-      fields: [
-        { name: 'id', type: 'text' },
-        { name: 'name', type: 'text' },
-      ],
-    },
-    // Legacy fields - hidden for backward compatibility
-    {
-      name: 'overview',
-      type: 'textarea',
-      admin: { hidden: true },
-    },
-    {
-      name: 'bannerImage',
-      type: 'upload',
-      relationTo: 'media',
-      admin: { hidden: true },
-    },
   ],
   hooks: {
-    beforeChange: [calculateReadTime],
     afterChange: [revalidateProject],
-    afterRead: [populateAuthors],
   },
   versions: {
-    drafts: {
-      autosave: {
-        interval: 2000, // We set this interval for optimal live preview
-      },
-    },
+    // Drafts without autosave: autosave wrote an empty draft the moment "Create" was
+    // opened. Live preview (server-side RefreshRouteOnSave) still works, but now
+    // refreshes on "Save draft" rather than every 2s.
+    drafts: true,
     maxPerDoc: 50,
   },
 }

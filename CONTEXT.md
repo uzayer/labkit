@@ -66,6 +66,10 @@ _Avoid_: funding, award (reserved below)
 A recognition received by a person or a Publication. Always entered by hand.
 _Avoid_: prize, honour, grant
 
+**News Item**:
+A dated announcement from the Lab — a paper accepted, an event held, community work. Carries how precisely its date is known, because sources often give only a month or a year.
+_Avoid_: post, event, update, announcement
+
 ## Ingestion
 
 **Front Door**:

@@ -66,15 +66,15 @@ This is a strict policy. Violating it requires rewriting git history to remove t
 
 ### Rendering
 
-The page-builder layout system was removed. Pages are now Hero + SEO only (70+ hero variants in `src/heros/config.ts`, dispatched by `src/heros/RenderHero.tsx`). Posts and Projects render as full detail pages via `src/blocks/RenderPostDetailPage.tsx` / `RenderProjectDetailPage.tsx`. The only remaining `blocks` fields are richText embeds (Code, MediaBlock, Banner, MotionText) and Projects' `appendLayoutBlock` (Stats, Awards). See `src/blocks/CLAUDE.md`.
+The page-builder layout system was removed. Pages are now Hero + SEO only (70+ hero variants in `src/heros/config.ts`, dispatched by `src/heros/RenderHero.tsx`). Posts render as full detail pages via `src/blocks/RenderPostDetailPage.tsx`; `RenderProjectDetailPage.tsx` is a minimal stand-in until the dial-test port. The only remaining `blocks` fields are richText embeds (Code, MediaBlock, Banner, MotionText). See `src/blocks/CLAUDE.md`.
 
 ### Collections & Globals
 
-See `src/payload.config.ts` for the authoritative list. Beyond the base template (Pages, Posts, Media, Categories, Users, Roles), this repo adds: **ResearchThemes, Projects, Publications, Team, Awards, Organizations, Venues, Grants** (the LabKit research-domain collections) plus **ImportRuns, ReviewItems** — bookkeeping for the ingestion pipeline (see below).
+See `src/payload.config.ts` for the authoritative list. Beyond the base template (Pages, Posts, Media, Categories, Users, Roles), this repo adds: **ResearchThemes, Projects, Publications, Team, Awards, Organizations, Venues, Grants, News** (the LabKit research-domain collections) plus **ImportRuns, ReviewItems** — bookkeeping for the ingestion pipeline (see below).
 
 Globals: **ThemeConfig, Header, Footer, PageConfig, LabInfo**.
 
-The research collections set `admin.group` so the Payload sidebar reads as a deliberate v1 dashboard: **Research** (Publications, Projects, Team, Grants, Awards, ResearchThemes), **Reference Data** (Venues, Organizations), **Import** (ImportRuns, ReviewItems). The base-template collections are deliberately left ungrouped. Any new research-domain collection should pick one of these three groups rather than inventing a fourth.
+The research collections set `admin.group` so the Payload sidebar reads as a deliberate v1 dashboard: **Research** (Publications, Projects, Team, Grants, Awards, ResearchThemes, News), **Reference Data** (Venues, Organizations), **Import** (ImportRuns, ReviewItems). The base-template collections are deliberately left ungrouped. Any new research-domain collection should pick one of these three groups rather than inventing a fourth.
 
 ### Routing
 

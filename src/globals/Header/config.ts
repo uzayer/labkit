@@ -1,3 +1,4 @@
+import { isAdminHidden } from '@/access/isAdmin'
 import type { GlobalConfig } from 'payload'
 
 import { revalidateHeader } from './hooks/revalidateHeader'
@@ -14,6 +15,7 @@ export const Header: GlobalConfig = {
     update: authenticated,
   },
   admin: {
+    hidden: isAdminHidden,
     description: 'Theme configuration (For live preview config has to be saved)',
     livePreview: {
       url: () => {

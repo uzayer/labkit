@@ -83,6 +83,15 @@ const Organizations: CollectionConfig = {
       },
     },
     {
+      name: 'logo',
+      type: 'upload',
+      relationTo: 'media',
+      admin: {
+        description:
+          "The organization's own mark, shown in the partner strip. Prefer SVG or a transparent PNG.",
+      },
+    },
+    {
       name: 'ror_id',
       label: 'ROR ID',
       type: 'text',

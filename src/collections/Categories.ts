@@ -1,3 +1,4 @@
+import { isAdminHidden } from '@/access/isAdmin'
 import type { CollectionConfig } from 'payload'
 
 import { anyone } from '../access/anyone'
@@ -12,6 +13,7 @@ const Categories: CollectionConfig = {
     update: hasPermission('canManageContent'),
   },
   admin: {
+    hidden: isAdminHidden,
     useAsTitle: 'title',
   },
   fields: [

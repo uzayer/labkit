@@ -3,7 +3,7 @@ import type { GlobalConfig, TextFieldSingleValidation } from 'payload'
 import { revalidateThemeConfig } from './hooks/revalidateThemeConfig'
 import { generatePreviewPath } from '@/utilities/generatePreviewPath'
 import { serverUrl as NEXT_PUBLIC_SERVER_URL } from '@/config/server'
-import { isAdminFieldLevel } from '@/access/isAdmin'
+import { isAdminFieldLevel, isAdminHidden } from '@/access/isAdmin'
 
 const validateCssColor: TextFieldSingleValidation = (value: string) => {
   const cssColorRegex =
@@ -29,6 +29,7 @@ export const ThemeConfig: GlobalConfig = {
     update: isAdminFieldLevel,
   },
   admin: {
+    hidden: isAdminHidden,
     description: 'Theme configuration (For live preview config has to be saved)',
     livePreview: {
       url: () => {

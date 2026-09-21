@@ -1,9 +1,12 @@
 import { GlobalConfig } from 'payload'
-import { isAdmin } from '@/access/isAdmin'
+import { isAdmin, isAdminHidden } from '@/access/isAdmin'
 import { revalidatePageConfig } from './hooks/revalidatePageConfig'
 
 export const PageConfig: GlobalConfig = {
   slug: 'page-config',
+  admin: {
+    hidden: isAdminHidden,
+  },
   access: {
     read: () => true,
     update: isAdmin,

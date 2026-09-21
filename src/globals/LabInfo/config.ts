@@ -136,9 +136,10 @@ export const LabInfo: GlobalConfig = {
           type: 'select',
           required: true,
           options: [
-            { label: 'Twitter/X', value: 'twitter' },
+            { label: 'X (Twitter)', value: 'x' },
             { label: 'GitHub', value: 'github' },
             { label: 'LinkedIn', value: 'linkedin' },
+            { label: 'Facebook', value: 'facebook' },
             { label: 'Google Scholar', value: 'google-scholar' },
             { label: 'YouTube', value: 'youtube' },
             { label: 'ResearchGate', value: 'researchgate' },
@@ -198,6 +199,63 @@ export const LabInfo: GlobalConfig = {
           displayFormat: 'yyyy',
         },
       },
+    },
+
+    // Curated Organization lists. Ordered relationships rather than per-record
+    // flags, because the order is editorial (the home logo strip reads left
+    // to right) and a checkbox on Organization cannot express it.
+    {
+      name: 'homePartners',
+      type: 'relationship',
+      relationTo: 'organizations',
+      hasMany: true,
+      admin: {
+        description:
+          'Organizations shown in the home page partner strip, in display order. Give each a logo.',
+      },
+    },
+    {
+      name: 'collaborators',
+      type: 'relationship',
+      relationTo: 'organizations',
+      hasMany: true,
+      admin: {
+        description: 'Organizations listed as collaborating institutions, in display order',
+      },
+    },
+
+    // Recruitment
+    {
+      name: 'recruitment',
+      type: 'group',
+      admin: {
+        description:
+          'Current recruitment window shown on Join Us. Leave both empty when none is announced.',
+      },
+      fields: [
+        {
+          type: 'row',
+          fields: [
+            {
+              name: 'opens',
+              type: 'date',
+              admin: { width: '50%', date: { pickerAppearance: 'dayOnly' } },
+            },
+            {
+              name: 'closes',
+              type: 'date',
+              admin: { width: '50%', date: { pickerAppearance: 'dayOnly' } },
+              validate: (value, { siblingData }) => {
+                const opens = (siblingData as { opens?: string | null })?.opens
+                if (value && opens && new Date(value) < new Date(opens)) {
+                  return 'Closing date must be on or after the opening date.'
+                }
+                return true
+              },
+            },
+          ],
+        },
+      ],
     },
 
     // Dashboard feature toggles

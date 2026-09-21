@@ -44,6 +44,7 @@ import Awards from './collections/Awards'
 import Organizations from './collections/Organizations'
 import Venues from './collections/Venues'
 import Grants from './collections/Grants'
+import News from './collections/News'
 import ImportRuns from './collections/ImportRuns'
 import ReviewItems from './collections/ReviewItems'
 import { Footer } from './globals/Footer/config'
@@ -197,23 +198,27 @@ export default buildConfig({
       maxPoolSize: 10,
     },
   }),
+  // Order is nav order: Payload renders groups in the order their first collection
+  // appears. Research first (what a Lab Editor came to do), then Reference Data,
+  // then Import, then the ungrouped base-template collections.
   collections: [
+    Publications,
+    Team,
+    News,
+    Projects,
+    Awards,
+    Grants,
+    ResearchThemes,
+    Venues,
+    Organizations,
+    ImportRuns,
+    ReviewItems,
     Pages,
     Posts,
     Media,
     Categories,
     Users,
     Roles,
-    ResearchThemes,
-    Awards,
-    Projects,
-    Publications,
-    Team,
-    Organizations,
-    Venues,
-    Grants,
-    ImportRuns,
-    ReviewItems,
   ],
   cors: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
   csrf: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
@@ -242,6 +247,9 @@ export default buildConfig({
     redirectsPlugin({
       collections: ['pages', 'posts', 'projects'],
       overrides: {
+        admin: {
+          hidden: isAdminHidden,
+        },
         // @ts-expect-error Type mismatch between redirects plugin field types and our runtime shape
         fields: ({ defaultFields }) => {
           return defaultFields.map((field) => {
@@ -284,6 +292,9 @@ export default buildConfig({
         telephone: Telephone,
       },
       formOverrides: {
+        admin: {
+          hidden: isAdminHidden,
+        },
         fields: ({ defaultFields }) => {
           return defaultFields.map((field) => {
             if ('name' in field && field.name === 'confirmationMessage') {
@@ -306,6 +317,7 @@ export default buildConfig({
       },
       formSubmissionOverrides: {
         admin: {
+          hidden: isAdminHidden,
           description: {
             de: 'Formularübermittlungen, die von Formularen im Frontend gesammelt wurden',
             en: 'Form submissions that got collected by forms in the frontend',

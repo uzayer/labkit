@@ -1,3 +1,4 @@
+import { isAdminHidden } from '@/access/isAdmin'
 import type { GlobalConfig } from 'payload'
 
 import { link } from '@/fields/link'
@@ -15,6 +16,7 @@ export const Footer: GlobalConfig = {
     update: authenticated,
   },
   admin: {
+    hidden: isAdminHidden,
     description: 'Theme configuration (For live preview config has to be saved)',
     livePreview: {
       url: ({ req }) => {

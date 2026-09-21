@@ -111,6 +111,14 @@ const Grants: CollectionConfig = {
         },
       ],
     },
+    {
+      name: 'amountLabel',
+      type: 'text',
+      admin: {
+        description:
+          'Amount as the source states it, when it cannot be a number (e.g. "5 lac"). Shown only when Amount is empty.',
+      },
+    },
 
     // Timeline row
     {
@@ -201,6 +209,14 @@ const Grants: CollectionConfig = {
                   relationTo: 'organizations',
                   admin: {
                     description: 'Institutional affiliation, if known.',
+                  },
+                },
+                {
+                  name: 'affiliationLabel',
+                  type: 'text',
+                  admin: {
+                    description:
+                      'Affiliation as free text, when no Organization record exists (e.g. an OpenAlex affiliation without a ROR ID).',
                   },
                 },
               ],

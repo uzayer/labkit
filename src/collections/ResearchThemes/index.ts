@@ -38,7 +38,8 @@ const ResearchThemes: CollectionConfig = {
       defaultValue: false,
       index: true,
       admin: {
-        description: 'For highlighting on homepage / research landing page',
+        description:
+          'Currently has no effect on the site: the home page picks its leading themes by counting the projects and publications filed under each, and /research lists every theme.',
       },
     },
     {
@@ -47,6 +48,9 @@ const ResearchThemes: CollectionConfig = {
       relationTo: 'media',
       admin: {
         description: 'Optional icon for visual display in grid or blocks',
+        // Hidden: the site draws theme icons from a fixed per-slug icon set, not
+        // this upload. Kept in the schema (frozen) — unhide if the frontend reads it.
+        hidden: true,
       },
     },
     {

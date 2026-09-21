@@ -18,6 +18,10 @@ export const provenanceFields = (): Field => ({
       type: 'group',
       admin: {
         hideGutter: true,
+        // Written by the ingestion scripts (Local API, overrideAccess) — an audit
+        // trail, not something to hand-edit. Read-only in the admin UI only, deliberately not
+        // field-level access, so the Local API writers are unaffected.
+        readOnly: true,
       },
       fields: [
         {

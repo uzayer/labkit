@@ -1,3 +1,4 @@
+import { isAdminHidden } from '@/access/isAdmin'
 import type { CollectionConfig } from 'payload'
 
 import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
@@ -39,6 +40,7 @@ export const Pages: CollectionConfig = {
     update: hasPermission('canManageContent'),
   },
   admin: {
+    hidden: isAdminHidden,
     defaultColumns: ['title', 'slug', 'updatedAt'],
     livePreview: {
       url: ({ data, locale, req }) => {

@@ -158,6 +158,14 @@ const Awards: CollectionConfig = {
                     description: 'Institutional affiliation, if known.',
                   },
                 },
+                {
+                  name: 'affiliationLabel',
+                  type: 'text',
+                  admin: {
+                    description:
+                      'Affiliation as free text, when no Organization record exists (e.g. an OpenAlex affiliation without a ROR ID).',
+                  },
+                },
               ],
             },
           ],

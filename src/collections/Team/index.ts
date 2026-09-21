@@ -41,31 +41,7 @@ const Team: CollectionConfig = {
           label: 'Profile',
           fields: [
             {
-              type: 'row',
-              fields: [
-                {
-                  name: 'name',
-                  type: 'text',
-                  required: false, // Changed to false
-                  admin: {
-                    width: '50%',
-                    hidden: true, // Added hidden: true
-                    description: 'Internal display name (auto-generated)', // Clarified description
-                  },
-                },
-                {
-                  name: 'title',
-                  type: 'text',
-                  required: true,
-                  admin: {
-                    width: '50%',
-                    description: "Professional title (e.g., 'PhD Candidate', 'Professor')",
-                  },
-                },
-              ],
-            },
-            {
-              // New row for first, middle, last names
+              // Names first: what an editor types to create a person
               type: 'row',
               fields: [
                 {
@@ -91,6 +67,30 @@ const Team: CollectionConfig = {
                   admin: {
                     width: '33%',
                     description: 'Family Name (for BibTeX/Schema)',
+                  },
+                },
+              ],
+            },
+            {
+              type: 'row',
+              fields: [
+                {
+                  name: 'name',
+                  type: 'text',
+                  required: false, // Changed to false
+                  admin: {
+                    width: '50%',
+                    hidden: true, // Added hidden: true
+                    description: 'Internal display name (auto-generated)', // Clarified description
+                  },
+                },
+                {
+                  name: 'title',
+                  type: 'text',
+                  required: true,
+                  admin: {
+                    width: '50%',
+                    description: "Professional title (e.g., 'PhD Candidate', 'Professor')",
                   },
                 },
               ],
@@ -219,6 +219,16 @@ const Team: CollectionConfig = {
                 placeholder: '73/10485',
               },
             },
+            // Matching aid for ingestion, not profile content — lives with the identifiers.
+            {
+              name: 'alternateNames',
+              type: 'text',
+              hasMany: true,
+              admin: {
+                description:
+                  'Other exact spellings this person is cited under (e.g. "N. Ahmed"). Ingestion treats an exact match on any of these as a safe match — list only spellings that are certainly this person.',
+              },
+            },
           ],
         },
       ],
@@ -233,6 +243,7 @@ const Team: CollectionConfig = {
       options: [
         { label: 'Director', value: 'director' },
         { label: 'Faculty Member', value: 'faculty' },
+        { label: 'Research Staff', value: 'research-staff' },
         { label: 'Graduate RA', value: 'graduate-ra' },
         { label: 'Undergraduate RA', value: 'undergraduate-ra' },
         { label: 'Alumni', value: 'alumni' },
@@ -263,8 +274,33 @@ const Team: CollectionConfig = {
         { label: 'Import', value: 'import' },
       ],
       admin: {
-        description: 'How this record entered the system — drives People page filters',
+        description:
+          'How this record entered the system: typed in by hand (Manual) or created by a publication import (Import). Set automatically.',
         position: 'sidebar',
+        readOnly: true,
+      },
+    },
+    {
+      name: 'emerging',
+      type: 'checkbox',
+      defaultValue: false,
+      admin: {
+        description: 'Newly joined; shown with an "Emerging" badge alongside undergraduate RAs',
+        position: 'sidebar',
+        condition: (data) => data?.role === 'undergraduate-ra',
+      },
+    },
+    {
+      name: 'onLeave',
+      type: 'select',
+      options: [
+        { label: 'Study leave', value: 'study' },
+        { label: 'Professional leave', value: 'professional' },
+      ],
+      admin: {
+        description: 'Set while a current member is away; leave empty otherwise',
+        position: 'sidebar',
+        condition: (data) => data?.role !== 'alumni',
       },
     },
     {

@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
 import { anyone } from '@/access/anyone'
+import { isAdminHidden } from '@/access/isAdmin'
 import { hasPermission } from '@/utilities/checkPermission'
 import { validatePublications } from './hooks/validatePublications'
 import { populateAuthorPosition } from './hooks/populateAuthorPosition'
@@ -14,9 +15,11 @@ import { isValidExternalHttpUrl } from '@/utilities/validation'
  * OpenAlex equivalent: Work
  *
  * Admin UX: Tabs organized for BibTeX import workflow
- * 1. Content - title, abstract, authors (what researchers write/paste)
+ * 1. Content - DOI + BibTeX (the entry point), title, year, abstract, authors
  * 2. Publication Info - metadata typically from BibTeX
  * 3. Links & Files - PDFs and external URLs
+ *
+ * Tabs are unnamed, so moving a field between them does not change its data path.
  */
 const Publications: CollectionConfig = {
   slug: 'publications',
@@ -27,7 +30,7 @@ const Publications: CollectionConfig = {
     update: hasPermission('canManageContent'),
   },
   admin: {
-    defaultColumns: ['title', 'year', 'type', 'venueLabel', 'featured'],
+    defaultColumns: ['title', 'year', 'type', 'venueLabel', 'displayInWebsite', 'featured'],
     useAsTitle: 'title',
     group: 'Research',
   },
@@ -40,9 +43,58 @@ const Publications: CollectionConfig = {
           label: 'Content',
           fields: [
             {
+              name: 'doi',
+              label: 'DOI',
+              type: 'text',
+              unique: true,
+              admin: {
+                description: 'e.g., 10.1145/1234567.1234568',
+                placeholder: '10.1000/182',
+              },
+              validate: (value) => {
+                if (!value) return true
+                const doiRegex = /^10\.\d{4,9}\/[-._;()/:A-Z0-9]+$/i
+                if (!doiRegex.test(value)) {
+                  return 'Invalid DOI format. Expected format: 10.xxxx/xxxxx'
+                }
+                return true
+              },
+            },
+            // BibTeX import section - placeholder for future parser integration.
+            // Top of the tab with DOI: a paper's identifier is the entry point for adding it.
+            {
+              type: 'collapsible',
+              label: 'BibTeX Import',
+              admin: {
+                initCollapsed: true,
+                description: 'Paste BibTeX to auto-fill publication metadata',
+              },
+              fields: [
+                {
+                  name: 'bibtex',
+                  type: 'textarea',
+                  admin: {
+                    description:
+                      'Paste BibTeX entry here. Future: "Parse & Auto-fill" button will populate fields.',
+                    rows: 6,
+                  },
+                },
+              ],
+            },
+            {
               name: 'title',
               type: 'text',
               required: true,
+            },
+            {
+              name: 'year',
+              type: 'number',
+              required: true,
+              index: true,
+              admin: {
+                description:
+                  'Publication year. Required — on this tab so a missing year is visible.',
+              },
             },
             {
               name: 'abstract',
@@ -134,6 +186,14 @@ const Publications: CollectionConfig = {
                             description: 'Institutional affiliation, if known.',
                           },
                         },
+                        {
+                          name: 'affiliationLabel',
+                          type: 'text',
+                          admin: {
+                            description:
+                              'Affiliation as free text, when no Organization record exists (e.g. an OpenAlex affiliation without a ROR ID).',
+                          },
+                        },
                       ],
                     },
                   ],
@@ -169,27 +229,6 @@ const Publications: CollectionConfig = {
                 initCollapsed: false,
               },
             },
-
-            // BibTeX import section - placeholder for future parser integration
-            {
-              type: 'collapsible',
-              label: 'BibTeX Import',
-              admin: {
-                initCollapsed: true,
-                description: 'Paste BibTeX to auto-fill publication metadata',
-              },
-              fields: [
-                {
-                  name: 'bibtex',
-                  type: 'textarea',
-                  admin: {
-                    description:
-                      'Paste BibTeX entry here. Future: "Parse & Auto-fill" button will populate fields.',
-                    rows: 6,
-                  },
-                },
-              ],
-            },
           ],
         },
 
@@ -200,15 +239,6 @@ const Publications: CollectionConfig = {
             {
               type: 'row',
               fields: [
-                {
-                  name: 'year',
-                  type: 'number',
-                  required: true,
-                  index: true,
-                  admin: {
-                    width: '33%',
-                  },
-                },
                 {
                   name: 'status',
                   type: 'select',
@@ -221,7 +251,7 @@ const Publications: CollectionConfig = {
                     { label: 'Preprint', value: 'preprint' },
                   ],
                   admin: {
-                    width: '33%',
+                    width: '50%',
                   },
                 },
                 {
@@ -238,7 +268,7 @@ const Publications: CollectionConfig = {
                     { label: 'Book Chapter', value: 'book-chapter' },
                   ],
                   admin: {
-                    width: '33%',
+                    width: '50%',
                   },
                 },
               ],
@@ -396,24 +426,6 @@ const Publications: CollectionConfig = {
           label: 'Links & Files',
           fields: [
             {
-              name: 'doi',
-              label: 'DOI',
-              type: 'text',
-              unique: true,
-              admin: {
-                description: 'e.g., 10.1145/1234567.1234568',
-                placeholder: '10.1000/182',
-              },
-              validate: (value) => {
-                if (!value) return true
-                const doiRegex = /^10\.\d{4,9}\/[-._;()/:A-Z0-9]+$/i
-                if (!doiRegex.test(value)) {
-                  return 'Invalid DOI format. Expected format: 10.xxxx/xxxxx'
-                }
-                return true
-              },
-            },
-            {
               name: 'externalUrl',
               label: 'Publisher URL',
               type: 'text',
@@ -504,6 +516,17 @@ const Publications: CollectionConfig = {
 
     // SIDEBAR FIELDS
     {
+      name: 'displayInWebsite',
+      type: 'checkbox',
+      defaultValue: true,
+      index: true,
+      admin: {
+        description:
+          "Show on website. Untick instead of deleting a paper that isn't the lab's (or a preprint duplicate) — a deleted DOI is re-created by the next import, a hidden one is skipped.",
+        position: 'sidebar',
+      },
+    },
+    {
       name: 'featured',
       type: 'checkbox',
       defaultValue: false,
@@ -549,7 +572,8 @@ const Publications: CollectionConfig = {
       admin: {
         position: 'sidebar',
         initCollapsed: true,
-        // condition: (data) => Boolean(data?.openalex_id), // Show only when synced
+        // Sync bookkeeping, not something a Lab Editor acts on — admins only.
+        condition: (_data, _siblingData, { user }) => !isAdminHidden({ user }),
       },
       fields: [
         {
