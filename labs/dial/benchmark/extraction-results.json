@@ -1,0 +1,117 @@
+{
+  "model": "gpt-5.6-terra",
+  "results": [
+    {
+      "id": "publication-doi",
+      "expected": {
+        "title": "AI4Bangladesh: AI Ethics for Bangladesh - Challenges, Risks, Principles, and Suggestions",
+        "year": "2025",
+        "doi": "10.1145/3700794.3700820",
+        "type": "conference"
+      },
+      "predicted": {
+        "title": "AI4Bangladesh: AI Ethics for Bangladesh - Challenges, Risks, Principles, and Suggestions",
+        "year": "2025",
+        "doi": "10.1145/3700794.3700820",
+        "type": "conference"
+      },
+      "exact": true,
+      "source_ok": true
+    },
+    {
+      "id": "publication-duplicate",
+      "expected": {
+        "title": "AI4Bangladesh: AI Ethics for Bangladesh - Challenges, Risks, Principles, and Suggestions",
+        "year": "2025",
+        "doi": "10.1145/3700794.3700820"
+      },
+      "predicted": {
+        "title": "AI4Bangladesh: AI Ethics for Bangladesh - Challenges, Risks, Principles, and Suggestions",
+        "year": "2025",
+        "doi": "10.1145/3700794.3700820"
+      },
+      "exact": true,
+      "source_ok": true
+    },
+    {
+      "id": "publication-truncated",
+      "expected": {
+        "title": "A gradient sensing middleware to handle flash flood",
+        "year": "2017",
+        "type": "journal"
+      },
+      "predicted": {
+        "title": "A gradient sensing middleware to handle flash flood",
+        "year": "2017",
+        "type": "journal"
+      },
+      "exact": true,
+      "source_ok": true
+    },
+    {
+      "id": "project-shonabondhu",
+      "expected": {
+        "title": "Shonabondhu",
+        "status": "ongoing"
+      },
+      "predicted": {
+        "title": "Shonabondhu",
+        "status": "ongoing"
+      },
+      "exact": true,
+      "source_ok": true
+    },
+    {
+      "id": "award-best-journal",
+      "expected": {
+        "title": "Best Journal Paper Award",
+        "year": "2023"
+      },
+      "predicted": {
+        "title": "Best Journal Paper Award",
+        "year": "2023"
+      },
+      "exact": true,
+      "source_ok": true
+    },
+    {
+      "id": "event-dial-symposium",
+      "expected": {
+        "title": "DIAL HCI Research Symposium: Connecting Young Researchers With Experts 2023",
+        "date": "2023-06-01",
+        "datePrecision": "day",
+        "type": "event"
+      },
+      "predicted": {
+        "title": "DIAL HCI Research Symposium: Connecting Young Researchers With Experts 2023",
+        "year": "2023",
+        "type": "event",
+        "date": "2023-06-01",
+        "datePrecision": "day"
+      },
+      "exact": false,
+      "source_ok": true
+    },
+    {
+      "id": "event-winter-school",
+      "expected": {
+        "title": "ACM SIGCHI Winter School 2024",
+        "type": "event"
+      },
+      "predicted": {
+        "title": "ACM SIGCHI Winter School 2024 in Colombo",
+        "year": "2024",
+        "type": "event"
+      },
+      "exact": false,
+      "source_ok": true
+    },
+    {
+      "id": "irrelevant-scholar-link",
+      "expected": {},
+      "predicted": {},
+      "exact": true,
+      "source_ok": true
+    }
+  ]
+}

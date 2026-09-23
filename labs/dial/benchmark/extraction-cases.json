@@ -1,0 +1,52 @@
+[
+  {
+    "id": "publication-doi",
+    "expected": {
+      "title": "AI4Bangladesh: AI Ethics for Bangladesh - Challenges, Risks, Principles, and Suggestions",
+      "year": "2025",
+      "doi": "10.1145/3700794.3700820",
+      "type": "conference"
+    }
+  },
+  {
+    "id": "publication-duplicate",
+    "expected": {
+      "title": "AI4Bangladesh: AI Ethics for Bangladesh - Challenges, Risks, Principles, and Suggestions",
+      "year": "2025",
+      "doi": "10.1145/3700794.3700820"
+    }
+  },
+  {
+    "id": "publication-truncated",
+    "expected": {
+      "title": "A gradient sensing middleware to handle flash flood",
+      "year": "2017",
+      "type": "journal"
+    }
+  },
+  {
+    "id": "project-shonabondhu",
+    "expected": { "title": "Shonabondhu", "status": "ongoing" }
+  },
+  {
+    "id": "award-best-journal",
+    "expected": { "title": "Best Journal Paper Award", "year": "2023" }
+  },
+  {
+    "id": "event-dial-symposium",
+    "expected": {
+      "title": "DIAL HCI Research Symposium: Connecting Young Researchers With Experts 2023",
+      "date": "2023-06-01",
+      "datePrecision": "day",
+      "type": "event"
+    }
+  },
+  {
+    "id": "event-winter-school",
+    "expected": { "title": "ACM SIGCHI Winter School 2024", "type": "event" }
+  },
+  {
+    "id": "irrelevant-scholar-link",
+    "expected": {}
+  }
+]

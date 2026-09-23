@@ -1,0 +1,4042 @@
+[
+  {
+    "id": "team/nova-ahmed",
+    "collection": "team",
+    "recordId": "nova-ahmed",
+    "label": "Professor, ECE Department, North South University",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers → Dr. Nova Ahmed\"; bio paraphrases nova-ahmed-personal-site/home.md — \"Nova Ahmed\"; Scholar link from nsu-hci-current-website/publications.md — \"Google Scholar\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/tamanna-motahar",
+    "collection": "team",
+    "recordId": "tamanna-motahar",
+    "label": "Assistant Professor, School of Computing and Informatics, University of Louisiana at Lafayette; Senior Lecturer, ECE Department, North South University (On Leave)",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers → Dr. Tamanna Motahar\". The Proposal lists her as an Interdisciplinary Collaborator instead; role needs confirmation.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/rahat-jahangir-rony",
+    "collection": "team",
+    "recordId": "rahat-jahangir-rony",
+    "label": "Coordinator (NSUHCI) and Researcher, DIAL, North South University; Researcher, Cardiff University; Secretary, Dhaka ACM SIGCHI Chapter (BanglaCHI)",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers → Dr. Rahat Jahangir Rony\". Also listed under \"Researchers: Study Leave\" (older card) and in the 2022 \"Researchers Pursuing Ph.D.\" list; the current Researchers card is treated as authoritative. Role is the closest LabKit fit (no research-staff role).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/anik-sinha",
+    "collection": "team",
+    "recordId": "anik-sinha",
+    "label": "Researcher, DIAL; Lab Coordinator and Treasurer, DIAL; Team Lead, Autism Project",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers → Anik Sinha\". Role is the closest LabKit fit (no research-staff role).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/anik-saha",
+    "collection": "team",
+    "recordId": "anik-saha",
+    "label": "Researcher, DIAL; Project Planning & Implementation Coordinator; Team Lead, Familiarization and Co-Learning Project",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers → Anik Saha\". Role is the closest LabKit fit (no research-staff role).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/ifti-azad-abeer",
+    "collection": "team",
+    "recordId": "ifti-azad-abeer",
+    "label": "Researcher and Research Coordinator, DIAL; Team Lead, Credit Scoring Project",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers → Ifti Azad Abeer\" for card and photo; nsu-hci-current-website/people.md — \"Researchers Pursuing Ph.D. and Postgraduate Studies → 2026\" (\"Ifti Azad Abber\", treated as the same person) for the move.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/antara-saha",
+    "collection": "team",
+    "recordId": "antara-saha",
+    "label": "Research Assistant, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Graduate Student Researchers → Antara Saha\"; nsu-hci-current-website/people.md — \"Researchers Pursuing Ph.D. and Postgraduate Studies → 2026\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/md-shihab-reza",
+    "collection": "team",
+    "recordId": "md-shihab-reza",
+    "label": "Research Assistant, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Graduate Student Researchers → Md. Shihab Reza\" (also duplicated under \"Researchers: Professional Leave\"); nsu-hci-current-website/people.md — \"Researchers Pursuing Ph.D. and Postgraduate Studies → 2026\" (\"Shihab Reja\", treated as the same person).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/md-jahidul-islam",
+    "collection": "team",
+    "recordId": "md-jahidul-islam",
+    "label": "Data Scientist, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Graduate Student Researchers → Md. Jahidul Islam\"; nsu-hci-current-website/people.md — \"Researchers Pursuing Ph.D. and Postgraduate Studies → 2026\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/monisha-dey",
+    "collection": "team",
+    "recordId": "monisha-dey",
+    "label": "Research Assistant, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Graduate Student Researchers → Monisha Dey\"; listed under nsu-hci-current-website/people.md — \"Researchers Pursuing Ph.D. and Postgraduate Studies → 2026\" with no destination given.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/manoshi-das-turjo",
+    "collection": "team",
+    "recordId": "manoshi-das-turjo",
+    "label": "Research Assistant, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Graduate Student Researchers → Manoshi Das Turjo\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/moostazi-maisha",
+    "collection": "team",
+    "recordId": "moostazi-maisha",
+    "label": "Research Assistant, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Graduate Student Researchers → Moostazi Maisha\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/sumit-kumar-kar",
+    "collection": "team",
+    "recordId": "sumit-kumar-kar",
+    "label": "Research Assistant, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Graduate Student Researchers → Sumit Kumar Kar\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/shahariar-ifti",
+    "collection": "team",
+    "recordId": "shahariar-ifti",
+    "label": "Research Assistant, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Graduate Student Researchers → Shahariar Ifti\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/shuvashish-chakraborty",
+    "collection": "team",
+    "recordId": "shuvashish-chakraborty",
+    "label": "Research Assistant, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Graduate Student Researchers → Shuvashish Chakraborty\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/f-m-abir-hossain",
+    "collection": "team",
+    "recordId": "f-m-abir-hossain",
+    "label": "Research Assistant, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Graduate Student Researchers → F. M. Abir Hossain\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/farhan-ahmed-fahim",
+    "collection": "team",
+    "recordId": "farhan-ahmed-fahim",
+    "label": "Research Assistant, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Undergraduate Student Researchers → Farhan Ahmed Fahim\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/shams-akbar-aalok",
+    "collection": "team",
+    "recordId": "shams-akbar-aalok",
+    "label": "Research Assistant, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Undergraduate Student Researchers → Shams Akbar Aalok\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/lamia-amin",
+    "collection": "team",
+    "recordId": "lamia-amin",
+    "label": "Research Assistant, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Undergraduate Student Researchers → Lamia Amin\". The Proposal lists \"Lamia Amin Tisha\"; not merged without confirmation.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/sami-uddin",
+    "collection": "team",
+    "recordId": "sami-uddin",
+    "label": "Research Assistant, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Undergraduate Student Researchers → Sami Uddin\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/ashfaq-mahee-siddiky",
+    "collection": "team",
+    "recordId": "ashfaq-mahee-siddiky",
+    "label": "Research Assistant, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Undergraduate Student Researchers → Ashfaq Mahee Siddiky\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/obayed-ur-rahman",
+    "collection": "team",
+    "recordId": "obayed-ur-rahman",
+    "label": "Research Assistant, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Undergraduate Student Researchers → Obayed Ur Rahman\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/asif-mahbub",
+    "collection": "team",
+    "recordId": "asif-mahbub",
+    "label": "Research Assistant, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Undergraduate Student Researchers → Asif Mahbub\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/eusra-amreen",
+    "collection": "team",
+    "recordId": "eusra-amreen",
+    "label": "Research Assistant, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Undergraduate Student Researchers → Eusra Amreen\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/mahir-morshed",
+    "collection": "team",
+    "recordId": "mahir-morshed",
+    "label": "Research Assistant, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Undergraduate Student Researchers → Mahir Morshed\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/arefa-khandaker-rifa",
+    "collection": "team",
+    "recordId": "arefa-khandaker-rifa",
+    "label": "Research Assistant, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Emerging Student Researchers → Arefa Khandaker Rifa\". LabKit has no \"emerging\" role; undergraduate-ra is an assumption.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/marzia-mahian-hridi",
+    "collection": "team",
+    "recordId": "marzia-mahian-hridi",
+    "label": "Research Assistant, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Emerging Student Researchers → Marzia Mahian Hridi\". LabKit has no \"emerging\" role; undergraduate-ra is an assumption.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/md-azmine-amin-mormo",
+    "collection": "team",
+    "recordId": "md-azmine-amin-mormo",
+    "label": "Research Assistant, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Emerging Student Researchers → Md. Azmine Amin Mormo\". LabKit has no \"emerging\" role; undergraduate-ra is an assumption.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/tasnim-sharif-rowla",
+    "collection": "team",
+    "recordId": "tasnim-sharif-rowla",
+    "label": "Research Assistant, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Emerging Student Researchers → Tasnim Sharif Rowla\". LabKit has no \"emerging\" role; undergraduate-ra is an assumption.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/ridwan-ur-rahman",
+    "collection": "team",
+    "recordId": "ridwan-ur-rahman",
+    "label": "Research Assistant, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Emerging Student Researchers → Ridwan Ur Rahman\". LabKit has no \"emerging\" role; undergraduate-ra is an assumption.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/samina-islam-mim",
+    "collection": "team",
+    "recordId": "samina-islam-mim",
+    "label": "Research Assistant, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Emerging Student Researchers → Samina Islam Mim\". LabKit has no \"emerging\" role; undergraduate-ra is an assumption.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/syeda-shabnam-khan",
+    "collection": "team",
+    "recordId": "syeda-shabnam-khan",
+    "label": "Former Research Scientist, DIAL, North South University",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers: Study Leave → Syeda Shabnam Khan\"; alumniYear is the earliest year under \"Researchers Pursuing Ph.D. and Postgraduate Studies\" (2023).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/shajnush-amir",
+    "collection": "team",
+    "recordId": "shajnush-amir",
+    "label": "Former Research Scientist, DIAL, North South University",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers: Study Leave → Shajnush Amir\"; alumniYear is the earliest year under \"Researchers Pursuing Ph.D. and Postgraduate Studies\" (2023).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/sarah-binte-alam-shoilee",
+    "collection": "team",
+    "recordId": "sarah-binte-alam-shoilee",
+    "label": "Former Researcher, DIAL, North South University",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers: Study Leave → Sarah Binte Alam Shoilee\"; alumniYear is the earliest year under \"Researchers Pursuing Ph.D. and Postgraduate Studies\" (2020 and 2021).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/kimia-t-zaman",
+    "collection": "team",
+    "recordId": "kimia-t-zaman",
+    "label": "Former Researcher, DIAL, North South University",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers: Study Leave → Kimia T. Zaman\"; alumniYear is the earliest year under \"Researchers Pursuing Ph.D. and Postgraduate Studies\" (2021). The 2021 list writes \"Kimia-tuz- Zaman\"; the Proposal writes \"Kimia Zaman\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/mahbuba-tasmin",
+    "collection": "team",
+    "recordId": "mahbuba-tasmin",
+    "label": "Former Researcher, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers: Study Leave → Mahbuba Tasmin\"; alumniYear is the earliest year under \"Researchers Pursuing Ph.D. and Postgraduate Studies\" (2022). Her card does not say \"Former DIAL\"; the title is inferred from the Study Leave section and the Proposal's \"Notable DIAL Alumni\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/md-sabbir-ahmed",
+    "collection": "team",
+    "recordId": "md-sabbir-ahmed",
+    "label": "Former Data Scientist, DIAL, North South University",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers: Study Leave → Md. Sabbir Ahmed\"; alumniYear is the earliest year under \"Researchers Pursuing Ph.D. and Postgraduate Studies\" (2023). Card name is \"Sabbir Ahmed\"; the 2023 list and the Mon Majhi page say \"Md. Sabbir Ahmed\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/tahsin-mayeesha",
+    "collection": "team",
+    "recordId": "tahsin-mayeesha",
+    "label": "Former Researcher, DIAL, North South University",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers: Study Leave → Tahsin Mayeesha\"; alumniYear is the earliest year under \"Researchers Pursuing Ph.D. and Postgraduate Studies\" (2025). Publications list her as \"Tasmiah Tahsin Mayeesha\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/partho-anthony-d-costa",
+    "collection": "team",
+    "recordId": "partho-anthony-d-costa",
+    "label": "Former Researcher, DIAL, North South University",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers: Study Leave → Partho Anthony D' Costa\"; alumniYear is the earliest year under \"Researchers Pursuing Ph.D. and Postgraduate Studies\" (2025).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/tanvir-hasan-fuad",
+    "collection": "team",
+    "recordId": "tanvir-hasan-fuad",
+    "label": "Former Researcher & Lab Manager, DIAL, North South University",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers: Study Leave → Tanvir Hasan Fuad\"; alumniYear is the earliest year under \"Researchers Pursuing Ph.D. and Postgraduate Studies\" (2023).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/ulfat-tahsin",
+    "collection": "team",
+    "recordId": "ulfat-tahsin",
+    "label": "Former Researcher, DIAL, North South University",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers: Study Leave → Ulfat Tahsin\"; alumniYear is the earliest year under \"Researchers Pursuing Ph.D. and Postgraduate Studies\" (2023).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/jannatul-shapna",
+    "collection": "team",
+    "recordId": "jannatul-shapna",
+    "label": "Former Researcher, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers Pursuing Ph.D. and Postgraduate Studies\"; alumniYear is the earliest year under \"Researchers Pursuing Ph.D. and Postgraduate Studies\" (2022). Her Study Leave card is absent from the 2026-09-12 crawl; email from the earlier capture via organized-from-scrapes/people-projects-themes.md.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/tawfique-elahi",
+    "collection": "team",
+    "recordId": "tawfique-elahi",
+    "label": "Former Researcher, DIAL, North South University",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers: Study Leave → Tawfique Elahi\"; alumniYear is the earliest year under \"Researchers Pursuing Ph.D. and Postgraduate Studies\" (2023 and 2025).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/zareen-tasnim",
+    "collection": "team",
+    "recordId": "zareen-tasnim",
+    "label": "Former Researcher, DIAL, North South University",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers: Study Leave → Zareen Tasnim\"; alumniYear is the earliest year under \"Researchers Pursuing Ph.D. and Postgraduate Studies\" (2022 and 2025).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/mohammad-rayed",
+    "collection": "team",
+    "recordId": "mohammad-rayed",
+    "label": "Former Researcher, DIAL, North South University",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers: Study Leave → Mohammad Rayed\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/mayisha-muntaha-alam",
+    "collection": "team",
+    "recordId": "mayisha-muntaha-alam",
+    "label": "Former Researcher, DIAL, North South University",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers: Study Leave → Mayisha Muntaha Alam\"; alumniYear is the earliest year under \"Researchers Pursuing Ph.D. and Postgraduate Studies\" (2025). Card name is \"Mayisha Alam\"; the 2025 list says \"MayishaMuntaha Alam\" (same destination).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/monirul-islam-mahmud",
+    "collection": "team",
+    "recordId": "monirul-islam-mahmud",
+    "label": "Former Researcher, DIAL, North South University",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers: Study Leave → Monirul Islam Mahmud\"; alumniYear is the earliest year under \"Researchers Pursuing Ph.D. and Postgraduate Studies\" (2024).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/md-tanvir-chowdhury",
+    "collection": "team",
+    "recordId": "md-tanvir-chowdhury",
+    "label": "Former Researcher, DIAL, North South University",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers: Study Leave → Md. Tanvir Chowdhury\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/rio-chakma",
+    "collection": "team",
+    "recordId": "rio-chakma",
+    "label": "Research Associate, IDLC, Bangladesh",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers: Professional Leave → Rio Chakma\". The page does not say \"Former\"; \"Professional Leave\" is read as no longer active.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/majedur-rahman",
+    "collection": "team",
+    "recordId": "majedur-rahman",
+    "label": "Software Engineer, Technuf, USA",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers: Professional Leave → Majedur Rahman\". The page does not say \"Former\"; \"Professional Leave\" is read as no longer active.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/shahreen-shahjahan-psyche",
+    "collection": "team",
+    "recordId": "shahreen-shahjahan-psyche",
+    "label": "Software Engineer, Amazon",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers: Professional Leave → Shahreen Shahjahan Psyche\". The page does not say \"Former\"; \"Professional Leave\" is read as no longer active. alumniYear from \"Researchers Pursuing Ph.D. and Postgraduate Studies → 2020\" (M.Sc., The University of Texas Dallas).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/md-tanvir-mushfique",
+    "collection": "team",
+    "recordId": "md-tanvir-mushfique",
+    "label": "Layout Engineer, ULKASEMI, Canada",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers: Professional Leave → Md. Tanvir Mushfique\". The page does not say \"Former\"; \"Professional Leave\" is read as no longer active. alumniYear from \"Researchers Pursuing Ph.D. and Postgraduate Studies → 2020\" (M.Sc., University of Windsor).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/gazi-fakhrul-islam",
+    "collection": "team",
+    "recordId": "gazi-fakhrul-islam",
+    "label": "Researcher, DIAL, North South University",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers: Professional Leave → Gazi Fakhrul Islam\". The page does not say \"Former\"; \"Professional Leave\" is read as no longer active.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/md-tamjid-hosain",
+    "collection": "team",
+    "recordId": "md-tamjid-hosain",
+    "label": "Research Assistant, DIAL",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers: Professional Leave → Md. Tamjid Hosain\". The page does not say \"Former\"; \"Professional Leave\" is read as no longer active. The Proposal writes \"Md Tamjid Hossain\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/salekul-islam",
+    "collection": "team",
+    "recordId": "salekul-islam",
+    "label": "Professor, ECE, North South University",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Ongoing Supervision Structure\" (\"Member\"). Not on the current People page, so hidden. The Mon Majhi page instead calls him \"Prof. Salekul Islam, UIU\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/nabil-bin-hannan",
+    "collection": "team",
+    "recordId": "nabil-bin-hannan",
+    "label": "Assistant Professor, ECE",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Ongoing Supervision Structure\" (\"Member\"). Not on the current People page, so hidden.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/saidul-islam",
+    "collection": "team",
+    "recordId": "saidul-islam",
+    "label": "Counseling Center, North South University",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Ongoing Supervision Structure\" (\"Member\"). Not on the current People page, so hidden.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/lamia-iftekhar",
+    "collection": "team",
+    "recordId": "lamia-iftekhar",
+    "label": "Women in STEM collaboration",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/collaborations.md — \"Women in STEM Collaboration\"; the Proposal lists her under \"Past Collaborators\" as \"Dr. Lamia Iftekhar, NSU\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/silvia-ahmed",
+    "collection": "team",
+    "recordId": "silvia-ahmed",
+    "label": "Women in STEM collaboration",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/collaborations.md — \"Women in STEM Collaboration\"; PI of the CTRG \"Exploring emotion from text data\" grant (DIAL Proposal.md — \"Funding Information\"). Affiliation not stated.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/moinuddin-bhuiyan",
+    "collection": "team",
+    "recordId": "moinuddin-bhuiyan",
+    "label": "Collaborator",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/collaborations.md — \"Grameen Phone Collaboration\" (spelled \"Moinunddin\" there, \"Moin Bhuiyan\" elsewhere).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/nithya-sambasivan",
+    "collection": "team",
+    "recordId": "nithya-sambasivan",
+    "label": "Collaborator, gender equity in technology",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/collaborations.md — \"Collaboration with Google\"; the Proposal lists \"Dr. Nithya Sambasivan, Google\" under \"Past Collaborators\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/munir-hasan",
+    "collection": "team",
+    "recordId": "munir-hasan",
+    "label": "Interdisciplinary collaborator, Women in Tech",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Interdisciplinary Collaborator (21)\": \"Munir Hasan, BDOSN Area: Women in Tech\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/abdul-wohab",
+    "collection": "team",
+    "recordId": "abdul-wohab",
+    "label": "Interdisciplinary collaborator, Social Science",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Interdisciplinary Collaborator (21)\": \"Abdul Wohab, Social Science, NSU\"; PI on two SIPG grants (\"Funding Information\").",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "team/shameem-ahmed",
+    "collection": "team",
+    "recordId": "shameem-ahmed",
+    "label": "Co-PI, autism parent–teacher grant",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Past Collaborators\" (\"Dr. Shameem Ahmed, WWU\") and \"Funding Information\" (Co-PI, CTRG-22-SEPS-01).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/protibadi",
+    "collection": "projects",
+    "recordId": "protibadi",
+    "label": "Protibadi",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/research-protibadi.md — \"Protibadi\"; merged with nsu-hci-current-website/dial-research.md — \"Development of Wearable Security for Women Against Sexual Harassment\". Award link: the CHI 2019 paper is listed on the project page.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/jyoti",
+    "collection": "projects",
+    "recordId": "jyoti",
+    "label": "Jyoti",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Projects\" → \"Jyoti (জ্যোতি)\" (Ongoing; lead Ifti Azad Abeer, members Eusra Amreen and Mahir Morshed).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/mon-majhi",
+    "collection": "projects",
+    "recordId": "mon-majhi",
+    "label": "Mon Majhi",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/research-mental-health-with-mon-majhi.md — \"Mental Health with Mon Majhi\"; status from nova-ahmed-personal-site/home.md \"Ongoing Projects\"; hero is its thumbnail on nova-ahmed-personal-site/research.md.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/shondhi",
+    "collection": "projects",
+    "recordId": "shondhi",
+    "label": "Shondhi",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/research-autism.md — \"Shondhi\"; merged with DIAL Proposal.md — \"Projects\" → \"Shondhi and Shongi (স্যন্ধি অ্যান্ড সঙ্গী)\" (Ongoing; localName from its heading) and the three autism entries on nsu-hci-current-website/dial-research.md. Scope of \"Shondhi\" vs \"Shondhi and Shongi\" needs confirmation.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/shonabondhu",
+    "collection": "projects",
+    "recordId": "shonabondhu",
+    "label": "Shonabondhu",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/research-project-shonabondhu.md — \"Shonabondhu\" (\"This is an active project\"). Team names are first names only and are not linked.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/next-billion-users",
+    "collection": "projects",
+    "recordId": "next-billion-users",
+    "label": "Next Billion Users",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/research-next-biliion-users.md — \"Next Biliion Users\" (title spelling from nova-ahmed-personal-site/research.md); merged with nsu-hci-current-website/dial-research.md — \"Google Gender and Technology Research in Bangladesh 2017\" (abstract). Awards are the two award-winning papers the project page lists.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/bap-re-bap",
+    "collection": "projects",
+    "recordId": "bap-re-bap",
+    "label": "Bap re Bap",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/research-bap-re-bap.md — \"Bap re Bap\"; merged with nsu-hci-current-website/dial-research.md — \"Assessment of the Driving Behavior and Stress in Multi-modal Road Culture in Developing Countries\". Award link: \"Monitoring Driving Stress using HRV\" is listed on the project page.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/tuntuni",
+    "collection": "projects",
+    "recordId": "tuntuni",
+    "label": "TunTuni",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/research-teen-and-youth.md — \"About Teen and Young Population\" (titled \"TunTuni\" and listed under \"Ongoing Projects\" on nova-ahmed-personal-site/home.md); merged with nsu-hci-current-website/dial-research.md — \"Teens' Online Behavior in Bangladesh\" and \"Teen-Parent Relationship in the Context of Bangladesh\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/aparajita",
+    "collection": "projects",
+    "recordId": "aparajita",
+    "label": "Aparajita",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/research-women-in-lab.md — \"Women in STEM, Computing\" (named \"Aparajita\" under \"Ongoing Projects\" on nova-ahmed-personal-site/home.md; \"Aporajita\" on research.md).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/meena-needs-a-computer-now",
+    "collection": "projects",
+    "recordId": "meena-needs-a-computer-now",
+    "label": "Meena Needs a Computer Now",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/dial-research.md — \"Meena Needs a Computer Now: Co-design Solutions to Barriers using Fictional Inquiry for Women in Computing\". Kept separate from Aparajita until DIAL confirms they are one project.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/golpokotha",
+    "collection": "projects",
+    "recordId": "golpokotha",
+    "label": "Golpokotha",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/research-golpokotha.md — \"Golpokotha\" (tagline from nova-ahmed-personal-site/research.md); merged with nsu-hci-current-website/dial-research.md — \"Social Justice and Digital Silence in the Context of Bangladesh\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/tech-for-rmg-workers",
+    "collection": "projects",
+    "recordId": "tech-for-rmg-workers",
+    "label": "Tech for RMG Workers",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/research-tech-for-rmg-workers.md — \"Tech for RMG workers\" (\"with BRACU\" on nova-ahmed-personal-site/research.md); abstract from nsu-hci-current-website/dial-research.md — \"Digital RMG Mapping in Bangladesh 2020\", treated as the same work.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/notun-digonto",
+    "collection": "projects",
+    "recordId": "notun-digonto",
+    "label": "Notun Digonto",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Projects\" → \"Notun Digonto (নতুন দিগন্ত)\" (Ongoing; lead Antara Saha); abstract detail from nsu-hci-current-website/dial-research.md — \"We Are Just One Step Away… 2025\", treated as its output. Member \"Ifti\" is not linked (ambiguous first name).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/alor-akash",
+    "collection": "projects",
+    "recordId": "alor-akash",
+    "label": "Alor Akash",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/dial-research.md — \"Alor Akash: Intersections of Gender and Technology in Bangladesh\"; \"Completed Project\" in DIAL Proposal.md; hero is its thumbnail on nova-ahmed-personal-site/research.md.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/shohojoyi",
+    "collection": "projects",
+    "recordId": "shohojoyi",
+    "label": "Shohojoyi",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Projects\" → \"Shohojoyi (সহজয়ী)\" (Ongoing; lead Anik Saha; funding \"Bill and Melinda Gates Foundation\"). Anik Saha's People-page card confirms \"Team Lead- Familiarization and Co- Learning Project\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/poisha",
+    "collection": "projects",
+    "recordId": "poisha",
+    "label": "Poisha",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Projects\" → \"Poisha (পয়সা)\" (Ongoing; lead Ifti Azad Abeer; \"NSU CTRG fund, BDT 5 Lac\"). Ifti's People-page card confirms \"Team Lead- Credit Scoring Project\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/mon-bina",
+    "collection": "projects",
+    "recordId": "mon-bina",
+    "label": "Mon Bina",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Ongoing\" → \"Mon Bina (মন বিনা)\" (\"NSU UIU fund, BDT 5 Lac\"). Members are listed by first name only and are not linked.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/beyond-posts",
+    "collection": "projects",
+    "recordId": "beyond-posts",
+    "label": "Beyond Posts",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Projects\" → \"Beyond Posts\" (lead Manoshi Das; \"NSU_UIU Collaboration fund, BDT 5 Lac\" — not matched to a Grant row).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/infodemic-detection",
+    "collection": "projects",
+    "recordId": "infodemic-detection",
+    "label": "Infodemic Detection",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Projects\" → \"Infodemic Detection\" (Ongoing; \"GDN funding, USD 20,000\"). Members \"Ifti, Saeem, Khushboo, Prachi\" are first names only and are not linked.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/fair-ai",
+    "collection": "projects",
+    "recordId": "fair-ai",
+    "label": "Fair AI",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Projects\" → \"Fair AI (ফেয়ার এ.আই)\" (leads Tahsin Mayeesha and Farzana Islam; \"SIPG NSU 3,00,000\", matched to the CPS-SIPG-02 \"Understanding AI and Ethics\" grant of the same amount).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/arc-net",
+    "collection": "projects",
+    "recordId": "arc-net",
+    "label": "ARC-Net: DeepFake Face Detection Using XAI",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Projects\" → \"Attention-Residual Mechanism with EfficientNetB0 Backbone for DeepFake Face Detection Using XAI\" (members and co-leaders Md Shihab Reza, Farhana Elias, Monirul Islam Mahmud; Farhana Elias has no Team record).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/dfu-dialnet",
+    "collection": "projects",
+    "recordId": "dfu-dialnet",
+    "label": "DFU_DIALNet",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Projects\" → \"DFU_DIALNet – A Hybrid Approach to Detect Diabetic Foot Ulcer\" (members and co-leaders Monirul Islam Mahmud, Md Shihab Reza, Farhana Elias).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/shathi",
+    "collection": "projects",
+    "recordId": "shathi",
+    "label": "Shathi",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Projects\" → \"Shathi (সাথী)\" (Ongoing). Members \"Asif, Shubhashish, Ifti, Abir\" are first names only and are not linked.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/shohochor",
+    "collection": "projects",
+    "recordId": "shohochor",
+    "label": "Shohochor",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Projects\" → \"Shohochor (সহচর)\". Lead \"Mayeesha\" is ambiguous (Tahsin Mayeesha / Mayisha Muntaha Alam) and not linked.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/july-movement",
+    "collection": "projects",
+    "recordId": "july-movement",
+    "label": "July Movement",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Projects\" → \"July Movement (জুলাই প্রতিরূপ)\"; merged with nsu-hci-current-website/dial-research.md — \"Multimodal Data-Driven Exploration of Emotional Eruption of the July Movement 2024\". Only the members named in full are linked.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/social-chatbot-mental-health",
+    "collection": "projects",
+    "recordId": "social-chatbot-mental-health",
+    "label": "Social Chatbot for Addressing the Mental Health of University Students",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/dial-research.md — \"Social Chatbot for Addressing the Mental Health of University Students in Bangladesh 2024\" (also NSU-CTRG Fund 5); merged with DIAL Proposal.md — \"Projects\" → \"Emotional Support Chatbot\" (Ongoing).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/tertiary-student-mental-health",
+    "collection": "projects",
+    "recordId": "tertiary-student-mental-health",
+    "label": "Mental Health Status & Tech Intervention Design for Tertiary-level Students",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/dial-research.md — \"Understanding Mental Health Status & Tech Intervention Design for Tertiary-level Students 2025\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/physician-wellbeing",
+    "collection": "projects",
+    "recordId": "physician-wellbeing",
+    "label": "Physician Well-being in Bangladesh",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/dial-research.md — \"Physician Well-being in Bangladesh: Burdens and Support Interventions During COVID-19\"; merged with DIAL Proposal.md — \"Projects\" → \"Mental Health and Well-being: Impact of COVID-19 on the mental health of the Doctors\" (lead Rahat Jahangir Rony).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/shonchalon",
+    "collection": "projects",
+    "recordId": "shonchalon",
+    "label": "Shonchalon",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/dial-research.md — \"Shonchalon: An Approach for Observing Rehabilitation of Post-Stroke Patients' Upper Limb Complications Using Low-Cost Sensors 2025\"; merged with the 2024 entry \"Understanding the sociocultural challenges … poststroke upper-limb rehabilitation\". Grant link: the GCRF grant is \"Exploring stroke patient wearables\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/nobody-can-see-us",
+    "collection": "projects",
+    "recordId": "nobody-can-see-us",
+    "label": "Nobody Can See Us",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/dial-research.md — \"Nobody Can See Us: An Overview of Online Dating Site Experiences 2023\"; team from the COMPASS '24 paper's authors (Nova Ahmed, Abdul Wohab, Monisha Dey) in DIAL Proposal.md.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/cyber-security-data-breach",
+    "collection": "projects",
+    "recordId": "cyber-security-data-breach",
+    "label": "Cyber Security Concerns and Data Breach",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/dial-research.md — \"Cyber Security Concerns and Data Breach\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/ride-sharing-experiences",
+    "collection": "projects",
+    "recordId": "ride-sharing-experiences",
+    "label": "Ride-sharing Experiences in Bangladesh",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/dial-research.md — \"Ride-sharing Experiences in Bangladesh\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/rohingya-health",
+    "collection": "projects",
+    "recordId": "rohingya-health",
+    "label": "Refugee (Rohingya) Health Problems in Bangladesh",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/dial-research.md — \"Refugee (Rohingya) Health Problems in Bangladesh\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/mini-nurse-bot",
+    "collection": "projects",
+    "recordId": "mini-nurse-bot",
+    "label": "Mini Nurse Healthcare Bot for Old Home",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/dial-research.md — \"Mini Nurse Healthcare Bot for Old Home\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "projects/bornomala-ar",
+    "collection": "projects",
+    "recordId": "bornomala-ar",
+    "label": "Bornomala AR",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/dial-research.md — \"Bengali Bornomala (Alphabet) in Augmented Reality for Children\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "grants/uiu-nsu-pwd-mental-health",
+    "collection": "grants",
+    "recordId": "uiu-nsu-pwd-mental-health",
+    "label": "Exploring mental health for People With Disabilities (PWD)",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Funding Information\" (co-PI given as \"Dr. Salekul\")",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "grants/sipg-small-business",
+    "collection": "grants",
+    "recordId": "sipg-small-business",
+    "label": "Technology usage for small businesses",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Funding Information\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "grants/cps-sipg-02-ai-ethics",
+    "collection": "grants",
+    "recordId": "cps-sipg-02-ai-ethics",
+    "label": "Understanding AI and Ethics",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Funding Information\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "grants/gates-fintech-barriers",
+    "collection": "grants",
+    "recordId": "gates-fintech-barriers",
+    "label": "Understanding technology and fintech barriers for women and marginal ones",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Funding Information\"; amount confirmed by nova-ahmed-personal-site/awards.md — \"Funding\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "grants/google-south-asia-research",
+    "collection": "grants",
+    "recordId": "google-south-asia-research",
+    "label": "Google South Asian Grant",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Funding Information\". The personal site lists \"Google South Asia & Southeast Asia Research Awards, 2022. Amount 20,000 USD\" and awards.md \"Google Research Grant - 2023\"; not merged.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "grants/ctrg-22-seps-01-autism-parent-teacher",
+    "collection": "grants",
+    "recordId": "ctrg-22-seps-01-autism-parent-teacher",
+    "label": "Exploring parent-teacher challenges for children with Autism",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Funding Information\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "grants/gcrf-stroke-wearables",
+    "collection": "grants",
+    "recordId": "gcrf-stroke-wearables",
+    "label": "Exploring stroke patient wearables",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Funding Information\"; nova-ahmed-personal-site/awards.md — \"Funding\". PI affiliation from the Proposal's \"Katarzina Sawar, Cardiff University\" collaborator entry (spelling differs).",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "grants/ctrg-23-seps-02-credit-scoring",
+    "collection": "grants",
+    "recordId": "ctrg-23-seps-02-credit-scoring",
+    "label": "Alternative credit scoring exploration",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Funding Information\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "grants/ctrg-autism-tech-development",
+    "collection": "grants",
+    "recordId": "ctrg-autism-tech-development",
+    "label": "Exploring tech development for children with autism",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Funding Information\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "grants/uiu-nsu-app-usage-mental-health",
+    "collection": "grants",
+    "recordId": "uiu-nsu-app-usage-mental-health",
+    "label": "Understanding mental health from app usage data",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Funding Information\". Possibly the same award as the Mon Majhi grant below, but title, amount, and year differ; not merged.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "grants/ctrg-emotion-from-text",
+    "collection": "grants",
+    "recordId": "ctrg-emotion-from-text",
+    "label": "Exploring emotion from text data",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Funding Information\" (amount punctuation preserved as captured)",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "grants/cps-sipg-dating-sites",
+    "collection": "grants",
+    "recordId": "cps-sipg-dating-sites",
+    "label": "Nobody can see us, exploring dating sites",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Funding Information\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "grants/bdosn-technology-for-women",
+    "collection": "grants",
+    "recordId": "bdosn-technology-for-women",
+    "label": "Technology usage for women",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Funding Information\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "grants/google-next-billion-users",
+    "collection": "grants",
+    "recordId": "google-next-billion-users",
+    "label": "Technology challenges for the next billion users Bangladesh",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Funding Information\" (raw role label \"Lead\")",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "grants/bracu-garment-industry",
+    "collection": "grants",
+    "recordId": "bracu-garment-industry",
+    "label": "Technology usage in the garment industry",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Funding Information\"; nsu-hci-current-website/awards.md lists \"BRAC CED Research Grant - 2020\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "grants/nsu-uiu-xml-psychological-problems",
+    "collection": "grants",
+    "recordId": "nsu-uiu-xml-psychological-problems",
+    "label": "A Real-Time Approach to Identify Psychological Problems Unobtrusively Through Explainable Machine Learning Model",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/research-mental-health-with-mon-majhi.md — \"Fund\" (co-PI given as \"Prof. Salekul Islam, UIU\")",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "grants/nsu-bap-re-bap-seed",
+    "collection": "grants",
+    "recordId": "nsu-bap-re-bap-seed",
+    "label": "Bap re Bap initial seed fund",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/research-bap-re-bap.md — \"Bap re Bap\" (no amount or date)",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "grants/nsu-shonabondhu",
+    "collection": "grants",
+    "recordId": "nsu-shonabondhu",
+    "label": "Shonabondhu research grant",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/research-project-shonabondhu.md — \"Funding\" (no date)",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "grants/systers-shonabondhu",
+    "collection": "grants",
+    "recordId": "systers-shonabondhu",
+    "label": "Systers Grant",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/research-project-shonabondhu.md — \"Funding\" (no date). The personal funding list instead has \"Systers Anita Borg Pass It On Award, 2015, USD 1000\"; unresolved.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "grants/gdn-infodemic-detection",
+    "collection": "grants",
+    "recordId": "gdn-infodemic-detection",
+    "label": "Assessing Infodemic in the Post COVID-19 Risk Communication and Governance",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Infodemic Detection\" (\"GDN funding, USD 20,000\"; leads Dr. Shabana Khan, Dr. Jyoti Misra, Dr. Nova Ahmed). Not in the funding table; no dates.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "awards/soups-2024-ten-year-impact-award",
+    "collection": "awards",
+    "recordId": "soups-2024-ten-year-impact-award",
+    "label": "10 Years Impact Award",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Awards\" (\"10 years Impact Award: SOUPS Usenix Conference (2024)\")",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "awards/compass-2023-best-paper",
+    "collection": "awards",
+    "recordId": "compass-2023-best-paper",
+    "label": "Best Paper Award — Making ethics at home in Global CS Education: Provoking stories from the Souths",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/awards.md — \"Paper Awards\" → \"ACM Journal on Computing and Sustainable Societies (COMPASS 2023) Best Paper\"; \"Best Journal Paper Award\" in DIAL Proposal.md — \"Awards\". Tahsin Mayeesha is listed as \"Tasmiah Tahsin Mayeesha\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "awards/chi-2019-best-paper",
+    "collection": "awards",
+    "recordId": "chi-2019-best-paper",
+    "label": "Best Paper Award (Best of CHI) — \"They Don’t Leave Us Alone Anywhere We Go\": Gender and Digital Abuse in South Asia",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/awards.md — \"Paper Awards\" → \"CHI 2019 Best Paper\"; also DIAL Proposal.md — \"Awards\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "awards/comsnets-2019-best-poster",
+    "collection": "awards",
+    "recordId": "comsnets-2019-best-poster",
+    "label": "Best Poster Award — Monitoring Driving Stress using HRV",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/awards.md — \"Paper Awards\" → \"COMSNETS 2019 Best Short Paper\"; DIAL Proposal.md — \"Awards\"; nsu-hci-current-website/events.md — \"COMSNETS 2019\" photo caption",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "awards/soups-2018-iapp-distinguished-privacy-award",
+    "collection": "awards",
+    "recordId": "soups-2018-iapp-distinguished-privacy-award",
+    "label": "IAPP Distinguished Privacy Award — \"Privacy is not for me, it’s for those rich women\": Performative Privacy Practices on Mobile Phones by Women in South Asia",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/awards.md — \"Paper Awards\" → \"Soups 2018: IAPP Distinguished Privacy Award\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "awards/hcixb-2018-best-poster",
+    "collection": "awards",
+    "recordId": "hcixb-2018-best-poster",
+    "label": "Best Poster Award — Supporting Missing Daughters",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/awards.md — \"Paper Awards\" → \"CHI HCIxB Symposium 2018 Best Poster\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "awards/iqac-2021-research-award",
+    "collection": "awards",
+    "recordId": "iqac-2021-research-award",
+    "label": "IQAC Research Award",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Awards\"; nova-ahmed-personal-site/awards.md — \"Awards\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "awards/icaist-2020-best-paper",
+    "collection": "awards",
+    "recordId": "icaist-2020-best-paper",
+    "label": "Best Paper Award",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Awards\"; nova-ahmed-personal-site/awards.md — \"Awards\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "awards/ghc-2019-faculty-scholar",
+    "collection": "awards",
+    "recordId": "ghc-2019-faculty-scholar",
+    "label": "Grace Hopper Conference for Women in Computing, Faculty Scholar",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/awards.md — \"Awards\"; also DIAL Proposal.md — \"Awards\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "awards/south-asian-feminist-course-2019-fellowship",
+    "collection": "awards",
+    "recordId": "south-asian-feminist-course-2019-fellowship",
+    "label": "Fellowship, XXIV South Asian Feminist Capacity Building Course on Gender, Sustainable Livelihoods, Human Rights and Peace",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/awards.md — \"Awards\"; also DIAL Proposal.md — \"Awards\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "awards/ingsa-asia-2021-honorable-mention",
+    "collection": "awards",
+    "recordId": "ingsa-asia-2021-honorable-mention",
+    "label": "INGSA_Asia Essay Contest 2020, Honorable Mention",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/awards.md — \"Awards\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "awards/col-grow-with-google-2021-scholarship",
+    "collection": "awards",
+    "recordId": "col-grow-with-google-2021-scholarship",
+    "label": "Commonwealth of Learning Grow with Google Skill Development Scholarship",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/awards.md — \"Awards\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "awards/gestc-2014-best-paper",
+    "collection": "awards",
+    "recordId": "gestc-2014-best-paper",
+    "label": "Best Paper Award",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/awards.md — \"Awards\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "awards/ghc-2013-new-investigators-award",
+    "collection": "awards",
+    "recordId": "ghc-2013-new-investigators-award",
+    "label": "New Investigators Award — Gradient Sensor Middleware System design for Flash Flood prone River banks in Bangladesh",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/awards.md — \"Awards\"; paper title and \"USD 1000\" from nova-ahmed-personal-site/research-project-shonabondhu.md",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "awards/gtric-2010-finalist",
+    "collection": "awards",
+    "recordId": "gtric-2010-finalist",
+    "label": "Finalists in the Georgia Tech Research and Innovation Competition",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/awards.md — \"Awards\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "awards/assets-2009-src-second-place",
+    "collection": "awards",
+    "recordId": "assets-2009-src-second-place",
+    "label": "ACM Student Research Competition Award, 2nd Place Winner",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/awards.md — \"Awards\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "awards/upe-2009-essay-competition",
+    "collection": "awards",
+    "recordId": "upe-2009-essay-competition",
+    "label": "Essay Competition Winner",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/awards.md — \"Awards\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "awards/acm-w-2010-scholarship",
+    "collection": "awards",
+    "recordId": "acm-w-2010-scholarship",
+    "label": "ACM-W Scholarship Recipient",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/awards.md — \"Awards\" (\"Spring 2010, Fall 2007\")",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "awards/du-2002-deans-honour",
+    "collection": "awards",
+    "recordId": "du-2002-deans-honour",
+    "label": "Deans Honour",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/awards.md — \"Awards\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "awards/du-talent-pool-scholarship",
+    "collection": "awards",
+    "recordId": "du-talent-pool-scholarship",
+    "label": "Talent pool Scholarship",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/awards.md — \"Awards\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "awards/acm-icpc-1999",
+    "collection": "awards",
+    "recordId": "acm-icpc-1999",
+    "label": "6th position, Dhaka University Team",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/awards.md — \"Awards\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "awards/ncpc-1998",
+    "collection": "awards",
+    "recordId": "ncpc-1998",
+    "label": "3rd Position, Dhaka University Team",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/awards.md — \"Awards\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "research-themes/accessibility-inclusion",
+    "collection": "research-themes",
+    "recordId": "accessibility-inclusion",
+    "label": "Accessibility & Inclusion",
+    "source": "manual",
+    "sourceNote": "dial-test prototype theme route; taxonomy not in any capture (DIAL Proposal.md \"Research Themes\" lists six different labels)",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "research-themes/gender-feminist-hci",
+    "collection": "research-themes",
+    "recordId": "gender-feminist-hci",
+    "label": "Gender & Feminist HCI",
+    "source": "manual",
+    "sourceNote": "dial-test prototype theme route; taxonomy not in any capture (DIAL Proposal.md \"Research Themes\" lists six different labels)",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "research-themes/mental-health-wellbeing",
+    "collection": "research-themes",
+    "recordId": "mental-health-wellbeing",
+    "label": "Mental Health & Wellbeing",
+    "source": "manual",
+    "sourceNote": "dial-test prototype theme route; taxonomy not in any capture (DIAL Proposal.md \"Research Themes\" lists six different labels)",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "research-themes/explainable-ai-ml",
+    "collection": "research-themes",
+    "recordId": "explainable-ai-ml",
+    "label": "Explainable AI & Machine Learning",
+    "source": "manual",
+    "sourceNote": "dial-test prototype theme route; taxonomy not in any capture (DIAL Proposal.md \"Research Themes\" lists six different labels)",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "research-themes/ictd",
+    "collection": "research-themes",
+    "recordId": "ictd",
+    "label": "ICT for Development",
+    "source": "manual",
+    "sourceNote": "dial-test prototype theme route; taxonomy not in any capture (DIAL Proposal.md \"Research Themes\" lists six different labels)",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "research-themes/safety-security",
+    "collection": "research-themes",
+    "recordId": "safety-security",
+    "label": "Safety & Security",
+    "source": "manual",
+    "sourceNote": "dial-test prototype theme route; taxonomy not in any capture (DIAL Proposal.md \"Research Themes\" lists six different labels)",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "research-themes/iot-low-cost-hardware",
+    "collection": "research-themes",
+    "recordId": "iot-low-cost-hardware",
+    "label": "IoT & Low-cost Hardware",
+    "source": "manual",
+    "sourceNote": "dial-test prototype theme route; taxonomy not in any capture (DIAL Proposal.md \"Research Themes\" lists six different labels)",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "research-themes/infodemic-misinformation",
+    "collection": "research-themes",
+    "recordId": "infodemic-misinformation",
+    "label": "Infodemic & Misinformation",
+    "source": "manual",
+    "sourceNote": "dial-test prototype theme route; taxonomy not in any capture (DIAL Proposal.md \"Research Themes\" lists six different labels)",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "research-themes/computing-education-community",
+    "collection": "research-themes",
+    "recordId": "computing-education-community",
+    "label": "Computing Education & Community",
+    "source": "manual",
+    "sourceNote": "dial-test prototype theme route; taxonomy not in any capture (DIAL Proposal.md \"Research Themes\" lists six different labels)",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/iftar-knowledge-dissemination-2026",
+    "collection": "news",
+    "recordId": "iftar-knowledge-dissemination-2026",
+    "label": "Research Knowledge Dissemination Session Following the Annual Iftar",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"Upcoming Events\" (listed with the date March 11, 2026; no description)",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/flood-relief-2024",
+    "collection": "news",
+    "recordId": "flood-relief-2024",
+    "label": "Organizing Flood Relief, 2024",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"DIAL Events\" (photo not resolved in the capture)",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/july-movement-support-2024",
+    "collection": "news",
+    "recordId": "july-movement-support-2024",
+    "label": "Supporting Affected People in the July Movement, 2024",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"DIAL Events\" (photo not resolved in the capture)",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/iftar-2024",
+    "collection": "news",
+    "recordId": "iftar-2024",
+    "label": "Iftar Party, 2024",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"DIAL Events\" (photo not resolved in the capture)",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/sigchi-winter-school-2024-colombo",
+    "collection": "news",
+    "recordId": "sigchi-winter-school-2024-colombo",
+    "label": "ACM SIGCHI Winter School 2024 – Colombo, Sri Lanka",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"ACM SIGCHI Winter School 2024 – Colombo, Sri Lanka\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/dial-hci-research-symposium-2023",
+    "collection": "news",
+    "recordId": "dial-hci-research-symposium-2023",
+    "label": "DIAL HCI Research Symposium: Connecting Young Researchers With Experts 2023",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"DIAL HCI Research Symposium: Connecting Young Researchers With Experts 2023\" (date from the photo caption); \"Dial Conference 2023\" in DIAL Proposal.md",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/technique-protibadi-2023",
+    "collection": "news",
+    "recordId": "technique-protibadi-2023",
+    "label": "Technique: Nova Ahmed's new app combats sexual misconduct",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/home-news.md — \"Technique Magazine at GeorgiaTech\" (date from the article URL)",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/agami-science-fair-2023",
+    "collection": "news",
+    "recordId": "agami-science-fair-2023",
+    "label": "Talk at the 5th LiF Annual Science Fair 2023",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/home-talks.md — \"5th LiF Annual Science Fair 2023 organized by Agami Education Foundation\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/brac-r2fif-2022",
+    "collection": "news",
+    "recordId": "brac-r2fif-2022",
+    "label": "How to make digital solutions and services gender-intentional — R2FIF 2022, BRAC",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/home-talks.md — \"How to make digital solutions and services gender-intentional | R2FIF 2022 | BRAC\"; home-news.md — \"BRAC talk\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/eastern-university-orientation-2022",
+    "collection": "news",
+    "recordId": "eastern-university-orientation-2022",
+    "label": "Orientation speech at Eastern University, Fall 2022",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/home-talks.md — \"Speech of Prof. Dr. Nova Ahmed, ECE Dept., NSU | Orientation Program- Fall 2022 | Eastern University\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/sigchi-virtual-summer-school-2020",
+    "collection": "news",
+    "recordId": "sigchi-virtual-summer-school-2020",
+    "label": "ACM SIGCHI Virtual Summer School 2020, Bangladesh",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"ACM SIGCHI Virtual Summer School 2020, Bangladesh\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/virtual-asian-chi-2020",
+    "collection": "news",
+    "recordId": "virtual-asian-chi-2020",
+    "label": "Virtual Asian CHI 2020",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"Virtual Asian CHI 2020\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/historical-places-visit-2020",
+    "collection": "news",
+    "recordId": "historical-places-visit-2020",
+    "label": "Historical Places Visit 2020",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"Historical Places Visit 2020\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/saraswati-puja-planning-2020",
+    "collection": "news",
+    "recordId": "saraswati-puja-planning-2020",
+    "label": "Planning Discussion During Sharashwati Puja 2020",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"Planning Discussion During Sharashwati Puja 2020\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/sigchi-winter-school-2019-bangladesh",
+    "collection": "news",
+    "recordId": "sigchi-winter-school-2019-bangladesh",
+    "label": "ACM SIGCHI Winter School 2019, Bangladesh",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"ACM SIGCHI Winter School 2019, Bangladesh\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/cscw-asia-winter-school-2019",
+    "collection": "news",
+    "recordId": "cscw-asia-winter-school-2019",
+    "label": "CSCW Asia Winter School 2019",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"CSCW Asia Winter School 2019\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/ieee-tencon-2019",
+    "collection": "news",
+    "recordId": "ieee-tencon-2019",
+    "label": "IEEE TENCON 2019",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"IEEE TENCON 2019\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/grace-hopper-2019",
+    "collection": "news",
+    "recordId": "grace-hopper-2019",
+    "label": "Grace Hopper 2019",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"Grace Hopper 2019\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/hcai-summer-school-2019",
+    "collection": "news",
+    "recordId": "hcai-summer-school-2019",
+    "label": "ACM SIGCHI Summer School on Human Centered AI 2019",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"ACM SIGCHI Summer School on Human Centered AI 2019\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/asian-chi-2019",
+    "collection": "news",
+    "recordId": "asian-chi-2019",
+    "label": "Asian CHI Symposium 2019",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"Asian CHI Symposium 2019\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/chi-2019-bangladeshi-researchers-meetup",
+    "collection": "news",
+    "recordId": "chi-2019-bangladeshi-researchers-meetup",
+    "label": "CHI 2019 Bangladeshi Researchers Meetup",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"CHI 2019 Bangladeshi Researchers Meetup\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/summer-school-meetup-chi-2019",
+    "collection": "news",
+    "recordId": "summer-school-meetup-chi-2019",
+    "label": "Summer School Team Meetup at CHI 2019",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"Summer School Team Meetup at CHI 2019\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/hcixb-chi-2019",
+    "collection": "news",
+    "recordId": "hcixb-chi-2019",
+    "label": "HCI Across Borders, CHI 2019",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"HCI Across Borders, CHI 2019\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/discussion-on-design-2019",
+    "collection": "news",
+    "recordId": "discussion-on-design-2019",
+    "label": "Discussion on Design 2019",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"Discussion on Design 2019\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/sigchi-summer-school-2019-bangladesh",
+    "collection": "news",
+    "recordId": "sigchi-summer-school-2019-bangladesh",
+    "label": "ACM SIGCHI Summer School 2019, Bangladesh",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"ACM SIGCHI Summer School 2019, Bangladesh\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/comsnets-2019",
+    "collection": "news",
+    "recordId": "comsnets-2019",
+    "label": "COMSNETS 2019",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"COMSNETS 2019\" (photo caption: \"Best Poster Award, COMSNETS 2019, Bangalore, India\")",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/broadening-participation-workshop-2018",
+    "collection": "news",
+    "recordId": "broadening-participation-workshop-2018",
+    "label": "Broadening Participation Workshop 2018",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"Broadening Participation Workshop 2018\"; organized at UbiComp, Singapore (nova-ahmed-personal-site/collaborations.md)",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/ubicomp-2018",
+    "collection": "news",
+    "recordId": "ubicomp-2018",
+    "label": "UbiComp 2018",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"UbiComp 2018\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/mobilehci-2018",
+    "collection": "news",
+    "recordId": "mobilehci-2018",
+    "label": "MobileHCI 2018",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"MobileHCI 2018\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/hci-workshop-nsu-2018",
+    "collection": "news",
+    "recordId": "hci-workshop-nsu-2018",
+    "label": "HCI Workshop at North South University 2018",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"HCI Workshop at North South University 2018\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/bangla-computational-linguistics-2018",
+    "collection": "news",
+    "recordId": "bangla-computational-linguistics-2018",
+    "label": "2nd Symposium on Bangla Computational Linguistics 2018",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"2nd Symposium on Bangla Computational Linguistics 2018\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/summer-school-text-entry-2018",
+    "collection": "news",
+    "recordId": "summer-school-text-entry-2018",
+    "label": "Summer School of HCI Research and Text Entry Method 2018",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"Summer School of HCI Research and Text Entry Method 2018\" (date from the photo caption)",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/hcixb-2018",
+    "collection": "news",
+    "recordId": "hcixb-2018",
+    "label": "HCI Across Borders 2018",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"HCI Across Borders 2018\"; date and award from nsu-hci-current-website/awards.md — \"CHI HCIxB Symposium 2018 Best Poster\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/comsnets-asset-2018",
+    "collection": "news",
+    "recordId": "comsnets-asset-2018",
+    "label": "COMSNETS 2018 — ASSET symposium",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"COMSNETS 2018\" (date from the photo caption \"ASSET, January 9, 2018, IISC, Bangalore\")",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "news/google-gender-technology-research-2017",
+    "collection": "news",
+    "recordId": "google-gender-technology-research-2017",
+    "label": "Google Gender and Technology Research in Bangladesh 2017",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/events.md — \"Google Gender and Technology Research in Bangladesh 2017\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2026-google-maps-can-say-lot",
+    "collection": "publications",
+    "recordId": "2026-google-maps-can-say-lot",
+    "label": "\"Google Maps can say a lot of things, but it cannot guide us properly\": Exploring Technology Inaccessibility for People with Visual Impairments in Bangladesh",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.1145/3772363.3799021.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2026-beyond-stigma-silence-multilayered-approach",
+    "collection": "publications",
+    "recordId": "2026-beyond-stigma-silence-multilayered-approach",
+    "label": "Beyond Stigma and Silence: A Multilayered Approach to Uncovering Mental Health Challenges Among People with Disabilities in Bangladesh Through Social Media Behavior and Linguistic Analytics",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.2196/preprints.105485.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2026-building-bridges-participatory-framework-ai",
+    "collection": "publications",
+    "recordId": "2026-building-bridges-participatory-framework-ai",
+    "label": "Building Bridges: A Participatory Framework for AI Accountability in South Asia",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.1145/3772363.3799093.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2026-designing-amplifying-voices-supporting-bangladeshs",
+    "collection": "publications",
+    "recordId": "2026-designing-amplifying-voices-supporting-bangladeshs",
+    "label": "Designing for Amplifying Voices: Supporting Bangladesh’s Low-Income RMG Workers Through Technology Amid COVID-19 Pandemic: Qualitative Study",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.2196/90675.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2026-dual-source-retrieval-augmented-generation",
+    "collection": "publications",
+    "recordId": "2026-dual-source-retrieval-augmented-generation",
+    "label": "Dual-Source Retrieval-Augmented Generation Chatbot for Women’s Health (HerCare): Design and Multimethod Evaluation Study",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.2196/88549.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2026-meena-needs-computer-now-co",
+    "collection": "publications",
+    "recordId": "2026-meena-needs-computer-now-co",
+    "label": "Meena Needs a Computer Now: Co-design Solutions to Barriers Using Fictional Inquiry for Women in Computing",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2025 heading, line 110); DOI stated in the NSU citation; metadata from Crossref/OpenAlex for DOI 10.1145/3762808.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2026-peer-support-online-womens-health",
+    "collection": "publications",
+    "recordId": "2026-peer-support-online-womens-health",
+    "label": "Peer Support in Online Women’s Health Communities: Mixed Methods Formative Analysis of Reddit Discourse",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.2196/87782.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2026-shurokkha-helmet-minimalistic-pragmatic-approach",
+    "collection": "publications",
+    "recordId": "2026-shurokkha-helmet-minimalistic-pragmatic-approach",
+    "label": "Shurokkha Helmet: A Minimalistic and Pragmatic Approach to Ensure Safety on Bangladeshi Construction Sites for Marginal Community",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.2139/ssrn.6429402.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2026-spondon-low-cost-multi-sensor",
+    "collection": "publications",
+    "recordId": "2026-spondon-low-cost-multi-sensor",
+    "label": "Spondon: A Low-Cost, Multi-Sensor Wearable for Understanding Stress in Resource-Constrained Countries",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.1145/3811242.3819996.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2025-we-just-one-step-away",
+    "collection": "publications",
+    "recordId": "2025-we-just-one-step-away",
+    "label": "\"We Are Just One Step Away\"; Embracing '4IR' With Realistic Transitional Framework Rooted With the Manufacturing Practices of RMG Industries in Bangladesh",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2025 heading, line 100); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/3706599.3720235.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2025-design-exploration-address-breast-cancer",
+    "collection": "publications",
+    "recordId": "2025-design-exploration-address-breast-cancer",
+    "label": "A Design Exploration to Address Breast Cancer A qualitative study considering the context of Bangladesh",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.1145/3768633.3770128.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2025-breast-cancer-womens-image-social",
+    "collection": "publications",
+    "recordId": "2025-breast-cancer-womens-image-social",
+    "label": "Breast Cancer & Women's Image through Social Lenses Context of Bangladesh",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.1145/3715335.3736313.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2025-bridging-gaps-hci-advancing-education",
+    "collection": "publications",
+    "recordId": "2025-bridging-gaps-hci-advancing-education",
+    "label": "Bridging Gaps in HCI: Advancing Education, Research, and Careers in Asia",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.1145/3706599.3716298.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2025-implications-mobile-financial-service-users",
+    "collection": "publications",
+    "recordId": "2025-implications-mobile-financial-service-users",
+    "label": "Implications of Mobile Financial Service Users’ Adaptive Usage Behavior: The Vicious Cycle of Negative Experience, Social Construct, and Confidence",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2025 heading, line 104); DOI stated in the NSU citation; metadata from Crossref/OpenAlex for DOI 10.1145/3723041.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2025-jalli-system-level-support-critical",
+    "collection": "publications",
+    "recordId": "2025-jalli-system-level-support-critical",
+    "label": "Jalli: System Level Support for Critical Real-Time Applications",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2025 heading, line 108); DOI stated in the NSU citation; metadata from Crossref/OpenAlex for DOI 10.1145/3715335.3744891.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2025-joyee-pcos-chatbot",
+    "collection": "publications",
+    "recordId": "2025-joyee-pcos-chatbot",
+    "label": "Joyee — A PCOS Chatbot",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.1007/978-3-031-93236-6_13.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2025-teens-online-behavior-support-interventions",
+    "collection": "publications",
+    "recordId": "2025-teens-online-behavior-support-interventions",
+    "label": "Teens Online Behavior and Support Interventions in Bangladesh",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2025 heading, line 102); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/3704813.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2025-necessary-ingredients-success-women-computing",
+    "collection": "publications",
+    "recordId": "2025-necessary-ingredients-success-women-computing",
+    "label": "The Necessary Ingredients for Success of Women in Computing: A 360° Perspective from Students, Professionals and Stakeholders",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2025 heading, line 106); DOI stated in the NSU citation; metadata from Crossref/OpenAlex for DOI 10.1145/3724502.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2025-understanding-mental-physical-burdens-physicians",
+    "collection": "publications",
+    "recordId": "2025-understanding-mental-physical-burdens-physicians",
+    "label": "Understanding the Mental and Physical Burdens of Physicians and Identifying Support Interventions in Bangladesh: Qualitative Study",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2025 heading, line 96); DOI stated in the NSU citation; metadata from Crossref/OpenAlex for DOI 10.2196/76934.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2025-unveiling-engaging-humans-networking-research",
+    "collection": "publications",
+    "recordId": "2025-unveiling-engaging-humans-networking-research",
+    "label": "Unveiling and Engaging with the Humans of Networking Research",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.1145/3772356.3772400.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2024-if-men-andwomenworked-together-we",
+    "collection": "publications",
+    "recordId": "2024-if-men-andwomenworked-together-we",
+    "label": "\"If Men andWomenWorked Together,We could Accelerate Growth\": Opportunities in the Presence of Gender Stereotype for Robot Olympiad Participants from Bangladesh",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.1145/3678884.3681896.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2024-personalized-communication-application-children-autism",
+    "collection": "publications",
+    "recordId": "2024-personalized-communication-application-children-autism",
+    "label": "A Personalized Communication Application for Children with Autism through a Participatory Design Approach",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2024 heading, line 119); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/3678884.3681900.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2024-platform-connectivity-synergy-between-parents",
+    "collection": "publications",
+    "recordId": "2024-platform-connectivity-synergy-between-parents",
+    "label": "A Platform for Connectivity and Synergy between Parents and Teachers of Children with Autism",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2024 heading, line 117); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/3696434.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2024-addressing-technology-learning-divide-co",
+    "collection": "publications",
+    "recordId": "2024-addressing-technology-learning-divide-co",
+    "label": "Addressing the Technology Learning Divide Using Co-Learning with Familiarization Method",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2024 heading, line 133); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/3613905.3650969.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2024-ai4bangladesh-ai-ethics-bangladesh-challenges",
+    "collection": "publications",
+    "recordId": "2024-ai4bangladesh-ai-ethics-bangladesh-challenges",
+    "label": "AI4Bangladesh: AI Ethics for Bangladesh - Challenges, Risks, Principles, and Suggestions",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2025 heading, line 98, also lines 115); DOI stated in the NSU citation; metadata from Crossref/OpenAlex for DOI 10.1145/3700794.3700820.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2024-developing-communication-application-children-autism",
+    "collection": "publications",
+    "recordId": "2024-developing-communication-application-children-autism",
+    "label": "Developing a Communication Application for Children with Autism through a Participatory Design Approach",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2024 heading, line 139); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2024-digital-financial-conditions-low-income",
+    "collection": "publications",
+    "recordId": "2024-digital-financial-conditions-low-income",
+    "label": "Digital Financial Conditions for Low Income Communities of Dhaka City: Exploring Gender Based Differences",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.2139/ssrn.4863970.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2024-investigating-rhythmicity-app-usage-predict",
+    "collection": "publications",
+    "recordId": "2024-investigating-rhythmicity-app-usage-predict",
+    "label": "Investigating Rhythmicity in App Usage to Predict Depressive Symptoms: Protocol for Personalized Framework Development and Validation Through a Countrywide Study",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2024 heading, line 137); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.2196/51540.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2024-know-your-users-explainable-ai",
+    "collection": "publications",
+    "recordId": "2024-know-your-users-explainable-ai",
+    "label": "Know Your Users: Towards Explainable AI in Bangladesh",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2024 heading, line 123); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/3675094.3679002.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2024-making-ethics-home-global-cs",
+    "collection": "publications",
+    "recordId": "2024-making-ethics-home-global-cs",
+    "label": "Making Ethics at Home in Global CS Education: Provoking Stories from the Souths",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.1145/3608113.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2024-nobody-can-see-us-overview",
+    "collection": "publications",
+    "recordId": "2024-nobody-can-see-us-overview",
+    "label": "Nobody Can See Us: An Overview of Online Dating Site Experiences",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2024 heading, line 125, also lines 141); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/3674829.3675072.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2024-population-health",
+    "collection": "publications",
+    "recordId": "2024-population-health",
+    "label": "Population and Health",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.1109/mprv.2024.3520397.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2024-predicting-transition-depression-suicidal-ideation",
+    "collection": "publications",
+    "recordId": "2024-predicting-transition-depression-suicidal-ideation",
+    "label": "Predicting the Transition From Depression to Suicidal Ideation Using Facebook Data Among Indian-Bangladeshi Individuals: Protocol for a Cohort Study",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2024 heading, line 121); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.2196/55511.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2024-roles-technology-risk-communication-community",
+    "collection": "publications",
+    "recordId": "2024-roles-technology-risk-communication-community",
+    "label": "Roles of Technology for Risk Communication and Community Engagement in Bangladesh during COVID-19 Pandemic",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2024 heading, line 131); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/3648433.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2024-understanding-driving-stress-urban-bangladesh",
+    "collection": "publications",
+    "recordId": "2024-understanding-driving-stress-urban-bangladesh",
+    "label": "Understanding Driving Stress in Urban Bangladesh: An Exploratory Study, Wearable Development and Experiment",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2024 heading, line 129); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/3648434.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2024-understanding-sociocultural-challenges-opportunities-affordable",
+    "collection": "publications",
+    "recordId": "2024-understanding-sociocultural-challenges-opportunities-affordable",
+    "label": "Understanding the Sociocultural Challenges and Opportunities for Affordable Wearables to Support Poststroke Upper-Limb Rehabilitation: Qualitative Study",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2024 heading, line 127); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.2196/54699.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2024-youth-driven-community-engaged-waste",
+    "collection": "publications",
+    "recordId": "2024-youth-driven-community-engaged-waste",
+    "label": "Youth-Driven, Community-Engaged Waste Management",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.15353/joci.v20i1.5289.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2024-now-i-am-socially-well",
+    "collection": "publications",
+    "recordId": "2024-now-i-am-socially-well",
+    "label": "“Now I am Socially Well Respected” - From being Bullied in the Society to being Important Community Member",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2024 heading, line 135); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/3613905.3651062.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2023-fast-minimal-system-identify-depression",
+    "collection": "publications",
+    "recordId": "2023-fast-minimal-system-identify-depression",
+    "label": "A Fast and Minimal System to Identify Depression Using Smartphones: Explainable Machine Learning–Based Approach",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.2196/28848.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2023-minimalistic-approach-predict-understand-relation",
+    "collection": "publications",
+    "recordId": "2023-minimalistic-approach-predict-understand-relation",
+    "label": "A Minimalistic Approach to Predict and Understand the Relation of App Usage with Students' Academic Performance",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.1145/3604240.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2023-advancing-hci-research-education-within",
+    "collection": "publications",
+    "recordId": "2023-advancing-hci-research-education-within",
+    "label": "Advancing HCI Research and Education within and across South Asia",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.1145/3544549.3573815.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2023-hci-across-borders-global-solidarity",
+    "collection": "publications",
+    "recordId": "2023-hci-across-borders-global-solidarity",
+    "label": "HCI Across Borders: Towards Global Solidarity",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.1145/3544549.3573806.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2023-intersection-gender-technology-bangladesh-dhaka",
+    "collection": "publications",
+    "recordId": "2023-intersection-gender-technology-bangladesh-dhaka",
+    "label": "Intersection of Gender and Technology in Bangladesh: Dhaka Phase",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.2139/ssrn.4487452.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2023-intersection-gender-technology-bangladesh-stakeholders",
+    "collection": "publications",
+    "recordId": "2023-intersection-gender-technology-bangladesh-stakeholders",
+    "label": "Intersection of Gender and Technology in Bangladesh: Stakeholders Engagement",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.2139/ssrn.4487384.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2023-mfs-design-appstore-enabled-smart",
+    "collection": "publications",
+    "recordId": "2023-mfs-design-appstore-enabled-smart",
+    "label": "MFS Design in Appstore-enabled Smart Featurephones for Low-literate, Marginalized Communities",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.1145/3544548.3580661.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2023-stories-beneath-needle-understanding-ready",
+    "collection": "publications",
+    "recordId": "2023-stories-beneath-needle-understanding-ready",
+    "label": "Stories Beneath Needle: Understanding Ready Made Garment Workers of Bangladesh",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.2139/ssrn.4499616.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2022-my-mom-took-my-phone",
+    "collection": "publications",
+    "recordId": "2022-my-mom-took-my-phone",
+    "label": "'My Mom took My Phone and Locked It in the Wardrobe': Parental Mediation in Teen-Parent Relationship in Technology Usage from Teens Perspective in Bangladesh",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.2139/ssrn.4000430.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2022-low-cost-wearable-system-support",
+    "collection": "publications",
+    "recordId": "2022-low-cost-wearable-system-support",
+    "label": "A low-cost wearable system to support upper limb rehabilitation in resource-constrained settings",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2022 heading, line 164); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2022-challenges-women-computing-bangladesh-considering",
+    "collection": "publications",
+    "recordId": "2022-challenges-women-computing-bangladesh-considering",
+    "label": "Challenges for women in computing in Bangladesh considering the learning and workplace environment over a period of eight years",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2022 heading, line 166); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1007/s43545-022-00529-y.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2022-deep-learning-approach-classifying-aggressive",
+    "collection": "publications",
+    "recordId": "2022-deep-learning-approach-classifying-aggressive",
+    "label": "Deep Learning Approach for Classifying the Aggressive Comments on Social Media: Machine Translated Data Vs Real Life Data",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2022 heading, line 160); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2022-development-low-cost-wearable-upper",
+    "collection": "publications",
+    "recordId": "2022-development-low-cost-wearable-upper",
+    "label": "Development of A Low Cost Wearable for Upper-limb Functional Rehabilitation",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2022 heading, line 156); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2022-exploring-technology-usage-southeast-asian",
+    "collection": "publications",
+    "recordId": "2022-exploring-technology-usage-southeast-asian",
+    "label": "Exploring Technology Usage of Southeast Asian Elderly Women for Better Mental Health during COVID-19 Pandemic",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2022 heading, line 176); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2022-exploring-unique-app-signature-depressed",
+    "collection": "publications",
+    "recordId": "2022-exploring-unique-app-signature-depressed",
+    "label": "Exploring Unique App Signature of the Depressed and Non-depressed Through Their Fingerprints on Apps",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2022 heading, line 180); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1007/978-3-030-99194-4_15.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2022-hci-knowledge-dissemination-south-asia",
+    "collection": "publications",
+    "recordId": "2022-hci-knowledge-dissemination-south-asia",
+    "label": "HCI Knowledge Dissemination in South Asia through both Coursework and Community Engagement",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2022 heading, line 184); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2022-impact-socio-economic-factors-female",
+    "collection": "publications",
+    "recordId": "2022-impact-socio-economic-factors-female",
+    "label": "Impact of socio-economic factors on female students’ enrollments in science, technology, engineering and mathematics and workplace challenges in Bangladesh",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2022 heading, line 186); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2022-less-more-leveraging-digital-behavioral",
+    "collection": "publications",
+    "recordId": "2022-less-more-leveraging-digital-behavioral",
+    "label": "Less Is More: Leveraging Digital Behavioral Markers for Real-Time Identification of Loneliness in Resource-Limited Settings",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2022 heading, line 162); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2022-liberating-stories-about-terrorist-attack",
+    "collection": "publications",
+    "recordId": "2022-liberating-stories-about-terrorist-attack",
+    "label": "Liberating Stories about a Terrorist Attack",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.1145/3572334.3572380.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2022-note-cheating-morality-problems-tertiary",
+    "collection": "publications",
+    "recordId": "2022-note-cheating-morality-problems-tertiary",
+    "label": "Note: Cheating and Morality Problems in the Tertiary Education Level: A COVID-19 Perspective in Bangladesh",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2022 heading, line 170); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2022-note-importance-digital-profile-pictures",
+    "collection": "publications",
+    "recordId": "2022-note-importance-digital-profile-pictures",
+    "label": "Note: Importance of Digital Profile Pictures on Social Media Perceived by Different Groups",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2022 heading, line 172); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2022-open-science-whom",
+    "collection": "publications",
+    "recordId": "2022-open-science-whom",
+    "label": "Open Science – For Whom?",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2022 heading, line 182); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.5334/dsj-2022-001.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2022-opportunities-women-computing-perspective-bangladesh",
+    "collection": "publications",
+    "recordId": "2022-opportunities-women-computing-perspective-bangladesh",
+    "label": "Opportunities for Women in Computing: Perspective of Bangladesh",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.1145/3572334.3572369.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2022-risk-communication-community-engagement-during",
+    "collection": "publications",
+    "recordId": "2022-risk-communication-community-engagement-during",
+    "label": "Risk communication and community engagement during COVID-19",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2022 heading, line 174); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2022-risk-communication-during-covid-19",
+    "collection": "publications",
+    "recordId": "2022-risk-communication-during-covid-19",
+    "label": "Risk Communication During COVID-19 Pandemic: Impacting Women in Bangladesh",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2022 heading, line 146); DOI stated in the NSU citation (not in ORCID); metadata from Crossref/OpenAlex for DOI 10.3389/fcomm.2022.878050.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2022-structured-training-enabler-women-ict",
+    "collection": "publications",
+    "recordId": "2022-structured-training-enabler-women-ict",
+    "label": "Structured Training as an Enabler for Women in ICT",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2022 heading, line 150); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2022-technology-empowerment-context-urban-afghan",
+    "collection": "publications",
+    "recordId": "2022-technology-empowerment-context-urban-afghan",
+    "label": "Technology for empowerment: Context of urban Afghan women",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2022 heading, line 168); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1016/j.techsoc.2022.102058.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2022-complexities-participatory-action-research-community",
+    "collection": "publications",
+    "recordId": "2022-complexities-participatory-action-research-community",
+    "label": "The complexities of participatory action research: a community development project in Bangladesh",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2022 heading, line 178); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2022-role-fintech-positive-enabler-during",
+    "collection": "publications",
+    "recordId": "2022-role-fintech-positive-enabler-during",
+    "label": "The Role of Fintech as a Positive Enabler During COVID-19 in Bangladesh",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2022 heading, line 148); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2022-world-my-hand-now-smartphones",
+    "collection": "publications",
+    "recordId": "2022-world-my-hand-now-smartphones",
+    "label": "The World is in My Hand Now: Smartphones for Empowering Rural Women in Developing Countries",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.1145/3572334.3572394.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2022-understanding-healthcare-sector-bangladesh-experience",
+    "collection": "publications",
+    "recordId": "2022-understanding-healthcare-sector-bangladesh-experience",
+    "label": "Understanding the Healthcare Sector in Bangladesh: Experience and Services during the COVID-19 Pandemic",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2022 heading, line 158); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2022-upper-limb-rehabilitation-exploring-physiotherapy",
+    "collection": "publications",
+    "recordId": "2022-upper-limb-rehabilitation-exploring-physiotherapy",
+    "label": "Upper-limb Rehabilitation: Exploring The Physiotherapy Landscape of the UK and Bangladesh",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2022 heading, line 154); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2022-i-use-youtube-now-covid",
+    "collection": "publications",
+    "recordId": "2022-i-use-youtube-now-covid",
+    "label": "“I Use YouTube Now in COVID”: Understanding Technology Adoption of Indigenous Communities during COVID-19 Pandemic in Bangladesh",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2022 heading, line 152); DOI stated in the NSU citation; metadata from Crossref/OpenAlex for DOI 10.1145/3530190.3534847.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2021-development-testing-low-cost-water",
+    "collection": "publications",
+    "recordId": "2021-development-testing-low-cost-water",
+    "label": "Development and Testing of a Low-Cost Water Level Sensor and a Mobile Based Real-time Flood Warning System for the Flash Flood Prone North Eastern Part of Bangladesh",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.2174/2210327910999200614000455.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2021-identifying-high-low-academic-result",
+    "collection": "publications",
+    "recordId": "2021-identifying-high-low-academic-result",
+    "label": "Identifying High and Low Academic Result Holders Through Smartphone Usage Data",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2021 heading, line 197, also lines 218); DOI stated in the NSU citation (not in ORCID); metadata from Crossref/OpenAlex for DOI 10.1145/3429360.3468192.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2021-religion-womens-intimate-health-inclusive",
+    "collection": "publications",
+    "recordId": "2021-religion-womens-intimate-health-inclusive",
+    "label": "Religion and Women’s Intimate Health: Towards an Inclusive Approach to Healthcare",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2021 heading, line 193); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2021-nature-cause-consequence-covid-19",
+    "collection": "publications",
+    "recordId": "2021-nature-cause-consequence-covid-19",
+    "label": "The nature, cause and consequence of COVID-19 panic among social media users in India",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2021 heading, line 199); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2021-exploration-factors-affecting-mobile-banking",
+    "collection": "publications",
+    "recordId": "2021-exploration-factors-affecting-mobile-banking",
+    "label": "Towards Exploration of the Factors Affecting Mobile Banking of Bangladeshi Women during COVID",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2021 heading, line 205); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.2139/ssrn.4029970. DOI is the SSRN posting of this work (matched via ORCID); venue/year from the NSU citation.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2021-understanding-self-reported-stress-among",
+    "collection": "publications",
+    "recordId": "2021-understanding-self-reported-stress-among",
+    "label": "Understanding self-reported stress among drivers and designing stress monitor using heart rate variability",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2021 heading, line 201); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2021-understanding-education-children-autism-bangladesh",
+    "collection": "publications",
+    "recordId": "2021-understanding-education-children-autism-bangladesh",
+    "label": "Understanding the Education of Children with Autism in Bangladesh: Parents' Perspective",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2021 heading, line 191); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2021-covid-has-made-everyone-digital",
+    "collection": "publications",
+    "recordId": "2021-covid-has-made-everyone-digital",
+    "label": "“COVID has made Everyone Digital and Digitally Independent”: Understanding Working Women's DFS and Technology Adoption during COVID Pandemic in Bangladesh",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2021 heading, line 195); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2021-i-didnt-understand-but-i",
+    "collection": "publications",
+    "recordId": "2021-i-didnt-understand-but-i",
+    "label": "“I didn’t understand but I was determined to learn”: Understanding the Contrast of using DFS among the Working Women in Bangladesh",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2021 heading, line 203); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2020-empirical-study-analyze-impact-instagram",
+    "collection": "publications",
+    "recordId": "2020-empirical-study-analyze-impact-instagram",
+    "label": "An Empirical Study to Analyze the Impact of Instagram on Students' Academic Results",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2020 heading, line 238); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2020-analysis-morphological-changes-river-padma",
+    "collection": "publications",
+    "recordId": "2020-analysis-morphological-changes-river-padma",
+    "label": "Analysis of the Morphological Changes of the River Padma Along Naria Upazila through Supervised Classification of Satellite Images",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2020 heading, line 216); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2020-challenges-opportunities-young-female-learners",
+    "collection": "publications",
+    "recordId": "2020-challenges-opportunities-young-female-learners",
+    "label": "Challenges and Opportunities for Young Female Learners in STEM from the Perspective of Bangladesh",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2020 heading, line 212); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2020-design-thinking-around-covid-19",
+    "collection": "publications",
+    "recordId": "2020-design-thinking-around-covid-19",
+    "label": "Design thinking around COVID-19: Focusing on the garment workers of Bangladesh",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2020 heading, line 236); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2020-designing-digital-payments-next-billion",
+    "collection": "publications",
+    "recordId": "2020-designing-digital-payments-next-billion",
+    "label": "Designing Digital Payments for Next Billion Users",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2020 heading, line 222); fields parsed from the citation text, no DOI or API match. Author list is truncated (\"...\") in the source.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2020-development-low-cost-wearable-mobile",
+    "collection": "publications",
+    "recordId": "2020-development-low-cost-wearable-mobile",
+    "label": "Development of a Low Cost Wearable with Mobile Sensing to Monitor Driving Stress through HRV",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2020 heading, line 228); DOI stated in the NSU citation (not in ORCID); metadata from Crossref/OpenAlex for DOI 10.1145/3391203.3391213.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2020-exploring-how-international-graduate-students",
+    "collection": "publications",
+    "recordId": "2020-exploring-how-international-graduate-students",
+    "label": "Exploring How International Graduate Students in the US Seek Support",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2020 heading, line 240); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2020-kotha-bondhu-translating-sign-languages",
+    "collection": "publications",
+    "recordId": "2020-kotha-bondhu-translating-sign-languages",
+    "label": "Kotha Bondhu: Translating Sign Languages into Bengali Voice",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2020 heading, line 232); DOI stated in the NSU citation (not in ORCID); metadata from Crossref/OpenAlex for DOI 10.1145/3391203.3391208.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2020-mom-thinks-technology-my-enemy",
+    "collection": "publications",
+    "recordId": "2020-mom-thinks-technology-my-enemy",
+    "label": "Mom thinks, Technology is my Enemy: A Teen Perspective",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2020 heading, line 234); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2020-motherhood-science-how-children-change",
+    "collection": "publications",
+    "recordId": "2020-motherhood-science-how-children-change",
+    "label": "Motherhood in Science–How children change our academic careers",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2020 heading, line 214); fields parsed from the citation text, no DOI or API match. Author list is truncated (\"...\") in the source.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2020-social-distancing-challenges-marginal-communities",
+    "collection": "publications",
+    "recordId": "2020-social-distancing-challenges-marginal-communities",
+    "label": "Social Distancing Challenges for Marginal Communities during COVID-19 Pandemic in Bangladesh",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2020 heading, line 220); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.30577/jba.v3i2.45.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2020-effectiveness-acceptance-collaborative-e-learning",
+    "collection": "publications",
+    "recordId": "2020-effectiveness-acceptance-collaborative-e-learning",
+    "label": "The Effectiveness and Acceptance of Collaborative E-learning in the Context of Bangladesh",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2020 heading, line 210); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2020-understanding-teens-online-awareness-knowledge",
+    "collection": "publications",
+    "recordId": "2020-understanding-teens-online-awareness-knowledge",
+    "label": "Understanding Teens Online Awareness and Knowledge Regarding Cybersecurity in Bangladesh",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2020 heading, line 230); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2020-understanding-educational-landscape-children-autism",
+    "collection": "publications",
+    "recordId": "2020-understanding-educational-landscape-children-autism",
+    "label": "Understanding the Educational Landscape of Children with Autism in Bangladesh",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2020 heading, line 224); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2019-they-dont-leave-us-alone",
+    "collection": "publications",
+    "recordId": "2019-they-dont-leave-us-alone",
+    "label": "\"They Don't Leave Us Alone Anywhere We Go\": Gender and Digital Abuse in South Asia",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2019 heading, line 245); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/3290605.3300232. Citation notes \"Best of CHI 2019\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2019-low-cost-healthcare-bot-elderly",
+    "collection": "publications",
+    "recordId": "2019-low-cost-healthcare-bot-elderly",
+    "label": "A Low-cost Healthcare Bot for Elderly People",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2019 heading, line 271); DOI stated in the NSU citation (not in ORCID); metadata from Crossref/OpenAlex for DOI 10.1109/iciev.2019.8858567.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2019-am-i-safe-looking-personal",
+    "collection": "publications",
+    "recordId": "2019-am-i-safe-looking-personal",
+    "label": "AM I Safe? Looking at Personal Data Privacy in Bangladesh",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2019 heading, line 265); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2019-ambient-intelligence-systems-support-wellbeing",
+    "collection": "publications",
+    "recordId": "2019-ambient-intelligence-systems-support-wellbeing",
+    "label": "Ambient Intelligence in Systems to Support Wellbeing of Drivers",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2019 heading, line 251); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2019-cooperative-deployment-shonabondhu",
+    "collection": "publications",
+    "recordId": "2019-cooperative-deployment-shonabondhu",
+    "label": "Cooperative deployment of Shonabondhu",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2019 heading, line 277); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2019-development-digital-family-stories-bangladesh",
+    "collection": "publications",
+    "recordId": "2019-development-digital-family-stories-bangladesh",
+    "label": "Development through digital family stories in Bangladesh",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2019 heading, line 283); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/3287098.3287136.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2019-digital-silence-liberating-stories-during",
+    "collection": "publications",
+    "recordId": "2019-digital-silence-liberating-stories-during",
+    "label": "Digital Silence and Liberating Stories: During a Student-Driven Movement",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2019 heading, line 279); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/3290607.3310418.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2019-exploring-challenges-solution-approaches-regarding",
+    "collection": "publications",
+    "recordId": "2019-exploring-challenges-solution-approaches-regarding",
+    "label": "Exploring Challenges and Solution Approaches Regarding Wellbeing of Female Rohingya Community in Bangladesh",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2019 heading, line 261); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2019-hci-across-borders-intersections",
+    "collection": "publications",
+    "recordId": "2019-hci-across-borders-intersections",
+    "label": "HCI Across Borders and Intersections",
+    "source": "orcid",
+    "sourceNote": "Nova Ahmed's ORCID (0000-0002-7715-1742); not on the NSU publications page. Metadata from Crossref/OpenAlex for DOI 10.1145/3290607.3299004.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2019-managing-autism-spectrum-disorder-developing",
+    "collection": "publications",
+    "recordId": "2019-managing-autism-spectrum-disorder-developing",
+    "label": "Managing autism spectrum disorder in developing countries by utilizing existing resources: A perspective from Bangladesh",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2019 heading, line 249); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1177/1362361318773981.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2019-mathealthxb-designing-across-borders-global",
+    "collection": "publications",
+    "recordId": "2019-mathealthxb-designing-across-borders-global",
+    "label": "MatHealthXB: Designing Across Borders for Global Maternal Health",
+    "source": "orcid",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2019 heading, line 281); title-matched to Nova Ahmed's ORCID (no DOI there), so title/year from ORCID and authors/venue parsed from the citation. ORCID lists DOI 10.1145/3290607.3308454 for this work, but Crossref resolves that DOI to a different paper (\"Designing Compassion Cultivating Interactions for New Mothers\"), so no DOI is attached.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2019-monitoring-driving-stress-hrv",
+    "collection": "publications",
+    "recordId": "2019-monitoring-driving-stress-hrv",
+    "label": "Monitoring Driving Stress using HRV",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2019 heading, line 247); DOI stated in the NSU citation; metadata from Crossref/OpenAlex for DOI 10.1109/comsnets.2019.8711411. Citation notes \"Best Poster COMSNETS 2019\".",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2019-motorbike-ridesharing-bangladesh-way-empowerment",
+    "collection": "publications",
+    "recordId": "2019-motorbike-ridesharing-bangladesh-way-empowerment",
+    "label": "Motorbike Ridesharing in Bangladesh: The Way of Empowerment",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2019 heading, line 269); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2019-protibadi-starting-fight-against-sexual",
+    "collection": "publications",
+    "recordId": "2019-protibadi-starting-fight-against-sexual",
+    "label": "Protibadi: starting the fight against sexual abuse",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2019 heading, line 257); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2019-sheba-low-cost-assistive-robot",
+    "collection": "publications",
+    "recordId": "2019-sheba-low-cost-assistive-robot",
+    "label": "SHEBA: A Low-Cost Assistive Robot for Older Adults in the Developing World",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2019 heading, line 285); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2019-smart-school-bus-ensuring-safety",
+    "collection": "publications",
+    "recordId": "2019-smart-school-bus-ensuring-safety",
+    "label": "Smart School Bus: Ensuring Safety On The Road For School Going Children",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2019 heading, line 289); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2019-smart-warehouse-management-system-rfid",
+    "collection": "publications",
+    "recordId": "2019-smart-warehouse-management-system-rfid",
+    "label": "Smart Warehouse Management System with RFID and Cloud Database",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2019 heading, line 287); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2019-stress-personality-study-drivers-bangladesh",
+    "collection": "publications",
+    "recordId": "2019-stress-personality-study-drivers-bangladesh",
+    "label": "Stress and Personality Study on Drivers of Bangladesh",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2019 heading, line 267); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2019-sustainable-houses-bangladesh",
+    "collection": "publications",
+    "recordId": "2019-sustainable-houses-bangladesh",
+    "label": "Sustainable Houses of Bangladesh",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2019 heading, line 273); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2019-gender-equitable-privacy-security-south",
+    "collection": "publications",
+    "recordId": "2019-gender-equitable-privacy-security-south",
+    "label": "Toward Gender-Equitable Privacy and Security in South Asia",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2019 heading, line 275, also lines 255); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1109/msec.2019.2912727. Line 255 lists the same title with a different author order and no venue; merged here.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2019-understanding-drivers-wellbeing-quantitative-study",
+    "collection": "publications",
+    "recordId": "2019-understanding-drivers-wellbeing-quantitative-study",
+    "label": "Understanding drivers wellbeing: quantitative study analysis and wearable experiment",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2019 heading, line 263); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/3341162.3344830.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2019-understanding-political-ecology-forced-migration",
+    "collection": "publications",
+    "recordId": "2019-understanding-political-ecology-forced-migration",
+    "label": "Understanding the political ecology of forced migration and deforestation through a multi-algorithm classification approach: the case of Rohingya displacement in the southeastern border region of Bangladesh",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2019 heading, line 259); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2019-gender-shouldnt-matter-because-we",
+    "collection": "publications",
+    "recordId": "2019-gender-shouldnt-matter-because-we",
+    "label": "‘Gender shouldn’t matter because we are all scientists here’: A narration of the panel discussion at the 2nd International Women in Science Without Borders conference",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2019 heading, line 253); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.17159/sajs.2019/5865.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2018-applying-text-mining-protest-stories",
+    "collection": "publications",
+    "recordId": "2018-applying-text-mining-protest-stories",
+    "label": "Applying Text Mining to Protest Stories as Voice against Media Censorship",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2018 heading, line 306); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2018-automated-mobile-robot-rfid-scanner",
+    "collection": "publications",
+    "recordId": "2018-automated-mobile-robot-rfid-scanner",
+    "label": "Automated mobile robot with RFID scanner and self obstacle avoiding system",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2018 heading, line 332); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2018-bengali-communicative-android-app-autism",
+    "collection": "publications",
+    "recordId": "2018-bengali-communicative-android-app-autism",
+    "label": "Bengali Communicative Android App for Autism Personnel",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2018 heading, line 322); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2018-bornomala-ar-bengali-learning-experience",
+    "collection": "publications",
+    "recordId": "2018-bornomala-ar-bengali-learning-experience",
+    "label": "Bornomala AR-bengali learning experience using augmented reality",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2018 heading, line 330); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2018-changes-driving-behavior-possibly-hidden",
+    "collection": "publications",
+    "recordId": "2018-changes-driving-behavior-possibly-hidden",
+    "label": "Changes in Driving Behavior Possibly Hidden in Stress",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2018 heading, line 314); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2018-chikungunya-outbreak-2017-bangladesh-clinical",
+    "collection": "publications",
+    "recordId": "2018-chikungunya-outbreak-2017-bangladesh-clinical",
+    "label": "Chikungunya outbreak (2017) in Bangladesh: Clinical profile, economic impact and quality of life during the acute phase of the disease",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2018 heading, line 296); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1371/journal.pntd.0006561.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2018-communication-platform-breast-cancer-patient",
+    "collection": "publications",
+    "recordId": "2018-communication-platform-breast-cancer-patient",
+    "label": "Communication Platform for Breast Cancer Patient and Doctor",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2018 heading, line 318); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2018-connecting-systems-human",
+    "collection": "publications",
+    "recordId": "2018-connecting-systems-human",
+    "label": "Connecting Systems and Human",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2018 heading, line 312); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/3267305.3277834.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2018-ez-parking-smart-parking-space",
+    "collection": "publications",
+    "recordId": "2018-ez-parking-smart-parking-space",
+    "label": "EZ Parking: Smart Parking Space Reservation Using Internet of Things",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2018 heading, line 328); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2018-hci-across-borders-paving-new",
+    "collection": "publications",
+    "recordId": "2018-hci-across-borders-paving-new",
+    "label": "HCI Across Borders: Paving New Pathways",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2018 heading, line 300); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/3170427.3170666.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2018-how-well-our-drivers-road",
+    "collection": "publications",
+    "recordId": "2018-how-well-our-drivers-road",
+    "label": "How Well Our Drivers on Road? Discomfort is Obvious in Drivers Daily Life",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2018 heading, line 308); DOI stated in the NSU citation (not in ORCID); metadata from Crossref/OpenAlex for DOI 10.1145/3267305.3277809.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2018-mini-nurse-bot-healthcare-assistance",
+    "collection": "publications",
+    "recordId": "2018-mini-nurse-bot-healthcare-assistance",
+    "label": "Mini Nurse-Bot: A Healthcare Assistance for Elderly People",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2018 heading, line 310); DOI stated in the NSU citation (not in ORCID); metadata from Crossref/OpenAlex for DOI 10.1145/3267305.3267662.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2018-minion-following-robot-ultrasonic-wave",
+    "collection": "publications",
+    "recordId": "2018-minion-following-robot-ultrasonic-wave",
+    "label": "MINION: A Following Robot Using Ultrasonic Wave",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2018 heading, line 334); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1007/978-981-10-6872-0_36.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2018-parent-enabled-learning-autism",
+    "collection": "publications",
+    "recordId": "2018-parent-enabled-learning-autism",
+    "label": "Parent Enabled Learning for Autism",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2018 heading, line 320); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2018-protibadinext-low-cost-emergency-solution",
+    "collection": "publications",
+    "recordId": "2018-protibadinext-low-cost-emergency-solution",
+    "label": "ProtibadiNext: A Low Cost Emergency Solution against the Perpetrators",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2018 heading, line 316); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2018-reinforcement-based-learning-communicative-android",
+    "collection": "publications",
+    "recordId": "2018-reinforcement-based-learning-communicative-android",
+    "label": "Reinforcement based learning through communicative Android app for autism personnel",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2018 heading, line 302); DOI stated in the NSU citation; metadata from Crossref/OpenAlex for DOI 10.1145/3236112.3236131.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2018-rickshaw-buddy-cost-effective-automated",
+    "collection": "publications",
+    "recordId": "2018-rickshaw-buddy-cost-effective-automated",
+    "label": "RICKSHAW BUDDY: A Cost Effective Automated Auto Rickshaw Assistance System",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2018 heading, line 326); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2018-secret-bot-video-streaming-android",
+    "collection": "publications",
+    "recordId": "2018-secret-bot-video-streaming-android",
+    "label": "Secret Bot: A Video Streaming, Android Device Controlled Spy Robot",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2018 heading, line 324); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2018-strategic-communication-counter-sexual-harassment",
+    "collection": "publications",
+    "recordId": "2018-strategic-communication-counter-sexual-harassment",
+    "label": "Strategic communication to counter sexual harassment in Bangladesh",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2018 heading, line 304); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2018-supporting-missing-daughters",
+    "collection": "publications",
+    "recordId": "2018-supporting-missing-daughters",
+    "label": "Supporting Missing Daughters",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2018 heading, line 298); fields parsed from the citation text, no DOI or API match. Citation notes a Best Poster Award.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2018-privacy-not-me-those-rich",
+    "collection": "publications",
+    "recordId": "2018-privacy-not-me-those-rich",
+    "label": "“Privacy is not for me, it's for those rich women”: Performative Privacy Practices on Mobile Phones by Women in South Asia",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2018 heading, line 294); fields parsed from the citation text, no DOI or API match. Citation notes the IAPP Distinguished Privacy Award.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2017-gradient-sensing-middleware-handle-flash",
+    "collection": "publications",
+    "recordId": "2017-gradient-sensing-middleware-handle-flash",
+    "label": "A gradient sensing middleware to handle flash flood",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2017 heading, line 343); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1016/j.compeleceng.2017.08.006.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2017-blended-learning-family-planning-policy",
+    "collection": "publications",
+    "recordId": "2017-blended-learning-family-planning-policy",
+    "label": "Blended learning on family planning policy requirements: key findings and implications from a mixed methods study",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2017 heading, line 363); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2017-chi-2017-stories-overview",
+    "collection": "publications",
+    "recordId": "2017-chi-2017-stories-overview",
+    "label": "CHI 2017 Stories Overview",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2017 heading, line 353); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/3027063.3051134.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2017-crazy-crowd-sourcing-mitigate-resource",
+    "collection": "publications",
+    "recordId": "2017-crazy-crowd-sourcing-mitigate-resource",
+    "label": "Crazy Crowd Sourcing to Mitigate Resource Scarcity",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2017 heading, line 359); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1109/icdcs.2017.321.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2017-gender-equity-technologies-considerations-design",
+    "collection": "publications",
+    "recordId": "2017-gender-equity-technologies-considerations-design",
+    "label": "Gender equity in technologies: considerations for design in the global south",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2017 heading, line 345); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/3155050.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2017-hci-across-borders",
+    "collection": "publications",
+    "recordId": "2017-hci-across-borders",
+    "label": "HCI Across Borders",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2017 heading, line 341); fields parsed from the citation text, no DOI or API match. Author list is truncated (\"...\") in the source.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2017-how-do-you-feel-when",
+    "collection": "publications",
+    "recordId": "2017-how-do-you-feel-when",
+    "label": "How Do You Feel When You Are Driving?: A Participatory Approach",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2017 heading, line 355); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2017-ifreephony-minimalistic-interface-developed-visually",
+    "collection": "publications",
+    "recordId": "2017-ifreephony-minimalistic-interface-developed-visually",
+    "label": "Ifreephony: Minimalistic interface developed for the visually impaired and the elderly community in bangladesh",
+    "source": "orcid",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2017 heading, line 351, also lines 226); title-matched to Nova Ahmed's ORCID (no DOI there), so title/year from ORCID and authors/venue parsed from the citation.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2017-new-narratives-global-health-stories",
+    "collection": "publications",
+    "recordId": "2017-new-narratives-global-health-stories",
+    "label": "New Narratives in Global Health: Using Stories and Storytelling to Promote Family Planning",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2017 heading, line 361); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2017-optimized-route-planer-application",
+    "collection": "publications",
+    "recordId": "2017-optimized-route-planer-application",
+    "label": "Optimized route planer application",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2017 heading, line 347); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1109/r10-htc.2017.8288922.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2017-simple-group-photo-sharing-facesense",
+    "collection": "publications",
+    "recordId": "2017-simple-group-photo-sharing-facesense",
+    "label": "Simple Group Photo Sharing Using Facesense",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2017 heading, line 357); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1109/compsac.2017.212.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2017-working-women-ictd",
+    "collection": "publications",
+    "recordId": "2017-working-women-ictd",
+    "label": "Working with Women in ICTD",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2017 heading, line 349); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/3136560.3136585.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2016-improved-interactive-system-fulfill-basic",
+    "collection": "publications",
+    "recordId": "2016-improved-interactive-system-fulfill-basic",
+    "label": "An improved and interactive system to fulfill basic human healthcare needs",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2016 heading, line 378); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1109/iccitechn.2016.7860254.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2016-assessing-driving-stress-custom-built",
+    "collection": "publications",
+    "recordId": "2016-assessing-driving-stress-custom-built",
+    "label": "Assessing Driving Stress using Custom Built Real Time Sensors",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2016 heading, line 374); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2016-computing-beyond-gender-imposed-limits",
+    "collection": "publications",
+    "recordId": "2016-computing-beyond-gender-imposed-limits",
+    "label": "Computing beyond gender-imposed limits",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2016 heading, line 368); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/2926676.2926681.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2016-discussing-about-sexual-harassment-breaking",
+    "collection": "publications",
+    "recordId": "2016-discussing-about-sexual-harassment-breaking",
+    "label": "Discussing about Sexual Harassment (Breaking Silence): The Role of Technology",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2016 heading, line 370); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/2851581.2892567.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2016-my-code-my-native-tone",
+    "collection": "publications",
+    "recordId": "2016-my-code-my-native-tone",
+    "label": "My Code in My Native Tone: Cha Script",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2016 heading, line 384); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/2909609.2909611.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2016-poster-protibaadi-extended-solution-deal",
+    "collection": "publications",
+    "recordId": "2016-poster-protibaadi-extended-solution-deal",
+    "label": "Poster: Protibaadi: An Extended Solution to Deal with Sexual Harassment",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2016 heading, line 382); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/2938559.2948796.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2016-protibaadinext-low-cost-wearable-system",
+    "collection": "publications",
+    "recordId": "2016-protibaadinext-low-cost-wearable-system",
+    "label": "ProtibaadiNext: A Low Cost Wearable System to Deal with Sexual Harassment in Bangladesh",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2016 heading, line 386); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.4108/eai.30-11-2016.2267059.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2016-protibadi-next-sensor-support-handle",
+    "collection": "publications",
+    "recordId": "2016-protibadi-next-sensor-support-handle",
+    "label": "Protibadi next: sensor support to handle sexual harassment",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2016 heading, line 380); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/2968219.2979133.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2016-shonabondhu-cloud-based-system-handle",
+    "collection": "publications",
+    "recordId": "2016-shonabondhu-cloud-based-system-handle",
+    "label": "ShonaBondhu: a cloud based system to handle flash flood",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2016 heading, line 372); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1109/nsyss.2016.7400688.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2016-softsense-sensing-software-level",
+    "collection": "publications",
+    "recordId": "2016-softsense-sensing-software-level",
+    "label": "Softsense: sensing at software level",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2016 heading, line 388); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/2968219.2971457.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2016-urban-search-rescue-mission-use",
+    "collection": "publications",
+    "recordId": "2016-urban-search-rescue-mission-use",
+    "label": "Urban search and rescue mission: The use of marsupial robots",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2016 heading, line 376); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2015-skin-disease-detection-system-financially",
+    "collection": "publications",
+    "recordId": "2015-skin-disease-detection-system-financially",
+    "label": "A skin disease detection system for financially unstable people in developing countries",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2015 heading, line 397); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2015-smart-phone-that-acts-unsmart",
+    "collection": "publications",
+    "recordId": "2015-smart-phone-that-acts-unsmart",
+    "label": "A smart phone that acts unsmart: An assistive touch screenuser interface for visually impaired people",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2015 heading, line 409); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2015-banglacloud-cloud-infrastructure-abandoned-computers",
+    "collection": "publications",
+    "recordId": "2015-banglacloud-cloud-infrastructure-abandoned-computers",
+    "label": "BanglaCloud: A cloud infrastructure with abandoned computers",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2015 heading, line 413); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1109/iceeict.2015.7307444.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2015-bap-re-bap-driving-experiences",
+    "collection": "publications",
+    "recordId": "2015-bap-re-bap-driving-experiences",
+    "label": "Bap re Bap! Driving Experiences through Multimodal Unruly Traffic on Bumpy Roads",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2015 heading, line 403); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/2830629.2835214.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2015-dynamic-load-sharing-maximize-resource",
+    "collection": "publications",
+    "recordId": "2015-dynamic-load-sharing-maximize-resource",
+    "label": "Dynamic Load Sharing to Maximize Resource Utilization Within Cloud Federation",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2015 heading, line 407); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1007/978-3-319-28430-9_10.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2015-electrical-computer-engineering-laboratory-education",
+    "collection": "publications",
+    "recordId": "2015-electrical-computer-engineering-laboratory-education",
+    "label": "Electrical and computer engineering laboratory education for female undergraduate students: Challenges and solutions from an urban perspective of Bangladesh",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2015 heading, line 393); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1109/iccse.2015.7250276.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2015-entering-dream-world-computers",
+    "collection": "publications",
+    "recordId": "2015-entering-dream-world-computers",
+    "label": "Entering the dream world of computers",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2015 heading, line 401); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/2737856.2737860.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2015-map-matching-error-prone-gps",
+    "collection": "publications",
+    "recordId": "2015-map-matching-error-prone-gps",
+    "label": "Map matching for error prone GPS data on a sparse road network and predicting travel time of a route",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2015 heading, line 395); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1109/iccitechn.2015.7488035.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2015-map-matching-sparse-gps-data",
+    "collection": "publications",
+    "recordId": "2015-map-matching-sparse-gps-data",
+    "label": "Map matching on sparse gps data: A perspective of a developing city",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2015 heading, line 399); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2015-poster-shonabondhu-sensing-middleware-handle",
+    "collection": "publications",
+    "recordId": "2015-poster-shonabondhu-sensing-middleware-handle",
+    "label": "Poster: Shonabondhu: A Sensing Middleware to Handle Flash Flood",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2015 heading, line 405); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/2809695.2817874.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2015-telemedicine-system-financially-unstable-people",
+    "collection": "publications",
+    "recordId": "2015-telemedicine-system-financially-unstable-people",
+    "label": "Telemedicine system for financially unstable people of Bangladesh",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2015 heading, line 411); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2014-skin-disease-detection-system-financially",
+    "collection": "publications",
+    "recordId": "2014-skin-disease-detection-system-financially",
+    "label": "A Skin Disease Detection System for Financially Unstable People in Developing Countries ",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2014 heading, line 440); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2014-beetles-mobile-application-detect-crop",
+    "collection": "publications",
+    "recordId": "2014-beetles-mobile-application-detect-crop",
+    "label": "Beetles: A Mobile Application to Detect Crop Disease for Farmers in Rural Area",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2014 heading, line 428); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2014-chascript-breaking-language-barrier-bengali",
+    "collection": "publications",
+    "recordId": "2014-chascript-breaking-language-barrier-bengali",
+    "label": "ChaScript: Breaking language barrier using a bengali programming system",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2014 heading, line 430); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1109/icece.2014.7026875.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2014-computer-vision-based-road-traffic",
+    "collection": "publications",
+    "recordId": "2014-computer-vision-based-road-traffic",
+    "label": "Computer vision based road traffic accident and anomaly detection in the context of Bangladesh",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2014 heading, line 424); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1109/iciev.2014.6850780.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2014-dermatological-disease-detection-image-processing",
+    "collection": "publications",
+    "recordId": "2014-dermatological-disease-detection-image-processing",
+    "label": "Dermatological disease detection using image processing and artificial neural network",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2014 heading, line 420); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1109/icece.2014.7026918.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2014-efficient-reliable-hybrid-cloud-architechture",
+    "collection": "publications",
+    "recordId": "2014-efficient-reliable-hybrid-cloud-architechture",
+    "label": "Efficient and reliable hybrid cloud architechture for big data",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2014 heading, line 426); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2014-empowering-local-government-decentralised-wash",
+    "collection": "publications",
+    "recordId": "2014-empowering-local-government-decentralised-wash",
+    "label": "Empowering local government through decentralised WASH programmes in Bangladesh",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2014 heading, line 434); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2014-hybrid-cloud-infrastructure-handle-large",
+    "collection": "publications",
+    "recordId": "2014-hybrid-cloud-infrastructure-handle-large",
+    "label": "Hybrid cloud infrastructure to handle large scale data for bangladesh people search (BDPS)",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2014 heading, line 436); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1109/iciev.2014.6850681.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2014-ifreephony-touchscreen-based-user-interface",
+    "collection": "publications",
+    "recordId": "2014-ifreephony-touchscreen-based-user-interface",
+    "label": "Ifreephony: A touchscreen based user interface for people with visual impairment",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2014 heading, line 432); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2014-ifreephony-touchscreen-based-user-interface-2",
+    "collection": "publications",
+    "recordId": "2014-ifreephony-touchscreen-based-user-interface-2",
+    "label": "Ifreephony: A Touchscreen Based User Interface for People with Visual Impairment",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2014 heading, line 444); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2014-ifreephony-touchscreen-user-interface-people",
+    "collection": "publications",
+    "recordId": "2014-ifreephony-touchscreen-user-interface-people",
+    "label": "ifreePhony: A touchscreen user interface for people with eye disability",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2014 heading, line 438); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2014-implementation-flash-flood-monitoring-system",
+    "collection": "publications",
+    "recordId": "2014-implementation-flash-flood-monitoring-system",
+    "label": "Implementation of flash flood monitoring system based on wireless sensor network in Bangladesh",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2014 heading, line 422); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1109/iciev.2014.6850752.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2014-protibadi-platform-fighting-sexual-harassment",
+    "collection": "publications",
+    "recordId": "2014-protibadi-platform-fighting-sexual-harassment",
+    "label": "Protibadi: A platform for fighting sexual harassment in urban Bangladesh",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2014 heading, line 418); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1145/2556288.2557376.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2014-telemedicine-system-financially-unstable-people",
+    "collection": "publications",
+    "recordId": "2014-telemedicine-system-financially-unstable-people",
+    "label": "Telemedicine System for Financially Unstable People of Bangladesh ",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2014 heading, line 442); fields parsed from the citation text, no DOI or API match. Source citation prints the year as \"2104\"; year taken from the 2014 heading.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2013-gradient-sensor-middleware-system-design",
+    "collection": "publications",
+    "recordId": "2013-gradient-sensor-middleware-system-design",
+    "label": "Gradient Sensor Middleware System design for Flash Flood prone River banks in Bangladesh",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2013 heading, line 451); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2013-mhealth-blood-donation-service-bangladesh",
+    "collection": "publications",
+    "recordId": "2013-mhealth-blood-donation-service-bangladesh",
+    "label": "mHealth: Blood donation service in Bangladesh",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2013 heading, line 449); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1109/iciev.2013.6572594.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2012-adaptive-approach-video-streaming-evaluation",
+    "collection": "publications",
+    "recordId": "2012-adaptive-approach-video-streaming-evaluation",
+    "label": "An Adaptive Approach for Video Streaming and Evaluation over Bluetooth Network",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2012 heading, line 462); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1109/wicom.2012.6478392.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2012-android-mobile-application-remote-monitoring",
+    "collection": "publications",
+    "recordId": "2012-android-mobile-application-remote-monitoring",
+    "label": "Android mobile application: Remote monitoring of blood pressure",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2012 heading, line 464); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.1109/iccitechn.2012.6509753.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2012-middleware-systems-sensor-network-study",
+    "collection": "publications",
+    "recordId": "2012-middleware-systems-sensor-network-study",
+    "label": "Middleware Systems for Sensor Network: A Study on Different Middleware Systems",
+    "source": "crossref",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2012 heading, line 472, also lines 470); title-matched to Nova Ahmed's ORCID; metadata from Crossref/OpenAlex for DOI 10.4018/978-1-4666-0101-7.ch026.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "publications/2012-widespread-adoption-rfid-technology",
+    "collection": "publications",
+    "recordId": "2012-widespread-adoption-rfid-technology",
+    "label": "Widespread adoption of RFID technology",
+    "source": "scrape",
+    "sourceNote": "NSU publications page labs/dial/scraped-data/nsu-hci-current-website/publications.md (2012 heading, line 466); fields parsed from the citation text, no DOI or API match.",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/nsu",
+    "collection": "organizations",
+    "recordId": "nsu",
+    "label": "North South University",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/contact-us.md — \"Design Inclusion and Access Lab (DIAL)\"; URL from nova-ahmed-personal-site/home.md",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/uiu",
+    "collection": "organizations",
+    "recordId": "uiu",
+    "label": "United International University",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Collaborator List\"; DIAL Proposal.md — \"Funding Information\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/sipg",
+    "collection": "organizations",
+    "recordId": "sipg",
+    "label": "South Asian Institute of Policy and Governance",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/awards.md — \"Research Grants, Funding, and Awards\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/gates-foundation",
+    "collection": "organizations",
+    "recordId": "gates-foundation",
+    "label": "Bill and Melinda Gates Foundation",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Funding Information\"; nsu-hci-current-website/awards.md — \"Research Grants, Funding, and Awards\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/google",
+    "collection": "organizations",
+    "recordId": "google",
+    "label": "Google",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Collaborator List\"; nsu-hci-current-website/awards.md — \"Research Grants, Funding, and Awards\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/ukri-gcrf",
+    "collection": "organizations",
+    "recordId": "ukri-gcrf",
+    "label": "UKRI-GCRF",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/awards.md — \"Research Grants, Funding, and Awards\"; DIAL Proposal.md — \"Funding Information\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/bracu",
+    "collection": "organizations",
+    "recordId": "bracu",
+    "label": "BRAC University",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Collaborator List\" (\"National Level Collaboration\")",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/bdosn",
+    "collection": "organizations",
+    "recordId": "bdosn",
+    "label": "Bangladesh Open Source Network",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Collaborator List\" (\"National Level Collaboration\")",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/gdn",
+    "collection": "organizations",
+    "recordId": "gdn",
+    "label": "GDN",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Infodemic Detection\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/systers",
+    "collection": "organizations",
+    "recordId": "systers",
+    "label": "Systers",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/research-project-shonabondhu.md — \"Funding\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/cardiff-university",
+    "collection": "organizations",
+    "recordId": "cardiff-university",
+    "label": "Cardiff University",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Collaborator List\" (\"International Collaboration\")",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/university-of-leeds",
+    "collection": "organizations",
+    "recordId": "university-of-leeds",
+    "label": "University of Leeds",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Collaborator List\" (\"International Collaboration\")",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/birmingham-university",
+    "collection": "organizations",
+    "recordId": "birmingham-university",
+    "label": "Birmingham University",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Collaborator List\" (\"International Collaboration\")",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/western-washington-university",
+    "collection": "organizations",
+    "recordId": "western-washington-university",
+    "label": "Western Washington University",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Collaborator List\" (\"International Collaboration\")",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/nsf",
+    "collection": "organizations",
+    "recordId": "nsf",
+    "label": "National Science Foundation",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Collaborator List\" (\"International Collaboration\")",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/acm-sigchi",
+    "collection": "organizations",
+    "recordId": "acm-sigchi",
+    "label": "ACM SIGCHI",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Collaborator List\" (\"International Collaboration\")",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/global-young-academy",
+    "collection": "organizations",
+    "recordId": "global-young-academy",
+    "label": "Global Young Academy",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Collaborator List\"; nova-ahmed-personal-site/collaborations.md",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/iit-mumbai",
+    "collection": "organizations",
+    "recordId": "iit-mumbai",
+    "label": "IIT, Mumbai",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Collaborator List\" (\"International Collaboration\")",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/iit-guwahati",
+    "collection": "organizations",
+    "recordId": "iit-guwahati",
+    "label": "IIT, Guwahati",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Collaborator List\" (\"International Collaboration\")",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/microsoft-research-india",
+    "collection": "organizations",
+    "recordId": "microsoft-research-india",
+    "label": "Microsoft Research, India",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Collaborator List\" (\"International Collaboration\")",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/lums",
+    "collection": "organizations",
+    "recordId": "lums",
+    "label": "Lahore University of Management Sciences",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Collaborator List\" (\"International Collaboration\")",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/icddrb",
+    "collection": "organizations",
+    "recordId": "icddrb",
+    "label": "icddr,b",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Collaborator List\" (\"National Level Collaboration\")",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/ict-ministry-bangladesh",
+    "collection": "organizations",
+    "recordId": "ict-ministry-bangladesh",
+    "label": "ICT Ministry, Bangladesh",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Collaborator List\" (\"National Level Collaboration\")",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/education-ministry-bangladesh",
+    "collection": "organizations",
+    "recordId": "education-ministry-bangladesh",
+    "label": "Education Ministry, Bangladesh",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Collaborator List\" (\"National Level Collaboration\")",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/british-council-bangladesh",
+    "collection": "organizations",
+    "recordId": "british-council-bangladesh",
+    "label": "British Council, Bangladesh",
+    "source": "scrape",
+    "sourceNote": "DIAL Proposal.md — \"Collaborator List\" (\"National Level Collaboration\")",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/grameenphone",
+    "collection": "organizations",
+    "recordId": "grameenphone",
+    "label": "Grameenphone",
+    "source": "scrape",
+    "sourceNote": "nova-ahmed-personal-site/collaborations.md — \"Grameen Phone Collaboration\"",
+    "status": "unverified",
+    "decisionNote": ""
+  },
+  {
+    "id": "organizations/university-of-louisiana-at-lafayette",
+    "collection": "organizations",
+    "recordId": "university-of-louisiana-at-lafayette",
+    "label": "University of Louisiana at Lafayette",
+    "source": "scrape",
+    "sourceNote": "nsu-hci-current-website/people.md — \"Researchers\" (Dr. Tamanna Motahar)",
+    "status": "unverified",
+    "decisionNote": ""
+  }
+]

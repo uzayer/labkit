@@ -1,7 +1,7 @@
 /**
  * Pull an ORCID iD's works and import them as Publications.
  *
- * Run: bun run payload -- run scripts/ingestion/import-orcid.ts <orcid-id> [dry-run] [since=YYYY]
+ * Run: bun run payload -- run scripts/ingestion/import-orcid.ts <orcid-id> [dry-run] [since=YYYY] [selection=path.json]
  *
  * `since=YYYY` drops works whose ORCID year is earlier, before any
  * Crossref/OpenAlex call. Works ORCID gives no year for are kept — there is
@@ -24,8 +24,8 @@
  *
  * Routes through the shared staging + persistence engine (stageOrcidCandidates
  * + import-runs/review-items bookkeeping) instead of fetching and hydrating
- * inline — this CLI has no human selection step, so every staged candidate is
- * processed automatically regardless of its `selected` flag.
+ * inline. A live run requires a reviewed selection covering every in-range
+ * Candidate. A dry run without one is an inventory rehearsal only.
  */
 import { getPayload } from 'payload'
 import config from '@payload-config'
@@ -44,11 +44,15 @@ import { finalizeRun, persistRunProgress, type RunProgress } from '@/lib/ingesti
 import { normalizeOrcid } from '@/lib/ingestion/normalize'
 import { stageOrcidCandidates } from '@/lib/ingestion/staging'
 import type { UpsertAction } from '@/lib/ingestion/upsert'
+import { loadOrcidSelection, writeOrcidSelectionTemplate } from './orcid-selection'
 
 const args = process.argv.slice(2)
 const DRY_RUN = args.includes('dry-run')
 const sinceArg = args.find((arg) => arg.startsWith('since='))
-const orcidId = args.find((arg) => arg !== 'dry-run' && !arg.startsWith('since='))
+const selectionArg = args.find((arg) => arg.startsWith('selection='))
+const orcidId = args.find(
+  (arg) => arg !== 'dry-run' && !arg.startsWith('since=') && !arg.startsWith('selection='),
+)
 
 function bucketAction(progress: RunProgress, action: UpsertAction) {
   switch (action) {
@@ -71,13 +75,19 @@ function bucketAction(progress: RunProgress, action: UpsertAction) {
 async function main() {
   if (!orcidId) {
     console.error(
-      'Usage: bun run payload -- run scripts/ingestion/import-orcid.ts <orcid-id> [dry-run] [since=YYYY]',
+      'Usage: bun run payload -- run scripts/ingestion/import-orcid.ts <orcid-id> [dry-run] [since=YYYY] [selection=path.json]',
     )
     process.exit(1)
   }
   const since = sinceArg ? Number(sinceArg.slice('since='.length)) : undefined
   if (sinceArg && !(Number.isInteger(since) && since! >= 1900 && since! <= 2100)) {
     console.error(`Invalid ${sinceArg} — expected since=YYYY`)
+    process.exit(1)
+  }
+  if (!DRY_RUN && !selectionArg) {
+    console.error(
+      'A live ORCID run requires selection=path.json with every in-range Candidate reviewed.',
+    )
     process.exit(1)
   }
 
@@ -102,14 +112,25 @@ async function main() {
 
   const staged = await stageOrcidCandidates(orcidId)
   const withoutYear = staged.filter((candidate) => candidate.year === undefined).length
-  const candidates =
+  const inRange =
     since === undefined
       ? staged
       : staged.filter((candidate) => candidate.year === undefined || candidate.year >= since)
+  const candidates = selectionArg
+    ? await loadOrcidSelection(selectionArg.slice('selection='.length), orcidId, since, inRange)
+    : inRange
+  if (!DRY_RUN && candidates.length === 0) {
+    throw new Error('The reviewed selection includes no DOI Candidates; nothing to import.')
+  }
+  if (DRY_RUN && !selectionArg) {
+    const templatePath = await writeOrcidSelectionTemplate(orcidId, since, inRange)
+    console.log(`Selection template (all excluded until reviewed): ${templatePath}`)
+  }
   console.log(
     since === undefined
-      ? `ORCID ${orcidId}: ${staged.length} works found.`
-      : `ORCID ${orcidId}: ${staged.length} works found, ${candidates.length} in range (since ${since}), ` +
+      ? `ORCID ${orcidId}: ${staged.length} works found, ${candidates.length} selected.`
+      : `ORCID ${orcidId}: ${staged.length} works found, ${inRange.length} in range (since ${since}), ` +
+          `${candidates.length} selected, ` +
           `${withoutYear} without a year (kept).`,
   )
 
@@ -140,7 +161,12 @@ async function main() {
       label: `ORCID import — ${orcidId}`,
       source: 'cli',
       status: 'running',
-      params: { orcidId, dryRun: DRY_RUN, since },
+      params: {
+        orcidId,
+        dryRun: DRY_RUN,
+        since,
+        selectionFile: selectionArg?.slice('selection='.length),
+      },
       candidates,
       progress,
       startedAt: new Date().toISOString(),
@@ -193,6 +219,9 @@ async function main() {
     dryRun: DRY_RUN,
     since,
     ownerMissing,
+    selectionFile: selectionArg?.slice('selection='.length),
+    inRange: inRange.length,
+    selected: candidates.length,
   })
   console.log(
     `\nPreview: ${previewPath}\n  bun run payload -- run scripts/ingestion/preview-report.ts ${previewPath}`,

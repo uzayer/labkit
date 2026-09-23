@@ -1,0 +1,185 @@
+{
+  "model": "gpt-5.6-terra",
+  "results": [
+    {
+      "id": "team-nova",
+      "expected": {
+        "kind": "team",
+        "scope": "review"
+      },
+      "predicted": {
+        "kind": "team",
+        "scope": "review"
+      },
+      "correct": {
+        "kind": true,
+        "scope": true
+      }
+    },
+    {
+      "id": "team-rony",
+      "expected": {
+        "kind": "team",
+        "scope": "dial"
+      },
+      "predicted": {
+        "kind": "team",
+        "scope": "dial"
+      },
+      "correct": {
+        "kind": true,
+        "scope": true
+      }
+    },
+    {
+      "id": "team-tamanna",
+      "expected": {
+        "kind": "team",
+        "scope": "review"
+      },
+      "predicted": {
+        "kind": "team",
+        "scope": "review"
+      },
+      "correct": {
+        "kind": true,
+        "scope": true
+      }
+    },
+    {
+      "id": "publication-doi",
+      "expected": {
+        "kind": "publication",
+        "scope": "review"
+      },
+      "predicted": {
+        "kind": "publication",
+        "scope": "review"
+      },
+      "correct": {
+        "kind": true,
+        "scope": true
+      }
+    },
+    {
+      "id": "publication-duplicate",
+      "expected": {
+        "kind": "publication",
+        "scope": "review"
+      },
+      "predicted": {
+        "kind": "publication",
+        "scope": "review"
+      },
+      "correct": {
+        "kind": true,
+        "scope": true
+      }
+    },
+    {
+      "id": "publication-truncated",
+      "expected": {
+        "kind": "publication",
+        "scope": "review"
+      },
+      "predicted": {
+        "kind": "publication",
+        "scope": "review"
+      },
+      "correct": {
+        "kind": true,
+        "scope": true
+      }
+    },
+    {
+      "id": "project-shonabondhu",
+      "expected": {
+        "kind": "project",
+        "scope": "review"
+      },
+      "predicted": {
+        "kind": "project",
+        "scope": "review"
+      },
+      "correct": {
+        "kind": true,
+        "scope": true
+      }
+    },
+    {
+      "id": "grant-shonabondhu",
+      "expected": {
+        "kind": "grant",
+        "scope": "review"
+      },
+      "predicted": {
+        "kind": "grant",
+        "scope": "review"
+      },
+      "correct": {
+        "kind": true,
+        "scope": true
+      }
+    },
+    {
+      "id": "award-best-journal",
+      "expected": {
+        "kind": "award",
+        "scope": "review"
+      },
+      "predicted": {
+        "kind": "award",
+        "scope": "review"
+      },
+      "correct": {
+        "kind": true,
+        "scope": true
+      }
+    },
+    {
+      "id": "event-dial-symposium",
+      "expected": {
+        "kind": "news",
+        "scope": "dial"
+      },
+      "predicted": {
+        "kind": "news",
+        "scope": "dial"
+      },
+      "correct": {
+        "kind": true,
+        "scope": true
+      }
+    },
+    {
+      "id": "event-winter-school",
+      "expected": {
+        "kind": "news",
+        "scope": "review"
+      },
+      "predicted": {
+        "kind": "news",
+        "scope": "dial"
+      },
+      "correct": {
+        "kind": true,
+        "scope": false
+      }
+    },
+    {
+      "id": "irrelevant-scholar-link",
+      "expected": {
+        "kind": "none",
+        "scope": "outside"
+      },
+      "predicted": {
+        "kind": "none",
+        "scope": "outside"
+      },
+      "correct": {
+        "kind": true,
+        "scope": true
+      }
+    }
+  ]
+}
