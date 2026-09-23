@@ -22,7 +22,7 @@ const UserStat = (props: UserStatProps) => {
           {props.title}
         </CardTitle>
         <TooltipProvider>
-          <Tooltip delayDuration={50}>
+          <Tooltip delay={50}>
             <TooltipTrigger>
               <IconInfoCircle className="scale-90 stroke-[1.25] text-muted-foreground" />
               <span className="sr-only">More Info</span>

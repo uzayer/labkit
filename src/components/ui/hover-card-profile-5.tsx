@@ -8,10 +8,8 @@ export const title = 'Profile with Stats'
 
 const Example = () => (
   <HoverCard>
-    <HoverCardTrigger asChild>
-      <a className="text-sm font-medium underline" href="#">
-        @haydenbleasel
-      </a>
+    <HoverCardTrigger render={<a className="text-sm font-medium underline" href="#" />}>
+      @haydenbleasel
     </HoverCardTrigger>
     <HoverCardContent className="w-80">
       <div className="space-y-3">

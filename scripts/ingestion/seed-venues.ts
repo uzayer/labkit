@@ -2,7 +2,7 @@
  * Seed DIAL's recurring Venues before an import, so their papers link to one
  * curated record (with a shortName) instead of a per-year free-text label.
  *
- * Run: pnpm payload run scripts/ingestion/seed-venues.ts [dry-run]
+ * Run: bun run payload -- run scripts/ingestion/seed-venues.ts [dry-run]
  *
  * Reference data the Operator seeds before running a Front Door. Ingestion's
  * resolveVenue matches an incoming venue string against `name` and

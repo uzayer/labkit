@@ -2,7 +2,7 @@
  * Parse a .bib file (Zotero/Mendeley/EndNote/Google Scholar export) and
  * import each entry into Publications.
  *
- * Run: pnpm payload run scripts/ingestion/import-bibtex.ts <path.bib> [dry-run]
+ * Run: bun run payload -- run scripts/ingestion/import-bibtex.ts <path.bib> [dry-run]
  *
  * Per entry: has a `doi` field -> hydrate via Crossref/OpenAlex (BibTeX only
  * supplies the DOI, those APIs stay the enrichment source of truth). No DOI
@@ -64,7 +64,9 @@ function bucketAction(progress: RunProgress, action: UpsertAction) {
 
 async function main() {
   if (!bibPath) {
-    console.error('Usage: pnpm payload run scripts/ingestion/import-bibtex.ts <path.bib> [dry-run]')
+    console.error(
+      'Usage: bun run payload -- run scripts/ingestion/import-bibtex.ts <path.bib> [dry-run]',
+    )
     process.exit(1)
   }
 
@@ -199,7 +201,7 @@ async function main() {
     dryRun: DRY_RUN,
   })
   console.log(
-    `\nPreview: ${previewPath}\n  pnpm payload run scripts/ingestion/preview-report.ts ${previewPath}`,
+    `\nPreview: ${previewPath}\n  bun run payload -- run scripts/ingestion/preview-report.ts ${previewPath}`,
   )
   await finalizeRun(payload, runId, report, 'completed')
   process.exit(0)

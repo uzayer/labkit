@@ -82,9 +82,7 @@ export default function SubscribeDrawer({ plan }: Props) {
 
   return (
     <Sheet>
-      <SheetTrigger asChild>
-        <Button className="ml-auto w-fit">Start Subscribe</Button>
-      </SheetTrigger>
+      <SheetTrigger render={<Button className="ml-auto w-fit" />}>Start Subscribe</SheetTrigger>
       <SheetContent>
         <SheetHeader>
           <SheetTitle>Summary</SheetTitle>

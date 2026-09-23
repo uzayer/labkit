@@ -66,11 +66,10 @@ const Hero20 = () => {
             </Badge>
             <h1 className="mb-8 text-3xl font-medium lg:text-5xl">Build your own platform</h1>
             <Accordion
-              type="single"
-              value={currentAccordion}
+              value={currentAccordion ? [currentAccordion] : []}
               onValueChange={(value) => {
-                setCurrentAccordion(value)
-                api?.scrollTo(+value - 1)
+                setCurrentAccordion(value[0] ?? '')
+                if (value[0]) api?.scrollTo(+value[0] - 1)
               }}
             >
               {accordions.map((accordion) => (

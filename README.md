@@ -43,7 +43,7 @@ The research information domain is heavily modelled and well served — at insti
 
 - **The knowledge lives in the lab; the software lives at the institution.** Institutional systems have chronically poor data quality for a structural reason — they are populated by administrators who don't know the work, or by faculty who resent the data entry. LabKit builds at the layer where the information is true.
 - **Lab websites are ugly because maintenance is a chore, not because nobody cares.** A site that requires manual data entry decays the moment the student who maintained it graduates. The fix is ingestion, not a nicer theme.
-- **A lab cannot adopt a CRIS.** DSpace-CRIS needs JDK 17, Maven, Ant, PostgreSQL, Solr 9, Tomcat, Node, and PM2 across two separately deployed applications. That is a university IT project. LabKit is `pnpm dev` and a Mongo URI.
+- **A lab cannot adopt a CRIS.** DSpace-CRIS needs JDK 17, Maven, Ant, PostgreSQL, Solr 9, Tomcat, Node, and PM2 across two separately deployed applications. That is a university IT project. LabKit is `bun run dev` and a Mongo URI.
 - **Structured beats scraped.** Once the data is modelled properly, the website is only the first thing you can build from it — CVs, annual reports, and funder submissions read from the same records.
 - **The real competitor is doing nothing.** A Google Scholar link and a free theme is genuinely good enough for most labs, so the switching cost has to be near zero. That constraint is why the pitch is a command, not an onboarding flow.
 
@@ -99,22 +99,22 @@ Two properties are load-bearing:
 
 ## Quick start
 
-Requires **Node ≥ 24**, **pnpm 11.24**, and a **MongoDB** instance.
+Requires **Node ≥ 24**, **Bun 1.4.2**, and a **MongoDB** instance. Bun installs dependencies; Node runs the application.
 
 ```bash
 git clone git@github.com:uzayer/labkit.git
 cd labkit
-pnpm install             # install the locked dependency set
+bun install              # install the locked dependency set
 cp .env.example .env     # fill in MONGODB_URI and PAYLOAD_SECRET
-pnpm dev                 # http://localhost:3000, admin at /admin
+bun run dev              # http://localhost:3000, admin at /admin
 ```
 
-`pnpm install` is the sanctioned install. pnpm is pinned through `packageManager`, resolves dependencies from `pnpm-lock.yaml`, and native build scripts are allowlisted per-package in `pnpm-workspace.yaml`'s `allowBuilds`.
+`bun install` is the sanctioned install. Bun is pinned through `packageManager`, resolves dependencies from `bun.lock`, and native build scripts are allowlisted in `package.json`'s `trustedDependencies`.
 
 Then import a real corpus:
 
 ```bash
-pnpm payload run scripts/ingestion/import-orcid.ts 0000-0002-1825-0097 dry-run
+bun run payload -- run scripts/ingestion/import-orcid.ts 0000-0002-1825-0097 dry-run
 ```
 
 Drop `dry-run` to commit. A dry run still writes the Import Run and its review queue, so you can inspect exactly what would have happened in `/admin` before letting it touch content.
@@ -124,28 +124,28 @@ Drop `dry-run` to commit. A dry run still writes the Import Run and its review q
 ## Commands
 
 ```bash
-pnpm dev                  # dev server (Turbopack)
-pnpm build                # generate types + Next.js build
-pnpm tsc                  # type check
-pnpm lint                 # oxlint
-pnpm format               # oxfmt
-pnpm generate:types       # regenerate src/payload-types.ts
-pnpm backup               # export MongoDB pages → backup/pages.json
+bun run dev               # dev server (Turbopack)
+bun run build             # generate types + Next.js build
+bun run tsc               # type check
+bun run lint              # oxlint
+bun run format            # oxfmt
+bun run generate:types    # regenerate src/payload-types.ts
+bun run backup            # export MongoDB pages → backup/pages.json
 ```
 
 Ingestion and migration scripts run through Payload's own runner, never `tsx` or `node`:
 
 ```bash
-pnpm payload run scripts/ingestion/import-orcid.ts <orcid-id> [dry-run]
-pnpm payload run scripts/ingestion/import-bibtex.ts <file.bib> [dry-run]
-pnpm payload run scripts/ingestion/import-citations.ts <file.txt> [dry-run]
-pnpm payload run scripts/ingestion/probe-doi.ts <doi>...     # onboarding diagnostic
-pnpm payload run scripts/ingestion/verify-jobs-queue.ts      # jobs-queue regression check
+bun run payload -- run scripts/ingestion/import-orcid.ts <orcid-id> [dry-run]
+bun run payload -- run scripts/ingestion/import-bibtex.ts <file.bib> [dry-run]
+bun run payload -- run scripts/ingestion/import-citations.ts <file.txt> [dry-run]
+bun run payload -- run scripts/ingestion/probe-doi.ts <doi>...     # onboarding diagnostic
+bun run payload -- run scripts/ingestion/verify-jobs-queue.ts      # jobs-queue regression check
 ```
 
 There is no test framework. `verify-jobs-queue.ts` is the closest thing — 13 live checks against real MongoDB covering lock contention, stale-lease takeover, mid-run checkpoint visibility, and watchdog drain. Run it whenever you touch the job path.
 
-Note that `pnpm tsc` does **not** cover `scripts/` — use `pnpm tsc -p scripts/tsconfig.json` for those.
+Note that `bun run tsc` does **not** cover `scripts/` — use `bun run tsc -- -p scripts/tsconfig.json` for those.
 
 ## Project layout
 
@@ -159,7 +159,7 @@ src/
   blocks/           richText embeds + post/project detail renderers
   app/(frontend)/   public site
   app/(payload)/    Payload admin
-scripts/ingestion/  CLI front doors, run via `pnpm payload run`
+scripts/ingestion/  CLI front doors, run via `bun run payload -- run`
 docs/
   product/          VISION, ROADMAP
   adr/              standing architectural decisions
@@ -217,7 +217,7 @@ LabKit originated from the [shadcnblocks Payload template](https://docs.shadcnbl
 
 ## Release automation
 
-Release automation (changesets → versioned GitHub Releases) is paused while LabKit is pre-release. Keep recording changes with `pnpm changeset` as you work — entries accumulate in `.changeset/` and will roll into the first automated release. Archived workflows live in `.github/workflows-archive/`; nothing in `.github/workflows/` is currently active.
+Release automation (changesets → versioned GitHub Releases) is paused while LabKit is pre-release. Keep recording changes with `bunx changeset` as you work — entries accumulate in `.changeset/` and will roll into the first automated release. Archived workflows live in `.github/workflows-archive/`; nothing in `.github/workflows/` is currently active.
 
 ## License
 

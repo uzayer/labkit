@@ -98,9 +98,7 @@ export function TasksImportDialog({ open, onOpenChange }: Props) {
           </form>
         </Form>
         <DialogFooter className="flex gap-2">
-          <DialogClose asChild>
-            <Button variant="outline">Close</Button>
-          </DialogClose>
+          <DialogClose render={<Button variant="outline" />}>Close</DialogClose>
           <Button type="submit" form="task-import-form">
             Import
           </Button>

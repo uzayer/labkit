@@ -1,12 +1,14 @@
 import React from 'react'
+import Script from 'next/script'
 
 import { defaultTheme, themeLocalStorageKey } from '../ThemeSelector/types'
 
 export const InitTheme: React.FC = () => {
   return (
-    <script
-      suppressHydrationWarning
-      type={typeof window === 'undefined' ? 'text/javascript' : 'text/plain'}
+    // oxlint-disable-next-line nextjs/no-before-interactive-script-outside-document -- rendered from the App Router's root frontend layout to set the theme before paint
+    <Script
+      id="init-theme"
+      strategy="beforeInteractive"
       dangerouslySetInnerHTML={{
         __html: `
   (function () {

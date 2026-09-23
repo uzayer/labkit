@@ -83,10 +83,10 @@ export default function RouteView() {
             <div className="m-auto flex items-center gap-1">
               <ViewAllRouteDialog />
               <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="outline" className="rounded-full" size="icon">
-                    <IconDots />
-                  </Button>
+                <DropdownMenuTrigger
+                  render={<Button variant="outline" className="rounded-full" size="icon" />}
+                >
+                  <IconDots />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                   <DropdownMenuLabel>Actions</DropdownMenuLabel>

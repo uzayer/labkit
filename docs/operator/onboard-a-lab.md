@@ -75,12 +75,12 @@ An ORCID record represents a person's career, not automatically a Lab's output. 
 Ingestion scripts run through Payload's runner. The runner forwards positional arguments but swallows flags, so `dry-run` is a bare positional word:
 
 ```bash
-pnpm payload run scripts/ingestion/import-orcid.ts <orcid-id> dry-run
-pnpm payload run scripts/ingestion/import-bibtex.ts <file.bib> dry-run
-pnpm payload run scripts/ingestion/import-citations.ts <file.txt> dry-run
+bun run payload -- run scripts/ingestion/import-orcid.ts <orcid-id> dry-run
+bun run payload -- run scripts/ingestion/import-bibtex.ts <file.bib> dry-run
+bun run payload -- run scripts/ingestion/import-citations.ts <file.txt> dry-run
 ```
 
-Before the ORCID import: the Lab roster must already be in Team (the ORCID owner with their `orcid` set — a live run refuses otherwise), and recurring Venues should be seeded (`pnpm payload run scripts/ingestion/seed-venues.ts`). Scope career-spanning ORCID records with a bare `since=YYYY` positional. Each Lab's range is decided with its PI and is separate from `LabInfo.foundingDate`: DIAL is imported with `since=2017` (its NSUHCI lineage) even though its founding date is 2020.
+Before the ORCID import: the Lab roster must already be in Team (the ORCID owner with their `orcid` set — a live run refuses otherwise), and recurring Venues should be seeded (`bun run payload -- run scripts/ingestion/seed-venues.ts`). Scope career-spanning ORCID records with a bare `since=YYYY` positional. Each Lab's range is decided with its PI and is separate from `LabInfo.foundingDate`: DIAL is imported with `since=2017` (its NSUHCI lineage) even though its founding date is 2020.
 
 For each rehearsal, record candidates, selected and deselected works, created/updated/skipped projections, Review Item counts by kind, errors, and elapsed time.
 
@@ -123,6 +123,21 @@ Do not use fuzzy identity matching as an automatic decision. LabKit intentionall
 The bibliographic pipeline does not create Projects, Grants, Awards, Research Themes, or launch-ready images. Enter and review the items required by the Lab's launch scope, then record which source supported each batch.
 
 Collect team portraits and project images early. Record consent or licensing, attribution requirements, crop/original locations, and any missing assets that affect launch.
+
+What DIAL's frontend reads, beyond the imported records:
+
+- **Research Themes** with exactly the nine slugs the `/research/<slug>` routes use (`accessibility-inclusion`, `computing-education-community`, `explainable-ai-ml`, `gender-feminist-hci`, `ictd`, `infodemic-misinformation`, `iot-low-cost-hardware`, `mental-health-wellbeing`, `safety-security`). A missing slug makes that route 404.
+- **LabInfo**: email, address, socials, founding date, recruitment window, and `homePartners`, which drives the home page's "In collaboration with" strip. `collaborators` is loaded but no page shows it yet. Partner logos go on each Organization's `logo`. Prefer SVG when the partner has one. Payload rejects an SVG that contains scripts or other active content, so if an upload fails, check the file or rasterise it to PNG at 2×.
+- **Team**: `role`, `emerging`, and `displayInWebsite` place each person on `/people`. Use the slugs in `SCHOLAR_ORDER` (`src/app/(frontend)/(dial)/publications/page.tsx`) for the Scholar links on `/publications`.
+- **Projects** must be *published* to appear. Drafts stay hidden.
+- **Forms**: create a Form titled exactly `Contact` with `name`, `email`, and `message` fields. `/contact` submits to it; without it, every submission fails with a message pointing people to the Lab's email address. Production also needs both Turnstile keys (`docs/guides/forms.md`).
+
+To compare the port with `dial-test/` before real data exists, seed the prototype's fixtures into a **throwaway** database. The script refuses a non-empty target:
+
+```bash
+MONGODB_URI='mongodb://127.0.0.1:27017/dial-fixtures?replicaSet=rs0' \
+  bun run payload -- run scripts/dev/seed-dial-fixtures.ts
+```
 
 ## 8. Verify the public site
 

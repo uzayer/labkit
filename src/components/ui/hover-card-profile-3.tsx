@@ -8,14 +8,14 @@ export const title = 'Profile with Badge'
 
 const Example = () => (
   <HoverCard>
-    <HoverCardTrigger asChild>
-      <a className="flex items-center gap-2 text-sm font-medium" href="#">
-        <Avatar className="h-6 w-6">
-          <AvatarImage src="https://github.com/haydenbleasel.png" />
-          <AvatarFallback>HB</AvatarFallback>
-        </Avatar>
-        <span>Hayden Bleasel</span>
-      </a>
+    <HoverCardTrigger
+      render={<a className="flex items-center gap-2 text-sm font-medium" href="#" />}
+    >
+      <Avatar className="h-6 w-6">
+        <AvatarImage src="https://github.com/haydenbleasel.png" />
+        <AvatarFallback>HB</AvatarFallback>
+      </Avatar>
+      <span>Hayden Bleasel</span>
     </HoverCardTrigger>
     <HoverCardContent>
       <div className="flex gap-4">

@@ -10,11 +10,9 @@ export const title = 'Share Popover'
 
 const Example = () => (
   <Popover>
-    <PopoverTrigger asChild>
-      <Button variant="outline">
-        <Share2 className="h-4 w-4" />
-        Share
-      </Button>
+    <PopoverTrigger render={<Button variant="outline" />}>
+      <Share2 className="h-4 w-4" />
+      Share
     </PopoverTrigger>
     <PopoverContent className="w-80">
       <div className="space-y-4">

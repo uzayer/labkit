@@ -1,6 +1,6 @@
 'use client'
 
-import { DotsHorizontalIcon } from '@radix-ui/react-icons'
+import { Ellipsis as DotsHorizontalIcon } from 'lucide-react'
 import { IconChecklist, IconEdit, IconTrash } from '@tabler/icons-react'
 import { Row } from '@tanstack/react-table'
 import Link from 'next/link'
@@ -27,20 +27,20 @@ export function DataTableRowActions({ row }: Props) {
   return (
     <>
       <DropdownMenu modal={false}>
-        <DropdownMenuTrigger asChild>
-          <Button variant="ghost" className="flex h-8 w-8 p-0 data-[state=open]:bg-muted">
-            <DotsHorizontalIcon className="h-4 w-4" />
-            <span className="sr-only">Open menu</span>
-          </Button>
+        <DropdownMenuTrigger
+          render={
+            <Button variant="ghost" className="flex h-8 w-8 p-0 data-[state=open]:bg-muted" />
+          }
+        >
+          <DotsHorizontalIcon className="h-4 w-4" />
+          <span className="sr-only">Open menu</span>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-[160px]">
-          <DropdownMenuItem asChild>
-            <Link href={`/users/${row.original.id}`}>
-              View Detail
-              <DropdownMenuShortcut>
-                <IconChecklist size={16} />
-              </DropdownMenuShortcut>
-            </Link>
+          <DropdownMenuItem render={<Link href={`/users/${row.original.id}`} />}>
+            View Detail
+            <DropdownMenuShortcut>
+              <IconChecklist size={16} />
+            </DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem onClick={() => setOpen('edit')}>
             Edit

@@ -52,24 +52,24 @@ const Hero101: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = 
                 ))}
               {presentationVideo && presentationVideo.label && (
                 <Button
-                  asChild
+                  render={<a href="#" />}
                   variant="ghost"
                   onClick={() => setIsVideoOpen(true)}
                   className="flex w-fit items-center gap-3 hover:bg-transparent"
+                  nativeButton={false}
+                  role="link"
                 >
-                  <a href="#">
-                    <div className="relative h-7 w-7 rounded-full p-[3px] before:absolute before:top-0 before:left-0 before:block before:h-full before:w-full before:animate-[spin_5s_ease-in-out_infinite] before:rounded-full before:bg-linear-to-r before:from-primary before:to-transparent before:content-['']">
-                      <div className="relative z-20 flex h-full w-full rounded-full bg-background">
-                        <PlayIcon className="m-auto h-3! w-3! fill-primary stroke-primary" />
-                      </div>
+                  <div className="relative h-7 w-7 rounded-full p-[3px] before:absolute before:top-0 before:left-0 before:block before:h-full before:w-full before:animate-[spin_5s_ease-in-out_infinite] before:rounded-full before:bg-linear-to-r before:from-primary before:to-transparent before:content-['']">
+                    <div className="relative z-20 flex h-full w-full rounded-full bg-background">
+                      <PlayIcon className="m-auto h-3! w-3! fill-primary stroke-primary" />
                     </div>
-                    <p className="text-sm/5 font-medium text-primary">
-                      {presentationVideo.label || 'Watch Demo'}{' '}
-                      <span className="ml-1 text-xs text-muted-foreground">
-                        {presentationVideo?.videoDuration || '2 min'}
-                      </span>
-                    </p>
-                  </a>
+                  </div>
+                  <p className="text-sm/5 font-medium text-primary">
+                    {presentationVideo.label || 'Watch Demo'}{' '}
+                    <span className="ml-1 text-xs text-muted-foreground">
+                      {presentationVideo?.videoDuration || '2 min'}
+                    </span>
+                  </p>
                 </Button>
               )}
             </div>

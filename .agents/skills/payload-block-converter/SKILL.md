@@ -314,7 +314,7 @@ Preview image download failed for <name>. Add it manually:
 ### 8b — Generate types
 
 ```bash
-pnpm generate:types
+bun run generate:types
 ```
 
 ### 8c — Validate the build
@@ -323,10 +323,10 @@ Run each command in sequence. If a command surfaces errors in files you created 
 fix them before moving to the next command. Pre-existing errors in files you didn't touch
 can be ignored.
 
-1. **Type-check:** `pnpm tsc` — fix any type errors in the new/modified block files
-2. **Lint + auto-fix:** `pnpm lint:fix` — auto-fix what it can, manually fix the rest
-3. **Format:** `pnpm format` — run Prettier so the new files match project style
-4. **Build:** `pnpm build` — full Next.js build to catch anything tsc alone misses (e.g.
+1. **Type-check:** `bun run tsc` — fix any type errors in the new/modified block files
+2. **Lint + auto-fix:** `bun run lint:fix` — auto-fix what it can, manually fix the rest
+3. **Format:** `bun run format` — run oxfmt so the new files match project style
+4. **Build:** `bun run build` — full Next.js build to catch anything tsc alone misses (e.g.
    Payload config resolution, import map issues)
 
 If the build fails on something unrelated to your changes (e.g. a pre-existing error in an

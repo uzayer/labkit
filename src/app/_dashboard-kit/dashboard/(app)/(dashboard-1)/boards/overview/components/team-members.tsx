@@ -36,10 +36,8 @@ export default function TeamMembers() {
             </div>
           </div>
           <Popover>
-            <PopoverTrigger asChild>
-              <Button variant="outline" className="h-7 py-0" size="sm">
-                Member <ChevronDown className="text-muted-foreground" />
-              </Button>
+            <PopoverTrigger render={<Button variant="outline" className="h-7 py-0" size="sm" />}>
+              Member <ChevronDown className="text-muted-foreground" />
             </PopoverTrigger>
             <PopoverContent className="p-0" align="end">
               <Command>
@@ -85,10 +83,8 @@ export default function TeamMembers() {
             </div>
           </div>
           <Popover>
-            <PopoverTrigger asChild>
-              <Button variant="outline" className="h-7 py-0" size="sm">
-                Owner <ChevronDown className="text-muted-foreground" />
-              </Button>
+            <PopoverTrigger render={<Button variant="outline" className="h-7 py-0" size="sm" />}>
+              Owner <ChevronDown className="text-muted-foreground" />
             </PopoverTrigger>
             <PopoverContent className="p-0" align="end">
               <Command>
@@ -134,10 +130,8 @@ export default function TeamMembers() {
             </div>
           </div>
           <Popover>
-            <PopoverTrigger asChild>
-              <Button variant="outline" className="h-7 py-0" size="sm">
-                Member <ChevronDown className="text-muted-foreground" />
-              </Button>
+            <PopoverTrigger render={<Button variant="outline" className="h-7 py-0" size="sm" />}>
+              Member <ChevronDown className="text-muted-foreground" />
             </PopoverTrigger>
             <PopoverContent className="p-0" align="end">
               <Command>
@@ -183,10 +177,8 @@ export default function TeamMembers() {
             </div>
           </div>
           <Popover>
-            <PopoverTrigger asChild>
-              <Button variant="outline" className="h-7 py-0" size="sm">
-                Member <ChevronDown className="text-muted-foreground" />
-              </Button>
+            <PopoverTrigger render={<Button variant="outline" className="h-7 py-0" size="sm" />}>
+              Member <ChevronDown className="text-muted-foreground" />
             </PopoverTrigger>
             <PopoverContent className="p-0" align="end">
               <Command>
@@ -232,10 +224,8 @@ export default function TeamMembers() {
             </div>
           </div>
           <Popover>
-            <PopoverTrigger asChild>
-              <Button variant="outline" className="h-7 py-0" size="sm">
-                Member <ChevronDown className="text-muted-foreground" />
-              </Button>
+            <PopoverTrigger render={<Button variant="outline" className="h-7 py-0" size="sm" />}>
+              Member <ChevronDown className="text-muted-foreground" />
             </PopoverTrigger>
             <PopoverContent className="p-0" align="end">
               <Command>

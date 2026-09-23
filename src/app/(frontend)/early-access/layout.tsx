@@ -3,7 +3,7 @@ import { Inter, Roboto_Serif, Roboto_Mono, Playfair_Display, Caveat } from 'next
 import { Providers } from '@/providers'
 import { cn } from '@/utils'
 
-import '../[[...slugs]]/globals.css'
+import '../_template-pages/globals.css'
 
 // This route shares frontend providers that can read live CMS configuration.
 export const dynamic = 'force-dynamic'

@@ -14,7 +14,7 @@ Note: this repo already has `LOG.md` — a running decision log distinct from `C
 
 ## File structure
 
-This repo is single-context (no monorepo signals — `pnpm-workspace.yaml` lists only `.` as a package, no populated `packages/*`, no `workspaces` field in `package.json`):
+This repo is single-context (no populated `packages/*` or workspace configuration):
 
 ```
 /

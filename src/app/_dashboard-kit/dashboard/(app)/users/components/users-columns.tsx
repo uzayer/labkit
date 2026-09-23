@@ -18,9 +18,7 @@ export const columns: ColumnDef<User>[] = [
     id: 'select',
     header: ({ table }) => (
       <Checkbox
-        checked={
-          table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && 'indeterminate')
-        }
+        checked={table.getIsAllPageRowsSelected()}
         onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
         aria-label="Select all"
         className="translate-y-[2px]"
@@ -50,10 +48,14 @@ export const columns: ColumnDef<User>[] = [
       const { firstName, lastName } = row.original
       const fullName = `${firstName} ${lastName}`
       return (
-        <Button variant="link" className="underline" asChild>
-          <Link href={`/users/${row.original.id}`}>
-            <LongText className="max-w-36">{fullName}</LongText>
-          </Link>
+        <Button
+          variant="link"
+          className="underline"
+          render={<Link href={`/users/${row.original.id}`} />}
+          nativeButton={false}
+          role="link"
+        >
+          <LongText className="max-w-36">{fullName}</LongText>
         </Button>
       )
     },

@@ -33,11 +33,13 @@ export default function ViewAllReferrersDialog() {
 
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline" className="rounded-full px-3 pt-[2px] pb-[2px] text-xs">
-          View All
-          <IconMaximize className="ml-2 h-4 w-4" />
-        </Button>
+      <DialogTrigger
+        render={
+          <Button variant="outline" className="rounded-full px-3 pt-[2px] pb-[2px] text-xs" />
+        }
+      >
+        View All
+        <IconMaximize className="ml-2 h-4 w-4" />
       </DialogTrigger>
       <DialogContent className="sm:max-w-[800px]">
         <DialogHeader>

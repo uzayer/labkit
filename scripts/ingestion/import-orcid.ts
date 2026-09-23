@@ -1,7 +1,7 @@
 /**
  * Pull an ORCID iD's works and import them as Publications.
  *
- * Run: pnpm payload run scripts/ingestion/import-orcid.ts <orcid-id> [dry-run] [since=YYYY]
+ * Run: bun run payload -- run scripts/ingestion/import-orcid.ts <orcid-id> [dry-run] [since=YYYY]
  *
  * `since=YYYY` drops works whose ORCID year is earlier, before any
  * Crossref/OpenAlex call. Works ORCID gives no year for are kept — there is
@@ -71,7 +71,7 @@ function bucketAction(progress: RunProgress, action: UpsertAction) {
 async function main() {
   if (!orcidId) {
     console.error(
-      'Usage: pnpm payload run scripts/ingestion/import-orcid.ts <orcid-id> [dry-run] [since=YYYY]',
+      'Usage: bun run payload -- run scripts/ingestion/import-orcid.ts <orcid-id> [dry-run] [since=YYYY]',
     )
     process.exit(1)
   }
@@ -195,7 +195,7 @@ async function main() {
     ownerMissing,
   })
   console.log(
-    `\nPreview: ${previewPath}\n  pnpm payload run scripts/ingestion/preview-report.ts ${previewPath}`,
+    `\nPreview: ${previewPath}\n  bun run payload -- run scripts/ingestion/preview-report.ts ${previewPath}`,
   )
   await finalizeRun(payload, runId, report, 'completed')
   process.exit(0)

@@ -1,7 +1,11 @@
 'use client'
 
 import React, { type FC, useState, useEffect, useMemo, useRef, JSX } from 'react'
-import { ChevronUpIcon, ChevronDownIcon, CheckIcon } from '@radix-ui/react-icons'
+import {
+  ChevronUp as ChevronUpIcon,
+  ChevronDown as ChevronDownIcon,
+  Check as CheckIcon,
+} from 'lucide-react'
 import { IconCalendar } from '@tabler/icons-react'
 import { cn } from '@/lib/utils'
 import { DateInput } from './date-input'
@@ -311,32 +315,30 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
         setIsOpen(open)
       }}
     >
-      <PopoverTrigger asChild>
-        <div className="flex items-center">
-          <div className="rounded-l-md border border-r-0 px-2 py-[0.5rem]">
-            <IconCalendar size={18} />
-          </div>
-          <Button className="rounded-l-none px-3" variant="outline">
-            <div className="text-right">
-              <div className="py-1 text-xs">
-                <div>{`${formatDate(range.from, locale)}${
-                  range.to != null ? ' - ' + formatDate(range.to, locale) : ''
-                }`}</div>
-              </div>
-              {rangeCompare != null && (
-                <div className="-mt-1 text-xs opacity-60">
-                  <>
-                    vs. {formatDate(rangeCompare.from, locale)}
-                    {rangeCompare.to != null ? ` - ${formatDate(rangeCompare.to, locale)}` : ''}
-                  </>
-                </div>
-              )}
-            </div>
-            <div className="pl-1 opacity-60">
-              {isOpen ? <ChevronUpIcon width={20} /> : <ChevronDownIcon width={20} />}
-            </div>
-          </Button>
+      <PopoverTrigger render={<div className="flex items-center" />}>
+        <div className="rounded-l-md border border-r-0 px-2 py-[0.5rem]">
+          <IconCalendar size={18} />
         </div>
+        <Button className="rounded-l-none px-3" variant="outline">
+          <div className="text-right">
+            <div className="py-1 text-xs">
+              <div>{`${formatDate(range.from, locale)}${
+                range.to != null ? ' - ' + formatDate(range.to, locale) : ''
+              }`}</div>
+            </div>
+            {rangeCompare != null && (
+              <div className="-mt-1 text-xs opacity-60">
+                <>
+                  vs. {formatDate(rangeCompare.from, locale)}
+                  {rangeCompare.to != null ? ` - ${formatDate(rangeCompare.to, locale)}` : ''}
+                </>
+              </div>
+            )}
+          </div>
+          <div className="pl-1 opacity-60">
+            {isOpen ? <ChevronUpIcon width={20} /> : <ChevronDownIcon width={20} />}
+          </div>
+        </Button>
       </PopoverTrigger>
       <PopoverContent align={align} className="w-auto">
         <div className="flex py-2">
@@ -454,7 +456,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
                 <Select
                   defaultValue={selectedPreset}
                   onValueChange={(value) => {
-                    setPreset(value)
+                    setPreset(value ?? '')
                   }}
                 >
                   <SelectTrigger className="mx-auto mb-2 w-[180px]">

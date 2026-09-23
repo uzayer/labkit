@@ -18,7 +18,7 @@ export default function ConnectAppForm() {
         <p>This is necessary for us to have a source to generate reports for you.</p>
       </div>
 
-      <Accordion type="single" collapsible className="my-10 flex w-full flex-col gap-4">
+      <Accordion className="my-10 flex w-full flex-col gap-4">
         {apps.map((app) => (
           <AccordionItem key={app.name} value={app.name} className="rounded-md border px-4 py-0">
             <AccordionTrigger className="flex items-center hover:no-underline">

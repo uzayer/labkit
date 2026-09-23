@@ -1,23 +1,19 @@
-# STALE / UNSUPPORTED as of 2026-08-29: this file still targets Bun, which the
-# project has moved off of (see LOG.md, 2026-08-29). Never actually built or run —
-# not part of any working deploy path. Needs a full rewrite (node:24-alpine base,
-# pnpm via Corepack, COPY package.json pnpm-lock.yaml pnpm-workspace.yaml) before
-# it's trustworthy. Do not assume this works.
-FROM oven/bun:1.3.14-alpine AS base
+# STALE / UNSUPPORTED: this file is not part of any working deployment path.
+# It remains as a historical starting point and should not be assumed to work.
+# Bun installs the dependency tree; Node runs build and production processes.
+FROM oven/bun:1.4.2-alpine AS dependencies
 
-FROM base AS dependencies
-
-WORKDIR /home/bun/app
+WORKDIR /app
 
 # Keep dependency installation cacheable and reproducible.
 COPY package.json bun.lock bunfig.toml ./
 RUN bun install --frozen-lockfile
 
-FROM base AS builder
+FROM node:24-alpine AS builder
 
-WORKDIR /home/bun/app
+WORKDIR /app
 
-COPY --from=dependencies /home/bun/app/node_modules ./node_modules
+COPY --from=dependencies /app/node_modules ./node_modules
 COPY . .
 
 ENV NODE_ENV=production
@@ -27,34 +23,31 @@ ENV SKIP_STATIC_GENERATION=true
 # only in the disposable builder stage; docker-compose supplies the real key.
 ENV PAYLOAD_SECRET=build-only-payload-signing-key-override-at-runtime
 
-RUN bun run build
+RUN node ./node_modules/payload/bin.js generate:types && node ./node_modules/next/dist/bin/next build
 
-FROM base AS runtime
+FROM node:24-alpine AS runtime
 
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=3000
 ENV HOSTNAME=0.0.0.0
 
-WORKDIR /home/bun/app
+WORKDIR /app
 
-# Install the locked production dependency set. Next's standalone trace does
-# not preserve every Bun dependency edge used by Payload at runtime.
-COPY package.json bun.lock bunfig.toml ./
-# The root prepare script invokes Husky, which is intentionally absent from
-# production dependencies.
-RUN bun install --production --frozen-lockfile --ignore-scripts
+# Next's standalone trace does not preserve every dependency edge Payload uses
+# at runtime, so retain the Bun-resolved dependency tree from the builder.
+COPY --from=builder /app/node_modules ./node_modules
 
 # Next.js output tracing supplies the built application files.
-COPY --from=builder --chown=bun:bun /home/bun/app/public ./public
-COPY --from=builder --chown=bun:bun /home/bun/app/.next/standalone ./
-COPY --from=builder --chown=bun:bun /home/bun/app/.next/static ./.next/static
+COPY --from=builder --chown=node:node /app/public ./public
+COPY --from=builder --chown=node:node /app/.next/standalone ./
+COPY --from=builder --chown=node:node /app/.next/static ./.next/static
 
-USER bun
+USER node
 
 EXPOSE 3000
 
 HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
-  CMD ["bun", "-e", "fetch('http://127.0.0.1:3000/api/health').then((response) => process.exit(response.ok ? 0 : 1)).catch(() => process.exit(1))"]
+  CMD ["node", "-e", "fetch('http://127.0.0.1:3000/api/health').then((response) => process.exit(response.ok ? 0 : 1)).catch(() => process.exit(1))"]
 
-CMD ["bun", "server.js"]
+CMD ["node", "server.js"]

@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { z } from 'zod'
 import { format } from 'date-fns'
 import { useForm } from 'react-hook-form'
-import { CalendarIcon } from '@radix-ui/react-icons'
+import { CalendarDays as CalendarIcon } from 'lucide-react'
 import { IconCreditCard, IconCreditCardPay, IconPlus } from '@tabler/icons-react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { cn } from '@/lib/utils'
@@ -83,15 +83,17 @@ export function AddNewCard() {
         setOpened((prev) => !prev)
       }}
     >
-      <DialogTrigger asChild>
-        <Button
-          type="button"
-          variant="link"
-          className="flex items-center gap-1 font-semibold text-blue-600"
-        >
-          <IconPlus size={16} />
-          <span className="text-xs">Add New Card</span>
-        </Button>
+      <DialogTrigger
+        render={
+          <Button
+            type="button"
+            variant="link"
+            className="flex items-center gap-1 font-semibold text-blue-600"
+          />
+        }
+      >
+        <IconPlus size={16} />
+        <span className="text-xs">Add New Card</span>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader className="text-left">
@@ -145,20 +147,22 @@ export function AddNewCard() {
                 <FormItem className="col-span-6">
                   <FormLabel>Expire Date</FormLabel>
                   <Popover>
-                    <PopoverTrigger asChild>
-                      <FormControl>
-                        <Button
-                          variant={'outline'}
-                          className={cn(
-                            'w-full pl-3 text-left font-normal',
-                            !field.value && 'text-muted-foreground',
-                          )}
-                        >
-                          {field.value ? format(field.value, 'PPP') : <span>Pick a date</span>}
-                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                        </Button>
-                      </FormControl>
-                    </PopoverTrigger>
+                    <FormControl>
+                      <PopoverTrigger
+                        render={
+                          <Button
+                            variant={'outline'}
+                            className={cn(
+                              'w-full pl-3 text-left font-normal',
+                              !field.value && 'text-muted-foreground',
+                            )}
+                          />
+                        }
+                      >
+                        {field.value ? format(field.value, 'PPP') : <span>Pick a date</span>}
+                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                      </PopoverTrigger>
+                    </FormControl>
                     <PopoverContent className="w-auto p-0" align="start">
                       <Calendar
                         mode="single"
@@ -207,9 +211,7 @@ export function AddNewCard() {
           </form>
         </Form>
         <DialogFooter className="gap-y-2">
-          <DialogClose asChild>
-            <Button variant="outline">Cancel</Button>
-          </DialogClose>
+          <DialogClose render={<Button variant="outline" />}>Cancel</DialogClose>
           <Button type="submit" form="add-new-card-form">
             Submit <IconCreditCardPay />
           </Button>

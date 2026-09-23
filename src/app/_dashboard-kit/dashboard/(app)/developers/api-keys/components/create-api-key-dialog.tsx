@@ -53,11 +53,7 @@ export function CreateApiKeyDialog() {
         setOpened((prev) => !prev)
       }}
     >
-      <DialogTrigger asChild>
-        <Button variant="default" size="sm">
-          Create API Key
-        </Button>
-      </DialogTrigger>
+      <DialogTrigger render={<Button variant="default" size="sm" />}>Create API Key</DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Create New API Key</DialogTitle>

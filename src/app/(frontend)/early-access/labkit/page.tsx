@@ -38,8 +38,8 @@ export default function LabKitEarlyAccessPage() {
       </p>
 
       <div className="mt-8">
-        <Button asChild size="lg">
-          <a href={MAILTO}>Request early access</a>
+        <Button render={<a href={MAILTO} />} size="lg" nativeButton={false} role="link">
+          Request early access
         </Button>
       </div>
 
@@ -113,8 +113,8 @@ export default function LabKitEarlyAccessPage() {
       </section>
 
       <section className="mt-16">
-        <Button asChild size="lg">
-          <a href={MAILTO}>Request early access</a>
+        <Button render={<a href={MAILTO} />} size="lg" nativeButton={false} role="link">
+          Request early access
         </Button>
       </section>
     </main>

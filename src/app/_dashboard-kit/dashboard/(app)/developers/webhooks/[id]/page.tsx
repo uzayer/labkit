@@ -36,20 +36,18 @@ export default async function WebhookDetailPage({ params }: Props) {
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink asChild>
-              <Link href="/dashboard">Home</Link>
+            <BreadcrumbLink render={<Link href="/dashboard" />}>Home</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink render={<Link href="/dashboard/developers/overview" />}>
+              Developers
             </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbLink asChild>
-              <Link href="/dashboard/developers/overview">Developers</Link>
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbLink asChild>
-              <Link href="/dashboard/developers/webhooks">Webhooks</Link>
+            <BreadcrumbLink render={<Link href="/dashboard/developers/webhooks" />}>
+              Webhooks
             </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />

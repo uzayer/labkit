@@ -12,10 +12,8 @@ import {
 export default function LogsAction() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button className="shrink-0" variant="outline" size="icon">
-          <IconDots className="rotate-90" size={20} strokeWidth={1.5} />
-        </Button>
+      <DropdownMenuTrigger render={<Button className="shrink-0" variant="outline" size="icon" />}>
+        <IconDots className="rotate-90" size={20} strokeWidth={1.5} />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[150px]">
         <DropdownMenuLabel>Actions</DropdownMenuLabel>

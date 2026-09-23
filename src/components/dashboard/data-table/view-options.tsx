@@ -25,11 +25,11 @@ export function DataTableViewOptions<TData>({
 }: DataTableViewOptionsProps<TData>) {
   return (
     <DropdownMenu modal={false}>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm" className="ml-auto hidden h-8 lg:flex">
-          <IconLayoutColumns className="mr-2 size-4" />
-          View
-        </Button>
+      <DropdownMenuTrigger
+        render={<Button variant="outline" size="sm" className="ml-auto hidden h-8 lg:flex" />}
+      >
+        <IconLayoutColumns className="mr-2 size-4" />
+        View
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[180px]">
         <DropdownMenuLabel>Toggle columns</DropdownMenuLabel>

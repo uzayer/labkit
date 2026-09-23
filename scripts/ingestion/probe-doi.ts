@@ -3,7 +3,7 @@
  * field-coverage report, to see what a new Lab's bibliographic data looks like
  * before importing it.
  *
- * Run: pnpm payload run scripts/ingestion/probe-doi.ts <doi>...
+ * Run: bun run payload -- run scripts/ingestion/probe-doi.ts <doi>...
  */
 import {
   buildCoverageReport,
@@ -19,7 +19,7 @@ async function sleep(ms: number) {
 async function main() {
   const dois = process.argv.slice(2).filter((arg) => arg !== 'dry-run')
   if (dois.length === 0) {
-    console.error('Usage: pnpm payload run scripts/ingestion/probe-doi.ts <doi>...')
+    console.error('Usage: bun run payload -- run scripts/ingestion/probe-doi.ts <doi>...')
     process.exit(1)
   }
 

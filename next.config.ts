@@ -48,6 +48,7 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   output: 'standalone',
+  reactCompiler: true,
   experimental: {
     staticGenerationRetryCount: 1,
     staticGenerationMaxConcurrency: 8,

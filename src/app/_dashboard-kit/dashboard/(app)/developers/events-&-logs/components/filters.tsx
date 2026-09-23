@@ -42,10 +42,10 @@ export default function Filters() {
         <h1 className="text-sm font-bold">Filters</h1>
         <TooltipProvider>
           <Tooltip>
-            <TooltipTrigger asChild>
-              <Button onClick={resetHandler} variant="outline" className="px-3 text-xs">
-                Reset
-              </Button>
+            <TooltipTrigger
+              render={<Button onClick={resetHandler} variant="outline" className="px-3 text-xs" />}
+            >
+              Reset
             </TooltipTrigger>
             <TooltipContent>
               <p className="font-medium">Reset Filter</p>
@@ -55,12 +55,14 @@ export default function Filters() {
       </div>
       <ScrollArea className="flex flex-col">
         <Collapsible defaultOpen className="group/log-filter px-2">
-          <CollapsibleTrigger asChild>
-            <Button className="flex w-full items-center justify-start px-2" variant="ghost">
-              <ChevronRight className="scale-125 transition-transform duration-200 group-data-[state=open]/log-filter:rotate-90" />
-              <p className="text-sm">Timeline</p>
-              <span className="sr-only">Toggle</span>
-            </Button>
+          <CollapsibleTrigger
+            render={
+              <Button className="flex w-full items-center justify-start px-2" variant="ghost" />
+            }
+          >
+            <ChevronRight className="scale-125 transition-transform duration-200 group-data-[state=open]/log-filter:rotate-90" />
+            <p className="text-sm">Timeline</p>
+            <span className="sr-only">Toggle</span>
           </CollapsibleTrigger>
 
           <CollapsibleContent className="CollapsibleContent space-y-2 px-2 pt-1 pb-3 duration-75!">
@@ -89,12 +91,14 @@ export default function Filters() {
           </CollapsibleContent>
         </Collapsible>
         <Collapsible defaultOpen className="group/log-filter px-2">
-          <CollapsibleTrigger asChild>
-            <Button className="flex w-full items-center justify-start px-2" variant="ghost">
-              <ChevronRight className="scale-125 transition-transform duration-200 group-data-[state=open]/log-filter:rotate-90" />
-              <p className="text-sm">Contains Level</p>
-              <span className="sr-only">Toggle</span>
-            </Button>
+          <CollapsibleTrigger
+            render={
+              <Button className="flex w-full items-center justify-start px-2" variant="ghost" />
+            }
+          >
+            <ChevronRight className="scale-125 transition-transform duration-200 group-data-[state=open]/log-filter:rotate-90" />
+            <p className="text-sm">Contains Level</p>
+            <span className="sr-only">Toggle</span>
           </CollapsibleTrigger>
 
           <CollapsibleContent className="CollapsibleContent space-y-2 px-2 pt-1 pb-3 duration-75!">
@@ -130,12 +134,14 @@ export default function Filters() {
           </CollapsibleContent>
         </Collapsible>
         <Collapsible className="group/log-filter px-2">
-          <CollapsibleTrigger asChild>
-            <Button className="flex w-full items-center justify-start px-2" variant="ghost">
-              <ChevronRight className="scale-125 transition-transform duration-200 group-data-[state=open]/log-filter:rotate-90" />
-              <p className="text-sm">Environment</p>
-              <span className="sr-only">Select Environment</span>
-            </Button>
+          <CollapsibleTrigger
+            render={
+              <Button className="flex w-full items-center justify-start px-2" variant="ghost" />
+            }
+          >
+            <ChevronRight className="scale-125 transition-transform duration-200 group-data-[state=open]/log-filter:rotate-90" />
+            <p className="text-sm">Environment</p>
+            <span className="sr-only">Select Environment</span>
           </CollapsibleTrigger>
 
           <CollapsibleContent className="CollapsibleContent space-y-2 px-2 pt-1 pb-3 duration-75!">
@@ -169,12 +175,14 @@ export default function Filters() {
           </CollapsibleContent>
         </Collapsible>
         <Collapsible className="group/log-filter px-2">
-          <CollapsibleTrigger asChild>
-            <Button className="flex w-full items-center justify-start px-2" variant="ghost">
-              <ChevronRight className="scale-125 transition-transform duration-200 group-data-[state=open]/log-filter:rotate-90" />
-              <p className="text-sm">Types</p>
-              <span className="sr-only">Select Event Type</span>
-            </Button>
+          <CollapsibleTrigger
+            render={
+              <Button className="flex w-full items-center justify-start px-2" variant="ghost" />
+            }
+          >
+            <ChevronRight className="scale-125 transition-transform duration-200 group-data-[state=open]/log-filter:rotate-90" />
+            <p className="text-sm">Types</p>
+            <span className="sr-only">Select Event Type</span>
           </CollapsibleTrigger>
 
           <CollapsibleContent className="CollapsibleContent space-y-2 px-2 pt-1 pb-3 duration-75!">

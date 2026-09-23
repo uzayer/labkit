@@ -27,7 +27,7 @@ export default function StatsCard({
       <CardHeader className="flex flex-row items-center justify-between px-4 pt-2 pb-2">
         <CardTitle className="flex items-center gap-2 text-sm font-medium">{title}</CardTitle>
         <TooltipProvider>
-          <Tooltip delayDuration={50}>
+          <Tooltip delay={50}>
             <TooltipTrigger>
               <IconInfoCircle className="scale-90 stroke-[1.25] text-muted-foreground" />
               <span className="sr-only">More Info</span>

@@ -26,11 +26,9 @@ export function WebhookDetailActions({ data }: Props) {
   return (
     <>
       <DropdownMenu modal={false}>
-        <DropdownMenuTrigger asChild>
-          <Button size="icon" variant="outline" className="scale-75">
-            <EllipsisVertical size={16} />
-            <span className="sr-only">Open menu</span>
-          </Button>
+        <DropdownMenuTrigger render={<Button size="icon" variant="outline" className="scale-75" />}>
+          <EllipsisVertical size={16} />
+          <span className="sr-only">Open menu</span>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" side="right" className="w-[160px]">
           <DropdownMenuItem onClick={() => setOpen('update')}>Update details</DropdownMenuItem>

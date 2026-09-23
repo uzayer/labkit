@@ -63,15 +63,11 @@ export default async function TaskDetailPage({ params }: Props) {
         <Breadcrumb className="mb-4">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink asChild>
-                <Link href="/dashboard">Home</Link>
-              </BreadcrumbLink>
+              <BreadcrumbLink render={<Link href="/dashboard" />}>Home</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink asChild>
-                <Link href="/dashboard/tasks">Tasks</Link>
-              </BreadcrumbLink>
+              <BreadcrumbLink render={<Link href="/dashboard/tasks" />}>Tasks</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>

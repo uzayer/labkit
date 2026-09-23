@@ -127,9 +127,7 @@ export default function ImportDialog() {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
-        <Button variant="outline">Import</Button>
-      </DialogTrigger>
+      <DialogTrigger render={<Button variant="outline" />}>Import</DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Import</DialogTitle>
@@ -192,7 +190,7 @@ export default function ImportDialog() {
                     </div>
                     <div className="flex w-full items-center justify-between gap-3">
                       <Progress
-                        value={file.progress}
+                        value={file.progress ?? null}
                         className="h-[2px] opacity-60 transition-all"
                       />
                       <div className="flex w-[30px] items-center justify-end">
@@ -225,15 +223,13 @@ export default function ImportDialog() {
 
         <DialogFooter>
           <Popover>
-            <PopoverTrigger asChild>
-              <Button className="mr-auto p-0" variant="link">
-                <HelpCircle />
-                <span>Help Center</span>
-              </Button>
+            <PopoverTrigger render={<Button className="mr-auto p-0" variant="link" />}>
+              <HelpCircle />
+              <span>Help Center</span>
             </PopoverTrigger>
             <PopoverContent className="w-80">
               <h3 className="mb-2 text-base font-semibold">Import/Export Help</h3>
-              <Accordion type="single" collapsible className="w-full">
+              <Accordion className="w-full">
                 <AccordionItem value="import">
                   <AccordionTrigger>
                     <div className="flex items-center">

@@ -28,31 +28,31 @@ const Hero171 = ({ className }: Hero171Props) => {
               </p>
               <div className="mt-11 flex gap-5">
                 <Button
-                  asChild
+                  render={<a href="#" />}
                   className="group block h-fit w-fit rounded-full px-7 py-6 text-base leading-none font-bold"
+                  nativeButton={false}
+                  role="link"
                 >
-                  <a href="#">
-                    <span
-                      data-text="Try for Free"
-                      className="text-red relative inline-block origin-[50%_0%] p-0 transition-all [transform-style:preserve-3d] group-hover:[transform:rotateX(90deg)] before:absolute before:top-full before:left-0 before:h-full before:w-full before:origin-[50%_0%] before:[transform:rotateX(-90deg)] before:p-0 before:text-center before:content-[attr(data-text)]"
-                    >
-                      Try for Free
-                    </span>
-                  </a>
+                  <span
+                    data-text="Try for Free"
+                    className="text-red relative inline-block origin-[50%_0%] p-0 transition-all [transform-style:preserve-3d] group-hover:[transform:rotateX(90deg)] before:absolute before:top-full before:left-0 before:h-full before:w-full before:origin-[50%_0%] before:[transform:rotateX(-90deg)] before:p-0 before:text-center before:content-[attr(data-text)]"
+                  >
+                    Try for Free
+                  </span>
                 </Button>
                 <Button
-                  asChild
+                  render={<a href="#" />}
                   variant="secondary"
                   className="group block h-fit w-fit rounded-full px-7 py-6 text-base leading-none font-bold"
+                  nativeButton={false}
+                  role="link"
                 >
-                  <a href="#">
-                    <span
-                      data-text="Contact us"
-                      className="text-red relative inline-block origin-[50%_0%] p-0 transition-all [transform-style:preserve-3d] group-hover:[transform:rotateX(90deg)] before:absolute before:top-full before:left-0 before:h-full before:w-full before:origin-[50%_0%] before:[transform:rotateX(-90deg)] before:p-0 before:text-center before:content-[attr(data-text)]"
-                    >
-                      Contact us
-                    </span>
-                  </a>
+                  <span
+                    data-text="Contact us"
+                    className="text-red relative inline-block origin-[50%_0%] p-0 transition-all [transform-style:preserve-3d] group-hover:[transform:rotateX(90deg)] before:absolute before:top-full before:left-0 before:h-full before:w-full before:origin-[50%_0%] before:[transform:rotateX(-90deg)] before:p-0 before:text-center before:content-[attr(data-text)]"
+                  >
+                    Contact us
+                  </span>
                 </Button>
               </div>
               <div className="mt-12 flex gap-14 border-t border-muted2">

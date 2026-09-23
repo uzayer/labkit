@@ -1,5 +1,5 @@
-# STALE / UNSUPPORTED as of 2026-08-29: paths below assume the Bun-based
-# Dockerfile, which is itself unsupported. See the note at the top of Dockerfile.
+# STALE / UNSUPPORTED: this file containerizes the app and is not used for
+# local development. Use docker-compose.dev.yml for MongoDB only.
 services:
   payload:
     build:
@@ -7,7 +7,7 @@ services:
     ports:
       - '3000:3000'
     volumes:
-      - ./public/media:/home/bun/app/public/media
+      - ./public/media:/app/public/media
     depends_on:
       mongo:
         condition: service_healthy
@@ -17,7 +17,7 @@ services:
     read_only: true
     tmpfs:
       - /tmp
-      - /home/bun/app/.next/cache:uid=1000,gid=1000,mode=1777
+      - /app/.next/cache:uid=1000,gid=1000,mode=1777
     cap_drop:
       - ALL
     security_opt:
@@ -31,14 +31,19 @@ services:
       - payload_network
 
   mongo:
-    image: mongo:7.0
+    image: mongodb/mongodb-community-server:latest
+    entrypoint: ['mongod']
     environment:
+      GLIBC_TUNABLES: glibc.pthread.rseq=1
+      MONGO_TCMALLOC_PER_CPU_CACHE_SIZE_BYTES: '0'
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD:?Set MONGO_ROOT_PASSWORD in .env}
       MONGO_INITDB_DATABASE: payloadcms
     command:
       - --storageEngine=wiredTiger
       - --auth
+      - --setParameter
+      - tcmallocMaxPerCPUCacheSize=0
     volumes:
       - mongo_data:/data/db
     healthcheck:

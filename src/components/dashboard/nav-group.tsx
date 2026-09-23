@@ -41,47 +41,48 @@ export function NavGroup({ title, items }: NavGroupProps) {
             return (
               <Collapsible
                 key={item.title}
-                asChild
+                render={<SidebarMenuItem />}
                 defaultOpen={active}
                 className="group/collapsible"
               >
-                <SidebarMenuItem>
-                  <CollapsibleTrigger asChild>
-                    <SidebarMenuButton tooltip={item.title} isActive={active}>
-                      {item.icon ? <item.icon /> : null}
-                      <span>{item.title}</span>
-                      {item.badge ? <NavBadge>{item.badge}</NavBadge> : null}
-                      <IconChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
-                    </SidebarMenuButton>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    <SidebarMenuSub>
-                      {item.items.map((subItem) => (
-                        <SidebarMenuSubItem key={subItem.title}>
-                          <SidebarMenuSubButton asChild isActive={isLeafActive(pathname, subItem)}>
-                            <Link href={subItem.url} onClick={() => setOpenMobile(false)}>
-                              {subItem.icon ? <subItem.icon /> : null}
-                              <span>{subItem.title}</span>
-                              {subItem.badge ? <NavBadge>{subItem.badge}</NavBadge> : null}
-                            </Link>
-                          </SidebarMenuSubButton>
-                        </SidebarMenuSubItem>
-                      ))}
-                    </SidebarMenuSub>
-                  </CollapsibleContent>
-                </SidebarMenuItem>
+                <CollapsibleTrigger
+                  render={<SidebarMenuButton tooltip={item.title} isActive={active} />}
+                >
+                  {item.icon ? <item.icon /> : null}
+                  <span>{item.title}</span>
+                  {item.badge ? <NavBadge>{item.badge}</NavBadge> : null}
+                  <IconChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  <SidebarMenuSub>
+                    {item.items.map((subItem) => (
+                      <SidebarMenuSubItem key={subItem.title}>
+                        <SidebarMenuSubButton
+                          render={<Link href={subItem.url} onClick={() => setOpenMobile(false)} />}
+                          isActive={isLeafActive(pathname, subItem)}
+                        >
+                          {subItem.icon ? <subItem.icon /> : null}
+                          <span>{subItem.title}</span>
+                          {subItem.badge ? <NavBadge>{subItem.badge}</NavBadge> : null}
+                        </SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                    ))}
+                  </SidebarMenuSub>
+                </CollapsibleContent>
               </Collapsible>
             )
           }
 
           return (
             <SidebarMenuItem key={item.title}>
-              <SidebarMenuButton asChild tooltip={item.title} isActive={active}>
-                <Link href={item.url} onClick={() => setOpenMobile(false)}>
-                  {item.icon ? <item.icon /> : null}
-                  <span>{item.title}</span>
-                  {item.badge ? <NavBadge>{item.badge}</NavBadge> : null}
-                </Link>
+              <SidebarMenuButton
+                render={<Link href={item.url} onClick={() => setOpenMobile(false)} />}
+                tooltip={item.title}
+                isActive={active}
+              >
+                {item.icon ? <item.icon /> : null}
+                <span>{item.title}</span>
+                {item.badge ? <NavBadge>{item.badge}</NavBadge> : null}
               </SidebarMenuButton>
             </SidebarMenuItem>
           )

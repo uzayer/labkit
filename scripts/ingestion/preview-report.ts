@@ -1,7 +1,7 @@
 /**
  * Summarise an ingestion preview against what the public site needs to render.
  *
- * Run: pnpm payload run scripts/ingestion/preview-report.ts <preview.json> [since=YYYY]
+ * Run: bun run payload -- run scripts/ingestion/preview-report.ts <preview.json> [since=YYYY]
  *
  * Every importer writes a preview file (`ingestion-previews/`, gitignored) holding
  * the records it would write. This script judges those records the way the
@@ -173,7 +173,7 @@ async function main() {
   const sinceArg = args.find((arg) => arg.startsWith('since='))
   if (!file) {
     console.error(
-      'Usage: pnpm payload run scripts/ingestion/preview-report.ts <preview.json> [since=YYYY]',
+      'Usage: bun run payload -- run scripts/ingestion/preview-report.ts <preview.json> [since=YYYY]',
     )
     process.exit(1)
   }

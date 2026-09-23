@@ -285,8 +285,10 @@ const CookiesPanel = ({ cookiesOptions }: CookiesPanelProps) => {
                 </Button>{' '}
                 for more details.
               </DrawerTitle>
-              <DrawerClose asChild className="w-full md:w-fit">
-                <Button type="submit">Done</Button>
+              <DrawerClose asChild>
+                <Button type="submit" className="w-full md:w-fit">
+                  Done
+                </Button>
               </DrawerClose>
             </div>
           </DrawerHeader>
@@ -331,23 +333,24 @@ const CookiesPanel = ({ cookiesOptions }: CookiesPanelProps) => {
 const LanguagesSelect = ({ languages }: LanguagesSelectProps) => {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline">
-          <Languages />
-          English
-          <ChevronDown />
-        </Button>
+      <DropdownMenuTrigger render={<Button variant="outline" />}>
+        <Languages />
+        English
+        <ChevronDown />
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56" align="start">
         {languages.map((lang, i) => (
-          <DropdownMenuItem asChild key={`footer-lang-${i}`}>
-            <a
-              href={lang.link}
-              className="flex cursor-pointer flex-col items-start rounded-md px-4 py-2"
-            >
-              <div className="text-base leading-normal text-foreground">{lang.label}</div>
-              <div className="text-sm leading-normal text-muted-foreground">{lang.description}</div>
-            </a>
+          <DropdownMenuItem
+            render={
+              <a
+                href={lang.link}
+                className="flex cursor-pointer flex-col items-start rounded-md px-4 py-2"
+              />
+            }
+            key={`footer-lang-${i}`}
+          >
+            <div className="text-base leading-normal text-foreground">{lang.label}</div>
+            <div className="text-sm leading-normal text-muted-foreground">{lang.description}</div>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
@@ -358,17 +361,13 @@ const LanguagesSelect = ({ languages }: LanguagesSelectProps) => {
 const PrivacyDialog = ({ trigger, title, text }: PrivacyDialog) => {
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline">{trigger}</Button>
-      </DialogTrigger>
+      <DialogTrigger render={<Button variant="outline" />}>{trigger}</DialogTrigger>
       <DialogContent className="sm:max-w-[26.5625rem]">
         <DialogHeader>
           <DialogTitle className="leading-normal">{title}</DialogTitle>
           <DialogDescription className="leading-normal">{text}</DialogDescription>
         </DialogHeader>
-        <DialogClose asChild>
-          <Button variant="outline">Okay</Button>
-        </DialogClose>
+        <DialogClose render={<Button variant="outline" />}>Okay</DialogClose>
       </DialogContent>
     </Dialog>
   )

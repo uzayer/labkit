@@ -156,13 +156,13 @@
   }
 
   to {
-    height: var(--radix-collapsible-content-height);
+    height: var(--collapsible-panel-height);
   }
 }
 
 @keyframes slide-up {
   from {
-    height: var(--radix-collapsible-content-height);
+    height: var(--collapsible-panel-height);
   }
 
   to {

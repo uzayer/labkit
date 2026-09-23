@@ -25,22 +25,24 @@ export function CopyButton({ text, className, ...rest }: Props) {
 
   return (
     <TooltipProvider>
-      <Tooltip delayDuration={0}>
-        <TooltipTrigger asChild>
-          <Button
-            variant="outline"
-            size="icon"
-            className={className}
-            onClick={copyToClipboard}
-            aria-label={isCopied ? 'Copied' : 'Copy to clipboard'}
-            {...rest}
-          >
-            {isCopied ? (
-              <IconCheck strokeWidth={1.5} className="m-auto" />
-            ) : (
-              <IconCopy strokeWidth={1.5} className="m-auto" />
-            )}
-          </Button>
+      <Tooltip delay={0}>
+        <TooltipTrigger
+          render={
+            <Button
+              variant="outline"
+              size="icon"
+              className={className}
+              onClick={copyToClipboard}
+              aria-label={isCopied ? 'Copied' : 'Copy to clipboard'}
+              {...rest}
+            />
+          }
+        >
+          {isCopied ? (
+            <IconCheck strokeWidth={1.5} className="m-auto" />
+          ) : (
+            <IconCopy strokeWidth={1.5} className="m-auto" />
+          )}
         </TooltipTrigger>
         <TooltipContent>
           <p>{isCopied ? 'Copied!' : 'Copy'}</p>

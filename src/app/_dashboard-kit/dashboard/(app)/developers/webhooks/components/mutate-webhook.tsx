@@ -211,9 +211,7 @@ export function MutateWebhook({ open, setOpen, currentWebhook }: Props) {
           </form>
         </Form>
         <SheetFooter className="gap-2">
-          <SheetClose asChild>
-            <Button variant="outline">Close</Button>
-          </SheetClose>
+          <SheetClose render={<Button variant="outline" />}>Close</SheetClose>
           <Button form="webhook" type="submit">
             Save changes
           </Button>

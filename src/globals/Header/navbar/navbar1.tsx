@@ -12,7 +12,6 @@ import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
@@ -70,34 +69,32 @@ export const Navbar1: React.FC<{ header: HeaderType; publicContext: PublicContex
                           </NavigationMenuTrigger>
                           <NavigationMenuContent>
                             <ul className="w-80 p-3">
-                              <NavigationMenuLink asChild>
-                                {item.subitems.map((subitem) => (
-                                  <li key={subitem.id}>
-                                    <CMSLink
-                                      publicContext={publicContext}
-                                      className={cn(
-                                        'flex gap-4 rounded-md p-3 leading-none no-underline outline-hidden transition-colors select-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
-                                      )}
-                                      {...subitem.link}
-                                      label=""
-                                      iconBefore={undefined}
-                                      iconAfter={undefined}
-                                    >
-                                      {subitem.link.iconBefore && (
-                                        <Icon icon={subitem.link.iconBefore} />
-                                      )}
-                                      <div>
-                                        <div className="text-sm font-semibold">
-                                          {subitem.link.label}
-                                        </div>
-                                        <p className="text-sm leading-snug text-muted-foreground">
-                                          {subitem.Description}
-                                        </p>
+                              {item.subitems.map((subitem) => (
+                                <li key={subitem.id}>
+                                  <CMSLink
+                                    publicContext={publicContext}
+                                    className={cn(
+                                      'flex gap-4 rounded-md p-3 leading-none no-underline outline-hidden transition-colors select-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
+                                    )}
+                                    {...subitem.link}
+                                    label=""
+                                    iconBefore={undefined}
+                                    iconAfter={undefined}
+                                  >
+                                    {subitem.link.iconBefore && (
+                                      <Icon icon={subitem.link.iconBefore} />
+                                    )}
+                                    <div>
+                                      <div className="text-sm font-semibold">
+                                        {subitem.link.label}
                                       </div>
-                                    </CMSLink>
-                                  </li>
-                                ))}
-                              </NavigationMenuLink>
+                                      <p className="text-sm leading-snug text-muted-foreground">
+                                        {subitem.Description}
+                                      </p>
+                                    </div>
+                                  </CMSLink>
+                                </li>
+                              ))}
                             </ul>
                           </NavigationMenuContent>
                         </NavigationMenuItem>
@@ -135,10 +132,8 @@ export const Navbar1: React.FC<{ header: HeaderType; publicContext: PublicContex
               />
             )}
             <Sheet>
-              <SheetTrigger asChild>
-                <Button variant={'outline'} size={'icon'}>
-                  <Menu className="size-4" />
-                </Button>
+              <SheetTrigger render={<Button variant={'outline'} size={'icon'} />}>
+                <Menu className="size-4" />
               </SheetTrigger>
               <SheetContent className="overflow-y-auto">
                 <SheetHeader>
@@ -150,7 +145,7 @@ export const Navbar1: React.FC<{ header: HeaderType; publicContext: PublicContex
                 </SheetHeader>
                 {/* Link Group */}
                 <div className="my-8 flex flex-col gap-4">
-                  <Accordion type="single" collapsible>
+                  <Accordion>
                     <LanguageSwitcherMobile publicContext={publicContext} />
                     {header.items?.map((item) => {
                       if (item.blockType === 'link') {
@@ -234,7 +229,6 @@ export const Navbar1: React.FC<{ header: HeaderType; publicContext: PublicContex
                                     </CMSLink>
                                   </li>
                                 ))}
-                              </NavigationMenuLink>
                             </ul>
                           </NavigationMenuContent>
                         </NavigationMenuItem> */

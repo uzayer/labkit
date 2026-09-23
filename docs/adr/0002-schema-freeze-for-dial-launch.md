@@ -74,7 +74,7 @@ Several fields ingestion could fill, the frontend doesn't render, and MVP doesn'
 
 ## Generated types
 
-`src/payload-types.ts` is gitignored in this repo, so the frozen shape is recorded by the collection configs and this ADR, not by a committed types file; regenerate with `pnpm generate:types` after checkout.
+`src/payload-types.ts` is gitignored in this repo, so the frozen shape is recorded by the collection configs and this ADR, not by a committed types file; regenerate with `bun run generate:types` after checkout.
 
 ## Re-import behaviour (checked, not a schema change)
 

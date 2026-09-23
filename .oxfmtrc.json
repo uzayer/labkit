@@ -6,7 +6,7 @@
   "semi": false,
   "sortPackageJson": false,
   "sortTailwindcss": {
-    "stylesheet": "./src/app/(frontend)/[[...slugs]]/globals.css",
+    "stylesheet": "./src/app/(frontend)/_template-pages/globals.css",
     "functions": ["cn"]
   },
   "ignorePatterns": [

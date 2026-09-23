@@ -17,9 +17,9 @@ import {
   useSidebar,
 } from '@/components/ui/sidebar'
 import { Badge } from '../ui/badge'
-import { NavItem, type NavGroup } from './types'
+import { NavItem, type NavGroup as NavGroupType } from './types'
 
-export function NavGroup({ title, items }: NavGroup) {
+export function NavGroup({ title, items }: NavGroupType) {
   const { setOpenMobile } = useSidebar()
   const pathname = usePathname()
   return (
@@ -31,15 +31,13 @@ export function NavGroup({ title, items }: NavGroup) {
             return (
               <SidebarMenuItem key={item.title}>
                 <SidebarMenuButton
-                  asChild
+                  render={<Link href={item.url} onClick={() => setOpenMobile(false)} />}
                   isActive={checkIsActive(pathname, item, true)}
                   tooltip={item.title}
                 >
-                  <Link href={item.url} onClick={() => setOpenMobile(false)}>
-                    {item.icon && <item.icon />}
-                    <span>{item.title}</span>
-                    {item.badge && <NavBadge>{item.badge}</NavBadge>}
-                  </Link>
+                  {item.icon && <item.icon />}
+                  <span>{item.title}</span>
+                  {item.badge && <NavBadge>{item.badge}</NavBadge>}
                 </SidebarMenuButton>
               </SidebarMenuItem>
             )
@@ -47,35 +45,32 @@ export function NavGroup({ title, items }: NavGroup) {
           return (
             <Collapsible
               key={item.title}
-              asChild
+              render={<SidebarMenuItem />}
               defaultOpen={checkIsActive(pathname, item, true)}
               className="group/collapsible"
             >
-              <SidebarMenuItem>
-                <CollapsibleTrigger asChild>
-                  <SidebarMenuButton tooltip={item.title}>
-                    {item.icon && <item.icon />}
-                    <span>{item.title}</span>
-                    {item.badge && <NavBadge>{item.badge}</NavBadge>}
-                    <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
-                  </SidebarMenuButton>
-                </CollapsibleTrigger>
-                <CollapsibleContent className="CollapsibleContent">
-                  <SidebarMenuSub>
-                    {item.items.map((subItem) => (
-                      <SidebarMenuSubItem key={subItem.title}>
-                        <SidebarMenuSubButton asChild isActive={checkIsActive(pathname, subItem)}>
-                          <Link href={subItem.url} onClick={() => setOpenMobile(false)}>
-                            {subItem.icon && <subItem.icon />}
-                            <span>{subItem.title}</span>
-                            {subItem.badge && <NavBadge>{subItem.badge}</NavBadge>}
-                          </Link>
-                        </SidebarMenuSubButton>
-                      </SidebarMenuSubItem>
-                    ))}
-                  </SidebarMenuSub>
-                </CollapsibleContent>
-              </SidebarMenuItem>
+              <CollapsibleTrigger render={<SidebarMenuButton tooltip={item.title} />}>
+                {item.icon && <item.icon />}
+                <span>{item.title}</span>
+                {item.badge && <NavBadge>{item.badge}</NavBadge>}
+                <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
+              </CollapsibleTrigger>
+              <CollapsibleContent className="CollapsibleContent">
+                <SidebarMenuSub>
+                  {item.items.map((subItem) => (
+                    <SidebarMenuSubItem key={subItem.title}>
+                      <SidebarMenuSubButton
+                        render={<Link href={subItem.url} onClick={() => setOpenMobile(false)} />}
+                        isActive={checkIsActive(pathname, subItem)}
+                      >
+                        {subItem.icon && <subItem.icon />}
+                        <span>{subItem.title}</span>
+                        {subItem.badge && <NavBadge>{subItem.badge}</NavBadge>}
+                      </SidebarMenuSubButton>
+                    </SidebarMenuSubItem>
+                  ))}
+                </SidebarMenuSub>
+              </CollapsibleContent>
             </Collapsible>
           )
         })}

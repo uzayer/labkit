@@ -14,8 +14,8 @@ export default function ForbiddenError() {
         </p>
         <div className="mt-6 flex gap-4">
           <BackButton />
-          <Button asChild>
-            <Link href="/dashboard">Back to Home</Link>
+          <Button render={<Link href="/dashboard" />} nativeButton={false} role="link">
+            Back to Home
           </Button>
         </div>
       </div>

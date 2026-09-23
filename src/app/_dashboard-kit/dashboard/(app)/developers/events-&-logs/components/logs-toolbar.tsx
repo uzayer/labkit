@@ -17,15 +17,17 @@ export default function LogsToolbar({ toggleFilters, searchVal, setSearchVal }: 
     <div className="flex items-center gap-2 border-b border-muted p-3">
       <TooltipProvider>
         <Tooltip>
-          <TooltipTrigger asChild>
-            <Button
-              onClick={toggleFilters}
-              className="hidden shrink-0 lg:block"
-              variant="outline"
-              size="icon"
-            >
-              <IconFilter className="m-auto" size={20} strokeWidth={1.5} />
-            </Button>
+          <TooltipTrigger
+            render={
+              <Button
+                onClick={toggleFilters}
+                className="hidden shrink-0 lg:block"
+                variant="outline"
+                size="icon"
+              />
+            }
+          >
+            <IconFilter className="m-auto" size={20} strokeWidth={1.5} />
           </TooltipTrigger>
           <TooltipContent>
             <p className="font-medium">Toggle Filter</p>
@@ -38,10 +40,8 @@ export default function LogsToolbar({ toggleFilters, searchVal, setSearchVal }: 
       <SearchInput value={searchVal} onChange={(e) => setSearchVal(e)} className="flex-1" />
       <TooltipProvider>
         <Tooltip>
-          <TooltipTrigger asChild>
-            <Button className="shrink-0" variant="outline" size="icon">
-              <IconRefresh size={20} strokeWidth={1.5} />
-            </Button>
+          <TooltipTrigger render={<Button className="shrink-0" variant="outline" size="icon" />}>
+            <IconRefresh size={20} strokeWidth={1.5} />
           </TooltipTrigger>
           <TooltipContent>
             <p className="font-medium">Refresh</p>

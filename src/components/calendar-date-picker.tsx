@@ -367,147 +367,146 @@ const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDatePicke
           `}
         </style>
         <Popover open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
-          <PopoverTrigger asChild>
-            <Button
-              id="date"
-              ref={ref}
-              {...props}
-              className={cn('w-auto', multiSelectVariants({ variant, className }))}
-              onClick={handleTogglePopover}
-              suppressHydrationWarning
-            >
-              <CalendarIcon className="mr-2 h-4 w-4" />
-              <span>
-                {date?.from ? (
-                  date.to ? (
-                    <>
-                      <span
-                        id={`firstDay-${id}`}
-                        className={cn(
-                          'date-part',
-                          highlightedPart === 'firstDay' && 'font-bold underline',
-                        )}
-                        onMouseOver={() => handleMouseOver('firstDay')}
-                        onMouseLeave={handleMouseLeave}
-                      >
-                        {formatWithTz(date.from, 'dd')}
-                      </span>{' '}
-                      <span
-                        id={`firstMonth-${id}`}
-                        className={cn(
-                          'date-part',
-                          highlightedPart === 'firstMonth' && 'font-bold underline',
-                        )}
-                        onMouseOver={() => handleMouseOver('firstMonth')}
-                        onMouseLeave={handleMouseLeave}
-                      >
-                        {formatWithTz(date.from, 'LLL')}
-                      </span>
-                      ,{' '}
-                      <span
-                        id={`firstYear-${id}`}
-                        className={cn(
-                          'date-part',
-                          highlightedPart === 'firstYear' && 'font-bold underline',
-                        )}
-                        onMouseOver={() => handleMouseOver('firstYear')}
-                        onMouseLeave={handleMouseLeave}
-                      >
-                        {formatWithTz(date.from, 'y')}
-                      </span>
-                      {numberOfMonths === 2 && (
-                        <>
-                          {' - '}
-                          <span
-                            id={`secondDay-${id}`}
-                            className={cn(
-                              'date-part',
-                              highlightedPart === 'secondDay' && 'font-bold underline',
-                            )}
-                            onMouseOver={() => handleMouseOver('secondDay')}
-                            onMouseLeave={handleMouseLeave}
-                          >
-                            {formatWithTz(date.to, 'dd')}
-                          </span>{' '}
-                          <span
-                            id={`secondMonth-${id}`}
-                            className={cn(
-                              'date-part',
-                              highlightedPart === 'secondMonth' && 'font-bold underline',
-                            )}
-                            onMouseOver={() => handleMouseOver('secondMonth')}
-                            onMouseLeave={handleMouseLeave}
-                          >
-                            {formatWithTz(date.to, 'LLL')}
-                          </span>
-                          ,{' '}
-                          <span
-                            id={`secondYear-${id}`}
-                            className={cn(
-                              'date-part',
-                              highlightedPart === 'secondYear' && 'font-bold underline',
-                            )}
-                            onMouseOver={() => handleMouseOver('secondYear')}
-                            onMouseLeave={handleMouseLeave}
-                          >
-                            {formatWithTz(date.to, 'y')}
-                          </span>
-                        </>
+          <PopoverTrigger
+            render={
+              <Button
+                id="date"
+                ref={ref}
+                {...props}
+                className={cn('w-auto', multiSelectVariants({ variant, className }))}
+                onClick={handleTogglePopover}
+                suppressHydrationWarning
+              />
+            }
+          >
+            <CalendarIcon className="mr-2 h-4 w-4" />
+            <span>
+              {date?.from ? (
+                date.to ? (
+                  <>
+                    <span
+                      id={`firstDay-${id}`}
+                      className={cn(
+                        'date-part',
+                        highlightedPart === 'firstDay' && 'font-bold underline',
                       )}
-                    </>
-                  ) : (
-                    <>
-                      <span
-                        id="day"
-                        className={cn(
-                          'date-part',
-                          highlightedPart === 'day' && 'font-bold underline',
-                        )}
-                        onMouseOver={() => handleMouseOver('day')}
-                        onMouseLeave={handleMouseLeave}
-                      >
-                        {formatWithTz(date.from, 'dd')}
-                      </span>{' '}
-                      <span
-                        id="month"
-                        className={cn(
-                          'date-part',
-                          highlightedPart === 'month' && 'font-bold underline',
-                        )}
-                        onMouseOver={() => handleMouseOver('month')}
-                        onMouseLeave={handleMouseLeave}
-                      >
-                        {formatWithTz(date.from, 'LLL')}
-                      </span>
-                      ,{' '}
-                      <span
-                        id="year"
-                        className={cn(
-                          'date-part',
-                          highlightedPart === 'year' && 'font-bold underline',
-                        )}
-                        onMouseOver={() => handleMouseOver('year')}
-                        onMouseLeave={handleMouseLeave}
-                      >
-                        {formatWithTz(date.from, 'y')}
-                      </span>
-                    </>
-                  )
+                      onMouseOver={() => handleMouseOver('firstDay')}
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      {formatWithTz(date.from, 'dd')}
+                    </span>{' '}
+                    <span
+                      id={`firstMonth-${id}`}
+                      className={cn(
+                        'date-part',
+                        highlightedPart === 'firstMonth' && 'font-bold underline',
+                      )}
+                      onMouseOver={() => handleMouseOver('firstMonth')}
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      {formatWithTz(date.from, 'LLL')}
+                    </span>
+                    ,{' '}
+                    <span
+                      id={`firstYear-${id}`}
+                      className={cn(
+                        'date-part',
+                        highlightedPart === 'firstYear' && 'font-bold underline',
+                      )}
+                      onMouseOver={() => handleMouseOver('firstYear')}
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      {formatWithTz(date.from, 'y')}
+                    </span>
+                    {numberOfMonths === 2 && (
+                      <>
+                        {' - '}
+                        <span
+                          id={`secondDay-${id}`}
+                          className={cn(
+                            'date-part',
+                            highlightedPart === 'secondDay' && 'font-bold underline',
+                          )}
+                          onMouseOver={() => handleMouseOver('secondDay')}
+                          onMouseLeave={handleMouseLeave}
+                        >
+                          {formatWithTz(date.to, 'dd')}
+                        </span>{' '}
+                        <span
+                          id={`secondMonth-${id}`}
+                          className={cn(
+                            'date-part',
+                            highlightedPart === 'secondMonth' && 'font-bold underline',
+                          )}
+                          onMouseOver={() => handleMouseOver('secondMonth')}
+                          onMouseLeave={handleMouseLeave}
+                        >
+                          {formatWithTz(date.to, 'LLL')}
+                        </span>
+                        ,{' '}
+                        <span
+                          id={`secondYear-${id}`}
+                          className={cn(
+                            'date-part',
+                            highlightedPart === 'secondYear' && 'font-bold underline',
+                          )}
+                          onMouseOver={() => handleMouseOver('secondYear')}
+                          onMouseLeave={handleMouseLeave}
+                        >
+                          {formatWithTz(date.to, 'y')}
+                        </span>
+                      </>
+                    )}
+                  </>
                 ) : (
-                  <span>Pick a date</span>
-                )}
-              </span>
-            </Button>
+                  <>
+                    <span
+                      id="day"
+                      className={cn(
+                        'date-part',
+                        highlightedPart === 'day' && 'font-bold underline',
+                      )}
+                      onMouseOver={() => handleMouseOver('day')}
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      {formatWithTz(date.from, 'dd')}
+                    </span>{' '}
+                    <span
+                      id="month"
+                      className={cn(
+                        'date-part',
+                        highlightedPart === 'month' && 'font-bold underline',
+                      )}
+                      onMouseOver={() => handleMouseOver('month')}
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      {formatWithTz(date.from, 'LLL')}
+                    </span>
+                    ,{' '}
+                    <span
+                      id="year"
+                      className={cn(
+                        'date-part',
+                        highlightedPart === 'year' && 'font-bold underline',
+                      )}
+                      onMouseOver={() => handleMouseOver('year')}
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      {formatWithTz(date.from, 'y')}
+                    </span>
+                  </>
+                )
+              ) : (
+                <span>Pick a date</span>
+              )}
+            </span>
           </PopoverTrigger>
           {isPopoverOpen && (
             <PopoverContent
               className="w-auto"
               align="center"
-              avoidCollisions={false}
-              onInteractOutside={handleClose}
-              onEscapeKeyDown={handleClose}
               style={{
-                maxHeight: 'var(--radix-popover-content-available-height)',
+                maxHeight: 'var(--available-height)',
                 overflowY: 'auto',
               }}
             >
@@ -542,7 +541,7 @@ const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDatePicke
                     <div className="ml-3 flex gap-2">
                       <Select
                         onValueChange={(value) => {
-                          handleMonthChange(months.indexOf(value), 'from')
+                          handleMonthChange(months.indexOf(value ?? ''), 'from')
                           setSelectedRange(null)
                         }}
                         value={monthFrom ? months[monthFrom.getMonth()] : undefined}
@@ -581,7 +580,7 @@ const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDatePicke
                       <div className="flex gap-2">
                         <Select
                           onValueChange={(value) => {
-                            handleMonthChange(months.indexOf(value), 'to')
+                            handleMonthChange(months.indexOf(value ?? ''), 'to')
                             setSelectedRange(null)
                           }}
                           value={monthTo ? months[monthTo.getMonth()] : undefined}

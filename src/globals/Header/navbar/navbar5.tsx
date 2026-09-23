@@ -71,32 +71,28 @@ const Navbar5: React.FC<{ header: HeaderType; publicContext: PublicContextProps 
                       <NavigationMenuContent>
                         <ul className="w-80 p-3">
                           {item.subitems.map((subitem) => (
-                            <NavigationMenuLink asChild key={subitem.id}>
-                              <li>
-                                <CMSLink
-                                  publicContext={publicContext}
-                                  className="flex gap-4 rounded-md p-3 leading-none no-underline outline-hidden transition-colors select-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                                  {...subitem.link}
-                                  label=""
-                                  iconBefore={undefined}
-                                  iconAfter={undefined}
-                                >
-                                  {subitem.link.iconBefore && (
-                                    <Icon
-                                      icon={subitem.link.iconBefore}
-                                      className="size-5 shrink-0"
-                                    />
-                                  )}
-                                  <div>
-                                    <div className="text-sm font-semibold">
-                                      {subitem.link.label}
-                                    </div>
-                                    <p className="text-sm leading-snug text-muted-foreground">
-                                      {subitem.Description}
-                                    </p>
-                                  </div>
-                                </CMSLink>
-                              </li>
+                            <NavigationMenuLink render={<li />} key={subitem.id}>
+                              <CMSLink
+                                publicContext={publicContext}
+                                className="flex gap-4 rounded-md p-3 leading-none no-underline outline-hidden transition-colors select-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                {...subitem.link}
+                                label=""
+                                iconBefore={undefined}
+                                iconAfter={undefined}
+                              >
+                                {subitem.link.iconBefore && (
+                                  <Icon
+                                    icon={subitem.link.iconBefore}
+                                    className="size-5 shrink-0"
+                                  />
+                                )}
+                                <div>
+                                  <div className="text-sm font-semibold">{subitem.link.label}</div>
+                                  <p className="text-sm leading-snug text-muted-foreground">
+                                    {subitem.Description}
+                                  </p>
+                                </div>
+                              </CMSLink>
                             </NavigationMenuLink>
                           ))}
                         </ul>
@@ -130,10 +126,8 @@ const Navbar5: React.FC<{ header: HeaderType; publicContext: PublicContextProps 
               />
             )}
             <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="outline" size="icon">
-                  <MenuIcon className="h-4 w-4" />
-                </Button>
+              <SheetTrigger render={<Button variant="outline" size="icon" />}>
+                <MenuIcon className="h-4 w-4" />
               </SheetTrigger>
               <SheetContent side="top" className="max-h-screen overflow-scroll">
                 <SheetHeader>
@@ -152,7 +146,7 @@ const Navbar5: React.FC<{ header: HeaderType; publicContext: PublicContextProps 
                 </SheetHeader>
                 {/* Mobile Navigation Links */}
                 <div className="my-8 flex flex-col gap-6">
-                  <Accordion type="single" collapsible className="flex flex-col gap-4">
+                  <Accordion className="flex flex-col gap-4">
                     {header.items?.map((item) => {
                       if (item.blockType === 'link') {
                         return (

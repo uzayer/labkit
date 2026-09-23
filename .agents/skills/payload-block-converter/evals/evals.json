@@ -10,13 +10,13 @@
     {
       "id": 1,
       "prompt": "convert src/components/industries1.tsx",
-      "expected_output": "Brand new Industries block created. src/blocks/Industries/ directory with variants.ts, config.ts, Component.tsx, industries1.tsx. The framer-motion animation code and 'use client' directive preserved. Industries1 receives IndustriesBlock props with: headline (richText for the h2 title), industryLabel (plain text), items array (name, description, image upload, url text). Registered in Pages/index.ts and RenderBlocks.tsx. pnpm generate:types run.",
+      "expected_output": "Brand new Industries block created. src/blocks/Industries/ directory with variants.ts, config.ts, Component.tsx, industries1.tsx. The framer-motion animation code and 'use client' directive preserved. Industries1 receives IndustriesBlock props with: headline (richText for the h2 title), industryLabel (plain text), items array (name, description, image upload, url text). Registered in Pages/index.ts and RenderBlocks.tsx. bun run generate:types run.",
       "files": ["src/components/industries1.tsx"]
     },
     {
       "id": 2,
       "prompt": "convert src/components/trust-strip1.tsx",
-      "expected_output": "Brand new TrustStrip block created. src/blocks/TrustStrip/ directory with all four files. trust-strip1.tsx uses Icon component for per-item icons instead of hardcoded lucide imports. config.ts has an items array field with icon(), title (text), description (text) sub-fields. Registered in Pages/index.ts and RenderBlocks.tsx. pnpm generate:types run.",
+      "expected_output": "Brand new TrustStrip block created. src/blocks/TrustStrip/ directory with all four files. trust-strip1.tsx uses Icon component for per-item icons instead of hardcoded lucide imports. config.ts has an items array field with icon(), title (text), description (text) sub-fields. Registered in Pages/index.ts and RenderBlocks.tsx. bun run generate:types run.",
       "files": ["src/components/trust-strip1.tsx"]
     }
   ]

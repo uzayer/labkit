@@ -35,9 +35,7 @@ export default function ApiKeysPage() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink asChild>
-                <Link href="/dashboard">Home</Link>
-              </BreadcrumbLink>
+              <BreadcrumbLink render={<Link href="/dashboard" />}>Home</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>

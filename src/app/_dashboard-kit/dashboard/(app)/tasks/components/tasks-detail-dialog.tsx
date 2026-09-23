@@ -48,9 +48,7 @@ export function TasksDetailDialog({ open, onOpenChange, currentRow }: Props) {
           )}
         </div>
         <DialogFooter>
-          <DialogClose asChild>
-            <Button variant="outline">Close</Button>
-          </DialogClose>
+          <DialogClose render={<Button variant="outline" />}>Close</DialogClose>
         </DialogFooter>
       </DialogContent>
     </Dialog>

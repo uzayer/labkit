@@ -17,40 +17,40 @@ Also read @CONTEXT.md — the domain glossary. Use its terms exactly; it is opin
 ## Commands
 
 ```bash
-pnpm dev                 # Dev server (Turbopack)
-pnpm build               # Generate types + Next.js build
-pnpm tsc                 # Type check only
-pnpm lint                # oxlint
-pnpm lint:fix            # oxlint --fix
-pnpm format              # oxfmt
-pnpm format:check        # oxfmt --check
-pnpm generate:types      # Regenerate src/payload-types.ts
-pnpm generate:importmap  # Regenerate Payload admin import map
-pnpm dev:debug           # Dev with Node inspector
-pnpm backup              # Export MongoDB pages → backup/pages.json
-pnpm backup:apply        # Import backup/pages.json → MongoDB
-pnpm install              # Install locked dependencies
+bun run dev                 # Dev server (Turbopack)
+bun run build               # Generate types + Next.js build
+bun run tsc                 # Type check only
+bun run lint                # oxlint
+bun run lint:fix            # oxlint --fix
+bun run format              # oxfmt
+bun run format:check        # oxfmt --check
+bun run generate:types      # Regenerate src/payload-types.ts
+bun run generate:importmap  # Regenerate Payload admin import map
+bun run dev:debug           # Dev with Node inspector
+bun run backup              # Export MongoDB pages → backup/pages.json
+bun run backup:apply        # Import backup/pages.json → MongoDB
+bun install                 # Install locked dependencies
 ```
 
 Ingestion and migration scripts run through Payload's own runner, not `tsx`/`node`:
 
 ```bash
-pnpm payload run scripts/ingestion/import-orcid.ts <orcid-id> [dry-run]
-pnpm payload run scripts/ingestion/import-bibtex.ts <file.bib> [dry-run]
-pnpm payload run scripts/ingestion/import-citations.ts <file.txt> [dry-run]
-pnpm payload run scripts/ingestion/probe-doi.ts <doi>...    # onboarding diagnostic
-pnpm payload run scripts/ingestion/verify-jobs-queue.ts     # jobs-queue regression check (writes only bookkeeping)
+bun run payload -- run scripts/ingestion/import-orcid.ts <orcid-id> [dry-run]
+bun run payload -- run scripts/ingestion/import-bibtex.ts <file.bib> [dry-run]
+bun run payload -- run scripts/ingestion/import-citations.ts <file.txt> [dry-run]
+bun run payload -- run scripts/ingestion/probe-doi.ts <doi>...    # onboarding diagnostic
+bun run payload -- run scripts/ingestion/verify-jobs-queue.ts     # jobs-queue regression check (writes only bookkeeping)
 ```
 
 **`payload run` swallows flags.** It parses argv through minimist and forwards only _positional_ args, so `--dry-run` silently vanishes — every script takes the bare word `dry-run` instead. It also exits after module evaluation without awaiting a floating promise: script entrypoints must use top-level `await main()`, never `void main()`.
 
-No test framework is configured. Verify changes with `pnpm tsc` and `pnpm lint`, plus `verify-jobs-queue.ts` when touching the ingestion job path (13 live checks against real MongoDB — contention, stale-lease takeover, checkpoint visibility, watchdog drain).
+No test framework is configured. Verify changes with `bun run tsc` and `bun run lint`, plus `verify-jobs-queue.ts` when touching the ingestion job path (13 live checks against real MongoDB — contention, stale-lease takeover, checkpoint visibility, watchdog drain).
 
-**What the checks don't cover:** the root `tsconfig.json` excludes `scripts/` and `dial-test/`, and `.oxlintrc.json` ignores `dial-test/**` and `docs/**`. So `pnpm tsc` does _not_ type-check the ingestion scripts — use `pnpm tsc -p scripts/tsconfig.json` for those.
+**What the checks don't cover:** the root `tsconfig.json` excludes `scripts/` and `dial-test/`, and `.oxlintrc.json` ignores `dial-test/**` and `docs/**`. So `bun run tsc` does _not_ type-check the ingestion scripts — use `bun run tsc -- -p scripts/tsconfig.json` for those.
 
 **`dial-test/` is a separate app, not part of this build.** It has its own `package.json`, `node_modules`, lockfiles, and `CLAUDE.md`, and is excluded from the root typecheck, lint, and Next build. Run its commands from inside that directory.
 
-`pnpm install` is the sanctioned install. The root `pnpm-lock.yaml` is the single source of dependency resolution, and `pnpm-workspace.yaml`'s `allowBuilds` allowlists native build scripts per-package.
+`bun install` is the sanctioned install. The root `bun.lock` is the single source of dependency resolution, and `trustedDependencies` in `package.json` allowlists native build scripts.
 
 A Husky `pre-commit` hook runs `oxlint --fix` + `oxfmt` on staged files (lint-staged) and `commit-msg` enforces Conventional Commits via commitlint — a non-conforming commit message is rejected, not just warned about.
 
@@ -66,7 +66,7 @@ This is a strict policy. Violating it requires rewriting git history to remove t
 
 ### Rendering
 
-The page-builder layout system was removed. Pages are now Hero + SEO only (70+ hero variants in `src/heros/config.ts`, dispatched by `src/heros/RenderHero.tsx`). Posts render as full detail pages via `src/blocks/RenderPostDetailPage.tsx`; `RenderProjectDetailPage.tsx` is a minimal stand-in until the dial-test port. The only remaining `blocks` fields are richText embeds (Code, MediaBlock, Banner, MotionText). See `src/blocks/CLAUDE.md`.
+The page-builder layout system was removed. Pages are now Hero + SEO only (70+ hero variants in `src/heros/config.ts`, dispatched by `src/heros/RenderHero.tsx`). The template renderer for Pages and Posts (`src/blocks/RenderPostDetailPage.tsx`, `RenderProjectDetailPage.tsx`) is parked with the template catch-all in `src/app/(frontend)/_template-pages/` and does not route (see Routing). The only remaining `blocks` fields are richText embeds (Code, MediaBlock, Banner, MotionText). See `src/blocks/CLAUDE.md`.
 
 ### Collections & Globals
 
@@ -78,7 +78,7 @@ The research collections set `admin.group` so the Payload sidebar reads as a del
 
 ### Routing
 
-`src/app/(frontend)/[[...slugs]]/page.tsx` — catch-all route. The `nestedDocsPlugin` generates hierarchical URLs from page breadcrumbs (e.g. `/parent/child`).
+The public site is DIAL's: `src/app/(frontend)/(dial)/` is its own root layout and owns `/`. Its `[...slug]` catch-all follows Payload redirects, then renders DIAL's 404. The template's Pages/Posts catch-all (formerly `[[...slugs]]`, which also matched `/`) was moved to the private folder `src/app/(frontend)/_template-pages/`. It still compiles and its `globals.css` is still imported by `early-access` and `(frontend)/not-found.tsx`, but it generates no routes. `/admin`, `/api`, `/next/*` and `/early-access/labkit` are unchanged.
 
 ### Access control
 
@@ -92,7 +92,13 @@ Role-based via `Users` ↔ `Roles` (many-to-many). Permission flags: `canManageC
 
 ### Frontend
 
-`dial-test/` is a **static design prototype**, not a wired frontend — ~20 routes, zero `fetch` calls. Its data lives in `dial-test/src/data/`: a deliberately small **fixture** subset of DIAL records (~7 projects, ~23 people, ~23 publications) shaped like the LabKit collections, mapped to component view models in `views.ts`. Keep it small — it exists for rapid frontend iteration, and the data shape itself is still in question. The full scraped set is archived in `labs/dial/dial-test-full-data/`; real launch data comes from the ingestion pipeline, not from here. Porting a page means replacing those record imports with Payload Local API queries. `src/app/(frontend)/` has no lab-facing routes at all (15 files, all infrastructure). Porting dial-test's routes onto the Payload Local API is MVP item 1 and ~90% of the remaining MVP work. Note `Pages` has no body-content field (Hero + SEO only), so prose routes stay hardcoded by design — see ROADMAP's "split routes by churn" rule.
+The live frontend is the DIAL site in `src/app/(frontend)/(dial)/`, ported from the `dial-test/` prototype (2026-09-23). Every public route renders on request from Payload (`force-dynamic`).
+
+- **Data:** `src/lib/dial/data/load.ts` reads every public record in one Local API pass (`overrideAccess: false`) and flattens it to the prototype's record shapes (`types.ts`). `index.ts` (lookups/joins) and `views.ts` (view models) are factories over those records, and `getDial()` in `get.ts` builds them once per request with React `cache`. Pages call `const { … } = await getDial()`. The corpus is small enough that loading it all per request is the design, not a shortcut.
+- **Prose** (stable copy, per ROADMAP's "split routes by churn") stays in code: page copy, `faqs.ts`, and `lab-info.ts` (`DIAL_PROSE`, for values LabInfo has no field for). The nine `/research/<slug>` routes are hardcoded and resolve their Research Theme by slug.
+- **Components** live in `src/components/dial/`, with their own Base UI `ui/` copies so the DIAL styling is independent of the root `src/components/ui/`. Lib code is in `src/lib/dial/`. The CSS (`(dial)/globals.css`) scans only those folders and its own routes.
+- **Contact** posts to `form-submissions` against a Form titled `Contact` (honeypot plus Turnstile when configured).
+- `dial-test/` stays as the visual reference, and its fixtures are the source for `scripts/dev/seed-dial-fixtures.ts` (seed a _throwaway_ database for side-by-side comparison). Keep them small; real launch data comes from the ingestion pipeline.
 
 ### Dashboard
 
@@ -110,7 +116,7 @@ Both are Next.js private folders (`_`-prefixed): they compile and their exports 
 - **Tailwind bg-\* classes:** `RenderBlocks.tsx` has a manual switch statement enumerating every `bg-{color}` class so Tailwind's compiler includes them. If you add a new theme color, you must add a case there too.
 - **`overrideAccess` defaults to `true`** in Payload's Local API — always set `overrideAccess: false` when access control should apply.
 - **Conditional fields:** Blocks hide/show fields based on `designVersion` using `admin.condition`. Pattern: `condition: (_, { designVersion = '' } = {}) => ['1', '2'].includes(designVersion)`.
-- **pnpm, not Bun.** Payload's own docs list pnpm as the preferred package manager and don't mention Bun at all — see [LOG.md](LOG.md) (2026-08-29) for why this reverted a brief Bun experiment. A fresh `pnpm install` on a new machine will block on native build scripts for a handful of packages (`@google/genai`, `esbuild`, `protobufjs` as of this writing) — run `pnpm approve-builds` once; approvals are recorded in `pnpm-workspace.yaml`'s `allowBuilds` and committed.
+- **Bun installs; Node runs.** `bun install` is the supported installer; Node runs Next.js, Payload, TypeScript, and all project CLIs. Native build scripts are explicitly allowlisted in `package.json`'s `trustedDependencies`.
 - **TypeScript:** `strict: false` but `strictNullChecks: true`. ESLint has `no-explicit-any: off` and `no-unused-vars: off` (uses `unused-imports` plugin instead).
 - **Localization:** English enabled, German commented out. Both admin i18n and content localization configured in `src/localization.config.ts`.
 - **Default roles** are auto-created on startup via `onInit` → `initializeRoles()`.
@@ -130,7 +136,7 @@ Both are Next.js private folders (`_`-prefixed): they compile and their exports 
 
 See `.env.example` for all variables. Key ones: `MONGODB_URI`, `PAYLOAD_SECRET`, `NEXT_PRIVATE_DRAFT_SECRET`, `REVALIDATION_KEY`. `NEXT_PUBLIC_SERVER_URL` auto-derives from Vercel or defaults to `http://localhost:3000`.
 
-Node: `>=24`. pnpm: `11.24.0` (pinned via `packageManager`).
+Node: `>=24`. Bun: `1.4.2` (pinned via `packageManager`).
 
 ## Context7
 

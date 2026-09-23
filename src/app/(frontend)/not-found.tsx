@@ -10,7 +10,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { ThemeConfig } from '@/globals/ThemeConfig/Component'
 import localization from '@/localization.config'
 import { PublicContextProps } from '@/utilities/publicContextProps'
-import './[[...slugs]]/globals.css'
+import './_template-pages/globals.css'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 
@@ -33,11 +33,11 @@ export default function NotFound() {
     >
       <head>
         <ThemeConfig publicContext={publicContext} />
-        <InitTheme />
         <link href="/favicon.ico" rel="icon" sizes="32x32" />
         <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
       </head>
       <body>
+        <InitTheme />
         <Providers>
           <Analytics />
           <Header publicContext={publicContext} />
@@ -46,8 +46,8 @@ export default function NotFound() {
               <h1 className="mb-0">404</h1>
               <p className="mb-4">This page could not be found.</p>
             </div>
-            <Button asChild variant="default">
-              <Link href="/">Go home</Link>
+            <Button render={<Link href="/" />} variant="default" nativeButton={false} role="link">
+              Go home
             </Button>
           </div>
           <Footer publicContext={publicContext} />

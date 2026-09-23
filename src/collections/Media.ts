@@ -46,8 +46,17 @@ export const Media: CollectionConfig = {
   upload: {
     // Upload to the public/media directory in Next.js making them publicly accessible even outside of Payload
     staticDir: path.resolve(dirname, '../../public/media'),
-    // Allow image uploads and PDF files
-    mimeTypes: ['image/jpeg', 'image/png', 'image/webp', 'image/gif', 'application/pdf'],
+    // Allow image uploads and PDF files. SVG is for partner logos: Payload rejects
+    // SVGs with scripts or other active content on upload, and never resizes or
+    // converts them, so an SVG keeps its vector original and gets no size variants.
+    mimeTypes: [
+      'image/jpeg',
+      'image/png',
+      'image/webp',
+      'image/gif',
+      'image/svg+xml',
+      'application/pdf',
+    ],
     // Explicitly enable focal point selector
     focalPoint: true,
     // Generate WebP variants for all images and use a WebP thumbnail in admin

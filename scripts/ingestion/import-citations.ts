@@ -3,7 +3,7 @@
  * hand over during onboarding: a docx/PDF export with citations grouped by
  * year) and import each into Publications.
  *
- * Run: pnpm payload run scripts/ingestion/import-citations.ts <path-to-text-file> [dry-run]
+ * Run: bun run payload -- run scripts/ingestion/import-citations.ts <path-to-text-file> [dry-run]
  *
  * Segmentation: split on blank lines first (citations are usually already
  * one-per-paragraph/line once exported to plain text — no LLM segmentation
@@ -61,7 +61,7 @@ function bucketAction(progress: RunProgress, action: UpsertAction) {
 async function main() {
   if (!filePath) {
     console.error(
-      'Usage: pnpm payload run scripts/ingestion/import-citations.ts <path-to-text-file> [dry-run]',
+      'Usage: bun run payload -- run scripts/ingestion/import-citations.ts <path-to-text-file> [dry-run]',
     )
     process.exit(1)
   }
@@ -169,7 +169,7 @@ async function main() {
     dryRun: DRY_RUN,
   })
   console.log(
-    `\nPreview: ${previewPath}\n  pnpm payload run scripts/ingestion/preview-report.ts ${previewPath}`,
+    `\nPreview: ${previewPath}\n  bun run payload -- run scripts/ingestion/preview-report.ts ${previewPath}`,
   )
   await finalizeRun(payload, runId, report, 'completed')
   process.exit(0)

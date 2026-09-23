@@ -37,9 +37,9 @@ export function Breadcrumbs({ items, className, publicContext }: BreadcrumbProps
           <BreadcrumbItem>
             <BreadcrumbLink
               className="transition-colors duration-200 hover:text-foreground"
-              asChild
+              render={<Link href={localePrefix || '/'} />}
             >
-              <Link href={localePrefix || '/'}>Home</Link>
+              Home
             </BreadcrumbLink>
           </BreadcrumbItem>
           {items.map((item, index) => (
@@ -51,9 +51,9 @@ export function Breadcrumbs({ items, className, publicContext }: BreadcrumbProps
                 ) : (
                   <BreadcrumbLink
                     className="transition-colors duration-200 hover:text-foreground"
-                    asChild
+                    render={<Link href={localePrefix + item.url || '#'} />}
                   >
-                    <Link href={localePrefix + item.url || '#'}>{item.label}</Link>
+                    {item.label}
                   </BreadcrumbLink>
                 )}
               </BreadcrumbItem>

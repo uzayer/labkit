@@ -67,24 +67,25 @@ export function TeamMemberHoverCard({ teamMember }: TeamMemberHoverCardProps) {
   const hasSocials = teamMember.socials && teamMember.socials.length > 0
 
   return (
-    <HoverCard openDelay={50}>
-      <HoverCardTrigger asChild>
-        <div className="flex cursor-pointer items-start gap-3">
-          <Avatar className="size-10 shrink-0">
-            {hasPhoto ? (
-              <Media
-                resource={teamMember.photo!}
-                imgClassName="h-full w-full object-cover"
-                alt={teamMember.name || 'Team member avatar'}
-              />
-            ) : (
-              <AvatarFallback className="text-xs">{initials}</AvatarFallback>
-            )}
-          </Avatar>
-          <div className="min-w-0 flex-1">
-            <p className="font-normal">{teamMember.name}</p>
-            {roleLabel && <p className="mt-0.5 text-sm text-muted-foreground">{roleLabel}</p>}
-          </div>
+    <HoverCard>
+      <HoverCardTrigger
+        delay={50}
+        render={<div className="flex cursor-pointer items-start gap-3" />}
+      >
+        <Avatar className="size-10 shrink-0">
+          {hasPhoto ? (
+            <Media
+              resource={teamMember.photo!}
+              imgClassName="h-full w-full object-cover"
+              alt={teamMember.name || 'Team member avatar'}
+            />
+          ) : (
+            <AvatarFallback className="text-xs">{initials}</AvatarFallback>
+          )}
+        </Avatar>
+        <div className="min-w-0 flex-1">
+          <p className="font-normal">{teamMember.name}</p>
+          {roleLabel && <p className="mt-0.5 text-sm text-muted-foreground">{roleLabel}</p>}
         </div>
       </HoverCardTrigger>
       <HoverCardContent className="w-80">

@@ -33,15 +33,11 @@ export default async function UserDetailPage({ params }: Props) {
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink asChild>
-              <Link href="/dashboard">Home</Link>
-            </BreadcrumbLink>
+            <BreadcrumbLink render={<Link href="/dashboard" />}>Home</BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbLink asChild>
-              <Link href="/dashboard/users">Users</Link>
-            </BreadcrumbLink>
+            <BreadcrumbLink render={<Link href="/dashboard/users" />}>Users</BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
