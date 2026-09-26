@@ -382,7 +382,7 @@ async function seedOrganizations(payload: Payload) {
         country: fixture.country,
         type: fixture.type,
         url: fixture.url,
-        ror_id: fixture.ror_id,
+        ror_id: 'ror_id' in fixture ? fixture.ror_id : undefined,
         provenance: {
           source: 'manual',
           importedAt: '2026-07-05T09:00:00.000Z',
@@ -452,7 +452,7 @@ async function seedVenues(payload: Payload, organizationIds: Map<string, string>
         type: fixture.type,
         url: fixture.url,
         publisher: fixture.publisher,
-        issn: fixture.issn,
+        issn: 'issn' in fixture ? fixture.issn : undefined,
         openalex_id: fixture.openalex_id,
       },
     })

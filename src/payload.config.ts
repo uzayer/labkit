@@ -1,6 +1,5 @@
 // storage-adapter-import-placeholder
-// import { postgresAdapter } from '@payloadcms/db-postgres'
-import { mongooseAdapter } from '@payloadcms/db-mongodb'
+import { sqliteAdapter } from '@payloadcms/db-sqlite'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import { en } from '@payloadcms/translations/languages/en'
 // import { de } from '@payloadcms/translations/languages/de' // Uncomment to enable German
@@ -73,6 +72,13 @@ import { generateDocumentPath } from '@/utilities/generateDocumentPath'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 const payloadSecret = validateRuntimeSecrets()
+const databaseUrl = process.env.TURSO_DATABASE_URL || 'file:./labkit.db'
+if (
+  process.env.NODE_ENV === 'production' &&
+  (!databaseUrl.startsWith('libsql://') || !process.env.TURSO_AUTH_TOKEN)
+) {
+  throw new Error('Production requires TURSO_DATABASE_URL=libsql://... and TURSO_AUTH_TOKEN')
+}
 
 const generateTitle: GenerateTitle<Post | Page> = ({ doc }) => {
   return doc?.title ? `${doc.title} | LabKit Website Template` : 'LabKit Website Template'
@@ -190,11 +196,17 @@ export default buildConfig({
       ]
     },
   }),
-  db: mongooseAdapter({
-    url: process.env.MONGODB_URI || '',
-    connectOptions: {
-      maxPoolSize: 10,
+  db: sqliteAdapter({
+    client: {
+      url: databaseUrl,
+      authToken: process.env.TURSO_AUTH_TOKEN,
     },
+    idType: 'uuid',
+    allowIDOnCreate: true,
+    migrationDir: './src/migrations',
+    push: process.env.NODE_ENV !== 'production',
+    busyTimeout: databaseUrl.startsWith('file:') ? 10_000 : 0,
+    wal: databaseUrl.startsWith('file:'),
   }),
   // Order is nav order: Payload renders groups in the order their first collection
   // appears. Research first (what a Lab Editor came to do), then Reference Data,

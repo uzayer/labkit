@@ -1,5 +1,5 @@
-# STALE / UNSUPPORTED: this file containerizes the app and is not used for
-# local development. Use docker-compose.dev.yml for MongoDB only.
+# LEGACY / UNSUPPORTED: this MongoDB deployment compose file is retained only
+# as history. Use the Turso cutover runbook for deployment.
 services:
   payload:
     build:

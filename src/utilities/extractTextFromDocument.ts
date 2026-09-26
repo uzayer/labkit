@@ -108,7 +108,7 @@ function isUnwantedMetadata(text: string): boolean {
   const unwantedPatterns = [
     /^\/api\/media\//, // Media API paths
     /^\d+(\.\d+)?(px|rem|em|vh|vw|%)$/, // CSS units
-    /^[a-f0-9]{24}$/, // MongoDB ObjectIds
+    /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i, // SQLite UUID IDs
     /^https?:\/\//, // URLs (we handle these separately in links)
     /^\d{4}-\d{2}-\d{2}/, // Dates
     /^image\/\w+$/, // MIME types

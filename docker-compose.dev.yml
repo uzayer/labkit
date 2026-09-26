@@ -1,5 +1,5 @@
-# Local development database only. Not a deployment artifact — the app itself
-# runs on the host via `bun run dev`.
+# Legacy MongoDB source for the one-time SQLite transfer only. New local
+# development runs from an ignored SQLite file with `bun run dev`.
 #
 #   docker compose -f docker-compose.dev.yml up -d
 #

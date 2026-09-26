@@ -56,9 +56,6 @@ export async function initializeRoles(payload: Payload): Promise<void> {
     // Create default roles if they are not yet created
     if (totalDocs < defaultRoles.length) {
       payload.logger.info('No roles found, creating defaults...')
-      // we wait a bit to make sure, that we dont run into mongoDB "Unable to write to collection 'XX.roles' due to catalog changes;"
-      await new Promise((resolve) => setTimeout(resolve, 2000))
-
       // Create roles. Retry one time if it fails
       try {
         await initRoleCreation(payload)

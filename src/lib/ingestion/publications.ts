@@ -17,8 +17,7 @@ import { upsertByKey, type UpsertAction } from './upsert'
 
 /**
  * Tolerates a legacy bare-string `issn` value alongside the current
- * hasMany array shape — Payload doesn't migrate existing Mongo documents
- * when a field's `hasMany` flag changes.
+ * hasMany array shape in records imported before the schema was frozen.
  */
 function normalizeIssn(raw: unknown): string[] | undefined {
   if (Array.isArray(raw)) return raw.length > 0 ? raw : undefined

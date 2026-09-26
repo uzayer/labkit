@@ -27,6 +27,14 @@
 
 # Local data, scratch space, and tooling caches
 /dump/
+/backup/
+/data/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.db
+*.db-shm
+*.db-wal
 /ingestion-previews/
 /docs/scratch/
 /.firecrawl/

@@ -1,4 +1,4 @@
-/** Stage a reviewable ORCID selection template without touching Payload or MongoDB.
+/** Stage a reviewable ORCID selection template without touching Payload or SQLite.
  * Run: bun run payload -- run scripts/ingestion/prepare-orcid-selection.ts <orcid-id> [since=YYYY]
  */
 import { stageOrcidCandidates } from '@/lib/ingestion/staging'

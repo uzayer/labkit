@@ -7,12 +7,12 @@
  * not DIAL's record — DIAL's launch data comes from the ingestion pipeline.
  * Point it at a throwaway database, never the one real imports go into:
  *
- *   MONGODB_URI='mongodb://127.0.0.1:27017/dial-fixtures?replicaSet=rs0' \
+ *   TURSO_DATABASE_URL='file:./data/dial-fixtures.db' \
  *     bun run payload -- run scripts/dev/seed-dial-fixtures.ts
  *
  * It refuses to write when the target already holds Team, Publication, or
  * Project records. Images are fetched and uploaded to Media; the partner SVG
- * logos are rasterised to PNG first, because Media does not accept SVG.
+ * logos are rasterised to PNG in this visual fixture set.
  */
 import { readFile } from 'node:fs/promises'
 import path from 'node:path'
@@ -162,15 +162,19 @@ async function uploadImage(payload: Payload, src: string | null | undefined, alt
 // ─── Seed ───────────────────────────────────────────────────────────────────
 
 async function main() {
+  const databaseUrl = process.env.TURSO_DATABASE_URL
+  if (!databaseUrl?.startsWith('file:') || !databaseUrl.includes('dial-fixtures')) {
+    throw new Error('Use a local file: URL whose name contains dial-fixtures')
+  }
   const payload = await getPayload({ config: configPromise })
-  const dbName = new URL(process.env.MONGODB_URI ?? 'mongodb://x/unknown').pathname.slice(1)
+  const dbName = databaseUrl.slice('file:'.length)
 
   for (const collection of ['team', 'publications', 'projects'] as const) {
     const { totalDocs } = await payload.count({ collection })
     if (totalDocs > 0) {
       throw new Error(
         `Refusing to seed "${dbName}": it already has ${totalDocs} ${collection} records. ` +
-          'Point MONGODB_URI at an empty, throwaway database.',
+          'Point TURSO_DATABASE_URL at an empty, throwaway SQLite database.',
       )
     }
   }
