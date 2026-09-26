@@ -135,7 +135,7 @@ What DIAL's frontend reads, beyond the imported records:
 To compare the port with `dial-test/` before real data exists, seed the prototype's fixtures into a **throwaway** database. The script refuses a non-empty target:
 
 ```bash
-MONGODB_URI='mongodb://127.0.0.1:27017/dial-fixtures?replicaSet=rs0' \
+TURSO_DATABASE_URL='file:./dial-fixtures.db' \
   bun run payload -- run scripts/dev/seed-dial-fixtures.ts
 ```
 

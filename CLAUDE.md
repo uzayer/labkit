@@ -27,8 +27,9 @@ bun run format:check        # oxfmt --check
 bun run generate:types      # Regenerate src/payload-types.ts
 bun run generate:importmap  # Regenerate Payload admin import map
 bun run dev:debug           # Dev with Node inspector
-bun run backup              # Export MongoDB pages → backup/pages.json
-bun run backup:apply        # Import backup/pages.json → MongoDB
+bun run backup              # Consistent local SQLite backup
+bun run backup:apply -- <file> # Restore into a new local SQLite file
+bun run payload migrate     # Apply committed SQL migrations before production startup
 bun install                 # Install locked dependencies
 ```
 
@@ -44,7 +45,7 @@ bun run payload -- run scripts/ingestion/verify-jobs-queue.ts     # jobs-queue r
 
 **`payload run` swallows flags.** It parses argv through minimist and forwards only _positional_ args, so `--dry-run` silently vanishes — every script takes the bare word `dry-run` instead. It also exits after module evaluation without awaiting a floating promise: script entrypoints must use top-level `await main()`, never `void main()`.
 
-No test framework is configured. Verify changes with `bun run tsc` and `bun run lint`, plus `verify-jobs-queue.ts` when touching the ingestion job path (13 live checks against real MongoDB — contention, stale-lease takeover, checkpoint visibility, watchdog drain).
+No test framework is configured. Verify changes with `bun run tsc` and `bun run lint`, plus `verify-jobs-queue.ts` on a throwaway SQLite database when touching the ingestion job path (13 live checks: contention, stale-lease takeover, checkpoint visibility, watchdog drain).
 
 **What the checks don't cover:** the root `tsconfig.json` excludes `scripts/` and `dial-test/`, and `.oxlintrc.json` ignores `dial-test/**` and `docs/**`. So `bun run tsc` does _not_ type-check the ingestion scripts — use `bun run tsc -- -p scripts/tsconfig.json` for those.
 
@@ -134,7 +135,7 @@ Both are Next.js private folders (`_`-prefixed): they compile and their exports 
 
 ## Environment
 
-See `.env.example` for all variables. Key ones: `MONGODB_URI`, `PAYLOAD_SECRET`, `NEXT_PRIVATE_DRAFT_SECRET`, `REVALIDATION_KEY`. `NEXT_PUBLIC_SERVER_URL` auto-derives from Vercel or defaults to `http://localhost:3000`.
+See `.env.example` for all variables. Local SQLite uses `TURSO_DATABASE_URL=file:./labkit.db`; production requires a `libsql://` URL and `TURSO_AUTH_TOKEN`. See `docs/operator/turso-cutover.md` for migrations, backups, and cutover. `PAYLOAD_SECRET`, `NEXT_PRIVATE_DRAFT_SECRET`, and `REVALIDATION_KEY` remain required where configured. `NEXT_PUBLIC_SERVER_URL` auto-derives from Vercel or defaults to `http://localhost:3000`.
 
 Node: `>=24`. Bun: `1.4.2` (pinned via `packageManager`).
 
@@ -142,7 +143,7 @@ Node: `>=24`. Bun: `1.4.2` (pinned via `packageManager`).
 
 IMPORTANT: Always use Context7 MCP tools for code generation, setup, or library/API documentation — resolve library IDs and fetch docs automatically without being asked.
 
-Library IDs: Next.js `/vercel/next.js`, React `/facebook/react`, Tailwind CSS `/websites/tailwindcss`, MongoDB `/mongodb/mongo`.
+Library IDs: Next.js `/vercel/next.js`, React `/facebook/react`, Tailwind CSS `/websites/tailwindcss`.
 
 **PayloadCMS:** Use the `payload` skill instead of Context7 — it has bundled reference docs (fields, hooks, access control, queries, adapters) that are faster and more targeted than ctx7 lookups.
 

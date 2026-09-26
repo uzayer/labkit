@@ -2,7 +2,7 @@
 
 [![Payload](https://img.shields.io/badge/Payload-3.85-000000.svg?style=for-the-badge&logo=payloadcms&logoColor=white)](https://payloadcms.com)
 [![Next.js](https://img.shields.io/badge/Next.js-16-000000.svg?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org)
-[![MongoDB](https://img.shields.io/badge/MongoDB-47A248.svg?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com)
+[![Turso](https://img.shields.io/badge/Turso-4FF8D2.svg?style=for-the-badge)](https://turso.tech)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](#license)
 [![Status: pre-release](https://img.shields.io/badge/Status-pre--release-orange.svg?style=for-the-badge)](#status)
 
@@ -12,7 +12,7 @@
 
 # LabKit
 
-LabKit is a research information system small enough for one lab to run. It models a lab's publications, people, grants, projects, awards, venues, and collaborators as structured records, pulls most of that data in automatically from ORCID and DOI metadata, and renders the lab's public website as one output of it. Built on [PayloadCMS](https://payloadcms.com) and MongoDB.
+LabKit is a research information system small enough for one lab to run. It models a lab's publications, people, grants, projects, awards, venues, and collaborators as structured records, pulls most of that data in automatically from ORCID and DOI metadata, and renders the lab's public website as one output of it. Built on [PayloadCMS](https://payloadcms.com) and SQLite/Turso.
 
 - **Paste an ORCID iD, get a populated lab.** One command resolves a researcher's works to DOIs, hydrates each through Crossref and OpenAlex, and creates the Publications, Venues, Organizations, and people they reference.
 - **Every front door lands in the same engine.** ORCID, BibTeX (including a Google Scholar export), a pasted citation wall, or a bare DOI list all resolve to one internal shape — adding a source is not adding a pipeline.
@@ -43,7 +43,7 @@ The research information domain is heavily modelled and well served — at insti
 
 - **The knowledge lives in the lab; the software lives at the institution.** Institutional systems have chronically poor data quality for a structural reason — they are populated by administrators who don't know the work, or by faculty who resent the data entry. LabKit builds at the layer where the information is true.
 - **Lab websites are ugly because maintenance is a chore, not because nobody cares.** A site that requires manual data entry decays the moment the student who maintained it graduates. The fix is ingestion, not a nicer theme.
-- **A lab cannot adopt a CRIS.** DSpace-CRIS needs JDK 17, Maven, Ant, PostgreSQL, Solr 9, Tomcat, Node, and PM2 across two separately deployed applications. That is a university IT project. LabKit is `bun run dev` and a Mongo URI.
+- **A lab cannot adopt a CRIS.** DSpace-CRIS needs JDK 17, Maven, Ant, PostgreSQL, Solr 9, Tomcat, Node, and PM2 across two separately deployed applications. That is a university IT project. LabKit is `bun run dev` and a local SQLite file.
 - **Structured beats scraped.** Once the data is modelled properly, the website is only the first thing you can build from it — CVs, annual reports, and funder submissions read from the same records.
 - **The real competitor is doing nothing.** A Google Scholar link and a free theme is genuinely good enough for most labs, so the switching cost has to be near zero. That constraint is why the pitch is a command, not an onboarding flow.
 
@@ -99,17 +99,21 @@ Two properties are load-bearing:
 
 ## Quick start
 
-Requires **Node ≥ 24**, **Bun 1.4.2**, and a **MongoDB** instance. Bun installs dependencies; Node runs the application.
+Requires **Node ≥ 24** and **Bun 1.4.2**. Local development uses an ignored SQLite file; production uses Turso. Bun installs dependencies; Node runs the application.
 
 ```bash
 git clone git@github.com:uzayer/labkit.git
 cd labkit
 bun install              # install the locked dependency set
-cp .env.example .env     # fill in MONGODB_URI and PAYLOAD_SECRET
+cp .env.example .env     # set PAYLOAD_SECRET; local file: URL is provided
 bun run dev              # http://localhost:3000, admin at /admin
 ```
 
 `bun install` is the sanctioned install. Bun is pinned through `packageManager`, resolves dependencies from `bun.lock`, and native build scripts are allowlisted in `package.json`'s `trustedDependencies`.
+
+For Turso environment variables, SQL migrations, backups, media, and the
+fresh-database production cutover sequence, see
+[`docs/operator/turso-cutover.md`](docs/operator/turso-cutover.md).
 
 Then import a real corpus:
 
@@ -130,7 +134,9 @@ bun run tsc               # type check
 bun run lint              # oxlint
 bun run format            # oxfmt
 bun run generate:types    # regenerate src/payload-types.ts
-bun run backup            # export MongoDB pages → backup/pages.json
+bun run backup            # consistent local SQLite backup; prints the file path
+bun run backup:apply -- <backup-file>  # restore to a new SQLite file only
+bun run payload migrate   # apply committed SQL migrations (required before production startup)
 ```
 
 Ingestion and migration scripts run through Payload's own runner, never `tsx` or `node`:
@@ -143,7 +149,7 @@ bun run payload -- run scripts/ingestion/probe-doi.ts <doi>...     # onboarding 
 bun run payload -- run scripts/ingestion/verify-jobs-queue.ts      # jobs-queue regression check
 ```
 
-There is no test framework. `verify-jobs-queue.ts` is the closest thing — 13 live checks against real MongoDB covering lock contention, stale-lease takeover, mid-run checkpoint visibility, and watchdog drain. Run it whenever you touch the job path.
+There is no test framework. `verify-jobs-queue.ts` is the closest thing — 13 live checks against a throwaway SQLite database covering lock contention, stale-lease takeover, mid-run checkpoint visibility, and watchdog drain. Run it whenever you touch the job path.
 
 Note that `bun run tsc` does **not** cover `scripts/` — use `bun run tsc -- -p scripts/tsconfig.json` for those.
 
