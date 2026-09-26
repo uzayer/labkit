@@ -66,7 +66,7 @@ import { checkRole } from './utilities/checkRole'
 import { PageConfig } from './globals/PageConfig/config'
 import { LabInfo } from './globals/LabInfo/config'
 import { Telephone } from './fields/formBuilder/telephone'
-import { assertStrongCronSecret } from './components/AdminDashboard/BackupDashboard/security'
+import { assertStrongCronSecret } from './utilities/assertCronSecret'
 import { validateRuntimeSecrets } from '@/utilities/validateSecrets'
 import { generateDocumentPath } from '@/utilities/generateDocumentPath'
 
@@ -108,8 +108,6 @@ export default buildConfig({
     components: {
       beforeLogin: ['@/components/AdminDashboard/BeforeLogin'],
       afterLogin: googleAuthActive ? ['@/components/AdminDashboard/LoginButton'] : [],
-      beforeDashboard: ['@/components/AdminDashboard/BeforeDashboard'],
-      afterDashboard: ['@/components/AdminDashboard/BackupDashboard'],
       graphics: {
         Icon: '@/components/AdminDashboard/LabKitIcon',
         Logo: '@/components/AdminDashboard/LabKitLogo',
@@ -414,10 +412,6 @@ export default buildConfig({
     /**
      * Add the default roles if needed on system startup
      */
-    if (process.env.BLOB_READ_WRITE_TOKEN) {
-      assertStrongCronSecret()
-    }
-
     await initializeRoles(payload)
   },
   // Enable localization for the website
