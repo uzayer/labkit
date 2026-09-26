@@ -3,6 +3,7 @@
   "plugins": ["nextjs", "typescript"],
   "jsPlugins": [
     "eslint-plugin-unused-imports",
+    "@shadcn/lint",
     { "name": "react-hooks-js", "specifier": "eslint-plugin-react-hooks" }
   ],
   "categories": {
