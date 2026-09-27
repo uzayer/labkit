@@ -3,6 +3,8 @@ import { cn } from '@/lib/utils'
 
 export interface Alumni {
   name: string
+  slug?: string
+  photo?: string
   currentPosition?: string
   alumniYear?: number
 }
@@ -36,7 +38,12 @@ const AlumniGrid = ({ alumni, className }: AlumniGridProps) => {
             </td>
             <td className="py-4 pr-6">
               <span className="flex items-center gap-3">
-                <InitialTile name={person.name} className="size-8 text-base" />
+                <InitialTile
+                  name={person.name}
+                  seed={person.slug}
+                  photo={person.photo}
+                  className="size-8 text-base"
+                />
                 <span className="font-display text-lg">{person.name}</span>
               </span>
               {person.currentPosition && (

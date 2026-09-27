@@ -25,7 +25,8 @@ const matches = (m: TeamMember, q: string) =>
 
 /**
  * The Team roster as ruled name entries, grouped by role, with one search
- * box. No initials avatars: without photos they repeat the name in a circle.
+ * box. Each entry leads with the person's portrait, or their printed initial
+ * where there is none.
  *
  * The roster owns its section header so the search can sit in it: the title
  * on the left and the box on the right, on the header's own rule, the way a
@@ -123,7 +124,12 @@ function RosterEntry({ member }: { member: TeamMember }) {
   // a sibling rather than an ancestor, so the tilt never fired.
   return (
     <div className="group relative flex h-full gap-4 py-5">
-      <InitialTile name={member.name} seed={member.slug} className="mark-lift mt-1" />
+      <InitialTile
+        name={member.name}
+        seed={member.slug}
+        photo={member.photo}
+        className="mark-lift mt-1"
+      />
       <div className="flex min-w-0 flex-col gap-1">
         <Link
           href={`/people/${member.slug}`}

@@ -454,6 +454,7 @@ export function createDialViews(d: DialData) {
       interests: member.researchInterests ?? undefined,
       scholar: socialUrl(member, 'google-scholar'),
       site: socialUrl(member, 'website'),
+      photo: member.photo ?? undefined,
     }
   }
 
@@ -476,6 +477,8 @@ export function createDialViews(d: DialData) {
   function toAlumni(member: Team): Alumni {
     return {
       name: member.name,
+      slug: member.slug,
+      photo: member.photo ?? undefined,
       currentPosition: member.currentPosition ?? undefined,
       alumniYear: member.alumniYear ?? undefined,
     }

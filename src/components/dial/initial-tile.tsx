@@ -1,3 +1,4 @@
+import { OptionalImage } from '@/components/dial/optional-image'
 import { cn } from '@/lib/utils'
 
 /**
@@ -42,15 +43,18 @@ export function personInk(seed: string): { ink: string; tint: string } {
 export function InitialTile({
   name,
   seed,
+  photo,
   className,
 }: {
   name: string
   /** Stable identifier; falls back to the name. */
   seed?: string
+  /** Portrait URL. Shown in the tile's shape; a failed source prints the initial. */
+  photo?: string | null
   className?: string
 }) {
   const { ink, tint } = personInk(seed ?? name)
-  return (
+  const letter = (
     <span
       aria-hidden
       className={cn(
@@ -63,5 +67,15 @@ export function InitialTile({
       <span className="halftone absolute inset-0 opacity-25" />
       <span className="relative">{[...name.trim()][0] ?? ''}</span>
     </span>
+  )
+  if (!photo) return letter
+  return (
+    <OptionalImage
+      src={photo}
+      alt=""
+      frameClassName={cn('size-10 shrink-0 rounded-[0.6rem]', className)}
+      className="h-full w-full object-cover object-top"
+      fallback={letter}
+    />
   )
 }

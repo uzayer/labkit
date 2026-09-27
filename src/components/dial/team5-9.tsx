@@ -15,6 +15,8 @@ export interface TeamMember {
   scholar?: string
   site?: string
   slug: string
+  /** Portrait URL; the printed initial stands in without one. */
+  photo?: string
 }
 
 function initials(name: string) {
