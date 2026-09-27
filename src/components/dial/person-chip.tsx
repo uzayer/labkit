@@ -168,9 +168,11 @@ export function PersonChip({
   const body = (
     <>
       <PersonFace name={name} seed={seed} photo={photo} size={size} lift={Boolean(href)} />
-      <span className="truncate font-sans leading-none">{name}</span>
+      <span className={cn('truncate font-sans leading-none', meta && 'shrink-0')}>{name}</span>
       {meta && (
-        <span className="truncate font-sans text-xs font-normal text-muted-foreground">
+        // Only the note gives way: a chip with no room keeps the person's
+        // whole name and truncates their affiliation.
+        <span className="min-w-0 truncate font-sans text-xs font-normal text-muted-foreground">
           <span aria-hidden className="mr-1.5 opacity-60">
             ·
           </span>

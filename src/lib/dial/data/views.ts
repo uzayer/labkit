@@ -55,6 +55,7 @@ export function createDialViews(d: DialData) {
     isCollaboration,
     isCollaborator,
     labAwards,
+    labInfo,
     labStats,
     news,
     projects,
@@ -444,12 +445,22 @@ export function createDialViews(d: DialData) {
     return org?.shortName ?? affiliationName(member)
   }
 
+  /**
+   * The affiliation only when it is somewhere other than the Lab's own
+   * institution. DIAL sits inside NSU, so "NSU" beside a name says nothing; the
+   * tag is there to mark the people who come from elsewhere.
+   */
+  function externalAffiliation(member: Team): string | null {
+    if (affiliationName(member).toLowerCase() === labInfo.institution.toLowerCase()) return null
+    return shortAffiliation(member) || null
+  }
+
   function toTeamGridMember(member: Team): TeamGridMember {
     return {
       name: member.name,
       slug: member.slug,
       title: member.title,
-      affiliation: shortAffiliation(member),
+      affiliation: externalAffiliation(member) ?? '',
       badge: member.rosterSection === 'emerging' ? 'Emerging' : undefined,
       interests: member.researchInterests ?? undefined,
       scholar: socialUrl(member, 'google-scholar'),
@@ -701,9 +712,10 @@ export function createDialViews(d: DialData) {
       }
     }
 
-    // Current lab members, in roster order. Only the PI has a photograph, so
-    // everyone else arrives as their printed initial (PersonChip) — which is the
-    // honest treatment, not a placeholder for one.
+    // Current lab members, in roster order. A portrait where Media has one,
+    // otherwise the printed initial (PersonChip). The menu is an overview, not
+    // the roster: each column prints its first few and counts the rest.
+    const MENU_ROSTER_LIMIT = 4
     const current = (section: Team['rosterSection']) =>
       visible
         .filter((m) => !isAlumni(m) && m.role !== 'director' && m.rosterSection === section)
@@ -711,8 +723,13 @@ export function createDialViews(d: DialData) {
           name: m.name,
           slug: m.slug,
           photo: m.photo ?? null,
-          role: shortAffiliation(m),
+          role: externalAffiliation(m),
         }))
+    const rosterGroup = (title: string, people: ReturnType<typeof current>) => ({
+      title,
+      people: people.slice(0, MENU_ROSTER_LIMIT),
+      more: Math.max(0, people.length - MENU_ROSTER_LIMIT),
+    })
 
     const pubs = publicationsByYear()
     const years = pubs.map((p) => p.year).filter(Number.isFinite)
@@ -761,12 +778,12 @@ export function createDialViews(d: DialData) {
           }
         : null,
       rosterGroups: [
-        { title: 'Faculty & research staff', people: current('researchers') },
-        { title: 'Graduate researchers', people: current('graduate') },
-        {
-          title: 'Undergraduate researchers',
-          people: [...current('undergraduate'), ...current('emerging')],
-        },
+        rosterGroup('Faculty & research staff', current('researchers')),
+        rosterGroup('Graduate researchers', current('graduate')),
+        rosterGroup('Undergraduate researchers', [
+          ...current('undergraduate'),
+          ...current('emerging'),
+        ]),
       ].filter((group) => group.people.length > 0),
       teamCount: visible.filter((m) => !isAlumni(m)).length,
       alumniTeaser: visible

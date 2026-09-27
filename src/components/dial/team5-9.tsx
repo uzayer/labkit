@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils'
 export interface TeamMember {
   name: string
   title: string
+  /** Empty for the Lab's own institution: the tag marks people from elsewhere. */
   affiliation: string
   badge?: string
   interests?: string[]
@@ -47,9 +48,11 @@ function MemberCard({ member }: { member: TeamMember }) {
             </h3>
             <p className="mb-2 text-sm font-medium text-primary">{member.title}</p>
             <div className="flex flex-wrap justify-center gap-1">
-              <Badge variant="outline" className="text-xs">
-                {member.affiliation}
-              </Badge>
+              {member.affiliation && (
+                <Badge variant="outline" className="text-xs">
+                  {member.affiliation}
+                </Badge>
+              )}
               {member.badge && (
                 <Badge variant="outline" className="text-xs text-muted-foreground">
                   {member.badge}
@@ -115,9 +118,11 @@ function MemberItem({ member }: { member: TeamMember }) {
         <span className="mt-1 block text-sm leading-snug font-medium transition-colors group-hover:text-primary">
           {member.name}
         </span>
-        <span className="block text-xs leading-snug text-muted-foreground">
-          {member.affiliation}
-        </span>
+        {member.affiliation && (
+          <span className="block text-xs leading-snug text-muted-foreground">
+            {member.affiliation}
+          </span>
+        )}
         {member.badge && (
           <span className="block text-xs text-muted-foreground italic">{member.badge}</span>
         )}

@@ -141,10 +141,13 @@ function RosterEntry({ member }: { member: TeamMember }) {
         {member.title && member.title !== member.affiliation && (
           <p className="line-clamp-2 text-sm text-pretty text-muted-foreground">{member.title}</p>
         )}
-        <p className="text-xs text-muted-foreground">
-          {member.affiliation}
-          {member.badge && <> · {member.badge}</>}
-        </p>
+        {/* The affiliation only for someone from elsewhere; DIAL's own people
+            are NSU by being here. */}
+        {(member.affiliation || member.badge) && (
+          <p className="text-xs text-muted-foreground">
+            {[member.affiliation, member.badge].filter(Boolean).join(' · ')}
+          </p>
+        )}
         {(member.scholar || member.site) && (
           <p className="relative mt-1 flex gap-3 text-xs">
             {member.scholar && (

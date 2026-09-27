@@ -63,10 +63,15 @@ export interface NavData {
   publicationYears: string
   publicationRecognition: { id: string; title: string; body: string; href: string }[]
   pi: { name: string; title: string; photo: string | null; href: string } | null
-  /** Current lab members, by roster section. Each person links to their page. */
+  /**
+   * Current lab members, by roster section — the first few of each, with a
+   * count of the rest. Each person links to their page; `role` is set only for
+   * an affiliation outside the Lab's own institution.
+   */
   rosterGroups: {
     title: string
-    people: { name: string; slug: string; photo: string | null; role: string }[]
+    people: { name: string; slug: string; photo: string | null; role: string | null }[]
+    more: number
   }[]
   teamCount: number
   alumniTeaser: { name: string; placement: string }[]
@@ -447,9 +452,11 @@ const PeopleMenu = ({ nav }: MenuProps) => (
   <div className="grid gap-8 lg:grid-cols-[18rem_1fr]">
     {/* The photograph is taped on when there is one; there is no stock
         portrait standing in for a real person. */}
+    {/* self-start: the tile is as tall as its own content. Stretched to the
+        roster column it grew an empty paper tail under "Meet the lab". */}
     <Link
       href="/people"
-      className="group relative flex flex-col rounded-md border border-border bg-muted/40 p-5"
+      className="group relative flex flex-col self-start rounded-md border border-border bg-muted/40 p-5"
     >
       {/* No overflow-hidden on this card: the tape is stuck on over the edge
           of the photo and must be free to run past the card. The halftone
@@ -492,9 +499,9 @@ const PeopleMenu = ({ nav }: MenuProps) => (
     </Link>
 
     <div className="flex flex-col gap-8">
-      {/* Every current member, by name, each linking to their own page. Only
-          the PI has a photograph, so the rest arrive as their printed initial
-          in their own ink — the roster's vocabulary, not a placeholder. */}
+      {/* An overview, not the roster: the first few of each section, each
+          linking to their own page, and a count that goes to /people for the
+          rest. A person without a portrait arrives as their printed initial. */}
       <div>
         <PanelLabel>{nav.teamCount} In the Lab</PanelLabel>
         <div className="grid gap-6 md:grid-cols-3">
@@ -516,18 +523,25 @@ const PeopleMenu = ({ nav }: MenuProps) => (
                     />
                   </li>
                 ))}
+                {group.more > 0 && (
+                  <li>
+                    <PanelMore href="/people">{group.more} more</PanelMore>
+                  </li>
+                )}
               </ul>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="grid gap-8 md:grid-cols-[1fr_16rem]">
-        <div>
+      {/* The same three columns as the roster above, so the tile starts on
+          the undergraduate column's edge and alumni take the other two. */}
+      <div className="grid gap-6 md:grid-cols-3">
+        <div className="md:col-span-2">
           <PanelLabel action={<PanelMore href="/people">All {nav.alumniCount}</PanelMore>}>
             Where Our People Go
           </PanelLabel>
-          <ul className="grid gap-x-8 gap-y-3 md:grid-cols-2">
+          <ul className="grid gap-x-6 gap-y-3 md:grid-cols-2">
             {nav.alumniTeaser.map((alum) => (
               <li key={alum.name}>
                 <span className="text-sm font-medium text-foreground/85">{alum.name}</span>
@@ -545,7 +559,6 @@ const PeopleMenu = ({ nav }: MenuProps) => (
           title="Join the Lab"
           body="We read every email from graduate and undergraduate students."
           cta="How to apply"
-          className="h-fit"
         />
       </div>
     </div>
