@@ -106,6 +106,14 @@ export function mapCrossrefToPublicationFields(json: unknown): CrossrefPublicati
   }
   if (Array.isArray(message.title) && typeof message.title[0] === 'string') {
     fields.title = cleanText(message.title[0]) || undefined
+    // ACM and others deposit "Title: Subtitle" as two fields.
+    const subtitle =
+      Array.isArray(message.subtitle) && typeof message.subtitle[0] === 'string'
+        ? cleanText(message.subtitle[0])
+        : ''
+    if (fields.title && subtitle && !fields.title.includes(subtitle)) {
+      fields.title = `${fields.title.replace(/[\s:]+$/, '')}: ${subtitle}`
+    }
   }
   if (typeof message.type === 'string') {
     const mapped = CROSSREF_TYPE_MAP[message.type]

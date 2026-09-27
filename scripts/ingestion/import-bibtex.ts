@@ -75,7 +75,7 @@ async function main() {
   // Parsed directly (in addition to stageBibtexCandidates' own internal
   // parse) purely to preserve the original entries/parse-errors console
   // output — StagedCandidate has no field for parser errors.
-  const bib = parse(bibText)
+  const bib = parse(bibText, { sentenceCase: false })
   console.log(`${bib.entries.length} entries found, ${bib.errors.length} parse errors.`)
 
   const payload = await getPayload({ config })

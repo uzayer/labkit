@@ -80,7 +80,9 @@ export async function stageOrcidCandidates(orcidId: string): Promise<StagedCandi
  * of staging to stay fast and network-light).
  */
 export async function stageBibtexCandidates(bibtexText: string): Promise<StagedCandidate[]> {
-  const bib = parse(bibtexText)
+  // The parser sentence-cases English titles by default, which lowercases
+  // proper nouns ("bangladesh") that no other source will restore.
+  const bib = parse(bibtexText, { sentenceCase: false })
 
   const candidates = bib.entries.map((entry) => {
     const doi = typeof entry.fields.doi === 'string' ? entry.fields.doi : undefined
