@@ -41,8 +41,6 @@ bun run payload -- run scripts/ingestion/import-bibtex.ts <file.bib> [dry-run]
 bun run payload -- run scripts/ingestion/import-citations.ts <file.txt> [dry-run]
 bun run payload -- run scripts/ingestion/probe-doi.ts <doi>...    # onboarding diagnostic
 bun run payload -- run scripts/ingestion/verify-jobs-queue.ts     # jobs-queue regression check (writes only bookkeeping)
-bun run payload -- run scripts/ingestion/triage-dial-manifest.ts [dry-run]   # Jev scope hints on the DIAL manifest (TYPESAFE_API_KEY)
-bun run payload -- run scripts/ingestion/write-dial-confirmed.ts [dry-run]   # write confirmed DIAL manifest rows, create-only
 ```
 
 **`payload run` swallows flags.** It parses argv through minimist and forwards only _positional_ args, so `--dry-run` silently vanishes — every script takes the bare word `dry-run` instead. It also exits after module evaluation without awaiting a floating promise: script entrypoints must use top-level `await main()`, never `void main()`.
@@ -101,7 +99,7 @@ The live frontend is the DIAL site in `src/app/(frontend)/(dial)/`, ported from 
 - **Prose** (stable copy, per ROADMAP's "split routes by churn") stays in code: page copy, `faqs.ts`, and `lab-info.ts` (`DIAL_PROSE`, for values LabInfo has no field for). The nine `/research/<slug>` routes are hardcoded and resolve their Research Theme by slug.
 - **Components** live in `src/components/dial/`, with their own Base UI `ui/` copies so the DIAL styling is independent of the root `src/components/ui/`. Lib code is in `src/lib/dial/`. The CSS (`(dial)/globals.css`) scans only those folders and its own routes.
 - **Contact** posts to `form-submissions` against a Form titled `Contact` (honeypot plus Turnstile when configured).
-- `dial-test/` stays as the visual reference, and its fixtures are the source for `scripts/dev/seed-dial-fixtures.ts` (seed a _throwaway_ database for side-by-side comparison). Keep them small; real launch data comes from the ingestion pipeline.
+- `dial-test/` (untracked, local only) is the original visual reference. DIAL's launch data came from the ingestion pipeline plus a one-off manifest writer; that writer, its TypeScript source data, and the fixture seed were deleted on 2026-09-28 once `labkit.db` was built (restore from Git history if the launch database ever has to be rebuilt).
 
 ### Dashboard
 
@@ -139,7 +137,7 @@ Both are Next.js private folders (`_`-prefixed): they compile and their exports 
 
 See `.env.example` for all variables. Local SQLite uses `TURSO_DATABASE_URL=file:./labkit.db`; production requires a `libsql://` URL and `TURSO_AUTH_TOKEN`. See `docs/operator/turso-cutover.md` for migrations, backups, and cutover. `PAYLOAD_SECRET`, `NEXT_PRIVATE_DRAFT_SECRET`, and `REVALIDATION_KEY` remain required where configured. `NEXT_PUBLIC_SERVER_URL` auto-derives from Vercel or defaults to `http://localhost:3000`.
 
-Node: `>=24`. Bun: `1.4.2` (pinned via `packageManager`).
+Node: `>=24`. Bun: `1.4.2` (pinned via `packageManager`). `mise.toml` pins both exact versions for local development; Vercel reads Node from `engines`.
 
 ## Context7
 

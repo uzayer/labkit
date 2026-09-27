@@ -132,13 +132,6 @@ What DIAL's frontend reads, beyond the imported records:
 - **Projects** must be *published* to appear. Drafts stay hidden.
 - **Forms**: create a Form titled exactly `Contact` with `name`, `email`, and `message` fields. `/contact` submits to it; without it, every submission fails with a message pointing people to the Lab's email address. Production also needs both Turnstile keys (`docs/guides/forms.md`).
 
-To compare the port with `dial-test/` before real data exists, seed the prototype's fixtures into a **throwaway** database. The script refuses a non-empty target:
-
-```bash
-TURSO_DATABASE_URL='file:./dial-fixtures.db' \
-  bun run payload -- run scripts/dev/seed-dial-fixtures.ts
-```
-
 ## 8. Verify the public site
 
 Check every in-scope route against Payload data rather than fixtures. At minimum:

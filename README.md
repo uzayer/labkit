@@ -178,8 +178,6 @@ docs/
   adr/              standing architectural decisions
   architecture/     data model intent, theming
   guides/           forms
-dial-test/          static design prototype — a separate app, own package.json,
-                    excluded from the root typecheck, lint, and build
 ```
 
 ## Status
@@ -191,7 +189,7 @@ Honest about what is and isn't built:
 | **Ingestion engine**                   | Built and verified end-to-end against a real career-wide ORCID record — a 122-work profile resolved to 108 publications, 261 people, 94 organizations, and 23 venues, with 77 items correctly routed to review |
 | **Data model**                         | Frozen against real data, not designed in the abstract. The schema gaps that mattered were found by pushing an actual lab's corpus through it                                                                  |
 | **Payload admin**                      | The working admin surface, grouped into a deliberate v1 dashboard                                                                                                                                              |
-| **Public frontend**                    | **In progress.** `dial-test/` is a complete static design prototype with no data layer; porting its routes onto the Payload Local API is the current work                                                      |
+| **Public frontend**                    | **Built.** DIAL's site renders from Payload in `src/app/(frontend)/(dial)/`, ported from a static prototype; deploy is the remaining launch step                                                               |
 | **Custom dashboard**                   | Parked. Two prototypes live in `src/app/_dashboard-kit/` and `src/app/_dashboard-legacy/` as Next.js private folders — they compile and are importable, but generate no routes                                 |
 | **Multi-lab / theming generalization** | Deliberately not started. Lab #2 is what will define it; pre-solving it is the failure mode this project is guarding against                                                                                   |
 
@@ -227,10 +225,6 @@ LabKit originated from the [shadcnblocks Payload template](https://docs.shadcnbl
 - **ORCID public API:** [info.orcid.org/documentation](https://info.orcid.org/documentation/)
 - **Crossref REST API:** [api.crossref.org](https://api.crossref.org)
 - **OpenAlex:** [docs.openalex.org](https://docs.openalex.org)
-
-## Release automation
-
-Release automation (changesets → versioned GitHub Releases) is paused while LabKit is pre-release. Keep recording changes with `bunx changeset` as you work — entries accumulate in `.changeset/` and will roll into the first automated release. Archived workflows live in `.github/workflows-archive/`; nothing in `.github/workflows/` is currently active.
 
 ## License
 

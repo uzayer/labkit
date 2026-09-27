@@ -59,13 +59,14 @@ launch, production is the source of truth and data only flows down
    export TURSO_DATABASE_URL=file:./data/dial-launch.db PAYLOAD_DB_PUSH=false
    bun run payload migrate
    ```
-3. Mark reviewed manifest rows `confirmed`, then write them:
-   `bun run payload -- run scripts/ingestion/write-dial-confirmed.ts dry-run`,
-   then without `dry-run`. This puts the ORCID owner and the roster's alternate
-   names in place before the imports.
+3. Write the Lab's manual records (roster, Projects, Awards, Grants, LabInfo)
+   first, so the ORCID owner and the roster's alternate names are in place
+   before the imports. DIAL's were written by a one-off script,
+   `scripts/ingestion/write-dial-confirmed.ts`, deleted on 2026-09-28 and
+   recoverable from Git history.
 4. Run the reviewed ORCID selection and the Google Scholar BibTeX import, then
-   run `write-dial-confirmed.ts` again to link Projects to the imported
-   Publications. Work the Review Items in local `/admin`.
+   link Projects to the imported Publications. Work the Review Items in local
+   `/admin`.
 5. Check the file: `sqlite3 data/dial-launch.db "select name, batch from
    payload_migrations"` shows only committed migrations (no `batch = -1` row),
    and `bun run payload migrate:status` shows nothing pending. Stop the app, take
