@@ -41,6 +41,8 @@ bun run payload -- run scripts/ingestion/import-bibtex.ts <file.bib> [dry-run]
 bun run payload -- run scripts/ingestion/import-citations.ts <file.txt> [dry-run]
 bun run payload -- run scripts/ingestion/probe-doi.ts <doi>...    # onboarding diagnostic
 bun run payload -- run scripts/ingestion/verify-jobs-queue.ts     # jobs-queue regression check (writes only bookkeeping)
+bun run payload -- run scripts/ingestion/triage-dial-manifest.ts [dry-run]   # Jev scope hints on the DIAL manifest (TYPESAFE_API_KEY)
+bun run payload -- run scripts/ingestion/write-dial-confirmed.ts [dry-run]   # write confirmed DIAL manifest rows, create-only
 ```
 
 **`payload run` swallows flags.** It parses argv through minimist and forwards only _positional_ args, so `--dry-run` silently vanishes — every script takes the bare word `dry-run` instead. It also exits after module evaluation without awaiting a floating promise: script entrypoints must use top-level `await main()`, never `void main()`.

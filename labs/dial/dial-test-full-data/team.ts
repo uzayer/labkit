@@ -38,6 +38,8 @@ export const team: Team[] = [
       { platform: 'website', url: 'https://sites.google.com/site/novaahmednorthsouthnva/' },
     ],
     email: 'nova.ahmed@northsouth.edu',
+    // The iD staged in docs/operator/onboard-a-lab.md; import-orcid.ts requires its owner on the roster.
+    orcid: '0000-0002-7715-1742',
     displayInWebsite: true,
     rosterSection: 'researchers',
     provenance: {
