@@ -157,6 +157,14 @@ export type Publication = {
   citationText?: string | null
   doi?: string | null
   externalUrl?: string | null
+  /** Bibliographic detail, for generated citations. */
+  publicationDate?: string | null
+  location?: string | null
+  volume?: string | null
+  issue?: string | null
+  pageStart?: string | null
+  pageEnd?: string | null
+  publisher?: string | null
   isOpenAccess?: boolean | null
   pdf?: { link?: string | null } | null
   featured?: boolean | null

@@ -7,6 +7,7 @@ import { InkBand, SectionHeader, TextLink, sectionSpacing } from '@/components/d
 import { PersonChip } from '@/components/dial/person-chip'
 import { AsteriskMark, CropMarks, SquiggleUnderline, TickMark } from '@/components/dial/marks'
 import { CitationPanel } from '@/components/dial/publication-cite'
+import type { Citations } from '@/lib/dial/cite'
 import { FlatPublicationList, type PublicationYear } from '@/components/dial/publications1'
 import { RisoArt } from '@/components/dial/riso'
 import { themeArt, themeInkVar } from '@/components/dial/theme-marks'
@@ -43,8 +44,8 @@ export type PublicationPostData = {
   } | null
   abstract?: string | null
   /** The Lab's own APA string; absent where no source carries one. */
-  citationText?: string | null
-  bibtex: string
+  /** Generated from the record: ACM, APA, BibTeX. */
+  citations: Citations
   doi?: string | null
   externalUrl?: string | null
   pdfLink?: string | null
@@ -329,11 +330,9 @@ export function PublicationPost({ pub }: { pub: PublicationPostData }) {
         <section className="max-w-prose border-t border-border pt-6">
           <h2 className="font-display text-2xl md:text-3xl">Cite this paper</h2>
           <p className="mt-3 text-pretty text-muted-foreground">
-            {pub.citationText
-              ? 'APA as the Lab records it, and a BibTeX entry generated from the same fields.'
-              : "A BibTeX entry generated from the record's fields."}
+            ACM Reference Format, APA, or BibTeX, generated from this record.
           </p>
-          <CitationPanel apa={pub.citationText} bibtex={pub.bibtex} className="mt-6" />
+          <CitationPanel citations={pub.citations} className="mt-6" />
         </section>
 
         {labAuthors.length > 0 && (

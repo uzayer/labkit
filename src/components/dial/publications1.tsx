@@ -1,19 +1,12 @@
 'use client'
 
-import { ArrowUpRight, Check, Copy, LockOpen, Quote, Users } from 'lucide-react'
+import { ArrowUpRight, LockOpen, Users } from 'lucide-react'
 import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 
 import { Button } from '@/components/dial/ui/button'
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/dial/ui/dialog'
 import { Separator } from '@/components/dial/ui/separator'
 import { SegmentedControl } from '@/components/dial/segmented-control'
 import {
@@ -30,7 +23,7 @@ import {
   toggleIn,
   viewOptions,
 } from '@/components/dial/publication-filters'
-import { copyToClipboard, generateBibTeX } from '@/lib/dial/citation'
+import { CiteButton } from '@/components/dial/publication-cite'
 import { RosetteMark } from '@/components/dial/marks'
 import { PersonFaces, type Person } from '@/components/dial/person-chip'
 import { displaySectionTitle } from '@/lib/dial/typography'
@@ -59,7 +52,6 @@ export type Publication = {
   pdfLink?: string | null
   projectLink?: string | null
   doi?: string | null
-  citationText?: string | null
   themes?: string[] | null
   isOpenAccess?: boolean | null
   isCollaboration?: boolean | null
@@ -97,111 +89,10 @@ function AuthorList({ authors, highlight = [] }: { authors: string; highlight?: 
   )
 }
 
-type CiteFmt = 'apa' | 'bib'
-
-function CiteDialog({ pub, year }: { pub: Publication; year: number }) {
-  const [fmt, setFmt] = useState<CiteFmt>('apa')
-  const [copied, setCopied] = useState(false)
-
-  const text = fmt === 'apa' ? (pub.citationText ?? '') : generateBibTeX(pub, year)
-
-  async function handleCopy() {
-    await copyToClipboard(text)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
-  }
-
-  return (
-    <Dialog>
-      {/* The row's one verb. It stays on the page and opens here, so it is a
-          button, set apart at the right edge from the links that leave. */}
-      <DialogTrigger
-        render={
-          <Button
-            variant="outline"
-            size="sm"
-            className="ease-snappy relative z-10 ml-auto transition-transform duration-150 active:scale-[0.97]"
-          />
-        }
-      >
-        <Quote className="size-4" />
-        Cite
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-lg">
-        <DialogHeader>
-          <DialogTitle className="pr-6 text-sm leading-snug font-medium text-muted-foreground">
-            {pub.title}
-          </DialogTitle>
-        </DialogHeader>
-        <div className="flex gap-1">
-          <Button
-            size="sm"
-            variant={fmt === 'apa' ? 'default' : 'ghost'}
-            onClick={() => setFmt('apa')}
-          >
-            APA
-          </Button>
-          <Button
-            size="sm"
-            variant={fmt === 'bib' ? 'default' : 'ghost'}
-            onClick={() => setFmt('bib')}
-          >
-            BibTeX
-          </Button>
-        </div>
-        <pre
-          className={cn(
-            'rounded-md bg-muted p-3 text-sm break-words whitespace-pre-wrap',
-            fmt === 'bib' && 'font-mono',
-          )}
-        >
-          {text}
-        </pre>
-        {/* Both labels stay mounted and crossfade, with a 2px blur on the one
-            leaving so the swap reads as one change rather than two overlapping
-            words. The check pops in from 0.8. */}
-        <Button
-          variant="outline"
-          onClick={handleCopy}
-          className="ease-snappy w-full transition-transform duration-150 active:scale-[0.97]"
-        >
-          <span className="grid place-items-center [&>*]:col-start-1 [&>*]:row-start-1">
-            <span
-              aria-hidden={copied}
-              className={cn(
-                'ease-snappy inline-flex items-center gap-2 transition-[opacity,filter] duration-150',
-                copied ? 'opacity-0 blur-[2px]' : 'opacity-100',
-              )}
-            >
-              <Copy className="size-4" />
-              Copy
-            </span>
-            <span
-              aria-hidden={!copied}
-              className={cn(
-                'ease-snappy inline-flex items-center gap-2 transition-[opacity,filter] duration-150',
-                copied ? 'opacity-100' : 'opacity-0 blur-[2px]',
-              )}
-            >
-              <Check
-                className={cn(
-                  'text-brand ease-snappy size-4 transition-transform duration-200',
-                  copied ? 'scale-100' : 'scale-80',
-                )}
-              />
-              Copied
-            </span>
-          </span>
-        </Button>
-      </DialogContent>
-    </Dialog>
-  )
-}
-
 /**
  * Where else the paper lives: its PDF, its DOI, its project. These leave the
- * site, so they are set as links — words with an outbound arrow — not as
- * buttons, and they sit with the row's other facts rather than beside Cite.
+ * site, so they are set as links — words with an outbound arrow. Cite follows
+ * them on the same line, with no arrow, because it stays.
  */
 function PubLinks({ pub }: { pub: Publication }) {
   const links = [
@@ -386,8 +277,9 @@ function PublicationRow({
             </div>
           </div>
 
-          {/* Secondary facts and outbound links on the left, Cite alone on the
-              right. An award is the one secondary fact that stays loud. */}
+          {/* Secondary facts, then the links out, then Cite: the row's one
+              in-page action, last on the line it shares with DOI. An award is
+              the one secondary fact that stays loud. */}
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
               {pub.award && (
@@ -409,8 +301,10 @@ function PublicationRow({
                 </span>
               )}
             </div>
-            <PubLinks pub={pub} />
-            {pub.citationText && <CiteDialog pub={pub} year={year} />}
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+              <PubLinks pub={pub} />
+              <CiteButton id={pub.id} />
+            </div>
           </div>
         </div>
       </div>

@@ -6,14 +6,15 @@ import { getDial } from '@/lib/dial/data/get'
 type Props = { params: Promise<{ id: string }> }
 
 export async function generateMetadata({ params }: Props) {
-  const { getPublication } = await getDial()
+  const { getPublication, citationsFor } = await getDial()
   const { id } = await params
   const pub = getPublication(id)
   if (!pub) return {}
   return {
     title: pub.title,
     // The abstract is the paper's own summary; nothing is written for SEO.
-    description: pub.abstract ?? pub.citationText ?? undefined,
+    // Without one, the reference itself says who, where, and when.
+    description: pub.abstract ?? citationsFor(pub).acm,
   }
 }
 

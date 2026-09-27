@@ -1,6 +1,7 @@
 import { Suspense } from 'react'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, Download } from 'lucide-react'
 
+import { SquiggleUnderline } from '@/components/dial/marks'
 import { PersonFace } from '@/components/dial/person-chip'
 import { ScrollRuler } from '@/components/dial/scroll-ruler'
 import { FaqSection } from '@/components/dial/faq-section'
@@ -77,6 +78,20 @@ export default async function PublicationsPage() {
             </ul>
           </div>
         )}
+        {/* For the reader about to cite several papers: the whole list in the
+            file their reference manager takes. A download, so it gets the
+            download mark rather than the outbound arrow. */}
+        <a
+          href="/publications.bib"
+          download
+          className="group mt-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground"
+        >
+          <Download className="ease-snappy size-3.5 transition-transform duration-200 group-hover:translate-y-px" />
+          <span className="relative">
+            Download all {publicationCount} as BibTeX
+            <SquiggleUnderline />
+          </span>
+        </a>
       </PageHeader>
       <FaqSection items={publicationFaqs} title="Working with this list" className="pt-0 md:pt-0" />
 

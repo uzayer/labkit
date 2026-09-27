@@ -9,7 +9,6 @@ import type { AwardListItem } from '@/components/dial/award-list'
 import type { Award as AwardRow, AwardCategory } from '@/components/dial/awards-filter-table'
 import type { ResearchProject } from '@/components/dial/feature295'
 import type { MemberProfileData, Social } from '@/components/dial/member-profile'
-import type { MemberPublication } from '@/components/dial/member-publications'
 import type { NavData } from '@/components/dial/navbar4'
 import type { NewsPostData } from '@/components/dial/news-post'
 import type { NewsEntry } from '@/lib/dial/news'
@@ -29,7 +28,13 @@ import type { CollaboratorGroup, RelatedTheme } from '@/components/dial/theme-pa
 
 import type { DialData } from './index'
 import type { Award, Grant, News, Project, Publication, ResearchTheme, Team } from './types'
-import { generateBibTeX } from '@/lib/dial/citation'
+import {
+  baseCitationKey,
+  formatCitations,
+  type CitationAuthor,
+  type CitationInput,
+  type Citations,
+} from '@/lib/dial/cite'
 
 export function createDialViews(d: DialData) {
   const {
@@ -68,6 +73,7 @@ export function createDialViews(d: DialData) {
     publicationsByYear,
     publicationTeamIds,
     publicationThemeIds,
+    publications,
     researchThemes,
     resolveIds,
     teamIdForName,
@@ -119,7 +125,6 @@ export function createDialViews(d: DialData) {
       pdfLink: pub.pdf?.link ?? null,
       projectLink: project ? `/projects/${project.slug}` : null,
       doi: pub.doi ?? null,
-      citationText: pub.citationText ?? null,
       themes: publicationThemeIds(pub)
         .map((id) => getResearchTheme(id)?.title)
         .filter((title): title is string => Boolean(title)),
@@ -165,10 +170,83 @@ export function createDialViews(d: DialData) {
     return id ? getTeamMember(id) : undefined
   }
 
+  /** The record's authors as the citation generator takes them. */
+  function citationAuthors(pub: Publication): CitationAuthor[] {
+    return pub.authors.flatMap((author): CitationAuthor[] => {
+      const member = author.teamMember ? getTeamMember(author.teamMember) : undefined
+      if (member) {
+        const given = [member.firstName, member.middleName].filter(Boolean).join(' ')
+        return [{ given, family: member.lastName }]
+      }
+      const name = author.customAuthor?.name
+      return name ? [{ name }] : []
+    })
+  }
+
+  /**
+   * BibTeX keys, unique across the Lab's publications. Two papers that would
+   * share "rony2024understanding" both take a letter, oldest first, the way
+   * Google Scholar and biblatex do — so a reader citing both gets two entries,
+   * and neither key changes when a third, unrelated paper is added.
+   */
+  let citationKeys: Map<string, string> | undefined
+  function citationKeyFor(pub: Publication): string {
+    if (!citationKeys) {
+      const groups = new Map<string, Publication[]>()
+      for (const p of publications) {
+        const key = baseCitationKey({ title: p.title, year: p.year, authors: citationAuthors(p) })
+        groups.set(key, [...(groups.get(key) ?? []), p])
+      }
+      citationKeys = new Map()
+      for (const [key, group] of groups) {
+        if (group.length === 1) {
+          citationKeys.set(group[0].id, key)
+          continue
+        }
+        group
+          .sort(
+            (a, b) =>
+              (a.publicationDate ?? '').localeCompare(b.publicationDate ?? '') ||
+              a.title.localeCompare(b.title),
+          )
+          .forEach((p, i) => citationKeys!.set(p.id, key + String.fromCharCode(97 + i)))
+      }
+    }
+    return citationKeys.get(pub.id) ?? ''
+  }
+
+  /**
+   * A paper's citations, generated from the record. A Team Member author is
+   * cited from their structured name; anyone else from the name as printed.
+   */
+  function citationsFor(pub: Publication): Citations {
+    const venue = pub.venue ? getVenue(pub.venue) : undefined
+    const input: CitationInput = {
+      id: pub.id,
+      key: citationKeyFor(pub) || undefined,
+      title: pub.title,
+      authors: citationAuthors(pub),
+      type: pub.type ?? venue?.type ?? null,
+      container: venue?.name ?? pub.venueLabel ?? null,
+      containerShort: venue?.shortName && venue.shortName !== venue.name ? venue.shortName : null,
+      year: pub.year,
+      date: pub.publicationDate,
+      volume: pub.volume,
+      issue: pub.issue,
+      pageStart: pub.pageStart,
+      pageEnd: pub.pageEnd,
+      publisher: pub.publisher,
+      location: pub.location,
+      doi: pub.doi,
+      url: pub.externalUrl,
+      status: pub.status === 'published' ? null : pub.status,
+    }
+    return formatCitations(input)
+  }
+
   /** One paper's own page: the record, plus the links out of it. */
   function toPublicationPost(pub: Publication): PublicationPostData {
     const venue = pub.venue ? getVenue(pub.venue) : undefined
-    const authorNames = publicationAuthorNames(pub)
 
     return {
       title: pub.title,
@@ -194,16 +272,7 @@ export function createDialViews(d: DialData) {
           ? { name: pub.venueLabel }
           : null,
       abstract: pub.abstract ?? null,
-      citationText: pub.citationText ?? null,
-      bibtex: generateBibTeX(
-        {
-          title: pub.title,
-          authors: authorNames.join(', '),
-          venue: venueLabel(pub),
-          type: pub.type ?? null,
-        },
-        pub.year,
-      ),
+      citations: citationsFor(pub),
       doi: pub.doi ?? null,
       externalUrl: pub.externalUrl ?? null,
       pdfLink: pub.pdf?.link ?? null,
@@ -232,21 +301,6 @@ export function createDialViews(d: DialData) {
           (award.organization ? (getOrganization(award.organization)?.name ?? null) : null),
       })),
       related: toPublicationYears(relatedPublications(pub)),
-    }
-  }
-
-  function toMemberPublication(pub: Publication): MemberPublication {
-    const view = toPublicationView(pub)
-    return {
-      id: pub.id,
-      title: pub.title,
-      authors: view.authors,
-      venue: view.venue ?? '',
-      year: pub.year,
-      award: view.award ?? undefined,
-      pdfLink: view.pdfLink ?? undefined,
-      projectLink: view.projectLink ?? undefined,
-      citationText: pub.citationText ?? undefined,
     }
   }
 
@@ -818,10 +872,10 @@ export function createDialViews(d: DialData) {
 
   return {
     highlightAuthors,
+    citationsFor,
     toPublicationView,
     toPublicationYears,
     toPublicationPost,
-    toMemberPublication,
     toProjectEntry,
     toResearchProject,
     toProjectPost,

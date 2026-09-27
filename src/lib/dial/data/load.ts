@@ -194,6 +194,13 @@ function toPublication(doc: PayloadPublication, media: MediaById): Publication {
     citationText: doc.citationText ?? null,
     doi: doc.doi ?? null,
     externalUrl: doc.externalUrl ?? null,
+    publicationDate: doc.publicationDate ?? null,
+    location: doc.location ?? null,
+    volume: doc.volume ?? null,
+    issue: doc.issue ?? null,
+    pageStart: doc.pageStart ?? null,
+    pageEnd: doc.pageEnd ?? null,
+    publisher: doc.publisher ?? null,
     isOpenAccess: doc.isOpenAccess ?? null,
     pdf: {
       link: doc.pdf?.type === 'upload' ? mediaUrl(doc.pdf.upload, media) : (doc.pdf?.link ?? null),
