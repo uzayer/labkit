@@ -43,25 +43,44 @@ Uploaded Media files are separate from database records. Keep
 
 ## Production launch steps
 
-1. Finish the DIAL review. Only approved Publications, Team Members,
-   Research Themes, Projects, and supporting records belong in the launch
-   database. Prototype fixtures remain isolated.
-2. Create a **new empty** Turso database. Obtain its URL with
-   `turso db show --url <name>` and create a database token with
+The launch database is built and reviewed locally, then uploaded to Turso once.
+It is not seeded from code: the reviewed database file is the artifact. After
+launch, production is the source of truth and data only flows down
+(`turso db export`), never up again.
+
+1. Set `BLOB_READ_WRITE_TOKEN` in the local `.env` **before** writing any
+   records, so Media uploads land in Vercel Blob. Without it Media is stored in
+   `public/media/`, which the deployment cannot serve.
+2. Create a fresh, migration-only local database. `PAYLOAD_DB_PUSH=false` stops
+   schema push, which would otherwise add a `dev` row to `payload_migrations`
+   that `migrate` then warns about in production. Keep it set for every command
+   against this file, including `bun run dev` for the admin review:
+   ```bash
+   export TURSO_DATABASE_URL=file:./data/dial-launch.db PAYLOAD_DB_PUSH=false
+   bun run payload migrate
+   ```
+3. Mark reviewed manifest rows `confirmed`, then write them:
+   `bun run payload -- run scripts/ingestion/write-dial-confirmed.ts dry-run`,
+   then without `dry-run`. This puts the ORCID owner and the roster's alternate
+   names in place before the imports.
+4. Run the reviewed ORCID selection and the Google Scholar BibTeX import, then
+   run `write-dial-confirmed.ts` again to link Projects to the imported
+   Publications. Work the Review Items in local `/admin`.
+5. Check the file: `sqlite3 data/dial-launch.db "select name, batch from
+   payload_migrations"` shows only committed migrations (no `batch = -1` row),
+   and `bun run payload migrate:status` shows nothing pending. Stop the app, take
+   a consistent copy with `sqlite3 data/dial-launch.db ".backup
+   'backup/dial-launch.db'"`, and run `PRAGMA integrity_check` on the copy.
+6. Upload it: `turso db create <name> --from-file backup/dial-launch.db --wait`.
+   Get its URL with `turso db show --url <name>` and a token with
    `turso db tokens create <name>`.
-3. Set `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`, and a strong
-   `PAYLOAD_SECRET` in both the migration and deployment environments.
-   Configure durable Media storage and the other production secrets in
-   `.env.example`.
-4. Run `bun run payload migrate`, then `bun run payload migrate:status`
-   against that Turso database **before** starting the app. Production has
-   `push: false`; development schema push is not a deployment step.
-5. Deploy, create the first Lab Editor account, then enter or ingest only
-   reviewed DIAL data. Inspect Import Runs and Review Items as each Front Door
-   completes.
-6. Verify admin login and editing; `/`, `/people`, `/publications`, a
+7. Set `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`, `BLOB_READ_WRITE_TOKEN`, a
+   strong `PAYLOAD_SECRET`, and the other production secrets in
+   `.env.example` in Vercel. Run `bun run payload migrate:status` against Turso
+   before deploying. Production has `push: false`.
+8. Deploy. Verify admin login and editing; `/`, `/people`, `/publications`, a
    Publication detail route; uploaded Media; and the imports job queue before
-   moving traffic. Keep a Turso branch and Media backup for rollback.
+   moving traffic. Keep a Turso branch for rollback.
 
 Payload's multi-operation SQLite transactions are disabled. An overlapping
 import watchdog regression produced `SQLITE_BUSY_SNAPSHOT` with both deferred

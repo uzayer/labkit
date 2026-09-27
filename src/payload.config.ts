@@ -204,7 +204,9 @@ export default buildConfig({
     idType: 'uuid',
     allowIDOnCreate: true,
     migrationDir: './src/migrations',
-    push: process.env.NODE_ENV !== 'production',
+    // PAYLOAD_DB_PUSH=false keeps a local database migration-only, so it can be
+    // uploaded to Turso without a dev-push marker (docs/operator/turso-cutover.md).
+    push: process.env.NODE_ENV !== 'production' && process.env.PAYLOAD_DB_PUSH !== 'false',
     busyTimeout: databaseUrl.startsWith('file:') ? 10_000 : 0,
     wal: databaseUrl.startsWith('file:'),
   }),
