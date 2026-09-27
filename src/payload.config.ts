@@ -73,10 +73,9 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 const payloadSecret = validateRuntimeSecrets()
 const databaseUrl = process.env.TURSO_DATABASE_URL || 'file:./labkit.db'
-if (
-  process.env.NODE_ENV === 'production' &&
-  (!databaseUrl.startsWith('libsql://') || !process.env.TURSO_AUTH_TOKEN)
-) {
+// Scoped to Vercel, where a file: database is ephemeral. A local `next build`
+// also runs with NODE_ENV=production and should keep using labkit.db.
+if (process.env.VERCEL && (!databaseUrl.startsWith('libsql://') || !process.env.TURSO_AUTH_TOKEN)) {
   throw new Error('Production requires TURSO_DATABASE_URL=libsql://... and TURSO_AUTH_TOKEN')
 }
 

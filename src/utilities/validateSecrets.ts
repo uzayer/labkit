@@ -31,8 +31,10 @@ export function assertStrongSecret(name: string, secret: string | undefined) {
 
 /**
  * Require Payload's signing secret in every environment, and reject weak values
- * for production deployments. Optional feature secrets are only validated when
- * configured because draft preview and cron automation can be disabled.
+ * for Vercel deployments. A local `next build`/`next start` also runs with
+ * NODE_ENV=production, so NODE_ENV alone does not mean deployed. Optional
+ * feature secrets are only validated when configured because draft preview and
+ * cron automation can be disabled.
  */
 export function validateRuntimeSecrets(environment = process.env) {
   const payloadSecret = environment.PAYLOAD_SECRET
@@ -41,7 +43,7 @@ export function validateRuntimeSecrets(environment = process.env) {
     throw new Error('PAYLOAD_SECRET must be set.')
   }
 
-  if (environment.NODE_ENV !== 'production') {
+  if (!environment.VERCEL) {
     return payloadSecret
   }
 
