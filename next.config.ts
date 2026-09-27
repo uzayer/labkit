@@ -49,6 +49,8 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   output: 'standalone',
   reactCompiler: true,
+  // Lets the dev server accept HMR and dev-resource requests from this Mac's LAN hostname.
+  allowedDevOrigins: ['m4-pro.local'],
   experimental: {
     staticGenerationRetryCount: 1,
     staticGenerationMaxConcurrency: 8,
