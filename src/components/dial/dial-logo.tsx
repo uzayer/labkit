@@ -1,3 +1,5 @@
+import type { CSSProperties } from 'react'
+
 import { cn } from '@/lib/utils'
 
 /**
@@ -52,9 +54,12 @@ const IAL = () => (
 
 export function DialWordmark({
   className,
+  style,
   title = 'DIAL',
 }: {
   className?: string
+  // For surfaces without the DIAL Tailwind build, e.g. the Payload admin.
+  style?: CSSProperties
   title?: string
 }) {
   return (
@@ -63,6 +68,7 @@ export function DialWordmark({
       role="img"
       aria-label={title}
       className={cn('h-auto w-32 shrink-0', className)}
+      style={style}
     >
       <D />
       <IAL />

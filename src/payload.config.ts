@@ -121,6 +121,11 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
+    meta: {
+      titleSuffix: '— LabKit',
+      // One dark-ink favicon: browser tabs don't follow the page's theme.
+      icons: [{ rel: 'icon', type: 'image/svg+xml', url: '/brand/labkit-mark.svg' }],
+    },
     user: Users.slug,
     livePreview: {
       breakpoints: [

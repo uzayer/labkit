@@ -1,5 +1,12 @@
 <div align="center">
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="public/brand/labkit-wordmark-dark.svg">
+  <img src="public/brand/labkit-wordmark.svg" alt="LabKit" width="280">
+</picture>
+
+<br><br>
+
 [![Payload](https://img.shields.io/badge/Payload-3.85-000000.svg?style=for-the-badge&logo=payloadcms&logoColor=white)](https://payloadcms.com)
 [![Next.js](https://img.shields.io/badge/Next.js-16-000000.svg?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org)
 [![Turso](https://img.shields.io/badge/Turso-4FF8D2.svg?style=for-the-badge)](https://turso.tech)
