@@ -40,18 +40,24 @@ console.log(`${files.size} files referenced by Media`)
 if (mode === 'dry-run') process.exit(0)
 
 let uploaded = 0
-for (const [name, contentType] of files) {
-  const body = await readFile(path.resolve('public/media', name))
-  // Idempotent: re-running skips what already landed.
-  const existing = await head(name, { token }).catch(() => null)
-  if (existing?.size === body.length) continue
-  await put(name, body, {
-    access: 'public',
-    addRandomSuffix: false,
-    allowOverwrite: true,
-    contentType,
-    token,
-  })
-  uploaded++
+const queue = [...files]
+// A few uploads in flight; one at a time takes minutes for a few hundred files.
+async function worker() {
+  for (let next = queue.shift(); next; next = queue.shift()) {
+    const [name, contentType] = next
+    const body = await readFile(path.resolve('public/media', name))
+    // Idempotent: re-running skips what already landed.
+    const existing = await head(name, { token }).catch(() => null)
+    if (existing?.size === body.length) continue
+    await put(name, body, {
+      access: 'public',
+      addRandomSuffix: false,
+      allowOverwrite: true,
+      contentType,
+      token,
+    })
+    uploaded++
+  }
 }
+await Promise.all(Array.from({ length: 8 }, worker))
 console.log(`Uploaded ${uploaded}, skipped ${files.size - uploaded} already present`)

@@ -14,6 +14,8 @@ import { hasPermission } from '@/utilities/checkPermission'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
+const webp = { format: 'webp', options: { quality: 80 } } as const
+
 export const Media: CollectionConfig = {
   slug: 'media',
   access: {
@@ -59,20 +61,20 @@ export const Media: CollectionConfig = {
     ],
     // Explicitly enable focal point selector
     focalPoint: true,
-    // Generate WebP variants for all images and use a WebP thumbnail in admin
-    formatOptions: {
-      format: 'webp',
-      options: { quality: 80 },
-    },
+    // Store the original as WebP. Each image size needs its own formatOptions:
+    // the top-level setting only applies to the original.
+    formatOptions: webp,
     adminThumbnail: 'thumbnail',
     imageSizes: [
       {
         name: 'thumbnail',
+        formatOptions: webp,
         width: 320,
         height: 320,
       },
       {
         name: 'avatar',
+        formatOptions: webp,
         width: 400,
         height: 400,
         fit: 'cover',
@@ -80,10 +82,12 @@ export const Media: CollectionConfig = {
       },
       {
         name: 'card',
+        formatOptions: webp,
         width: 800,
       },
       {
         name: 'og',
+        formatOptions: webp,
         width: 1200,
         height: 630,
       },
