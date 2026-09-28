@@ -34,7 +34,6 @@ The files in [`agents/`](./agents/) document this repository's issue-tracker and
 - [`../README.md`](../README.md) is the current developer setup and command reference. Do not duplicate it here.
 - [`../CONTEXT.md`](../CONTEXT.md) is the canonical domain glossary; [`../LOG.md`](../LOG.md) is the chronological decision record.
 - [`../labs/dial/`](../labs/dial/) contains DIAL's identity and frontend delivery contract, unverified working data, raw source captures, and ingestion fixtures. It is an active Lab workspace, not reusable documentation.
-- [`../dial-test/`](../dial-test/) is DIAL's standalone static frontend prototype and keeps its own app-local notes.
 
 ## Content rules
 

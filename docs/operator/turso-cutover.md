@@ -50,7 +50,11 @@ launch, production is the source of truth and data only flows down
 
 1. Set `BLOB_READ_WRITE_TOKEN` in the local `.env` **before** writing any
    records, so Media uploads land in Vercel Blob. Without it Media is stored in
-   `public/media/`, which the deployment cannot serve.
+   `public/media/`, which the deployment cannot serve. If that already
+   happened (DIAL's did), `node --env-file=.env scripts/media-to-blob.mjs
+   <database.db>` copies every file a Media row references into Blob under the
+   pathname the storage adapter reads, so no row needs rewriting. It is
+   idempotent; pass `dry-run` to check every file exists first.
 2. Create a fresh, migration-only local database. `PAYLOAD_DB_PUSH=false` stops
    schema push, which would otherwise add a `dev` row to `payload_migrations`
    that `migrate` then warns about in production. Keep it set for every command
@@ -89,4 +93,5 @@ and immediate transactions; all 13 queue checks passed with the adapter
 default. A failed hydration can leave a partial Publication graph. The
 Operator should inspect its Import Run and Review Items before retrying.
 
-No production database was created or changed during this repository migration.
+DIAL's production database is `dial-prod` (created 2026-09-28 from the reviewed
+`labkit.db`); `dial-prod-launch-20260928` is its launch-day copy.

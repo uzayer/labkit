@@ -2,7 +2,7 @@
 
 This is the canonical content and porting contract for DIAL's public frontend. It records three things separately: what the prototype already establishes, where production data comes from, and what remains a decision.
 
-The prototype in `dial-test/` is visual and behavioral ground truth. Its data lives in `dial-test/src/data/`: records shaped like the LabKit collections, built from the 2026-09-12 captures and Nova Ahmed's ORCID. They are realistic but unverified, not factual ground truth. Porting a page means replacing those imports with Payload queries while keeping the page's view-model mappers.
+The port in `src/app/(frontend)/(dial)/` is visual and behavioral ground truth; the `dial-test/` prototype it came from was deleted on 2026-09-28.
 
 ## Global layout
 
@@ -50,7 +50,7 @@ Home, About, Contact, Join Us, the Research introduction, and method copy may re
 
 ### Unverified working data
 
-`organized-from-scrapes/` and the prototype's `dial-test/src/data/` may seed realistic development and manual import even when it has not been approved. A record sourced from it must retain provenance and remain subject to Operator review. Imported co-authorship does not make someone publicly visible.
+Scrape-derived records may seed realistic development and manual import even when it has not been approved. A record sourced from it must retain provenance and remain subject to Operator review. Imported co-authorship does not make someone publicly visible.
 
 ### Derived values
 

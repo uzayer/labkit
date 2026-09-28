@@ -249,7 +249,7 @@ export type Award = {
   provenance?: Provenance
 }
 
-/** Prototype-only: no LabKit collection yet. See dial-test/CLAUDE.md `/news`. */
+/** Prototype-only: no LabKit collection yet. */
 export type News = {
   id: string
   slug: string

@@ -12,13 +12,13 @@ This is an active delivery workspace, not part of the future Fumadocs content tr
 - [`working-data/`](./working-data/) — the BibTeX files imported into the launch database, and where each record type came from
 - [`scraped-data/`](./scraped-data/) — raw source captures (Firecrawl, 2026-09-12) and provenance notes
 
-The standalone prototype lives in [`dial-test/`](../../dial-test/). It is authoritative for layout and interaction, not for factual content. The production frontend belongs in `src/app/(frontend)/` and must read real Payload records for data-driven routes.
+The frontend is `src/app/(frontend)/(dial)/`, and it reads real Payload records for data-driven routes. The `dial-test/` prototype it was ported from was deleted on 2026-09-28.
 
 The launch database (`labkit.db`) is built. The review manifest, the prototype's TypeScript data, the model benchmarks and the scrape-derived candidate records that fed it were deleted on 2026-09-28; they are in Git history if it ever has to be rebuilt.
 
 ## Authority order
 
-1. `dial-test/` for implemented composition and interaction.
+1. `src/app/(frontend)/(dial)/` and `src/components/dial/` for implemented composition and interaction.
 2. `src/collections/` and `src/lib/ingestion/` for the current data contract.
 3. Raw captures plus direct confirmation from DIAL for factual claims.
 4. This workspace's open decisions where neither implementation nor source material settles the question.

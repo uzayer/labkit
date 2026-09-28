@@ -51,7 +51,6 @@
   ],
   "exclude": [
     "node_modules",
-    "dial-test",
     "scripts",
     "labs"
   ]

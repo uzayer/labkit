@@ -1,8 +1,0 @@
-{
-  "crons": [
-    {
-      "path": "/api/payload-jobs/run?queue=imports&limit=1",
-      "schedule": "*/1 * * * *"
-    }
-  ]
-}

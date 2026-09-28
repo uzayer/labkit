@@ -13,7 +13,6 @@
 /build/
 /dist/
 /coverage/
-/dial-test/
 *.tsbuildinfo
 
 # Environment files (keep the committed template)

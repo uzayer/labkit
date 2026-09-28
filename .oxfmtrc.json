@@ -25,7 +25,6 @@
     "labs/dial/scraped-data/**",
     ".agents/skills/**",
     "tsconfig.json",
-    "dial-test/**",
     "next-env.d.ts"
   ]
 }

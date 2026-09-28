@@ -13,7 +13,6 @@ fi
 
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 case "$FILE" in
-  "$ROOT"/dial-test/*) exit 0 ;; # separate app, its own tooling
   "$ROOT"/*) ;;
   *) exit 0 ;;
 esac
