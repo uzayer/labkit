@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-LabKit is a PayloadCMS content platform for research lab websites: research-domain collections (Publications, Grants, Awards, Team, etc.) with a shadcn/ui frontend. Originally built on the [shadcnblocks Payload template](https://docs.shadcnblocks.com/payload/getting-started/); the page-builder block library was removed. The `dial-test/` directory holds a standalone static design prototype that is being ported in as the lab site frontend (see Frontend below).
+LabKit is a PayloadCMS content platform for research lab websites: research-domain collections (Publications, Grants, Awards, Team, etc.) with a shadcn/ui frontend. Originally built on the [shadcnblocks Payload template](https://docs.shadcnblocks.com/payload/getting-started/); the page-builder block library was removed.
 
 Generic website-builder concerns belong upstream with the template; this repo should stay focused on LabKit-specific product and implementation work.
 
@@ -12,7 +12,7 @@ Before starting nontrivial work, read `LOG.md` — a running record of non-obvio
 
 Also read @CONTEXT.md — the domain glossary. Use its terms exactly; it is opinionated about which words to avoid. `LOG.md` is chronological (_why_ a decision was made), `CONTEXT.md` is structural (_what a word means today_), and `docs/adr/` holds standing architectural decisions.
 
-**Current scope (decided 2026-08-18): the MVP is "DIAL's public website is live," and nothing else.** See the MVP section at the top of @docs/product/ROADMAP.md for what is in and — more importantly — what is explicitly out. This project's dominant failure mode is scope creep; if a task doesn't move DIAL's site toward launch, it isn't MVP work.
+**Current scope (decided 2026-08-18): the MVP is "DIAL's public website is live," and nothing else.** See the MVP section at the top of `docs/product/ROADMAP.md` for what is in and — more importantly — what is explicitly out. This project's dominant failure mode is scope creep; if a task doesn't move DIAL's site toward launch, it isn't MVP work.
 
 ## Commands
 
@@ -47,9 +47,7 @@ bun run payload -- run scripts/ingestion/verify-jobs-queue.ts     # jobs-queue r
 
 No test framework is configured. Verify changes with `bun run tsc` and `bun run lint`, plus `verify-jobs-queue.ts` on a throwaway SQLite database when touching the ingestion job path (13 live checks: contention, stale-lease takeover, checkpoint visibility, watchdog drain).
 
-**What the checks don't cover:** the root `tsconfig.json` excludes `scripts/` and `dial-test/`, and `.oxlintrc.json` ignores `dial-test/**` and `docs/**`. So `bun run tsc` does _not_ type-check the ingestion scripts — use `bun run tsc -- -p scripts/tsconfig.json` for those.
-
-**`dial-test/` is a separate app, not part of this build.** It has its own `package.json`, `node_modules`, lockfiles, and `CLAUDE.md`, and is excluded from the root typecheck, lint, and Next build. Run its commands from inside that directory.
+**What the checks don't cover:** the root `tsconfig.json` excludes `scripts/`, and `.oxlintrc.json` ignores `docs/**`. So `bun run tsc` does _not_ type-check the ingestion scripts — use `bun run tsc -- -p scripts/tsconfig.json` for those.
 
 `bun install` is the sanctioned install. The root `bun.lock` is the single source of dependency resolution, and `trustedDependencies` in `package.json` allowlists native build scripts.
 
@@ -93,13 +91,12 @@ Role-based via `Users` ↔ `Roles` (many-to-many). Permission flags: `canManageC
 
 ### Frontend
 
-The live frontend is the DIAL site in `src/app/(frontend)/(dial)/`, ported from the `dial-test/` prototype (2026-09-23). Every public route renders on request from Payload (`force-dynamic`).
+The live frontend is the DIAL site in `src/app/(frontend)/(dial)/`, ported from the `dial-test/` prototype (2026-09-23; the prototype was deleted 2026-09-28). Every public route renders on request from Payload (`force-dynamic`).
 
 - **Data:** `src/lib/dial/data/load.ts` reads every public record in one Local API pass (`overrideAccess: false`) and flattens it to the prototype's record shapes (`types.ts`). `index.ts` (lookups/joins) and `views.ts` (view models) are factories over those records, and `getDial()` in `get.ts` builds them once per request with React `cache`. Pages call `const { … } = await getDial()`. The corpus is small enough that loading it all per request is the design, not a shortcut.
 - **Prose** (stable copy, per ROADMAP's "split routes by churn") stays in code: page copy, `faqs.ts`, and `lab-info.ts` (`DIAL_PROSE`, for values LabInfo has no field for). The nine `/research/<slug>` routes are hardcoded and resolve their Research Theme by slug.
 - **Components** live in `src/components/dial/`, with their own Base UI `ui/` copies so the DIAL styling is independent of the root `src/components/ui/`. Lib code is in `src/lib/dial/`. The CSS (`(dial)/globals.css`) scans only those folders and its own routes.
 - **Contact** posts to `form-submissions` against a Form titled `Contact` (honeypot plus Turnstile when configured).
-- `dial-test/` (untracked, local only) is the original visual reference. DIAL's launch data came from the ingestion pipeline plus a one-off manifest writer; that writer, its TypeScript source data, and the fixture seed were deleted on 2026-09-28 once `labkit.db` was built (restore from Git history if the launch database ever has to be rebuilt).
 
 ### Dashboard
 
@@ -114,7 +111,6 @@ Both are Next.js private folders (`_`-prefixed): they compile and their exports 
 
 ## Gotchas & Non-obvious Behavior
 
-- **Tailwind bg-\* classes:** `RenderBlocks.tsx` has a manual switch statement enumerating every `bg-{color}` class so Tailwind's compiler includes them. If you add a new theme color, you must add a case there too.
 - **`overrideAccess` defaults to `true`** in Payload's Local API — always set `overrideAccess: false` when access control should apply.
 - **Conditional fields:** Blocks hide/show fields based on `designVersion` using `admin.condition`. Pattern: `condition: (_, { designVersion = '' } = {}) => ['1', '2'].includes(designVersion)`.
 - **Bun installs; Node runs.** `bun install` is the supported installer; Node runs Next.js, Payload, TypeScript, and all project CLIs. Native build scripts are explicitly allowlisted in `package.json`'s `trustedDependencies`.
@@ -123,7 +119,6 @@ Both are Next.js private folders (`_`-prefixed): they compile and their exports 
 - **Default roles** are auto-created on startup via `onInit` → `initializeRoles()`.
 - **Nested docs URL generation:** Runs on save. Changing the `generateURL` function in config requires re-saving all pages to update URLs.
 - **Turnstile on form submissions:** `src/app/(payload)/api/[...slug]/route.ts` wraps `POST` for `form-submissions` with Cloudflare Turnstile verification when `NEXT_PUBLIC_TURNSTILE_SITE_KEY` is set. The middleware is in the catch-all API route, not the Form block component — easy to miss. Frontend must send a `cf-turnstile-token` header or the request is silently rejected with 400.
-- **Standalone form components ≠ Payload forms:** Components in `src/components/` like `contact10.tsx`, `waitlist*.tsx`, and `wishlist*.tsx` use react-hook-form but only `console.log` on submit. They are **not** wired to Payload's `form-submissions` collection. To wire them up, see @docs/guides/forms.md.
 - **Tailwind v4 arbitrary-value syntax silently produces no CSS:** vendored/older shadcn components use `w-[--sidebar-width]`-style syntax; Tailwind v4 only recognizes the parenthesized form `w-(--sidebar-width)` as `var()` shorthand. The bracket form compiles and lints clean but generates zero CSS — a real, previously-shipped bug. Grep for `-[--` when importing any older shadcn component. See `docs/LOG-ARCHIVE.md` (2026-07-05).
 
 ## Code style
@@ -165,16 +160,16 @@ Single-context — no monorepo signals. See `docs/agents/domain.md`.
 
 - @CONTEXT.md — domain glossary: canonical terms and words to avoid
 - `LOG.md` — decision log: why, not just what. Newest-first; read from the top, not whole
-- `docs/LOG-ARCHIVE.md` — older decisions (2026-07 and earlier); open only when `LOG.md` falls short
-- @docs/adr/ — standing architectural decisions (0001: why CERIF alignment is deferred)
-- @docs/product/ROADMAP.md — **start here for scope**: the MVP definition and what's explicitly out
-- @docs/product/VISION.md — product vision, positioning, competitive landscape
-- @docs/architecture/data-schema.md — data schema
-- @docs/architecture/theming-system.md — theming implementation
-- @docs/guides/forms.md — form submissions system, wiring standalone forms to Payload
-- @docs/agents/issue-tracker.md — Linear issue tracker config for agent skills
-- @docs/agents/triage-labels.md — triage label vocabulary mapping
-- @docs/agents/domain.md — domain doc consumer rules for agent skills
+- `docs/LOG-ARCHIVE.md` — older and condensed decisions; open only when `LOG.md` falls short
+- `docs/adr/` — standing architectural decisions (0001: why CERIF alignment is deferred)
+- `docs/product/ROADMAP.md` — **start here for scope**: the MVP definition and what's explicitly out
+- `docs/product/VISION.md` — product vision, positioning, competitive landscape
+- `docs/architecture/data-schema.md` — data schema
+- `docs/architecture/theming-system.md` — theming implementation
+- `docs/guides/forms.md` — form submissions system, wiring standalone forms to Payload
+- `docs/agents/issue-tracker.md` — Linear issue tracker config for agent skills
+- `docs/agents/triage-labels.md` — triage label vocabulary mapping
+- `docs/agents/domain.md` — domain doc consumer rules for agent skills
 
 <!-- BEGIN:nextjs-agent-rules -->
 
