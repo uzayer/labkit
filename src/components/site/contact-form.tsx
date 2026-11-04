@@ -32,6 +32,8 @@ type Status =
 export function ContactForm({ formId, email }: { formId: string; email: string | null }) {
   const [status, setStatus] = useState<Status>({ kind: 'idle' })
   const [turnstileToken, setTurnstileToken] = useState('')
+  // Turnstile tokens are single-use: a new key remounts the widget for a fresh one.
+  const [turnstileKey, setTurnstileKey] = useState(0)
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -63,6 +65,8 @@ export function ContactForm({ formId, email }: { formId: string; email: string |
       if (!response.ok) throw new Error(`Contact form request failed: ${response.status}`)
       form.reset()
       setStatus({ kind: 'sent' })
+      setTurnstileToken('')
+      setTurnstileKey((key) => key + 1)
     } catch {
       setStatus({
         kind: 'error',
@@ -121,6 +125,7 @@ export function ContactForm({ formId, email }: { formId: string; email: string |
 
       {TURNSTILE_SITE_KEY && (
         <Turnstile
+          key={turnstileKey}
           sitekey={TURNSTILE_SITE_KEY}
           refreshExpired="auto"
           onVerify={setTurnstileToken}

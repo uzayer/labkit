@@ -25,9 +25,8 @@ export default async function HomePage() {
   return (
     <>
       <PageHeader
-        eyebrow={[labInfo.name !== labInfo.headline && labInfo.name, institution]
-          .filter(Boolean)
-          .join(' · ')}
+        // The name moves up to the label when the headline takes the title.
+        eyebrow={[labInfo.headline && labInfo.name, institution].filter(Boolean).join(' · ')}
         title={labInfo.headline || site.labName}
         description={labInfo.intro || labInfo.description}
         facts={[

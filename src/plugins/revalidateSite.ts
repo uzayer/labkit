@@ -25,6 +25,10 @@ const SITE_GLOBALS = new Set(['features', 'lab-info'])
  * served stale while it refreshes, so a Lab Editor who saves and reloads sees
  * the edit on that reload.
  *
+ * `context.disableRevalidate` is not honoured: ingestion sets it to skip core's
+ * per-record revalidation, but an import should still show on the site, and
+ * expiring one tag is cheap.
+ *
  * Outside a Next.js request (`payload run` scripts) there is no cache to
  * revalidate and `revalidateTag` throws; the cache's hour-long backstop picks
  * those writes up instead.

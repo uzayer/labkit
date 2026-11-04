@@ -99,6 +99,7 @@ export function SiteFooter({ site }: { site: Site }) {
                       className="text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {SOCIAL_LABELS[social.platform] ?? social.platform}
+                      <span className="sr-only"> (opens in a new tab)</span>
                     </a>
                   </li>
                 ))}
