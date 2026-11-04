@@ -326,12 +326,17 @@ function YearStrip({
             key={year}
             type="button"
             aria-pressed={on}
-            aria-label={`${year}, ${count} publications`}
             disabled={count === 0 && !on}
             onClick={() => onToggle(year)}
             className="group/year flex flex-1 cursor-pointer flex-col items-center gap-1 disabled:cursor-default"
             title={`${year} · ${count}`}
           >
+            {/* The full year is the name. The two-digit label under the bar
+                abbreviates it (and is invisible for most years), so it is
+                kept out of the name rather than read as "12 2012". */}
+            <span className="sr-only">
+              {year}, {count} publications
+            </span>
             <span className="flex h-8 w-full items-end">
               <motion.span
                 className={cn(
@@ -350,6 +355,7 @@ function YearStrip({
               />
             </span>
             <span
+              aria-hidden
               className={cn(
                 'text-[0.65rem] tabular-nums transition-colors duration-150',
                 on ? 'text-foreground' : 'text-muted-foreground',
@@ -398,7 +404,8 @@ function FacetToggle({
     >
       <Icon className={cn('size-3.5', on && 'text-brand')} aria-hidden />
       {label}
-      <span className="tabular-nums opacity-60">{count}</span>
+      {/* Full strength: at 60% the count fell below 4.5:1 in both themes. */}
+      <span className="tabular-nums">{count}</span>
     </button>
   )
 }

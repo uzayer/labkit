@@ -39,9 +39,25 @@ export function RevealObserver() {
       }
     })
     mutations.observe(document.body, { childList: true, subtree: true })
+
+    // Keyboard focus can land on a link in a section that has not revealed
+    // yet (inside the observer's bottom margin, or jumped to in one move), and
+    // an opacity-0 link with focus is invisible focus. Reveal it on focus.
+    const revealFocused = (event: FocusEvent) => {
+      if (!(event.target instanceof Element)) return
+      // Every enclosing section, in case reveals are nested.
+      let section = event.target.closest<HTMLElement>(selector)
+      while (section) {
+        section.dataset.revealed = ''
+        observer.unobserve(section)
+        section = section.parentElement?.closest<HTMLElement>(selector) ?? null
+      }
+    }
+    document.addEventListener('focusin', revealFocused)
     return () => {
       observer.disconnect()
       mutations.disconnect()
+      document.removeEventListener('focusin', revealFocused)
     }
   }, [])
 

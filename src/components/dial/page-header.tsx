@@ -146,8 +146,10 @@ const PageHeader = ({
             // columns never wrap: a wrapped figure lost its rule and hung
             // indented under the first row. On a phone they share the width
             // equally and the type steps down to fit; from `sm` each column
-            // takes its own width.
-            <dl
+            // takes its own width. A list rather than a <dl>: each figure carries
+            // a caption row, and a <dl> group may hold only <dt> and <dd>. It
+            // reads as "14 Years at NSU", value then label.
+            <ul
               {...step(4)}
               style={{ ['--fact-cols' as string]: facts.length }}
               className={cn(
@@ -156,7 +158,7 @@ const PageHeader = ({
               )}
             >
               {facts.map((fact, i) => (
-                <div
+                <li
                   key={fact.label}
                   className={cn(
                     'flex min-w-0 flex-col gap-2 py-4 pr-3 sm:pr-8',
@@ -175,16 +177,16 @@ const PageHeader = ({
                     </span>
                     <FactMark label={fact.label} className="ink-mark size-5 shrink-0" />
                   </div>
-                  <dd className="font-display text-4xl leading-none tabular-nums sm:text-5xl">
+                  <span className="font-display text-4xl leading-none tabular-nums sm:text-5xl">
                     {fact.value}
-                  </dd>
+                  </span>
                   {/* Lettered by hand, like a note in the margin of the plate. */}
-                  <dt className="font-hand text-ink pt-1 text-lg leading-tight text-balance sm:text-xl sm:leading-none">
+                  <span className="font-hand text-ink pt-1 text-lg leading-tight text-balance sm:text-xl sm:leading-none">
                     {fact.label}
-                  </dt>
-                </div>
+                  </span>
+                </li>
               ))}
-            </dl>
+            </ul>
           )}
         </div>
       )}

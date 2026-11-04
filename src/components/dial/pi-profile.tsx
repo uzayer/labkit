@@ -8,6 +8,7 @@ export interface PIProfileData {
   name: string
   title: string
   photo?: string | null
+  photoAlt?: string | null
   bio?: string | null
   awards: AwardListItem[]
   scholarUrl?: string | null
@@ -24,7 +25,12 @@ interface PIProfileProps {
 const PIProfile = ({ pi, className }: PIProfileProps) => (
   <section className={cn('container', className)}>
     <div className="grid gap-10 border-t border-border pt-6 md:grid-cols-[minmax(0,20rem)_1fr] md:gap-16">
-      <MountedPortrait src={pi.photo} name={pi.name} alt={`Dr. ${pi.name}`} priority />
+      <MountedPortrait
+        src={pi.photo}
+        name={pi.name}
+        alt={pi.photoAlt ?? `Dr. ${pi.name}`}
+        priority
+      />
 
       <div className="flex flex-col">
         <p className={label}>Principal Investigator</p>

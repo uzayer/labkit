@@ -169,7 +169,7 @@ export function NewsFeed({ entries }: { entries: NewsEntry[] }) {
                               strip of tape stuck to nothing. */}
                           <OptionalImage
                             src={entry.photo}
-                            alt={entry.title}
+                            alt={entry.photoAlt ?? entry.title}
                             overlay={<Tape />}
                             frameClassName="sticker-alt rounded-sm shadow-[0_12px_28px_-20px_rgba(0,0,0,0.6)]"
                             className="aspect-video"

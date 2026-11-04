@@ -11,7 +11,7 @@ export interface PartnerStripEntry {
   /** Nullable because the Organization records this is fed carry it that way. */
   shortName?: string | null
   url?: string | null
-  logo?: { src: string; width: number; height: number } | null
+  logo?: { src: string; width: number; height: number; alt?: string | null } | null
 }
 
 /**
@@ -71,14 +71,20 @@ const PartnerStrip = ({
 }) => {
   const reduceMotion = useReducedMotion()
   const [turn, setTurn] = useState(0)
+  // Moving content that starts on its own needs a way to stop it (WCAG
+  // 2.2.2): a Pause button, and a hold while the pointer or keyboard focus is
+  // on the strip, so a logo never swaps out from under a click or a focus.
+  const [paused, setPaused] = useState(false)
+  const [held, setHeld] = useState(false)
 
   const rotates = !reduceMotion && partners.length > SLOTS_SM
+  const ticking = rotates && !paused && !held
 
   useEffect(() => {
-    if (!rotates) return
+    if (!ticking) return
     const id = setInterval(() => setTurn((t) => t + 1), SWAP_MS)
     return () => clearInterval(id)
-  }, [rotates])
+  }, [ticking])
 
   if (partners.length === 0) return null
 
@@ -93,8 +99,30 @@ const PartnerStrip = ({
   )
 
   return (
-    <div className={cn('flex flex-col gap-8', className)}>
-      <p className={labelType}>{label}</p>
+    <div
+      className={cn('flex flex-col gap-8', className)}
+      onPointerEnter={(event) => event.pointerType === 'mouse' && setHeld(true)}
+      onPointerLeave={() => setHeld(false)}
+      onFocus={() => setHeld(true)}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setHeld(false)
+      }}
+    >
+      <div className="flex items-baseline justify-between gap-4">
+        <p className={labelType}>{label}</p>
+        {/* Only where the strip rotates: below lg, with motion allowed. */}
+        {rotates && (
+          <button
+            type="button"
+            onClick={() => setPaused((p) => !p)}
+            // 24px tall for touch (WCAG 2.5.8) without moving the label.
+            className="-my-1 py-1 text-xs text-muted-foreground lg:hidden"
+          >
+            {paused ? 'Play' : 'Pause'}
+            <span className="sr-only"> partner logos</span>
+          </button>
+        )}
+      </div>
       {rotates && (
         <>
           <RotatingRow partners={partners} count={SLOTS_SM} turn={turn} className="sm:hidden" />
@@ -182,7 +210,7 @@ const Wordmark = ({ partner }: { partner: PartnerStripEntry }) => {
     // eslint-disable-next-line @next/next/no-img-element -- static SVGs; next/image adds nothing here
     <img
       src={partner.logo.src}
-      alt={partner.name}
+      alt={partner.logo.alt || partner.name}
       width={Math.round((logoHeight(partner.logo) * partner.logo.width) / partner.logo.height)}
       height={logoHeight(partner.logo)}
       loading="lazy"

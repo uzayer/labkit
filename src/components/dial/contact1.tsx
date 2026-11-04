@@ -73,6 +73,23 @@ interface Contact1Props {
 
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY
 
+/** The asterisk is for sighted readers; assistive tech hears aria-required. */
+const RequiredMark = () => (
+  <span aria-hidden className="text-destructive">
+    *
+  </span>
+)
+
+/**
+ * Required, invalid, and pointed at its error message when it has one, so a
+ * screen reader reads the error with the field rather than only once.
+ */
+const fieldA11y = (name: string, invalid: boolean) => ({
+  'aria-required': true,
+  'aria-invalid': invalid,
+  'aria-describedby': invalid ? `${name}-error` : undefined,
+})
+
 const Contact1 = ({ email, address, scholarUrl, formId, className, onSubmit }: Contact1Props) => {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [showSuccess, setShowSuccess] = useState(false)
@@ -88,6 +105,14 @@ const Contact1 = ({ email, address, scholarUrl, formId, className, onSubmit }: C
   })
 
   const handleFormSubmit = async (data: ContactFormData) => {
+    // Without a token the API answers 400, which would surface as "something
+    // went wrong"; name the actual problem instead.
+    if (!onSubmit && TURNSTILE_SITE_KEY && !turnstileToken) {
+      form.setError('root', {
+        message: 'Please complete the verification check above the button, then send again.',
+      })
+      return
+    }
     try {
       if (onSubmit) {
         await onSubmit(data)
@@ -211,17 +236,21 @@ const Contact1 = ({ email, address, scholarUrl, formId, className, onSubmit }: C
           style={enterStep(4)}
         >
           <div className="w-full">
-            {isSubmitted && (
-              <p
-                role="status"
-                className={cn(
-                  'border-brand text-brand ease-snappy mb-6 border-l-2 py-1 pl-3 text-sm transition-[opacity,translate] duration-300 starting:translate-y-1 starting:opacity-0 motion-reduce:starting:translate-y-0',
-                  showSuccess ? 'opacity-100' : 'opacity-0',
-                )}
-              >
-                Thank you. We&apos;ll be in touch soon.
-              </p>
-            )}
+            {/* The live region is always in the page, so the thank-you is
+                announced when it appears (a region inserted together with its
+                text often is not). */}
+            <div role="status">
+              {isSubmitted && (
+                <p
+                  className={cn(
+                    'border-brand text-brand ease-snappy mb-6 border-l-2 py-1 pl-3 text-sm transition-[opacity,translate] duration-300 starting:translate-y-1 starting:opacity-0 motion-reduce:starting:translate-y-0',
+                    showSuccess ? 'opacity-100' : 'opacity-0',
+                  )}
+                >
+                  Thank you. We&apos;ll be in touch soon.
+                </p>
+              )}
+            </div>
 
             <FieldGroup className="gap-6">
               <Controller
@@ -230,15 +259,18 @@ const Contact1 = ({ email, address, scholarUrl, formId, className, onSubmit }: C
                 render={({ field, fieldState }) => (
                   <Field data-invalid={fieldState.invalid}>
                     <FieldLabel htmlFor={field.name}>
-                      Name <span className="text-destructive">*</span>
+                      Name <RequiredMark />
                     </FieldLabel>
                     <Input
                       {...field}
                       id={field.name}
-                      aria-invalid={fieldState.invalid}
+                      autoComplete="name"
+                      {...fieldA11y(field.name, fieldState.invalid)}
                       placeholder="Your name"
                     />
-                    {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                    {fieldState.invalid && (
+                      <FieldError id={`${field.name}-error`} errors={[fieldState.error]} />
+                    )}
                   </Field>
                 )}
               />
@@ -249,16 +281,19 @@ const Contact1 = ({ email, address, scholarUrl, formId, className, onSubmit }: C
                 render={({ field, fieldState }) => (
                   <Field data-invalid={fieldState.invalid}>
                     <FieldLabel htmlFor={field.name}>
-                      Email <span className="text-destructive">*</span>
+                      Email <RequiredMark />
                     </FieldLabel>
                     <Input
                       {...field}
                       id={field.name}
                       type="email"
-                      aria-invalid={fieldState.invalid}
+                      autoComplete="email"
+                      {...fieldA11y(field.name, fieldState.invalid)}
                       placeholder="you@example.com"
                     />
-                    {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                    {fieldState.invalid && (
+                      <FieldError id={`${field.name}-error`} errors={[fieldState.error]} />
+                    )}
                   </Field>
                 )}
               />
@@ -269,16 +304,18 @@ const Contact1 = ({ email, address, scholarUrl, formId, className, onSubmit }: C
                 render={({ field, fieldState }) => (
                   <Field data-invalid={fieldState.invalid}>
                     <FieldLabel htmlFor={field.name}>
-                      Message <span className="text-destructive">*</span>
+                      Message <RequiredMark />
                     </FieldLabel>
                     <Textarea
                       {...field}
                       id={field.name}
-                      aria-invalid={fieldState.invalid}
+                      {...fieldA11y(field.name, fieldState.invalid)}
                       placeholder="How can we help you?"
                       rows={5}
                     />
-                    {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                    {fieldState.invalid && (
+                      <FieldError id={`${field.name}-error`} errors={[fieldState.error]} />
+                    )}
                   </Field>
                 )}
               />
@@ -308,7 +345,9 @@ const Contact1 = ({ email, address, scholarUrl, formId, className, onSubmit }: C
               )}
 
               {form.formState.errors.root && (
-                <p className="text-sm text-destructive">{form.formState.errors.root.message}</p>
+                <p role="alert" className="text-sm text-destructive">
+                  {form.formState.errors.root.message}
+                </p>
               )}
 
               <Button
@@ -319,7 +358,10 @@ const Contact1 = ({ email, address, scholarUrl, formId, className, onSubmit }: C
               >
                 {form.formState.isSubmitting ? (
                   <>
-                    <LoaderIcon className="mr-2 size-4 animate-spin" />
+                    <LoaderIcon
+                      aria-hidden
+                      className="mr-2 size-4 animate-spin motion-reduce:animate-none"
+                    />
                     Sending…
                   </>
                 ) : (

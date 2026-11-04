@@ -110,6 +110,10 @@ const mediaDoc = (value: string | Media | null | undefined, media: MediaById) =>
 const mediaUrl = (value: string | Media | null | undefined, media: MediaById): string | null =>
   mediaDoc(value, media)?.url ?? null
 
+/** The Media record's alt text; components fall back to the record's title. */
+const mediaAlt = (value: string | Media | null | undefined, media: MediaById): string | null =>
+  mediaDoc(value, media)?.alt || null
+
 function personRef(
   ref:
     | {
@@ -163,6 +167,7 @@ function toTeam(doc: PayloadTeam, media: MediaById): Team {
     affiliation: refId(doc.affiliation),
     affiliationLabel: doc.affiliationLabel ?? null,
     photo: mediaUrl(doc.photo, media),
+    photoAlt: mediaAlt(doc.photo, media),
     bio: lexicalToText(doc.bio),
     researchInterests: doc.researchInterests ?? null,
     socials: doc.socials?.map(({ platform, url }) => ({ platform, url })) ?? null,
@@ -220,6 +225,7 @@ function toProject(doc: PayloadProject, media: MediaById): Project {
     localName: doc.localName ?? null,
     abstract: doc.abstract ?? null,
     heroImage: mediaUrl(doc.heroImage, media),
+    heroImageAlt: mediaAlt(doc.heroImage, media),
     startDate: doc.startDate ?? null,
     endDate: doc.endDate ?? null,
     externalUrl: doc.externalUrl ?? null,
@@ -290,6 +296,7 @@ function toNews(doc: PayloadNews, media: MediaById): News {
     title: doc.title,
     description: doc.description,
     photo: mediaUrl(doc.photo, media),
+    photoAlt: mediaAlt(doc.photo, media),
     url: doc.url ?? null,
   }
 }
@@ -306,7 +313,7 @@ function toOrganization(doc: PayloadOrganization, media: MediaById): Organizatio
     ror_id: doc.ror_id ?? null,
     logo:
       logo?.url && logo.width && logo.height
-        ? { src: logo.url, width: logo.width, height: logo.height }
+        ? { src: logo.url, width: logo.width, height: logo.height, alt: logo.alt || null }
         : null,
   }
 }

@@ -3,7 +3,16 @@
 import { ArrowLeft, ArrowRight, Menu, Moon, Sun, UserPlus, X } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useRef, useState, useSyncExternalStore, type ReactElement, type ReactNode } from 'react'
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+  useSyncExternalStore,
+  type ReactElement,
+  type ReactNode,
+} from 'react'
 
 import {
   CropMarks,
@@ -18,7 +27,7 @@ import { DialLockup, DialMark } from '@/components/dial/dial-logo'
 import { OptionalImage } from '@/components/dial/optional-image'
 import { PersonChip } from '@/components/dial/person-chip'
 import { RisoArt } from '@/components/dial/riso'
-import { ThemeGlyph, themeInk } from '@/components/dial/theme-marks'
+import { ThemeGlyph, themeTextInk } from '@/components/dial/theme-marks'
 import { Button, buttonVariants } from '@/components/dial/ui/button'
 import {
   NavigationMenu,
@@ -62,7 +71,13 @@ export interface NavData {
   /** e.g. "2014–2025". */
   publicationYears: string
   publicationRecognition: { id: string; title: string; body: string; href: string }[]
-  pi: { name: string; title: string; photo: string | null; href: string } | null
+  pi: {
+    name: string
+    title: string
+    photo: string | null
+    photoAlt: string | null
+    href: string
+  } | null
   /**
    * Current lab members, by roster section — the first few of each, with a
    * count of the rest. Each person links to their page; `role` is set only for
@@ -90,6 +105,46 @@ interface MenuProps {
 // words take the squiggle and its mark lifts — never the paper behind it too.
 // A row with a mark therefore has no arrow on desktop; the mark is its answer.
 
+/**
+ * The panels render twice: in the desktop popup, where Base UI's
+ * NavigationMenu.Link joins the menu's keyboard handling, and in the mobile
+ * menu, which sits outside any NavigationMenu.List. There a
+ * NavigationMenu.Link throws ("CompositeRootContext is missing") and took the
+ * whole page down the moment a submenu opened, so the mobile copy prints the
+ * same classes on a plain link.
+ */
+const InMobileMenu = createContext(false)
+
+const MenuLink = ({
+  href,
+  className,
+  children,
+}: {
+  href: string
+  className?: string
+  children: ReactNode
+}) => {
+  const mobile = useContext(InMobileMenu)
+  if (!mobile)
+    return (
+      <NavigationMenuLink href={href} className={className}>
+        {children}
+      </NavigationMenuLink>
+    )
+  return (
+    <Link
+      href={href}
+      data-slot="navigation-menu-link"
+      className={cn(
+        "flex items-center gap-2 rounded-lg p-2 text-sm transition-colors outline-none [&_svg:not([class*='size-'])]:size-4",
+        className,
+      )}
+    >
+      {children}
+    </Link>
+  )
+}
+
 const PanelLabel = ({ children, action }: { children: ReactNode; action?: ReactNode }) => (
   <div className="mb-5 flex items-center justify-between gap-4 border-b border-border pb-2.5">
     <strong className="flex items-center gap-2 text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase">
@@ -102,7 +157,7 @@ const PanelLabel = ({ children, action }: { children: ReactNode; action?: ReactN
 
 /** The "N more →" link that closes a panel label. */
 const PanelMore = ({ href, children }: { href: string; children: ReactNode }) => (
-  <NavigationMenuLink
+  <MenuLink
     href={href}
     className="group flex shrink-0 items-center gap-1.5 p-0 text-xs text-muted-foreground hover:text-foreground"
   >
@@ -111,7 +166,7 @@ const PanelMore = ({ href, children }: { href: string; children: ReactNode }) =>
       <SquiggleUnderline />
     </span>
     <ArrowRight className="arrow-ne size-3.5" />
-  </NavigationMenuLink>
+  </MenuLink>
 )
 
 /**
@@ -197,7 +252,7 @@ const DestinationTile = ({
   cta: string
   className?: string
 }) => (
-  <NavigationMenuLink
+  <MenuLink
     href={href}
     className={cn(
       'group relative flex w-full flex-row items-start gap-4 overflow-hidden rounded-md border border-border p-5 md:p-6',
@@ -219,7 +274,7 @@ const DestinationTile = ({
         <ArrowRight className="arrow-ne size-4" />
       </span>
     </div>
-  </NavigationMenuLink>
+  </MenuLink>
 )
 
 /**
@@ -241,7 +296,7 @@ const PanelRow = ({
   /** Something printed after the title — an award rosette. */
   trailing?: ReactNode
 }) => (
-  <NavigationMenuLink
+  <MenuLink
     href={href}
     className="group flex flex-row items-baseline gap-3 border-b border-border/60 px-0 py-3 text-left last:border-0"
   >
@@ -262,7 +317,7 @@ const PanelRow = ({
         mark && 'lg:hidden',
       )}
     />
-  </NavigationMenuLink>
+  </MenuLink>
 )
 
 /** A project's initial, printed: the same block the Projects index uses. */
@@ -339,7 +394,7 @@ const ResearchMenu = ({ nav }: MenuProps) => (
       <PanelLabel>Research Themes</PanelLabel>
       <div className="grid grid-cols-1 gap-x-8 md:grid-cols-2 lg:grid-cols-3">
         {nav.researchThemes.map((theme, i) => (
-          <NavigationMenuLink
+          <MenuLink
             key={theme.id}
             href={`/research/${theme.slug}`}
             className="group flex items-start gap-4 border-b border-border/60 px-0 py-4 text-left"
@@ -352,7 +407,10 @@ const ResearchMenu = ({ nav }: MenuProps) => (
             </span>
             <span className="min-w-0 flex-1">
               <strong
-                className={cn('font-display relative text-base font-normal', themeInk(theme.slug))}
+                className={cn(
+                  'font-display relative text-base font-normal',
+                  themeTextInk(theme.slug),
+                )}
               >
                 {theme.title}
                 <SquiggleUnderline />
@@ -364,7 +422,7 @@ const ResearchMenu = ({ nav }: MenuProps) => (
             {/* A phone has no hover to reveal that a row is a link, so there
                 every row carries the arrow a link wears elsewhere. */}
             <ArrowRight className="size-4 shrink-0 self-center text-muted-foreground lg:hidden" />
-          </NavigationMenuLink>
+          </MenuLink>
         ))}
       </div>
     </div>
@@ -470,7 +528,7 @@ const PeopleMenu = ({ nav }: MenuProps) => (
                 so the frame is 3/4 and centred: very nearly the whole photo. */}
             <OptionalImage
               src={nav.pi.photo}
-              alt={`Dr. ${nav.pi.name}`}
+              alt={nav.pi.photoAlt ?? `Dr. ${nav.pi.name}`}
               overlay={<Tape />}
               frameClassName="aspect-3/4 w-full rounded-sm"
               sizes="(max-width: 1023px) 100vw, 18rem"
@@ -686,7 +744,47 @@ const Navbar4 = ({ nav, className }: Navbar4Props) => {
   const [panel, setPanel] = useState<string | null>(null)
   const openedAt = useRef(0)
   const barRef = useRef<HTMLDivElement>(null)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
+  const submenuHeadingRef = useRef<HTMLHeadingElement>(null)
+  const submenuTriggerRefs = useRef(new Map<NavigationMenuKey, HTMLButtonElement>())
+  const lastSubmenu = useRef<NavigationMenuKey | null>(null)
   const pathname = usePathname()
+
+  const closeMobileMenu = () => {
+    setOpen(false)
+    setSubmenu(null)
+  }
+
+  // The open mobile menu covers the page, so the page behind it leaves the
+  // tab order and the accessibility tree (inert), and Escape closes it,
+  // handing focus back to the button that opened it.
+  useEffect(() => {
+    if (!open) return
+    const behind = [...document.body.children].filter(
+      (el): el is HTMLElement => el instanceof HTMLElement && !el.contains(barRef.current),
+    )
+    for (const el of behind) el.inert = true
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return
+      setOpen(false)
+      setSubmenu(null)
+      menuButtonRef.current?.focus()
+    }
+    document.addEventListener('keydown', onKeyDown)
+    return () => {
+      for (const el of behind) el.inert = false
+      document.removeEventListener('keydown', onKeyDown)
+    }
+  }, [open])
+
+  // Drilling in unmounts the row that was clicked, which would drop focus to
+  // <body>. Focus follows the drill instead: into the submenu's heading, and
+  // on "Go back" to the row it came from.
+  useEffect(() => {
+    if (submenu) submenuHeadingRef.current?.focus()
+    else if (lastSubmenu.current) submenuTriggerRefs.current.get(lastSubmenu.current)?.focus()
+    lastSubmenu.current = submenu
+  }, [submenu])
 
   // Arriving on a new page closes whatever panel led there, so the page you
   // chose is what you see, not the menu still hanging over it. Links close the
@@ -713,7 +811,7 @@ const Navbar4 = ({ nav, className }: Navbar4Props) => {
   }
 
   return (
-    <section
+    <header
       data-site-nav
       className={cn('inset-x-0 top-0 z-20 bg-background text-foreground', className)}
     >
@@ -727,6 +825,7 @@ const Navbar4 = ({ nav, className }: Navbar4Props) => {
           anchor={barRef}
           align="center"
           className="min-w-full"
+          aria-label="Main"
         >
           <div ref={barRef} className="flex w-full justify-between gap-2 py-4">
             {/* Logo. The wordmark used to carry "NSU HCI" as part of the
@@ -783,7 +882,8 @@ const Navbar4 = ({ nav, className }: Navbar4Props) => {
               <Button
                 variant="ghost"
                 size="icon"
-                aria-label="Toggle dark mode"
+                aria-label="Dark mode"
+                aria-pressed={isDark}
                 onClick={toggleDark}
               >
                 <IconSwap
@@ -796,15 +896,11 @@ const Navbar4 = ({ nav, className }: Navbar4Props) => {
                 variant="outline"
                 size="icon"
                 aria-label="Main Menu"
+                aria-expanded={open}
+                aria-controls={open ? 'mobile-menu' : undefined}
+                ref={menuButtonRef}
                 className="lg:hidden"
-                onClick={() => {
-                  if (open) {
-                    setOpen(false)
-                    setSubmenu(null)
-                  } else {
-                    setOpen(true)
-                  }
-                }}
+                onClick={() => (open ? closeMobileMenu() : setOpen(true))}
               >
                 <IconSwap
                   on={open}
@@ -820,11 +916,11 @@ const Navbar4 = ({ nav, className }: Navbar4Props) => {
               the shared layout does not need to ship Motion on every route. */}
           {open ? (
             <div
+              id="mobile-menu"
               className="mobile-menu-enter fixed inset-0 top-[77px] container flex h-[calc(100vh-77px)] w-full flex-col overflow-auto border-t border-border bg-background lg:hidden"
               onClick={(event) => {
                 if (!(event.target instanceof Element) || !event.target.closest('a')) return
-                setOpen(false)
-                setSubmenu(null)
+                closeMobileMenu()
               }}
             >
               {submenu && (
@@ -845,6 +941,10 @@ const Navbar4 = ({ nav, className }: Navbar4Props) => {
                     <button
                       key={item.key}
                       type="button"
+                      ref={(el) => {
+                        if (el) submenuTriggerRefs.current.set(item.key, el)
+                        else submenuTriggerRefs.current.delete(item.key)
+                      }}
                       className="enter flex w-full items-center border-b border-border py-6 text-left [animation-duration:300ms]"
                       style={{ animationDelay: `${80 + i * 40}ms` }}
                       onClick={() => setSubmenu(item.key)}
@@ -861,8 +961,17 @@ const Navbar4 = ({ nav, className }: Navbar4Props) => {
                 (item) =>
                   submenu === item.key && (
                     <div key={item.key} className="submenu-enter">
-                      <h2 className="pt-4 pb-6 text-lg font-medium">{item.label}</h2>
-                      <item.component nav={nav} />
+                      <h2
+                        ref={submenuHeadingRef}
+                        tabIndex={-1}
+                        data-focus-target
+                        className="pt-4 pb-6 text-lg font-medium outline-none"
+                      >
+                        {item.label}
+                      </h2>
+                      <InMobileMenu.Provider value>
+                        <item.component nav={nav} />
+                      </InMobileMenu.Provider>
                     </div>
                   ),
               )}
@@ -875,7 +984,7 @@ const Navbar4 = ({ nav, className }: Navbar4Props) => {
           ) : null}
         </NavigationMenu>
       </div>
-    </section>
+    </header>
   )
 }
 
