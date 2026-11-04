@@ -1,13 +1,6 @@
 import type { PublicationType } from './crossref'
-import { cleanText, normalizeOrcid } from './normalize'
-
-// OpenAlex work types with no equivalent Publications.type value are left
-// unmapped, same policy as CROSSREF_TYPE_MAP in crossref.ts.
-const OPENALEX_TYPE_MAP: Record<string, PublicationType> = {
-  article: 'journal',
-  preprint: 'preprint',
-  'book-chapter': 'book-chapter',
-}
+import { cleanText, normalizeDoi, normalizeOrcid } from './normalize'
+import { mapOpenAlexType, type WorkTypeMapping } from './work-types'
 
 function reconstructAbstract(invertedIndex: Record<string, number[]>): string {
   const positions: Array<[number, string]> = []
@@ -44,6 +37,15 @@ export interface OpenAlexPublicationFields {
   title?: string
   year?: number
   type?: PublicationType
+  typeMapping?: WorkTypeMapping
+  /**
+   * Every DOI OpenAlex filed under this work (its own and its locations').
+   * OpenAlex merges a preprint and its published version into one work, so a
+   * second DOI here is another version of the same paper. Which one is the
+   * preprint is not read from here: location `version` labels are unreliable
+   * (SSRN copies are labelled publishedVersion).
+   */
+  workDois?: string[]
   authorships?: OpenAlexAuthorship[]
   venueOpenAlexSourceId?: string
   venueIssn?: string[]
@@ -53,6 +55,7 @@ export interface OpenAlexPublicationFields {
 
 interface OpenAlexWork {
   id?: string
+  doi?: string | null
   title?: string
   publication_year?: number
   type?: string
@@ -71,6 +74,17 @@ interface OpenAlexWork {
     source?: { id?: string; issn?: string[] }
   }
   best_oa_location?: { pdf_url?: string | null } | null
+  locations?: Array<{ landing_page_url?: string | null }>
+}
+
+const DOI_URL = /^https?:\/\/(dx\.)?doi\.org\/(10\..+)$/i
+
+function safeDecode(value: string): string {
+  try {
+    return decodeURIComponent(value)
+  } catch {
+    return value
+  }
 }
 
 export function mapOpenAlexToPublicationFields(json: unknown): OpenAlexPublicationFields {
@@ -94,10 +108,18 @@ export function mapOpenAlexToPublicationFields(json: unknown): OpenAlexPublicati
   if (typeof work.publication_year === 'number') {
     fields.year = work.publication_year
   }
-  if (typeof work.type === 'string') {
-    const mapped = OPENALEX_TYPE_MAP[work.type]
-    if (mapped) fields.type = mapped
+  const mapping = mapOpenAlexType(typeof work.type === 'string' ? work.type : undefined)
+  if (mapping) {
+    fields.type = mapping.type
+    fields.typeMapping = mapping
   }
+  const workDois = [work.doi, ...(work.locations ?? []).map((l) => l.landing_page_url)].flatMap(
+    (url) => {
+      const match = typeof url === 'string' ? DOI_URL.exec(url) : null
+      return match ? [normalizeDoi(safeDecode(match[2]))] : []
+    },
+  )
+  if (workDois.length > 0) fields.workDois = [...new Set(workDois)]
   if (Array.isArray(work.authorships)) {
     fields.authorships = work.authorships.map((authorship) => ({
       authorId: authorship.author?.id,

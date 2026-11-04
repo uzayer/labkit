@@ -1,0 +1,2118 @@
+{
+  "url": "https://api.openalex.org/works/https://doi.org/10.48550/arXiv.2208.08907",
+  "recordedAt": "2026-11-04",
+  "note": "Trimmed to the fields ingestion reads. OpenAlex files the arXiv DOI under the published work W4293515232.",
+  "body": {
+    "id": "https://openalex.org/W4293515232",
+    "doi": "https://doi.org/10.1128/msystems.00927-22",
+    "title": "Application of Traditional Vaccine Development Strategies to SARS-CoV-2",
+    "publication_year": 2023,
+    "primary_location": {
+      "id": "doi:10.1128/msystems.00927-22",
+      "doi": "https://doi.org/10.1128/msystems.00927-22",
+      "is_oa": true,
+      "landing_page_url": "https://doi.org/10.1128/msystems.00927-22",
+      "pdf_url": null,
+      "source": {
+        "id": "https://openalex.org/S4210181942",
+        "display_name": "mSystems",
+        "issn_l": "2379-5077",
+        "issn": [
+          "2379-5077"
+        ],
+        "is_oa": true,
+        "is_in_doaj": true,
+        "is_core": true,
+        "listed_in": [
+          "cwts-core",
+          "doaj",
+          "dongbi-c",
+          "jufo-1",
+          "ki-jl-1",
+          "medline",
+          "norway-1",
+          "oarl",
+          "poland-140",
+          "russia-white-list-1",
+          "vabb-shw"
+        ],
+        "host_organization": "https://openalex.org/P4310320263",
+        "host_organization_name": "American Society for Microbiology",
+        "host_organization_lineage": [
+          "https://openalex.org/P4310320263"
+        ],
+        "host_organization_lineage_names": [
+          "American Society for Microbiology"
+        ],
+        "type": "journal"
+      },
+      "license": "cc-by",
+      "license_id": "https://openalex.org/licenses/cc-by",
+      "version": "publishedVersion",
+      "is_accepted": true,
+      "is_published": true,
+      "raw_source_name": "mSystems",
+      "raw_type": "journal-article"
+    },
+    "type": "review",
+    "open_access": {
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://doi.org/10.1128/msystems.00927-22",
+      "any_repository_has_fulltext": true
+    },
+    "authorships": [
+      {
+        "author_position": "first",
+        "author": {
+          "id": "https://openalex.org/A5062823488",
+          "display_name": "Halie M. Rando",
+          "orcid": "https://orcid.org/0000-0001-7688-1770",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-7688-1770"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I51713134",
+            "display_name": "University of Colorado Anschutz",
+            "ror": "https://ror.org/03wmf1y16",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I51713134"
+            ]
+          },
+          {
+            "id": "https://openalex.org/I79576946",
+            "display_name": "University of Pennsylvania",
+            "ror": "https://ror.org/00b30xv10",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Halie M. Rando",
+        "raw_affiliation_strings": [
+          "Center for Health AI, University of Colorado School of Medicine, Aurora, Colorado, USA",
+          "Department of Biochemistry and Molecular Genetics, University of Colorado School of Medicine, Aurora, Colorado, USA",
+          "Department of Biomedical Informatics, University of Colorado School of Medicine, Aurora, Colorado, USA",
+          "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania, Philadelphia, Pennsylvania, USA"
+        ],
+        "raw_orcid": "https://orcid.org/0000-0001-7688-1770",
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Center for Health AI, University of Colorado School of Medicine, Aurora, Colorado, USA",
+            "institution_ids": [
+              "https://openalex.org/I51713134"
+            ]
+          },
+          {
+            "raw_affiliation_string": "Department of Biochemistry and Molecular Genetics, University of Colorado School of Medicine, Aurora, Colorado, USA",
+            "institution_ids": [
+              "https://openalex.org/I51713134"
+            ]
+          },
+          {
+            "raw_affiliation_string": "Department of Biomedical Informatics, University of Colorado School of Medicine, Aurora, Colorado, USA",
+            "institution_ids": [
+              "https://openalex.org/I51713134"
+            ]
+          },
+          {
+            "raw_affiliation_string": "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania, Philadelphia, Pennsylvania, USA",
+            "institution_ids": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5035868372",
+          "display_name": "Ronan Lordan",
+          "orcid": "https://orcid.org/0000-0001-9668-3368",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-9668-3368"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I79576946",
+            "display_name": "University of Pennsylvania",
+            "ror": "https://ror.org/00b30xv10",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Ronan Lordan",
+        "raw_affiliation_strings": [
+          "Department of Medicine, Perelman School of Medicine, University of Pennsylvania, Pennsylvania, USA",
+          "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania, Philadelphia, Pennsylvania, USA",
+          "Institute for Translational Medicine and Therapeutics, Perelman School of Medicine, University of Pennsylvania, Philadelphia, Pennsylvania, USA"
+        ],
+        "raw_orcid": "https://orcid.org/0000-0001-9668-3368",
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Department of Medicine, Perelman School of Medicine, University of Pennsylvania, Pennsylvania, USA",
+            "institution_ids": [
+              "https://openalex.org/I79576946"
+            ]
+          },
+          {
+            "raw_affiliation_string": "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania, Philadelphia, Pennsylvania, USA",
+            "institution_ids": [
+              "https://openalex.org/I79576946"
+            ]
+          },
+          {
+            "raw_affiliation_string": "Institute for Translational Medicine and Therapeutics, Perelman School of Medicine, University of Pennsylvania, Philadelphia, Pennsylvania, USA",
+            "institution_ids": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": null,
+          "display_name": "Alexandra J. Lee",
+          "orcid": "https://orcid.org/0000-0002-0208-3730",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-0208-3730"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I79576946",
+            "display_name": "University of Pennsylvania",
+            "ror": "https://ror.org/00b30xv10",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Alexandra J. Lee",
+        "raw_affiliation_strings": [
+          "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania, Philadelphia, Pennsylvania, USA"
+        ],
+        "raw_orcid": "https://orcid.org/0000-0002-0208-3730",
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania, Philadelphia, Pennsylvania, USA",
+            "institution_ids": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5065376186",
+          "display_name": "Amruta S. Naik",
+          "orcid": "https://orcid.org/0000-0003-0673-2643",
+          "observed_orcids": [
+            "https://orcid.org/0000-0003-0673-2643"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I1335321130",
+            "display_name": "Children's Hospital of Philadelphia",
+            "ror": "https://ror.org/01z7r7q48",
+            "country_code": "US",
+            "type": "funder",
+            "lineage": [
+              "https://openalex.org/I1335321130"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Amruta Naik",
+        "raw_affiliation_strings": [
+          "Children’s Hospital of Philadelphia, Philadelphia, Pennsylvania, USA"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Children’s Hospital of Philadelphia, Philadelphia, Pennsylvania, USA",
+            "institution_ids": [
+              "https://openalex.org/I1335321130"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5039755062",
+          "display_name": "Nils Wellhausen",
+          "orcid": "https://orcid.org/0000-0001-8955-7582",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-8955-7582"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I79576946",
+            "display_name": "University of Pennsylvania",
+            "ror": "https://ror.org/00b30xv10",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Nils Wellhausen",
+        "raw_affiliation_strings": [
+          "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania, Philadelphia, Pennsylvania, USA"
+        ],
+        "raw_orcid": "https://orcid.org/0000-0001-8955-7582",
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania, Philadelphia, Pennsylvania, USA",
+            "institution_ids": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5083873815",
+          "display_name": "Elizabeth Sell",
+          "orcid": "https://orcid.org/0000-0002-9658-1107",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-9658-1107"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I79576946",
+            "display_name": "University of Pennsylvania",
+            "ror": "https://ror.org/00b30xv10",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Elizabeth Sell",
+        "raw_affiliation_strings": [
+          "Department of Medicine, Perelman School of Medicine, University of Pennsylvania, Pennsylvania, USA"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Department of Medicine, Perelman School of Medicine, University of Pennsylvania, Pennsylvania, USA",
+            "institution_ids": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5057502829",
+          "display_name": "Likhitha Kolla",
+          "orcid": "https://orcid.org/0000-0002-1169-906X",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-1169-906X"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I79576946",
+            "display_name": "University of Pennsylvania",
+            "ror": "https://ror.org/00b30xv10",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Likhitha Kolla",
+        "raw_affiliation_strings": [
+          "Department of Medicine, Perelman School of Medicine, University of Pennsylvania, Pennsylvania, USA"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Department of Medicine, Perelman School of Medicine, University of Pennsylvania, Pennsylvania, USA",
+            "institution_ids": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5083286341",
+          "display_name": "Anthony Gitter",
+          "orcid": "https://orcid.org/0000-0002-5324-9833",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-5324-9833"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I135310074",
+            "display_name": "University of Wisconsin–Madison",
+            "ror": "https://ror.org/01y2jtd41",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I135310074"
+            ]
+          },
+          {
+            "id": "https://openalex.org/I29680605",
+            "display_name": "Morgridge Institute for Research",
+            "ror": "https://ror.org/05cb4rb43",
+            "country_code": "US",
+            "type": "nonprofit",
+            "lineage": [
+              "https://openalex.org/I135310074",
+              "https://openalex.org/I29680605"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Anthony Gitter",
+        "raw_affiliation_strings": [
+          "Department of Biostatistics and Medical Informatics, University of Wisconsin—Madison, Madison, Wisconsin, USA",
+          "Morgridge Institute for Research, Madison, Wisconsin, USA"
+        ],
+        "raw_orcid": "https://orcid.org/0000-0002-5324-9833",
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Department of Biostatistics and Medical Informatics, University of Wisconsin—Madison, Madison, Wisconsin, USA",
+            "institution_ids": [
+              "https://openalex.org/I135310074"
+            ]
+          },
+          {
+            "raw_affiliation_string": "Morgridge Institute for Research, Madison, Wisconsin, USA",
+            "institution_ids": [
+              "https://openalex.org/I29680605"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5050692257",
+          "display_name": "Casey S. Greene",
+          "orcid": "https://orcid.org/0000-0001-8713-9213",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-8713-9213"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I4210126766",
+            "display_name": "Alex's Lemonade Stand Foundation",
+            "ror": "https://ror.org/038ja4880",
+            "country_code": "US",
+            "type": "nonprofit",
+            "lineage": [
+              "https://openalex.org/I4210126766"
+            ]
+          },
+          {
+            "id": "https://openalex.org/I51713134",
+            "display_name": "University of Colorado Anschutz",
+            "ror": "https://ror.org/03wmf1y16",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I51713134"
+            ]
+          },
+          {
+            "id": "https://openalex.org/I79576946",
+            "display_name": "University of Pennsylvania",
+            "ror": "https://ror.org/00b30xv10",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Casey S. Greene",
+        "raw_affiliation_strings": [
+          "Center for Health AI, University of Colorado School of Medicine, Aurora, Colorado, USA",
+          "Childhood Cancer Data Lab, Alex’s Lemonade Stand Foundation, Philadelphia, Pennsylvania, USA",
+          "Department of Biochemistry and Molecular Genetics, University of Colorado School of Medicine, Aurora, Colorado, USA",
+          "Department of Biomedical Informatics, University of Colorado School of Medicine, Aurora, Colorado, USA",
+          "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania, Philadelphia, Pennsylvania, USA"
+        ],
+        "raw_orcid": "https://orcid.org/0000-0001-8713-9213",
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Center for Health AI, University of Colorado School of Medicine, Aurora, Colorado, USA",
+            "institution_ids": [
+              "https://openalex.org/I51713134"
+            ]
+          },
+          {
+            "raw_affiliation_string": "Childhood Cancer Data Lab, Alex’s Lemonade Stand Foundation, Philadelphia, Pennsylvania, USA",
+            "institution_ids": [
+              "https://openalex.org/I4210126766"
+            ]
+          },
+          {
+            "raw_affiliation_string": "Department of Biochemistry and Molecular Genetics, University of Colorado School of Medicine, Aurora, Colorado, USA",
+            "institution_ids": [
+              "https://openalex.org/I51713134"
+            ]
+          },
+          {
+            "raw_affiliation_string": "Department of Biomedical Informatics, University of Colorado School of Medicine, Aurora, Colorado, USA",
+            "institution_ids": [
+              "https://openalex.org/I51713134"
+            ]
+          },
+          {
+            "raw_affiliation_string": "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania, Philadelphia, Pennsylvania, USA",
+            "institution_ids": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": null,
+          "display_name": "Vikas Bansal",
+          "orcid": null,
+          "observed_orcids": []
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Vikas Bansal",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5036998304",
+          "display_name": "John P. Barton",
+          "orcid": "https://orcid.org/0000-0003-1467-421X",
+          "observed_orcids": [
+            "https://orcid.org/0000-0003-1467-421X"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "John P. Barton",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5034362700",
+          "display_name": "Simina Maria Boca",
+          "orcid": "https://orcid.org/0000-0002-1400-3398",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-1400-3398"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Simina M. Boca",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5032144064",
+          "display_name": "Joel D. Boerckel",
+          "orcid": "https://orcid.org/0000-0003-3126-3025",
+          "observed_orcids": [
+            "https://orcid.org/0000-0003-3126-3025"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Joel D. Boerckel",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5060662654",
+          "display_name": "Christian Brueffer",
+          "orcid": "https://orcid.org/0000-0002-3826-0989",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-3826-0989"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Christian Brueffer",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5065971122",
+          "display_name": "James Brian Byrd",
+          "orcid": "https://orcid.org/0000-0002-0509-3520",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-0509-3520"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "James Brian Byrd",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5061037221",
+          "display_name": "Stephen Capone",
+          "orcid": "https://orcid.org/0000-0001-7231-1535",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-7231-1535"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Stephen Capone",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5103415310",
+          "display_name": "Shikta Das",
+          "orcid": null,
+          "observed_orcids": []
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Shikta Das",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5002953481",
+          "display_name": "Anna Ada Dattoli",
+          "orcid": "https://orcid.org/0000-0003-1462-831X",
+          "observed_orcids": [
+            "https://orcid.org/0000-0003-1462-831X"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Anna Ada Dattoli",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5040736586",
+          "display_name": "John J. Dziak",
+          "orcid": "https://orcid.org/0000-0003-0762-5495",
+          "observed_orcids": [
+            "https://orcid.org/0000-0003-0762-5495"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "John J. Dziak",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5019562492",
+          "display_name": "Jeffrey M. Field",
+          "orcid": "https://orcid.org/0000-0001-7161-7284",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-7161-7284"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Jeffrey M. Field",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5079331432",
+          "display_name": "Soumita Ghosh",
+          "orcid": "https://orcid.org/0000-0003-1743-529X",
+          "observed_orcids": [
+            "https://orcid.org/0000-0003-1743-529X",
+            "https://orcid.org/0000-0002-2783-2750"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Soumita Ghosh",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5083286341",
+          "display_name": "Anthony Gitter",
+          "orcid": "https://orcid.org/0000-0002-5324-9833",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-5324-9833"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I135310074",
+            "display_name": "University of Wisconsin–Madison",
+            "ror": "https://ror.org/01y2jtd41",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I135310074"
+            ]
+          },
+          {
+            "id": "https://openalex.org/I29680605",
+            "display_name": "Morgridge Institute for Research",
+            "ror": "https://ror.org/05cb4rb43",
+            "country_code": "US",
+            "type": "nonprofit",
+            "lineage": [
+              "https://openalex.org/I135310074",
+              "https://openalex.org/I29680605"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Anthony Gitter",
+        "raw_affiliation_strings": [
+          "Department of Biostatistics and Medical Informatics, University of Wisconsin—Madison, Madison, Wisconsin, USA",
+          "Morgridge Institute for Research, Madison, Wisconsin, USA"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Department of Biostatistics and Medical Informatics, University of Wisconsin—Madison, Madison, Wisconsin, USA",
+            "institution_ids": [
+              "https://openalex.org/I135310074"
+            ]
+          },
+          {
+            "raw_affiliation_string": "Morgridge Institute for Research, Madison, Wisconsin, USA",
+            "institution_ids": [
+              "https://openalex.org/I29680605"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5072931739",
+          "display_name": "Rishi R. Goel",
+          "orcid": "https://orcid.org/0000-0003-1715-5191",
+          "observed_orcids": [
+            "https://orcid.org/0000-0003-1715-5191"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Rishi Raj Goel",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5050692257",
+          "display_name": "Casey S. Greene",
+          "orcid": "https://orcid.org/0000-0001-8713-9213",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-8713-9213"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I4210126766",
+            "display_name": "Alex's Lemonade Stand Foundation",
+            "ror": "https://ror.org/038ja4880",
+            "country_code": "US",
+            "type": "nonprofit",
+            "lineage": [
+              "https://openalex.org/I4210126766"
+            ]
+          },
+          {
+            "id": "https://openalex.org/I51713134",
+            "display_name": "University of Colorado Anschutz",
+            "ror": "https://ror.org/03wmf1y16",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I51713134"
+            ]
+          },
+          {
+            "id": "https://openalex.org/I79576946",
+            "display_name": "University of Pennsylvania",
+            "ror": "https://ror.org/00b30xv10",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Casey S. Greene",
+        "raw_affiliation_strings": [
+          "Center for Health AI, University of Colorado School of Medicine, Aurora, Colorado, USA",
+          "Childhood Cancer Data Lab, Alex’s Lemonade Stand Foundation, Philadelphia, Pennsylvania, USA",
+          "Department of Biochemistry and Molecular Genetics, University of Colorado School of Medicine, Aurora, Colorado, USA",
+          "Department of Biomedical Informatics, University of Colorado School of Medicine, Aurora, Colorado, USA",
+          "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania, Philadelphia, Pennsylvania, USA"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Center for Health AI, University of Colorado School of Medicine, Aurora, Colorado, USA",
+            "institution_ids": [
+              "https://openalex.org/I51713134"
+            ]
+          },
+          {
+            "raw_affiliation_string": "Childhood Cancer Data Lab, Alex’s Lemonade Stand Foundation, Philadelphia, Pennsylvania, USA",
+            "institution_ids": [
+              "https://openalex.org/I4210126766"
+            ]
+          },
+          {
+            "raw_affiliation_string": "Department of Biochemistry and Molecular Genetics, University of Colorado School of Medicine, Aurora, Colorado, USA",
+            "institution_ids": [
+              "https://openalex.org/I51713134"
+            ]
+          },
+          {
+            "raw_affiliation_string": "Department of Biomedical Informatics, University of Colorado School of Medicine, Aurora, Colorado, USA",
+            "institution_ids": [
+              "https://openalex.org/I51713134"
+            ]
+          },
+          {
+            "raw_affiliation_string": "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania, Philadelphia, Pennsylvania, USA",
+            "institution_ids": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5087387706",
+          "display_name": "Marouen Ben Guebila",
+          "orcid": "https://orcid.org/0000-0001-5934-966X",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-5934-966X"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Marouen Ben Guebila",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5043439179",
+          "display_name": "Daniel Himmelstein",
+          "orcid": "https://orcid.org/0000-0002-3012-7446",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-3012-7446"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Daniel S. Himmelstein",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5036989840",
+          "display_name": "Fengling Hu",
+          "orcid": "https://orcid.org/0000-0003-1081-5038",
+          "observed_orcids": [
+            "https://orcid.org/0000-0003-1081-5038"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Fengling Hu",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5042905167",
+          "display_name": "Nafisa M. Jadavji",
+          "orcid": "https://orcid.org/0000-0002-3557-7307",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-3557-7307"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Nafisa M. Jadavji",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5006646838",
+          "display_name": "Jeremy P. Kamil",
+          "orcid": "https://orcid.org/0000-0001-8422-7656",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-8422-7656"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Jeremy P. Kamil",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5108272388",
+          "display_name": "Sergey Knyazev",
+          "orcid": "https://orcid.org/0000-0003-0385-1831",
+          "observed_orcids": [
+            "https://orcid.org/0000-0003-0385-1831"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Sergey Knyazev",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5057502829",
+          "display_name": "Likhitha Kolla",
+          "orcid": "https://orcid.org/0000-0002-1169-906X",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-1169-906X"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I79576946",
+            "display_name": "University of Pennsylvania",
+            "ror": "https://ror.org/00b30xv10",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Likhitha Kolla",
+        "raw_affiliation_strings": [
+          "Department of Medicine, Perelman School of Medicine, University of Pennsylvania, Pennsylvania, USA"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Department of Medicine, Perelman School of Medicine, University of Pennsylvania, Pennsylvania, USA",
+            "institution_ids": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": null,
+          "display_name": "Alexandra J. Lee",
+          "orcid": null,
+          "observed_orcids": []
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I79576946",
+            "display_name": "University of Pennsylvania",
+            "ror": "https://ror.org/00b30xv10",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Alexandra J. Lee",
+        "raw_affiliation_strings": [
+          "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania, Philadelphia, Pennsylvania, USA"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania, Philadelphia, Pennsylvania, USA",
+            "institution_ids": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5035868372",
+          "display_name": "Ronan Lordan",
+          "orcid": "https://orcid.org/0000-0001-9668-3368",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-9668-3368"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I79576946",
+            "display_name": "University of Pennsylvania",
+            "ror": "https://ror.org/00b30xv10",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Ronan Lordan",
+        "raw_affiliation_strings": [
+          "Department of Medicine, Perelman School of Medicine, University of Pennsylvania, Pennsylvania, USA",
+          "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania, Philadelphia, Pennsylvania, USA",
+          "Institute for Translational Medicine and Therapeutics, Perelman School of Medicine, University of Pennsylvania, Philadelphia, Pennsylvania, USA"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Department of Medicine, Perelman School of Medicine, University of Pennsylvania, Pennsylvania, USA",
+            "institution_ids": [
+              "https://openalex.org/I79576946"
+            ]
+          },
+          {
+            "raw_affiliation_string": "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania, Philadelphia, Pennsylvania, USA",
+            "institution_ids": [
+              "https://openalex.org/I79576946"
+            ]
+          },
+          {
+            "raw_affiliation_string": "Institute for Translational Medicine and Therapeutics, Perelman School of Medicine, University of Pennsylvania, Philadelphia, Pennsylvania, USA",
+            "institution_ids": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5055351466",
+          "display_name": "Tiago Lubiana",
+          "orcid": "https://orcid.org/0000-0003-2473-2313",
+          "observed_orcids": [
+            "https://orcid.org/0000-0003-2473-2313"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Tiago Lubiana",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5023297313",
+          "display_name": "Temitayo Lukan",
+          "orcid": null,
+          "observed_orcids": []
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Temitayo Lukan",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5046793239",
+          "display_name": "Adam L. MacLean",
+          "orcid": "https://orcid.org/0000-0003-0689-7907",
+          "observed_orcids": [
+            "https://orcid.org/0000-0003-0689-7907"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Adam L. MacLean",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5061136460",
+          "display_name": "David Mai",
+          "orcid": "https://orcid.org/0000-0002-9238-0164",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-9238-0164"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "David Mai",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5017101305",
+          "display_name": "Serghei Mangul",
+          "orcid": "https://orcid.org/0000-0003-4770-3443",
+          "observed_orcids": [
+            "https://orcid.org/0000-0003-4770-3443"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Serghei Mangul",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5010975997",
+          "display_name": "David Manheim",
+          "orcid": "https://orcid.org/0000-0001-8599-8380",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-8599-8380"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "David Manheim",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5070177612",
+          "display_name": "Lucy D’Agostino McGowan",
+          "orcid": "https://orcid.org/0000-0001-7297-9359",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-7297-9359"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Lucy D’Agostino McGowan",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5067432674",
+          "display_name": "Jesse G. Meyer",
+          "orcid": "https://orcid.org/0000-0003-2753-3926",
+          "observed_orcids": [
+            "https://orcid.org/0000-0003-2753-3926"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Jesse G. Meyer",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5000774145",
+          "display_name": "Ariel I. Mundo",
+          "orcid": "https://orcid.org/0000-0002-6014-4538",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-6014-4538"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Ariel I. Mundo",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5065376186",
+          "display_name": "Amruta S. Naik",
+          "orcid": "https://orcid.org/0000-0003-0673-2643",
+          "observed_orcids": [
+            "https://orcid.org/0000-0003-0673-2643"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I1335321130",
+            "display_name": "Children's Hospital of Philadelphia",
+            "ror": "https://ror.org/01z7r7q48",
+            "country_code": "US",
+            "type": "funder",
+            "lineage": [
+              "https://openalex.org/I1335321130"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Amruta Naik",
+        "raw_affiliation_strings": [
+          "Children’s Hospital of Philadelphia, Philadelphia, Pennsylvania, USA"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Children’s Hospital of Philadelphia, Philadelphia, Pennsylvania, USA",
+            "institution_ids": [
+              "https://openalex.org/I1335321130"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5086882278",
+          "display_name": "YoSon Park",
+          "orcid": "https://orcid.org/0000-0002-0465-4744",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-0465-4744"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "YoSon Park",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5089156481",
+          "display_name": "Dimitri Perrin",
+          "orcid": "https://orcid.org/0000-0002-4007-5256",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-4007-5256"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Dimitri Perrin",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5023904955",
+          "display_name": "Yanjun Qi",
+          "orcid": null,
+          "observed_orcids": []
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Yanjun Qi",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5001873566",
+          "display_name": "Diane N. Rafizadeh",
+          "orcid": "https://orcid.org/0000-0002-2838-067X",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-2838-067X"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Diane N. Rafizadeh",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5039641760",
+          "display_name": "Bharath Ramsundar",
+          "orcid": "https://orcid.org/0000-0001-8450-4262",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-8450-4262"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Bharath Ramsundar",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5062823488",
+          "display_name": "Halie M. Rando",
+          "orcid": "https://orcid.org/0000-0001-7688-1770",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-7688-1770"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I51713134",
+            "display_name": "University of Colorado Anschutz",
+            "ror": "https://ror.org/03wmf1y16",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I51713134"
+            ]
+          },
+          {
+            "id": "https://openalex.org/I79576946",
+            "display_name": "University of Pennsylvania",
+            "ror": "https://ror.org/00b30xv10",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Halie M. Rando",
+        "raw_affiliation_strings": [
+          "Center for Health AI, University of Colorado School of Medicine, Aurora, Colorado, USA",
+          "Department of Biochemistry and Molecular Genetics, University of Colorado School of Medicine, Aurora, Colorado, USA",
+          "Department of Biomedical Informatics, University of Colorado School of Medicine, Aurora, Colorado, USA",
+          "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania, Philadelphia, Pennsylvania, USA"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Center for Health AI, University of Colorado School of Medicine, Aurora, Colorado, USA",
+            "institution_ids": [
+              "https://openalex.org/I51713134"
+            ]
+          },
+          {
+            "raw_affiliation_string": "Department of Biochemistry and Molecular Genetics, University of Colorado School of Medicine, Aurora, Colorado, USA",
+            "institution_ids": [
+              "https://openalex.org/I51713134"
+            ]
+          },
+          {
+            "raw_affiliation_string": "Department of Biomedical Informatics, University of Colorado School of Medicine, Aurora, Colorado, USA",
+            "institution_ids": [
+              "https://openalex.org/I51713134"
+            ]
+          },
+          {
+            "raw_affiliation_string": "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania, Philadelphia, Pennsylvania, USA",
+            "institution_ids": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5026814056",
+          "display_name": "Sandipan Ray",
+          "orcid": "https://orcid.org/0000-0002-9960-5768",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-9960-5768"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Sandipan Ray",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5025533131",
+          "display_name": "Michael P. Robson",
+          "orcid": "https://orcid.org/0000-0002-4859-0033",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-4859-0033"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Michael P. Robson",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5082140316",
+          "display_name": "Vincent Rubinetti",
+          "orcid": "https://orcid.org/0000-0002-4655-3773",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-4655-3773"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Vincent Rubinetti",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5083873815",
+          "display_name": "Elizabeth Sell",
+          "orcid": "https://orcid.org/0000-0002-9658-1107",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-9658-1107"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I79576946",
+            "display_name": "University of Pennsylvania",
+            "ror": "https://ror.org/00b30xv10",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Elizabeth Sell",
+        "raw_affiliation_strings": [
+          "Department of Medicine, Perelman School of Medicine, University of Pennsylvania, Pennsylvania, USA"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Department of Medicine, Perelman School of Medicine, University of Pennsylvania, Pennsylvania, USA",
+            "institution_ids": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5069704224",
+          "display_name": "Lamonica Shinholster",
+          "orcid": "https://orcid.org/0000-0001-6285-005X",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-6285-005X"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Lamonica Shinholster",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5053430115",
+          "display_name": "Ashwin N. Skelly",
+          "orcid": "https://orcid.org/0000-0002-1565-3376",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-1565-3376"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Ashwin N. Skelly",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5068519221",
+          "display_name": "Yuchen Sun",
+          "orcid": "https://orcid.org/0000-0001-5452-8829",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-5452-8829"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Yuchen Sun",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5047226318",
+          "display_name": "Yusha Sun",
+          "orcid": null,
+          "observed_orcids": []
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Yusha Sun",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5023962863",
+          "display_name": "Gregory Lee Szeto",
+          "orcid": "https://orcid.org/0000-0001-7604-1333",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-7604-1333"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Gregory L. Szeto",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5064486704",
+          "display_name": "Ryan Velazquez",
+          "orcid": "https://orcid.org/0000-0002-3655-3403",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-3655-3403"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Ryan Velazquez",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5100394106",
+          "display_name": "Jinhui Wang",
+          "orcid": "https://orcid.org/0000-0001-8148-1595",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-8148-1595"
+          ]
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Jinhui Wang",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "last",
+        "author": {
+          "id": "https://openalex.org/A5039755062",
+          "display_name": "Nils Wellhausen",
+          "orcid": "https://orcid.org/0000-0001-8955-7582",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-8955-7582"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I79576946",
+            "display_name": "University of Pennsylvania",
+            "ror": "https://ror.org/00b30xv10",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Nils Wellhausen",
+        "raw_affiliation_strings": [
+          "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania, Philadelphia, Pennsylvania, USA"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania, Philadelphia, Pennsylvania, USA",
+            "institution_ids": [
+              "https://openalex.org/I79576946"
+            ]
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "doi:10.1128/msystems.00927-22",
+        "doi": "https://doi.org/10.1128/msystems.00927-22",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1128/msystems.00927-22",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4210181942",
+          "display_name": "mSystems",
+          "issn_l": "2379-5077",
+          "issn": [
+            "2379-5077"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320263",
+          "host_organization_name": "American Society for Microbiology",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320263"
+          ],
+          "host_organization_lineage_names": [
+            "American Society for Microbiology"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "mSystems",
+        "raw_type": "journal-article"
+      },
+      {
+        "id": "pmh:oai:pubmedcentral.nih.gov:10134813",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/10134813",
+        "pdf_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10134813/pdf/msystems.00927-22.pdf",
+        "source": {
+          "id": "https://openalex.org/S2764455111",
+          "display_name": "PubMed Central",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I1299303238",
+          "host_organization_name": "National Institutes of Health",
+          "host_organization_lineage": [
+            "https://openalex.org/I1299303238"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "mSystems",
+        "raw_type": "Text"
+      },
+      {
+        "id": "pmid:36034485",
+        "doi": null,
+        "is_oa": false,
+        "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/36034485",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4306525036",
+          "display_name": "PubMed",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I1299303238",
+          "host_organization_name": "National Institutes of Health",
+          "host_organization_lineage": [
+            "https://openalex.org/I1299303238"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "ArXiv",
+        "raw_type": "Preprint"
+      },
+      {
+        "id": "pmid:36861991",
+        "doi": null,
+        "is_oa": false,
+        "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/36861991",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4306525036",
+          "display_name": "PubMed",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I1299303238",
+          "host_organization_name": "National Institutes of Health",
+          "host_organization_lineage": [
+            "https://openalex.org/I1299303238"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "mSystems",
+        "raw_type": "Journal Article"
+      },
+      {
+        "id": "pmh:oai:arXiv.org:2208.08907",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2208.08907",
+        "pdf_url": "https://arxiv.org/pdf/2208.08907",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      {
+        "id": "pmh:oai:pubmedcentral.nih.gov:9413721",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/9413721",
+        "pdf_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9413721/pdf/nihpp-2208.08907v2.pdf",
+        "source": {
+          "id": "https://openalex.org/S2764455111",
+          "display_name": "PubMed Central",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I1299303238",
+          "host_organization_name": "National Institutes of Health",
+          "host_organization_lineage": [
+            "https://openalex.org/I1299303238"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "ArXiv",
+        "raw_type": "Text"
+      },
+      {
+        "id": "pmh:oai:scholarworks.smith.edu:csc_facpubs-1412",
+        "doi": null,
+        "is_oa": false,
+        "landing_page_url": "https://scholarworks.smith.edu/csc_facpubs/411",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4377196392",
+          "display_name": "Smith ScholarWorks (Smith College)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I202524275",
+          "host_organization_name": "Smith College",
+          "host_organization_lineage": [
+            "https://openalex.org/I202524275"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "Computer Science: Faculty Publications",
+        "raw_type": "text"
+      },
+      {
+        "id": "pmh:oai:doaj.org/article:673b77bfcfa3479e95df125d7dd5c46d",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://doaj.org/article/673b77bfcfa3479e95df125d7dd5c46d",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4306401280",
+          "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-sa",
+        "license_id": "https://openalex.org/licenses/cc-by-sa",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "mSystems, Vol 8, Iss 2 (2023)",
+        "raw_type": "article"
+      },
+      {
+        "id": "doi:10.48550/arxiv.2208.08907",
+        "doi": "https://doi.org/10.48550/arxiv.2208.08907",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.48550/arxiv.2208.08907",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": null,
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "article-journal"
+      }
+    ],
+    "best_oa_location": {
+      "id": "doi:10.1128/msystems.00927-22",
+      "doi": "https://doi.org/10.1128/msystems.00927-22",
+      "is_oa": true,
+      "landing_page_url": "https://doi.org/10.1128/msystems.00927-22",
+      "pdf_url": null,
+      "source": {
+        "id": "https://openalex.org/S4210181942",
+        "display_name": "mSystems",
+        "issn_l": "2379-5077",
+        "issn": [
+          "2379-5077"
+        ],
+        "is_oa": true,
+        "is_in_doaj": true,
+        "is_core": true,
+        "listed_in": [
+          "cwts-core",
+          "doaj",
+          "dongbi-c",
+          "jufo-1",
+          "ki-jl-1",
+          "medline",
+          "norway-1",
+          "oarl",
+          "poland-140",
+          "russia-white-list-1",
+          "vabb-shw"
+        ],
+        "host_organization": "https://openalex.org/P4310320263",
+        "host_organization_name": "American Society for Microbiology",
+        "host_organization_lineage": [
+          "https://openalex.org/P4310320263"
+        ],
+        "host_organization_lineage_names": [
+          "American Society for Microbiology"
+        ],
+        "type": "journal"
+      },
+      "license": "cc-by",
+      "license_id": "https://openalex.org/licenses/cc-by",
+      "version": "publishedVersion",
+      "is_accepted": true,
+      "is_published": true,
+      "raw_source_name": "mSystems",
+      "raw_type": "journal-article"
+    }
+  }
+}

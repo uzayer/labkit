@@ -1,0 +1,7 @@
+{
+  "url": "https://api.crossref.org/works/10.5281/zenodo.20314127",
+  "recordedAt": "2026-11-04",
+  "note": "Crossref answers 404 (text/plain \"Resource not found.\"): a DataCite DOI.",
+  "status": 404,
+  "body": null
+}

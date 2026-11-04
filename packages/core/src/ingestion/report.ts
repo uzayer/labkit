@@ -10,6 +10,12 @@ interface UnmatchedRelation {
   value: string
   /** Structured payload persisted on the Review Item, e.g. the Crossref candidates a search didn't apply. */
   data?: Record<string, unknown>
+  /**
+   * The Review Item kind, for entries that aren't an unmatched relation at all
+   * (a preprint link applied, a possible duplicate). Without it the kind is
+   * inferred from collection, field and value (run-persistence.ts).
+   */
+  kind?: 'preprint-link' | 'possible-duplicate'
 }
 
 interface DedupeSuggestion {
@@ -29,8 +35,9 @@ interface DedupeSuggestion {
    * Why this was raised. Absent means a fuzzy name similarity. The conflict
    * reasons mean an ORCID or DBLP pid on the paper matched a Team Member
    * whose name can't be the printed author's (people.ts matchPersonToTeam).
+   * `name-variant` is an accent or middle-name variant (nearDuplicateNames).
    */
-  reason?: 'orcid-name-conflict' | 'dblp-pid-name-conflict'
+  reason?: 'orcid-name-conflict' | 'dblp-pid-name-conflict' | 'name-variant'
   /** The conflicting ORCID or DBLP pid. */
   identifier?: string
 }

@@ -1,0 +1,474 @@
+{
+  "url": "https://api.crossref.org/works/10.1145/3290607.3299004",
+  "recordedAt": "2026-11-04",
+  "note": "CHI EA 2019 SIG \"HCI Across Borders and Intersections\": Gaytán-Lugo and Dray name variants.",
+  "body": {
+    "status": "ok",
+    "message-type": "work",
+    "message-version": "1.0.0",
+    "message": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            6,
+            25
+          ]
+        ],
+        "date-time": "2026-06-25T06:51:29Z",
+        "timestamp": 1782370289272,
+        "version": "3.54.5"
+      },
+      "publisher-location": "New York, NY, USA",
+      "reference-count": 13,
+      "publisher": "ACM",
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                2019,
+                5,
+                2
+              ]
+            ],
+            "date-time": "2019-05-02T00:00:00Z",
+            "timestamp": 1556755200000
+          },
+          "content-version": "vor",
+          "delay-in-days": 0,
+          "URL": "https://www.acm.org/publications/policies/copyright_policy#Background"
+        }
+      ],
+      "content-domain": {
+        "domain": [
+          "dl.acm.org"
+        ],
+        "crossmark-restriction": true
+      },
+      "short-container-title": [],
+      "published-print": {
+        "date-parts": [
+          [
+            2019,
+            5,
+            2
+          ]
+        ]
+      },
+      "DOI": "10.1145/3290607.3299004",
+      "type": "proceedings-article",
+      "created": {
+        "date-parts": [
+          [
+            2019,
+            4,
+            30
+          ]
+        ],
+        "date-time": "2019-04-30T15:55:05Z",
+        "timestamp": 1556639705000
+      },
+      "page": "1-8",
+      "update-policy": "https://doi.org/10.1145/crossmark-policy",
+      "source": "Crossref",
+      "is-referenced-by-count": 11,
+      "title": [
+        "HCI Across Borders and Intersections"
+      ],
+      "prefix": "10.1145",
+      "author": [
+        {
+          "given": "Neha",
+          "family": "Kumar",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Georgia Institute of Technology, Atlanta, GA, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Christian",
+          "family": "Sturm",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Hamm-Lippstadt University of Applied Sciences, Lippstadt, North Rhine Westphalia, Germany"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Syed Ishtiaque",
+          "family": "Ahmed",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "University of Toronto, Toronto, ON, Canada"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Naveena",
+          "family": "Karusala",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "University of Washington, Seattle, WA, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Marisol",
+          "family": "Wong-Villacres",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Georgia Institute of Technology, Atlanta, GA, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Leonel",
+          "family": "Morales",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Universidad Francisco Marroquín, Guatemala, Guatemala"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Rita",
+          "family": "Orji",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Dalhousie University, Halifax, Nova Scotia, Canada"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Michaelanne",
+          "family": "Dye",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Georgia Institute of Technology, Atlanta, GA, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Nova",
+          "family": "Ahmed",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "North South University, Dhaka, Bangladesh"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Laura S.",
+          "family": "Gaytán-Lugo",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Universidad de Colima, Coquimatlan, Colima, Mexico"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Aditya",
+          "family": "Vashistha",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "University of Washington, Seattle, WA, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "David",
+          "family": "Nemer",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "University of Kentucky, Lexington, Kentucky, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Kurtis",
+          "family": "Heimerl",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "University of Washington, Seattle, WA, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Susan",
+          "family": "Dray",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Dray Associates, Minneapolis, MN, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "member": "320",
+      "published-online": {
+        "date-parts": [
+          [
+            2019,
+            5,
+            2
+          ]
+        ]
+      },
+      "reference": [
+        {
+          "key": "e_1_3_2_1_1_1",
+          "first-page": "75",
+          "article-title": "Ain't I a woman? Revisiting intersectionality",
+          "volume": "5",
+          "author": "Brah Avtar",
+          "year": "2004",
+          "unstructured": "Avtar Brah and Ann Phoenix . 2004 . Ain't I a woman? Revisiting intersectionality . Journal of international women's studies 5 , 3 (2004), 75 -- 86 . Avtar Brah and Ann Phoenix. 2004. Ain't I a woman? Revisiting intersectionality. Journal of international women's studies 5, 3 (2004), 75--86.",
+          "journal-title": "Journal of international women's studies"
+        },
+        {
+          "key": "e_1_3_2_1_2_1",
+          "unstructured": "Kimberle Crenshaw. 1989. Demarginalizing the intersection of race and sex: A black feminist critique of antidiscrimination doctrine feminist theory and antiracist politics. U. Chi. Legal F. (1989) 139.  Kimberle Crenshaw. 1989. Demarginalizing the intersection of race and sex: A black feminist critique of antidiscrimination doctrine feminist theory and antiracist politics. U. Chi. Legal F. (1989) 139."
+        },
+        {
+          "key": "e_1_3_2_1_3_1",
+          "volume-title": "Video. Retrieved",
+          "author": "Crenshaw Kimberle",
+          "year": "2016",
+          "unstructured": "Kimberle Crenshaw . 2016 . The Urgency of Intersectionality . Video. Retrieved October 17, 2018 from https://www.ted. com/talks/kimberle_crenshaw_the_urgency_of_intersectionality?language=en. Kimberle Crenshaw. 2016. The Urgency of Intersectionality. Video. Retrieved October 17, 2018 from https://www.ted. com/talks/kimberle_crenshaw_the_urgency_of_intersectionality?language=en."
+        },
+        {
+          "key": "e_1_3_2_1_4_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1177/1065912910379227"
+        },
+        {
+          "key": "e_1_3_2_1_5_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/3194349"
+        },
+        {
+          "key": "e_1_3_2_1_6_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/3022198.3022665"
+        },
+        {
+          "key": "e_1_3_2_1_7_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/3058494"
+        },
+        {
+          "key": "e_1_3_2_1_8_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2851581.2856507"
+        },
+        {
+          "key": "e_1_3_2_1_9_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/3027063.3108901"
+        },
+        {
+          "key": "e_1_3_2_1_10_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/3170427.3170666"
+        },
+        {
+          "key": "e_1_3_2_1_11_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/3025453.3025766"
+        },
+        {
+          "key": "e_1_3_2_1_12_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/3170427.3186324"
+        },
+        {
+          "key": "e_1_3_2_1_13_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/3196709.3196794"
+        }
+      ],
+      "event": {
+        "name": "CHI '19: CHI Conference on Human Factors in Computing Systems",
+        "location": "Glasgow Scotland Uk",
+        "acronym": "CHI '19",
+        "sponsor": [
+          "SIGCHI ACM Special Interest Group on Computer-Human Interaction"
+        ]
+      },
+      "container-title": [
+        "Extended Abstracts of the 2019 CHI Conference on Human Factors in Computing Systems"
+      ],
+      "original-title": [],
+      "link": [
+        {
+          "URL": "https://dl.acm.org/doi/10.1145/3290607.3299004",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "https://dl.acm.org/doi/pdf/10.1145/3290607.3299004",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2025,
+            6,
+            17
+          ]
+        ],
+        "date-time": "2025-06-17T23:53:25Z",
+        "timestamp": 1750204405000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://dl.acm.org/doi/10.1145/3290607.3299004"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2019,
+            5,
+            2
+          ]
+        ]
+      },
+      "references-count": 13,
+      "alternative-id": [
+        "10.1145/3290607.3299004",
+        "10.1145/3290607"
+      ],
+      "URL": "https://doi.org/10.1145/3290607.3299004",
+      "relation": {},
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2019,
+            5,
+            2
+          ]
+        ]
+      },
+      "assertion": [
+        {
+          "value": "2019-05-02",
+          "order": 2,
+          "name": "published",
+          "label": "Published",
+          "group": {
+            "name": "publication_history",
+            "label": "Publication History"
+          }
+        }
+      ]
+    }
+  }
+}

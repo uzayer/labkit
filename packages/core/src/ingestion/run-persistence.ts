@@ -13,6 +13,8 @@ type ReviewItemKind =
   | 'unmapped-type'
   | 'failed-doi'
   | 'identifier-name-conflict'
+  | 'preprint-link'
+  | 'possible-duplicate'
 
 export interface RunProgress {
   total: number
@@ -49,6 +51,7 @@ export async function persistRunProgress(
  * this mapping hasn't seen yet.
  */
 function inferReviewKind(entry: UnmatchedEntry): ReviewItemKind {
+  if (entry.kind) return entry.kind
   if (entry.collection === 'venues') return 'unmatched-venue'
   if (entry.collection === 'organizations') return 'unmatched-org'
 
@@ -126,10 +129,13 @@ export async function finalizeRun(
     await payload.create({
       collection: 'review-items',
       data: {
-        // A `reason` means an ORCID or DBLP pid matched a Team Member whose
-        // name conflicts with the printed author's (people.ts); without one
-        // this is a fuzzy name-similarity suggestion.
-        kind: entry.reason ? 'identifier-name-conflict' : 'person-merge-suggestion',
+        // A conflict reason means an ORCID or DBLP pid matched a Team Member
+        // whose name conflicts with the printed author's (people.ts). With no
+        // reason, or `name-variant`, it is a merge suggestion on names alone.
+        kind:
+          entry.reason && entry.reason !== 'name-variant'
+            ? 'identifier-name-conflict'
+            : 'person-merge-suggestion',
         status: 'open',
         run: runId,
         value: entry.value,

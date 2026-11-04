@@ -1,0 +1,51 @@
+{
+  "url": "https://api.ror.org/v2/organizations/01ggx4157",
+  "recordedAt": "2026-11-04",
+  "note": "Trimmed to id, types, names and status. Example of a ROR `facility`.",
+  "body": {
+    "id": "https://ror.org/01ggx4157",
+    "types": [
+      "facility",
+      "funder"
+    ],
+    "names": [
+      {
+        "lang": "fr",
+        "types": [
+          "label"
+        ],
+        "value": "CERN"
+      },
+      {
+        "lang": "fr",
+        "types": [
+          "label"
+        ],
+        "value": "Conseil Européen pour la Recherche Nucléaire"
+      },
+      {
+        "lang": "en",
+        "types": [
+          "ror_display",
+          "label"
+        ],
+        "value": "European Organization for Nuclear Research"
+      },
+      {
+        "lang": "de",
+        "types": [
+          "label"
+        ],
+        "value": "Europäische Organisation für Kernforschung"
+      },
+      {
+        "lang": "fr",
+        "types": [
+          "label"
+        ],
+        "value": "Organisation européenne pour la recherche nucléaire"
+      }
+    ],
+    "status": "active"
+  }
+}

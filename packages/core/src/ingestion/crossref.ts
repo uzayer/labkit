@@ -1,27 +1,29 @@
-import { cleanText, normalizeOrcid } from './normalize'
+import type { PublicationTypeValue } from '../publicationTypes'
+import { cleanText, normalizeDoi, normalizeOrcid, normalizeTitle } from './normalize'
+import { mapCrossrefType, type WorkTypeMapping } from './work-types'
 
-// Mirrors Publications.type / Publications.status select options exactly
-// (collections/Publications/index.ts) — never invent a value outside these.
-export type PublicationType =
-  | 'conference'
-  | 'journal'
-  | 'workshop'
-  | 'preprint'
-  | 'extended-abstract'
-  | 'study-protocol'
-  | 'book-chapter'
+export type PublicationType = PublicationTypeValue
+// Mirrors Publications.status's select options exactly — never invent a value.
 export type PublicationStatus = 'published' | 'accepted-in-press' | 'submitted' | 'preprint'
 
-// Crossref work types with no equivalent Publications.type value (dataset,
-// dissertation, monograph, component, ...) are deliberately left unmapped —
-// callers must flag these rather than guess, since a wrong `type` changes
-// which conditional admin fields show (location for conference, editor for
-// book-chapter).
-const CROSSREF_TYPE_MAP: Record<string, PublicationType> = {
-  'journal-article': 'journal',
-  'proceedings-article': 'conference',
-  'book-chapter': 'book-chapter',
-  'posted-content': 'preprint',
+/**
+ * DOIs of other versions of the same work that a source asserts. Identifier
+ * evidence: a link made from these may hide a preprint (versions.ts).
+ */
+export interface VersionRelations {
+  /** This work is a preprint of these. */
+  publishedVersions: string[]
+  /** These are preprints of this work. */
+  preprints: string[]
+}
+
+function relationDois(relation: unknown, key: string): string[] {
+  const entries = (relation as Record<string, unknown> | undefined)?.[key]
+  if (!Array.isArray(entries)) return []
+  return entries.flatMap((entry) => {
+    const { id, 'id-type': idType } = (entry ?? {}) as { id?: unknown; 'id-type'?: unknown }
+    return idType === 'doi' && typeof id === 'string' ? [normalizeDoi(id)] : []
+  })
 }
 
 function stripJats(text: string): string {
@@ -69,8 +71,10 @@ export interface CrossrefPublicationFields {
   title?: string
   year?: number
   type?: PublicationType
+  typeMapping?: WorkTypeMapping
   status?: PublicationStatus
   authors?: CrossrefAuthor[]
+  relations?: VersionRelations
 }
 
 export function mapCrossrefToPublicationFields(json: unknown): CrossrefPublicationFields {
@@ -117,16 +121,31 @@ export function mapCrossrefToPublicationFields(json: unknown): CrossrefPublicati
       Array.isArray(message.subtitle) && typeof message.subtitle[0] === 'string'
         ? cleanText(message.subtitle[0])
         : ''
-    if (fields.title && subtitle && !fields.title.includes(subtitle)) {
+    // Compared normalized: some deposits repeat the subtitle in the title with
+    // different case or punctuation, and a plain `includes` then doubled it.
+    if (
+      fields.title &&
+      subtitle &&
+      !normalizeTitle(fields.title).includes(normalizeTitle(subtitle))
+    ) {
       fields.title = `${fields.title.replace(/[\s:]+$/, '')}: ${subtitle}`
     }
   }
-  if (typeof message.type === 'string') {
-    const mapped = CROSSREF_TYPE_MAP[message.type]
-    if (mapped) {
-      fields.type = mapped
-      if (mapped === 'preprint') fields.status = 'preprint'
-    }
+  const mapping = mapCrossrefType(
+    typeof message.type === 'string' ? message.type : undefined,
+    typeof message.subtype === 'string' ? message.subtype : undefined,
+  )
+  if (mapping) {
+    fields.type = mapping.type
+    fields.typeMapping = mapping
+    if (mapping.type === 'preprint') fields.status = 'preprint'
+  }
+  const relations: VersionRelations = {
+    publishedVersions: relationDois(message.relation, 'is-preprint-of'),
+    preprints: relationDois(message.relation, 'has-preprint'),
+  }
+  if (relations.publishedVersions.length > 0 || relations.preprints.length > 0) {
+    fields.relations = relations
   }
   if (Array.isArray(message.author)) {
     fields.authors = (message.author as Array<Record<string, unknown>>).map((author) => {

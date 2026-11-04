@@ -1,0 +1,51 @@
+{
+  "url": "https://api.ror.org/v2/organizations/0456r8d26",
+  "recordedAt": "2026-11-04",
+  "note": "Trimmed to id, types, names and status. Example of a ROR `nonprofit`.",
+  "body": {
+    "id": "https://ror.org/0456r8d26",
+    "types": [
+      "funder",
+      "nonprofit"
+    ],
+    "names": [
+      {
+        "lang": null,
+        "types": [
+          "acronym"
+        ],
+        "value": "BMGF"
+      },
+      {
+        "lang": "en",
+        "types": [
+          "alias"
+        ],
+        "value": "Bill & Melinda Gates Foundation"
+      },
+      {
+        "lang": "en",
+        "types": [
+          "alias"
+        ],
+        "value": "Bill and Melinda Gates Foundation"
+      },
+      {
+        "lang": "en",
+        "types": [
+          "alias"
+        ],
+        "value": "Bill and Melinda Gates Fund"
+      },
+      {
+        "lang": "en",
+        "types": [
+          "label",
+          "ror_display"
+        ],
+        "value": "Gates Foundation"
+      }
+    ],
+    "status": "active"
+  }
+}

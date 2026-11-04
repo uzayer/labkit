@@ -256,6 +256,39 @@ export async function fetchCrossrefByDoi(doi: string): Promise<unknown | null> {
   })
 }
 
+/** A DOI in a URL path, its `/` kept literal (10.48550/arXiv.x, not 10.48550%2FarXiv.x). */
+function doiPath(doi: string): string {
+  return doi.split('/').map(encodeURIComponent).join('/')
+}
+
+/**
+ * The registration agency holding a DOI ("Crossref", "DataCite", "mEDRA"…),
+ * from doi.org. Asked only after Crossref has no record, so a DOI is never
+ * reported failed when it is simply registered elsewhere.
+ */
+export async function fetchRegistrationAgency(doi: string): Promise<string | null> {
+  const json = await fetchJsonWithRetry(`https://doi.org/ra/${doiPath(doi)}`, {
+    headers: defaultHeaders(),
+  })
+  const ra = Array.isArray(json) ? (json[0] as { RA?: unknown } | undefined)?.RA : undefined
+  return typeof ra === 'string' ? ra : null
+}
+
+export async function fetchDataciteByDoi(doi: string): Promise<unknown | null> {
+  return fetchJsonWithRetry(`https://api.datacite.org/dois/${doiPath(doi)}`, {
+    headers: defaultHeaders(),
+  })
+}
+
+/** A ROR record by its full id ("https://ror.org/05wdbfp45"), from ROR's v2 API. */
+export async function fetchRorOrganization(rorId: string): Promise<unknown | null> {
+  const id = rorId.replace(/^https?:\/\/ror\.org\//i, '').trim()
+  if (!/^0[a-z0-9]{8}$/i.test(id)) return null
+  return fetchJsonWithRetry(`https://api.ror.org/v2/organizations/${id}`, {
+    headers: defaultHeaders(),
+  })
+}
+
 export async function fetchOpenAlexByDoi(doi: string): Promise<unknown | null> {
   const url = new URL(`https://api.openalex.org/works/https://doi.org/${encodeURIComponent(doi)}`)
   const email = contactEmail()

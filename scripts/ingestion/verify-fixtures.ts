@@ -1,6 +1,7 @@
 /**
  * Offline regression check for ingestion identity and client behaviour,
- * replayed from recorded Crossref, OpenAlex and ORCID responses in
+ * replayed from recorded Crossref, OpenAlex, ORCID, DataCite, doi.org
+ * registration-agency and ROR responses in
  * `scripts/ingestion/fixtures/`. No network and no database: global `fetch`
  * is replaced by a router over the fixtures and throws on any URL it doesn't
  * know, so an accidental live call fails the run instead of passing quietly.
@@ -8,6 +9,7 @@
  * Run: bun run payload -- run scripts/ingestion/verify-fixtures.ts
  *
  * Fixtures were recorded on 2026-11-04. Each file keeps the URL it came from;
+ * a recorded 404 keeps `status: 404` and a null body.
  * re-recording means fetching that URL again and re-checking the labels.
  * Crossref search items and OpenAlex works are trimmed to the fields
  * ingestion reads. Anything derived or reconstructed says so in its `note`.
@@ -21,24 +23,45 @@ import { fileURLToPath } from 'node:url'
 
 import { mapCrossrefToPublicationFields } from '@labkit/core/ingestion/crossref'
 import { decideCrossrefSearch, resolveCrossrefSearch } from '@labkit/core/ingestion/crossref-search'
+import { mapDataciteToPublicationFields } from '@labkit/core/ingestion/datacite'
 import { fetchDblpRecordByTitle } from '@labkit/core/ingestion/dblp'
 import {
   fetchCrossrefByDoi,
+  fetchDataciteByDoi,
   fetchJsonWithRetry,
   fetchOpenAlexByDoi,
+  fetchRegistrationAgency,
+  fetchRorOrganization,
 } from '@labkit/core/ingestion/fetch'
-import { normalizeDoi } from '@labkit/core/ingestion/normalize'
+import { nearDuplicateNames, normalizeDoi } from '@labkit/core/ingestion/normalize'
 import { mapOpenAlexToPublicationFields } from '@labkit/core/ingestion/openalex'
+import { mapRorTypes } from '@labkit/core/ingestion/organizations'
 import {
   attachDblpPids,
   matchPersonToTeam,
   mergeAuthors,
+  nameVariantMatches,
   planTeamLink,
   type MergedAuthor,
   type TeamLookupEntry,
 } from '@labkit/core/ingestion/people'
 import { matchVenueByName, type VenueLookupEntry } from '@labkit/core/ingestion/publications'
 import { stageOrcidCandidates, type StagedCandidate } from '@labkit/core/ingestion/staging'
+import {
+  authorKeysOf,
+  planVersionLinks,
+  titleMatches,
+  type PublicationLookupEntry,
+  type VersionEvidence,
+} from '@labkit/core/ingestion/versions'
+import {
+  isPreprintServerDoi,
+  mapBibtexType,
+  mapCrossrefType,
+  mapDataciteType,
+  mapOpenAlexType,
+} from '@labkit/core/ingestion/work-types'
+import { PUBLICATION_TYPES, crosswalkPublicationType } from '@labkit/core/publication-types'
 
 const FIXTURES = path.join(path.dirname(fileURLToPath(import.meta.url)), 'fixtures')
 
@@ -68,6 +91,7 @@ interface Recorded<T = unknown> {
   url: string
   recordedAt: string
   note?: string
+  status?: number
   body: T
 }
 interface SearchFixture extends Recorded<{ message: { items: Array<Record<string, unknown>> } }> {
@@ -82,6 +106,18 @@ const slug = (doi: string) => doi.toLowerCase().replace(/[^a-z0-9.]+/g, '_')
 const crossrefBody = (doi: string) => readJson<Recorded>('crossref', `${slug(doi)}.json`).body
 const openalexBody = (doi: string, variant = '') =>
   readJson<Recorded>('openalex', `${slug(doi)}${variant}.json`).body
+const hasFixture = (dir: string, name: string) =>
+  fs.existsSync(path.join(FIXTURES, dir, `${name}.json`))
+/** A recorded response, replayed with its status (a 404 has a null body). */
+const replay = (dir: string, name: string) => {
+  const recorded = readJson<Recorded>(dir, `${name}.json`)
+  return recorded.status === 404
+    ? new Response('Resource not found.', {
+        status: 404,
+        headers: { 'content-type': 'text/plain' },
+      })
+    : json(recorded.body)
+}
 
 const searchFixtures = new Map<string, SearchFixture>()
 for (const file of fs.readdirSync(path.join(FIXTURES, 'search')).sort()) {
@@ -123,7 +159,16 @@ globalThis.fetch = (async (input: string | URL | Request, init?: RequestInit) =>
   }
   if (url.hostname === 'api.crossref.org' && url.pathname.startsWith('/works/')) {
     const doi = decodeURIComponent(url.pathname.slice('/works/'.length))
-    return json(crossrefBody(doi))
+    return replay('crossref', slug(doi))
+  }
+  if (url.hostname === 'doi.org' && url.pathname.startsWith('/ra/')) {
+    return replay('ra', slug(decodeURIComponent(url.pathname.slice('/ra/'.length))))
+  }
+  if (url.hostname === 'api.datacite.org' && url.pathname.startsWith('/dois/')) {
+    return replay('datacite', slug(decodeURIComponent(url.pathname.slice('/dois/'.length))))
+  }
+  if (url.hostname === 'api.ror.org' && url.pathname.startsWith('/v2/organizations/')) {
+    return replay('ror', url.pathname.slice('/v2/organizations/'.length))
   }
   if (url.hostname === 'api.openalex.org' && url.pathname.startsWith('/works/')) {
     const doi = decodeURIComponent(url.pathname.slice('/works/'.length)).replace(
@@ -643,6 +688,361 @@ await checkAsync(
     assert.equal(openalex.url.searchParams.get('api_key'), 'test-key')
   },
 )
+
+// ─── 8. Preprint ↔ published linking ─────────────────────────────────────────
+
+/**
+ * A work as hydration sees it: its Lab index entry and its version evidence,
+ * built from whichever recorded sources exist for the DOI.
+ */
+function workFromFixtures(doi: string, overrides: Partial<PublicationLookupEntry> = {}) {
+  const name = slug(doi)
+  const recorded = (dir: string) =>
+    hasFixture(dir, name) ? readJson<Recorded>(dir, `${name}.json`).body : null
+  const crossref = recorded('crossref') ? mapCrossrefToPublicationFields(recorded('crossref')) : {}
+  const openalex = recorded('openalex') ? mapOpenAlexToPublicationFields(recorded('openalex')) : {}
+  const datacite = recorded('datacite') ? mapDataciteToPublicationFields(recorded('datacite')) : {}
+  const type = isPreprintServerDoi(doi)
+    ? 'preprint'
+    : (crossref.type ?? datacite.type ?? openalex.type ?? 'other')
+  const authors = mergeAuthors(crossref.authors ?? datacite.authors, openalex.authorships)
+  const entry: PublicationLookupEntry = {
+    id: `pub:${doi}`,
+    doi: normalizeDoi(doi),
+    title: crossref.title ?? datacite.title ?? openalex.title ?? '',
+    year: crossref.year ?? datacite.year ?? openalex.year,
+    type,
+    status: type === 'preprint' ? 'preprint' : 'published',
+    openalexId: openalex.openalex_id,
+    authorKeys: authorKeysOf(authors.map((a) => a.fullName)),
+    ...overrides,
+  }
+  const relations = {
+    publishedVersions: [
+      ...(crossref.relations?.publishedVersions ?? []),
+      ...(datacite.relations?.publishedVersions ?? []),
+    ],
+    preprints: [...(crossref.relations?.preprints ?? []), ...(datacite.relations?.preprints ?? [])],
+  }
+  const evidence: VersionEvidence = {
+    relations,
+    openalexId: openalex.openalex_id,
+    openalexWorkDois: openalex.workDois,
+  }
+  return { entry, evidence }
+}
+const linkPairs = (plan: ReturnType<typeof planVersionLinks>) =>
+  plan.links.map((link) => `${link.preprint.doi} -> ${link.published.doi}`)
+
+const LINKS = 'preprint-linking'
+check(LINKS, 'JMIR 76934: Crossref relations are read on both records', () => {
+  assert.deepEqual(workFromFixtures('10.2196/preprints.76934').evidence.relations, {
+    publishedVersions: ['10.2196/76934'],
+    preprints: [],
+  })
+  assert.deepEqual(workFromFixtures('10.2196/76934').evidence.relations, {
+    publishedVersions: [],
+    preprints: ['10.2196/preprints.76934'],
+  })
+})
+check(LINKS, 'JMIR 76934: preprint imported after the published version links to it', () => {
+  const published = workFromFixtures('10.2196/76934').entry
+  const { entry, evidence } = workFromFixtures('10.2196/preprints.76934')
+  const plan = planVersionLinks(entry, evidence, [published])
+  assert.deepEqual(linkPairs(plan), ['10.2196/preprints.76934 -> 10.2196/76934'])
+})
+check(
+  LINKS,
+  'JMIR 76934: published imported after the preprint finds it through the preprint relation',
+  () => {
+    // Derived: the published record's own `has-preprint` removed, the
+    // one-sided case Crossref usually gives. Only the preprint asserts it.
+    const preprint = workFromFixtures('10.2196/preprints.76934')
+    const { entry } = workFromFixtures('10.2196/76934')
+    const known = new Map([[preprint.entry.id, preprint.evidence.relations!]])
+    const plan = planVersionLinks(entry, {}, [preprint.entry], known)
+    assert.deepEqual(linkPairs(plan), ['10.2196/preprints.76934 -> 10.2196/76934'])
+  },
+)
+check(
+  LINKS,
+  'JMIR 76934: preprint imported after a published version that lists it links through that',
+  () => {
+    // Derived: the preprint's own `is-preprint-of` and OpenAlex evidence
+    // removed; only the published record (hydrated earlier) names it.
+    const published = workFromFixtures('10.2196/76934')
+    const { entry } = workFromFixtures('10.2196/preprints.76934')
+    const known = new Map([[published.entry.id, published.evidence.relations!]])
+    const plan = planVersionLinks(entry, {}, [published.entry], known)
+    assert.deepEqual(linkPairs(plan), ['10.2196/preprints.76934 -> 10.2196/76934'])
+  },
+)
+check(LINKS, 'a relation never hides a record that is not typed as a preprint', () => {
+  // Synthetic relation: the JMIR article claims the CHI 2023 paper as its preprint.
+  const { entry } = workFromFixtures('10.2196/76934')
+  const chi = workFromFixtures('10.1145/3544548.3580661').entry
+  const plan = planVersionLinks(
+    entry,
+    { relations: { publishedVersions: [], preprints: [chi.doi!] } },
+    [chi],
+  )
+  assert.deepEqual(linkPairs(plan), [])
+})
+check(LINKS, 'SSRN 4190884 is a preprint even though Crossref files it as journal-article', () => {
+  assert.equal(mapCrossrefToPublicationFields(crossrefBody('10.2139/ssrn.4190884')).type, 'journal')
+  assert.equal(workFromFixtures('10.2139/ssrn.4190884').entry.type, 'preprint')
+})
+check(LINKS, 'SSRN 4190884 ↔ LNICST chapter: one OpenAlex work links them, either order', () => {
+  const ssrn = workFromFixtures('10.2139/ssrn.4190884')
+  const chapter = workFromFixtures('10.1007/978-3-031-34586-9_3')
+  const expected = ['10.2139/ssrn.4190884 -> 10.1007/978-3-031-34586-9_3']
+  assert.deepEqual(
+    linkPairs(planVersionLinks(ssrn.entry, ssrn.evidence, [chapter.entry])),
+    expected,
+  )
+  assert.deepEqual(
+    linkPairs(planVersionLinks(chapter.entry, chapter.evidence, [ssrn.entry])),
+    expected,
+  )
+})
+check(LINKS, 'a title match alone never links (identifiers removed from the JMIR pair)', () => {
+  const published = workFromFixtures('10.2196/76934', { openalexId: undefined }).entry
+  const { entry } = workFromFixtures('10.2196/preprints.76934', { openalexId: undefined })
+  assert.deepEqual(linkPairs(planVersionLinks(entry, {}, [published])), [])
+  // The real titles: the preprint's carries JMIR's " (Preprint)" suffix.
+  assert.ok(entry.title.endsWith('(Preprint)'), entry.title)
+  assert.deepEqual(
+    titleMatches(entry, [published]).map((m) => m.reason),
+    ['preprint-title-match'],
+  )
+})
+check(LINKS, 'two JMIR preprints under one OpenAlex work are not linked to each other', () => {
+  const { entry, evidence } = workFromFixtures('10.2196/preprints.105485')
+  assert.ok(evidence.openalexWorkDois?.includes('10.2196/preprints.85023'))
+  const other: PublicationLookupEntry = {
+    id: 'pub:85023',
+    doi: '10.2196/preprints.85023',
+    title: entry.title,
+    type: 'preprint',
+    authorKeys: [],
+  }
+  assert.deepEqual(linkPairs(planVersionLinks(entry, evidence, [other])), [])
+})
+check(LINKS, 'a preprint already linked by hand is left alone', () => {
+  const published = workFromFixtures('10.2196/76934').entry
+  const { entry, evidence } = workFromFixtures('10.2196/preprints.76934', {
+    versionOf: 'pub:chosen-by-hand',
+  })
+  assert.deepEqual(linkPairs(planVersionLinks(entry, evidence, [published])), [])
+})
+
+// ─── 9. DataCite fallback ────────────────────────────────────────────────────
+
+const DATACITE = 'datacite'
+await checkAsync(DATACITE, 'arXiv DOI: Crossref 404, doi.org names DataCite', async () => {
+  assert.equal(await fetchCrossrefByDoi('10.48550/arXiv.2208.08907'), null)
+  assert.equal(await fetchRegistrationAgency('10.48550/arXiv.2208.08907'), 'DataCite')
+})
+await checkAsync(DATACITE, 'arXiv DataCite record maps title, year, authors', async () => {
+  const fields = mapDataciteToPublicationFields(
+    await fetchDataciteByDoi('10.48550/arXiv.2208.08907'),
+  )
+  assert.equal(
+    fields.title,
+    'Application of Traditional Vaccine Development Strategies to SARS-CoV-2',
+  )
+  assert.equal(fields.year, 2022)
+  assert.equal(fields.status, 'preprint')
+  assert.equal(fields.venueName, 'arXiv')
+  assert.deepEqual(fields.authors?.[0], {
+    given: 'Halie M.',
+    family: 'Rando',
+    orcid: undefined,
+    sequence: 'first',
+    affiliationName: undefined,
+  })
+})
+check(DATACITE, 'arXiv: IsVersionOf names the published DOI, and links to it', () => {
+  const arxiv = workFromFixtures('10.48550/arXiv.2208.08907')
+  assert.deepEqual(arxiv.evidence.relations?.publishedVersions, ['10.1128/msystems.00927-22'])
+  const published = workFromFixtures('10.1128/msystems.00927-22').entry
+  assert.equal(published.type, 'journal', 'OpenAlex `review` should map to journal')
+  assert.deepEqual(linkPairs(planVersionLinks(arxiv.entry, arxiv.evidence, [published])), [
+    '10.48550/arxiv.2208.08907 -> 10.1128/msystems.00927-22',
+  ])
+})
+await checkAsync(
+  DATACITE,
+  'Zenodo preprint: per-work ORCIDs, HasVersion is not a published version',
+  async () => {
+    assert.equal(await fetchRegistrationAgency('10.5281/zenodo.20314127'), 'DataCite')
+    const fields = mapDataciteToPublicationFields(
+      await fetchDataciteByDoi('10.5281/zenodo.20314127'),
+    )
+    assert.equal(fields.type, 'preprint')
+    assert.equal(fields.authors?.[0]?.orcid, '0000-0001-7075-4287')
+    assert.equal(fields.relations, undefined)
+    const merged = mergeAuthors(fields.authors, undefined, 'datacite')
+    assert.equal(merged[0].orcidSource, 'datacite')
+  },
+)
+
+// ─── 10. Type mapping ────────────────────────────────────────────────────────
+
+const TYPES = 'type-mapping'
+check(TYPES, 'Crossref types onto the widened Publication types', () => {
+  const t = (type: string, subtype?: string) => mapCrossrefType(type, subtype)?.type
+  assert.equal(t('journal-article'), 'journal')
+  assert.equal(t('proceedings-article'), 'conference')
+  assert.equal(t('posted-content', 'preprint'), 'preprint')
+  assert.equal(t('dissertation'), 'thesis')
+  assert.equal(t('monograph'), 'book')
+  assert.equal(t('dataset'), 'dataset')
+  assert.equal(
+    mapCrossrefToPublicationFields(crossrefBody('10.1007/978-3-031-34586-9_3')).type,
+    'book-chapter',
+  )
+})
+check(TYPES, 'an unknown type is kept as `other`, flagged unmapped, with its raw type', () => {
+  assert.deepEqual(mapCrossrefType('component'), {
+    type: 'other',
+    mapped: false,
+    raw: 'crossref: component',
+  })
+  assert.equal(mapDataciteType('Text')?.mapped, false)
+  assert.equal(mapBibtexType('misc')?.type, 'other')
+})
+check(TYPES, 'a source type named like an Object property is not a mapping', () => {
+  assert.deepEqual(mapCrossrefType('constructor'), {
+    type: 'other',
+    mapped: false,
+    raw: 'crossref: constructor',
+  })
+})
+check(TYPES, 'OpenAlex conference-paper and review', () => {
+  assert.equal(
+    mapOpenAlexToPublicationFields(openalexBody('10.1145/3544548.3580661')).type,
+    'conference',
+  )
+  assert.equal(mapOpenAlexType('review')?.type, 'journal')
+})
+check(TYPES, 'BibTeX entry types', () => {
+  assert.equal(mapBibtexType('inproceedings')?.type, 'conference')
+  assert.equal(mapBibtexType('phdthesis')?.type, 'thesis')
+  assert.equal(mapBibtexType('incollection')?.type, 'book-chapter')
+})
+check(TYPES, 'DataCite types round-trip through crosswalkPublicationType', () => {
+  for (const entry of PUBLICATION_TYPES) {
+    const { datacite } = crosswalkPublicationType(entry.value)
+    const mapped = mapDataciteType(datacite)
+    if (entry.value === 'other') {
+      assert.equal(mapped?.mapped, false)
+      continue
+    }
+    assert.equal(crosswalkPublicationType(mapped?.type).datacite, datacite, entry.value)
+  }
+})
+check(TYPES, 'a subtitle Crossref repeats in the title in another case is not doubled', () => {
+  // Synthetic Crossref message.
+  const fields = mapCrossrefToPublicationFields({
+    message: { title: ['Shonabondhu: A Cognitive Aid'], subtitle: ['a cognitive aid'] },
+  })
+  assert.equal(fields.title, 'Shonabondhu: A Cognitive Aid')
+})
+
+// ─── 11. Organization type from ROR ──────────────────────────────────────────
+
+const ROR = 'ror-types'
+for (const [ror, expected] of [
+  ['05wdbfp45', 'university'], // North South University: education + funder
+  ['01w86pt71', 'healthcare'], // Sibu Hospital
+  ['0456r8d26', 'nonprofit'], // Gates Foundation: funder + nonprofit
+  ['00njsd438', 'company'], // Google: company + funder
+  ['00k4cwq24', 'government'], // a ministry: funder + government
+  ['01ggx4157', 'research-institute'], // CERN: facility + funder
+] as const) {
+  await checkAsync(ROR, `${ror} → ${expected}`, async () => {
+    const record = (await fetchRorOrganization(`https://ror.org/${ror}`)) as { types?: unknown }
+    assert.equal(mapRorTypes(record?.types), expected)
+  })
+}
+
+// ─── 12. Name variants: veto and near-duplicates ─────────────────────────────
+
+const VARIANTS = 'name-veto-and-variants'
+check(VARIANTS, 'ORCID printed on "Saiful Islam" but held by "Salekul Islam" does not link', () => {
+  const team = [{ id: 'roster:salekul', name: 'Salekul Islam', orcid: '0000-0000-0000-0004' }]
+  const result = matchPersonToTeam({ fullName: 'Saiful Islam', orcid: '0000-0000-0000-0004' }, team)
+  assert.equal(result.team, null, `linked by ${result.method}`)
+  assert.equal(result.conflicts.length, 1)
+})
+check(VARIANTS, 'an initial still fits the ORCID holder\'s full given name ("N. Ahmed")', () => {
+  const result = matchPersonToTeam({ fullName: 'N. Ahmed', orcid: NOVA_ORCID }, dialRoster())
+  assert.equal(result.team?.id, 'roster:nova')
+})
+check(VARIANTS, 'CHI EA 2019: Gaytán-Lugo and Dray spellings are near-duplicates', () => {
+  const doi = '10.1145/3290607.3299004'
+  const printed = mapCrossrefToPublicationFields(crossrefBody(doi)).authors!.map((a) =>
+    [a.given, a.family].join(' '),
+  )
+  const profiles = mapOpenAlexToPublicationFields(openalexBody(doi)).authorships!.map(
+    (a) => a.displayName,
+  )
+  const pairs = printed.flatMap((name) =>
+    profiles
+      .filter((other) => nearDuplicateNames(name, other))
+      .map((other) => `${name} ~ ${other}`),
+  )
+  assert.deepEqual(pairs, [
+    'Marisol Wong-Villacres ~ Marisol Wong-Villacrés',
+    'Laura S. Gaytán-Lugo ~ Laura Sanely Gaytan-Lugo',
+    'Susan Dray ~ Susan M. Dray',
+  ])
+})
+check(VARIANTS, 'a near-duplicate co-author is suggested, never linked', () => {
+  const team: TeamLookupEntry[] = [
+    { id: 'hidden:laura', name: 'Laura Sanely Gaytan-Lugo' },
+    { id: 'hidden:susan', name: 'Susan M. Dray' },
+  ]
+  for (const printed of ['Laura S. Gaytán-Lugo', 'Susan Dray']) {
+    assert.equal(planTeamLink({ fullName: printed }, team).match.team, null, `${printed} linked`)
+    assert.equal(nameVariantMatches(printed, team).length, 1, `${printed} not suggested`)
+  }
+})
+check(VARIANTS, 'different given names are not near-duplicates', () => {
+  assert.equal(nearDuplicateNames('Saiful Islam', 'Salekul Islam'), false)
+  assert.equal(nearDuplicateNames('Md. Jahidul Islam', 'Md. Saiful Islam'), false)
+  assert.equal(nearDuplicateNames('Nova Ahmed', 'Nova Ahmed'), false)
+})
+
+// ─── 13. Duplicate Candidates across Front Doors ─────────────────────────────
+
+const DUPES = 'duplicates'
+// The CHI 2023 paper as hydrated from its DOI, against a derived BibTeX-only
+// copy (no DOI, sentence case, a year off by one, one author).
+const chi = workFromFixtures('10.1145/3544548.3580661').entry
+const bibtexCopy = (overrides: Partial<PublicationLookupEntry> = {}): PublicationLookupEntry => ({
+  id: 'bibtex:copy',
+  title: `${chi.title.toLowerCase()}.`,
+  year: chi.year! + 1,
+  authorKeys: [chi.authorKeys[0]],
+  ...overrides,
+})
+check(DUPES, 'a BibTeX-only copy of a DOI record is flagged (title, year ±1, an author)', () => {
+  assert.deepEqual(
+    titleMatches(bibtexCopy(), [chi]).map((m) => m.reason),
+    ['title-match'],
+  )
+})
+check(DUPES, 'years two apart are not duplicates', () => {
+  assert.deepEqual(titleMatches(bibtexCopy({ year: chi.year! + 2 }), [chi]), [])
+})
+check(DUPES, 'no shared family name and initial: not duplicates', () => {
+  assert.deepEqual(titleMatches(bibtexCopy({ authorKeys: ['nobody:x'] }), [chi]), [])
+})
+check(DUPES, 'two different DOIs, neither a preprint, veto the match', () => {
+  assert.deepEqual(titleMatches(bibtexCopy({ doi: '10.1145/0000000.0000002' }), [chi]), [])
+})
 
 // ─── Report ──────────────────────────────────────────────────────────────────
 

@@ -120,14 +120,21 @@ Use Payload's admin collections at `/admin`; the custom dashboards are parked an
 The launch bar is **presentable**, not a perfectly normalized research graph:
 
 1. Confirm or reject every person-merge suggestion deliberately. A wrong match corrupts a real person's public profile.
-2. Fix a missing or visibly wrong venue label. A correct free-text venue is acceptable when a Venue record cannot be matched safely.
-3. Inspect no-DOI and failed-DOI works individually.
-4. Defer non-visible normalization work when it does not affect the launch, but record the reason and owner.
-5. Record queue counts before and after, the decisions by kind, and elapsed time.
+2. Check every `preprint-link`: the preprint was hidden automatically. Resolve every `possible-duplicate` by hand. Both kinds are described below.
+3. Fix a missing or visibly wrong venue label. A correct free-text venue is acceptable when a Venue record cannot be matched safely.
+4. Inspect no-DOI and failed-DOI works individually. Give each `unmapped-type` work a real type; ingestion stored it as `other`.
+5. Defer non-visible normalization work when it does not affect the launch, but record the reason and owner.
+6. Record queue counts before and after, the decisions by kind, and elapsed time.
 
 Do not use fuzzy identity matching as an automatic decision. LabKit intentionally auto-links people only on ORCID, DBLP ID, or an unambiguous exact full name.
 
-Ingestion takes only the ORCIDs a paper itself asserts (Crossref, or OpenAlex's per-paper `raw_orcid`), never OpenAlex's author-profile ORCID, which is what spread one swap to 17 papers in DIAL's import. An ORCID or DBLP ID match whose printed name contradicts the Team Member's name (different family name or first initial) does not link: it becomes an `identifier-name-conflict` Review Item naming both records. Work these first, and still check imported people by who owns each ORCID on any database imported before November 2026.
+Ingestion takes only the ORCIDs a paper itself asserts (Crossref, or OpenAlex's per-paper `raw_orcid`), never OpenAlex's author-profile ORCID, which is what spread one swap to 17 papers in DIAL's import. An ORCID or DBLP ID match whose printed name contradicts the Team Member's name does not link. A contradiction is a different family name, or a given name that differs; an initial still fits the full name it starts, so "N. Ahmed" fits "Nova Ahmed" but "Saiful Islam" does not fit "Salekul Islam". It becomes an `identifier-name-conflict` Review Item naming both records. Work these first, and still check imported people by who owns each ORCID on any database imported before November 2026.
+
+A new co-author whose name is an accent or middle-name variant of an existing Team Member ("Laura S. Gaytán-Lugo" and "Laura Sanely Gaytan-Lugo", "Susan Dray" and "Susan M. Dray") is still created as a new record. It also raises a person-merge suggestion with `data.reason: "name-variant"`. Merge it, then add the spelling to `alternateNames` so the next import links it exactly.
+
+A preprint is linked to its published version only by an identifier. That means a Crossref or DataCite version relation, or OpenAlex filing both DOIs under one work. When both versions are in the Lab, in either import order, the preprint gets `versionOf` and is hidden, and a `preprint-link` Review Item records the evidence. Re-importing a DOI that is already in the Lab still links it. A title match alone never links: it raises a `possible-duplicate` Review Item instead. Possible duplicates are the same normalized title, years at most one apart and a shared family name and first initial, across Front Doors. An arXiv DOI whose DataCite record names a published DOI imports that published version too and links the arXiv record to it.
+
+DOIs that Crossref doesn't hold (arXiv, Zenodo, figshare) are read from DataCite (provenance source `datacite`) instead of ending as failed DOIs. Every work type maps onto a Publication type. One with no counterpart is stored as `other`, and its raw source type is kept in the provenance note. An Organization created from a ROR ID takes its type from ROR (education, healthcare, facility, government, nonprofit, company).
 
 A DOI-less BibTeX entry or citation line is auto-matched to a Crossref record only when the title and at least two of year, first author, and venue agree, and never to a preprint copy of a work cited from a journal or conference. Everything else becomes a Review Item listing the top Crossref candidates (`data.crossrefCandidates`) to pick from.
 
