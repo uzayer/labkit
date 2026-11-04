@@ -694,6 +694,7 @@ export function createDialViews(d: DialData) {
       description: item.description,
       photo: item.photo ?? undefined,
       photoAlt: item.photoAlt ?? undefined,
+      photoWidth: item.photoWidth ?? undefined,
       url: item.url ?? undefined,
     }
   }

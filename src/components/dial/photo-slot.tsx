@@ -23,6 +23,7 @@ export function PhotoSlot({
   caption,
   aspect = 'aspect-4/3',
   taped = true,
+  sizes,
   className,
 }: {
   src?: string | null
@@ -32,6 +33,12 @@ export function PhotoSlot({
   aspect?: string
   /** Photographs are taped down; printed compositions sit flat on the page. */
   taped?: boolean
+  /**
+   * The photo's rendered width, as an `<img sizes>` value. The frame takes its
+   * width from the layout, so the photo can be a resized copy (see
+   * OptionalImage) without moving anything.
+   */
+  sizes?: string
   className?: string
 }) {
   const art_ = (
@@ -61,6 +68,7 @@ export function PhotoSlot({
             alt={alt}
             overlay={taped ? <Tape /> : null}
             frameClassName={cn('w-full rounded-md', aspect)}
+            sizes={sizes}
             className="h-full w-full object-cover"
             fallback={art_}
           />

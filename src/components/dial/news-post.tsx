@@ -94,6 +94,7 @@ export function NewsPost({ entry, newer, older }: NewsPostData) {
             alt={entry.photoAlt ?? entry.title}
             art={NEWS_ART[entry.type]}
             aspect="aspect-4/3"
+            sizes="(max-width: 1023px) 100vw, 20rem"
             className="lg:sticky lg:top-24 lg:h-fit"
           />
         </div>

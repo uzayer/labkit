@@ -325,6 +325,13 @@ export function ProjectPost({ project }: { project: ProjectData }) {
             alt={project.heroImageAlt ?? project.title}
             art={themeArt(primaryTheme)}
             aspect={project.trace ? 'aspect-4/3 lg:aspect-auto' : 'aspect-16/7'}
+            // The container's content is 1216px at most; beside a trace the
+            // photo takes 1.15 of 2 columns.
+            sizes={
+              project.trace
+                ? '(max-width: 1023px) 100vw, (max-width: 1279px) 58vw, 688px'
+                : '(max-width: 1279px) 100vw, 1216px'
+            }
             className={project.trace ? 'h-full' : undefined}
           />
           {project.trace && <ProjectTrace trace={project.trace} art={themeArt(primaryTheme)} />}

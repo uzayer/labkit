@@ -262,6 +262,8 @@ export type News = {
   description: string
   photo?: string | null
   photoAlt?: string | null
+  /** The photo's natural width in pixels. */
+  photoWidth?: number | null
   url?: string | null
   /**
    * Prototype-only: how much of `date` the source actually states. Many

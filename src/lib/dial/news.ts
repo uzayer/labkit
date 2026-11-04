@@ -23,6 +23,8 @@ export interface NewsEntry {
   photo?: string
   /** The photo's Media alt text. */
   photoAlt?: string
+  /** The photo's natural width in pixels, which caps its width in the archive. */
+  photoWidth?: number
   /** An external record of the same thing — an announcement, a programme. */
   url?: string
 }
