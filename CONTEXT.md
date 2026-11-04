@@ -70,6 +70,10 @@ _Avoid_: prize, honour, grant
 A dated announcement from the Lab — a paper accepted, an event held, community work. Carries how precisely its date is known, because sources often give only a month or a year.
 _Avoid_: post, event, update, announcement
 
+**Feature**:
+A module of LabKit that a Lab can switch on or off — Projects, Grants, Awards, News Items. Switching one off hides it in the admin and on the website; its data and schema stay.
+_Avoid_: module, plugin, toggle
+
 ## Ingestion
 
 **Front Door**:

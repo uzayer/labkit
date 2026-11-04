@@ -2,7 +2,7 @@
 
 > Living doc. Captures product decisions and sequencing. Last updated: 2026-11-04.
 
-## Current phase: LabKit for any lab (decided 2026-11-04)
+## Current phase: LabKit for any Lab (decided 2026-11-04)
 
 The MVP is done: DIAL's site went live on 2026-09-28. The goal now is that a Lab that isn't DIAL can get a working website out of LabKit. Architecture is in [ADR-0003](../adr/0003-core-package-and-lab-sites.md).
 
@@ -11,11 +11,11 @@ In scope, in order:
 1. **Payload 4 in production.** Done 2026-11-04.
 2. **`@labkit/core` package.** The research collections, ingestion, migrations and access move into `packages/core`, a Payload plugin. Behaviour doesn't change.
 3. **DIAL moves out.** DIAL's frontend moves to its own repo (`dial-site`), which consumes LabKit through a git submodule. LabKit becomes public, since Vercel only clones public submodules.
-4. **Feature switches and lab content as data.** A `Features` global turns modules (Projects, Grants, Awards, News…) on and off. The content DIAL hardcodes (Research Themes as routes, about/contact copy, branding) moves into `LabInfo`. This needs one migration and ends ADR-0002's freeze.
-5. **Default lab site.** A generic site built from DIAL's design and driven entirely by data and Features.
-6. **Onboarding.** For Lab Editors first: a first-run wizard in `/admin` (lab info → PI's ORCID → Features → import). For developers: a README and seed path. A `create-labkit` CLI comes later.
+4. **Feature switches and Lab content as data.** A `Features` global turns Features (Projects, Grants, Awards, News Items…) on and off. The content DIAL hardcodes (Research Themes as routes, about/contact copy, branding) moves into `LabInfo`. This needs one migration and ends ADR-0002's freeze.
+5. **Default Lab site.** A generic site built from DIAL's design and driven entirely by data and Features.
+6. **Onboarding.** For Lab Editors first: a first-run wizard in `/admin` (Lab info → PI's ORCID → Features → first Import Run). For developers: a README and seed path. A `create-labkit` CLI comes later.
 
-Still out: everything under "Explicitly out" below except multi-lab generalization, which this phase is. Hosted multi-tenancy and pricing also stay out: each Lab gets its own deployment and database.
+Still out: everything under "Explicitly out" below except multi-lab generalization, which this phase is. One hosted deployment serving many Labs, and pricing, also stay out: each Lab gets its own deployment and database.
 
 ## The MVP (decided 2026-08-18, done 2026-09-28)
 
