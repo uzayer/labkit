@@ -5,12 +5,16 @@ import { formatSlugHook } from './formatSlug'
 type Overrides = {
   slugOverrides?: Partial<TextField>
   checkboxOverrides?: Partial<CheckboxField>
+  // Where the server builds a slug from when `fieldToUse` isn't in the data yet.
+  // Field hooks run before collection hooks, so a value a collection hook derives
+  // (Team's `name`) doesn't exist when this field's hook runs.
+  fallback?: (data: Record<string, unknown>) => unknown
 }
 
 type Slug = (fieldToUse?: string, overrides?: Overrides) => [TextField, CheckboxField]
 
 export const slugField: Slug = (fieldToUse = 'title', overrides = {}) => {
-  const { slugOverrides, checkboxOverrides } = overrides
+  const { slugOverrides, checkboxOverrides, fallback } = overrides
 
   const checkBoxField: CheckboxField = {
     name: 'slugLock',
@@ -32,7 +36,7 @@ export const slugField: Slug = (fieldToUse = 'title', overrides = {}) => {
     ...(slugOverrides || {}),
     hooks: {
       // Kept this in for hook or API based updates
-      beforeValidate: [formatSlugHook(fieldToUse)],
+      beforeValidate: [formatSlugHook((data) => data[fieldToUse] || fallback?.(data))],
     },
     admin: {
       position: 'sidebar',

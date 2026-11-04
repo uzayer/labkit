@@ -6,7 +6,7 @@ import { slugField } from '../../fields/slug'
 import { populateRoleLabel } from './hooks/populateRoleLabel'
 import { setDisplayInTeam } from './hooks/setDisplayInTeam'
 import { validateTeamMembers } from './hooks/validateTeamMembers'
-import { populateFullName } from './hooks/populateFullName'
+import { composeFullName, populateFullName } from './hooks/populateFullName'
 import { clearAlumniRole } from './hooks/clearAlumniRole'
 import { ALUMNI_ROLES, TEAM_ROLES } from './roles'
 
@@ -97,7 +97,7 @@ const Team: CollectionConfig = {
                 },
               ],
             },
-            ...slugField('name'),
+            ...slugField('name', { fallback: composeFullName }),
             {
               name: 'affiliation',
               type: 'relationship',
