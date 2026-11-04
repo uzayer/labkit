@@ -7,13 +7,13 @@
 
 <br><br>
 
-[![Payload](https://img.shields.io/badge/Payload-3.85-000000.svg?style=for-the-badge&logo=payloadcms&logoColor=white)](https://payloadcms.com)
+[![Payload](https://img.shields.io/badge/Payload-4.0_beta-000000.svg?style=for-the-badge&logo=payloadcms&logoColor=white)](https://payloadcms.com)
 [![Next.js](https://img.shields.io/badge/Next.js-16-000000.svg?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org)
 [![Turso](https://img.shields.io/badge/Turso-4FF8D2.svg?style=for-the-badge)](https://turso.tech)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](#license)
 [![Status: pre-release](https://img.shields.io/badge/Status-pre--release-orange.svg?style=for-the-badge)](#status)
 
-**[Vision](docs/product/VISION.md)** · **[Roadmap](docs/product/ROADMAP.md)** · **[Glossary](CONTEXT.md)** · **[Agent guide](CLAUDE.md)** · **[ADRs](docs/adr/)**
+**[Live demo](https://trylabkit.vercel.app)** · **[Vision](docs/product/VISION.md)** · **[Roadmap](docs/product/ROADMAP.md)** · **[Glossary](CONTEXT.md)** · **[Agent guide](CLAUDE.md)** · **[ADRs](docs/adr/)**
 
 </div>
 
@@ -214,20 +214,18 @@ docs/
 
 Honest about what is and isn't built:
 
-| Area                                   | State                                                                                                                                                                                                          |
-| -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Ingestion engine**                   | Built and verified end-to-end against a real career-wide ORCID record — a 122-work profile resolved to 108 publications, 261 people, 94 organizations, and 23 venues, with 77 items correctly routed to review |
-| **Data model**                         | Shaped by real data, not designed in the abstract. The schema gaps that mattered were found by pushing an actual lab's corpus through it                                                                       |
-| **Payload admin**                      | The working admin surface, grouped into a deliberate v1 dashboard                                                                                                                                              |
-| **Public frontend**                    | DIAL's site is live from its own repo, `dial-site`, which consumes LabKit as a git submodule. This repo ships the default Lab site, a starter a Lab copies and edits                                           |
-| **Custom dashboard**                   | Parked. Two prototypes live in `src/app/_dashboard-kit/` and `src/app/_dashboard-legacy/` as Next.js private folders — they compile and are importable, but generate no routes                                 |
-| **Multi-lab / theming generalization** | Deliberately not started. Lab #2 is what will define it; pre-solving it is the failure mode this project is guarding against                                                                                   |
+| Area                 | State                                                                                                                                                                                                                                                                                                                                                                                        |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Ingestion engine** | Built and verified end-to-end against a real career-wide ORCID record — a 122-work profile resolved to 108 publications, 261 people, 94 organizations, and 23 venues, with 77 items correctly routed to review                                                                                                                                                                               |
+| **Data model**       | Shaped by real data, not designed in the abstract. The schema gaps that mattered were found by pushing an actual lab's corpus through it                                                                                                                                                                                                                                                     |
+| **Payload admin**    | The working admin surface, grouped into a deliberate v1 dashboard                                                                                                                                                                                                                                                                                                                            |
+| **Public frontend**  | DIAL's site is live from its own repo, `dial-site`, which consumes LabKit as a git submodule. This repo ships the default Lab site, a starter a Lab copies and edits                                                                                                                                                                                                                         |
+| **Custom dashboard** | Parked. Two prototypes live in `src/app/_dashboard-kit/` and `src/app/_dashboard-legacy/` as Next.js private folders — they compile and are importable, but generate no routes                                                                                                                                                                                                               |
+| **Multi-lab**        | Each Lab gets its own deployment and database; every Lab has the same schema. Features switch modules (Projects, Grants, Awards, News Items, Research Themes) per Lab, and each Lab restyles its own copy of the site. Not yet tested beyond DIAL; Lab #2 will test it. A demo of the default site with a fictional Example Lab runs at [trylabkit.vercel.app](https://trylabkit.vercel.app) |
 
 ## Roadmap
 
-- **First lab live.** The whole current milestone: one real lab's public website, running on real ingested data.
 - **The second lab.** The product-defining moment — the first time the engine and frontend meet a lab that wasn't designed around. What is lab-specific and what is LabKit gets discovered there, not before.
-- **Self-serve ingestion.** Today an operator runs the CLI. The import wizard and review queue become a UI a lab member can drive.
 - **Scrape to demo.** Run a lab's existing site through the pipeline and send the PI a link to their own site, already filled, before first contact.
 - **Recurring sync.** A weekly OpenAlex poll by team ORCID turns site maintenance into approve/reject.
 - **More enrichment sources.** Semantic Scholar for citation counts and TLDRs, arXiv for preprints, PubMed for medical-informatics venues.

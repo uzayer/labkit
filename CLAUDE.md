@@ -2,7 +2,7 @@
 
 `AGENTS.md` is a symlink to this file. `README.md` has setup, commands and project layout; this file holds only what an agent would otherwise get wrong.
 
-LabKit is a PayloadCMS content platform for research lab websites. Each Lab's site is its own repo that consumes LabKit as a git submodule (ADR-0003); DIAL's, the first, is `dial-site`. This repo's root app is the admin plus a placeholder home page.
+LabKit is a PayloadCMS content platform for research lab websites. Each Lab's site is its own repo that consumes LabKit as a git submodule (ADR-0003); DIAL's, the first, is `dial-site`. This repo's root app is the admin plus the default Lab site (`src/app/(frontend)/(site)/`), a starter Labs copy.
 
 ## Read first
 
@@ -33,7 +33,7 @@ There is no test framework. Run `bun run tsc` and `bun run lint`.
 
 - **`overrideAccess` defaults to `false`** in Payload 4's Local API, including `payload.jobs.*`. Trusted server work (hooks, scripts, ingestion, jobs) must pass `overrideAccess: true` explicitly.
 - **Roles must be populated**, not string IDs, for `hasPermission()` (`packages/core/src/utilities/checkPermission.ts`) to work. That's why Users set `auth.depth: 2`: Payload 4 defaults it to 0.
-- **Production databases belong to the Labs' site repos.** A merge here deploys nothing; a Lab picks it up by bumping its submodule. A new core migration must be applied to each Lab's production database before that Lab deploys the bump (dial-site's README has the procedure), so write migrations that are safe to run before the old code stops. A Vercel rollback alone can't undo a migration.
+- **Production databases belong to the Labs' site repos, except the demo's.** A merge here deploys only the demo (`trylabkit.vercel.app`, Turso `labkit-demo`, seeded with `scripts/seed-demo.ts`); a Lab picks it up by bumping its submodule. Migrate `labkit-demo` before merging a migration, the same as any Lab. A new core migration must be applied to each Lab's production database before that Lab deploys the bump (dial-site's README has the procedure), so write migrations that are safe to run before the old code stops. A Vercel rollback alone can't undo a migration.
 - **`oxlint --fix` (pre-commit) can delete a type import** whose name matches a value in the same file (e.g. `ThemeConfig`). Alias the import, and re-run `bun run tsc` after committing.
 - **SQLite transactions are off on purpose.** Payload's multi-operation transactions caused `SQLITE_BUSY_SNAPSHOT` in the overlapping-watchdog check. Keep WAL plus a busy timeout, and don't enable transactions to fix a lock error.
 - **Admin SCSS** has no `~@payloadcms/ui/scss` and no `--theme-*` tokens in Payload 4. Use literal px (20px is the old `base(1)`) or `--color-*` tokens.
