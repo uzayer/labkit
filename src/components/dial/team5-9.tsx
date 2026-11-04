@@ -34,7 +34,7 @@ function initials(name: string) {
 function MemberCard({ member }: { member: TeamMember }) {
   return (
     <a href={`/people/${member.slug}`}>
-      <Card className="group border-0 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:shadow-lg">
+      <Card className="group border-0 bg-card/50 backdrop-blur-sm transition-shadow duration-300 hover:shadow-lg">
         <CardContent className="p-6">
           <div className="relative mb-6">
             <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 text-2xl font-bold text-primary">

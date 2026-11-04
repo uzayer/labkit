@@ -1,8 +1,3 @@
-'use client'
-
-import { useRef } from 'react'
-import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
-
 import { cn } from '@/lib/utils'
 
 /**
@@ -11,6 +6,12 @@ import { cn } from '@/lib/utils'
  *
  * Decoration in the margin, not content — it never holds text and never moves
  * anything. With reduced motion the line is simply drawn in full.
+ *
+ * The draw is a CSS view-timeline animation (`.scroll-stroke` in globals.css),
+ * so this ships no JavaScript. Browsers without scroll timelines (Firefox
+ * stable, when this was written in 2026) draw the line in full, as reduced motion does: a
+ * script fallback would have to read this element's position on every scroll
+ * frame, which costs more than a decoration is worth.
  */
 const PATHS = {
   /** A line wandering down the page, as if tracing a route. */
@@ -26,26 +27,20 @@ export function ScrollStroke({
   variant?: keyof typeof PATHS
   className?: string
 }) {
-  const ref = useRef<HTMLDivElement>(null)
-  const reduceMotion = useReducedMotion()
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start end', 'end start'],
-  })
-  // Starts part-drawn so the line never reads as missing, and completes as the
-  // section leaves.
-  const pathLength = useTransform(scrollYProgress, [0, 0.85], [0.08, 1])
-
   return (
-    <div ref={ref} aria-hidden className={cn('pointer-events-none absolute inset-y-0', className)}>
+    <div
+      aria-hidden
+      className={cn('scroll-stroke pointer-events-none absolute inset-y-0', className)}
+    >
       <svg viewBox="0 0 120 640" preserveAspectRatio="none" className="text-ink/50 h-full w-full">
-        <motion.path
+        <path
           d={PATHS[variant]}
+          // A unit length, so the dash keyframes are fractions of the line.
+          pathLength={1}
           fill="none"
           stroke="currentColor"
           strokeWidth={2.5}
           strokeLinecap="round"
-          style={reduceMotion ? undefined : { pathLength }}
         />
       </svg>
     </div>

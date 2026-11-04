@@ -1,7 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { motion, useMotionTemplate, useReducedMotion, useScroll, useTransform } from 'motion/react'
+import { useEffect, useRef, useState } from 'react'
 
 import { cn } from '@/lib/utils'
 
@@ -17,6 +16,13 @@ import { cn } from '@/lib/utils'
  * or single-record pages. It hides itself where there is no margin to spare (below xl) and where the
  * page is not actually long, which is what happens once a filter cuts a list
  * down.
+ *
+ * The motion is a CSS scroll-driven animation (`.scroll-ruler-*` in
+ * globals.css), so no script runs per scroll frame: the hairline's translate
+ * runs on the compositor, and the fill's clip-path and the readout's counter
+ * update in style alone. Browsers without scroll timelines (Firefox stable,
+ * when this was written in 2026) get the small listener below instead, which writes
+ * the same three values. Reduced motion hides the ruler in CSS.
  */
 
 /** Below this many viewports, position is obvious and the ruler is noise. */
@@ -37,9 +43,10 @@ export function ScrollRuler({
   side?: 'left' | 'right'
   className?: string
 }) {
-  const { scrollYProgress } = useScroll()
-  const reduceMotion = useReducedMotion()
   const [longEnough, setLongEnough] = useState(false)
+  const fillRef = useRef<HTMLDivElement>(null)
+  const lineRef = useRef<HTMLDivElement>(null)
+  const readoutRef = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
     const measure = () =>
@@ -55,13 +62,33 @@ export function ScrollRuler({
     }
   }, [])
 
-  // The filled portion grows from the bottom up as the page advances.
-  const remaining = useTransform(scrollYProgress, [0, 1], [100, 0])
-  const clipPath = useMotionTemplate`inset(0 0 ${remaining}% 0)`
-  const percent = useTransform(scrollYProgress, (v) => Math.round(v * 100))
-  const y = useTransform(scrollYProgress, [0, 1], [0, 192])
+  // Fallback for browsers without scroll timelines only.
+  useEffect(() => {
+    if (!longEnough || CSS.supports('animation-timeline', 'scroll()')) return
+    let frame = 0
+    const update = () => {
+      frame = 0
+      const root = document.documentElement
+      const max = root.scrollHeight - window.innerHeight
+      const progress = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0
+      fillRef.current?.style.setProperty('clip-path', `inset(0 0 ${(1 - progress) * 100}% 0)`)
+      lineRef.current?.style.setProperty('translate', `0 ${progress * 12}rem`)
+      readoutRef.current?.style.setProperty('--ruler-pct', String(Math.round(progress * 100)))
+    }
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update)
+    }
+    update()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+      if (frame) cancelAnimationFrame(frame)
+    }
+  }, [longEnough])
 
-  if (reduceMotion || !longEnough) return null
+  if (!longEnough) return null
 
   const onRight = side === 'right'
 
@@ -69,7 +96,7 @@ export function ScrollRuler({
     <div
       aria-hidden
       className={cn(
-        'pointer-events-none fixed top-1/2 z-30 hidden h-48 w-4 -translate-y-1/2 xl:block',
+        'scroll-ruler pointer-events-none fixed top-1/2 z-30 hidden h-48 w-4 -translate-y-1/2 xl:block',
         // Clear of the overlay scrollbar on the right, of the container on the left.
         onRight ? 'right-8' : 'left-6',
         className,
@@ -77,24 +104,27 @@ export function ScrollRuler({
     >
       <div className="text-ink relative h-full w-full">
         <div className="absolute inset-0 opacity-25" style={{ backgroundImage: TICKS }} />
-        <motion.div className="absolute inset-0" style={{ clipPath, backgroundImage: TICKS }} />
-        <motion.div
-          style={{ y }}
+        <div
+          ref={fillRef}
+          className="scroll-ruler-fill absolute inset-0"
+          style={{ backgroundImage: TICKS }}
+        />
+        <div
+          ref={lineRef}
           className={cn(
-            'bg-ink absolute top-0 flex h-px w-6 items-center',
+            'scroll-ruler-line bg-ink absolute top-0 flex h-px w-6 items-center',
             onRight ? 'right-0' : 'left-0',
           )}
         >
           {/* The readout sits on the outside, away from the page's text. */}
-          <motion.span
+          <span
+            ref={readoutRef}
             className={cn(
-              'text-ink absolute font-mono text-[0.65rem] tabular-nums',
+              'scroll-ruler-readout text-ink absolute font-mono text-[0.65rem] tabular-nums',
               onRight ? '-left-1 -translate-x-full' : '-right-1 translate-x-full',
             )}
-          >
-            {percent}
-          </motion.span>
-        </motion.div>
+          />
+        </div>
       </div>
     </div>
   )
