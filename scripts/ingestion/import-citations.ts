@@ -22,7 +22,7 @@ import fs from 'node:fs'
 import { getPayload } from 'payload'
 import config from '@payload-config'
 
-import { resolveCrossrefTitle } from '@labkit/core/ingestion/fetch'
+import { resolveCrossrefSearch, searchReviewData } from '@labkit/core/ingestion/crossref-search'
 import {
   hydratePublicationFromDoi,
   loadPublicationIndexes,
@@ -131,14 +131,14 @@ async function main() {
         await sleep(150)
       } else {
         const chunk = (candidate.raw?.chunk as string | undefined) ?? candidate.title
-        const resolution = await resolveCrossrefTitle(chunk)
+        const decision = await resolveCrossrefSearch({ chunk })
         await sleep(150)
 
-        if (resolution.method === 'crossref' && resolution.candidate) {
+        if (decision.status === 'accepted') {
           result = await hydratePublicationFromDoi(
             payload,
             report,
-            resolution.candidate.doi,
+            decision.doi,
             indexes,
             DRY_RUN,
             sourceContext,
@@ -150,6 +150,7 @@ async function main() {
             field: 'doi',
             sourceContext,
             value: chunk.length > 200 ? `${chunk.slice(0, 200)}…` : chunk,
+            data: searchReviewData(decision),
           })
         }
       }

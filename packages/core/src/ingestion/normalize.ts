@@ -194,6 +194,32 @@ export function namesCompatible(a: string, b: string): boolean {
 }
 
 /**
+ * Whether two printed names can be the same person *on one paper*, strictly
+ * enough to carry an ORCID or affiliation from one source's author to the
+ * other's. Stricter than namesCompatible: given names must agree token by
+ * token, where an initial agrees with a full name it starts but two
+ * different full names never agree ("Saiful Islam" is not "Salekul Islam",
+ * though their initials are the same). Md./Mohammad-style prefixes are
+ * ignored, as in namesCompatible.
+ */
+export function namesPair(a: string, b: string): boolean {
+  if (!namesCompatible(a, b)) return false
+  const tokensA = nameTokens(a)
+  const tokensB = nameTokens(b)
+  const familyA = tokensA[tokensA.length - 1]
+  const shared = tokensB.includes(familyA) ? familyA : tokensB[tokensB.length - 1]
+  const given = (tokens: string[]) =>
+    tokens.filter((token) => token !== shared && !NON_DISCRIMINATING_GIVEN.has(token))
+  const [fewer, more] = [given(tokensA), given(tokensB)].sort((x, y) => x.length - y.length)
+  return fewer.every((token) =>
+    more.some(
+      (other) =>
+        token === other || ((token.length === 1 || other.length === 1) && token[0] === other[0]),
+    ),
+  )
+}
+
+/**
  * Typography-only key for names that must be *equal*: Unicode form, case,
  * periods, commas, hyphens and spacing. Diacritics are kept, because folding
  * them can merge genuinely different names.

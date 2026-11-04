@@ -5,7 +5,7 @@ import { NotFound } from 'payload'
 
 import type { ImportRun } from '../../types'
 
-import { resolveCrossrefTitle } from '../fetch'
+import { bibtexSearchInput, resolveCrossrefSearch, searchReviewData } from '../crossref-search'
 import {
   hydratePublicationFromDoi,
   hydratePublicationFromFields,
@@ -271,6 +271,7 @@ function restoreReport(report: ImportReport, summary: ImportRun['reportSummary']
         field: entry.field,
         sourceContext: entry.sourceContext,
         value: entry.value,
+        data: isRecord(entry.data) ? entry.data : undefined,
       })
     }
   }
@@ -381,14 +382,14 @@ async function processBibtexCandidate(
     return null
   }
 
-  const resolution = await resolveCrossrefTitle(candidate.title)
+  const decision = await resolveCrossrefSearch(bibtexSearchInput(candidate))
   await sleep(THROTTLE_MS)
 
-  if (resolution.method === 'crossref' && resolution.candidate) {
+  if (decision.status === 'accepted') {
     const result = await hydratePublicationFromDoi(
       payload,
       report,
-      resolution.candidate.doi,
+      decision.doi,
       indexes,
       false,
       sourceContext,
@@ -414,6 +415,7 @@ async function processBibtexCandidate(
       title: candidate.title,
       year: candidate.year,
       authors: (candidate.raw.authors as Array<{ fullName: string }> | undefined) ?? [],
+      searchReview: searchReviewData(decision),
     },
     indexes,
     false,
@@ -457,14 +459,14 @@ async function processCitationCandidate(
   }
 
   const chunk = candidate.raw.chunk
-  const resolution = await resolveCrossrefTitle(chunk)
+  const decision = await resolveCrossrefSearch({ chunk })
   await sleep(THROTTLE_MS)
 
-  if (resolution.method === 'crossref' && resolution.candidate) {
+  if (decision.status === 'accepted') {
     const result = await hydratePublicationFromDoi(
       payload,
       report,
-      resolution.candidate.doi,
+      decision.doi,
       indexes,
       false,
       sourceContext,
@@ -478,6 +480,7 @@ async function processCitationCandidate(
     field: 'doi',
     sourceContext,
     value: chunk.length > 200 ? `${chunk.slice(0, 200)}…` : chunk,
+    data: searchReviewData(decision),
   })
   return null
 }

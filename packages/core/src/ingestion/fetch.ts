@@ -8,22 +8,18 @@ import path from 'node:path'
 // pool: slower, but every lookup still works.
 // Read per call, not at import, so it doesn't depend on when env files load.
 const contactEmail = (): string | null => process.env.LABKIT_CONTACT_EMAIL?.trim() || null
+// OpenAlex has required a key for real volumes since 2026-02: without one a
+// client gets 100 credits a day. Singleton /works/{doi} lookups (all LabKit
+// does) cost nothing, so the key is optional; set it before any batching.
+const openalexApiKey = (): string | null => process.env.OPENALEX_API_KEY?.trim() || null
+
 const RETRYABLE_STATUS_CODES = new Set([408, 429, 500, 502, 503, 504])
 const MAX_ATTEMPTS = 3
-const INITIAL_RETRY_DELAY_MS = 250
-const CROSSREF_TITLE_SCORE_THRESHOLD = 50
-
-export interface CrossrefTitleSearchCandidate {
-  title: string
-  doi: string
-  score: number
-}
-
-export interface CrossrefTitleResolution {
-  candidate: { title: string; doi: string } | null
-  method: 'crossref' | 'none'
-  score?: number
-}
+const BASE_RETRY_DELAY_MS = 500
+const MAX_RETRY_DELAY_MS = 30_000
+// A Retry-After longer than this means "come back much later", not "pause":
+// give up on this request rather than stall a whole import behind it.
+const MAX_RETRY_AFTER_MS = 60_000
 
 function isRetryableStatus(status: number): boolean {
   return RETRYABLE_STATUS_CODES.has(status)
@@ -33,11 +29,74 @@ async function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
 
+/**
+ * Full-jitter backoff: a random wait in [0, min(cap, base·2^n)). Plain
+ * doubling makes every worker that hit the same 429 retry in lockstep.
+ */
+function backoffMs(attempt: number): number {
+  return Math.random() * Math.min(MAX_RETRY_DELAY_MS, BASE_RETRY_DELAY_MS * 2 ** (attempt - 1))
+}
+
+/** Retry-After is either delta-seconds or an HTTP date. */
+function retryAfterMs(header: string | null): number | null {
+  if (!header) return null
+  const seconds = Number(header)
+  if (Number.isFinite(seconds)) return Math.max(0, seconds * 1000)
+  const date = Date.parse(header)
+  return Number.isNaN(date) ? null : Math.max(0, date - Date.now())
+}
+
+// ─── Per-host concurrency ───────────────────────────────────────────────────
+//
+// Crossref's polite pool allows 3 concurrent requests; more earns 429s. DBLP
+// asks bulk users to go slowly and walls off clients that don't. The cap
+// applies to requests in flight only, never to a backoff wait.
+
+const HOST_CONCURRENCY: Record<string, number> = {
+  'api.crossref.org': 3,
+  'dblp.org': 1,
+}
+const DEFAULT_HOST_CONCURRENCY = 5
+const hostSlots = new Map<string, { active: number; waiting: Array<() => void> }>()
+
+async function withHostSlot<T>(host: string, run: () => Promise<T>): Promise<T> {
+  const limit = HOST_CONCURRENCY[host] ?? DEFAULT_HOST_CONCURRENCY
+  let slot = hostSlots.get(host)
+  if (!slot) {
+    slot = { active: 0, waiting: [] }
+    hostSlots.set(host, slot)
+  }
+  if (slot.active >= limit) {
+    await new Promise<void>((resolve) => slot!.waiting.push(resolve))
+  } else {
+    slot.active++
+  }
+  try {
+    return await run()
+  } finally {
+    // Hand the slot straight to the next waiter, or free it.
+    const next = slot.waiting.shift()
+    if (next) next()
+    else slot.active--
+  }
+}
+
 export interface FetchOptions {
   /** Total tries, including the first. Default 3. */
   attempts?: number
   /** Per-attempt timeout. Default 10s — without one, a stalled request waits for undici's 5-minute default. */
   timeoutMs?: number
+  /**
+   * Retry after a network error or timeout, not only after a retryable
+   * status. Default true. DBLP turns it off: it stalls rather than errors,
+   * so a second attempt doubles the stall, but a 429 with Retry-After is
+   * still worth one polite retry.
+   */
+  retryOnNetworkError?: boolean
+  /** Cache key when the URL carries a secret (an API key) that must stay out of it. */
+  cacheKey?: string
+  /** Set false for answers that must be fresh on every run even when a CLI enabled the cache. */
+  cache?: boolean
 }
 
 const DEFAULT_TIMEOUT_MS = 10_000
@@ -94,65 +153,75 @@ function writeCache(url: string, value: unknown | null): void {
 }
 
 /**
- * GET JSON with retry, a per-attempt timeout, and (when configured) caching.
+ * GET JSON with retry, a per-attempt timeout, a per-host concurrency cap, and
+ * (when configured) caching.
  *
  * Returns null on any miss. Only *definitive* answers are cached — a JSON body,
  * or a 404/410 (the source genuinely has nothing). Timeouts, 5xx, and non-JSON
  * interstitials (DBLP's anti-bot page) are not cached, so a flaky source gets
  * another chance on the next run instead of being remembered as empty.
+ *
+ * A Retry-After header sets the wait before the next attempt; otherwise the
+ * wait is jittered exponential backoff.
  */
 export async function fetchJsonWithRetry(
   url: string,
   init: RequestInit,
   options: FetchOptions = {},
 ): Promise<unknown | null> {
-  const cached = readCache(url)
+  const useCache = options.cache ?? true
+  const cacheKey = options.cacheKey ?? url
+  const cached = useCache ? readCache(cacheKey) : { hit: false, value: null }
   if (cached.hit) return cached.value
+  const store = (value: unknown | null) => {
+    if (useCache) writeCache(cacheKey, value)
+  }
 
   const attempts = options.attempts ?? MAX_ATTEMPTS
   const timeoutMs = options.timeoutMs ?? DEFAULT_TIMEOUT_MS
-  let delayMs = INITIAL_RETRY_DELAY_MS
+  const retryOnNetworkError = options.retryOnNetworkError ?? true
+  const host = new URL(url).hostname
 
   for (let attempt = 1; attempt <= attempts; attempt++) {
+    let waitMs = backoffMs(attempt)
     try {
-      const response = await fetch(url, { ...init, signal: AbortSignal.timeout(timeoutMs) })
-      if (response.ok) {
-        // A 200 that isn't JSON is an interstitial, not data — DBLP serves an
-        // anti-bot challenge page this way. Treat it as a miss rather than
-        // letting `.json()` reject: this helper is the shared path for
-        // Crossref, OpenAlex and DBLP, and a throw here kills the whole run.
-        const contentType = response.headers.get('content-type') ?? ''
-        if (!contentType.toLowerCase().includes('json')) {
-          return null
+      const outcome = await withHostSlot(host, async () => {
+        const response = await fetch(url, { ...init, signal: AbortSignal.timeout(timeoutMs) })
+        if (response.ok) {
+          // A 200 that isn't JSON is an interstitial, not data — DBLP serves an
+          // anti-bot challenge page this way. Treat it as a miss rather than
+          // letting `.json()` reject: this helper is the shared path for every
+          // source, and a throw here kills the whole run.
+          const contentType = response.headers.get('content-type') ?? ''
+          if (!contentType.toLowerCase().includes('json')) return { done: true, value: null }
+          try {
+            const json = (await response.json()) as unknown
+            store(json)
+            return { done: true, value: json }
+          } catch {
+            // Malformed body — retrying will not repair it.
+            return { done: true, value: null }
+          }
         }
-
-        try {
-          const json = (await response.json()) as unknown
-          writeCache(url, json)
-          return json
-        } catch {
-          // Malformed body — retrying will not repair it.
-          return null
+        if (response.status === 404 || response.status === 410) {
+          store(null)
+          return { done: true, value: null }
         }
-      }
-
-      if (response.status === 404 || response.status === 410) {
-        writeCache(url, null)
-        return null
-      }
-
-      if (attempt === attempts || !isRetryableStatus(response.status)) {
-        return null
+        if (!isRetryableStatus(response.status)) return { done: true, value: null }
+        return { done: false, retryAfter: retryAfterMs(response.headers.get('retry-after')) }
+      })
+      if (outcome.done) return outcome.value
+      if (outcome.retryAfter !== null && outcome.retryAfter !== undefined) {
+        if (outcome.retryAfter > MAX_RETRY_AFTER_MS) return null
+        waitMs = outcome.retryAfter
       }
     } catch {
       // Network error or timeout (AbortSignal.timeout rejects with TimeoutError).
-      if (attempt === attempts) {
-        return null
-      }
+      if (!retryOnNetworkError) return null
     }
 
-    await sleep(delayMs)
-    delayMs *= 2
+    if (attempt === attempts) return null
+    await sleep(waitMs)
   }
 
   return null
@@ -168,58 +237,31 @@ export function defaultHeaders(headers?: HeadersInit): Headers {
   return merged
 }
 
+/**
+ * A Crossref REST URL with `mailto` as a query parameter as well as in the
+ * User-Agent: Crossref documents both, and the parameter is what places a
+ * request in the polite pool reliably.
+ */
+export function crossrefUrl(pathname: string, params: Record<string, string> = {}): string {
+  const url = new URL(pathname, 'https://api.crossref.org')
+  for (const [key, value] of Object.entries(params)) url.searchParams.set(key, value)
+  const email = contactEmail()
+  if (email) url.searchParams.set('mailto', email)
+  return url.href
+}
+
 export async function fetchCrossrefByDoi(doi: string): Promise<unknown | null> {
-  return fetchJsonWithRetry(`https://api.crossref.org/works/${encodeURIComponent(doi)}`, {
+  return fetchJsonWithRetry(crossrefUrl(`/works/${encodeURIComponent(doi)}`), {
     headers: defaultHeaders(),
   })
 }
 
 export async function fetchOpenAlexByDoi(doi: string): Promise<unknown | null> {
+  const url = new URL(`https://api.openalex.org/works/https://doi.org/${encodeURIComponent(doi)}`)
   const email = contactEmail()
-  const mailto = email ? `?mailto=${encodeURIComponent(email)}` : ''
-  const url = `https://api.openalex.org/works/https://doi.org/${encodeURIComponent(doi)}${mailto}`
-  return fetchJsonWithRetry(url, {
-    headers: defaultHeaders(),
-  })
-}
-
-export async function searchCrossrefByTitle(
-  query: string,
-  rows = 3,
-): Promise<CrossrefTitleSearchCandidate[]> {
-  const url = `https://api.crossref.org/works?query.bibliographic=${encodeURIComponent(query)}&rows=${rows}`
-  const json = await fetchJsonWithRetry(url, {
-    headers: defaultHeaders(),
-  })
-
-  const items =
-    (json as { message?: { items?: Array<{ title?: string[]; DOI?: string; score?: number }> } })
-      ?.message?.items ?? []
-
-  return items.flatMap((item) => {
-    const title = Array.isArray(item.title) ? item.title[0] : undefined
-    if (!title || typeof item.DOI !== 'string' || typeof item.score !== 'number') {
-      return []
-    }
-
-    return [{ title, doi: item.DOI, score: item.score }]
-  })
-}
-
-export async function resolveCrossrefTitle(
-  query: string,
-  rows = 3,
-): Promise<CrossrefTitleResolution> {
-  const candidates = await searchCrossrefByTitle(query, rows)
-  const best = candidates[0]
-
-  if (!best || best.score < CROSSREF_TITLE_SCORE_THRESHOLD) {
-    return { candidate: null, method: 'none', score: best?.score }
-  }
-
-  return {
-    candidate: { title: best.title, doi: best.doi },
-    method: 'crossref',
-    score: best.score,
-  }
+  if (email) url.searchParams.set('mailto', email)
+  const cacheKey = url.href
+  const key = openalexApiKey()
+  if (key) url.searchParams.set('api_key', key)
+  return fetchJsonWithRetry(url.href, { headers: defaultHeaders() }, { cacheKey })
 }

@@ -127,7 +127,9 @@ The launch bar is **presentable**, not a perfectly normalized research graph:
 
 Do not use fuzzy identity matching as an automatic decision. LabKit intentionally auto-links people only on ORCID, DBLP ID, or an unambiguous exact full name.
 
-Check imported people by who owns each ORCID, not only by name. An ORCID taken from an OpenAlex authorship can be attached to the wrong author: in DIAL's import, one swap spread to 17 papers.
+Ingestion takes only the ORCIDs a paper itself asserts (Crossref, or OpenAlex's per-paper `raw_orcid`), never OpenAlex's author-profile ORCID, which is what spread one swap to 17 papers in DIAL's import. An ORCID or DBLP ID match whose printed name contradicts the Team Member's name (different family name or first initial) does not link: it becomes an `identifier-name-conflict` Review Item naming both records. Work these first, and still check imported people by who owns each ORCID on any database imported before November 2026.
+
+A DOI-less BibTeX entry or citation line is auto-matched to a Crossref record only when the title and at least two of year, first author, and venue agree, and never to a preprint copy of a work cited from a journal or conference. Everything else becomes a Review Item listing the top Crossref candidates (`data.crossrefCandidates`) to pick from.
 
 ## 7. Add manual content and media
 

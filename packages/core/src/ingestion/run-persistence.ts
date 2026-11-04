@@ -115,7 +115,7 @@ export async function finalizeRun(
         run: runId,
         value: entry.value,
         sourceContext: entry.sourceContext,
-        data: null,
+        data: entry.data ?? null,
       },
       overrideAccess: true,
       context: { disableRevalidate: true },

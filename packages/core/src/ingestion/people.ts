@@ -2,7 +2,7 @@ import type { CollectionSlug, Payload } from 'payload'
 import type { CrossrefAuthor } from './crossref'
 import type { DblpAuthor } from './dblp'
 import { diceCoefficient, type RorLookupEntry } from './match'
-import { namesCompatible, normalizeTitle } from './normalize'
+import { exactNameKey, namesCompatible, namesPair, normalizeTitle } from './normalize'
 import { resolveOrCreatePartnerOrg } from './organizations'
 import type { OpenAlexAuthorship } from './openalex'
 import type { ImportReport } from './report'
@@ -493,7 +493,7 @@ export function mergeAuthors(
 
   const names = crossref.map((cr) => [cr.given, cr.family].filter(Boolean).join(' '))
   const compatible = names.map((name) =>
-    openalex.map((oa) => Boolean(openalexName(oa)) && namesCompatible(name, openalexName(oa))),
+    openalex.map((oa) => Boolean(openalexName(oa)) && namesPair(name, openalexName(oa))),
   )
 
   return crossref.map((cr, i) => {
@@ -511,34 +511,27 @@ export function mergeAuthors(
   })
 }
 
-const DBLP_NAME_MATCH_THRESHOLD = 0.85
+// DBLP disambiguates homonyms with a numeric suffix: "Md. Jahidul Islam 0001".
+const DBLP_HOMONYM_SUFFIX = /\s+\d{4}$/
 
 /**
- * Attaches DBLP's already-disambiguated author pid to each merged author by
- * name similarity within the same paper's (small) author list — DBLP's own
- * author count/order can differ slightly from Crossref/OpenAlex (e.g.
- * middle-initial formatting), so position alone isn't reliable here the way
- * it is between Crossref and OpenAlex.
+ * Attaches DBLP's already-disambiguated author pid to each merged author whose
+ * name is exactly one DBLP author's name on the same paper (after case and
+ * punctuation normalization, minus DBLP's homonym suffix). A pid is an
+ * identifier and identifiers drive Safe Match, so a near-identical name
+ * ("Md Habibur Rahman" for "Md Hasibur Rahman") must not carry one across.
  */
 export function attachDblpPids(merged: MergedAuthor[], dblpAuthors: DblpAuthor[]): MergedAuthor[] {
   if (dblpAuthors.length === 0) return merged
 
+  const byName = new Map<string, DblpAuthor[]>()
+  for (const author of dblpAuthors) {
+    const key = exactNameKey(author.name.replace(DBLP_HOMONYM_SUFFIX, ''))
+    byName.set(key, [...(byName.get(key) ?? []), author])
+  }
+
   return merged.map((person) => {
-    const normalizedName = normalizeTitle(person.fullName)
-    let best: DblpAuthor | null = null
-    let bestScore = 0
-
-    for (const author of dblpAuthors) {
-      const score = diceCoefficient(normalizedName, normalizeTitle(author.name))
-      if (score > bestScore) {
-        bestScore = score
-        best = author
-      }
-    }
-
-    if (best && bestScore >= DBLP_NAME_MATCH_THRESHOLD) {
-      return { ...person, dblpPid: best.pid }
-    }
-    return person
+    const hits = byName.get(exactNameKey(person.fullName)) ?? []
+    return hits.length === 1 ? { ...person, dblpPid: hits[0].pid } : person
   })
 }

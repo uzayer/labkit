@@ -40,22 +40,31 @@ export async function stageOrcidCandidates(orcidId: string): Promise<StagedCandi
   const seenDois = new Set<string>()
 
   return works.flatMap((work, index): StagedCandidate[] => {
+    // Other identifiers ride along on the Candidate for a person reviewing it
+    // (and later linking) — Hydration still goes by `doi` alone.
+    const raw: Record<string, unknown> = { sourceName: work.sourceName }
+    if (work.otherDois.length > 0) raw.otherDois = work.otherDois
+    if (work.arxiv) raw.arxiv = work.arxiv
+    if (work.pmid) raw.pmid = work.pmid
+    if (work.isbn.length > 0) raw.isbn = work.isbn
+
     if (work.doi) {
-      const normalized = work.doi.toLowerCase()
+      // `work.doi` is already normalized (orcid.ts), so the key, the staged
+      // DOI, and the dedupe below all agree on case and prefix.
       // ORCID sometimes lists the same DOI under multiple work-groups (e.g.
       // both self-asserted and Crossref-pushed) — keep the first occurrence.
-      if (seenDois.has(normalized)) return []
-      seenDois.add(normalized)
+      if (seenDois.has(work.doi)) return []
+      seenDois.add(work.doi)
 
       return [
         {
-          key: `doi:${normalized}`,
+          key: `doi:${work.doi}`,
           title: work.title,
           year: work.year,
           doi: work.doi,
           selected: true,
           status: 'pending' as const,
-          raw: { sourceName: work.sourceName },
+          raw,
         },
       ]
     }
@@ -68,7 +77,7 @@ export async function stageOrcidCandidates(orcidId: string): Promise<StagedCandi
         note: 'no DOI found — career-wide ORCID result, needs manual review',
         selected: false,
         status: 'pending' as const,
-        raw: { sourceName: work.sourceName },
+        raw,
       },
     ]
   })
@@ -96,7 +105,10 @@ export async function stageBibtexCandidates(bibtexText: string): Promise<StagedC
       return fullName ? [{ fullName }] : []
     })
 
-    const raw: Record<string, unknown> = { key: entry.key, type: entry.type, authors }
+    // The venue lets a DOI-less entry's Crossref search check venue agreement (crossref-search.ts).
+    const venueField = entry.fields.journal ?? entry.fields.booktitle
+    const venue = typeof venueField === 'string' ? venueField : undefined
+    const raw: Record<string, unknown> = { key: entry.key, type: entry.type, authors, venue }
 
     if (doi) {
       return {

@@ -20,12 +20,12 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 import { mapCrossrefToPublicationFields } from '@labkit/core/ingestion/crossref'
+import { decideCrossrefSearch, resolveCrossrefSearch } from '@labkit/core/ingestion/crossref-search'
 import { fetchDblpRecordByTitle } from '@labkit/core/ingestion/dblp'
 import {
   fetchCrossrefByDoi,
   fetchJsonWithRetry,
   fetchOpenAlexByDoi,
-  resolveCrossrefTitle,
 } from '@labkit/core/ingestion/fetch'
 import { normalizeDoi } from '@labkit/core/ingestion/normalize'
 import { mapOpenAlexToPublicationFields } from '@labkit/core/ingestion/openalex'
@@ -418,6 +418,21 @@ check(NAMES, '105485: "Md Hasibur Rahman" and "Md. Jahidul Islam" pair with Open
   assert.ok(authors.some((a) => a.fullName === 'Md. Jahidul Islam'))
   assert.ok(authors.some((a) => a.fullName === 'Md Hasibur Rahman'))
 })
+check(NAMES, 'pairing: a different full given name with the same initial gets no ORCID', () => {
+  const authors = mergeAuthors(
+    [{ given: 'Salekul', family: 'Islam' }],
+    [
+      {
+        displayName: 'Saiful Islam',
+        rawAuthorName: 'Saiful Islam',
+        orcid: '0000-0000-0000-0003',
+        position: 'first',
+        institutions: [],
+      },
+    ],
+  )
+  assert.equal(authors[0].orcid, undefined)
+})
 check(NAMES, 'DBLP pid attaches only on an exact name, not a near-identical one', () => {
   const people = attachDblpPids(
     [{ fullName: 'Md Hasibur Rahman' }, { fullName: 'Md. Jahidul Islam' }],
@@ -435,11 +450,18 @@ check(NAMES, 'DBLP pid attaches only on an exact name, not a near-identical one'
 const SEARCH = 'title-search'
 type SearchOutcome = { doi: string | null; candidates: string[] }
 async function decide(fixture: SearchFixture): Promise<SearchOutcome> {
-  const query = fixture.input.chunk ?? fixture.input.title!
-  const resolution = await resolveCrossrefTitle(query)
+  const decision = await resolveCrossrefSearch(fixture.input)
+  if (process.env.VERIFY_DEBUG) {
+    console.log(`\n${fixture.expected.doi ?? 'null'}  ${decision.status}`)
+    for (const c of decision.candidates) {
+      console.log(
+        `   ${c.doi} sim=${c.similarity.toFixed(2)} n=${c.normalizedScore.toFixed(2)} [${c.support}] ${c.blocked ?? ''}`,
+      )
+    }
+  }
   return {
-    doi: resolution.candidate ? normalizeDoi(resolution.candidate.doi) : null,
-    candidates: [],
+    doi: decision.status === 'accepted' ? decision.doi : null,
+    candidates: decision.candidates.map((candidate) => candidate.doi),
   }
 }
 
@@ -458,6 +480,40 @@ for (const [name, fixture] of searchFixtures) {
     if (fixture.expected.doi && !outcome.doi) return 'review (missed auto-apply)'
   })
 }
+// Synthetic hits for the two guards that the recorded corpus doesn't exercise.
+const syntheticHit = (overrides: Record<string, unknown>) => ({
+  DOI: '10.0000/synthetic',
+  score: 60,
+  type: 'journal-article',
+  title: ['Mobile health records for rural clinics'],
+  author: [{ given: 'Ann', family: 'Hall' }],
+  issued: { 'date-parts': [[2021]] },
+  'container-title': ['Journal of Rural Health'],
+  ...overrides,
+})
+check(SEARCH, 'an off-by-one year is not an agreeing field', () => {
+  const decision = decideCrossrefSearch(
+    { title: 'Mobile health records for rural clinics', year: 2020, authors: ['Ann Hall'] },
+    'Mobile health records for rural clinics',
+    [syntheticHit({})],
+  )
+  assert.equal(decision.status, 'review')
+})
+check(
+  SEARCH,
+  "citation line: the candidate's own title words are not author or venue evidence",
+  () => {
+    const chunk = 'B. Smith. Hall effect sensors in rural health clinics. 2021.'
+    const decision = decideCrossrefSearch({ chunk }, chunk, [
+      syntheticHit({
+        title: ['Hall effect sensors in rural health clinics'],
+        author: [{ given: 'Ann', family: 'Hall' }],
+        'container-title': ['Rural Health'],
+      }),
+    ])
+    assert.equal(decision.status, 'review')
+  },
+)
 const accepted = tally.correct + tally.wrong
 console.log(
   `\nTitle search: ${tally.correct} correct, ${tally.wrong} wrong, ${tally.missed} sent to review, ` +

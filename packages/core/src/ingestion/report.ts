@@ -8,6 +8,8 @@ interface UnmatchedRelation {
   field: string
   sourceContext: string
   value: string
+  /** Structured payload persisted on the Review Item, e.g. the Crossref candidates a search didn't apply. */
+  data?: Record<string, unknown>
 }
 
 interface DedupeSuggestion {

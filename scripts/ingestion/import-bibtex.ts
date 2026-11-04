@@ -25,7 +25,11 @@ import { parse } from '@retorquere/bibtex-parser'
 import { getPayload } from 'payload'
 import config from '@payload-config'
 
-import { resolveCrossrefTitle } from '@labkit/core/ingestion/fetch'
+import {
+  bibtexSearchInput,
+  resolveCrossrefSearch,
+  searchReviewData,
+} from '@labkit/core/ingestion/crossref-search'
 import {
   hydratePublicationFromDoi,
   hydratePublicationFromFields,
@@ -142,14 +146,14 @@ async function main() {
             value: '(bibtex entry has no title field)',
           })
         } else {
-          const resolution = await resolveCrossrefTitle(candidate.title)
+          const decision = await resolveCrossrefSearch(bibtexSearchInput(candidate))
           await sleep(150)
 
-          if (resolution.method === 'crossref' && resolution.candidate) {
+          if (decision.status === 'accepted') {
             result = await hydratePublicationFromDoi(
               payload,
               report,
-              resolution.candidate.doi,
+              decision.doi,
               indexes,
               DRY_RUN,
               sourceContext,
@@ -170,6 +174,7 @@ async function main() {
                 title: candidate.title,
                 year: candidate.year,
                 authors: (candidate.raw?.authors as Array<{ fullName: string }>) ?? [],
+                searchReview: searchReviewData(decision),
               },
               indexes,
               DRY_RUN,
