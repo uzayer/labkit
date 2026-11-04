@@ -6,7 +6,8 @@
  *
  * - LabInfo: `headline`, `intro`, `about`, `joinUs`.
  * - ResearchThemes: `body` for DIAL's nine themes, matched by slug.
- * - Features: every Feature on, only if the global has never been saved.
+ * - Features: every Feature on, only if the global has never been saved. The
+ *   migration already carries over LabInfo's old toggles where a row existed.
  *
  * Fills empty fields only, so a re-run never overwrites a Lab Editor's edits;
  * `force` overwrites them. `dry-run` prints what would change and writes nothing.
