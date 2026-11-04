@@ -109,11 +109,11 @@ No automated authorization test suite exists today, so record the manual cases r
 
 ## Related code
 
-- `src/collections/Roles/index.ts`
-- `src/collections/Users/index.ts`
-- `src/utilities/initRoles.ts`
-- `src/utilities/checkRole.ts`
-- `src/utilities/checkPermission.ts`
-- `src/access/isAdmin.ts`
-- `src/access/isAdminOrCreatedBy.ts`
-- `src/access/authenticatedOrPublished.ts`
+- `packages/core/src/collections/Roles/index.ts`
+- `packages/core/src/collections/Users/index.ts`
+- `packages/core/src/utilities/initRoles.ts`
+- `packages/core/src/utilities/checkRole.ts`
+- `packages/core/src/utilities/checkPermission.ts`
+- `packages/core/src/access/isAdmin.ts`
+- `packages/core/src/access/isAdminOrCreatedBy.ts`
+- `packages/core/src/access/authenticatedOrPublished.ts`

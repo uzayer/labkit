@@ -19,7 +19,7 @@ The launch database (`labkit.db`) is built. The review manifest, the prototype's
 ## Authority order
 
 1. `src/app/(frontend)/(dial)/` and `src/components/dial/` for implemented composition and interaction.
-2. `src/collections/` and `src/lib/ingestion/` for the current data contract.
+2. `packages/core/src/collections/` and `packages/core/src/ingestion/` for the current data contract.
 3. Raw captures plus direct confirmation from DIAL for factual claims.
 4. This workspace's open decisions where neither implementation nor source material settles the question.
 

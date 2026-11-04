@@ -32,18 +32,22 @@ import config from '@payload-config'
 
 import path from 'node:path'
 
-import { configureFetchCache } from '@/lib/ingestion/fetch'
+import { configureFetchCache } from '@labkit/core/ingestion/fetch'
 import {
   hydratePublicationFromDoi,
   loadPublicationIndexes,
   prefetchDoiSources,
   type HydratePublicationResult,
-} from '@/lib/ingestion/publications'
-import { ImportReport } from '@/lib/ingestion/report'
-import { finalizeRun, persistRunProgress, type RunProgress } from '@/lib/ingestion/run-persistence'
-import { normalizeOrcid } from '@/lib/ingestion/normalize'
-import { stageOrcidCandidates } from '@/lib/ingestion/staging'
-import type { UpsertAction } from '@/lib/ingestion/upsert'
+} from '@labkit/core/ingestion/publications'
+import { ImportReport } from '@labkit/core/ingestion/report'
+import {
+  finalizeRun,
+  persistRunProgress,
+  type RunProgress,
+} from '@labkit/core/ingestion/run-persistence'
+import { normalizeOrcid } from '@labkit/core/ingestion/normalize'
+import { stageOrcidCandidates } from '@labkit/core/ingestion/staging'
+import type { UpsertAction } from '@labkit/core/ingestion/upsert'
 import { loadOrcidSelection, writeOrcidSelectionTemplate } from './orcid-selection'
 
 const args = process.argv.slice(2)

@@ -1,7 +1,7 @@
 import { getPayload, type CollectionSlug, type Payload } from 'payload'
 import config from '@payload-config'
 
-import { textToLexical } from '@/lib/ingestion/lexical'
+import { textToLexical } from '@labkit/core/ingestion/lexical'
 
 const SEED_PREFIX = '[seed] '
 const SHOULD_WIPE = process.argv.includes('wipe')

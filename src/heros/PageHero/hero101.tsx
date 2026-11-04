@@ -11,7 +11,7 @@ import { PublicContextProps } from '@/utilities/publicContextProps'
 import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
-import { getSafePresentationVideoSource } from '@/utilities/validation'
+import { getSafePresentationVideoSource } from '@labkit/core/validation'
 
 const Hero101: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = ({
   richText,

@@ -4,7 +4,7 @@ import { mkdtemp, rm, writeFile } from 'node:fs/promises'
 import os from 'node:os'
 import path from 'node:path'
 
-import type { StagedCandidate } from '@/lib/ingestion/staging'
+import type { StagedCandidate } from '@labkit/core/ingestion/staging'
 import { loadOrcidSelection } from './orcid-selection'
 
 const candidates: StagedCandidate[] = [

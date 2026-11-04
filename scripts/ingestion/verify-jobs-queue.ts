@@ -11,9 +11,12 @@ import { getPayload } from 'payload'
 
 import config from '@payload-config'
 
-import { queueImportRun } from '@/lib/ingestion/jobs/import-hydrate'
-import { hydratePublicationFromFields, loadPublicationIndexes } from '@/lib/ingestion/publications'
-import { ImportReport } from '@/lib/ingestion/report'
+import { queueImportRun } from '@labkit/core/ingestion/jobs/import-hydrate'
+import {
+  hydratePublicationFromFields,
+  loadPublicationIndexes,
+} from '@labkit/core/ingestion/publications'
+import { ImportReport } from '@labkit/core/ingestion/report'
 
 const SELECTED_COUNT = 45
 

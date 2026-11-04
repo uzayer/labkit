@@ -36,7 +36,7 @@ The cheapest compliance lead: ask BRAC's IQAC what they collect from Labs for th
 
 ## Ingestion (the moat)
 
-There is one engine in `src/lib/ingestion/`, with several Front Doors that all resolve to the same shape: a DOI, or fields good enough to look one up.
+There is one engine in `packages/core/src/ingestion/`, with several Front Doors that all resolve to the same shape: a DOI, or fields good enough to look one up.
 
 | Front Door | Status | Use |
 |---|---|---|

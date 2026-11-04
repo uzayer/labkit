@@ -3,7 +3,7 @@ import type { GlobalConfig, TextFieldSingleValidation } from 'payload'
 import { revalidateThemeConfig } from './hooks/revalidateThemeConfig'
 import { generatePreviewPath } from '@/utilities/generatePreviewPath'
 import { serverUrl as NEXT_PUBLIC_SERVER_URL } from '@/config/server'
-import { isAdmin, isAdminHidden } from '@/access/isAdmin'
+import { isAdmin, isAdminHidden } from '@labkit/core/access'
 
 const validateCssColor: TextFieldSingleValidation = (value: string) => {
   const cssColorRegex =

@@ -163,11 +163,18 @@ Note that `bun run tsc` does **not** cover `scripts/` — use `bun run tsc -- -p
 ## Project layout
 
 ```
-src/
-  collections/      research-domain collections + ingestion bookkeeping
-  globals/          ThemeConfig, Header, Footer, PageConfig, LabInfo
-  lib/ingestion/    the engine: crossref, openalex, dblp, orcid, matching,
+packages/core/      @labkit/core: labkitPlugin(), shared by every Lab's site
+  src/collections/  research-domain collections, Media, Users, Roles,
+                    ingestion bookkeeping
+  src/globals/      LabInfo
+  src/ingestion/    the engine: crossref, openalex, dblp, orcid, matching,
                     staging, hydration, run persistence, jobs
+  src/access/       access functions, roles and permissions
+  src/migrations/   every migration (the app's migrationDir points here)
+src/
+  payload.config.ts db, storage, email, template plugins, labkitPlugin()
+  collections/      Pages, Posts, Categories
+  globals/          ThemeConfig, Header, Footer, PageConfig
   heros/            70+ hero variants, dispatched by RenderHero
   blocks/           richText embeds + post/project detail renderers
   app/(frontend)/   public site

@@ -3,7 +3,7 @@ import { redirect } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { SidebarProvider } from '@/components/ui/sidebar'
 import { AppSidebar } from '@/components/layout/app-sidebar'
-import { checkRole } from '@/utilities/checkRole'
+import { checkRole } from '@labkit/core/access'
 import { getMeUser } from '@/utilities/getMeUser'
 
 interface Props {

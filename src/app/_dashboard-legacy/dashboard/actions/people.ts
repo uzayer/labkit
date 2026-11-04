@@ -4,7 +4,7 @@ import { getPayload } from 'payload'
 import configPromise from '@payload-config'
 import { revalidatePath } from 'next/cache'
 
-import { checkRole } from '@/utilities/checkRole'
+import { checkRole } from '@labkit/core/access'
 import { getMeUser } from '@/utilities/getMeUser'
 
 async function requireAdminUser() {

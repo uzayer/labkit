@@ -1,12 +1,9 @@
-import { isAdminHidden } from '@/access/isAdmin'
+import { isAdminHidden, authenticatedOrPublished, hasPermission } from '@labkit/core/access'
 import type { CollectionConfig } from 'payload'
-
-import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
-import { hasPermission } from '@/utilities/checkPermission'
 
 import { hero } from '@/heros/config'
 
-import { slugField } from '@/fields/slug'
+import { slugField } from '@labkit/core/fields'
 import { populatePublishedAt } from '@/hooks/populatePublishedAt'
 import { generatePreviewPath } from '@/utilities/generatePreviewPath'
 import { revalidatePage } from './hooks/revalidatePage'

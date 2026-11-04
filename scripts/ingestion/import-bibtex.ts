@@ -25,17 +25,21 @@ import { parse } from '@retorquere/bibtex-parser'
 import { getPayload } from 'payload'
 import config from '@payload-config'
 
-import { resolveCrossrefTitle } from '@/lib/ingestion/fetch'
+import { resolveCrossrefTitle } from '@labkit/core/ingestion/fetch'
 import {
   hydratePublicationFromDoi,
   hydratePublicationFromFields,
   loadPublicationIndexes,
   type HydratePublicationResult,
-} from '@/lib/ingestion/publications'
-import { ImportReport } from '@/lib/ingestion/report'
-import { finalizeRun, persistRunProgress, type RunProgress } from '@/lib/ingestion/run-persistence'
-import { stageBibtexCandidates } from '@/lib/ingestion/staging'
-import type { UpsertAction } from '@/lib/ingestion/upsert'
+} from '@labkit/core/ingestion/publications'
+import { ImportReport } from '@labkit/core/ingestion/report'
+import {
+  finalizeRun,
+  persistRunProgress,
+  type RunProgress,
+} from '@labkit/core/ingestion/run-persistence'
+import { stageBibtexCandidates } from '@labkit/core/ingestion/staging'
+import type { UpsertAction } from '@labkit/core/ingestion/upsert'
 
 const DRY_RUN = process.argv.includes('dry-run')
 const bibPath = process.argv.slice(2).find((arg) => arg !== 'dry-run')

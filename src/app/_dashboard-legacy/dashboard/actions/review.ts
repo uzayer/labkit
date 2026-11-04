@@ -5,7 +5,7 @@ import configPromise from '@payload-config'
 import { revalidatePath } from 'next/cache'
 
 import type { Publication, ReviewItem } from '@/payload-types'
-import { checkRole } from '@/utilities/checkRole'
+import { checkRole } from '@labkit/core/access'
 import { getMeUser } from '@/utilities/getMeUser'
 
 async function requireAdminUser() {
@@ -26,7 +26,7 @@ export interface ReviewActionResult {
 /**
  * Both sides of a person-merge-suggestion review item embed a Team record id
  * inside a parenthesized substring — see resolveOrCreateTeamMember in
- * src/lib/ingestion/people.ts. `value` looks like "Jane Doe (new id: 66f...)"
+ * packages/core/src/ingestion/people.ts. `value` looks like "Jane Doe (new id: 66f...)"
  * (the newly created, presumed-duplicate record) and `data.suggestedMatch`
  * looks like "Jane Doe (id: 66a...)" (the pre-existing record it fuzzy-matched
  * against). There is no first-class id field for this yet — this is a known

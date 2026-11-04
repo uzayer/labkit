@@ -1,5 +1,5 @@
 import { GlobalConfig } from 'payload'
-import { isAdmin, isAdminHidden } from '@/access/isAdmin'
+import { isAdmin, isAdminHidden } from '@labkit/core/access'
 import { revalidatePageConfig } from './hooks/revalidatePageConfig'
 
 export const PageConfig: GlobalConfig = {

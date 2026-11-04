@@ -7,7 +7,7 @@ import { CMSLink } from '@/components/Link'
 import { VideoText } from '@/components/magicui/video-text'
 import { Page } from '@/payload-types'
 import { PublicContextProps } from '@/utilities/publicContextProps'
-import { getSafePresentationVideoSource } from '@/utilities/validation'
+import { getSafePresentationVideoSource } from '@labkit/core/validation'
 
 export const Hero220: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = ({
   richText,

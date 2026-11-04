@@ -1,4 +1,4 @@
-import { isAdminHidden } from '@/access/isAdmin'
+import { isAdminHidden, authenticated } from '@labkit/core/access'
 import type { GlobalConfig } from 'payload'
 
 import { revalidateHeader } from './hooks/revalidateHeader'
@@ -6,7 +6,6 @@ import { navbar } from './navbar/navbar.config'
 import { generatePreviewPath } from '@/utilities/generatePreviewPath'
 import { serverUrl as NEXT_PUBLIC_SERVER_URL } from '@/config/server'
 import { backgroundColor } from '@/fields/color'
-import { authenticated } from '@/access/authenticated'
 
 export const Header: GlobalConfig = {
   slug: 'header',

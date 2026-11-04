@@ -16,7 +16,7 @@ import { backgroundColor } from '@/fields/color'
 import { designVersionDescription } from '@/components/AdminDashboard/DesignVersionDescription'
 import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
 import { MotionText } from '@/blocks/LexicalBlocks/MotionText/config'
-import { isValidPresentationVideoUrl } from '@/utilities/validation'
+import { isValidPresentationVideoUrl } from '@labkit/core/validation'
 
 /* TODO:
 13 -> X
