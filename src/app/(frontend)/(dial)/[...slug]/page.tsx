@@ -1,5 +1,9 @@
 import { PayloadRedirects } from '@/components/PayloadRedirects'
 
+// Per request: arbitrary URLs land here, and caching each one would fill the
+// page cache with 404s.
+export const dynamic = 'force-dynamic'
+
 type Props = { params: Promise<{ slug: string[] }> }
 
 /**

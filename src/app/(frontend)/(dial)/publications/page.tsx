@@ -23,6 +23,12 @@ const SCHOLAR_ORDER = [
   'ifti-azad-abeer',
 ]
 
+// Rendered per request, not cached like the other DIAL pages: the list's
+// filters are read from the query string, and a cached page would paint the
+// unfiltered list (or nothing, under the Suspense boundary) before hydration.
+// The records it reads are still cached (src/lib/dial/data/get.ts).
+export const dynamic = 'force-dynamic'
+
 export const metadata = {
   title: 'Publications',
   description: 'Publications from the Design Inclusion and Access Lab at North South University.',

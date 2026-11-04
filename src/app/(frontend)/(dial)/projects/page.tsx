@@ -9,6 +9,11 @@ import { projectFaqs } from '@/lib/dial/data/faqs'
 import { cn } from '@/lib/utils'
 import { getDial } from '@/lib/dial/data/get'
 
+// Rendered per request, not cached like the other DIAL pages: a filtered
+// directory (?theme=&status=) must paint filtered on first load. The records it
+// reads are still cached (src/lib/dial/data/get.ts).
+export const dynamic = 'force-dynamic'
+
 export const metadata = {
   title: 'Projects',
   description:

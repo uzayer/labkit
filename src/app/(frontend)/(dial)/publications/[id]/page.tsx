@@ -5,6 +5,12 @@ import { getDial } from '@/lib/dial/data/get'
 
 type Props = { params: Promise<{ id: string }> }
 
+// None at build: each page renders on its first request and is then cached
+// like the rest of the site, until its records change (see ../../layout.tsx).
+export function generateStaticParams() {
+  return []
+}
+
 export async function generateMetadata({ params }: Props) {
   const { getPublication, citationsFor } = await getDial()
   const { id } = await params

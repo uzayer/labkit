@@ -40,6 +40,7 @@ import { Footer } from './globals/Footer/config'
 import { Header } from './globals/Header/config'
 import { ThemeConfig } from './globals/ThemeConfig/config'
 import { revalidateRedirects } from './hooks/revalidateRedirects'
+import { revalidateDialPlugin } from './plugins/revalidateDial'
 import { GenerateTitle, GenerateURL } from '@payloadcms/plugin-seo/types'
 import { Page, Post } from '@/payload-types'
 
@@ -217,6 +218,8 @@ export default buildConfig({
           `${NEXT_PUBLIC_SERVER_URL}${generatePreviewPath({ slug, breadcrumbs, collection: 'projects', locale })}`,
       },
     }),
+    // After labkitPlugin, which adds the collections and LabInfo global it hooks.
+    revalidateDialPlugin,
     redirectsPlugin({
       collections: ['pages', 'posts', 'projects'],
       overrides: {
