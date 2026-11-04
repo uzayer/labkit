@@ -4,7 +4,8 @@ import type { CSSProperties } from 'react'
  * The LabKit wordmark: "lab" in Fraunces Medium, "kit" in its italic.
  *
  * Outlined from Fraunces (wght 500, opsz 9, SOFT 0), so it renders without the
- * font loaded. Same outlines as `public/brand/labkit-wordmark.svg`; inline so
+ * font loaded. Regenerate with HarfBuzz + fontTools; never hand-edit. Larger
+ * optical sizes swap in a swash "k". Same outlines as `public/brand/labkit-wordmark.svg`; inline so
  * it takes `currentColor` and follows light and dark mode on its own.
  */
 const D =

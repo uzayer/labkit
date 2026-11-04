@@ -20,4 +20,4 @@ The source set is intentionally messy. Pages may be stale, disagree with one ano
 - Preserve the raw capture even after a normalized record is corrected; record the correction in the curated layer.
 - Do not edit raw captures to make them agree with the current model.
 
-`../organized-from-scrapes/` maps these captures onto LabKit's collections as candidate records with source citations. It is more convenient to work from, but not more authoritative merely because it is structured.
+The launch database was built from these captures; the intermediate `organized-from-scrapes/` layer was deleted afterwards (recover it from commit `aa9b7c2^`).
