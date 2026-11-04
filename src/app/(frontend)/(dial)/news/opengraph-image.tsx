@@ -2,8 +2,9 @@ import { newsIndexCard } from '@/lib/dial/og/cards'
 import { ogImage } from '@/lib/dial/og/og-image'
 
 export { size } from '@/lib/dial/og/og-image'
-// Printed from live records, so never prerendered at build time.
-export const dynamic = 'force-dynamic'
+// Printed from the cached records and cached with them, like the pages: the
+// records' cache tag expires it (see the (dial) layout).
+export const revalidate = 3600
 export const contentType = 'image/webp'
 export const alt = 'News from DIAL'
 

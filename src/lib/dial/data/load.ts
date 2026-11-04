@@ -17,6 +17,8 @@ import type {
   Venue as PayloadVenue,
 } from '@/payload-types'
 
+import { blobBaseUrl } from '@/config/blob'
+
 import { DIAL_PROSE } from './lab-info'
 import type {
   Award,
@@ -107,8 +109,40 @@ const mediaDoc = (value: string | Media | null | undefined, media: MediaById) =>
   return id ? media.get(id) : undefined
 }
 
-const mediaUrl = (value: string | Media | null | undefined, media: MediaById): string | null =>
-  mediaDoc(value, media)?.url ?? null
+/**
+ * Where the site loads a Media file from: its public Blob URL, not the `url`
+ * Payload gives it. Payload's `/api/media/file/<name>` is a function that
+ * fetches from Blob on every request and is never cached by Vercel's CDN, and
+ * the name in it can be reused when a file is replaced. A Blob URL is served
+ * from the CDN, and it never changes content: every upload is written under a
+ * fresh random `_objectKey` folder, so a replaced file gets a new URL and a
+ * year-long cache cannot go stale. That holds for server uploads, which is all
+ * this config allows; re-check it if client uploads are ever enabled. (Files
+ * from before Payload 4 have no `_objectKey` and sit at the store's root; they
+ * are never overwritten either, since a replacement is a new upload into a new
+ * folder.)
+ *
+ * This is done here, for the public site, rather than with the storage
+ * plugin's `disablePayloadAccessControl` or `generateFileURL`. Those change the
+ * URL Payload expects a record to have, and Payload compares that against the
+ * stored `url` to recognise a pre-Payload-4 record's files (every record here
+ * is one), so its file tracking would stop matching them. The proxy keeps
+ * serving the admin and any old link, under Media's access rules.
+ */
+function fileUrl(doc: Media): string | null {
+  if (!blobBaseUrl || !doc.filename) return doc.url ?? null
+  const folder = [doc.prefix, doc._objectKey].filter(Boolean).join('/')
+  return `${blobBaseUrl}/${folder ? `${folder}/` : ''}${encodeURIComponent(doc.filename)}`
+}
+
+function mediaUrl(value: string | Media | null | undefined, media: MediaById): string | null {
+  const doc = mediaDoc(value, media)
+  return doc ? fileUrl(doc) : null
+}
+
+/** A Media file's natural width, for frames that size themselves from it. */
+const mediaWidth = (value: string | Media | null | undefined, media: MediaById) =>
+  mediaDoc(value, media)?.width ?? null
 
 /** The Media record's alt text; components fall back to the record's title. */
 const mediaAlt = (value: string | Media | null | undefined, media: MediaById): string | null =>
@@ -297,6 +331,7 @@ function toNews(doc: PayloadNews, media: MediaById): News {
     description: doc.description,
     photo: mediaUrl(doc.photo, media),
     photoAlt: mediaAlt(doc.photo, media),
+    photoWidth: mediaWidth(doc.photo, media),
     url: doc.url ?? null,
   }
 }
@@ -313,7 +348,12 @@ function toOrganization(doc: PayloadOrganization, media: MediaById): Organizatio
     ror_id: doc.ror_id ?? null,
     logo:
       logo?.url && logo.width && logo.height
-        ? { src: logo.url, width: logo.width, height: logo.height, alt: logo.alt || null }
+        ? {
+            src: fileUrl(logo) ?? logo.url,
+            width: logo.width,
+            height: logo.height,
+            alt: logo.alt || null,
+          }
         : null,
   }
 }

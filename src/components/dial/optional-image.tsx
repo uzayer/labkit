@@ -9,9 +9,17 @@ import { cn } from '@/lib/utils'
 const QUALITY = 80
 
 /**
+ * Media is served from its Vercel Blob store (see `fileUrl` in
+ * src/lib/dial/data/load.ts), which next.config.ts lets the optimizer fetch.
+ * Any other remote host, such as a scraped Google Sites URL, is not allowed.
+ */
+const isMedia = (src: string) =>
+  src.startsWith('/') || /^https:\/\/[a-z\d]+\.public\.blob\.vercel-storage\.com\//.test(src)
+
+/**
  * `src`, `srcSet` and `sizes` for a resized copy of a Media file. SVGs and
- * remote URLs are returned as they are: an SVG has nothing to resize, and the
- * optimizer only accepts this site's own paths.
+ * other remote URLs are returned as they are: an SVG has nothing to resize,
+ * and the optimizer only accepts this site's own Media.
  *
  * A number is a fixed rendered width in CSS pixels, answered with 1x/2x/3x
  * candidates: a list page prints hundreds of faces, and the full width ladder
@@ -19,7 +27,7 @@ const QUALITY = 80
  * an `<img sizes>` value, for an image whose width follows the layout.
  */
 function responsiveSource(src: string, sizes: number | string) {
-  if (!src.startsWith('/') || src.endsWith('.svg')) return null
+  if (!isMedia(src) || src.endsWith('.svg')) return null
   if (typeof sizes === 'string') {
     const { props } = getImageProps({ src, alt: '', fill: true, sizes, quality: QUALITY })
     return { src: props.src, srcSet: props.srcSet, sizes: props.sizes }

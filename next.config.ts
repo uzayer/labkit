@@ -1,5 +1,6 @@
 import { withPayload } from '@payloadcms/next/withPayload'
 import type { NextConfig } from 'next'
+import { blobBaseUrl } from './src/config/blob'
 import { serverUrl } from './src/config/server'
 import bundleAnalyzer from '@next/bundle-analyzer'
 
@@ -72,6 +73,18 @@ const nextConfig: NextConfig = {
           protocol: url.protocol.replace(':', '') as 'http' | 'https',
         }
       })(),
+      // DIAL's pages load Media straight from its Blob store, not through
+      // Payload (src/lib/dial/data/load.ts), so the optimizer resizes from there.
+      // Only this store: a wildcard would resize any public Blob on our bill.
+      ...(blobBaseUrl
+        ? [
+            {
+              hostname: new URL(blobBaseUrl).hostname,
+              pathname: '/**',
+              protocol: new URL(blobBaseUrl).protocol.replace(':', '') as 'http' | 'https',
+            },
+          ]
+        : []),
     ],
   },
   reactStrictMode: true,

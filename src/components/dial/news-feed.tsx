@@ -162,7 +162,15 @@ export function NewsFeed({ entries }: { entries: NewsEntry[] }) {
                       {entry.photo && (
                         <Link
                           href={`/news/${entry.slug}`}
-                          className="group relative mt-6 block w-fit"
+                          // The frame is as wide as the photo, up to the column.
+                          // `w-fit` got that from the image itself; a resized copy
+                          // would shrink it, so the width is stated instead. (A
+                          // fixed `width` would widen the column on a phone.)
+                          style={entry.photoWidth ? { maxWidth: entry.photoWidth } : undefined}
+                          className={cn(
+                            'group relative mt-6 block',
+                            entry.photoWidth ? 'w-full' : 'w-fit',
+                          )}
                         >
                           {/* Tape rides with the photograph (see OptionalImage);
                               as a sibling it outlived a failed load and left a
@@ -172,6 +180,12 @@ export function NewsFeed({ entries }: { entries: NewsEntry[] }) {
                             alt={entry.photoAlt ?? entry.title}
                             overlay={<Tape />}
                             frameClassName="sticker-alt rounded-sm shadow-[0_12px_28px_-20px_rgba(0,0,0,0.6)]"
+                            // The column is max-w-prose, 690px at this type size.
+                            sizes={
+                              entry.photoWidth
+                                ? `(max-width: 767px) 100vw, ${Math.min(entry.photoWidth, 690)}px`
+                                : undefined
+                            }
                             className="aspect-video"
                           />
                         </Link>
