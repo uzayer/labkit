@@ -32,6 +32,7 @@ export const provenanceFields = (): Field => ({
             { label: 'Manual', value: 'manual' },
             { label: 'Crossref', value: 'crossref' },
             { label: 'OpenAlex', value: 'openalex' },
+            { label: 'DataCite', value: 'datacite' },
             { label: 'BibTeX', value: 'bibtex' },
             { label: 'Scrape', value: 'scrape' },
           ],

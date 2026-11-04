@@ -48,6 +48,7 @@ const KIND_LABELS: Record<ReviewItemKind, string> = {
   'unparsed-citation': 'Unparsed citation',
   'unmapped-type': 'Unmapped type',
   'failed-doi': 'Failed DOI',
+  'identifier-name-conflict': 'Identifier matched, name conflicts',
 }
 
 const KIND_ORDER: ReviewItemKind[] = [

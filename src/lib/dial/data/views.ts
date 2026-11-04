@@ -561,6 +561,12 @@ export function createDialViews(d: DialData) {
     alumni: 'alumni',
     'interdisciplinary-collaborator': 'research-staff',
     'external-collaborator': 'research-staff',
+    // Core's generic roles. DIAL uses none of them; these only satisfy the type.
+    postdoc: 'research-staff',
+    'phd-student': 'graduate-ra',
+    'masters-student': 'graduate-ra',
+    visiting: 'research-staff',
+    staff: 'research-staff',
   }
 
   const SOCIAL_PLATFORM: Record<string, Social['platform']> = {

@@ -14,11 +14,24 @@ export type FeatureName = keyof typeof FEATURE_COLLECTIONS
 
 export type LabFeatures = Record<FeatureName, boolean>
 
+/**
+ * What a new Lab starts with. Grants and Awards start off: no lab-website
+ * template shows them, and they are always entered by hand, so a Lab opts in.
+ * A saved global (DIAL's has a row with every switch on) is never affected.
+ */
+export const FEATURE_DEFAULTS: LabFeatures = {
+  projects: true,
+  grants: false,
+  awards: false,
+  newsItems: true,
+  researchThemes: true,
+}
+
 const FEATURE_NAMES = Object.keys(FEATURE_COLLECTIONS) as FeatureName[]
 
 /**
- * Reads the Features global. Anything not explicitly `false` counts as on, so a
- * database that has never saved the global (no row yet) behaves like DIAL today.
+ * Reads the Features global. A switch that was never saved (no row yet, or a
+ * null column) takes its `FEATURE_DEFAULTS` value; a saved one is taken as is.
  */
 export async function readFeatures(payload: Payload, req?: PayloadRequest): Promise<LabFeatures> {
   const doc = (await payload.findGlobal({
@@ -28,7 +41,7 @@ export async function readFeatures(payload: Payload, req?: PayloadRequest): Prom
     req,
   })) as Partial<Record<FeatureName, boolean | null>> | null
   return Object.fromEntries(
-    FEATURE_NAMES.map((name) => [name, doc?.[name] !== false]),
+    FEATURE_NAMES.map((name) => [name, doc?.[name] ?? FEATURE_DEFAULTS[name]]),
   ) as LabFeatures
 }
 

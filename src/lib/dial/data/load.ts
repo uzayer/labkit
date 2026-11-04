@@ -169,6 +169,24 @@ function personRef(
 
 // ─── Record mappers ─────────────────────────────────────────────────────────
 
+const DIAL_PUBLICATION_TYPES = new Set<string>([
+  'conference',
+  'journal',
+  'workshop',
+  'preprint',
+  'extended-abstract',
+  'study-protocol',
+  'book-chapter',
+])
+
+/**
+ * Core's wider `type` list (thesis, dataset, …) is narrowed to the types DIAL's
+ * views know; DIAL has no records of the others, which show untyped if added.
+ */
+function dialPublicationType(type: string | null | undefined): Publication['type'] {
+  return type && DIAL_PUBLICATION_TYPES.has(type) ? (type as Publication['type']) : null
+}
+
 /**
  * The People page section a Team Member is listed under. The prototype stored
  * this by hand; LabKit derives it from `role` and `emerging`. Members on leave
@@ -228,7 +246,7 @@ function toPublication(doc: PayloadPublication, media: MediaById): Publication {
       })),
     year: doc.year,
     status: doc.status,
-    type: doc.type ?? null,
+    type: dialPublicationType(doc.type),
     venue: refId(doc.venue),
     venueLabel: doc.venueLabel ?? null,
     citationText: doc.citationText ?? null,

@@ -6,6 +6,7 @@ import { slugField } from '../../fields/slug'
 import { provenanceFields } from '../../fields/provenance'
 import { revalidateGrant } from './hooks/revalidateGrant'
 import { populateFunderLabel } from './hooks/populateFunderLabel'
+import { CURRENCY_OPTIONS } from './currencies'
 
 /**
  * Grants - Research funding and awards
@@ -99,12 +100,7 @@ const Grants: CollectionConfig = {
           label: 'Currency',
           type: 'select',
           defaultValue: 'USD',
-          options: [
-            { label: 'USD', value: 'USD' },
-            { label: 'BDT', value: 'BDT' },
-            { label: 'EUR', value: 'EUR' },
-            { label: 'GBP', value: 'GBP' },
-          ],
+          options: CURRENCY_OPTIONS,
           admin: {
             width: '20%',
           },
@@ -229,6 +225,8 @@ const Grants: CollectionConfig = {
                 { label: 'PI', value: 'pi' },
                 { label: 'Co-PI', value: 'co-pi' },
                 { label: 'Collaborator', value: 'collaborator' },
+                // ORCID's `supported-by`: a student or postdoc the grant pays for.
+                { label: 'Supported (funded student or postdoc)', value: 'supported' },
               ],
               admin: {
                 width: '30%',

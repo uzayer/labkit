@@ -6,7 +6,9 @@ import { slugField } from '../../fields/slug'
 import { populateRoleLabel } from './hooks/populateRoleLabel'
 import { setDisplayInTeam } from './hooks/setDisplayInTeam'
 import { validateTeamMembers } from './hooks/validateTeamMembers'
-import { populateFullName } from './hooks/populateFullName' // New import
+import { populateFullName } from './hooks/populateFullName'
+import { clearAlumniRole } from './hooks/clearAlumniRole'
+import { ALUMNI_ROLES, TEAM_ROLES } from './roles'
 
 /**
  * Team - Lab members, collaborators, and alumni
@@ -240,16 +242,7 @@ const Team: CollectionConfig = {
       type: 'select',
       required: true,
       index: true,
-      options: [
-        { label: 'Director', value: 'director' },
-        { label: 'Faculty Member', value: 'faculty' },
-        { label: 'Research Staff', value: 'research-staff' },
-        { label: 'Graduate RA', value: 'graduate-ra' },
-        { label: 'Undergraduate RA', value: 'undergraduate-ra' },
-        { label: 'Alumni', value: 'alumni' },
-        { label: 'Interdisciplinary Collaborator', value: 'interdisciplinary-collaborator' },
-        { label: 'External Collaborator', value: 'external-collaborator' },
-      ],
+      options: [...TEAM_ROLES],
       admin: {
         position: 'sidebar',
       },
@@ -304,6 +297,25 @@ const Team: CollectionConfig = {
       },
     },
     {
+      name: 'alumniRole',
+      label: 'Role in the Lab',
+      type: 'select',
+      options: [...ALUMNI_ROLES],
+      admin: {
+        description: 'What they were while in the Lab, e.g. PhD Student, shown as "PhD alum"',
+        position: 'sidebar',
+        condition: (data) => data?.role === 'alumni',
+      },
+    },
+    {
+      name: 'startYear',
+      type: 'number',
+      admin: {
+        description: 'Year of joining the Lab',
+        position: 'sidebar',
+      },
+    },
+    {
       name: 'alumniYear',
       type: 'number',
       admin: {
@@ -354,7 +366,7 @@ const Team: CollectionConfig = {
     },
   ],
   hooks: {
-    beforeChange: [populateFullName, setDisplayInTeam, validateTeamMembers], // populateFullName added here
+    beforeChange: [populateFullName, setDisplayInTeam, validateTeamMembers, clearAlumniRole],
     afterRead: [populateRoleLabel],
   },
   versions: false,

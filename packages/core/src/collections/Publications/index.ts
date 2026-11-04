@@ -8,10 +8,11 @@ import { populateAuthorPosition } from './hooks/populateAuthorPosition'
 import { populateVenueLabel } from './hooks/populateVenueLabel'
 import { provenanceFields } from '../../fields/provenance'
 import { isValidExternalHttpUrl } from '../../utilities/validation'
+import { PUBLICATION_TYPE_OPTIONS } from '../../publicationTypes'
 
 /**
  * Publications - Academic papers, articles, and other scholarly works
- * Maps to schema.org: ScholarlyArticle / Article / Chapter
+ * Maps to schema.org per `type` (see `publicationTypes.ts`): ScholarlyArticle, Chapter, Thesis, Dataset, …
  * OpenAlex equivalent: Work
  *
  * Admin UX: Tabs organized for BibTeX import workflow
@@ -258,20 +259,33 @@ const Publications: CollectionConfig = {
                   name: 'type',
                   type: 'select',
                   index: true,
-                  options: [
-                    { label: 'Conference', value: 'conference' },
-                    { label: 'Journal', value: 'journal' },
-                    { label: 'Workshop', value: 'workshop' },
-                    { label: 'Preprint', value: 'preprint' },
-                    { label: 'Extended Abstract', value: 'extended-abstract' },
-                    { label: 'Study Protocol', value: 'study-protocol' },
-                    { label: 'Book Chapter', value: 'book-chapter' },
-                  ],
+                  options: PUBLICATION_TYPE_OPTIONS,
                   admin: {
                     width: '50%',
                   },
                 },
               ],
+            },
+            // DataCite IsVersionOf / Crossref is-preprint-of. Set on the preprint so the
+            // published record stays the one a site lists, with its preprint as a link
+            // (the `preprints` join below). Nothing is hidden automatically.
+            {
+              name: 'versionOf',
+              label: 'Preprint of',
+              type: 'relationship',
+              relationTo: 'publications',
+              filterOptions: ({ id }) => (id ? { id: { not_equals: id } } : true),
+              admin: {
+                description:
+                  'On a preprint: the published version of the same work. The published record then lists this preprint.',
+              },
+              validate: (value: unknown, { id }: { id?: number | string }) => {
+                const target =
+                  value && typeof value === 'object' ? (value as { id?: unknown }).id : value
+                if (target && id && target === id)
+                  return 'A publication cannot be a version of itself.'
+                return true
+              },
             },
             {
               type: 'row',
@@ -509,6 +523,55 @@ const Publications: CollectionConfig = {
                 },
               ],
             },
+            {
+              name: 'links',
+              type: 'array',
+              admin: {
+                description:
+                  'Code, data, slides and other material that goes with this publication.',
+                initCollapsed: true,
+              },
+              fields: [
+                {
+                  type: 'row',
+                  fields: [
+                    {
+                      name: 'type',
+                      type: 'select',
+                      required: true,
+                      options: [
+                        { label: 'Code', value: 'code' },
+                        { label: 'Data', value: 'data' },
+                        { label: 'Slides', value: 'slides' },
+                        { label: 'Video', value: 'video' },
+                        { label: 'Poster', value: 'poster' },
+                        { label: 'Supplement', value: 'supplement' },
+                        { label: 'Other', value: 'other' },
+                      ],
+                      admin: { width: '25%' },
+                    },
+                    {
+                      name: 'url',
+                      label: 'URL',
+                      type: 'text',
+                      required: true,
+                      validate: (value: unknown) =>
+                        (typeof value === 'string' && isValidExternalHttpUrl(value)) ||
+                        'Link must be a valid http:// or https:// URL.',
+                      admin: { width: '45%', placeholder: 'https://...' },
+                    },
+                    {
+                      name: 'label',
+                      type: 'text',
+                      admin: {
+                        width: '30%',
+                        description: 'Optional; replaces the type as the link text.',
+                      },
+                    },
+                  ],
+                },
+              ],
+            },
           ],
         },
       ],
@@ -555,6 +618,17 @@ const Publications: CollectionConfig = {
       },
     },
     provenanceFields(),
+    {
+      name: 'preprints',
+      type: 'join',
+      collection: 'publications',
+      on: 'versionOf',
+      admin: {
+        position: 'sidebar',
+        allowCreate: false,
+        description: 'Preprints that point here with "Preprint of".',
+      },
+    },
     {
       name: 'projects',
       type: 'join',
