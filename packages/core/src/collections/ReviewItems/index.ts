@@ -5,7 +5,8 @@ import { isAdmin } from '../../access/isAdmin'
 /**
  * ReviewItems - work queue surfaced by the ingestion engine for human review
  * (unmatched venues/orgs, person-merge suggestions, no-DOI works, unparsed
- * citations, unmapped types, failed DOIs, identifier/name conflicts). Different lifecycle than ImportRuns
+ * citations, unmapped types, failed DOIs, identifier/name conflicts, preprint
+ * links, possible duplicates). Different lifecycle than ImportRuns
  * (immutable history) — this is a mutable queue that gets worked down.
  */
 const ReviewItems: CollectionConfig = {
@@ -43,6 +44,13 @@ const ReviewItems: CollectionConfig = {
         // the author's. An identifier alone isn't a Safe Match then: it may be a
         // data-entry error on either side, and a wrong link corrupts a real profile.
         { label: 'Identifier matched, name conflicts', value: 'identifier-name-conflict' },
+        // An identifier (Crossref/DataCite relation, shared OpenAlex work)
+        // linked a preprint to its published version and hid the preprint.
+        // Raised so a human sees every automatic hide.
+        { label: 'Preprint linked to published version', value: 'preprint-link' },
+        // Same title, year within 1 and a shared author, without an identifier
+        // tying the two together. Never merged or hidden automatically.
+        { label: 'Possible duplicate', value: 'possible-duplicate' },
       ],
     },
     {

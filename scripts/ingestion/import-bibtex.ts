@@ -174,6 +174,7 @@ async function main() {
                 title: candidate.title,
                 year: candidate.year,
                 authors: (candidate.raw?.authors as Array<{ fullName: string }>) ?? [],
+                entryType: typeof candidate.raw?.type === 'string' ? candidate.raw.type : undefined,
                 searchReview: searchReviewData(decision),
               },
               indexes,

@@ -292,6 +292,10 @@ function restoreReport(report: ImportReport, summary: ImportRun['reportSummary']
         sourceContext: entry.sourceContext,
         value: entry.value,
         data: isRecord(entry.data) ? entry.data : undefined,
+        kind:
+          entry.kind === 'preprint-link' || entry.kind === 'possible-duplicate'
+            ? entry.kind
+            : undefined,
       })
     }
   }
@@ -321,7 +325,9 @@ function restoreReport(report: ImportReport, summary: ImportRun['reportSummary']
         existingTeamId: typeof entry.existingTeamId === 'string' ? entry.existingTeamId : undefined,
         score: typeof entry.score === 'number' ? entry.score : undefined,
         reason:
-          entry.reason === 'orcid-name-conflict' || entry.reason === 'dblp-pid-name-conflict'
+          entry.reason === 'orcid-name-conflict' ||
+          entry.reason === 'dblp-pid-name-conflict' ||
+          entry.reason === 'name-variant'
             ? entry.reason
             : undefined,
         identifier: typeof entry.identifier === 'string' ? entry.identifier : undefined,
@@ -435,6 +441,7 @@ async function processBibtexCandidate(
       title: candidate.title,
       year: candidate.year,
       authors: (candidate.raw.authors as Array<{ fullName: string }> | undefined) ?? [],
+      entryType: typeof candidate.raw.type === 'string' ? candidate.raw.type : undefined,
       searchReview: searchReviewData(decision),
     },
     indexes,

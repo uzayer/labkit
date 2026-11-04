@@ -49,11 +49,15 @@ const KIND_LABELS: Record<ReviewItemKind, string> = {
   'unmapped-type': 'Unmapped type',
   'failed-doi': 'Failed DOI',
   'identifier-name-conflict': 'Identifier matched, name conflicts',
+  'preprint-link': 'Preprint linked to published version',
+  'possible-duplicate': 'Possible duplicate',
 }
 
 const KIND_ORDER: ReviewItemKind[] = [
   'person-merge-suggestion',
   'identifier-name-conflict',
+  'preprint-link',
+  'possible-duplicate',
   'unmatched-venue',
   'unmatched-org',
   'no-doi-work',

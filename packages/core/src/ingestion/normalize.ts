@@ -233,3 +233,36 @@ export function exactNameKey(name: string): string {
     .replace(/\s+/g, ' ')
     .trim()
 }
+
+/**
+ * Two printed names that are probably one person spelled two ways: accents
+ * stripped, family names equal, and given names compatible token by token
+ * (namesPair), but not the same spelling. "Laura Sanely Gaytan-Lugo" and
+ * "Laura S. Gaytán-Lugo", "Susan M. Dray" and "Susan Dray". Their trigram
+ * similarity falls below the fuzzy threshold, so this catches what that misses.
+ *
+ * Suggestion only: it feeds a person-merge Review Item and never a link.
+ * "S. Islam" fits many different people.
+ */
+export function nearDuplicateNames(a: string, b: string): boolean {
+  if (exactNameKey(a) === exactNameKey(b)) return false
+  const tokensA = nameTokens(a)
+  const tokensB = nameTokens(b)
+  if (tokensA.length < 2 || tokensB.length < 2) return false
+  if (tokensA[tokensA.length - 1] !== tokensB[tokensB.length - 1]) return false
+  return namesPair(a, b)
+}
+
+/**
+ * Zotero's duplicate-detection author key: the family name plus the first
+ * initial of the first given name that discriminates (Md./Mohammad prefixes
+ * are skipped, as in namesCompatible). A mononym is its family name alone.
+ */
+export function authorKey(name: string): string | null {
+  const tokens = nameTokens(name)
+  if (tokens.length === 0) return null
+  const family = tokens[tokens.length - 1]
+  const given = tokens.slice(0, -1)
+  const first = given.find((token) => !NON_DISCRIMINATING_GIVEN.has(token)) ?? given[0]
+  return first ? `${family}:${first[0]}` : family
+}

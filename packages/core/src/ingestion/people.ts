@@ -2,7 +2,7 @@ import type { CollectionSlug, Payload } from 'payload'
 import type { CrossrefAuthor } from './crossref'
 import type { DblpAuthor } from './dblp'
 import { diceCoefficient, type RorLookupEntry } from './match'
-import { exactNameKey, namesCompatible, namesPair, normalizeTitle } from './normalize'
+import { exactNameKey, namesPair, nearDuplicateNames, normalizeTitle } from './normalize'
 import { resolveOrCreatePartnerOrg } from './organizations'
 import type { OpenAlexAuthorship } from './openalex'
 import type { ImportReport } from './report'
@@ -46,7 +46,7 @@ export interface MergedAuthor {
   fullName: string
   /** Always asserted on this paper (Crossref `ORCID` or OpenAlex `raw_orcid`), never a profile's. */
   orcid?: string
-  orcidSource?: 'crossref-authenticated' | 'crossref' | 'openalex-raw'
+  orcidSource?: 'crossref-authenticated' | 'crossref' | 'datacite' | 'openalex-raw'
   dblpPid?: string
   institutionName?: string
   institutionRor?: string
@@ -70,9 +70,15 @@ export interface PersonMatchResult {
   conflicts: IdentifierConflict[]
 }
 
+/**
+ * namesPair, not namesCompatible: given names must agree token by token. With
+ * initials alone, an ORCID printed on "Saiful Islam" but held by "Salekul
+ * Islam" still linked (same family, same initial). An initial still fits the
+ * full name it starts ("N. Ahmed" fits "Nova Ahmed").
+ */
 function printedNameFits(person: MergedAuthor, member: TeamLookupEntry): boolean {
   return [member.name, ...(member.alternateNames ?? [])].some((name) =>
-    namesCompatible(person.fullName, name),
+    namesPair(person.fullName, name),
   )
 }
 
@@ -246,6 +252,19 @@ export function dedupeCustomAuthor(
   return { method: 'none', entry: null }
 }
 
+/**
+ * Team Members whose name (or a curated alternate) is an accent or
+ * middle-name variant of the author's (nearDuplicateNames). Only ever turned
+ * into person-merge Review Items: the author is still created as a new record.
+ */
+export function nameVariantMatches(fullName: string, team: TeamLookupEntry[]): TeamLookupEntry[] {
+  return team.filter((member) =>
+    [member.name, ...(member.alternateNames ?? [])].some((name) =>
+      nearDuplicateNames(fullName, name),
+    ),
+  )
+}
+
 export interface TeamCreationIndexes {
   teamIndex: TeamLookupEntry[]
   orgIndex: RorLookupEntry[]
@@ -326,6 +345,10 @@ export async function resolveOrCreateTeamMember(
     }
   }
   const fuzzySuggestion = bestScore >= FUZZY_NAME_THRESHOLD ? fuzzyMatch : null
+  // Taken before this author joins the index, so they never match themselves.
+  const variants = nameVariantMatches(person.fullName, indexes.teamIndex).filter(
+    (member) => member.id !== fuzzySuggestion?.id,
+  )
 
   let affiliationOrgId: string | undefined
   let affiliationLabel: string | undefined
@@ -409,6 +432,18 @@ export async function resolveOrCreateTeamMember(
       score: bestScore,
     })
   }
+  for (const member of variants) {
+    report.suggestDedupe({
+      collection: 'team',
+      field: 'name',
+      sourceContext,
+      value: `${person.fullName} (new id: ${id})`,
+      suggestedMatch: `${member.name} (id: ${member.id})`,
+      newTeamId: id,
+      existingTeamId: member.id,
+      reason: 'name-variant',
+    })
+  }
   reportIdentifierConflicts(report, person, teamMatch.conflicts, id, sourceContext)
 
   return id
@@ -445,7 +480,9 @@ function reportIdentifierConflicts(
 function orcidSource(
   cr: CrossrefAuthor | undefined,
   oa: OpenAlexAuthorship | undefined,
+  primary: 'crossref' | 'datacite',
 ): MergedAuthor['orcidSource'] {
+  if (cr?.orcid && primary === 'datacite') return 'datacite'
   if (cr?.orcid) return cr.orcidAuthenticated ? 'crossref-authenticated' : 'crossref'
   return oa?.orcid ? 'openalex-raw' : undefined
 }
@@ -467,10 +504,15 @@ function orcidSource(
  * When Crossref lists authors, its list is the author list. OpenAlex-only
  * authorships are not appended: an extra entry that failed to pair is more
  * likely a spelling of someone already listed than a missing author.
+ *
+ * For a DataCite DOI, DataCite's creators take Crossref's place (same shape,
+ * and their ORCIDs are likewise asserted per work); `primary` only labels
+ * where an ORCID came from.
  */
 export function mergeAuthors(
   crossrefAuthors: CrossrefAuthor[] | undefined,
   openalexAuthorships: OpenAlexAuthorship[] | undefined,
+  primary: 'crossref' | 'datacite' = 'crossref',
 ): MergedAuthor[] {
   const crossref = (crossrefAuthors ?? []).filter((cr) => cr.given || cr.family)
   const openalex = openalexAuthorships ?? []
@@ -486,7 +528,12 @@ export function mergeAuthors(
       const fullName = openalexName(oa)
       if (!fullName) return []
       return [
-        { fullName, orcid: oa.orcid, orcidSource: orcidSource(undefined, oa), ...fromOpenAlex(oa) },
+        {
+          fullName,
+          orcid: oa.orcid,
+          orcidSource: orcidSource(undefined, oa, primary),
+          ...fromOpenAlex(oa),
+        },
       ]
     })
   }
@@ -505,7 +552,7 @@ export function mergeAuthors(
     return {
       fullName: names[i],
       orcid: cr.orcid ?? unique?.orcid,
-      orcidSource: orcidSource(cr, unique),
+      orcidSource: orcidSource(cr, unique, primary),
       ...fromOpenAlex(unique),
     }
   })
