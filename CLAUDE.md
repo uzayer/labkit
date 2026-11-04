@@ -6,7 +6,7 @@ LabKit is a PayloadCMS content platform for research lab websites. The live publ
 
 ## Read first
 
-- **Scope:** the MVP is "DIAL's public website is live," and nothing else (`docs/product/ROADMAP.md`). Scope creep is this project's main failure mode. If a task doesn't move DIAL's site forward, it isn't MVP work.
+- **Scope:** the current phase is "LabKit for any Lab": the numbered list at the top of `docs/product/ROADMAP.md`, with the architecture in ADR-0003. Scope creep is this project's main failure mode. If a task isn't on that list, it's out of scope. DIAL's frontend moves to its own repo at step 3.
 - **`LOG.md`** records the reasoning behind decisions. Entries are newest-first, so read from the top and stop once you have enough. Add new decisions at the top, under today's date. `docs/LOG-ARCHIVE.md` is rarely worth opening.
 - **`CONTEXT.md`** is the domain glossary. Use its terms exactly and avoid the words it lists. Standing decisions live in `docs/adr/`.
 
@@ -30,11 +30,11 @@ There is no test framework. Run `bun run tsc` and `bun run lint`.
 
 - **`overrideAccess` defaults to `false`** in Payload 4's Local API, including `payload.jobs.*`. Trusted server work (hooks, scripts, ingestion, jobs) must pass `overrideAccess: true` explicitly.
 - **Roles must be populated**, not string IDs, for `hasPermission()` (`src/utilities/checkPermission.ts`) to work.
-- **Production has data.** Every schema change needs a committed migration (the schema is frozen for launch, ADR-0002). Run `bun run payload migrate:create` with any well-formed `BLOB_READ_WRITE_TOKEN` set, e.g. `vercel_blob_rw_local_x`. Without it, the generated migration drops Media's `_objectKey` column.
+- **Production has data.** Every schema change needs a committed migration (core owns all migrations, so Labs never add collections; see ADR-0003). Run `bun run payload migrate:create` with any well-formed `BLOB_READ_WRITE_TOKEN` set, e.g. `vercel_blob_rw_local_x`. Without it, the generated migration drops Media's `_objectKey` column.
 - **Turnstile** for `form-submissions` is checked in `src/app/(payload)/api/[...slug]/route.ts`, not in a form component. A missing `cf-turnstile-token` header gets a 400.
 - **Tailwind v4 bracket syntax** such as `w-[--x]` compiles to no CSS. Use `w-(--x)`. Grep for `-[--` whenever you import an older shadcn component.
 - **Person matching** in ingestion is Safe Match only: exact ORCID/DBLP ID or exact name, never fuzzy. Anything uncertain becomes a Review Item. See `src/lib/ingestion/people.ts`.
-- **Parked code:** `_`-prefixed folders (`_template-pages`, `_dashboard-kit`, `_dashboard-legacy`) compile but don't route. `/admin` is the only admin surface. Don't delete the dashboards: they've diverged from upstream, and porting them is out of MVP scope.
+- **Parked code:** `_`-prefixed folders (`_template-pages`, `_dashboard-kit`, `_dashboard-legacy`) compile but don't route. `/admin` is the only admin surface. Don't delete the dashboards: they've diverged from upstream, and porting them is out of scope.
 - **New research collections** go in an existing `admin.group`: Research, Reference Data, or Import.
 
 ## Docs
