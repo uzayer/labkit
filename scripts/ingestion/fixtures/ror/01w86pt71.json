@@ -1,0 +1,22 @@
+{
+  "url": "https://api.ror.org/v2/organizations/01w86pt71",
+  "recordedAt": "2026-11-04",
+  "note": "Trimmed to id, types, names and status. Example of a ROR `healthcare`.",
+  "body": {
+    "id": "https://ror.org/01w86pt71",
+    "types": [
+      "healthcare"
+    ],
+    "names": [
+      {
+        "lang": "en",
+        "types": [
+          "ror_display",
+          "label"
+        ],
+        "value": "Sibu Hospital"
+      }
+    ],
+    "status": "active"
+  }
+}

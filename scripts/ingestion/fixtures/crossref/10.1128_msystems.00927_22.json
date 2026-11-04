@@ -1,0 +1,2599 @@
+{
+  "url": "https://api.crossref.org/works/10.1128/msystems.00927-22",
+  "recordedAt": "2026-11-04",
+  "note": "Published version of arXiv 2208.08907; Crossref asserts no relation.",
+  "body": {
+    "status": "ok",
+    "message-type": "work",
+    "message-version": "1.0.0",
+    "message": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            6,
+            6
+          ]
+        ],
+        "date-time": "2026-06-06T17:34:02Z",
+        "timestamp": 1780767242856,
+        "version": "3.54.1"
+      },
+      "reference-count": 313,
+      "publisher": "American Society for Microbiology",
+      "issue": "2",
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                2023,
+                4,
+                27
+              ]
+            ],
+            "date-time": "2023-04-27T00:00:00Z",
+            "timestamp": 1682553600000
+          },
+          "content-version": "vor",
+          "delay-in-days": 0,
+          "URL": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        {
+          "start": {
+            "date-parts": [
+              [
+                2023,
+                4,
+                27
+              ]
+            ],
+            "date-time": "2023-04-27T00:00:00Z",
+            "timestamp": 1682553600000
+          },
+          "content-version": "tdm",
+          "delay-in-days": 0,
+          "URL": "https://journals.asm.org/non-commercial-tdm-license"
+        }
+      ],
+      "funder": [
+        {
+          "name": "NIH Medical Scientist Training Program T32",
+          "award": [
+            "GM07170"
+          ],
+          "award-info": [
+            {
+              "award-number": [
+                "GM07170"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "John W. and Jeanne M. Rowe Center for Research in Virology"
+        },
+        {
+          "DOI": "10.13039/100000936",
+          "name": "Gordon and Betty Moore Foundation",
+          "doi-asserted-by": "publisher",
+          "award": [
+            "GBMF 4552"
+          ],
+          "award-info": [
+            {
+              "award-number": [
+                "GBMF 4552"
+              ]
+            }
+          ],
+          "id": [
+            {
+              "id": "10.13039/100000936",
+              "id-type": "DOI",
+              "asserted-by": "publisher"
+            }
+          ]
+        },
+        {
+          "DOI": "10.13039/100000051",
+          "name": "HHS | NIH | National Human Genome Research Institute",
+          "doi-asserted-by": "publisher",
+          "award": [
+            "R01 HG010067"
+          ],
+          "award-info": [
+            {
+              "award-number": [
+                "R01 HG010067"
+              ]
+            }
+          ],
+          "id": [
+            {
+              "id": "10.13039/100000051",
+              "id-type": "DOI",
+              "asserted-by": "publisher"
+            }
+          ]
+        }
+      ],
+      "content-domain": {
+        "domain": [
+          "journals.asm.org"
+        ],
+        "crossmark-restriction": true
+      },
+      "short-container-title": [
+        "mSystems"
+      ],
+      "published-print": {
+        "date-parts": [
+          [
+            2023,
+            4,
+            27
+          ]
+        ]
+      },
+      "abstract": "<jats:p>The development, production, and distribution of vaccines is imperative to saving lives, preventing illness, and reducing the economic and social burdens caused by the COVID-19 pandemic. Vaccines that use cutting-edge biotechnology have played an important role in mitigating the effects of SARS-CoV-2.</jats:p>",
+      "DOI": "10.1128/msystems.00927-22",
+      "type": "journal-article",
+      "created": {
+        "date-parts": [
+          [
+            2023,
+            3,
+            2
+          ]
+        ],
+        "date-time": "2023-03-02T14:00:44Z",
+        "timestamp": 1677765644000
+      },
+      "update-policy": "https://doi.org/10.1128/asmj-crossmark-policy-page",
+      "source": "Crossref",
+      "is-referenced-by-count": 21,
+      "title": [
+        "Application of Traditional Vaccine Development Strategies to SARS-CoV-2"
+      ],
+      "prefix": "10.1128",
+      "volume": "8",
+      "author": [
+        {
+          "ORCID": "https://orcid.org/0000-0001-7688-1770",
+          "authenticated-orcid": true,
+          "given": "Halie M.",
+          "family": "Rando",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania, Philadelphia, Pennsylvania, USA"
+            },
+            {
+              "name": "Department of Biomedical Informatics, University of Colorado School of Medicine, Aurora, Colorado, USA"
+            },
+            {
+              "name": "Center for Health AI, University of Colorado School of Medicine, Aurora, Colorado, USA"
+            },
+            {
+              "name": "Department of Biochemistry and Molecular Genetics, University of Colorado School of Medicine, Aurora, Colorado, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-9668-3368",
+          "authenticated-orcid": true,
+          "given": "Ronan",
+          "family": "Lordan",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania, Philadelphia, Pennsylvania, USA"
+            },
+            {
+              "name": "Institute for Translational Medicine and Therapeutics, Perelman School of Medicine, University of Pennsylvania, Philadelphia, Pennsylvania, USA"
+            },
+            {
+              "name": "Department of Medicine, Perelman School of Medicine, University of Pennsylvania, Pennsylvania, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-0208-3730",
+          "authenticated-orcid": true,
+          "given": "Alexandra J.",
+          "family": "Lee",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania, Philadelphia, Pennsylvania, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Amruta",
+          "family": "Naik",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Children’s Hospital of Philadelphia, Philadelphia, Pennsylvania, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-8955-7582",
+          "authenticated-orcid": true,
+          "given": "Nils",
+          "family": "Wellhausen",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania, Philadelphia, Pennsylvania, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Elizabeth",
+          "family": "Sell",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Medicine, Perelman School of Medicine, University of Pennsylvania, Pennsylvania, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Likhitha",
+          "family": "Kolla",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Medicine, Perelman School of Medicine, University of Pennsylvania, Pennsylvania, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "name": "COVID-19 Review Consortium",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-5324-9833",
+          "authenticated-orcid": true,
+          "given": "Anthony",
+          "family": "Gitter",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Biostatistics and Medical Informatics, University of Wisconsin—Madison, Madison, Wisconsin, USA"
+            },
+            {
+              "name": "Morgridge Institute for Research, Madison, Wisconsin, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-8713-9213",
+          "authenticated-orcid": true,
+          "given": "Casey S.",
+          "family": "Greene",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania, Philadelphia, Pennsylvania, USA"
+            },
+            {
+              "name": "Department of Biomedical Informatics, University of Colorado School of Medicine, Aurora, Colorado, USA"
+            },
+            {
+              "name": "Center for Health AI, University of Colorado School of Medicine, Aurora, Colorado, USA"
+            },
+            {
+              "name": "Department of Biochemistry and Molecular Genetics, University of Colorado School of Medicine, Aurora, Colorado, USA"
+            },
+            {
+              "name": "Childhood Cancer Data Lab, Alex’s Lemonade Stand Foundation, Philadelphia, Pennsylvania, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "name": "The COVID-19 Review Consortium includes",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Vikas",
+          "family": "Bansal",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "John P.",
+          "family": "Barton",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Simina M.",
+          "family": "Boca",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Joel D.",
+          "family": "Boerckel",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Christian",
+          "family": "Brueffer",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "James Brian",
+          "family": "Byrd",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Stephen",
+          "family": "Capone",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Shikta",
+          "family": "Das",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Anna Ada",
+          "family": "Dattoli",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "John J.",
+          "family": "Dziak",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Jeffrey M.",
+          "family": "Field",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Soumita",
+          "family": "Ghosh",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Anthony",
+          "family": "Gitter",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Rishi Raj",
+          "family": "Goel",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Casey S.",
+          "family": "Greene",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Marouen Ben",
+          "family": "Guebila",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Daniel S.",
+          "family": "Himmelstein",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Fengling",
+          "family": "Hu",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Nafisa M.",
+          "family": "Jadavji",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Jeremy P.",
+          "family": "Kamil",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Sergey",
+          "family": "Knyazev",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Likhitha",
+          "family": "Kolla",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Alexandra J.",
+          "family": "Lee",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Ronan",
+          "family": "Lordan",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Tiago",
+          "family": "Lubiana",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Temitayo",
+          "family": "Lukan",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Adam L.",
+          "family": "MacLean",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "David",
+          "family": "Mai",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Serghei",
+          "family": "Mangul",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "David",
+          "family": "Manheim",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Lucy D’Agostino",
+          "family": "McGowan",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Jesse G.",
+          "family": "Meyer",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Ariel I.",
+          "family": "Mundo",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Amruta",
+          "family": "Naik",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "YoSon",
+          "family": "Park",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Dimitri",
+          "family": "Perrin",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Yanjun",
+          "family": "Qi",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Diane N.",
+          "family": "Rafizadeh",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Bharath",
+          "family": "Ramsundar",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Halie M.",
+          "family": "Rando",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Sandipan",
+          "family": "Ray",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Michael P.",
+          "family": "Robson",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Vincent",
+          "family": "Rubinetti",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Elizabeth",
+          "family": "Sell",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Lamonica",
+          "family": "Shinholster",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Ashwin N.",
+          "family": "Skelly",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Yuchen",
+          "family": "Sun",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Yusha",
+          "family": "Sun",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Gregory L.",
+          "family": "Szeto",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Ryan",
+          "family": "Velazquez",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Jinhui",
+          "family": "Wang",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Nils",
+          "family": "Wellhausen",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "member": "235",
+      "reference": [
+        {
+          "key": "e_1_3_3_2_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1073/pnas.1400472111"
+        },
+        {
+          "key": "e_1_3_3_3_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1128/mSystems.00095-21"
+        },
+        {
+          "key": "e_1_3_3_4_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1128/mSystems.00233-21"
+        },
+        {
+          "key": "e_1_3_3_5_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/s41586-020-2798-3"
+        },
+        {
+          "key": "e_1_3_3_6_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1128/mSystems.00928-22"
+        },
+        {
+          "key": "e_1_3_3_7_2",
+          "unstructured": "VIPER Group COVID19 Vaccine Tracker Team. COVID19 Vaccine Tracker. https://covid19.trackvaccines.org/. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_8_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/s41562-021-01122-8"
+        },
+        {
+          "key": "e_1_3_3_9_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1126/science.abc5312"
+        },
+        {
+          "key": "e_1_3_3_10_2",
+          "unstructured": "World Health Organization. 14 July 2021. Vaccine efficacy effectiveness and protection. https://www.who.int/news-room/feature-stories/detail/vaccine-efficacy-effectiveness-and-protection. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_11_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1056/NEJMoa2022483"
+        },
+        {
+          "key": "e_1_3_3_12_2",
+          "unstructured": "COVID-19 Review Consortium. 2021. Evolutionary and genomic analysis of SARS-CoV-2. Manubot."
+        },
+        {
+          "key": "e_1_3_3_13_2",
+          "first-page": "S405",
+          "article-title": "Differences between clinical trial efficacy and real-world effectiveness",
+          "volume": "12",
+          "author": "Davidson MH",
+          "year": "2006",
+          "unstructured": "Davidson MH. 2006. Differences between clinical trial efficacy and real-world effectiveness. Am J Manag Care 12:S405–S411.",
+          "journal-title": "Am J Manag Care"
+        },
+        {
+          "key": "e_1_3_3_14_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1093/rheumatology/key109"
+        },
+        {
+          "key": "e_1_3_3_15_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.jinf.2005.07.021"
+        },
+        {
+          "key": "e_1_3_3_16_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/978-1-4419-1339-5_2"
+        },
+        {
+          "key": "e_1_3_3_17_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1377/hlthaff.24.3.611"
+        },
+        {
+          "key": "e_1_3_3_18_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.vaccine.2017.11.003"
+        },
+        {
+          "key": "e_1_3_3_19_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.virol.2015.03.032"
+        },
+        {
+          "key": "e_1_3_3_20_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.3389/fimmu.2019.00594"
+        },
+        {
+          "key": "e_1_3_3_21_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/S0065-2660(05)54011-2"
+        },
+        {
+          "key": "e_1_3_3_22_2",
+          "unstructured": "Barranco C. 28 September 2020. The first live attenuated vaccines. Nat Res. https://www.nature.com/articles/d42859-020-00008-5."
+        },
+        {
+          "key": "e_1_3_3_23_2",
+          "volume-title": "Molecular biology",
+          "author": "Flint J",
+          "year": "2015",
+          "unstructured": "Flint J, Skalka AM, Rall GF, Racaniello VR. 2015. Principles of virology, vol I. Molecular biology American Society for Microbiology, Washington, DC."
+        },
+        {
+          "key": "e_1_3_3_24_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/s41586-020-3035-9"
+        },
+        {
+          "key": "e_1_3_3_25_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/B978-0-323-35761-6.00002-X"
+        },
+        {
+          "key": "e_1_3_3_26_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.3389/fimmu.2020.602256"
+        },
+        {
+          "key": "e_1_3_3_27_2",
+          "unstructured": "US Department of Health & Human Services. 2021. Vaccine types. https://www.hhs.gov/immunization/basics/types/index.html. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_28_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.apsb.2022.11.022"
+        },
+        {
+          "key": "e_1_3_3_29_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.ebiom.2022.103841"
+        },
+        {
+          "key": "e_1_3_3_30_2",
+          "doi-asserted-by": "publisher",
+          "unstructured": "Sharma S Vercruysse T Sanchez-Felipe L Kerstens W Rasulova M Abdelnabi R Foo CS Lemmens V Van Looveren D Maes P Baele G Weynand B Lemey P Neyts J Thibaut HJ Dallmeier K. 16 February 2022. Updated vaccine protects from infection with SARS-CoV-2 variants prevents transmission and is immunogenic against Omicron in hamsters. bioRxiv. doi:10.1101/2021.11.12.468374.",
+          "DOI": "10.1101/2021.11.12.468374"
+        },
+        {
+          "key": "e_1_3_3_31_2",
+          "unstructured": "Marshall D. 23 April 2020. Griffith University researchers on the road to COVID-19 vaccine. https://news.griffith.edu.au/2020/04/23/griffith-university-researchers-on-the-road-to-covid-19-vaccine/. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_32_2",
+          "unstructured": "Milken Institute. COVID-19 Treatment and Vaccine Tracker. https://milkeninstitute.org/sites/default/files/2020-03/Covid19%20Tracker_WEB.pdf. Accessed 5 August 2022."
+        },
+        {
+          "key": "e_1_3_3_33_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1073/pnas.2102775118"
+        },
+        {
+          "key": "e_1_3_3_34_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1126/science.1155761"
+        },
+        {
+          "key": "e_1_3_3_35_2",
+          "unstructured": "Codagenix Inc. 2022. First-in-human randomised double-blind placebo-controlled dose-escalation study in healthy young adults evaluating the safety and immunogenicity of COVI-VAC a live attenuated vaccine candidate for prevention of COVID-19. NCT04619628. https://clinicaltrials.gov/ct2/show/NCT04619628."
+        },
+        {
+          "key": "e_1_3_3_36_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1093/ofid/ofab466.775"
+        },
+        {
+          "key": "e_1_3_3_37_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1186/s12985-022-01945-5"
+        },
+        {
+          "key": "e_1_3_3_38_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/s41541-022-00509-6"
+        },
+        {
+          "key": "e_1_3_3_39_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.3389/fmicb.2019.02881"
+        },
+        {
+          "key": "e_1_3_3_40_2",
+          "unstructured": "Meissa Vaccines Inc. 2022. Phase 1 open-label dose-escalation study to evaluate tolerability safety and immunogenicity of an intranasal live attenuated respiratory syncytial virus vaccine expressing spike protein of SARS-CoV-2 in healthy adults ages 18–69 years. NCT04798001. https://clinicaltrials.gov/ct2/show/NCT04798001."
+        },
+        {
+          "key": "e_1_3_3_41_2",
+          "unstructured": "Rando HM Greene CS Robson MP Boca SM Wellhausen N Lordan R Brueffer C Ray S D’Agostino McGowan L Gitter A Dattoli AA Velazquez R Barton JP Field JM Ramsundar B MacLean AL Lee AJ Immunology Institute of the Icahn School ofMedicine Hu F Jadavji NM Sell E Wang J Rafizadeh DN Skelly AN Ben Guebila M Kolla L Manheim D Ghosh S Byrd JB Park Y Bansal V Capone S Dziak JJ Sun Y Qi Y Shinholster L Lukan T Knyazev S Perrin D Mangul S Das S Szeto GL Lubiana T Mai D Goel RR Boerckel JD Naik A Sun Y Himmelstein DS Kamil JP Meyer JG Mundo AI COVID-19 Review Consortium. 2023. SARS-CoV-2 and COVID-19: an evolving review of diagnostics and therapeutics. Manubot. https://greenelab.github.io/covid19-review/."
+        },
+        {
+          "key": "e_1_3_3_42_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/s41577-020-0337-y"
+        },
+        {
+          "key": "e_1_3_3_43_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1093/cid/ciac182"
+        },
+        {
+          "key": "e_1_3_3_44_2",
+          "unstructured": "Murdoch Childrens Research Institute. BCG vaccination to reduce the impact of COVID-19 in healthcare workers (BRACE) trial. NCT04327206. https://clinicaltrials.gov/ct2/show/NCT04327206. Accessed 8 February 2021."
+        },
+        {
+          "key": "e_1_3_3_45_2",
+          "unstructured": "Texas A&M University. Bacillus Calmette-Guerin vaccination as defense against SARS-CoV-2: a randomized controlled trial to protect health care workers by enhanced trained immune responses. NCT04348370. https://clinicaltrials.gov/ct2/show/NCT04348370. Accessed 8 February 2021."
+        },
+        {
+          "key": "e_1_3_3_46_2",
+          "unstructured": "VIPER Group COVID19 Vaccine Tracker Team. COVID19 Vaccine Tracker. Codagenix Inc: COVI-VAC. https://covid19.trackvaccines.org/vaccines/59/. Accessed 16 January 2023."
+        },
+        {
+          "key": "e_1_3_3_47_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.copbio.2007.10.010"
+        },
+        {
+          "key": "e_1_3_3_48_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1080/14760584.2017.1357471"
+        },
+        {
+          "key": "e_1_3_3_49_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/nri2868"
+        },
+        {
+          "key": "e_1_3_3_50_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.virusres.2007.03.025"
+        },
+        {
+          "key": "e_1_3_3_51_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1084/jem.164.4.1114"
+        },
+        {
+          "key": "e_1_3_3_52_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1111/1751-7915.13818"
+        },
+        {
+          "key": "e_1_3_3_53_2",
+          "unstructured": "Reuters. 30 December 2020. China gives its first COVID-19 vaccine approval to Sinopharm. Reuters London United Kingdom. https://www.reuters.com/business/healthcare-pharmaceuticals/china-gives-its-first-covid-19-vaccine-approval-sinopharm-2020-12-31/."
+        },
+        {
+          "key": "e_1_3_3_54_2",
+          "unstructured": "Wee S-L Simões M. 16 July 2020. In coronavirus vaccine race China strays from the official paths. The New York Times New York NY. https://www.nytimes.com/2020/07/16/business/china-vaccine-coronavirus.html."
+        },
+        {
+          "key": "e_1_3_3_55_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/d41586-020-03626-1"
+        },
+        {
+          "key": "e_1_3_3_56_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1002/rmv.492"
+        },
+        {
+          "key": "e_1_3_3_57_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1093/intimm/dxh143"
+        },
+        {
+          "key": "e_1_3_3_58_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/s41579-020-00462-y"
+        },
+        {
+          "key": "e_1_3_3_59_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1021/acsinfecdis.6b00006"
+        },
+        {
+          "key": "e_1_3_3_60_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1080/21645515.2016.1177688"
+        },
+        {
+          "key": "e_1_3_3_61_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1128/mBio.00554-20"
+        },
+        {
+          "key": "e_1_3_3_62_2",
+          "unstructured": "World Health Organization. 1 June 2021. Background document on the inactivated vaccine Sinovac-CoronaVac against COVID-19. https://www.who.int/publications-detail-redirect/WHO-2019-nCoV-vaccines-SAGE_recommendation-Sinovac-CoronaVac-background-2021.1. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_63_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/S1473-3099(20)30987-7"
+        },
+        {
+          "key": "e_1_3_3_64_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1126/science.abc1932"
+        },
+        {
+          "key": "e_1_3_3_65_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/S1473-3099(20)30843-4"
+        },
+        {
+          "key": "e_1_3_3_66_2",
+          "unstructured": "VIPER Group COVID19 Vaccine Tracker Team. COVID19 Vaccine Tracker. Sinovac: CoronaVac. https://covid19.trackvaccines.org/vaccines/7/. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_67_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1093/cid/ciab823"
+        },
+        {
+          "key": "e_1_3_3_68_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/S0140-6736(21)01429-X"
+        },
+        {
+          "key": "e_1_3_3_69_2",
+          "unstructured": "Corum J Zimmer C. 7 May 2021. How the Sinovac vaccine works. The New York Times New York NY. https://www.nytimes.com/interactive/2020/health/sinovac-covid-19-vaccine.html."
+        },
+        {
+          "key": "e_1_3_3_70_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1186/s13063-020-04775-4"
+        },
+        {
+          "key": "e_1_3_3_71_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.2139/ssrn.3822780"
+        },
+        {
+          "key": "e_1_3_3_72_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/s41591-021-01469-5"
+        },
+        {
+          "key": "e_1_3_3_73_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/S1473-3099(21)00319-4"
+        },
+        {
+          "key": "e_1_3_3_74_2",
+          "unstructured": "Reuters. 23 December 2020. Brazil institute says CoronaVac efficacy above 50% delays full results. Reuters London United Kingdom. https://www.reuters.com/article/us-health-coronavirus-sinovac-butantan/brazil-institute-says-coronavac-efficacy-above-50-delays-full-results-idUKKBN28X2FC."
+        },
+        {
+          "key": "e_1_3_3_75_2",
+          "unstructured": "Zimmer C Londoño E. 25 December 2020. Turkey and Brazil say Chinese vaccine effective with sparse supporting data. The New York Times New York NY. https://www.nytimes.com/2020/12/25/health/turkey-brazil-sinovac-coronavirus-vaccine.html."
+        },
+        {
+          "key": "e_1_3_3_76_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1056/NEJMoa2107715"
+        },
+        {
+          "key": "e_1_3_3_77_2",
+          "unstructured": "Zimmer C Corum J Wee S-L Kristoffersen M. 2020. Coronavirus vaccine tracker. The New York Times New York NY. https://www.nytimes.com/interactive/2020/science/coronavirus-vaccine-tracker.html."
+        },
+        {
+          "key": "e_1_3_3_78_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1155/2021/9673453"
+        },
+        {
+          "key": "e_1_3_3_79_2",
+          "unstructured": "Wee S-L. 16 September 2021. They relied on Chinese vaccines. Now they’re battling outbreaks. The New York Times New York NY. https://www.nytimes.com/2021/06/22/business/economy/china-vaccines-covid-outbreak.html."
+        },
+        {
+          "key": "e_1_3_3_80_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/S1473-3099(21)00568-5"
+        },
+        {
+          "key": "e_1_3_3_81_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1093/cid/ciab1041"
+        },
+        {
+          "key": "e_1_3_3_82_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1056/NEJMc2103022"
+        },
+        {
+          "key": "e_1_3_3_83_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.jvacx.2022.100153"
+        },
+        {
+          "key": "e_1_3_3_84_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.3389/fimmu.2022.939311"
+        },
+        {
+          "key": "e_1_3_3_85_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1101/2021.08.03.21261544"
+        },
+        {
+          "key": "e_1_3_3_86_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/S1473-3099(21)00681-2"
+        },
+        {
+          "key": "e_1_3_3_87_2",
+          "unstructured": "Medical Xpress. 11 August 2021. China approves first mixed-vaccine trial as Delta spreads. https://medicalxpress.com/news/2021-08-china-mixed-vaccine-trial-delta.html. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_88_2",
+          "unstructured": "Araos R. 2021. Reactogenicidad seguridad e inmunogenicidad de dosis de refuerzo de vacunas contra SARS-CoV-2 en Chile (Estudio REFUERZO). NCT04992182. https://clinicaltrials.gov/ct2/show/NCT04992182."
+        },
+        {
+          "key": "e_1_3_3_89_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/s41591-021-01677-z"
+        },
+        {
+          "key": "e_1_3_3_90_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/s41591-022-01705-6"
+        },
+        {
+          "key": "e_1_3_3_91_2",
+          "unstructured": "World Health Organization. 10 June 2022. The Sinovac-CoronaVac COVID-19 vaccine: what you need to know. https://www.who.int/news-room/feature-stories/detail/the-sinovac-covid-19-vaccine-what-you-need-to-know. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_92_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/s41541-021-00292-w"
+        },
+        {
+          "key": "e_1_3_3_93_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.cell.2020.06.008"
+        },
+        {
+          "key": "e_1_3_3_94_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/S1473-3099(20)30831-8"
+        },
+        {
+          "key": "e_1_3_3_95_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1001/jama.2020.15543"
+        },
+        {
+          "key": "e_1_3_3_96_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1001/jama.2021.8565"
+        },
+        {
+          "key": "e_1_3_3_97_2",
+          "unstructured": "Reuters. 29 December 2020. Sinopharm’s COVID-19 vaccine 79% effective seeks approval in China. Reuters London United Kingdom. https://www.reuters.com/article/health-coronavirus-china-vaccine-int/sinopharms-covid-19-vaccine-79-effective-seeks-approval-in-china-idUSKBN2940CA."
+        },
+        {
+          "key": "e_1_3_3_98_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1101/2021.07.15.21260621"
+        },
+        {
+          "key": "e_1_3_3_99_2",
+          "doi-asserted-by": "publisher",
+          "unstructured": "Huang B Dai L Wang H Hu Z Yang X Tan W Gao GF. 2 February 2021. Neutralization of SARS-CoV-2 VOC 501Y.V2 by human antisera elicited by both inactivated BBIBP-CorV and recombinant dimeric RBD ZF2001 vaccines. bioRxiv. doi:10.1101/2021.02.01.429069.",
+          "DOI": "10.1101/2021.02.01.429069"
+        },
+        {
+          "key": "e_1_3_3_100_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/s41421-022-00373-7"
+        },
+        {
+          "key": "e_1_3_3_101_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.isci.2021.102054"
+        },
+        {
+          "key": "e_1_3_3_102_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/s41467-021-21639-w"
+        },
+        {
+          "key": "e_1_3_3_103_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/S1473-3099(20)30942-7"
+        },
+        {
+          "key": "e_1_3_3_104_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/S1473-3099(21)00070-0"
+        },
+        {
+          "key": "e_1_3_3_105_2",
+          "unstructured": "Bharat Biotech. 2021. Bharat Biotech announces phase 3 results of COVAXIN. Bharat Biotech Hyderabad India. https://www.bharatbiotech.com/images/press/covaxin-phase3-efficacy-results.pdf."
+        },
+        {
+          "key": "e_1_3_3_106_2",
+          "unstructured": "Biogenetech. 2021. Ocugen’s COVID-19 vaccine co-development partner Bharat Biotech shares phase 3 interim results of COVAXIN demonstrates efficacy of 81%. Biogenetech. https://www.biogenetech.co.th/wp-content/uploads/2021/03/5-Ocugen.pdf."
+        },
+        {
+          "key": "e_1_3_3_107_2",
+          "unstructured": "Xinhuanet. 4 March 2021. Zimbabwe authorizes use of India’s first indigenous COVID-19 vaccine. http://www.xinhuanet.com/english/2021-03/04/c_139783893.htm. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_108_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/S0140-6736(21)02000-6"
+        },
+        {
+          "key": "e_1_3_3_109_2",
+          "unstructured": "VIPER Group COVID19 Vaccine Tracker Team. COVID19 Vaccine Tracker. Bharat Biotech: Covaxin. https://covid19.trackvaccines.org/vaccines/9/. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_110_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1093/jtm/taab154"
+        },
+        {
+          "key": "e_1_3_3_111_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1093/jtm/taab104"
+        },
+        {
+          "key": "e_1_3_3_112_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1093/jtm/taab051"
+        },
+        {
+          "key": "e_1_3_3_113_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1101/2022.01.24.22269189"
+        },
+        {
+          "key": "e_1_3_3_114_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.jinf.2022.03.016"
+        },
+        {
+          "key": "e_1_3_3_115_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.53411/jpadr.2021.2.3.5"
+        },
+        {
+          "key": "e_1_3_3_116_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1002/jmv.27655"
+        },
+        {
+          "key": "e_1_3_3_117_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/s40264-022-01226-8"
+        },
+        {
+          "key": "e_1_3_3_118_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1080/21645515.2022.2034456"
+        },
+        {
+          "key": "e_1_3_3_119_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1101/2021.08.26.21262705"
+        },
+        {
+          "key": "e_1_3_3_120_2",
+          "unstructured": "Hindustan Times. 7 July 2021. Covaxin booster dose: what is it? What does govt say about this? Hindustan Times New Delhi India. https://www.hindustantimes.com/india-news/covaxin-booster-dose-what-is-it-what-does-govt-say-about-this-101625644184446.html. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_121_2",
+          "unstructured": "Das S. 25 September 2021. Booster dose: Bharat Biotech’s nasal vaccine may be used with Covaxin. Business Standard New Delhi India. https://www.business-standard.com/article/current-affairs/booster-dose-bharat-biotech-s-nasal-vaccine-may-be-used-with-covaxin-121092500034_1.html. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_122_2",
+          "unstructured": "Bharadwaj S. 21 September 2021. Covaxin kids trial over Bharat Biotech to submit data to DCGI next week. The Times of India. https://timesofindia.indiatimes.com/india/bharat-biotech-to-submit-covaxin-kids-trials-data-to-dcgi-in-weeks-time/articleshow/86392325.cms."
+        },
+        {
+          "key": "e_1_3_3_123_2",
+          "unstructured": "India Today. 24 September 2021. WHO emergency approval for Covaxin delayed till October 5. India Today New Delhi India. https://www.indiatoday.in/coronavirus-covid-19-outbreak/video/who-emergency-approval-for-covaxin-delayed-till-october-1856178-2021-09-23. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_124_2",
+          "unstructured": "World Health Organization. 2 April 2022. Suspension of supply of COVID-19 vaccine (COVAXIN®). https://extranet.who.int/pqweb/vaccines/suspension-supply-covid-19-vaccine-covaxin. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_125_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1136/bmj.o902"
+        },
+        {
+          "key": "e_1_3_3_126_2",
+          "unstructured": "PTI. 24 May 2022. FDA lifts hold on Bharat Biotech’s Covaxin clinical trials in US. Business Today. https://www.businesstoday.in/coronavirus/story/fda-lifts-hold-on-bharat-biotechs-covaxin-clinical-trials-in-us-334915-2022-05-24. Accessed 16 January 2023."
+        },
+        {
+          "key": "e_1_3_3_127_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1163/25895893-bja10009"
+        },
+        {
+          "key": "e_1_3_3_128_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/S0140-6736(21)02288-1"
+        },
+        {
+          "key": "e_1_3_3_129_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/S0140-6736(21)02286-8"
+        },
+        {
+          "key": "e_1_3_3_130_2",
+          "unstructured": "World Health Organization. 2022. The Valneva VLA2001 COVID-19 vaccine: what you need to know. https://www.who.int/news-room/feature-stories/detail/the-valneva-vla2001-covid-19-vaccine--what-you-need-to-know. Accessed 1 December 2022."
+        },
+        {
+          "key": "e_1_3_3_131_2",
+          "unstructured": "World Health Organization. 10 June 2022. The Bharat Biotech BBV152 COVAXIN vaccine against COVID-19: what you need to know. https://www.who.int/news-room/feature-stories/detail/the-bharat-biotech-bbv152-covaxin-vaccine-against-covid-19-what-you-need-to-know. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_132_2",
+          "unstructured": "WHO Collaborating Centre for Vaccine Safety. 20 September 2022. Is the Sinopharm BIBP (Covilo) COVID-19 vaccine safe and effective? https://www.covid19infovaccines.com/en-posts/is-the-sinopharm-bibp-covilo-covid-19-vaccine-safe-and-effective. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_133_2",
+          "unstructured": "World Health Organization. 3 June 2022. COVID-19 vaccine (Vero cell) inactivated (Sinopharm). https://cdn.who.int/media/docs/default-source/immunization/covid-19/16-june-22080-sinopharm-vaccine-explainer-update.pdf. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_134_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.3390/v14092016"
+        },
+        {
+          "key": "e_1_3_3_135_2",
+          "unstructured": "Sattwika PD. 2022. A phase II non-randomized open labelled clinical trial to evaluate the safety & immunogenicity of SARS-COV-2 vaccine (Vero cell) inactivated as a booster dose. NCT05172193. https://clinicaltrials.gov/ct2/show/NCT05172193."
+        },
+        {
+          "key": "e_1_3_3_136_2",
+          "unstructured": "China National Biotec Group Company Limited. 2022. Multicenter randomized double blind parallel placebo controlled phase III clinical trial to evaluate the protective efficacy safety and immunogenicity of inactivated SARS-CoV-2 vaccines (Vero cell) in healthy population aged 18 years old and above. NCT04510207. https://clinicaltrials.gov/ct2/show/NCT04510207."
+        },
+        {
+          "key": "e_1_3_3_137_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1002/jmv.27396"
+        },
+        {
+          "key": "e_1_3_3_138_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1073/pnas.1402981111"
+        },
+        {
+          "key": "e_1_3_3_139_2",
+          "first-page": "159",
+          "volume-title": "Subunit vaccine delivery. Advances in delivery science and technology.",
+          "author": "Donaldson B",
+          "year": "2014",
+          "unstructured": "Donaldson B, Al-Barwani F, Young V, Scullion S, Ward V, Young S. 2014. Virus-like particles, a versatile subunit vaccine platform, p 159–180. In Foged C, Rades T, Perrie Y, Hook S (ed), Subunit vaccine delivery. Advances in delivery science and technology. Springer, New York, NY."
+        },
+        {
+          "key": "e_1_3_3_140_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/s0966-842x(03)00208-7"
+        },
+        {
+          "key": "e_1_3_3_141_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.addr.2021.01.001"
+        },
+        {
+          "key": "e_1_3_3_142_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1186/s12951-021-00806-7"
+        },
+        {
+          "key": "e_1_3_3_143_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/978-1-4615-1823-5"
+        },
+        {
+          "key": "e_1_3_3_144_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.3390/vaccines2030515"
+        },
+        {
+          "key": "e_1_3_3_145_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1517/14712598.2011.573624"
+        },
+        {
+          "key": "e_1_3_3_146_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.vaccine.2019.04.055"
+        },
+        {
+          "key": "e_1_3_3_147_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1093/ilar.46.3.280"
+        },
+        {
+          "key": "e_1_3_3_148_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1128/JVI.00083-06"
+        },
+        {
+          "key": "e_1_3_3_149_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1089/vim.2012.0076"
+        },
+        {
+          "key": "e_1_3_3_150_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.vaccine.2006.01.059"
+        },
+        {
+          "key": "e_1_3_3_151_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.vaccine.2006.10.031"
+        },
+        {
+          "key": "e_1_3_3_152_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.bbrc.2009.05.003"
+        },
+        {
+          "key": "e_1_3_3_153_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1089/vim.2009.0090"
+        },
+        {
+          "key": "e_1_3_3_154_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.vaccine.2006.06.084"
+        },
+        {
+          "key": "e_1_3_3_155_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1089/dna.2005.24.510"
+        },
+        {
+          "key": "e_1_3_3_156_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1128/JCM.43.8.3718-3726.2005"
+        },
+        {
+          "key": "e_1_3_3_157_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.vaccine.2009.05.073"
+        },
+        {
+          "key": "e_1_3_3_158_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.vaccine.2006.01.058"
+        },
+        {
+          "key": "e_1_3_3_159_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.3389/fmicb.2020.00298"
+        },
+        {
+          "key": "e_1_3_3_160_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.4161/hv.27464"
+        },
+        {
+          "key": "e_1_3_3_161_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.ebiom.2015.08.031"
+        },
+        {
+          "key": "e_1_3_3_162_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1371/journal.pone.0112602"
+        },
+        {
+          "key": "e_1_3_3_163_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.vaccine.2018.02.065"
+        },
+        {
+          "key": "e_1_3_3_164_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.virol.2016.10.005"
+        },
+        {
+          "key": "e_1_3_3_165_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1073/pnas.1707304114"
+        },
+        {
+          "key": "e_1_3_3_166_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1089/vim.2014.0080"
+        },
+        {
+          "key": "e_1_3_3_167_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.vaccine.2016.11.064"
+        },
+        {
+          "key": "e_1_3_3_168_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/ncomms8712"
+        },
+        {
+          "key": "e_1_3_3_169_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.antiviral.2016.07.015"
+        },
+        {
+          "key": "e_1_3_3_170_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.vaccine.2020.07.003"
+        },
+        {
+          "key": "e_1_3_3_171_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.vaccine.2014.04.016"
+        },
+        {
+          "key": "e_1_3_3_172_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.18632/oncotarget.8475"
+        },
+        {
+          "key": "e_1_3_3_173_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/s12250-018-0064-8"
+        },
+        {
+          "key": "e_1_3_3_174_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1186/s12929-020-00695-2"
+        },
+        {
+          "key": "e_1_3_3_175_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/s0168-1656(99)00107-8"
+        },
+        {
+          "key": "e_1_3_3_176_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1128/mBio.01339-14"
+        },
+        {
+          "key": "e_1_3_3_177_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1371/journal.ppat.1003418"
+        },
+        {
+          "key": "e_1_3_3_178_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1188/06.CJON.559-560"
+        },
+        {
+          "key": "e_1_3_3_179_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.micinf.2014.12.006"
+        },
+        {
+          "key": "e_1_3_3_180_2",
+          "unstructured": "VIPER Group COVID19 Vaccine Tracker Team. COVID19 Vaccine Tracker. Vaccines candidates in clinical trials. https://covid19.trackvaccines.org/vaccines/. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_181_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1080/21655979.2016.1191707"
+        },
+        {
+          "key": "e_1_3_3_182_2",
+          "unstructured": "World Health Organization. The Novavax vaccine against COVID-19: what you need to know. https://www.who.int/news-room/feature-stories/detail/the-novavax-vaccine-against-covid-19-what-you-need-to-know. Accessed 16 January 2023."
+        },
+        {
+          "key": "e_1_3_3_183_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1056/NEJMoa2026920"
+        },
+        {
+          "key": "e_1_3_3_184_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/s41467-020-20653-8"
+        },
+        {
+          "key": "e_1_3_3_185_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1021/acs.iecr.8b00985"
+        },
+        {
+          "key": "e_1_3_3_186_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.3389/fimmu.2021.660198"
+        },
+        {
+          "key": "e_1_3_3_187_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1056/NEJMoa2107659"
+        },
+        {
+          "key": "e_1_3_3_188_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1056/NEJMoa2116185"
+        },
+        {
+          "key": "e_1_3_3_189_2",
+          "unstructured": "Allen A Tribble SJ. 4 June 2022. Novavax missed its global moonshot but is angling to win over mRNA defectors. ASBMB Today Rockville MD. https://www.asbmb.org/asbmb-today/industry/060422/novavax-missed-its-global-moonshot-but-is-angling. Accessed 16 January 2023."
+        },
+        {
+          "key": "e_1_3_3_190_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1136/bmj.n2965"
+        },
+        {
+          "key": "e_1_3_3_191_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1126/science.abc9588"
+        },
+        {
+          "key": "e_1_3_3_192_2",
+          "unstructured": "Owermohle S Banco E Cancryn A. 19 October 2021. ‘They rushed the process’: vaccine maker’s woes hamper global inoculation campaign. POLITICO Arlington VA. https://www.politico.com/news/2021/10/19/novavax-vaccine-rush-process-global-campaign-516298. Accessed 16 January 2023."
+        },
+        {
+          "key": "e_1_3_3_193_2",
+          "unstructured": "Kimball S. 13 May 2022. Novavax confident Covid vaccine will receive FDA authorization in June after delays. CNBC. https://www.cnbc.com/2022/05/13/novavax-confident-covid-vaccine-will-receive-fda-authorization-in-june-after-delays.html. Accessed 16 January 2023."
+        },
+        {
+          "key": "e_1_3_3_194_2",
+          "unstructured": "World Health Organization. 17 December 2021. WHO lists 9th COVID-19 vaccine for emergency use with aim to increase access to vaccination in lower-income countries. https://www.who.int/news/item/17-12-2021-who-lists-9th-covid-19-vaccine-for-emergency-use-with-aim-to-increase-access-to-vaccination-in-lower-income-countries. Accessed 16 January 2023."
+        },
+        {
+          "key": "e_1_3_3_195_2",
+          "unstructured": "Medicines and Healthcare Products Regulatory Agency. 3 February 2022. Novavax COVID-19 vaccine Nuvaxovid approved by MHRA. Medicines and Healthcare Products Regulatory Agency London United Kingdom. https://www.gov.uk/government/news/novavax-covid-19-vaccine-nuvaxovid-approved-by-mhra. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_196_2",
+          "unstructured": "European Medicines Agency. 20 December 2021. EMA recommends Nuvaxovid for authorisation in the EU. https://www.ema.europa.eu/en/news/ema-recommends-nuvaxovid-authorisation-eu."
+        },
+        {
+          "key": "e_1_3_3_197_2",
+          "unstructured": "FDA. 13 July 2022. Coronavirus (COVID-19) update: FDA authorizes emergency use of Novavax COVID-19 vaccine adjuvanted. FDA Silver Spring MD. https://www.fda.gov/news-events/press-announcements/coronavirus-covid-19-update-fda-authorizes-emergency-use-novavax-covid-19-vaccine-adjuvanted. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_198_2",
+          "unstructured": "Reuters. 22 November 2022. Gavi rejects Novavax’s claim on COVID vaccine deal breach. Reuters London United Kingdom. https://www.reuters.com/business/healthcare-pharmaceuticals/gavi-says-it-is-not-breach-novavax-vaccine-deal-2022-11-22/."
+        },
+        {
+          "key": "e_1_3_3_199_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1056/NEJMoa2103055"
+        },
+        {
+          "key": "e_1_3_3_200_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1101/2021.12.23.21267374"
+        },
+        {
+          "key": "e_1_3_3_201_2",
+          "unstructured": "Novavax. 2022. A 2-part phase 1/2 randomized observer-blinded study to evaluate the safety and immunogenicity of a SARS-CoV-2 recombinant spike protein nanoparticle vaccine (SARS-CoV-2 rS) with or without MATRIX-M™ adjuvant in healthy subjects. NCT04368988. https://clinicaltrials.gov/ct2/show/NCT04368988."
+        },
+        {
+          "key": "e_1_3_3_202_2",
+          "doi-asserted-by": "publisher",
+          "unstructured": "Bhiman JN Richardson SI Lambson BE Kgagudi P Mzindle N Kaldine H Crowther C Gray G Bekker L-G Shinde V Bennett C Glenn GM Madhi S Moore PL. 17 July 2022. Novavax NVX-COV2373 triggers potent neutralization of Omicron sub-lineages. bioRxiv. doi:10.1101/2022.07.14.500148.",
+          "DOI": "10.1101/2022.07.14.500148"
+        },
+        {
+          "key": "e_1_3_3_203_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1101/2021.06.09.21258556"
+        },
+        {
+          "key": "e_1_3_3_204_2",
+          "unstructured": "Novavax. 8 September 2021. Novavax initiates phase 1/2 clinical trial of combination vaccine for COVID-19 and seasonal influenza. Novavax Gaithersburg MD. https://ir.novavax.com/2021-09-08-Novavax-Initiates-Phase-1-2-Clinical-Trial-of-Combination-Vaccine-for-COVID-19-and-Seasonal-Influenza. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_205_2",
+          "doi-asserted-by": "publisher",
+          "unstructured": "Massare MJ Patel N Zhou B Maciejewski S Flores R Guebre-Xabier M Tian J-H Portnoff AD Fries L Shinde V Ellingsworth L Glenn G Smith G. 5 May 2021. Combination respiratory vaccine containing recombinant SARS-CoV-2 spike and quadrivalent seasonal influenza hemagglutinin nanoparticles with Matrix-M adjuvant. bioRxiv. doi:10.1101/2021.05.05.442782.",
+          "DOI": "10.1101/2021.05.05.442782"
+        },
+        {
+          "key": "e_1_3_3_206_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/d41586-021-03470-x"
+        },
+        {
+          "key": "e_1_3_3_207_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.37757/mr2022.v24.n3-4.13"
+        },
+        {
+          "key": "e_1_3_3_208_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.lana.2022.100423"
+        },
+        {
+          "key": "e_1_3_3_209_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.medj.2022.08.001"
+        },
+        {
+          "key": "e_1_3_3_210_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.nbt.2022.08.002"
+        },
+        {
+          "key": "e_1_3_3_211_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.eclinm.2022.101383"
+        },
+        {
+          "key": "e_1_3_3_212_2",
+          "unstructured": "Xinhuanet. 20 March 2021. Cuba’s Abdala COVID-19 vaccine enters phase 3 clinical trial. http://www.xinhuanet.com/english/northamerica/2021-03/20/c_139823225.htm. Accessed 16 January 2023."
+        },
+        {
+          "key": "e_1_3_3_213_2",
+          "unstructured": "Reuters. 22 June 2021. Cuba says Abdala vaccine 92.28% effective against coronavirus. Reuters London United Kingdom. https://www.reuters.com/business/healthcare-pharmaceuticals/cuba-says-abdala-vaccine-9228-effective-against-coronavirus-2021-06-21/."
+        },
+        {
+          "key": "e_1_3_3_214_2",
+          "unstructured": "Hernández LM León RT. 21 June 2021. Abdala con tres dosis tiene una eficacia de 92 28%. Granma Havana Cuba. https://www.granma.cu/cuba/2021-06-21/abdala-con-tres-dosis-tiene-una-eficacia-de-9228-porciento-21-06-2021-21-06-01. Accessed 22 December 2022."
+        },
+        {
+          "key": "e_1_3_3_215_2",
+          "unstructured": "OnCuba Staff. 27 June 2021. How was the efficacy of the Cuban COVID-19 vaccine candidates calculated? OnCubaNews English. https://oncubanews.com/en/cuba/how-was-the-efficacy-of-the-cuban-covid-19-vaccine-candidates-calculated/. Accessed 16 January 2023."
+        },
+        {
+          "key": "e_1_3_3_216_2",
+          "unstructured": "CECMED. 9 July 2021. Aprueba el CECMED el Autorizo de Uso de Emergencia del candidato vacunal cubano ABDALA. https://www.cecmed.cu/noticias/aprueba-cecmed-autorizo-uso-emergencia-candidato-vacunal-cubano-abdala. Accessed 22 December 2022."
+        },
+        {
+          "key": "e_1_3_3_217_2",
+          "unstructured": "Taylor L. 23 December 2021. Cuba’s home-grown vaccines have massively cut covid-19 cases. New Scientist. https://www.newscientist.com/article/2303121-cubas-home-grown-vaccines-have-massively-cut-covid-19-cases. Accessed 13 January 2023."
+        },
+        {
+          "key": "e_1_3_3_218_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1101/2022.09.08.22279690"
+        },
+        {
+          "key": "e_1_3_3_219_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.lana.2022.100366"
+        },
+        {
+          "key": "e_1_3_3_220_2",
+          "unstructured": "Ministerio de Salud Pública de Cuba. 2023. Actualización de la estrategia para el desarrollo de las vacunas cubanas. Ministerio de Salud Pública de Cuba Havana Cuba. https://salud.msp.gob.cu/actualizacion-de-la-vacunacion-en-el-marco-de-los-estudios-de-los-candidatos-vacunales-cubanos-y-la-intervencion-sanitaria/."
+        },
+        {
+          "key": "e_1_3_3_221_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.37757/MR2022.V24.N1.11"
+        },
+        {
+          "key": "e_1_3_3_222_2",
+          "unstructured": "World Health Organization. 2021. Status of COVID-19 vaccines within WHO EUL/PQ evaluation process. https://extranet.who.int/pqweb/sites/default/files/documents/Status_COVID_VAX_12January2023.pdf."
+        },
+        {
+          "key": "e_1_3_3_223_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1136/bmj.o230"
+        },
+        {
+          "key": "e_1_3_3_224_2",
+          "article-title": "Variantes ómicron y delta de SARS-CoV-2 conservan epítopes presentes en vacunas cubanas anti-covid-19 Abdala y Soberana",
+          "volume": "47",
+          "author": "Serrano-Barrera OR",
+          "year": "2022",
+          "unstructured": "Serrano-Barrera OR, Bello-Rodríguez MM, Pupo-Rodríguez OL, Robinson-Agramonte M, de los A, Pérez O. 2022. Variantes ómicron y delta de SARS-CoV-2 conservan epítopes presentes en vacunas cubanas anti-covid-19 Abdala y Soberana. Revista Electrónica Dr Zoilo E Marinello Vidaurreta 47:e299.",
+          "journal-title": "Revista Electrónica Dr Zoilo E Marinello Vidaurreta"
+        },
+        {
+          "key": "e_1_3_3_225_2",
+          "unstructured": "EFE. 13 October 2021. Cuba to apply booster doses of its COVID-19 vaccines. OnCubaNews English. https://oncubanews.com/en/coronavirus/cuba-to-apply-booster-doses-of-its-covid-19-vaccines/. Accessed 16 January 2023."
+        },
+        {
+          "key": "e_1_3_3_226_2",
+          "unstructured": "Meredith S. 13 January 2022. Why Cuba’s extraordinary Covid vaccine success could provide the best hope for low-income countries. CNBC. https://www.cnbc.com/2022/01/13/why-cubas-extraordinary-covid-vaccine-success-could-provide-the-best-hope-for-the-global-south.html. Accessed 16 January 2023."
+        },
+        {
+          "key": "e_1_3_3_227_2",
+          "unstructured": "Frank M Sherwood D. 29 December 2021. Cuba to fast-track boosters as Omicron looms. Reuters London United Kingdom. https://www.reuters.com/world/americas/cuba-fast-track-boosters-omicron-looms-2021-12-29/."
+        },
+        {
+          "key": "e_1_3_3_228_2",
+          "unstructured": "Worldometer. Cuba COVID. Coronavirus statistics. https://www.worldometers.info/coronavirus/country/cuba. Accessed 16 January 2023."
+        },
+        {
+          "key": "e_1_3_3_229_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1136/bmj.n1912"
+        },
+        {
+          "key": "e_1_3_3_230_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1503/cmaj.1095992"
+        },
+        {
+          "key": "e_1_3_3_231_2",
+          "unstructured": "Medicago. Covifenz®. Medicago Quebec Canada. https://medicago.com/en/our-products/our-vaccines/covifenz-covid-19-vlp-vaccine/. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_232_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/S0140-6736(20)32014-6"
+        },
+        {
+          "key": "e_1_3_3_233_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/s41591-021-01370-1"
+        },
+        {
+          "key": "e_1_3_3_234_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1586/erv.11.192"
+        },
+        {
+          "key": "e_1_3_3_235_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1056/NEJMoa2201300"
+        },
+        {
+          "key": "e_1_3_3_236_2",
+          "unstructured": "GSK. 24 February 2022. Medicago and GSK announce the approval by Health Canada of COVIFENZ an adjuvanted plant-based COVID-19 vaccine. https://www.gsk.com/en-gb/media/press-releases/medicago-and-gsk-announce-the-approval-by-health-canada-of-covifenz/. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_237_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1111/j.1467-7652.2008.00384.x"
+        },
+        {
+          "key": "e_1_3_3_238_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1136/bmj.o811"
+        },
+        {
+          "key": "e_1_3_3_239_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.4161/hv.22218"
+        },
+        {
+          "key": "e_1_3_3_240_2",
+          "unstructured": "Lam P. 29 December 2022. Big Tobacco’s divestment from Quebec’s Medicago ‘a step in the right direction’ for its COVID vaccine. CBC News Toronto Canada. https://www.cbc.ca/news/health/philips-morris-divestment-medicago-1.6700103. Accessed 16 January 2023."
+        },
+        {
+          "key": "e_1_3_3_241_2",
+          "unstructured": "Government of Canada. 2022. COVID-19 vaccine: Canadian immunization guide. https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-26-covid-19-vaccine.html. Accessed 22 December 2022."
+        },
+        {
+          "key": "e_1_3_3_242_2",
+          "unstructured": "Medicago. News releases. https://medicago.com/en/news-releases/. Accessed 16 January 2023."
+        },
+        {
+          "key": "e_1_3_3_243_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.bjid.2021.101606"
+        },
+        {
+          "key": "e_1_3_3_244_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/s41541-022-00507-8"
+        },
+        {
+          "key": "e_1_3_3_245_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/d41586-020-01756-0"
+        },
+        {
+          "key": "e_1_3_3_246_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1093/cid/ciab213"
+        },
+        {
+          "key": "e_1_3_3_247_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.eclinm.2020.100674"
+        },
+        {
+          "key": "e_1_3_3_248_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1126/science.abe2803"
+        },
+        {
+          "key": "e_1_3_3_249_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1126/sciadv.abf1374"
+        },
+        {
+          "key": "e_1_3_3_250_2",
+          "unstructured": "Mathieu E Ritchie H Rodés-Guirao L Appel C Giattino C Hasell J Macdonald B Dattani S Beltekian D Ortiz-Ospina E Roser M. 2020. Coronavirus pandemic (COVID-19). Our World in Data. https://ourworldindata.org/coronavirus."
+        },
+        {
+          "key": "e_1_3_3_251_2",
+          "unstructured": "Holder J. 2021. Tracking coronavirus vaccinations around the world. The New York Times New York NY. https://www.nytimes.com/interactive/2021/world/covid-vaccinations-tracker.html."
+        },
+        {
+          "key": "e_1_3_3_252_2",
+          "unstructured": "Goodman PS. 25 December 2020. One vaccine side effect: global economic inequality. The New York Times New York NY. https://www.nytimes.com/2020/12/25/business/coronavirus-vaccines-global-economy.html."
+        },
+        {
+          "key": "e_1_3_3_253_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1111/1468-0009.12503"
+        },
+        {
+          "key": "e_1_3_3_254_2",
+          "unstructured": "World Health Organization. 9 September 2020. Fair allocation mechanism for COVID-19 vaccines through the COVAX Facility. https://www.who.int/publications/m/item/fair-allocation-mechanism-for-covid-19-vaccines-through-the-covax-facility. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_255_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1126/science.369.6503.489"
+        },
+        {
+          "key": "e_1_3_3_256_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/S0140-6736(21)01367-2"
+        },
+        {
+          "key": "e_1_3_3_257_2",
+          "unstructured": "Twohey M Collins K Thomas K. 2020. With first dibs on vaccines rich countries have ‘cleared the shelves.’ The New York Times New York NY. https://www.nytimes.com/2020/12/15/us/coronavirus-vaccine-doses-reserved.html."
+        },
+        {
+          "key": "e_1_3_3_258_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1002/hpm.3341"
+        },
+        {
+          "key": "e_1_3_3_259_2",
+          "unstructured": "Mwai P. 31 December 2021. Covid-19 vaccinations: African nations miss WHO target. BBC News. https://www.bbc.com/news/56100076."
+        },
+        {
+          "key": "e_1_3_3_260_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1136/bmj.m4853"
+        },
+        {
+          "key": "e_1_3_3_261_2",
+          "unstructured": "World Health Organization. COVAX. Working toward for global equitable access to COVID-19 vaccines. https://www.who.int/initiatives/act-accelerator/covax. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_262_2",
+          "unstructured": "Gavi. COVAX vaccine roll-out. https://www.gavi.org/covax-vaccine-roll-out. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_263_2",
+          "unstructured": "Cohen J Kupferschmidt K. 9 March 2021. Countries now scrambling for COVID-19 vaccines may soon have surpluses to donate. American Association for the Advancement of Science (AAAS) Washington DC. https://www.science.org/content/article/countries-now-scrambling-covid-19-vaccines-may-soon-have-surpluses-donate."
+        },
+        {
+          "key": "e_1_3_3_264_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1126/science.abe6959"
+        },
+        {
+          "key": "e_1_3_3_265_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/s41598-020-78447-3"
+        },
+        {
+          "key": "e_1_3_3_266_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.vaccine.2020.12.059"
+        },
+        {
+          "key": "e_1_3_3_267_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1136/medethics-2020-107036"
+        },
+        {
+          "key": "e_1_3_3_268_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1101/2021.01.12.21249694"
+        },
+        {
+          "key": "e_1_3_3_269_2",
+          "unstructured": "Ferran M. 19 January 2022. CORBEVAX a new patent-free COVID-19 vaccine could be a pandemic game changer globally. The Conversation. http://theconversation.com/corbevax-a-new-patent-free-covid-19-vaccine-could-be-a-pandemic-game-changer-globally-174672. Accessed 16 January 2023."
+        },
+        {
+          "key": "e_1_3_3_270_2",
+          "unstructured": "VIPER Group COVID19 Vaccine Tracker Team. COVID19 Vaccine Tracker. Biological E Limited: Corbevax. https://covid19.trackvaccines.org/vaccines/54/. Retrieved 16 January 2023."
+        },
+        {
+          "key": "e_1_3_3_271_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1093/inthealth/ihab010"
+        },
+        {
+          "key": "e_1_3_3_272_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1208/s12249-021-01974-3"
+        },
+        {
+          "key": "e_1_3_3_273_2",
+          "unstructured": "Sguazzin A. 3 January 2021. Africa left with few options for vaccines South Africa says. Bloomberg. https://www.bloomberg.com/news/articles/2021-01-03/pfizer-to-supply-african-health-care-workers-with-vaccines. Accessed 13 January 2023."
+        },
+        {
+          "key": "e_1_3_3_274_2",
+          "unstructured": "UNICEF. COVAX: ensuring global equitable access to COVID-19 vaccines. https://www.unicef.org/supply/covax-ensuring-global-equitable-access-covid-19-vaccines. Accessed 16 January 2023."
+        },
+        {
+          "key": "e_1_3_3_275_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/S0140-6736(22)00328-2"
+        },
+        {
+          "key": "e_1_3_3_276_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1093/cid/ciac361"
+        },
+        {
+          "key": "e_1_3_3_277_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1080/20477724.2022.2091862"
+        },
+        {
+          "key": "e_1_3_3_278_2",
+          "unstructured": "Taylor A. 10 December 2021. Covax promised 2 billion vaccine doses to help the world’s neediest in 2021. It won’t deliver even half that. Washington Post Washington DC. https://www.washingtonpost.com/world/2021/12/10/covax-doses-delivered/."
+        },
+        {
+          "key": "e_1_3_3_279_2",
+          "unstructured": "World Health Organization. Ten threats to global health in 2019. https://www.who.int/news-room/spotlight/ten-threats-to-global-health-in-2019. Accessed 16 January 2023."
+        },
+        {
+          "key": "e_1_3_3_280_2",
+          "unstructured": "Hamel L Kirzinger A Lopes L Kearney A Sparks G Brodie M. 22 January 2021. KFF COVID-19 vaccine monitor: January 2021. KFF. https://www.kff.org/coronavirus-covid-19/report/kff-covid-19-vaccine-monitor-january-2021/. Accessed 16 January 2023."
+        },
+        {
+          "key": "e_1_3_3_281_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1056/NEJMms2101220"
+        },
+        {
+          "key": "e_1_3_3_282_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1111/jgs.17022"
+        },
+        {
+          "key": "e_1_3_3_283_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1177/00333549221114346"
+        },
+        {
+          "key": "e_1_3_3_284_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1002/jmv.28156"
+        },
+        {
+          "key": "e_1_3_3_285_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1126/sciadv.abm9825"
+        },
+        {
+          "key": "e_1_3_3_286_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1186/s41256-022-00255-1"
+        },
+        {
+          "key": "e_1_3_3_287_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1080/20477724.2021.2011580"
+        },
+        {
+          "key": "e_1_3_3_288_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1136/bmjopen-2021-052432"
+        },
+        {
+          "key": "e_1_3_3_289_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1093/pnasnexus/pgac207"
+        },
+        {
+          "key": "e_1_3_3_290_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/s41591-022-01728-z"
+        },
+        {
+          "key": "e_1_3_3_291_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1371/journal.pone.0268926"
+        },
+        {
+          "key": "e_1_3_3_292_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1093/pubmed/fdab122"
+        },
+        {
+          "key": "e_1_3_3_293_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1177/1075547020960463"
+        },
+        {
+          "key": "e_1_3_3_294_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1377/hlthaff.2020.02254"
+        },
+        {
+          "key": "e_1_3_3_295_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1186/s13037-021-00291-9"
+        },
+        {
+          "key": "e_1_3_3_296_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.vaccine.2015.09.035"
+        },
+        {
+          "key": "e_1_3_3_297_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.mayocp.2015.09.006"
+        },
+        {
+          "key": "e_1_3_3_298_2",
+          "unstructured": "Berg S. 20 July 2022. What sets apart Novavax option from other COVID-19 vaccines. American Medical Association Philadelphia PA. https://www.ama-assn.org/delivering-care/public-health/what-sets-apart-novavax-option-other-covid-19-vaccines. Accessed 16 January 2023."
+        },
+        {
+          "key": "e_1_3_3_299_2",
+          "unstructured": "Berman M Rupp R. 3 August 2022. Novavax COVID vaccine is for those hesitant to get vaccinated. The Daily News Galveston TX. https://www.galvnews.com/health/free/novavax-covid-vaccine-is-for-those-hesitant-to-get-vaccinated/article_8ddebef4-1db0-579a-b0d2-852f2031d881.html. Accessed 16 January 2023."
+        },
+        {
+          "key": "e_1_3_3_300_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1001/jama.2022.13661"
+        },
+        {
+          "key": "e_1_3_3_301_2",
+          "unstructured": "Constantino AK. 15 July 2022. Novavax’s new Covid vaccine is perfect for people scared of mRNA tech—but it won’t win over the unvaccinated. CNBC. https://www.cnbc.com/2022/07/15/why-new-novavax-covid-vaccine-wont-win-over-unvaccinated-americans.html. Accessed 16 January 2023."
+        },
+        {
+          "key": "e_1_3_3_302_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.vaccine.2021.05.099"
+        },
+        {
+          "key": "e_1_3_3_303_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.3201/1107.050219"
+        },
+        {
+          "key": "e_1_3_3_304_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/nrmicro3143"
+        },
+        {
+          "key": "e_1_3_3_305_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1056/NEJMp2005630"
+        },
+        {
+          "key": "e_1_3_3_306_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1080/21645515.2017.1358325"
+        },
+        {
+          "key": "e_1_3_3_307_2",
+          "unstructured": "Jordahl K Van Den Bossche J Fleischmann M McBride J Wasserman J Badaracco AG Gerard J Snow AD Tratner J Perry M Farmer C Hjelle GA Cochran M Gillies S Culbertson L Bartos M Ward B Caria G Taves M Eubank N Sangarshanan Flavin J Richards M Rey S Maxalbert Bilogur A Ren C Arribas-Bel D Mesejo-León D Wasser L. 16 October 2021. geopandas/geopandas: v0.10.2. Zenodo. https://doi.org/gqkzpv."
+        },
+        {
+          "key": "e_1_3_3_308_2",
+          "unstructured": "Kibirige H. 2022. plotnine. https://github.com/has2k1/plotnine. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_309_2",
+          "unstructured": "Wickham H Chang W Henry L Pedersen TL Takahashi K Wilke C Woo K Yutani H Dunnington D R Studio. Smoothed conditional means—geom_smooth. https://ggplot2.tidyverse.org/reference/geom_smooth.html. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_310_2",
+          "unstructured": "Our World in Data. 2022. COVID-19 dataset by Our World in Data. https://github.com/owid/covid-19-data/blob/9e0b8314da28f155a88bbaf7617390c01c1c26da/public/data/vaccinations/locations.csv. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_311_2",
+          "unstructured": "VIPER Group COVID19 Vaccine Tracker Team. COVID19 Vaccine Tracker. Types of vaccines. https://covid19.trackvaccines.org/types-of-vaccines/. Accessed 5 December 2022."
+        },
+        {
+          "key": "e_1_3_3_312_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/S1473-3099(20)30120-1"
+        },
+        {
+          "key": "e_1_3_3_313_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1080/21645515.2022.2122503"
+        },
+        {
+          "key": "e_1_3_3_314_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.3390/vaccines10111800"
+        }
+      ],
+      "container-title": [
+        "mSystems"
+      ],
+      "original-title": [],
+      "language": "en",
+      "link": [
+        {
+          "URL": "https://journals.asm.org/doi/pdf/10.1128/msystems.00927-22",
+          "content-type": "application/pdf",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "https://journals.asm.org/doi/pdf/10.1128/msystems.00927-22",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2024,
+            8,
+            11
+          ]
+        ],
+        "date-time": "2024-08-11T18:59:04Z",
+        "timestamp": 1723402744000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://journals.asm.org/doi/10.1128/msystems.00927-22"
+        }
+      },
+      "subtitle": [],
+      "editor": [
+        {
+          "given": "Jack A.",
+          "family": "Gilbert",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "editor"
+            }
+          ]
+        }
+      ],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2023,
+            4,
+            27
+          ]
+        ]
+      },
+      "references-count": 313,
+      "journal-issue": {
+        "issue": "2",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              4,
+              27
+            ]
+          ]
+        }
+      },
+      "alternative-id": [
+        "10.1128/msystems.00927-22"
+      ],
+      "URL": "https://doi.org/10.1128/msystems.00927-22",
+      "relation": {},
+      "ISSN": [
+        "2379-5077"
+      ],
+      "issn-type": [
+        {
+          "value": "2379-5077",
+          "type": "electronic"
+        }
+      ],
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2023,
+            4,
+            27
+          ]
+        ]
+      },
+      "assertion": [
+        {
+          "value": "2023-03-02",
+          "order": 3,
+          "name": "published",
+          "label": "Published",
+          "group": {
+            "name": "publication_history",
+            "label": "Publication History"
+          }
+        }
+      ],
+      "article-number": "e00927-22"
+    }
+  }
+}

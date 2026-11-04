@@ -1,0 +1,37 @@
+{
+  "url": "https://api.ror.org/v2/organizations/00njsd438",
+  "recordedAt": "2026-11-04",
+  "note": "Trimmed to id, types, names and status. Example of a ROR `company`.",
+  "body": {
+    "id": "https://ror.org/00njsd438",
+    "types": [
+      "company",
+      "funder"
+    ],
+    "names": [
+      {
+        "lang": null,
+        "types": [
+          "ror_display",
+          "label"
+        ],
+        "value": "Google (United States)"
+      },
+      {
+        "lang": "en",
+        "types": [
+          "alias"
+        ],
+        "value": "Google Research"
+      },
+      {
+        "lang": null,
+        "types": [
+          "alias"
+        ],
+        "value": "Googleplex"
+      }
+    ],
+    "status": "active"
+  }
+}

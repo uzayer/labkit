@@ -1,0 +1,262 @@
+{
+  "url": "https://api.datacite.org/dois/10.5281/zenodo.20314127",
+  "recordedAt": "2026-11-04",
+  "note": "Zenodo preprint: HasVersion its sibling deposit, which must not read as a published version.",
+  "body": {
+    "data": {
+      "id": "10.5281/zenodo.20314127",
+      "type": "dois",
+      "attributes": {
+        "doi": "10.5281/zenodo.20314127",
+        "prefix": "10.5281",
+        "suffix": "zenodo.20314127",
+        "identifiers": [],
+        "alternateIdentifiers": [],
+        "creators": [
+          {
+            "name": "Lange, Ethan M.",
+            "nameType": "Personal",
+            "givenName": "Ethan M.",
+            "familyName": "Lange",
+            "affiliation": [
+              "University of Colorado Anschutz Medical Campus"
+            ],
+            "nameIdentifiers": [
+              {
+                "nameIdentifier": "0000-0001-7075-4287",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          },
+          {
+            "name": "Ganesh, Vikram Adithya",
+            "nameType": "Personal",
+            "givenName": "Vikram Adithya",
+            "familyName": "Ganesh",
+            "affiliation": [
+              "University of Colorado Anschutz Medical Campus"
+            ],
+            "nameIdentifiers": [
+              {
+                "nameIdentifier": "0009-0009-2056-2696",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          },
+          {
+            "name": "Ivich, Adriana",
+            "nameType": "Personal",
+            "givenName": "Adriana",
+            "familyName": "Ivich",
+            "affiliation": [
+              "University of Colorado Anschutz Medical Campus"
+            ],
+            "nameIdentifiers": []
+          },
+          {
+            "name": "Rubinetti, Vince",
+            "nameType": "Personal",
+            "givenName": "Vince",
+            "familyName": "Rubinetti",
+            "affiliation": [
+              "University of Colorado Anschutz Medical Campus"
+            ],
+            "nameIdentifiers": [
+              {
+                "nameIdentifier": "0000-0002-4655-3773",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          },
+          {
+            "name": "Greene, Casey",
+            "nameType": "Personal",
+            "givenName": "Casey",
+            "familyName": "Greene",
+            "affiliation": [
+              "University of Colorado Anschutz Medical Campus"
+            ],
+            "nameIdentifiers": [
+              {
+                "nameIdentifier": "0000-0001-8713-9213",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          },
+          {
+            "name": "Davis, Sean",
+            "nameType": "Personal",
+            "givenName": "Sean",
+            "familyName": "Davis",
+            "affiliation": [
+              "University of Colorado Anschutz Medical Campus"
+            ],
+            "nameIdentifiers": [
+              {
+                "nameIdentifier": "0000-0002-8991-6458",
+                "nameIdentifierScheme": "ORCID"
+              }
+            ]
+          }
+        ],
+        "titles": [
+          {
+            "title": "Lifecycle-aware evaluation of biomedical data ecosystems"
+          }
+        ],
+        "publisher": "Zenodo",
+        "container": {},
+        "publicationYear": 2026,
+        "subjects": [
+          {
+            "subject": "biomedical data ecosystems"
+          },
+          {
+            "subject": "research evaluation"
+          },
+          {
+            "subject": "FAIR"
+          },
+          {
+            "subject": "bibliometrics"
+          },
+          {
+            "subject": "NIH Common Fund"
+          },
+          {
+            "subject": "data sharing"
+          }
+        ],
+        "contributors": [],
+        "dates": [
+          {
+            "date": "2026-05-20",
+            "dateType": "Issued"
+          }
+        ],
+        "language": "en",
+        "types": {
+          "ris": "GEN",
+          "bibtex": "misc",
+          "citeproc": "article",
+          "schemaOrg": "CreativeWork",
+          "resourceType": "",
+          "resourceTypeGeneral": "Preprint"
+        },
+        "relatedIdentifiers": [
+          {
+            "relationType": "IsSupplementedBy",
+            "relatedIdentifier": "https://github.com/seandavi/2026-cfde-metrics-manuscript",
+            "resourceTypeGeneral": "Software",
+            "relatedIdentifierType": "URL"
+          },
+          {
+            "relationType": "HasVersion",
+            "relatedIdentifier": "10.5281/zenodo.20314128",
+            "relatedIdentifierType": "DOI"
+          }
+        ],
+        "relatedItems": [],
+        "sizes": [],
+        "formats": [],
+        "version": null,
+        "rightsList": [
+          {
+            "rights": "Creative Commons Attribution 4.0 International",
+            "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+            "schemeUri": "https://spdx.org/licenses/",
+            "rightsIdentifier": "cc-by-4.0",
+            "rightsIdentifierScheme": "SPDX"
+          }
+        ],
+        "descriptions": [],
+        "geoLocations": [],
+        "fundingReferences": [
+          {
+            "awardTitle": "NIH Common Fund Data Ecosystem Integration and Coordination Center (ICC)",
+            "funderName": "National Institutes of Health",
+            "awardNumber": "U54OD036472",
+            "funderIdentifier": "10.13039/100000002",
+            "funderIdentifierType": "Crossref Funder ID"
+          }
+        ],
+        "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJlc291cmNlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00L21ldGFkYXRhLnhzZCI+CiAgPGlkZW50aWZpZXIgaWRlbnRpZmllclR5cGU9IkRPSSI+MTAuNTI4MS9aRU5PRE8uMjAzMTQxMjc8L2lkZW50aWZpZXI+CiAgPGNyZWF0b3JzPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPkxhbmdlLCBFdGhhbiBNLjwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+RXRoYW4gTS48L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+TGFuZ2U8L2ZhbWlseU5hbWU+CiAgICAgIDxuYW1lSWRlbnRpZmllciBuYW1lSWRlbnRpZmllclNjaGVtZT0iT1JDSUQiIHNjaGVtZVVSST0iIj4wMDAwLTAwMDEtNzA3NS00Mjg3PC9uYW1lSWRlbnRpZmllcj4KICAgICAgPGFmZmlsaWF0aW9uIGFmZmlsaWF0aW9uSWRlbnRpZmllcj0iaHR0cHM6Ly9yb3Iub3JnLzAzd21mMXkxNiIgYWZmaWxpYXRpb25JZGVudGlmaWVyU2NoZW1lPSJST1IiPlVuaXZlcnNpdHkgb2YgQ29sb3JhZG8gQW5zY2h1dHogTWVkaWNhbCBDYW1wdXM8L2FmZmlsaWF0aW9uPgogICAgPC9jcmVhdG9yPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPkdhbmVzaCwgVmlrcmFtIEFkaXRoeWE8L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPlZpa3JhbSBBZGl0aHlhPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPkdhbmVzaDwvZmFtaWx5TmFtZT4KICAgICAgPG5hbWVJZGVudGlmaWVyIG5hbWVJZGVudGlmaWVyU2NoZW1lPSJPUkNJRCIgc2NoZW1lVVJJPSIiPjAwMDktMDAwOS0yMDU2LTI2OTY8L25hbWVJZGVudGlmaWVyPgogICAgICA8YWZmaWxpYXRpb24gYWZmaWxpYXRpb25JZGVudGlmaWVyPSJodHRwczovL3Jvci5vcmcvMDN3bWYxeTE2IiBhZmZpbGlhdGlvbklkZW50aWZpZXJTY2hlbWU9IlJPUiI+VW5pdmVyc2l0eSBvZiBDb2xvcmFkbyBBbnNjaHV0eiBNZWRpY2FsIENhbXB1czwvYWZmaWxpYXRpb24+CiAgICA8L2NyZWF0b3I+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lIG5hbWVUeXBlPSJQZXJzb25hbCI+SXZpY2gsIEFkcmlhbmE8L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPkFkcmlhbmE8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+SXZpY2g8L2ZhbWlseU5hbWU+CiAgICAgIDxhZmZpbGlhdGlvbiBhZmZpbGlhdGlvbklkZW50aWZpZXI9Imh0dHBzOi8vcm9yLm9yZy8wM3dtZjF5MTYiIGFmZmlsaWF0aW9uSWRlbnRpZmllclNjaGVtZT0iUk9SIj5Vbml2ZXJzaXR5IG9mIENvbG9yYWRvIEFuc2NodXR6IE1lZGljYWwgQ2FtcHVzPC9hZmZpbGlhdGlvbj4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5SdWJpbmV0dGksIFZpbmNlPC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5WaW5jZTwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5SdWJpbmV0dGk8L2ZhbWlseU5hbWU+CiAgICAgIDxuYW1lSWRlbnRpZmllciBuYW1lSWRlbnRpZmllclNjaGVtZT0iT1JDSUQiIHNjaGVtZVVSST0iIj4wMDAwLTAwMDItNDY1NS0zNzczPC9uYW1lSWRlbnRpZmllcj4KICAgICAgPGFmZmlsaWF0aW9uIGFmZmlsaWF0aW9uSWRlbnRpZmllcj0iaHR0cHM6Ly9yb3Iub3JnLzAzd21mMXkxNiIgYWZmaWxpYXRpb25JZGVudGlmaWVyU2NoZW1lPSJST1IiPlVuaXZlcnNpdHkgb2YgQ29sb3JhZG8gQW5zY2h1dHogTWVkaWNhbCBDYW1wdXM8L2FmZmlsaWF0aW9uPgogICAgPC9jcmVhdG9yPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPkdyZWVuZSwgQ2FzZXk8L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPkNhc2V5PC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPkdyZWVuZTwvZmFtaWx5TmFtZT4KICAgICAgPG5hbWVJZGVudGlmaWVyIG5hbWVJZGVudGlmaWVyU2NoZW1lPSJPUkNJRCIgc2NoZW1lVVJJPSIiPjAwMDAtMDAwMS04NzEzLTkyMTM8L25hbWVJZGVudGlmaWVyPgogICAgICA8YWZmaWxpYXRpb24gYWZmaWxpYXRpb25JZGVudGlmaWVyPSJodHRwczovL3Jvci5vcmcvMDN3bWYxeTE2IiBhZmZpbGlhdGlvbklkZW50aWZpZXJTY2hlbWU9IlJPUiI+VW5pdmVyc2l0eSBvZiBDb2xvcmFkbyBBbnNjaHV0eiBNZWRpY2FsIENhbXB1czwvYWZmaWxpYXRpb24+CiAgICA8L2NyZWF0b3I+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lIG5hbWVUeXBlPSJQZXJzb25hbCI+RGF2aXMsIFNlYW48L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPlNlYW48L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+RGF2aXM8L2ZhbWlseU5hbWU+CiAgICAgIDxuYW1lSWRlbnRpZmllciBuYW1lSWRlbnRpZmllclNjaGVtZT0iT1JDSUQiIHNjaGVtZVVSST0iIj4wMDAwLTAwMDItODk5MS02NDU4PC9uYW1lSWRlbnRpZmllcj4KICAgICAgPGFmZmlsaWF0aW9uIGFmZmlsaWF0aW9uSWRlbnRpZmllcj0iaHR0cHM6Ly9yb3Iub3JnLzAzd21mMXkxNiIgYWZmaWxpYXRpb25JZGVudGlmaWVyU2NoZW1lPSJST1IiPlVuaXZlcnNpdHkgb2YgQ29sb3JhZG8gQW5zY2h1dHogTWVkaWNhbCBDYW1wdXM8L2FmZmlsaWF0aW9uPgogICAgPC9jcmVhdG9yPgogIDwvY3JlYXRvcnM+CiAgPHRpdGxlcz4KICAgIDx0aXRsZT5MaWZlY3ljbGUtYXdhcmUgZXZhbHVhdGlvbiBvZiBiaW9tZWRpY2FsIGRhdGEgZWNvc3lzdGVtczwvdGl0bGU+CiAgPC90aXRsZXM+CiAgPHB1Ymxpc2hlcj5aZW5vZG88L3B1Ymxpc2hlcj4KICA8cHVibGljYXRpb25ZZWFyPjIwMjY8L3B1YmxpY2F0aW9uWWVhcj4KICA8cmVzb3VyY2VUeXBlIHJlc291cmNlVHlwZUdlbmVyYWw9IlByZXByaW50Ii8+CiAgPHN1YmplY3RzPgogICAgPHN1YmplY3Q+YmlvbWVkaWNhbCBkYXRhIGVjb3N5c3RlbXM8L3N1YmplY3Q+CiAgICA8c3ViamVjdD5yZXNlYXJjaCBldmFsdWF0aW9uPC9zdWJqZWN0PgogICAgPHN1YmplY3Q+RkFJUjwvc3ViamVjdD4KICAgIDxzdWJqZWN0PmJpYmxpb21ldHJpY3M8L3N1YmplY3Q+CiAgICA8c3ViamVjdD5OSUggQ29tbW9uIEZ1bmQ8L3N1YmplY3Q+CiAgICA8c3ViamVjdD5kYXRhIHNoYXJpbmc8L3N1YmplY3Q+CiAgPC9zdWJqZWN0cz4KICA8ZGF0ZXM+CiAgICA8ZGF0ZSBkYXRlVHlwZT0iSXNzdWVkIj4yMDI2LTA1LTIwPC9kYXRlPgogIDwvZGF0ZXM+CiAgPGxhbmd1YWdlPmVuPC9sYW5ndWFnZT4KICA8cmVsYXRlZElkZW50aWZpZXJzPgogICAgPHJlbGF0ZWRJZGVudGlmaWVyIHJlbGF0ZWRJZGVudGlmaWVyVHlwZT0iVVJMIiByZWxhdGlvblR5cGU9IklzU3VwcGxlbWVudGVkQnkiIHJlc291cmNlVHlwZUdlbmVyYWw9IlNvZnR3YXJlIj5odHRwczovL2dpdGh1Yi5jb20vc2VhbmRhdmkvMjAyNi1jZmRlLW1ldHJpY3MtbWFudXNjcmlwdDwvcmVsYXRlZElkZW50aWZpZXI+CiAgICA8cmVsYXRlZElkZW50aWZpZXIgcmVsYXRlZElkZW50aWZpZXJUeXBlPSJET0kiIHJlbGF0aW9uVHlwZT0iSGFzVmVyc2lvbiI+MTAuNTI4MS96ZW5vZG8uMjAzMTQxMjg8L3JlbGF0ZWRJZGVudGlmaWVyPgogIDwvcmVsYXRlZElkZW50aWZpZXJzPgogIDxzaXplcy8+CiAgPGZvcm1hdHMvPgogIDx2ZXJzaW9uLz4KICA8cmlnaHRzTGlzdD4KICAgIDxyaWdodHMgcmlnaHRzVVJJPSJodHRwczovL2NyZWF0aXZlY29tbW9ucy5vcmcvbGljZW5zZXMvYnkvNC4wL2xlZ2FsY29kZSIgcmlnaHRzSWRlbnRpZmllcj0iY2MtYnktNC4wIiByaWdodHNJZGVudGlmaWVyU2NoZW1lPSJTUERYIiBzY2hlbWVVUkk9Imh0dHBzOi8vc3BkeC5vcmcvbGljZW5zZXMvIj5DcmVhdGl2ZSBDb21tb25zIEF0dHJpYnV0aW9uIDQuMCBJbnRlcm5hdGlvbmFsPC9yaWdodHM+CiAgPC9yaWdodHNMaXN0PgogIDxmdW5kaW5nUmVmZXJlbmNlcz4KICAgIDxmdW5kaW5nUmVmZXJlbmNlPgogICAgICA8ZnVuZGVyTmFtZT5OYXRpb25hbCBJbnN0aXR1dGVzIG9mIEhlYWx0aDwvZnVuZGVyTmFtZT4KICAgICAgPGZ1bmRlcklkZW50aWZpZXIgZnVuZGVySWRlbnRpZmllclR5cGU9IkNyb3NzcmVmIEZ1bmRlciBJRCI+MTAuMTMwMzkvMTAwMDAwMDAyPC9mdW5kZXJJZGVudGlmaWVyPgogICAgICA8YXdhcmROdW1iZXI+VTU0T0QwMzY0NzI8L2F3YXJkTnVtYmVyPgogICAgICA8YXdhcmRUaXRsZT5OSUggQ29tbW9uIEZ1bmQgRGF0YSBFY29zeXN0ZW0gSW50ZWdyYXRpb24gYW5kIENvb3JkaW5hdGlvbiBDZW50ZXIgKElDQyk8L2F3YXJkVGl0bGU+CiAgICA8L2Z1bmRpbmdSZWZlcmVuY2U+CiAgPC9mdW5kaW5nUmVmZXJlbmNlcz4KPC9yZXNvdXJjZT4K",
+        "url": "https://zenodo.org/doi/10.5281/zenodo.20314127",
+        "contentUrl": null,
+        "metadataVersion": 1,
+        "schemaVersion": "http://datacite.org/schema/kernel-4",
+        "source": "api",
+        "isActive": true,
+        "state": "findable",
+        "reason": null,
+        "viewCount": 0,
+        "viewsOverTime": [],
+        "downloadCount": 0,
+        "downloadsOverTime": [],
+        "referenceCount": 0,
+        "citationCount": 0,
+        "citationsOverTime": [],
+        "partCount": 0,
+        "partOfCount": 0,
+        "versionCount": 2,
+        "versionOfCount": 1,
+        "created": "2026-05-20T17:40:16.000Z",
+        "registered": "2026-05-20T17:40:16.000Z",
+        "published": "2026",
+        "updated": "2026-09-15T16:36:07.000Z"
+      },
+      "relationships": {
+        "client": {
+          "data": {
+            "id": "cern.zenodo",
+            "type": "clients"
+          }
+        },
+        "provider": {
+          "data": {
+            "id": "cern",
+            "type": "providers"
+          }
+        },
+        "media": {
+          "data": {
+            "id": "10.5281/zenodo.20314127",
+            "type": "media"
+          }
+        },
+        "references": {
+          "data": []
+        },
+        "citations": {
+          "data": []
+        },
+        "parts": {
+          "data": []
+        },
+        "partOf": {
+          "data": []
+        },
+        "versions": {
+          "data": [
+            {
+              "id": "10.5281/zenodo.20314128",
+              "type": "dois"
+            },
+            {
+              "id": "10.5281/zenodo.20314127",
+              "type": "dois"
+            }
+          ]
+        },
+        "versionOf": {
+          "data": [
+            {
+              "id": "10.5281/zenodo.20314127",
+              "type": "dois"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,270 @@
+{
+  "url": "https://api.datacite.org/dois/10.48550/arXiv.2208.08907",
+  "recordedAt": "2026-11-04",
+  "note": "arXiv DataCite record: resourceTypeGeneral Text; IsVersionOf the mSystems DOI.",
+  "body": {
+    "data": {
+      "id": "10.48550/arxiv.2208.08907",
+      "type": "dois",
+      "attributes": {
+        "doi": "10.48550/arxiv.2208.08907",
+        "prefix": "10.48550",
+        "suffix": "arxiv.2208.08907",
+        "identifiers": [
+          {
+            "identifier": "2208.08907",
+            "identifierType": "arXiv"
+          }
+        ],
+        "alternateIdentifiers": [
+          {
+            "alternateIdentifierType": "arXiv",
+            "alternateIdentifier": "2208.08907"
+          }
+        ],
+        "creators": [
+          {
+            "name": "Rando, Halie M.",
+            "nameType": "Personal",
+            "givenName": "Halie M.",
+            "familyName": "Rando",
+            "affiliation": [],
+            "nameIdentifiers": []
+          },
+          {
+            "name": "Lordan, Ronan",
+            "nameType": "Personal",
+            "givenName": "Ronan",
+            "familyName": "Lordan",
+            "affiliation": [],
+            "nameIdentifiers": []
+          },
+          {
+            "name": "Lee, Alexandra J.",
+            "nameType": "Personal",
+            "givenName": "Alexandra J.",
+            "familyName": "Lee",
+            "affiliation": [],
+            "nameIdentifiers": []
+          },
+          {
+            "name": "Naik, Amruta",
+            "nameType": "Personal",
+            "givenName": "Amruta",
+            "familyName": "Naik",
+            "affiliation": [],
+            "nameIdentifiers": []
+          },
+          {
+            "name": "Wellhausen, Nils",
+            "nameType": "Personal",
+            "givenName": "Nils",
+            "familyName": "Wellhausen",
+            "affiliation": [],
+            "nameIdentifiers": []
+          },
+          {
+            "name": "Sell, Elizabeth",
+            "nameType": "Personal",
+            "givenName": "Elizabeth",
+            "familyName": "Sell",
+            "affiliation": [],
+            "nameIdentifiers": []
+          },
+          {
+            "name": "Kolla, Likhitha",
+            "nameType": "Personal",
+            "givenName": "Likhitha",
+            "familyName": "Kolla",
+            "affiliation": [],
+            "nameIdentifiers": []
+          },
+          {
+            "name": "Consortium, COVID-19 Review",
+            "nameType": "Personal",
+            "givenName": "COVID-19 Review",
+            "familyName": "Consortium",
+            "affiliation": [],
+            "nameIdentifiers": []
+          },
+          {
+            "name": "Gitter, Anthony",
+            "nameType": "Personal",
+            "givenName": "Anthony",
+            "familyName": "Gitter",
+            "affiliation": [],
+            "nameIdentifiers": []
+          },
+          {
+            "name": "Greene, Casey S.",
+            "nameType": "Personal",
+            "givenName": "Casey S.",
+            "familyName": "Greene",
+            "affiliation": [],
+            "nameIdentifiers": []
+          }
+        ],
+        "titles": [
+          {
+            "title": "Application of Traditional Vaccine Development Strategies to SARS-CoV-2"
+          }
+        ],
+        "publisher": "arXiv",
+        "container": {},
+        "publicationYear": 2022,
+        "subjects": [
+          {
+            "lang": "en",
+            "subject": "Other Quantitative Biology (q-bio.OT)",
+            "subjectScheme": "arXiv"
+          },
+          {
+            "subject": "FOS: Biological sciences",
+            "subjectScheme": "Fields of Science and Technology (FOS)"
+          },
+          {
+            "subject": "FOS: Biological sciences",
+            "schemeUri": "http://www.oecd.org/science/inno/38235147.pdf",
+            "subjectScheme": "Fields of Science and Technology (FOS)"
+          }
+        ],
+        "contributors": [],
+        "dates": [
+          {
+            "date": "2022-08-16T20:58:12Z",
+            "dateType": "Submitted",
+            "dateInformation": "v1"
+          },
+          {
+            "date": "2022-08-19T00:16:19Z",
+            "dateType": "Updated",
+            "dateInformation": "v1"
+          },
+          {
+            "date": "2023-01-23T20:27:37Z",
+            "dateType": "Submitted",
+            "dateInformation": "v2"
+          },
+          {
+            "date": "2023-05-02T00:17:30Z",
+            "dateType": "Updated",
+            "dateInformation": "v2"
+          },
+          {
+            "date": "2022-08",
+            "dateType": "Available",
+            "dateInformation": "v1"
+          },
+          {
+            "date": "2022",
+            "dateType": "Issued"
+          }
+        ],
+        "language": null,
+        "types": {
+          "ris": "RPRT",
+          "bibtex": "article",
+          "citeproc": "article-journal",
+          "schemaOrg": "ScholarlyArticle",
+          "resourceType": "Article",
+          "resourceTypeGeneral": "Text"
+        },
+        "relatedIdentifiers": [
+          {
+            "relationType": "IsVersionOf",
+            "relatedIdentifier": "10.1128/msystems.00927-22",
+            "relatedIdentifierType": "DOI"
+          }
+        ],
+        "relatedItems": [],
+        "sizes": [],
+        "formats": [],
+        "version": "2",
+        "rightsList": [
+          {
+            "rights": "Creative Commons Attribution 4.0 International",
+            "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+            "schemeUri": "https://spdx.org/licenses/",
+            "rightsIdentifier": "cc-by-4.0",
+            "rightsIdentifierScheme": "SPDX"
+          }
+        ],
+        "descriptions": [
+          {
+            "description": "Over the past 150 years, vaccines have revolutionized the relationship between people and disease. During the COVID-19 pandemic, technologies such as mRNA vaccines have received attention due to their novelty and successes. However, more traditional vaccine development platforms have also yielded important tools in the worldwide fight against the SARS-CoV-2 virus. A variety of approaches have been used to develop COVID-19 vaccines that are now authorized for use in countries around the world. In this review, we highlight strategies that focus on the viral capsid and outwards, rather than on the nucleic acids inside. These approaches fall into two broad categories: whole-virus vaccines and subunit vaccines. Whole-virus vaccines use the virus itself, either in an inactivated or attenuated state. Subunit vaccines contain instead an isolated, immunogenic component of the virus. Here, we highlight vaccine candidates that apply these approaches against SARS-CoV-2 in different ways. In a companion manuscript, we review the more recent and novel development of nucleic-acid based vaccine technologies. We further consider the role that these COVID-19 vaccine development programs have played in prophylaxis at the global scale. Well-established vaccine technologies have proved especially important to making vaccines accessible in low- and middle-income countries. Vaccine development programs that use established platforms have been undertaken in a much wider range of countries than those using nucleic-acid-based technologies, which have been led by wealthy Western countries. Therefore, these vaccine platforms, though less novel from a biotechnological standpoint, have proven to be extremely important to the management of SARS-CoV-2.",
+            "descriptionType": "Abstract"
+          }
+        ],
+        "geoLocations": [],
+        "fundingReferences": [],
+        "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHJlc291cmNlIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00LjMvbWV0YWRhdGEueHNkIj4KICA8aWRlbnRpZmllciBpZGVudGlmaWVyVHlwZT0iRE9JIj4xMC40ODU1MC9BUlhJVi4yMjA4LjA4OTA3PC9pZGVudGlmaWVyPgogIDxhbHRlcm5hdGVJZGVudGlmaWVycz4KICAgIDxhbHRlcm5hdGVJZGVudGlmaWVyIGFsdGVybmF0ZUlkZW50aWZpZXJUeXBlPSJhclhpdiI+MjIwOC4wODkwNzwvYWx0ZXJuYXRlSWRlbnRpZmllcj4KICA8L2FsdGVybmF0ZUlkZW50aWZpZXJzPgogIDxjcmVhdG9ycz4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5SYW5kbywgSGFsaWUgTS48L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPkhhbGllIE0uPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPlJhbmRvPC9mYW1pbHlOYW1lPgogICAgPC9jcmVhdG9yPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPkxvcmRhbiwgUm9uYW48L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPlJvbmFuPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPkxvcmRhbjwvZmFtaWx5TmFtZT4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5MZWUsIEFsZXhhbmRyYSBKLjwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+QWxleGFuZHJhIEouPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPkxlZTwvZmFtaWx5TmFtZT4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5OYWlrLCBBbXJ1dGE8L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPkFtcnV0YTwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5OYWlrPC9mYW1pbHlOYW1lPgogICAgPC9jcmVhdG9yPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPldlbGxoYXVzZW4sIE5pbHM8L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPk5pbHM8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+V2VsbGhhdXNlbjwvZmFtaWx5TmFtZT4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5TZWxsLCBFbGl6YWJldGg8L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPkVsaXphYmV0aDwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5TZWxsPC9mYW1pbHlOYW1lPgogICAgPC9jcmVhdG9yPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPktvbGxhLCBMaWtoaXRoYTwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+TGlraGl0aGE8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+S29sbGE8L2ZhbWlseU5hbWU+CiAgICA8L2NyZWF0b3I+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lIG5hbWVUeXBlPSJQZXJzb25hbCI+Q29uc29ydGl1bSwgQ09WSUQtMTkgUmV2aWV3PC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5DT1ZJRC0xOSBSZXZpZXc8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+Q29uc29ydGl1bTwvZmFtaWx5TmFtZT4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5HaXR0ZXIsIEFudGhvbnk8L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPkFudGhvbnk8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+R2l0dGVyPC9mYW1pbHlOYW1lPgogICAgPC9jcmVhdG9yPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPkdyZWVuZSwgQ2FzZXkgUy48L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPkNhc2V5IFMuPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPkdyZWVuZTwvZmFtaWx5TmFtZT4KICAgIDwvY3JlYXRvcj4KICA8L2NyZWF0b3JzPgogIDx0aXRsZXM+CiAgICA8dGl0bGU+QXBwbGljYXRpb24gb2YgVHJhZGl0aW9uYWwgVmFjY2luZSBEZXZlbG9wbWVudCBTdHJhdGVnaWVzIHRvIFNBUlMtQ29WLTI8L3RpdGxlPgogIDwvdGl0bGVzPgogIDxwdWJsaXNoZXI+YXJYaXY8L3B1Ymxpc2hlcj4KICA8cHVibGljYXRpb25ZZWFyPjIwMjI8L3B1YmxpY2F0aW9uWWVhcj4KICA8c3ViamVjdHM+CiAgICA8c3ViamVjdCB4bWw6bGFuZz0iZW4iIHN1YmplY3RTY2hlbWU9ImFyWGl2Ij5PdGhlciBRdWFudGl0YXRpdmUgQmlvbG9neSAocS1iaW8uT1QpPC9zdWJqZWN0PgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iRmllbGRzIG9mIFNjaWVuY2UgYW5kIFRlY2hub2xvZ3kgKEZPUykiPkZPUzogQmlvbG9naWNhbCBzY2llbmNlczwvc3ViamVjdD4KICA8L3N1YmplY3RzPgogIDxkYXRlcz4KICAgIDxkYXRlIGRhdGVUeXBlPSJTdWJtaXR0ZWQiIGRhdGVJbmZvcm1hdGlvbj0idjEiPjIwMjItMDgtMTZUMjA6NTg6MTJaPC9kYXRlPgogICAgPGRhdGUgZGF0ZVR5cGU9IlVwZGF0ZWQiIGRhdGVJbmZvcm1hdGlvbj0idjEiPjIwMjItMDgtMTlUMDA6MTY6MTlaPC9kYXRlPgogICAgPGRhdGUgZGF0ZVR5cGU9IlN1Ym1pdHRlZCIgZGF0ZUluZm9ybWF0aW9uPSJ2MiI+MjAyMy0wMS0yM1QyMDoyNzozN1o8L2RhdGU+CiAgICA8ZGF0ZSBkYXRlVHlwZT0iVXBkYXRlZCIgZGF0ZUluZm9ybWF0aW9uPSJ2MiI+MjAyMy0wNS0wMlQwMDoxNzozMFo8L2RhdGU+CiAgICA8ZGF0ZSBkYXRlVHlwZT0iQXZhaWxhYmxlIiBkYXRlSW5mb3JtYXRpb249InYxIj4yMDIyLTA4PC9kYXRlPgogIDwvZGF0ZXM+CiAgPHJlc291cmNlVHlwZSByZXNvdXJjZVR5cGVHZW5lcmFsPSJUZXh0Ij5BcnRpY2xlPC9yZXNvdXJjZVR5cGU+CiAgPHJlbGF0ZWRJZGVudGlmaWVycz4KICAgIDxyZWxhdGVkSWRlbnRpZmllciByZWxhdGVkSWRlbnRpZmllclR5cGU9IkRPSSIgcmVsYXRpb25UeXBlPSJJc1ZlcnNpb25PZiI+MTAuMTEyOC9tc3lzdGVtcy4wMDkyNy0yMjwvcmVsYXRlZElkZW50aWZpZXI+CiAgPC9yZWxhdGVkSWRlbnRpZmllcnM+CiAgPHZlcnNpb24+MjwvdmVyc2lvbj4KICA8cmlnaHRzTGlzdD4KICAgIDxyaWdodHMgcmlnaHRzVVJJPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9saWNlbnNlcy9ieS80LjAvIiByaWdodHNJZGVudGlmaWVyU2NoZW1lPSJTUERYIiByaWdodHNJZGVudGlmaWVyPSJDQy1CWS00LjAiPkNyZWF0aXZlIENvbW1vbnMgQXR0cmlidXRpb24gNC4wIEludGVybmF0aW9uYWw8L3JpZ2h0cz4KICA8L3JpZ2h0c0xpc3Q+CiAgPGRlc2NyaXB0aW9ucz4KICAgIDxkZXNjcmlwdGlvbiBkZXNjcmlwdGlvblR5cGU9IkFic3RyYWN0Ij5PdmVyIHRoZSBwYXN0IDE1MCB5ZWFycywgdmFjY2luZXMgaGF2ZSByZXZvbHV0aW9uaXplZCB0aGUgcmVsYXRpb25zaGlwIGJldHdlZW4gcGVvcGxlIGFuZCBkaXNlYXNlLiBEdXJpbmcgdGhlIENPVklELTE5IHBhbmRlbWljLCB0ZWNobm9sb2dpZXMgc3VjaCBhcyBtUk5BIHZhY2NpbmVzIGhhdmUgcmVjZWl2ZWQgYXR0ZW50aW9uIGR1ZSB0byB0aGVpciBub3ZlbHR5IGFuZCBzdWNjZXNzZXMuIEhvd2V2ZXIsIG1vcmUgdHJhZGl0aW9uYWwgdmFjY2luZSBkZXZlbG9wbWVudCBwbGF0Zm9ybXMgaGF2ZSBhbHNvIHlpZWxkZWQgaW1wb3J0YW50IHRvb2xzIGluIHRoZSB3b3JsZHdpZGUgZmlnaHQgYWdhaW5zdCB0aGUgU0FSUy1Db1YtMiB2aXJ1cy4gQSB2YXJpZXR5IG9mIGFwcHJvYWNoZXMgaGF2ZSBiZWVuIHVzZWQgdG8gZGV2ZWxvcCBDT1ZJRC0xOSB2YWNjaW5lcyB0aGF0IGFyZSBub3cgYXV0aG9yaXplZCBmb3IgdXNlIGluIGNvdW50cmllcyBhcm91bmQgdGhlIHdvcmxkLiBJbiB0aGlzIHJldmlldywgd2UgaGlnaGxpZ2h0IHN0cmF0ZWdpZXMgdGhhdCBmb2N1cyBvbiB0aGUgdmlyYWwgY2Fwc2lkIGFuZCBvdXR3YXJkcywgcmF0aGVyIHRoYW4gb24gdGhlIG51Y2xlaWMgYWNpZHMgaW5zaWRlLiBUaGVzZSBhcHByb2FjaGVzIGZhbGwgaW50byB0d28gYnJvYWQgY2F0ZWdvcmllczogd2hvbGUtdmlydXMgdmFjY2luZXMgYW5kIHN1YnVuaXQgdmFjY2luZXMuIFdob2xlLXZpcnVzIHZhY2NpbmVzIHVzZSB0aGUgdmlydXMgaXRzZWxmLCBlaXRoZXIgaW4gYW4gaW5hY3RpdmF0ZWQgb3IgYXR0ZW51YXRlZCBzdGF0ZS4gU3VidW5pdCB2YWNjaW5lcyBjb250YWluIGluc3RlYWQgYW4gaXNvbGF0ZWQsIGltbXVub2dlbmljIGNvbXBvbmVudCBvZiB0aGUgdmlydXMuIEhlcmUsIHdlIGhpZ2hsaWdodCB2YWNjaW5lIGNhbmRpZGF0ZXMgdGhhdCBhcHBseSB0aGVzZSBhcHByb2FjaGVzIGFnYWluc3QgU0FSUy1Db1YtMiBpbiBkaWZmZXJlbnQgd2F5cy4gSW4gYSBjb21wYW5pb24gbWFudXNjcmlwdCwgd2UgcmV2aWV3IHRoZSBtb3JlIHJlY2VudCBhbmQgbm92ZWwgZGV2ZWxvcG1lbnQgb2YgbnVjbGVpYy1hY2lkIGJhc2VkIHZhY2NpbmUgdGVjaG5vbG9naWVzLiBXZSBmdXJ0aGVyIGNvbnNpZGVyIHRoZSByb2xlIHRoYXQgdGhlc2UgQ09WSUQtMTkgdmFjY2luZSBkZXZlbG9wbWVudCBwcm9ncmFtcyBoYXZlIHBsYXllZCBpbiBwcm9waHlsYXhpcyBhdCB0aGUgZ2xvYmFsIHNjYWxlLiBXZWxsLWVzdGFibGlzaGVkIHZhY2NpbmUgdGVjaG5vbG9naWVzIGhhdmUgcHJvdmVkIGVzcGVjaWFsbHkgaW1wb3J0YW50IHRvIG1ha2luZyB2YWNjaW5lcyBhY2Nlc3NpYmxlIGluIGxvdy0gYW5kIG1pZGRsZS1pbmNvbWUgY291bnRyaWVzLiBWYWNjaW5lIGRldmVsb3BtZW50IHByb2dyYW1zIHRoYXQgdXNlIGVzdGFibGlzaGVkIHBsYXRmb3JtcyBoYXZlIGJlZW4gdW5kZXJ0YWtlbiBpbiBhIG11Y2ggd2lkZXIgcmFuZ2Ugb2YgY291bnRyaWVzIHRoYW4gdGhvc2UgdXNpbmcgbnVjbGVpYy1hY2lkLWJhc2VkIHRlY2hub2xvZ2llcywgd2hpY2ggaGF2ZSBiZWVuIGxlZCBieSB3ZWFsdGh5IFdlc3Rlcm4gY291bnRyaWVzLiBUaGVyZWZvcmUsIHRoZXNlIHZhY2NpbmUgcGxhdGZvcm1zLCB0aG91Z2ggbGVzcyBub3ZlbCBmcm9tIGEgYmlvdGVjaG5vbG9naWNhbCBzdGFuZHBvaW50LCBoYXZlIHByb3ZlbiB0byBiZSBleHRyZW1lbHkgaW1wb3J0YW50IHRvIHRoZSBtYW5hZ2VtZW50IG9mIFNBUlMtQ29WLTIuPC9kZXNjcmlwdGlvbj4KICA8L2Rlc2NyaXB0aW9ucz4KPC9yZXNvdXJjZT4=",
+        "url": "https://arxiv.org/abs/2208.08907",
+        "contentUrl": null,
+        "metadataVersion": 2,
+        "schemaVersion": "http://datacite.org/schema/kernel-4",
+        "source": "mds",
+        "isActive": true,
+        "state": "findable",
+        "reason": null,
+        "viewCount": 0,
+        "viewsOverTime": [],
+        "downloadCount": 0,
+        "downloadsOverTime": [],
+        "referenceCount": 0,
+        "citationCount": 0,
+        "citationsOverTime": [],
+        "partCount": 0,
+        "partOfCount": 0,
+        "versionCount": 0,
+        "versionOfCount": 1,
+        "created": "2022-08-19T00:52:42.000Z",
+        "registered": "2022-08-19T00:52:43.000Z",
+        "published": "2022",
+        "updated": "2023-05-02T01:28:57.000Z"
+      },
+      "relationships": {
+        "client": {
+          "data": {
+            "id": "arxiv.content",
+            "type": "clients"
+          }
+        },
+        "provider": {
+          "data": {
+            "id": "arxiv",
+            "type": "providers"
+          }
+        },
+        "media": {
+          "data": {
+            "id": "10.48550/arxiv.2208.08907",
+            "type": "media"
+          }
+        },
+        "references": {
+          "data": []
+        },
+        "citations": {
+          "data": []
+        },
+        "parts": {
+          "data": []
+        },
+        "partOf": {
+          "data": []
+        },
+        "versions": {
+          "data": []
+        },
+        "versionOf": {
+          "data": [
+            {
+              "id": "10.1128/msystems.00927-22",
+              "type": "dois"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

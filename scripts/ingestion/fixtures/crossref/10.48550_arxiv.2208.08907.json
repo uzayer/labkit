@@ -1,0 +1,7 @@
+{
+  "url": "https://api.crossref.org/works/10.48550/arXiv.2208.08907",
+  "recordedAt": "2026-11-04",
+  "note": "Crossref answers 404 (text/plain \"Resource not found.\"): a DataCite DOI.",
+  "status": 404,
+  "body": null
+}

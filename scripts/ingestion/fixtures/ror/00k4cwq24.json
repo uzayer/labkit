@@ -1,0 +1,44 @@
+{
+  "url": "https://api.ror.org/v2/organizations/00k4cwq24",
+  "recordedAt": "2026-11-04",
+  "note": "Trimmed to id, types, names and status. Example of a ROR `government`.",
+  "body": {
+    "id": "https://ror.org/00k4cwq24",
+    "types": [
+      "funder",
+      "government"
+    ],
+    "names": [
+      {
+        "lang": null,
+        "types": [
+          "acronym"
+        ],
+        "value": "MOHESR"
+      },
+      {
+        "lang": "en",
+        "types": [
+          "ror_display",
+          "label"
+        ],
+        "value": "Ministry of Higher Education and Scientific Research"
+      },
+      {
+        "lang": "en",
+        "types": [
+          "alias"
+        ],
+        "value": "Ministry of Scientific Research"
+      },
+      {
+        "lang": "ar",
+        "types": [
+          "label"
+        ],
+        "value": "وزارة التعليم العالي والبحث العلمي المصرية"
+      }
+    ],
+    "status": "active"
+  }
+}
