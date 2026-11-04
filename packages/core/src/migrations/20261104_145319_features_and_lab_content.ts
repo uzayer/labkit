@@ -3,7 +3,7 @@ import { MigrateUpArgs, MigrateDownArgs, sql } from '@payloadcms/db-sqlite'
 // Roadmap step 4: the Features global, Lab content fields on LabInfo and
 // ResearchThemes, and LabInfo without DIAL's column defaults or its old
 // `features_*` columns, whose values move to the Features global. No new
-// content is written here; `scripts/seed-dial-content.ts` seeds DIAL's separately.
+// content is written here; DIAL's is seeded by a script in its own repo, dial-site.
 //
 // Dropping the defaults means rebuilding lab_info, and DROP TABLE cascades into
 // lab_info_socials and lab_info_rels wherever foreign keys are enforced.

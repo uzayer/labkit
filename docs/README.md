@@ -33,7 +33,7 @@ Standing architecture decisions live in [`adr/`](./adr/). ADR-0001 records why C
 
 - [`../README.md`](../README.md) is the current developer setup and command reference. Do not duplicate it here.
 - [`../CONTEXT.md`](../CONTEXT.md) is the canonical domain glossary.
-- [`../labs/dial/`](../labs/dial/) contains DIAL's identity and frontend delivery contract, unverified working data, raw source captures, and ingestion fixtures. It is an active Lab workspace, not reusable documentation.
+- DIAL's site, and its Lab workspace (identity, frontend contract, working data, raw source captures), live in the separate `dial-site` repo, which consumes LabKit as a git submodule.
 
 ## Content rules
 

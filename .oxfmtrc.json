@@ -22,7 +22,6 @@
     "**/node_modules",
     "**/temp",
     "**/docs/**",
-    "labs/dial/scraped-data/**",
     "scripts/ingestion/fixtures/**",
     ".agents/skills/**",
     "tsconfig.json",

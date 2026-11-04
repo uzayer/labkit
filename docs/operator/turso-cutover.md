@@ -12,7 +12,7 @@ and `TURSO_AUTH_TOKEN`.
 2. `bun run payload migrate` creates `labkit.db` from the committed SQL
    migration. `bun run payload migrate:status` confirms it is applied.
 3. `bun run dev` starts the site and creates the two default Roles. Create the
-   first Lab Editor account at `/admin`, then add reviewed DIAL records.
+   first Lab Editor account at `/admin`, then add the Lab's reviewed records.
 
 Development schema push is available for iteration. The committed migration is
 the production schema source. Create a new migration for every later schema
@@ -51,38 +51,39 @@ launch, production is the source of truth and data only flows down
 1. Set `BLOB_READ_WRITE_TOKEN` in `.env.production.local`, not `.env.local` (`vercel link` writes there), **before** writing any
    records, so Media uploads land in Vercel Blob. Without it Media is stored in
    `public/media/`, which the deployment cannot serve. If that already
-   happened (DIAL's did), `node --env-file=.env scripts/media-to-blob.mjs
-   <database.db>` copies every file a Media row references into Blob under the
-   pathname the storage adapter reads, so no row needs rewriting. It is
-   idempotent; pass `dry-run` to check every file exists first.
+   happened (DIAL's did), copy every file a Media row references into Blob
+   under the pathname the storage adapter reads, so no row needs rewriting.
+   dial-site's `scripts/media-to-blob.mjs` does this idempotently.
 2. Create a fresh, migration-only local database. `PAYLOAD_DB_PUSH=false` stops
    schema push, which would otherwise add a `dev` row to `payload_migrations`
    that `migrate` then warns about in production. Keep it set for every command
    against this file, including `bun run dev` for the admin review:
    ```bash
-   export TURSO_DATABASE_URL=file:./data/dial-launch.db PAYLOAD_DB_PUSH=false
+   export TURSO_DATABASE_URL=file:./data/<lab>-launch.db PAYLOAD_DB_PUSH=false
    bun run payload migrate
    ```
 3. Write the Lab's manual records (roster, Projects, Awards, Grants, LabInfo)
    first, so the ORCID owner and the roster's alternate names are in place
-   before the imports. DIAL's were written by a one-off script,
-   `scripts/ingestion/write-dial-confirmed.ts`, deleted on 2026-09-28 and
-   recoverable from Git history.
+   before the imports. DIAL's were written by a one-off
+   script, recoverable from Git history (`write-dial-confirmed.ts`).
 4. Run the reviewed ORCID selection and the Google Scholar BibTeX import, then
    link Projects to the imported Publications. Work the Review Items in local
    `/admin`.
-5. Check the file: `sqlite3 data/dial-launch.db "select name, batch from
+5. Check the file: `sqlite3 data/<lab>-launch.db "select name, batch from
    payload_migrations"` shows only committed migrations (no `batch = -1` row),
    and `bun run payload migrate:status` shows nothing pending. Stop the app, take
-   a consistent copy with `sqlite3 data/dial-launch.db ".backup
-   'backup/dial-launch.db'"`, and run `PRAGMA integrity_check` on the copy.
-6. Upload it: `turso db create <name> --from-file backup/dial-launch.db --wait`.
+   a consistent copy with `sqlite3 data/<lab>-launch.db ".backup
+   'backup/<lab>-launch.db'"`, and run `PRAGMA integrity_check` on the copy.
+6. Upload it: `turso db create <name> --from-file backup/<lab>-launch.db --wait`.
    Get its URL with `turso db show --url <name>` and a token with
    `turso db tokens create <name>`.
 7. Set `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`, `BLOB_READ_WRITE_TOKEN`, a
    strong `PAYLOAD_SECRET`, and the other production secrets in
    `.env.example` in Vercel. Run `bun run payload migrate:status` against Turso
-   before deploying. Production has `push: false`.
+   before deploying. Production has `push: false`. Pin the Vercel functions to
+   the region nearest the Turso database (`"regions"` in the site's
+   `vercel.json`): every request reads the database, and Vercel's default
+   `iad1` adds an ocean round trip per query for a database in Asia.
 8. Deploy. Verify admin login and editing; `/`, `/people`, `/publications`, a
    Publication detail route; uploaded Media; and the imports job queue before
    moving traffic. Keep a Turso branch for rollback.
@@ -93,13 +94,5 @@ and immediate transactions; all 13 queue checks passed with the adapter
 default. A failed hydration can leave a partial Publication graph. The
 Operator should inspect its Import Run and Review Items before retrying.
 
-DIAL's production database is `dial-prod` (created 2026-09-28 from the reviewed
-`labkit.db`); `dial-prod-launch-20260928` is its launch-day copy.
-
-## Production (DIAL)
-
-- `dial-prod` on Turso (`aws-ap-south-1`) serves `dial-research.vercel.app`. Vercel functions are pinned to `bom1` in `vercel.json`, because every request loads the whole corpus and the default `iad1` region would add an ocean round trip per query. The Blob store is in `bom1` too.
-- There's no jobs cron. Hobby rejects sub-daily crons, and only the parked dashboard enqueues `imports` jobs. Restore the cron if the dashboard comes back.
-- Rollback points:
-  - `dial-prod-launch-20260928`: launch day
-  - `dial-prod-pre-v4-20261104`: before the Payload 4 migrations; pair it with a deploy of commit `04ad2f6`
+DIAL's production setup (its Turso database, region and rollback points) is
+documented in the `dial-site` repo's README.

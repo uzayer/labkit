@@ -2,11 +2,11 @@
 
 `AGENTS.md` is a symlink to this file. `README.md` has setup, commands and project layout; this file holds only what an agent would otherwise get wrong.
 
-LabKit is a PayloadCMS content platform for research lab websites. The live public site is DIAL's, in `src/app/(frontend)/(dial)/`.
+LabKit is a PayloadCMS content platform for research lab websites. Each Lab's site is its own repo that consumes LabKit as a git submodule (ADR-0003); DIAL's, the first, is `dial-site`. This repo's root app is the admin plus a placeholder home page.
 
 ## Read first
 
-- **Scope:** the current phase is "LabKit for any Lab": the numbered list at the top of `docs/product/ROADMAP.md`, with the architecture in ADR-0003. Scope creep is this project's main failure mode. If a task isn't on that list, it's out of scope. DIAL's frontend moves to its own repo at step 3.
+- **Scope:** the current phase is "LabKit for any Lab": the numbered list at the top of `docs/product/ROADMAP.md`, with the architecture in ADR-0003. Scope creep is this project's main failure mode. If a task isn't on that list, it's out of scope.
 - **Decisions** live in `docs/adr/` (standing architecture) and the roadmap (scope). There is no decision log. Record a non-obvious _why_ as a code comment next to the code, or in an ADR. Overwrite stale docs instead of appending history; git is the archive.
 - **`CONTEXT.md`** is the domain glossary. Use its terms exactly and avoid the words it lists. Standing decisions live in `docs/adr/`.
 
@@ -33,7 +33,7 @@ There is no test framework. Run `bun run tsc` and `bun run lint`.
 
 - **`overrideAccess` defaults to `false`** in Payload 4's Local API, including `payload.jobs.*`. Trusted server work (hooks, scripts, ingestion, jobs) must pass `overrideAccess: true` explicitly.
 - **Roles must be populated**, not string IDs, for `hasPermission()` (`packages/core/src/utilities/checkPermission.ts`) to work. That's why Users set `auth.depth: 2`: Payload 4 defaults it to 0.
-- **Production** is `dial-research.vercel.app` on Turso `dial-prod` (URL and token in the ignored `.env.production.local`). Merging to main deploys, and the build doesn't migrate. So take a Turso branch, rehearse the migration on a `turso db export` copy, apply it to prod, then merge straight away. A Vercel rollback alone can't undo a migration, so rolling back means pointing at the branch. Preview deploys fail the Turso guard on purpose. See `docs/operator/turso-cutover.md`.
+- **Production databases belong to the Labs' site repos.** A merge here deploys nothing; a Lab picks it up by bumping its submodule. A new core migration must be applied to each Lab's production database before that Lab deploys the bump (dial-site's README has the procedure), so write migrations that are safe to run before the old code stops. A Vercel rollback alone can't undo a migration.
 - **`oxlint --fix` (pre-commit) can delete a type import** whose name matches a value in the same file (e.g. `ThemeConfig`). Alias the import, and re-run `bun run tsc` after committing.
 - **SQLite transactions are off on purpose.** Payload's multi-operation transactions caused `SQLITE_BUSY_SNAPSHOT` in the overlapping-watchdog check. Keep WAL plus a busy timeout, and don't enable transactions to fix a lock error.
 - **Admin SCSS** has no `~@payloadcms/ui/scss` and no `--theme-*` tokens in Payload 4. Use literal px (20px is the old `base(1)`) or `--color-*` tokens.
