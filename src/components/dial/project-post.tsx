@@ -63,6 +63,7 @@ export type ProjectData = {
   localName?: string
   overview: string
   heroImageUrl?: string
+  heroImageAlt?: string
   /** ISO date; may be year-only. Absent when no source states it. */
   startDate?: string
   endDate?: string
@@ -222,7 +223,11 @@ export function ProjectPost({ project }: { project: ProjectData }) {
           )}
         </p>
         <div className="enter relative mt-4 w-fit" style={enterStep(1)}>
-          <h1 className={pageTitle}>{project.localName ?? project.title}</h1>
+          {/* A Project's local name is its Bengali name; `lang` lets a screen
+              reader switch voice rather than spell it out (WCAG 3.1.2). */}
+          <h1 lang={project.localName ? 'bn' : undefined} className={pageTitle}>
+            {project.localName ?? project.title}
+          </h1>
         </div>
         {project.localName && (
           <p
@@ -317,7 +322,7 @@ export function ProjectPost({ project }: { project: ProjectData }) {
         >
           <PhotoSlot
             src={project.heroImageUrl}
-            alt={project.title}
+            alt={project.heroImageAlt ?? project.title}
             art={themeArt(primaryTheme)}
             aspect={project.trace ? 'aspect-4/3 lg:aspect-auto' : 'aspect-16/7'}
             className={project.trace ? 'h-full' : undefined}

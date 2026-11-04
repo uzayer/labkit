@@ -106,6 +106,7 @@
   --color-ink-foreground: var(--ink-foreground);
   --color-ink-blue: var(--ink-blue);
   --color-ink-yellow: var(--ink-yellow);
+  --color-ink-yellow-text: var(--ink-yellow-text);
   --color-ink-violet: var(--ink-violet);
   --color-paper-line: var(--paper-line);
   /* Strong ease-out for anything that responds to the user. */
@@ -193,14 +194,21 @@
      filter, ongoing status, links on hover), never decoration. */
   --brand: oklch(0.47 0.1 165);
   --brand-foreground: oklch(0.985 0.006 85);
-  /* Second riso ink: warm red-orange, for recognition and hand-drawn marks. */
-  --ink: oklch(0.58 0.17 38);
+  /* Second riso ink: warm red-orange, for recognition and hand-drawn marks.
+     At L 0.54 it reads as text at 4.5:1 or better on the paper (5.0) and on
+     its own 8% wash, the award pills (4.6); 0.58 gave 4.4 and 3.9. 0.545 is
+     the threshold on the wash; 0.54 leaves a little margin. */
+  --ink: oklch(0.54 0.17 38);
   --ink-foreground: oklch(0.985 0.006 85);
   /* Three more inks on the press. Used for the Research Themes and for the
      printed compositions, never for status, which stays green. */
   --ink-blue: oklch(0.53 0.14 248);
   --ink-yellow: oklch(0.74 0.14 82);
   --ink-violet: oklch(0.55 0.16 340);
+  /* Yellow is too light to set words in (2.2:1 on paper), so a Theme printed
+     in yellow takes this deeper ochre for its title; its drawings keep the
+     yellow. 4.6:1 on paper. */
+  --ink-yellow-text: oklch(0.55 0.12 82);
   /* Ruled-paper line, lighter than a border. */
   --paper-line: oklch(0.9 0.012 75);
 }
@@ -245,6 +253,7 @@
   --ink-blue: oklch(0.72 0.13 248);
   --ink-yellow: oklch(0.83 0.14 85);
   --ink-violet: oklch(0.74 0.14 340);
+  --ink-yellow-text: var(--ink-yellow);
   --paper-line: oklch(1 0.02 85 / 12%);
 }
 
@@ -268,6 +277,21 @@
   html {
     @apply font-sans;
   }
+}
+
+/* ── Focus ───────────────────────────────────────────────────────────────────
+   One keyboard focus ring for every control on the site, at full strength.
+   The shadcn primitives drew a 50% ring (about 1.7:1 on paper) and several
+   rows suppressed outlines altogether, leaving the squiggle as the only cue.
+   Deliberately outside any @layer, so it wins over `outline-none` utilities.
+   `--ring` is 3.4:1 on paper and 7.5:1 on dark paper. Elements that only
+   receive focus from script (<main> after the skip link, a menu heading) are
+   not controls; they opt out with `data-focus-target`. (Not `tabindex=-1`:
+   roving-tabindex controls carry that too.) Pointer clicks never match
+   :focus-visible, so mouse users see no change. */
+:focus-visible:not([data-focus-target]) {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
 }
 
 /* Out of flow for the whole hero page, so the opening stage gets the full
@@ -371,6 +395,25 @@ body:has([data-hero-root]) {
 .js [data-reveal]:not([data-revealed]) .reveal-item {
   opacity: 0;
   transform: translateY(6px);
+}
+
+/* tw-animate-css (popovers, dialogs) zooms and slides with no reduced-motion
+   variant of its own. Zeroing the movement variables keeps its fade and drops
+   the travel. Unlayered so it beats the `zoom-in-95`-style utilities. */
+@media (prefers-reduced-motion: reduce) {
+  [class*='animate-in'],
+  [class*='animate-out'] {
+    --tw-enter-scale: 1;
+    --tw-exit-scale: 1;
+    --tw-enter-rotate: 0;
+    --tw-exit-rotate: 0;
+    --tw-enter-translate-x: 0;
+    --tw-enter-translate-y: 0;
+    --tw-exit-translate-x: 0;
+    --tw-exit-translate-y: 0;
+    --tw-enter-blur: 0;
+    --tw-exit-blur: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

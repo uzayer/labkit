@@ -416,6 +416,7 @@ export function createDialViews(d: DialData) {
       localName: project.localName ?? undefined,
       overview: project.abstract ?? '',
       heroImageUrl: project.heroImage ?? undefined,
+      heroImageAlt: project.heroImageAlt ?? undefined,
       startDate: project.startDate ?? undefined,
       endDate: project.endDate ?? undefined,
       status: project.status ?? null,
@@ -637,6 +638,7 @@ export function createDialViews(d: DialData) {
       name: pi.name,
       title: pi.title,
       photo: pi.photo ?? null,
+      photoAlt: pi.photoAlt ?? null,
       bio: pi.bio ?? null,
       awards: awardsForTeamMember(pi.id)
         .filter((a) => a.featured)
@@ -691,6 +693,7 @@ export function createDialViews(d: DialData) {
       title: item.title,
       description: item.description,
       photo: item.photo ?? undefined,
+      photoAlt: item.photoAlt ?? undefined,
       url: item.url ?? undefined,
     }
   }
@@ -828,6 +831,7 @@ export function createDialViews(d: DialData) {
             name: pi.name,
             title: pi.title,
             photo: pi.photo ?? null,
+            photoAlt: pi.photoAlt ?? null,
             href: `/people/${pi.slug}`,
           }
         : null,

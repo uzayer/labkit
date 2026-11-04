@@ -179,7 +179,9 @@ export default async function Home() {
           </div>
           <Link
             href="/about"
-            aria-label="About the lab"
+            // Starts with the words printed on the card, so speech input can
+            // name it ("the lab, 2012–now"), and says where it goes.
+            aria-label={`the lab, ${labInfo.foundedYear}–now: about DIAL`}
             className="reveal-item group ease-snappy relative block w-full max-w-72 self-start rounded-md border border-border bg-muted/40 p-4 transition-transform duration-150 active:scale-[0.98]"
           >
             <span

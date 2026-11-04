@@ -91,7 +91,7 @@ export function NewsPost({ entry, newer, older }: NewsPostData) {
               stands in until DIAL supplies one (see PhotoSlot). */}
           <PhotoSlot
             src={entry.photo}
-            alt={entry.title}
+            alt={entry.photoAlt ?? entry.title}
             art={NEWS_ART[entry.type]}
             aspect="aspect-4/3"
             className="lg:sticky lg:top-24 lg:h-fit"

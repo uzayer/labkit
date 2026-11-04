@@ -524,7 +524,7 @@ function StickyBar({
           slash keeps the count reading as a count, not as part of the name. */}
       <span
         aria-hidden
-        className="flex min-w-0 items-baseline gap-1 text-xl font-medium tracking-tight text-foreground/50"
+        className="flex min-w-0 items-baseline gap-1 text-xl font-medium tracking-tight text-foreground/60"
       >
         {group && (
           <>
@@ -703,8 +703,11 @@ const PublicationsSection = ({
                         sticky bar's `h-20`, and the list is pulled up by
                         `-mt-20` so the first group's own header hides behind
                         it. The expansion therefore goes *inside* the row,
-                        opposite the name, rather than on a line above it. */}
-                    <header className="flex h-20 items-end justify-between gap-6 border-b border-foreground/20 pb-2 text-xl font-medium tracking-tight text-foreground/50">
+                        opposite the name, rather than on a line above it.
+                        The "/ count" is foreground at 60%, not 50%: it is
+                        text, and 50% was 3.4:1 on paper. The sticky copy
+                        above matches. */}
+                    <header className="flex h-20 items-end justify-between gap-6 border-b border-foreground/20 pb-2 text-xl font-medium tracking-tight text-foreground/60">
                       {group.filterable ? (
                         // The group name is the filter: you are already looking
                         // at the pile, clicking it keeps only that pile.

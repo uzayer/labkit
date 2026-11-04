@@ -93,10 +93,20 @@ export default async function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className="flex min-h-full flex-col">
+        {/* First in the tab order, invisible until focused. tabIndex on <main>
+            lets every browser move focus there, not just scroll. */}
+        <a
+          href="#main"
+          className="sr-only z-50 rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
+        >
+          Skip to content
+        </a>
         <div data-site-nav-scope className="text-foreground">
           <Navbar4 nav={getNavData()} className="sticky" />
         </div>
-        <main className="flex-1">{children}</main>
+        <main id="main" tabIndex={-1} data-focus-target className="flex-1 outline-none">
+          {children}
+        </main>
         <Footer18 />
         <RevealObserver />
       </body>

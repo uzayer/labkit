@@ -162,6 +162,13 @@ const THEME_INK: Record<string, string> = {
 export const themeInk = (slug: string) => THEME_INK[slug] ?? 'text-ink'
 
 /**
+ * The same ink for words. Identical except for yellow, which is too light to
+ * read as text on paper and swaps for its ochre text variant.
+ */
+export const themeTextInk = (slug: string) =>
+  themeInk(slug).replace(/^text-ink-yellow$/, 'text-ink-yellow-text')
+
+/**
  * The same ink as a raw CSS value, for the places a Tailwind text class cannot
  * reach: a wash behind a band, a rule, a mark at partial strength. Fed to
  * `--header-ink` so one variable re-inks a whole page.

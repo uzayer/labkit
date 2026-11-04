@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
 
 import { DashedPath, SquiggleText, SquiggleUnderline, TickMark } from '@/components/dial/marks'
-import { ThemeGlyph, themeInk, themeInkVar } from '@/components/dial/theme-marks'
+import { ThemeGlyph, themeInkVar, themeTextInk } from '@/components/dial/theme-marks'
 import { displaySectionTitle, label as labelClass } from '@/lib/dial/typography'
 import { cn } from '@/lib/utils'
 
@@ -203,10 +203,11 @@ export const ThemeIndex = ({
             <span
               className={cn(
                 'row-span-2 flex items-center gap-4 self-start font-mono text-xs tabular-nums md:row-span-1 md:self-center',
-                themeInk(theme.slug),
+                themeTextInk(theme.slug),
               )}
             >
-              <span className="opacity-70 max-md:hidden">{String(i + 1).padStart(2, '0')}</span>
+              {/* Full strength: at 70% the inks fell under 4.5:1. */}
+              <span className="max-md:hidden">{String(i + 1).padStart(2, '0')}</span>
               <span className="mark-lift shrink-0">
                 <ThemeGlyph slug={theme.slug} className="size-11 md:size-14" />
               </span>
@@ -320,7 +321,10 @@ export const ThemeSpotlight = ({
                 </span>
                 <SquiggleText
                   arrow
-                  className={cn('font-display min-w-0 text-xl leading-snug', themeInk(theme.slug))}
+                  className={cn(
+                    'font-display min-w-0 text-xl leading-snug',
+                    themeTextInk(theme.slug),
+                  )}
                 >
                   {theme.title}
                 </SquiggleText>

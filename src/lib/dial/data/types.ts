@@ -12,7 +12,8 @@
  * - `id` is a stable slug, and relationships are id strings (Payload's
  *   unpopulated form). Resolve them with the lookups in `./index.ts`.
  * - Lexical rich-text fields (`bio`, `content`) are plain strings.
- * - Media fields are image URLs, not Media records.
+ * - Media fields are image URLs, not Media records. Each image field has an
+ *   `…Alt` sibling carrying the Media record's alt text.
  * - System fields (`createdAt`, `updatedAt`, `slugLock`, SEO, etc.) are omitted.
  * - Additions with no LabKit field yet: `Provenance.source: 'orcid'` and
  *   `Grant.amountLabel`.
@@ -64,7 +65,7 @@ export type Organization = {
    * the artwork's intrinsic proportions, used to size marks of very different
    * shapes to the same visual weight. A Payload `upload` field in the port.
    */
-  logo?: { src: string; width: number; height: number } | null
+  logo?: { src: string; width: number; height: number; alt?: string | null } | null
   provenance?: Provenance
 }
 
@@ -98,6 +99,7 @@ export type Team = {
   affiliation?: string | null
   affiliationLabel?: string | null
   photo?: string | null
+  photoAlt?: string | null
   bio?: string | null
   researchInterests?: string[] | null
   socials?:
@@ -180,6 +182,7 @@ export type Project = {
   localName?: string | null
   abstract?: string | null
   heroImage?: string | null
+  heroImageAlt?: string | null
   startDate?: string | null
   endDate?: string | null
   externalUrl?: string | null
@@ -258,6 +261,7 @@ export type News = {
   title: string
   description: string
   photo?: string | null
+  photoAlt?: string | null
   url?: string | null
   /**
    * Prototype-only: how much of `date` the source actually states. Many

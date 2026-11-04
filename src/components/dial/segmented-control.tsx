@@ -50,10 +50,38 @@ export function SegmentedControl<T extends string>({
   // thumb back and forth across the screen on every click.
   const thumbId = `${useId()}-thumb`
 
+  // The radio group keyboard pattern: the group is one tab stop (the checked
+  // option), and the arrow keys move the selection, as native radios do.
+  const onKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    const index = options.findIndex((option) => option.value === value)
+    const last = options.length - 1
+    const next =
+      event.key === 'ArrowRight' || event.key === 'ArrowDown'
+        ? index >= last
+          ? 0
+          : index + 1
+        : event.key === 'ArrowLeft' || event.key === 'ArrowUp'
+          ? index <= 0
+            ? last
+            : index - 1
+          : event.key === 'Home'
+            ? 0
+            : event.key === 'End'
+              ? last
+              : null
+    if (next === null) return
+    event.preventDefault()
+    onChange(options[next].value)
+    const radios = event.currentTarget.querySelectorAll<HTMLElement>('[role="radio"]')
+    radios[next]?.focus()
+  }
+  const hasChecked = options.some((option) => option.value === value)
+
   const group = (
     <div
       role="radiogroup"
       aria-label={label}
+      onKeyDown={onKeyDown}
       className={cn(
         'flex w-fit max-w-full [scrollbar-width:none] overflow-x-auto rounded-full border border-border p-0.5 text-sm',
         // As a flex item beside a prefix it would otherwise refuse to shrink
@@ -62,7 +90,7 @@ export function SegmentedControl<T extends string>({
         !prefix && className,
       )}
     >
-      {options.map((option) => {
+      {options.map((option, i) => {
         const selected = value === option.value
         const Icon = option.icon
         return (
@@ -71,6 +99,7 @@ export function SegmentedControl<T extends string>({
             type="button"
             role="radio"
             aria-checked={selected}
+            tabIndex={selected || (!hasChecked && i === 0) ? 0 : -1}
             onClick={() => onChange(option.value)}
             className={cn(
               'ease-snappy relative shrink-0 rounded-full whitespace-nowrap transition-colors duration-150',
@@ -97,7 +126,9 @@ export function SegmentedControl<T extends string>({
               )}
               {option.label}
               {option.count !== undefined && (
-                <span className="tabular-nums opacity-60">{option.count}</span>
+                // Dimmed only on the filled thumb, where 60% still clears
+                // 4.5:1; on paper it fell to 2.4:1.
+                <span className={cn('tabular-nums', selected && 'opacity-60')}>{option.count}</span>
               )}
             </span>
           </button>

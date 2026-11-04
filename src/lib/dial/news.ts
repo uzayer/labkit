@@ -21,6 +21,8 @@ export interface NewsEntry {
   datePrecision?: 'day' | 'month' | 'year'
   description: string
   photo?: string
+  /** The photo's Media alt text. */
+  photoAlt?: string
   /** An external record of the same thing — an announcement, a programme. */
   url?: string
 }

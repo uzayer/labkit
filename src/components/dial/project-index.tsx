@@ -286,9 +286,14 @@ const ProjectRow = ({ project, index }: { project: ProjectEntry; index: number }
       <ProjectMark project={project} className="size-14 text-4xl md:size-28 md:text-8xl" />
 
       <div className="min-w-0">
-        <h3 className="font-display text-2xl leading-tight md:text-3xl">
+        {/* h2: the rows sit directly under the page's h1. */}
+        {/* The local name is Bengali: `lang` so it is voiced, not spelled. */}
+        <h2
+          lang={project.localName ? 'bn' : undefined}
+          className="font-display text-2xl leading-tight md:text-3xl"
+        >
           <SquiggleText>{project.localName ?? project.title}</SquiggleText>
-        </h3>
+        </h2>
         {project.localName && (
           <p className="mt-0.5 text-sm text-muted-foreground">{project.title}</p>
         )}
