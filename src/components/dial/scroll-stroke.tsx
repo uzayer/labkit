@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils'
  *
  * The draw is a CSS view-timeline animation (`.scroll-stroke` in globals.css),
  * so this ships no JavaScript. Browsers without scroll timelines (Firefox
- * stable, as of late 2026) draw the line in full, as reduced motion does: a
+ * stable, when this was written in 2026) draw the line in full, as reduced motion does: a
  * script fallback would have to read this element's position on every scroll
  * frame, which costs more than a decoration is worth.
  */

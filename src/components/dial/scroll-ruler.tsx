@@ -18,9 +18,10 @@ import { cn } from '@/lib/utils'
  * down.
  *
  * The motion is a CSS scroll-driven animation (`.scroll-ruler-*` in
- * globals.css), so the fill and the hairline run on the compositor and no
- * script runs per scroll frame. Browsers without scroll timelines (Firefox
- * stable, as of late 2026) get the small listener below instead, which writes
+ * globals.css), so no script runs per scroll frame: the hairline's translate
+ * runs on the compositor, and the fill's clip-path and the readout's counter
+ * update in style alone. Browsers without scroll timelines (Firefox stable,
+ * when this was written in 2026) get the small listener below instead, which writes
  * the same three values. Reduced motion hides the ruler in CSS.
  */
 
