@@ -29,8 +29,8 @@ Confirmation message shown or redirect triggered
 
 | File | Purpose |
 |------|---------|
-| `src/payload.config.ts` (lines ~240–274) | Plugin registration, custom fields, overrides |
-| `src/fields/formBuilder/telephone.ts` | Custom telephone field type for the form builder |
+| `packages/core/src/template/index.ts` | Plugin registration, custom fields, overrides |
+| `packages/core/src/template/fields/telephone.ts` | Custom telephone field type for the form builder |
 | `src/app/(payload)/api/[...slug]/route.ts` | Bot-protection middleware on POST to `form-submissions` |
 
 ### Available field types
@@ -140,8 +140,8 @@ Keep the component's hardcoded fields and visual design, but wire the submit han
 
 To add a custom field type (like the existing `telephone` field):
 
-1. Create the Payload Block definition in `src/fields/formBuilder/` (see `telephone.ts` for the pattern — define `name`, `label`, `width`, `defaultValue`, `required` fields)
-2. Register it in `src/payload.config.ts` under `formBuilderPlugin({ fields: { myField: MyField } })`
+1. Create the Payload Block definition in `packages/core/src/template/fields/` (see `telephone.ts` for the pattern — define `name`, `label`, `width`, `defaultValue`, `required` fields)
+2. Register it in `packages/core/src/template/index.ts` under `formBuilderPlugin({ fields: { myField: MyField } })`
 3. Update the frontend form renderer when one exists.
 4. Run `bun run generate:types`.
 

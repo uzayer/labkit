@@ -1,6 +1,6 @@
 # Authentication
 
-LabKit uses Payload's built-in email/password auth on the `Users` collection, plus an optional Google OAuth login button for the admin panel via the `payload-oauth2` plugin (`src/payload.config.ts`).
+LabKit uses Payload's built-in email/password auth on the `Users` collection, plus an optional Google OAuth login button for the admin panel via the `payload-oauth2` plugin (`packages/core/src/auth/googleLogin.ts`, added by `labkitPlugin()`).
 
 ## Google OAuth Setup
 
@@ -28,7 +28,7 @@ Set `ALLOWED_EMAIL_DOMAINS` (comma-separated) to reject Google sign-ins outside 
 ALLOWED_EMAIL_DOMAINS=example.edu,example.org
 ```
 
-This check happens in the `getUserInfo` callback in `src/payload.config.ts`, not in Google's OAuth consent flow — an unlisted domain still completes the Google auth handshake but is rejected afterward with "Email domain not allowed."
+This check happens in the `getUserInfo` callback in `packages/core/src/auth/googleLogin.ts`, not in Google's OAuth consent flow — an unlisted domain still completes the Google auth handshake but is rejected afterward with "Email domain not allowed."
 
 ## How Users Get Roles
 
@@ -43,5 +43,5 @@ See [Roles and Permissions](./roles-and-permissions.md) and [Architecture: Acces
 
 ## Related Files
 
-- `src/payload.config.ts` — `OAuth2Plugin` configuration, `googleAuthActive` flag
+- `packages/core/src/auth/googleLogin.ts` — `OAuth2Plugin` configuration, `googleLoginActive` flag
 - `src/components/AdminDashboard/LoginButton` — renders the Google login button when enabled
