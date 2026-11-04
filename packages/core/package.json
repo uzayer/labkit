@@ -12,6 +12,7 @@
     "./fields": "./src/fields/index.ts",
     "./ingestion/*": "./src/ingestion/*.ts",
     "./publication-types": "./src/publicationTypes.ts",
+    "./rsc": "./src/rsc.ts",
     "./seo": "./src/seo/index.ts",
     "./secrets": "./src/utilities/validateSecrets.ts",
     "./validation": "./src/utilities/validation.ts"
