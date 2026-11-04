@@ -2,7 +2,7 @@ import type { GlobalConfig } from 'payload'
 
 import { anyone } from '../../access/anyone'
 import { isAdmin, isAdminHidden } from '../../access/isAdmin'
-import { FEATURE_COLLECTIONS, type FeatureName } from './features'
+import { FEATURE_COLLECTIONS, FEATURE_DEFAULTS, type FeatureName } from './features'
 import { revalidateFeatures } from './hooks/revalidateFeatures'
 
 const LABELS: Record<FeatureName, string> = {
@@ -36,7 +36,7 @@ export const Features: GlobalConfig = {
     name,
     label: LABELS[name],
     type: 'checkbox' as const,
-    defaultValue: true,
+    defaultValue: FEATURE_DEFAULTS[name],
   })),
   hooks: {
     afterChange: [revalidateFeatures],

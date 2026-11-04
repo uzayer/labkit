@@ -52,6 +52,8 @@ export type Organization = {
   type?:
     | 'university'
     | 'research-institute'
+    | 'healthcare'
+    | 'nonprofit'
     | 'funding-agency'
     | 'company'
     | 'government'
@@ -86,6 +88,12 @@ export type TeamRole =
   | 'alumni'
   | 'interdisciplinary-collaborator'
   | 'external-collaborator'
+  // Core's generic roles; DIAL has none of these, so its People page ignores them.
+  | 'postdoc'
+  | 'phd-student'
+  | 'masters-student'
+  | 'visiting'
+  | 'staff'
 
 export type Team = {
   id: string
@@ -205,7 +213,8 @@ export type Grant = {
   funder?: string | null
   funderLabel?: string | null
   amountValue?: number | null
-  amountCurrency?: 'USD' | 'BDT' | 'EUR' | 'GBP' | null
+  /** ISO 4217 code. */
+  amountCurrency?: string | null
   /** Amount as the source states it, when it can't be a number (e.g. "5 lac"). */
   amountLabel?: string | null
   startDate?: string | null
@@ -214,7 +223,7 @@ export type Grant = {
     | {
         teamMember?: string | null
         customInvestigator?: PersonRef
-        role?: 'pi' | 'co-pi' | 'collaborator' | null
+        role?: 'pi' | 'co-pi' | 'collaborator' | 'supported' | null
       }[]
     | null
   url?: string | null

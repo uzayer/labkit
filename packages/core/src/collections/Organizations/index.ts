@@ -68,6 +68,9 @@ const Organizations: CollectionConfig = {
         { label: 'Funding Agency', value: 'funding-agency' },
         { label: 'Company', value: 'company' },
         { label: 'Government', value: 'government' },
+        // ROR types LabKit lacked: hospitals and NGOs (BRAC is one).
+        { label: 'Healthcare', value: 'healthcare' },
+        { label: 'Nonprofit', value: 'nonprofit' },
         { label: 'Publisher', value: 'publisher' },
         { label: 'Other', value: 'other' },
       ],
