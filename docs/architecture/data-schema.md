@@ -1,6 +1,6 @@
 # Data Model Intent
 
-This doc exists to explain intent, not field-level schema. If you need exact fields or validation rules, read `src/collections/` and `src/globals/` directly.
+This doc exists to explain intent, not field-level schema. If you need exact fields or validation rules, read `packages/core/src/collections/` (research collections), `src/collections/` (site pages) and the two `globals/` folders directly.
 
 ## Why LabKit has research-domain collections
 

@@ -29,7 +29,7 @@ There is no test framework. Run `bun run tsc` and `bun run lint`.
 ## Gotchas
 
 - **`overrideAccess` defaults to `false`** in Payload 4's Local API, including `payload.jobs.*`. Trusted server work (hooks, scripts, ingestion, jobs) must pass `overrideAccess: true` explicitly.
-- **Roles must be populated**, not string IDs, for `hasPermission()` (`src/utilities/checkPermission.ts`) to work. That's why Users set `auth.depth: 2`: Payload 4 defaults it to 0.
+- **Roles must be populated**, not string IDs, for `hasPermission()` (`packages/core/src/utilities/checkPermission.ts`) to work. That's why Users set `auth.depth: 2`: Payload 4 defaults it to 0.
 - **Production** is `dial-research.vercel.app` on Turso `dial-prod` (URL and token in the ignored `.env.production.local`). Merging to main deploys, and the build doesn't migrate. So take a Turso branch, rehearse the migration on a `turso db export` copy, apply it to prod, then merge straight away. A Vercel rollback alone can't undo a migration, so rolling back means pointing at the branch. Preview deploys fail the Turso guard on purpose. See `docs/operator/turso-cutover.md`.
 - **SQLite transactions are off on purpose.** Payload's multi-operation transactions caused `SQLITE_BUSY_SNAPSHOT` in the overlapping-watchdog check. Keep WAL plus a busy timeout, and don't enable transactions to fix a lock error.
 - **Admin SCSS** has no `~@payloadcms/ui/scss` and no `--theme-*` tokens in Payload 4. Use literal px (20px is the old `base(1)`) or `--color-*` tokens.
@@ -37,9 +37,10 @@ There is no test framework. Run `bun run tsc` and `bun run lint`.
 - **Production has data.** Every schema change needs a committed migration (core owns all migrations, so Labs never add collections; see ADR-0003). Run `bun run payload migrate:create` with any well-formed `BLOB_READ_WRITE_TOKEN` set, e.g. `vercel_blob_rw_local_x`. Without it, the generated migration drops Media's `_objectKey` column.
 - **Turnstile** for `form-submissions` is checked in `src/app/(payload)/api/[...slug]/route.ts`, not in a form component. A missing `cf-turnstile-token` header gets a 400.
 - **Tailwind v4 bracket syntax** such as `w-[--x]` compiles to no CSS. Use `w-(--x)`. Grep for `-[--` whenever you import an older shadcn component.
-- **Person matching** in ingestion is Safe Match only: exact ORCID/DBLP ID or exact name, never fuzzy. Anything uncertain becomes a Review Item. See `src/lib/ingestion/people.ts`.
+- **Person matching** in ingestion is Safe Match only: exact ORCID/DBLP ID or exact name, never fuzzy. Anything uncertain becomes a Review Item. See `packages/core/src/ingestion/people.ts`.
 - **Parked code:** `_`-prefixed folders (`_template-pages`, `_dashboard-kit`, `_dashboard-legacy`) compile but don't route. `/admin` is the only admin surface. Don't delete the dashboards: they've diverged from upstream, and porting them is out of scope.
 - **New research collections** go in an existing `admin.group`: Research, Reference Data, or Import.
+- **`packages/core`** (`@labkit/core`) is source-only TypeScript. Inside it, use relative imports: `@/` resolves to the app's `src/`. The app imports core only through its `exports` map, and admin components inside core are referenced as `@labkit/core/client#Name`.
 
 ## Docs
 
