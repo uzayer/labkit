@@ -267,12 +267,6 @@ async function resetLabInfo(payload: Payload) {
       openalex_id: undefined,
     },
     foundingDate: undefined,
-    features: {
-      projects: true,
-      grants: true,
-      awards: true,
-      researchThemes: true,
-    },
     onboardingCompleted: false,
   })
 
@@ -319,12 +313,6 @@ async function seedLabInfo(payload: Payload) {
       openalex_id: 'I4210100012',
     },
     foundingDate: '2018-01-01T00:00:00.000Z',
-    features: {
-      projects: true,
-      grants: true,
-      awards: true,
-      researchThemes: true,
-    },
     onboardingCompleted: true,
   })
 

@@ -71,7 +71,7 @@ A dated announcement from the Lab — a paper accepted, an event held, community
 _Avoid_: post, event, update, announcement
 
 **Feature**:
-A module of LabKit that a Lab can switch on or off — Projects, Grants, Awards, News Items. Switching one off hides it in the admin and on the website; its data and schema stay.
+A module of LabKit that a Lab can switch on or off — Projects, Grants, Awards, News Items, Research Themes. Switching one off hides it in the admin and on the website; its data and schema stay.
 _Avoid_: module, plugin, toggle
 
 ## Ingestion

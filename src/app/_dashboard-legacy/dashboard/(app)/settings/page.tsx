@@ -6,6 +6,7 @@ import { SettingsForm } from './settings-form'
 export default async function SettingsPage() {
   const payload = await getPayload({ config: configPromise })
   const labInfo = await payload.findGlobal({ slug: 'lab-info', overrideAccess: true })
+  const features = await payload.findGlobal({ slug: 'features', overrideAccess: true })
 
   return (
     <main className="flex flex-1 flex-col gap-4 p-6 md:p-8">
@@ -19,7 +20,7 @@ export default async function SettingsPage() {
           show up in the dashboard.
         </p>
       </div>
-      <SettingsForm labInfo={labInfo} />
+      <SettingsForm labInfo={labInfo} features={features} />
     </main>
   )
 }

@@ -64,8 +64,12 @@ export async function updateLabInfo(values: LabInfoFormValues): Promise<Settings
         },
         email: emptyToUndefined(values.email),
         url: emptyToUndefined(values.url),
-        features: values.features,
       },
+      overrideAccess: true,
+    })
+    await payload.updateGlobal({
+      slug: 'features',
+      data: values.features,
       overrideAccess: true,
     })
     revalidatePath('/dashboard/settings')

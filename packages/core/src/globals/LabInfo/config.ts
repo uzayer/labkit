@@ -12,7 +12,8 @@ export const LabInfo: GlobalConfig = {
   label: 'Lab Info',
   admin: {
     group: 'Settings',
-    description: 'Core information about the lab for SEO and schema.org markup',
+    description:
+      "The Lab's identity, contact details and site copy. Also used for SEO and schema.org markup.",
   },
   access: {
     read: () => true,
@@ -23,7 +24,6 @@ export const LabInfo: GlobalConfig = {
       name: 'name',
       type: 'text',
       required: true,
-      defaultValue: 'DIAL Lab',
       admin: {
         description: 'Full lab name',
       },
@@ -31,7 +31,6 @@ export const LabInfo: GlobalConfig = {
     {
       name: 'shortName',
       type: 'text',
-      defaultValue: 'DIAL',
       admin: {
         description: 'Acronym or short name',
       },
@@ -41,6 +40,30 @@ export const LabInfo: GlobalConfig = {
       type: 'textarea',
       admin: {
         description: 'Brief description for SEO and schema.org (1-2 sentences)',
+      },
+    },
+
+    // Site copy: the prose a Lab's site shows that no record holds. Contact
+    // details, socials, logo and the recruitment window are their own fields below.
+    {
+      name: 'headline',
+      type: 'text',
+      admin: {
+        description: 'One line on what the Lab does. The home page leads with it.',
+      },
+    },
+    {
+      name: 'intro',
+      type: 'textarea',
+      admin: {
+        description: 'A short paragraph under the headline on the home page.',
+      },
+    },
+    {
+      name: 'about',
+      type: 'richText',
+      admin: {
+        description: 'The About page: what the Lab does, how it works, its history.',
       },
     },
 
@@ -55,7 +78,6 @@ export const LabInfo: GlobalConfig = {
         {
           name: 'name',
           type: 'text',
-          defaultValue: 'North South University',
         },
         {
           name: 'url',
@@ -113,12 +135,10 @@ export const LabInfo: GlobalConfig = {
         {
           name: 'city',
           type: 'text',
-          defaultValue: 'Dhaka',
         },
         {
           name: 'country',
           type: 'text',
-          defaultValue: 'Bangladesh',
         },
       ],
     },
@@ -257,21 +277,16 @@ export const LabInfo: GlobalConfig = {
         },
       ],
     },
-
-    // Dashboard feature toggles
     {
-      name: 'features',
-      type: 'group',
+      name: 'joinUs',
+      label: 'Join Us',
+      type: 'richText',
       admin: {
-        description: 'Gates dashboard nav/sections for collections this lab does not use',
+        description:
+          'The Join Us page: who can join and how to apply. The apply link uses the contact email above.',
       },
-      fields: [
-        { name: 'projects', type: 'checkbox', defaultValue: true },
-        { name: 'grants', type: 'checkbox', defaultValue: true },
-        { name: 'awards', type: 'checkbox', defaultValue: true },
-        { name: 'researchThemes', type: 'checkbox', defaultValue: true },
-      ],
     },
+
     {
       name: 'onboardingCompleted',
       type: 'checkbox',

@@ -3,6 +3,7 @@ import { authenticated } from '../../access/authenticated'
 import { isAdmin, isAdminFieldLevel } from '../../access/isAdmin'
 import { isAdminOrSelf } from '../../access/isAdminOrCreatedBy'
 import { checkRole } from '../../utilities/checkRole'
+import { readFeaturesForRequest } from '../../globals/Features/features'
 
 const SKIP_USER_ROLE_SYNC = 'skipUserRoleSync'
 
@@ -247,6 +248,22 @@ const Users: CollectionConfig = {
       index: true,
       access: {
         update: isAdminFieldLevel,
+      },
+    },
+    // Carries the Features global onto req.user. Payload's `admin.hidden` is
+    // synchronous and receives only the user, and the user is loaded once per
+    // request (with `req`, so the read is cached on req.context). That is the one
+    // place a per-request, always-current Feature switch can reach the admin nav.
+    // Read access is false so it never leaves the server: the auth strategy loads
+    // the user with overrideAccess, which skips field access.
+    {
+      name: 'features',
+      type: 'json',
+      virtual: true,
+      admin: { hidden: true },
+      access: { read: () => false },
+      hooks: {
+        afterRead: [({ req }) => readFeaturesForRequest(req)],
       },
     },
   ],

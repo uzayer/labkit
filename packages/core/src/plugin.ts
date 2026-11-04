@@ -1,5 +1,5 @@
 import { sharpTransformer } from '@payloadcms/transformer-sharp'
-import type { JobsConfig, Plugin } from 'payload'
+import type { CollectionConfig, JobsConfig, Plugin } from 'payload'
 import sharp from 'sharp'
 
 import Awards from './collections/Awards'
@@ -16,6 +16,8 @@ import Roles from './collections/Roles'
 import Team from './collections/Team'
 import Users from './collections/Users'
 import Venues from './collections/Venues'
+import { Features } from './globals/Features/config'
+import { type FeatureName, hiddenUnlessFeature } from './globals/Features/features'
 import { LabInfo } from './globals/LabInfo/config'
 import { importHydrateTask } from './ingestion/jobs/import-hydrate'
 import { assertStrongCronSecret } from './utilities/assertCronSecret'
@@ -45,8 +47,14 @@ const jobsAccess: JobsConfig['access'] = {
   },
 }
 
+/** A Feature's collection, hidden in the admin while the Feature is switched off. */
+const behindFeature = (collection: CollectionConfig, feature: FeatureName): CollectionConfig => ({
+  ...collection,
+  admin: { ...collection.admin, hidden: hiddenUnlessFeature(feature) },
+})
+
 /**
- * Adds LabKit's research collections, the LabInfo global, users and roles, Media
+ * Adds LabKit's research collections, the LabInfo and Features globals, users and roles, Media
  * (with its WebP variants), the ingestion job, and default-role seeding.
  * Put it first in `plugins`, so plugins that target `projects` or `users` find them.
  */
@@ -64,11 +72,11 @@ export const labkitPlugin =
     collections: [
       Publications,
       Team,
-      News,
-      createProjects(options.projects),
-      Awards,
-      Grants,
-      ResearchThemes,
+      behindFeature(News, 'newsItems'),
+      behindFeature(createProjects(options.projects), 'projects'),
+      behindFeature(Awards, 'awards'),
+      behindFeature(Grants, 'grants'),
+      behindFeature(ResearchThemes, 'researchThemes'),
       Venues,
       Organizations,
       ImportRuns,
@@ -78,7 +86,7 @@ export const labkitPlugin =
       Users,
       Roles,
     ],
-    globals: [...(config.globals ?? []), LabInfo],
+    globals: [...(config.globals ?? []), LabInfo, Features],
     jobs: {
       ...config.jobs,
       tasks: [...(config.jobs?.tasks ?? []), importHydrateTask],

@@ -33,6 +33,13 @@ const ResearchThemes: CollectionConfig = {
       },
     },
     {
+      name: 'body',
+      type: 'richText',
+      admin: {
+        description: "The theme's own page: what it covers and why the Lab works on it.",
+      },
+    },
+    {
       name: 'featured',
       type: 'checkbox',
       defaultValue: false,
