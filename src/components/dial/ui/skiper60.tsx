@@ -270,34 +270,34 @@ type Skiper60RailProps = {
  * in TermSections. The active section is the last one whose top has passed
  * 30% of the viewport, which is the same band the original's inView margin
  * picks out.
+ *
+ * An IntersectionObserver tracks that line instead of reading every section's
+ * position on each scroll frame: its root is everything above the line (the
+ * viewport, cut 70% from the bottom and extended far upward), so a section
+ * intersects exactly while its top is above the line. It only reports when a
+ * section crosses, and recomputes the margin itself on resize.
  */
 const Skiper60Rail = ({ items, className }: Skiper60RailProps) => {
   const [activeTerm, setActiveTerm] = useState(0)
   const reduceMotion = useReducedMotion()
 
   useEffect(() => {
-    let frame = 0
-    const update = () => {
-      frame = 0
-      const line = window.innerHeight * 0.3
-      let next = 0
-      items.forEach((item, index) => {
-        const el = document.getElementById(item.id)
-        if (el && el.getBoundingClientRect().top <= line) next = index
-      })
-      setActiveTerm(next)
-    }
-    const onScroll = () => {
-      if (!frame) frame = requestAnimationFrame(update)
-    }
-    update()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    window.addEventListener('resize', onScroll)
-    return () => {
-      window.removeEventListener('scroll', onScroll)
-      window.removeEventListener('resize', onScroll)
-      if (frame) cancelAnimationFrame(frame)
-    }
+    const passed = new Map<Element, boolean>()
+    const elements = items.map((item) => document.getElementById(item.id))
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) passed.set(entry.target, entry.isIntersecting)
+        let next = 0
+        elements.forEach((el, index) => {
+          if (el && passed.get(el)) next = index
+        })
+        setActiveTerm(next)
+      },
+      // A section scrolled 100,000px past still counts as passed.
+      { rootMargin: '100000px 0px -70% 0px' },
+    )
+    for (const el of elements) if (el) observer.observe(el)
+    return () => observer.disconnect()
   }, [items])
 
   return (
