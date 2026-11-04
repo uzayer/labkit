@@ -1,0 +1,103 @@
+/* Scan the site only: its routes, components and lib. The rest of src/
+   (Payload admin, parked dashboards, template pages) has its own CSS. */
+@import 'tailwindcss' source(none);
+@source "./";
+@source "../../../components/site";
+@source "../../../lib/site";
+@plugin "@tailwindcss/typography";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-destructive: var(--destructive);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  /* Editorial display face for page and section titles. */
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  /* Strong ease-out for anything that responds to the user. */
+  --ease-snappy: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Paper, not screen white: a warm off-white with warm greys on top. Dark mode
+   follows the visitor's system setting; there is no toggle to load. */
+:root {
+  --background: oklch(0.982 0.006 85);
+  --foreground: oklch(0.19 0.012 60);
+  --muted: oklch(0.952 0.009 85);
+  --muted-foreground: oklch(0.5 0.014 60);
+  --border: oklch(0.9 0.008 75);
+  --ring: oklch(0.55 0.12 250);
+  /* The Lab's one accent. Change it here; it marks meaning (an open
+     recruitment window, an ongoing project, the current page), never
+     decoration. */
+  --brand: oklch(0.5 0.13 250);
+  --brand-foreground: oklch(0.985 0.006 85);
+  --destructive: oklch(0.55 0.2 27);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: oklch(0.16 0.008 70);
+    --foreground: oklch(0.965 0.006 85);
+    --muted: oklch(0.24 0.01 70);
+    --muted-foreground: oklch(0.72 0.012 80);
+    --border: oklch(1 0.02 85 / 14%);
+    --ring: oklch(0.75 0.1 250);
+    --brand: oklch(0.78 0.11 250);
+    --brand-foreground: oklch(0.2 0.03 250);
+    --destructive: oklch(0.7 0.19 22);
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  max-width: 80rem;
+  @media (width >= 48rem) {
+    padding-inline: 2rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply bg-background font-sans text-foreground antialiased;
+    color-scheme: light dark;
+  }
+  body {
+    overflow-x: clip;
+  }
+}
+
+/* One keyboard focus ring for every control, at full strength. Outside any
+   layer so it wins over `outline-none`. Elements that only take focus from
+   script (<main> after the skip link) opt out with `data-focus-target`. */
+:focus-visible:not([data-focus-target]) {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Page headers settle in once on load. Opacity and a short rise only; nothing
+   moves for a visitor who asks for reduced motion. */
+@keyframes enter {
+  from {
+    opacity: 0;
+    translate: 0 0.5rem;
+  }
+}
+.enter {
+  animation: enter 500ms var(--ease-snappy) both;
+  animation-delay: calc(var(--enter-i, 0) * 60ms);
+}
+@media (prefers-reduced-motion: reduce) {
+  .enter {
+    animation: none;
+  }
+}
