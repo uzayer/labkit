@@ -40,23 +40,29 @@ type SlugSource = string | ((data: Record<string, unknown>) => unknown)
 
 export const formatSlugHook =
   (source: SlugSource): FieldHook =>
-  ({ data, operation, value }) => {
+  ({ data, operation, originalDoc, value }) => {
     if (typeof value === 'string' && SLUG_FORM.test(value)) return value
 
     // An empty or unusable slug (the admin form sends '') falls through to the fallback.
     const own = typeof value === 'string' ? formatSlug(value) : ''
     if (own) return own
 
-    // On update, rebuild only when the slug was sent empty or is unlocked and unset,
-    // so editing a title never moves a locked slug.
+    // On update, rebuild only when the slug was sent empty or the record has no slug
+    // and is unlocked, so editing a title never moves a locked slug. A partial API
+    // update omits slug and slugLock, so read the stored values too.
     const sentEmpty = typeof value === 'string'
-    if (operation === 'create' || sentEmpty || (!data?.slug && !data?.slugLock)) {
+    const current = data?.slug ?? originalDoc?.slug
+    const locked = data?.slugLock ?? originalDoc?.slugLock
+    if (operation === 'create' || sentEmpty || (!current && !locked)) {
       const fallbackData = typeof source === 'function' ? source(data ?? {}) : data?.[source]
 
       if (fallbackData && typeof fallbackData === 'string') {
-        return formatSlug(fallbackData) || undefined
+        const built = formatSlug(fallbackData)
+        if (built) return built
       }
     }
 
-    return typeof value === 'string' ? undefined : value
+    // Payload keeps the submitted value when a hook returns undefined, so a sent ''
+    // is cleared with null rather than stored.
+    return typeof value === 'string' ? null : value
   }
