@@ -1,8 +1,5 @@
-import { isAdminHidden } from '@/access/isAdmin'
+import { isAdminHidden, anyone, hasPermission } from '@labkit/core/access'
 import type { CollectionConfig } from 'payload'
-
-import { anyone } from '../access/anyone'
-import { hasPermission } from '@/utilities/checkPermission'
 
 const Categories: CollectionConfig = {
   slug: 'categories',

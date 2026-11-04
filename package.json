@@ -4,6 +4,9 @@
   "description": "LabKit — a PayloadCMS content platform for research lab websites, built with shadcn/ui.",
   "license": "MIT",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "type": "module",
   "scripts": {
     "format": "oxfmt .",
@@ -32,8 +35,8 @@
     "@citation-js/plugin-bibtex": "^0.9.0",
     "@citation-js/plugin-csl": "^0.9.0",
     "@faker-js/faker": "^10.6.0",
-    "@google/genai": "^2.32.0",
     "@hookform/resolvers": "^5.9.2",
+    "@labkit/core": "workspace:*",
     "@number-flow/react": "^0.6.2",
     "@payloadcms/admin-bar": "4.0.0-beta.6",
     "@payloadcms/db-sqlite": "4.0.0-beta.6",

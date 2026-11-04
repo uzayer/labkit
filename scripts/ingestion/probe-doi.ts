@@ -9,8 +9,8 @@ import {
   buildCoverageReport,
   type CoverageReport,
   type CoverageRow,
-} from '@/lib/ingestion/coverage'
-import { fetchCrossrefByDoi, fetchOpenAlexByDoi } from '@/lib/ingestion/fetch'
+} from '@labkit/core/ingestion/coverage'
+import { fetchCrossrefByDoi, fetchOpenAlexByDoi } from '@labkit/core/ingestion/fetch'
 
 async function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms))

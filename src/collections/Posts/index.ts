@@ -1,4 +1,4 @@
-import { isAdminHidden } from '@/access/isAdmin'
+import { isAdminHidden, authenticatedOrPublished, hasPermission } from '@labkit/core/access'
 import type { CollectionConfig } from 'payload'
 
 import {
@@ -14,8 +14,6 @@ import {
   UploadFeature,
 } from '@payloadcms/richtext-lexical'
 
-import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
-import { hasPermission } from '@/utilities/checkPermission'
 import { Banner } from '@/blocks/LexicalBlocks/Banner/config'
 import { Code } from '@/blocks/Code/config'
 import { MediaBlock } from '@/blocks/MediaBlock/config'
@@ -30,7 +28,7 @@ import {
   OverviewField,
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
-import { slugField } from '@/fields/slug'
+import { slugField } from '@labkit/core/fields'
 import { serverUrl as NEXT_PUBLIC_SERVER_URL } from '@/config/server'
 import { Breadcrumb } from '@payloadcms/plugin-nested-docs/types'
 import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'

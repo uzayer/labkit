@@ -23,7 +23,7 @@
 import { getPayload } from 'payload'
 import config from '@payload-config'
 
-import { normalizeVenueName } from '@/lib/ingestion/normalize'
+import { normalizeVenueName } from '@labkit/core/ingestion/normalize'
 
 type VenueType = 'conference' | 'journal' | 'workshop' | 'book-series' | 'other'
 

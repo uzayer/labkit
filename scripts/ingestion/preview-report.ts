@@ -20,8 +20,8 @@ import fs from 'node:fs'
 import { getPayload } from 'payload'
 import config from '@payload-config'
 
-import { normalizeTitle } from '@/lib/ingestion/normalize'
-import type { CapturedRecord } from '@/lib/ingestion/report'
+import { normalizeTitle } from '@labkit/core/ingestion/normalize'
+import type { CapturedRecord } from '@labkit/core/ingestion/report'
 
 type Data = Record<string, any>
 

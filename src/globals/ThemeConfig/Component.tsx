@@ -1,8 +1,10 @@
 import { getCachedGlobal } from '@/utilities/getGlobals'
 import React from 'react'
-import type { ThemeConfig } from '@/payload-types'
+// Aliased: the component below is also named ThemeConfig, and oxlint --fix
+// (pre-commit) deletes the unaliased type import as unused.
+import type { ThemeConfig as ThemeConfigData } from '@/payload-types'
 import { PublicContextProps } from '@/utilities/publicContextProps'
-import { sanitizeThemeColorValue, sanitizeThemeRadiusValue } from '@/utilities/validation'
+import { sanitizeThemeColorValue, sanitizeThemeRadiusValue } from '@labkit/core/validation'
 
 function buildThemeDeclarationBlock(
   selector: string,
@@ -18,7 +20,11 @@ function buildThemeDeclarationBlock(
 }
 
 export async function ThemeConfig({ publicContext }: { publicContext: PublicContextProps }) {
-  const themeConfig: ThemeConfig = await getCachedGlobal('themeConfig', publicContext.locale, 2)()
+  const themeConfig: ThemeConfigData = await getCachedGlobal(
+    'themeConfig',
+    publicContext.locale,
+    2,
+  )()
   const lightThemeCss = buildThemeDeclarationBlock(':root', {
     radius: sanitizeThemeRadiusValue(themeConfig.radius),
     background: sanitizeThemeColorValue(themeConfig.regularColors?.background),

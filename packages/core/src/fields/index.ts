@@ -1,0 +1,1 @@
+export { slugField } from './slug'

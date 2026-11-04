@@ -24,28 +24,18 @@ import {
   TextStateFeature,
   defaultColors,
 } from '@payloadcms/richtext-lexical'
-import sharp from 'sharp' // editor-import
 import path from 'path'
 import { buildConfig, PayloadRequest } from 'payload'
 import { fileURLToPath } from 'url'
 
+import { labkitPlugin, migrationDir } from '@labkit/core'
+import { hasPermission, isAdminHidden } from '@labkit/core/access'
 import Categories from './collections/Categories'
-import { Media, mediaSharpConfig } from './collections/Media'
 import { Pages } from './collections/Pages'
 import { Posts } from './collections/Posts'
-import Users from './collections/Users'
-import Roles from './collections/Roles'
-import ResearchThemes from './collections/ResearchThemes'
-import { Projects } from './collections/Projects'
-import Publications from './collections/Publications'
-import Team from './collections/Team'
-import Awards from './collections/Awards'
-import Organizations from './collections/Organizations'
-import Venues from './collections/Venues'
-import Grants from './collections/Grants'
-import News from './collections/News'
-import ImportRuns from './collections/ImportRuns'
-import ReviewItems from './collections/ReviewItems'
+import { Banner } from './blocks/LexicalBlocks/Banner/config'
+import { Code } from './blocks/Code/config'
+import { MediaBlock } from './blocks/MediaBlock/config'
 import { Footer } from './globals/Footer/config'
 import { Header } from './globals/Header/config'
 import { ThemeConfig } from './globals/ThemeConfig/config'
@@ -57,18 +47,11 @@ import { searchFields } from '@/search/fieldOverrides'
 import { beforeSyncWithSearch } from '@/search/beforeSync'
 import { serverUrl as NEXT_PUBLIC_SERVER_URL } from '@/config/server'
 import localization from './localization.config'
-import { importHydrateTask } from './lib/ingestion/jobs/import-hydrate'
-import { initializeRoles } from './utilities/initRoles'
-import { isAdminHidden } from './access/isAdmin'
-import { hasPermission } from './utilities/checkPermission'
-import { checkRole } from './utilities/checkRole'
 import { PageConfig } from './globals/PageConfig/config'
-import { LabInfo } from './globals/LabInfo/config'
 import { Telephone } from './fields/formBuilder/telephone'
-import { assertStrongCronSecret } from './utilities/assertCronSecret'
-import { validateRuntimeSecrets } from '@/utilities/validateSecrets'
+import { validateRuntimeSecrets } from '@labkit/core/secrets'
 import { generateDocumentPath } from '@/utilities/generateDocumentPath'
-import { sharpTransformer } from '@payloadcms/transformer-sharp'
+import { generatePreviewPath } from '@/utilities/generatePreviewPath'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -127,7 +110,6 @@ export default buildConfig({
       // One dark-ink favicon: browser tabs don't follow the page's theme.
       icons: [{ rel: 'icon', type: 'image/svg+xml', url: '/brand/labkit-mark.svg' }],
     },
-    user: Users.slug,
     livePreview: {
       breakpoints: [
         {
@@ -212,59 +194,29 @@ export default buildConfig({
     },
     idType: 'uuid',
     allowIDOnCreate: true,
-    migrationDir: './src/migrations',
+    migrationDir,
     // PAYLOAD_DB_PUSH=false keeps a local database migration-only, so it can be
     // uploaded to Turso without a dev-push marker (docs/operator/turso-cutover.md).
     push: process.env.NODE_ENV !== 'production' && process.env.PAYLOAD_DB_PUSH !== 'false',
     busyTimeout: databaseUrl.startsWith('file:') ? 10_000 : 0,
     wal: databaseUrl.startsWith('file:'),
   }),
-  // Order is nav order: Payload renders groups in the order their first collection
-  // appears. Research first (what a Lab Editor came to do), then Reference Data,
-  // then Import, then the ungrouped base-template collections.
-  collections: [
-    Publications,
-    Team,
-    News,
-    Projects,
-    Awards,
-    Grants,
-    ResearchThemes,
-    Venues,
-    Organizations,
-    ImportRuns,
-    ReviewItems,
-    Pages,
-    Posts,
-    Media,
-    Categories,
-    Users,
-    Roles,
-  ],
+  // labkitPlugin() puts the research collections before these and Media, Users and
+  // Roles after them; see its nav-order note.
+  collections: [Pages, Posts, Categories],
   cors: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
   csrf: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
-  globals: [ThemeConfig, Header, Footer, PageConfig, LabInfo],
-  jobs: {
-    tasks: [importHydrateTask],
-    autoRun: [{ cron: '* * * * *', queue: 'imports', limit: 1 }],
-    access: {
-      run: async ({ req }) => {
-        const authHeader = req.headers.get('authorization')
-
-        if (process.env.CRON_SECRET) {
-          try {
-            const cronSecret = assertStrongCronSecret()
-            if (authHeader === `Bearer ${cronSecret}`) return true
-          } catch {
-            // falls through to admin check below
-          }
-        }
-
-        return checkRole(['admin'], req.user)
-      },
-    },
-  },
+  globals: [ThemeConfig, Header, Footer, PageConfig],
   plugins: [
+    // First, so the plugins below that target `projects` and `users` find them.
+    labkitPlugin({
+      mediaStaticDir: path.resolve(dirname, '../public/media'),
+      projects: {
+        contentBlocks: [Banner, Code, MediaBlock],
+        previewURL: ({ slug, breadcrumbs, locale }) =>
+          `${NEXT_PUBLIC_SERVER_URL}${generatePreviewPath({ slug, breadcrumbs, collection: 'projects', locale })}`,
+      },
+    }),
     redirectsPlugin({
       collections: ['pages', 'posts', 'projects'],
       overrides: {
@@ -430,21 +382,12 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
-  onInit: async (payload) => {
-    /**
-     * Add the default roles if needed on system startup
-     */
-    await initializeRoles(payload)
-  },
   // Enable localization for the website
   localization,
   // Enable localization for admin panel
   i18n: {
     supportedLanguages: { en },
     // supportedLanguages: { en, de }, // Uncomment to enable German
-  },
-  upload: {
-    transformers: [sharpTransformer({ sharp, collections: { media: mediaSharpConfig } })],
   },
   storage: [
     vercelBlobStorage({

@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 
-import type { StagedCandidate } from '@/lib/ingestion/staging'
+import type { StagedCandidate } from '@labkit/core/ingestion/staging'
 
 interface OrcidSelection {
   orcidId: string

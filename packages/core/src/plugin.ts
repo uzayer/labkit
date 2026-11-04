@@ -1,0 +1,100 @@
+import { sharpTransformer } from '@payloadcms/transformer-sharp'
+import type { JobsConfig, Plugin } from 'payload'
+import sharp from 'sharp'
+
+import Awards from './collections/Awards'
+import Grants from './collections/Grants'
+import ImportRuns from './collections/ImportRuns'
+import { createMedia, mediaSharpConfig } from './collections/Media'
+import News from './collections/News'
+import Organizations from './collections/Organizations'
+import { createProjects, type ProjectsOptions } from './collections/Projects'
+import Publications from './collections/Publications'
+import ResearchThemes from './collections/ResearchThemes'
+import ReviewItems from './collections/ReviewItems'
+import Roles from './collections/Roles'
+import Team from './collections/Team'
+import Users from './collections/Users'
+import Venues from './collections/Venues'
+import { LabInfo } from './globals/LabInfo/config'
+import { importHydrateTask } from './ingestion/jobs/import-hydrate'
+import { assertStrongCronSecret } from './utilities/assertCronSecret'
+import { checkRole } from './utilities/checkRole'
+import { initializeRoles } from './utilities/initRoles'
+
+export interface LabkitPluginOptions {
+  /** Absolute path for Media uploads when no storage adapter handles them. Defaults to `<cwd>/public/media`. */
+  mediaStaticDir?: string
+  projects?: ProjectsOptions
+}
+
+const jobsAccess: JobsConfig['access'] = {
+  run: async ({ req }) => {
+    const authHeader = req.headers.get('authorization')
+
+    if (process.env.CRON_SECRET) {
+      try {
+        const cronSecret = assertStrongCronSecret()
+        if (authHeader === `Bearer ${cronSecret}`) return true
+      } catch {
+        // falls through to admin check below
+      }
+    }
+
+    return checkRole(['admin'], req.user)
+  },
+}
+
+/**
+ * Adds LabKit's research collections, the LabInfo global, users and roles, Media
+ * (with its WebP variants), the ingestion job, and default-role seeding.
+ * Put it first in `plugins`, so plugins that target `projects` or `users` find them.
+ */
+export const labkitPlugin =
+  (options: LabkitPluginOptions = {}): Plugin =>
+  (config) => ({
+    ...config,
+    admin: {
+      ...config.admin,
+      user: config.admin?.user ?? Users.slug,
+    },
+    // Order is nav order: Payload renders groups in the order their first collection
+    // appears. Research first (what a Lab Editor came to do), then Reference Data,
+    // then Import, then the site's own collections, then the ungrouped base ones.
+    collections: [
+      Publications,
+      Team,
+      News,
+      createProjects(options.projects),
+      Awards,
+      Grants,
+      ResearchThemes,
+      Venues,
+      Organizations,
+      ImportRuns,
+      ReviewItems,
+      ...(config.collections ?? []),
+      createMedia({ staticDir: options.mediaStaticDir }),
+      Users,
+      Roles,
+    ],
+    globals: [...(config.globals ?? []), LabInfo],
+    jobs: {
+      ...config.jobs,
+      tasks: [...(config.jobs?.tasks ?? []), importHydrateTask],
+      autoRun: config.jobs?.autoRun ?? [{ cron: '* * * * *', queue: 'imports', limit: 1 }],
+      access: config.jobs?.access ?? jobsAccess,
+    },
+    onInit: async (payload) => {
+      await config.onInit?.(payload)
+      // Add the default roles if needed on system startup
+      await initializeRoles(payload)
+    },
+    upload: {
+      ...config.upload,
+      transformers: [
+        ...(config.upload?.transformers ?? []),
+        sharpTransformer({ sharp, collections: { media: mediaSharpConfig } }),
+      ],
+    },
+  })

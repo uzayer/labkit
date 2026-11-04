@@ -4,18 +4,21 @@ import { getPayload } from 'payload'
 import configPromise from '@payload-config'
 import { after } from 'next/server'
 
-import { normalizeDoi } from '@/lib/ingestion/normalize'
-import { hydratePublicationFromDoi, loadPublicationIndexes } from '@/lib/ingestion/publications'
-import { ImportReport } from '@/lib/ingestion/report'
-import { finalizeRun } from '@/lib/ingestion/run-persistence'
+import { normalizeDoi } from '@labkit/core/ingestion/normalize'
+import {
+  hydratePublicationFromDoi,
+  loadPublicationIndexes,
+} from '@labkit/core/ingestion/publications'
+import { ImportReport } from '@labkit/core/ingestion/report'
+import { finalizeRun } from '@labkit/core/ingestion/run-persistence'
 import {
   stageBibtexCandidates,
   stageCitationCandidates,
   stageOrcidCandidates,
   type StagedCandidate,
-} from '@/lib/ingestion/staging'
+} from '@labkit/core/ingestion/staging'
 import type { ImportRun } from '@/payload-types'
-import { checkRole } from '@/utilities/checkRole'
+import { checkRole } from '@labkit/core/access'
 import { getMeUser } from '@/utilities/getMeUser'
 
 const IMPORT_QUEUE = 'imports'

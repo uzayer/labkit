@@ -1,4 +1,4 @@
-import { isAdminHidden } from '@/access/isAdmin'
+import { isAdminHidden, authenticated } from '@labkit/core/access'
 import type { GlobalConfig } from 'payload'
 
 import { link } from '@/fields/link'
@@ -7,7 +7,6 @@ import { generatePreviewPath } from '@/utilities/generatePreviewPath'
 import { serverUrl as NEXT_PUBLIC_SERVER_URL } from '@/config/server'
 import { socialIcon } from '@/components/SocialIcon/config'
 import { backgroundColor } from '@/fields/color'
-import { authenticated } from '@/access/authenticated'
 
 export const Footer: GlobalConfig = {
   slug: 'footer',
