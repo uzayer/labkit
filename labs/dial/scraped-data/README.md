@@ -17,7 +17,7 @@ The source set is intentionally messy. Pages may be stale, disagree with one ano
 - Use captures to find plausible Team Members, Projects, Grants, Awards, Publications, collaborators, and wording.
 - Cross-check overlapping claims across captures and bibliographic sources.
 - Treat a single-source claim as unverified until DIAL confirms it or a suitable primary record supports it.
-- Preserve the raw capture even after a normalized record is corrected; record the correction in the curated layer or `LOG.md`.
+- Preserve the raw capture even after a normalized record is corrected; record the correction in the curated layer.
 - Do not edit raw captures to make them agree with the current model.
 
 `../organized-from-scrapes/` maps these captures onto LabKit's collections as candidate records with source citations. It is more convenient to work from, but not more authoritative merely because it is structured.

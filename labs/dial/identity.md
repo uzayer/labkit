@@ -40,7 +40,7 @@ Until confirmed, these values may be used as realistic prototype material but mu
 - `scraped-data/` preserves what the current Lab site, the PI's personal site, and the DIAL proposal said when captured.
 - Crossref, OpenAlex, ORCID, and DBLP can support bibliographic facts but do not decide Lab membership, Project ownership, Research Themes, or editorial prominence.
 - Payload becomes the operational source of truth only after the Operator has reviewed the imported records.
-- Direct confirmation from DIAL overrides scraped and inferred material. Record consequential corrections in `LOG.md`.
+- Direct confirmation from DIAL overrides scraped and inferred material.
 
 ## Copy guardrails
 

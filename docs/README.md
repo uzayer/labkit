@@ -32,7 +32,7 @@ Standing architecture decisions live in [`adr/`](./adr/). ADR-0001 records why C
 ## What lives elsewhere
 
 - [`../README.md`](../README.md) is the current developer setup and command reference. Do not duplicate it here.
-- [`../CONTEXT.md`](../CONTEXT.md) is the canonical domain glossary; [`../LOG.md`](../LOG.md) is the chronological decision record.
+- [`../CONTEXT.md`](../CONTEXT.md) is the canonical domain glossary.
 - [`../labs/dial/`](../labs/dial/) contains DIAL's identity and frontend delivery contract, unverified working data, raw source captures, and ingestion fixtures. It is an active Lab workspace, not reusable documentation.
 
 ## Content rules
@@ -41,4 +41,4 @@ Standing architecture decisions live in [`adr/`](./adr/). ADR-0001 records why C
 - Prefer a missing page over copied template documentation that does not describe LabKit.
 - Write task steps from a real execution. Mark unverified instructions as a plan, not as established procedure.
 - Keep Lab-specific evidence in that Lab's workspace. Promote only the repeatable lesson into this directory.
-- Delete obsolete snapshots; git history is the archive. Use `LOG.md` when the reasoning must remain visible.
+- Delete or overwrite obsolete docs; git history is the archive.

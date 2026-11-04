@@ -118,6 +118,8 @@ The launch bar is **presentable**, not a perfectly normalized research graph:
 
 Do not use fuzzy identity matching as an automatic decision. LabKit intentionally auto-links people only on ORCID, DBLP ID, or an unambiguous exact full name.
 
+Check imported people by who owns each ORCID, not only by name. An ORCID taken from an OpenAlex authorship can be attached to the wrong author: in DIAL's import, one swap spread to 17 papers.
+
 ## 7. Add manual content and media
 
 The bibliographic pipeline does not create Projects, Grants, Awards, Research Themes, or launch-ready images. Enter and review the items required by the Lab's launch scope, then record which source supported each batch.
