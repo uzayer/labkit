@@ -757,3 +757,91 @@ a:active .arrow-ne {
     animation: none;
   }
 }
+
+/* ── Scroll-driven marks ──────────────────────────────────────────────────────
+   The scroll ruler and scroll stroke are driven by scroll timelines, not by a
+   script reading scroll position on the main thread. Each keyframe is linear,
+   so progress maps to value exactly as the old motion/react transforms did.
+   Without timeline support the ruler falls back to a listener that writes the
+   same properties (scroll-ruler.tsx) and the stroke is drawn in full. */
+@property --ruler-pct {
+  syntax: '<integer>';
+  inherits: false;
+  initial-value: 0;
+}
+/* Integer interpolation rounds, as Math.round did for the readout. */
+.scroll-ruler-readout {
+  counter-reset: ruler-pct var(--ruler-pct);
+}
+.scroll-ruler-readout::after {
+  content: counter(ruler-pct);
+}
+@keyframes scroll-ruler-fill {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0% 0);
+  }
+}
+/* 12rem is the ruler's h-48: the hairline rides from its top to its bottom. */
+@keyframes scroll-ruler-line {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: 0 12rem;
+  }
+}
+@keyframes scroll-ruler-readout {
+  from {
+    --ruler-pct: 0;
+  }
+  to {
+    --ruler-pct: 100;
+  }
+}
+/* Starts part-drawn so the line never reads as missing, and completes as the
+   section leaves: 0.08 → 1 over the first 85% of the view timeline. The path
+   has pathLength=1, so these are fractions of the line, the dash motion's
+   pathLength used to write. */
+@keyframes scroll-stroke-draw {
+  from {
+    stroke-dasharray: 0.08 1;
+  }
+  85%,
+  to {
+    stroke-dasharray: 1 1;
+  }
+}
+@supports (animation-timeline: scroll()) {
+  .scroll-ruler-fill {
+    animation: scroll-ruler-fill linear both;
+    animation-timeline: scroll(root);
+  }
+  .scroll-ruler-line {
+    animation: scroll-ruler-line linear both;
+    animation-timeline: scroll(root);
+  }
+  .scroll-ruler-readout {
+    animation: scroll-ruler-readout linear both;
+    animation-timeline: scroll(root);
+  }
+  /* Motion's 'start end' to 'end start' offsets: the cover range. */
+  .scroll-stroke {
+    view-timeline: --scroll-stroke block;
+  }
+  .scroll-stroke path {
+    animation: scroll-stroke-draw linear both;
+    animation-timeline: --scroll-stroke;
+    animation-range: cover;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-ruler {
+    display: none;
+  }
+  .scroll-stroke path {
+    animation: none;
+  }
+}
