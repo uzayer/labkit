@@ -117,6 +117,8 @@ const Roles: CollectionConfig = {
     },
   ],
   timestamps: true,
+  versions: false,
+  authorship: false,
 }
 
 export default Roles

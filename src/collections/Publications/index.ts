@@ -611,6 +611,8 @@ const Publications: CollectionConfig = {
     afterChange: [],
     afterRead: [],
   },
+  versions: false,
+  authorship: false,
 }
 
 export default Publications

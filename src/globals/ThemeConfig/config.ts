@@ -3,7 +3,7 @@ import type { GlobalConfig, TextFieldSingleValidation } from 'payload'
 import { revalidateThemeConfig } from './hooks/revalidateThemeConfig'
 import { generatePreviewPath } from '@/utilities/generatePreviewPath'
 import { serverUrl as NEXT_PUBLIC_SERVER_URL } from '@/config/server'
-import { isAdminFieldLevel, isAdminHidden } from '@/access/isAdmin'
+import { isAdmin, isAdminHidden } from '@/access/isAdmin'
 
 const validateCssColor: TextFieldSingleValidation = (value: string) => {
   const cssColorRegex =
@@ -26,7 +26,7 @@ export const ThemeConfig: GlobalConfig = {
   slug: 'themeConfig',
   access: {
     read: () => true,
-    update: isAdminFieldLevel,
+    update: isAdmin,
   },
   admin: {
     hidden: isAdminHidden,
@@ -914,4 +914,6 @@ export const ThemeConfig: GlobalConfig = {
   hooks: {
     afterChange: [revalidateThemeConfig],
   },
+  versions: false,
+  authorship: false,
 }

@@ -153,9 +153,10 @@ export async function startImport(
       queue: IMPORT_QUEUE,
       task: 'import-hydrate',
       input: { runId },
+      overrideAccess: true,
     })
 
-    after(payload.jobs.run({ queue: IMPORT_QUEUE }))
+    after(payload.jobs.run({ queue: IMPORT_QUEUE, overrideAccess: true }))
 
     return { success: true }
   } catch (err) {

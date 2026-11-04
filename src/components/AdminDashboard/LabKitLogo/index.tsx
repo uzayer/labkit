@@ -16,13 +16,13 @@ export default function LabKitLogo() {
         display: 'inline-flex',
         alignItems: 'center',
         gap: '0.9rem',
-        color: 'var(--theme-text)',
+        color: 'var(--color-text)',
       }}
     >
       <LabKitWordmark style={{ height: '1.9rem', width: 'auto', flexShrink: 0 }} />
       <span
         aria-hidden
-        style={{ fontSize: '1.1rem', lineHeight: 1, color: 'var(--theme-elevation-400)' }}
+        style={{ fontSize: '1.1rem', lineHeight: 1, color: 'var(--color-text-tertiary)' }}
       >
         ×
       </span>
@@ -34,14 +34,14 @@ export default function LabKitLogo() {
         <span
           aria-hidden
           style={{
-            borderLeft: '1px solid var(--theme-elevation-150)',
+            borderLeft: '1px solid var(--color-border)',
             paddingLeft: '0.65rem',
             fontSize: '0.75rem',
             lineHeight: 1.3,
             letterSpacing: '0.12em',
             whiteSpace: 'nowrap',
             textTransform: 'uppercase',
-            color: 'var(--theme-elevation-650)',
+            color: 'var(--color-text-secondary)',
           }}
         >
           North South

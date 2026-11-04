@@ -30,7 +30,7 @@ import { buildConfig, PayloadRequest } from 'payload'
 import { fileURLToPath } from 'url'
 
 import Categories from './collections/Categories'
-import { Media } from './collections/Media'
+import { Media, mediaSharpConfig } from './collections/Media'
 import { Pages } from './collections/Pages'
 import { Posts } from './collections/Posts'
 import Users from './collections/Users'
@@ -68,6 +68,7 @@ import { Telephone } from './fields/formBuilder/telephone'
 import { assertStrongCronSecret } from './utilities/assertCronSecret'
 import { validateRuntimeSecrets } from '@/utilities/validateSecrets'
 import { generateDocumentPath } from '@/utilities/generateDocumentPath'
+import { sharpTransformer } from '@payloadcms/transformer-sharp'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -150,6 +151,10 @@ export default buildConfig({
       ],
     },
   },
+  // A Payload 4 feature this project doesn't use; disabling it avoids its collection.
+  llmInstructions: false,
+  // Payload 4 lowered the default to 1. Keep 3.x's 2 so queries that omit depth behave as before.
+  defaultDepth: 2,
   // This config helps us configure global or default features that the other editors can inherit
   editor: lexicalEditor({
     features: () => {
@@ -266,6 +271,8 @@ export default buildConfig({
         admin: {
           hidden: isAdminHidden,
         },
+        authorship: false,
+        versions: false,
         // @ts-expect-error Type mismatch between redirects plugin field types and our runtime shape
         fields: ({ defaultFields }) => {
           return defaultFields.map((field) => {
@@ -311,6 +318,8 @@ export default buildConfig({
         admin: {
           hidden: isAdminHidden,
         },
+        authorship: false,
+        versions: false,
         fields: ({ defaultFields }) => {
           return defaultFields.map((field) => {
             if ('name' in field && field.name === 'confirmationMessage') {
@@ -332,6 +341,8 @@ export default buildConfig({
         },
       },
       formSubmissionOverrides: {
+        authorship: false,
+        versions: false,
         admin: {
           hidden: isAdminHidden,
           description: {
@@ -352,12 +363,6 @@ export default buildConfig({
           return [...defaultFields, ...searchFields]
         },
       },
-    }),
-    vercelBlobStorage({
-      collections: {
-        media: true,
-      },
-      token: process.env.BLOB_READ_WRITE_TOKEN || '',
     }),
     OAuth2Plugin({
       enabled: googleAuthActive,
@@ -422,7 +427,6 @@ export default buildConfig({
     apiKey: process.env.RESEND_API_KEY || '',
   }),
   secret: payloadSecret,
-  sharp,
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
@@ -439,4 +443,15 @@ export default buildConfig({
     supportedLanguages: { en },
     // supportedLanguages: { en, de }, // Uncomment to enable German
   },
+  upload: {
+    transformers: [sharpTransformer({ sharp, collections: { media: mediaSharpConfig } })],
+  },
+  storage: [
+    vercelBlobStorage({
+      collections: {
+        media: true,
+      },
+      token: process.env.BLOB_READ_WRITE_TOKEN || '',
+    }),
+  ],
 })

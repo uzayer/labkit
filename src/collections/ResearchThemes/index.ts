@@ -90,6 +90,8 @@ const ResearchThemes: CollectionConfig = {
   hooks: {
     beforeChange: [validateResearchThemes],
   },
+  versions: false,
+  authorship: false,
 }
 
 export default ResearchThemes

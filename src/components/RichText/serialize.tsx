@@ -160,10 +160,12 @@ export function serializeLexical({
         }
         if (node.type === 'text') {
           const styles: React.CSSProperties = {}
+          // TextStateFeature state; Payload 4's text node type no longer declares it.
+          const textState = (node as { $?: Record<string, unknown> }).$
 
-          if (node.$) {
+          if (textState) {
             Object.entries(colorState).forEach(([stateKey, stateValues]) => {
-              const stateValue = node.$ && (node.$[stateKey] as ColorStateKeys)
+              const stateValue = textState[stateKey] as ColorStateKeys
 
               if (stateValue && stateValues[stateValue]) {
                 Object.assign(styles, stateValues[stateValue].css)
@@ -201,7 +203,7 @@ export function serializeLexical({
             text = <sup key={index}>{text}</sup>
           }
           // Handle TextStateFeature styling for color
-          if (node.$) {
+          if (textState) {
             text = (
               <span key={index} style={styles}>
                 {text}

@@ -21,6 +21,7 @@ export const populateFunderLabel: CollectionBeforeChangeHook = async ({ data, re
     const funder = await payload.findByID({
       collection: 'organizations',
       id: funderId,
+      overrideAccess: true,
     })
 
     if (funder) {

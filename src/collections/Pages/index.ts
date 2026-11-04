@@ -148,4 +148,5 @@ export const Pages: CollectionConfig = {
     },
     maxPerDoc: 50,
   },
+  authorship: false,
 }

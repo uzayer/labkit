@@ -23,6 +23,7 @@ export const populateOrganizationLabel: CollectionBeforeChangeHook = async ({ da
     const organization = await payload.findByID({
       collection: 'organizations',
       id: orgId,
+      overrideAccess: true,
     })
 
     if (organization) {

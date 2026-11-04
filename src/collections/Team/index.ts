@@ -357,6 +357,8 @@ const Team: CollectionConfig = {
     beforeChange: [populateFullName, setDisplayInTeam, validateTeamMembers], // populateFullName added here
     afterRead: [populateRoleLabel],
   },
+  versions: false,
+  authorship: false,
 }
 
 export default Team

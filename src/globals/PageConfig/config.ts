@@ -113,4 +113,5 @@ export const PageConfig: GlobalConfig = {
       ],
     },
   ],
+  authorship: false,
 }

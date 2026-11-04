@@ -31,6 +31,7 @@ const initRoleCreation = async (payload: Payload) => {
       await payload.create({
         collection: 'roles',
         data: role,
+        overrideAccess: true,
       })
     } catch (error) {
       payload.logger.error(`Error creating role ${role.name}: ${error}`)
@@ -41,6 +42,7 @@ const initRoleCreation = async (payload: Payload) => {
   const { docs: createdRoles } = await payload.find({
     collection: 'roles',
     limit: 10,
+    overrideAccess: true,
   })
   payload.logger.info(`Created roles: ${createdRoles.map((r) => r.name)}`)
 }
@@ -51,6 +53,7 @@ export async function initializeRoles(payload: Payload): Promise<void> {
     const { totalDocs } = await payload.find({
       collection: 'roles',
       limit: 0,
+      overrideAccess: true,
     })
 
     // Create default roles if they are not yet created

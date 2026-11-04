@@ -1,7 +1,7 @@
 import { cache } from 'react'
 import { draftMode, headers } from 'next/headers'
 import { Config, Page, Post, Project, User } from '@/payload-types'
-import { createLocalReq, LocalizationConfig, Payload } from 'payload'
+import { createPayloadRequest, LocalizationConfig, Payload } from 'payload'
 import { getPayload } from 'payload'
 import configPromise from '@payload-config'
 
@@ -33,7 +33,7 @@ async function getDraftAccess(payload: Payload): Promise<DraftAccess> {
 
   try {
     const requestHeaders = new Headers(await headers())
-    const req = await createLocalReq({ req: { headers: requestHeaders } }, payload)
+    const req = await createPayloadRequest({ payload, req: { headers: requestHeaders } })
     const { user } = await payload.auth({ headers: requestHeaders, req })
 
     if (!user) {

@@ -23,6 +23,8 @@ const Categories: CollectionConfig = {
       required: true,
     },
   ],
+  versions: false,
+  authorship: false,
 }
 
 export default Categories

@@ -378,4 +378,5 @@ export const Posts: CollectionConfig = {
     },
     maxPerDoc: 50,
   },
+  authorship: false,
 }

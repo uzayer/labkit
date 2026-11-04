@@ -129,6 +129,8 @@ const Venues: CollectionConfig = {
     beforeChange: [warnDuplicateVenue],
   },
   // No versions - simple lookup table
+  versions: false,
+  authorship: false,
 }
 
 export default Venues
