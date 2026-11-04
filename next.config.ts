@@ -95,6 +95,13 @@ const nextConfig: NextConfig = {
         source: '/:path*',
         headers: [...securityHeaders],
       },
+      {
+        // Self-hosted fonts carry a version in the file name (`.v1`), bumped on
+        // regeneration, so they can be cached for good. Without this, public/
+        // files go out with max-age=0 and every page revalidates them.
+        source: '/fonts/:path*',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
+      },
     ]
 
     if (process.env.NODE_ENV === 'production') {

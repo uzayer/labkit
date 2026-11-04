@@ -10,6 +10,7 @@ import {
   useTransform,
 } from 'motion/react'
 import { useCallback, useEffect, useRef } from 'react'
+import { preload } from 'react-dom'
 
 import { cn } from '@/lib/utils'
 
@@ -76,6 +77,18 @@ interface ResearchScrollHeroProps {
 }
 
 const ResearchScrollHero = ({ className, children }: ResearchScrollHeroProps) => {
+  // The focus areas below are the site's only Fraunces italic, and they are in
+  // the first paint, so the hero preloads the italic file itself. Called here,
+  // in a client component, it reaches <head> in the server render but runs in
+  // the browser only when the hero renders. From a server component (the
+  // layout's preload() or a <link> in the page) it became a hint in the RSC
+  // payload, which every page's prefetch of / applied, downloading the italic
+  // site-wide.
+  preload('/fonts/fraunces-soft50-italic-latin.v1.woff2', {
+    as: 'font',
+    type: 'font/woff2',
+    crossOrigin: 'anonymous',
+  })
   const panelRef = useRef<HTMLElement>(null)
   const reduceMotion = useReducedMotion()
 

@@ -131,10 +131,7 @@ function RosterEntry({ member }: { member: TeamMember }) {
         className="mark-lift mt-1"
       />
       <div className="flex min-w-0 flex-col gap-1">
-        <Link
-          href={`/people/${member.slug}`}
-          className="font-display relative w-fit text-xl leading-snug before:absolute before:-inset-y-5 before:right-0 before:-left-14"
-        >
+        <Link href={`/people/${member.slug}`} className="roster-name">
           {member.name}
           <SquiggleUnderline />
         </Link>

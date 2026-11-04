@@ -220,11 +220,7 @@ export function CiteButton({
         onPointerEnter={() => void fetchCitations(id)}
         onFocus={() => void fetchCitations(id)}
         render={render}
-        className={cn(
-          !render &&
-            'ease-snappy relative z-10 inline-flex items-center gap-1 rounded-sm text-sm font-medium text-foreground decoration-foreground/40 underline-offset-4 transition-transform duration-150 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50 active:scale-[0.97] data-popup-open:underline',
-          className,
-        )}
+        className={cn(!render && 'cite-trigger', className)}
       >
         <Quote className={cn(!render && 'size-3.5 text-muted-foreground')} aria-hidden />
         Cite

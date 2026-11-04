@@ -105,12 +105,7 @@ function PubLinks({ pub }: { pub: Publication }) {
     <ul className="relative z-10 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
       {links.map((l) => (
         <li key={l.label}>
-          <a
-            href={l.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-0.5 rounded-sm font-medium text-foreground decoration-foreground/40 underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
-          >
+          <a href={l.href} target="_blank" rel="noopener noreferrer" className="pub-row-out">
             {l.label}
             <ArrowUpRight className="size-3.5 text-muted-foreground" aria-hidden />
             <span className="sr-only"> (opens in a new tab)</span>
@@ -208,7 +203,7 @@ function PublicationRow({
 }) {
   const typeLabel = pub.type ? (TYPE_LABELS[pub.type] ?? pub.type) : null
   const title = (
-    <span className="font-display block max-w-4xl text-xl leading-snug text-pretty md:text-2xl">
+    <span className="pub-row-title">
       <MarkedTitle text={pub.title} term={query} />
     </span>
   )
@@ -220,11 +215,8 @@ function PublicationRow({
           runs to three lines; a squiggle under every line of every title was
           more ink than the words, and the paper no longer darkens behind a
           row (see "Hover vocabulary" in globals.css). */}
-      <div className="group relative py-6 @2xl:grid @2xl:grid-cols-[7rem_minmax(0,1fr)] @2xl:gap-x-8">
-        <span
-          aria-hidden
-          className="bg-ink ease-snappy pointer-events-none absolute inset-y-6 -left-3 w-0.5 origin-top scale-y-0 rounded-full transition-transform duration-150 group-focus-within:scale-y-100 group-hover:scale-y-100 group-hover:duration-200 motion-reduce:transition-none md:-left-5"
-        />
+      <div className="group pub-row">
+        <span aria-hidden className="pub-row-rule" />
 
         {/* The ledger: venue over type, in the margin. */}
         <div className="hidden flex-col gap-1 pt-1.5 @2xl:flex">
@@ -252,10 +244,7 @@ function PublicationRow({
                 and links sit above it on z-10, so a click on PDF or Cite is
                 still a click on PDF or Cite. */}
             {pub.href ? (
-              <Link
-                href={pub.href}
-                className="outline-none before:absolute before:inset-0 before:rounded-lg focus-visible:before:ring-3 focus-visible:before:ring-ring/50"
-              >
+              <Link href={pub.href} className="pub-row-link">
                 {title}
               </Link>
             ) : (
@@ -281,7 +270,7 @@ function PublicationRow({
               in-page action, last on the line it shares with DOI. An award is
               the one secondary fact that stays loud. */}
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+            <div className="pub-row-facts">
               {pub.award && (
                 <span className="border-ink/35 bg-ink/8 text-ink inline-flex items-center gap-1.5 rounded-[0.8rem] border py-0.5 pr-2.5 pl-1.5">
                   <RosetteMark className="size-4" />

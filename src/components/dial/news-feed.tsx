@@ -129,14 +129,7 @@ export function NewsFeed({ entries }: { entries: NewsEntry[] }) {
               {archive
                 .filter((e) => getYear(e.date) === year)
                 .map((entry, i) => (
-                  <li
-                    key={entry.slug}
-                    className={cn(
-                      'grid gap-x-8 gap-y-2 py-6 first:pt-2 lg:grid-cols-[9rem_1fr]',
-                      listEnter,
-                    )}
-                    style={listStagger(i)}
-                  >
+                  <li key={entry.slug} className={cn('news-row', listEnter)} style={listStagger(i)}>
                     {/* The row's index line. On a phone it runs across the top of
                         the entry — date on the left, kind on the right — so the
                         kinds form one column down the right edge and can be
@@ -146,12 +139,7 @@ export function NewsFeed({ entries }: { entries: NewsEntry[] }) {
                       <time dateTime={entry.date} className="tabular-nums">
                         {formatInYear(entry.date, entry.datePrecision)}
                       </time>
-                      <span
-                        className={cn(
-                          'inline-flex shrink-0 items-center gap-1.5 rounded-full border border-current/30 px-2 py-0.5 font-mono text-[0.65rem] tracking-[0.14em] uppercase lg:mt-2',
-                          TYPE_INK[entry.type],
-                        )}
-                      >
+                      <span className={cn('news-row-kind', TYPE_INK[entry.type])}>
                         <span className="size-1.5 rounded-full bg-current" />
                         {TYPE_LABELS[entry.type]}
                       </span>

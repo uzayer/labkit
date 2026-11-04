@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Caveat, Geist, Geist_Mono, Mina } from 'next/font/google'
+import { Geist, Geist_Mono, Mina } from 'next/font/google'
 import { preload } from 'react-dom'
 import './globals.css'
 import { Navbar4 } from '@/components/dial/navbar4'
@@ -22,21 +22,17 @@ const geistMono = Geist_Mono({
 })
 
 // Display serif for page and section titles, self-hosted with SOFT pinned at
-// 50 (see the @font-face rules in globals.css). Only the latin files are
-// preloaded; the hero's first paint uses both styles. Bengali project names
-// fall through to the Bengali face, so Project names like "স্যন্ধি" are set on
-// purpose rather than in whatever the OS happens to have.
-const frauncesPreloads = [
-  '/fonts/fraunces-soft50-roman-latin.v1.woff2',
-  '/fonts/fraunces-soft50-italic-latin.v1.woff2',
-]
+// 50 (see the @font-face rules in globals.css). Only the roman latin file is
+// preloaded here: it sets most pages' largest text. The italic (82 KB) sets
+// only the home hero's focus areas, so the hero preloads it itself (see
+// ResearchScrollHero); preloading it here made every other page download it
+// unused. Bengali
+// project names fall through to the Bengali face, so Project names like
+// "স্যন্ধি" are set on purpose rather than in whatever the OS happens to have.
+const frauncesRoman = '/fonts/fraunces-soft50-roman-latin.v1.woff2'
 
-// Margin notes and annotations only, never body copy.
-const caveat = Caveat({
-  variable: '--font-caveat',
-  subsets: ['latin'],
-  preload: false,
-})
+// Caveat, for margin notes and annotations only, is self-hosted at its one
+// weight; see the @font-face rules in globals.css.
 
 // Bengali in one face, Mina, behind every stack. Bengali subset only: the
 // file loads only when Bengali glyphs are on the page, and Latin text never
@@ -78,16 +74,14 @@ export default async function RootLayout({
   children: React.ReactNode
 }>) {
   const { getNavData } = await getDial()
-  for (const href of frauncesPreloads) {
-    preload(href, { as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' })
-  }
+  preload(frauncesRoman, { as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' })
 
   return (
     <html
       lang="en"
       // The theme script adds `dark` before hydration.
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} ${caveat.variable} ${bengali.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${bengali.variable} h-full antialiased`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />

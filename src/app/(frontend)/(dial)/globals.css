@@ -11,9 +11,13 @@
    Self-hosted rather than through next/font/google so the SOFT axis can be
    pinned at 50, the only value the site uses: the files in public/fonts are
    Google's subsets with SOFT instanced out (fontTools varLib.instancer), which
-   keeps opsz and wght variable and cuts the preloaded latin pair from 270 KB to
-   149 KB. Subsets and unicode ranges mirror Google's, so latin-ext and
-   Vietnamese still load only when those characters appear. Bump the `.v1`
+   keeps opsz and wght variable and cuts the latin pair from 270 KB to 149 KB.
+   wght stays variable although the site sets only roman 400 and italic 300:
+   Fraunces has masters only at 100 and 900, so pinning a weight rounds every
+   outline, and that renders differently (checked pixel by pixel). Subsets
+   and unicode ranges mirror Google's, so latin-ext and Vietnamese still load
+   only when those characters appear: the content has Bengali, macrons and
+   combining accents, so a Latin-only cut would change glyphs. Bump the `.v1`
    suffix when regenerating: /fonts/* is served immutable (next.config.ts). */
 @font-face {
   font-family: 'Fraunces';
@@ -88,6 +92,61 @@
   size-adjust: 115.45%;
 }
 
+/* ── Caveat ──────────────────────────────────────────────────────────────────
+   Self-hosted for the same reason as Fraunces: the site only ever sets Caveat
+   at 400, which is the variable font's default master, so instancing the
+   weight axis out (fontTools varLib.instancer, wght=400) leaves every outline
+   exactly as it was and drops the variation data: the latin file goes from
+   75 KB to 49 KB. Subsets, unicode ranges, order and fallback metrics mirror
+   what next/font/google generated. Not preloaded: margin notes are never the
+   first paint. If a heavier Caveat is ever wanted, regenerate from Google's
+   variable files rather than letting the browser fake a bold. */
+@font-face {
+  font-family: 'Caveat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/caveat-400-cyrillic-ext.v1.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Caveat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/caveat-400-cyrillic.v1.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Caveat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/caveat-400-latin-ext.v1.woff2') format('woff2');
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329,
+    U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F,
+    U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Caveat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/caveat-400-latin.v1.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Caveat Fallback';
+  src: local('Arial');
+  ascent-override: 124.77%;
+  descent-override: 38.99%;
+  line-gap-override: 0%;
+  size-adjust: 76.94%;
+}
+
 @custom-variant dark (&:is(.dark *):not(:is(.light *)));
 
 @theme inline {
@@ -99,7 +158,7 @@
   /* Editorial display face for page and section titles. */
   --font-display: 'Fraunces', 'Fraunces Fallback', var(--font-bengali), ui-serif, Georgia, serif;
   /* Margin notes only — never body copy. */
-  --font-hand: var(--font-caveat), var(--font-bengali), cursive;
+  --font-hand: 'Caveat', 'Caveat Fallback', var(--font-bengali), cursive;
   --color-brand: var(--brand);
   --color-brand-foreground: var(--brand-foreground);
   --color-ink: var(--ink);
@@ -292,6 +351,57 @@
 :focus-visible:not([data-focus-target]) {
   outline: 2px solid var(--ring);
   outline-offset: 2px;
+}
+
+/* ── List rows ───────────────────────────────────────────────────────────────
+   Class strings that the long lists repeat on every row, named once here. On
+   /publications (about 190 rows) the raw utilities came to roughly 486 KB of
+   the HTML. Each class applies exactly the utilities its markup used to carry.
+   They live in the components layer, below utilities, so a utility passed
+   alongside one (a `className` prop) still wins, as tailwind-merge made it
+   win before. A row's `group` stays in the markup: it is a selector hook. */
+@layer components {
+  /* Row entrance on insert (`listEnter` in src/lib/dial/motion.ts). */
+  .list-enter {
+    @apply ease-snappy transition-[opacity,translate] duration-200 starting:translate-y-1.5 starting:opacity-0 motion-reduce:starting:translate-y-0;
+  }
+
+  /* PublicationRow and its parts (src/components/dial/publications1.tsx). */
+  .pub-row {
+    @apply relative py-6 @2xl:grid @2xl:grid-cols-[7rem_minmax(0,1fr)] @2xl:gap-x-8;
+  }
+  .pub-row-rule {
+    @apply bg-ink ease-snappy pointer-events-none absolute inset-y-6 -left-3 w-0.5 origin-top scale-y-0 rounded-full transition-transform duration-150 group-focus-within:scale-y-100 group-hover:scale-y-100 group-hover:duration-200 motion-reduce:transition-none md:-left-5;
+  }
+  .pub-row-link {
+    @apply outline-none before:absolute before:inset-0 before:rounded-lg focus-visible:before:ring-3 focus-visible:before:ring-ring/50;
+  }
+  .pub-row-title {
+    @apply font-display block max-w-4xl text-xl leading-snug text-pretty md:text-2xl;
+  }
+  .pub-row-facts {
+    @apply flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground;
+  }
+  .pub-row-out {
+    @apply inline-flex items-center gap-0.5 rounded-sm font-medium text-foreground decoration-foreground/40 underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50;
+  }
+  /* CiteButton's own trigger (src/components/dial/publication-cite.tsx). */
+  .cite-trigger {
+    @apply ease-snappy relative z-10 inline-flex items-center gap-1 rounded-sm text-sm font-medium text-foreground decoration-foreground/40 underline-offset-4 transition-transform duration-150 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50 active:scale-[0.97] data-popup-open:underline;
+  }
+
+  /* NewsFeed's archive rows (src/components/dial/news-feed.tsx). */
+  .news-row {
+    @apply grid gap-x-8 gap-y-2 py-6 first:pt-2 lg:grid-cols-[9rem_1fr];
+  }
+  .news-row-kind {
+    @apply inline-flex shrink-0 items-center gap-1.5 rounded-full border border-current/30 px-2 py-0.5 font-mono text-[0.65rem] tracking-[0.14em] uppercase lg:mt-2;
+  }
+
+  /* PeopleRoster's name link (src/components/dial/people-roster.tsx). */
+  .roster-name {
+    @apply font-display relative w-fit text-xl leading-snug before:absolute before:-inset-y-5 before:right-0 before:-left-14;
+  }
 }
 
 /* Out of flow for the whole hero page, so the opening stage gets the full
