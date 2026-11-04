@@ -17,7 +17,7 @@ import { Analytics } from '@vercel/analytics/react'
 
 import { ThemeConfig } from '@/globals/ThemeConfig/Component'
 import { resolveSlugs } from '@/utilities/resolveSlugs'
-import localization from '@/localization.config'
+import localization from '@labkit/core/localization'
 import { PublicContextProps } from '@/utilities/publicContextProps'
 
 import './globals.css'

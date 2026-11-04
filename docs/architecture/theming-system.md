@@ -36,7 +36,7 @@ In particular, verify in code before assuming:
 
 When working on theming, inspect the actual implementation:
 
-- `src/globals/ThemeConfig/`
+- `packages/core/src/template/globals/ThemeConfig/` (schema) and `src/globals/ThemeConfig/` (rendering)
 - `src/providers/Theme/`
 - frontend `globals.css`
 

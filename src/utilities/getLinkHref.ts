@@ -1,5 +1,5 @@
 import type { Page, Post } from '@/payload-types'
-import localization from '@/localization.config'
+import localization from '@labkit/core/localization'
 
 type LinkField = {
   type?: 'reference' | 'custom' | null

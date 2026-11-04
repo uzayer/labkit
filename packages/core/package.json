@@ -11,10 +11,13 @@
     "./client": "./src/client.ts",
     "./fields": "./src/fields/index.ts",
     "./ingestion/*": "./src/ingestion/*.ts",
+    "./localization": "./src/localization.ts",
     "./publication-types": "./src/publicationTypes.ts",
+    "./routes": "./src/routes.ts",
     "./rsc": "./src/rsc.ts",
-    "./seo": "./src/seo/index.ts",
     "./secrets": "./src/utilities/validateSecrets.ts",
+    "./seo": "./src/seo/index.ts",
+    "./template": "./src/template/index.ts",
     "./validation": "./src/utilities/validation.ts"
   },
   "dependencies": {
@@ -24,14 +27,21 @@
   },
   "peerDependencies": {
     "@payloadcms/db-sqlite": "4.0.0-beta.6",
+    "@payloadcms/plugin-form-builder": "4.0.0-beta.6",
     "@payloadcms/plugin-nested-docs": "4.0.0-beta.6",
+    "@payloadcms/plugin-redirects": "4.0.0-beta.6",
+    "@payloadcms/plugin-search": "4.0.0-beta.6",
     "@payloadcms/plugin-seo": "4.0.0-beta.6",
     "@payloadcms/richtext-lexical": "4.0.0-beta.6",
+    "@payloadcms/storage-vercel-blob": "4.0.0-beta.6",
     "@payloadcms/transformer-sharp": "4.0.0-beta.6",
     "@payloadcms/ui": "4.0.0-beta.6",
+    "lucide-react": "^1.65.0",
     "next": "16.4.3",
     "payload": "4.0.0-beta.6",
+    "payload-oauth2": "1.0.21",
     "react": "19.3.1",
+    "react-icons": "^5.7.0",
     "sharp": "0.35.5"
   }
 }

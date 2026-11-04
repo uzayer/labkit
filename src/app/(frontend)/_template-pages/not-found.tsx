@@ -12,7 +12,7 @@ import { InitTheme } from '@/providers/Theme/InitTheme'
 import { Analytics } from '@vercel/analytics/react'
 
 import { ThemeConfig } from '@/globals/ThemeConfig/Component'
-import localization from '@/localization.config'
+import localization from '@labkit/core/localization'
 import { PublicContextProps } from '@/utilities/publicContextProps'
 import './globals.css'
 import Link from 'next/link'
