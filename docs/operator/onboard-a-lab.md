@@ -65,6 +65,15 @@ An ORCID record represents a person's career, not automatically a Lab's output. 
 
 ## 3. Prepare and rehearse the import
 
+For a new Lab, the setup wizard at `/admin/onboarding` replaces the manual first steps. The first admin lands in it on a fresh database, and it:
+
+- reads the PI's public ORCID record and creates the PI as a Team Member with role Director and their ORCID set, so the "roster first" rule below is met (an existing Team Member with that exact ORCID is linked instead and set to Director; it never links by name);
+- prefills LabInfo's institution, department and location from the PI's chosen ORCID employment, and saves the Lab's name, short name, headline, description, email and logo;
+- saves the Features switches (Grants and Awards start off);
+- stages the PI's ORCID works as an Import Run with nothing selected, takes the selection and a since-year filter in the UI instead of a selection JSON, and hydrates the chosen DOI works batch by batch while the page is open. Unselected works are left out of the run, as in the CLI. Its Import Runs carry `params.via: "onboarding"`.
+
+The wizard has no dry run. Use it for a first import small enough to check by eye, and the CLI below when the Lab's selection needs a rehearsal, a reviewed selection file, or a source other than ORCID. Record which path you used in the execution log.
+
 1. Confirm the environment points to the intended database.
 2. Back up an existing database before any non-dry-run import.
 3. Confirm the Admin and Editor roles exist.

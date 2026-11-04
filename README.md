@@ -35,7 +35,7 @@ LabKit is a research information system small enough for one lab to run. It mode
 - [How ingestion works](#how-ingestion-works)
 - [Front doors](#front-doors)
 - [The data model](#the-data-model)
-- [Quick start](#quick-start)
+- [Start a new Lab](#start-a-new-lab)
 - [Commands](#commands)
 - [Project layout](#project-layout)
 - [Status](#status)
@@ -104,31 +104,40 @@ Two properties are load-bearing:
 
 [`CONTEXT.md`](CONTEXT.md) is the canonical glossary — what each term means and which synonyms to avoid.
 
-## Quick start
+## Start a new Lab
 
 Requires **Node ≥ 24** and **Bun 1.4.2**. Local development uses an ignored SQLite file; production uses Turso. Bun installs dependencies; Node runs the application.
 
 ```bash
 git clone git@github.com:uzayer/labkit.git
 cd labkit
-bun install              # install the locked dependency set
-cp .env.example .env     # set PAYLOAD_SECRET; local file: URL is provided
-bun run dev              # http://localhost:3000, admin at /admin
+bun install                # install the locked dependency set
+cp .env.example .env       # works as is locally; set a strong PAYLOAD_SECRET before deploying
+bun run payload migrate    # creates labkit.db from the committed migrations
+bun run dev                # http://localhost:3000, admin at /admin
 ```
 
 `bun install` is the sanctioned install. Bun is pinned through `packageManager`, resolves dependencies from `bun.lock`, and native build scripts are allowlisted in `package.json`'s `trustedDependencies`.
 
-For Turso environment variables, SQL migrations, backups, media, and the
-fresh-database production cutover sequence, see
-[`docs/operator/turso-cutover.md`](docs/operator/turso-cutover.md).
+Open `/admin` and create the first user, who is always an admin. LabKit then opens the setup wizard at `/admin/onboarding`:
 
-Then import a real corpus:
+1. **The PI's ORCID iD.** LabKit reads the public ORCID record, prefills the Lab's institution, department and location, and adds the PI as the Lab's Director.
+2. **Lab info:** name, short name, headline, description, contact email, location and logo.
+3. **Features:** which modules the site shows. Grants and Awards start off.
+4. **The first Import Run**, from the PI's ORCID record. Nothing is preselected, because an ORCID record covers a career, not a Lab. Filter by year, tick the Lab's works, and the page shows progress while LabKit hydrates them.
+5. **Done:** view the site. The dashboard then keeps a checklist of what's left (Team photos, Research Themes, the review queue), which empties as the work gets done.
+
+### Deploy to Vercel
+
+Each Lab gets its own deployment: a Vercel project, a Turso database and a Vercel Blob store for Media. In the Vercel project, set the variables from `.env.example` with `TURSO_DATABASE_URL=libsql://…`, `TURSO_AUTH_TOKEN`, `BLOB_READ_WRITE_TOKEN`, strong secrets and both Turnstile keys, and apply the migrations to Turso before the first deploy. [`docs/operator/turso-cutover.md`](docs/operator/turso-cutover.md) has the full sequence: environment variables, migrations, backups and Media.
+
+Vercel has no jobs cron, so the wizard drives its import from the browser, one batch per request. Larger imports can also go through the CLI, which an Operator runs against the Lab's database:
 
 ```bash
 bun run payload -- run scripts/ingestion/import-orcid.ts 0000-0002-1825-0097 dry-run
 ```
 
-Drop `dry-run` to commit. A dry run still writes the Import Run and its review queue, so you can inspect exactly what would have happened in `/admin` before letting it touch content.
+Drop `dry-run` to commit. A dry run writes the Import Run and a preview report, so you can see exactly what would happen before it touches content.
 
 > `payload run` parses argv through minimist and forwards only _positional_ args, so `--dry-run` silently vanishes. Every script takes the bare word `dry-run` instead.
 
