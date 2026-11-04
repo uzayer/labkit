@@ -359,7 +359,7 @@ check(PAIRS, 'SSRN 4190884 vs LNICST: both name lists pair with OpenAlex cleanly
 // ─── 3. CHI vs CHI Extended Abstracts ────────────────────────────────────────
 
 const CHI = 'chi-vs-chi-ea'
-// The two curated venues exactly as scripts/ingestion/seed-venues.ts seeds them.
+// The two curated venues exactly as DIAL's venue seed (dial-site's scripts/seed-venues.ts) writes them.
 const chiVenues: VenueLookupEntry[] = [
   {
     id: 'venue:chi',

@@ -6,7 +6,6 @@ import { fileURLToPath } from 'url'
 
 import { labkitDb, labkitMediaStorage, labkitPlugin } from '@labkit/core'
 import { validateRuntimeSecrets } from '@labkit/core/secrets'
-import { revalidateDialPlugin } from './plugins/revalidateDial'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -35,11 +34,7 @@ export default buildConfig({
   db: labkitDb(),
   cors: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
   csrf: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
-  plugins: [
-    labkitPlugin({ mediaStaticDir: path.resolve(dirname, '../public/media') }),
-    // After labkitPlugin, which adds the collections and LabInfo global it hooks.
-    revalidateDialPlugin,
-  ],
+  plugins: [labkitPlugin({ mediaStaticDir: path.resolve(dirname, '../public/media') })],
   email: resendAdapter({
     defaultFromAddress: process.env.EMAIL_FROM_ADDRESS!,
     defaultFromName: 'LabKit Website',

@@ -224,7 +224,7 @@ async function resolveVenue(
   }
 
   // Curated name match: the Operator seeds recurring venues with their
-  // per-year spellings as alternateNames (scripts/ingestion/seed-venues.ts).
+  // per-year spellings as alternateNames (DIAL seeds its own: dial-site's scripts/seed-venues.ts).
   // Exact after normalizeVenueName, and only when exactly one venue matches —
   // never fuzzy. Runs before the auto-create gate so a seeded venue (with its
   // shortName) wins over a fresh per-edition record keyed to an OpenAlex ID.

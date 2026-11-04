@@ -5,8 +5,8 @@ import { PublicContextProps } from '@/utilities/publicContextProps'
 
 /**
  * Minimal stand-in project page. The template's case-study renderer was removed
- * with the schema freeze (ADR-0002); the real page is DIAL's `/projects` route,
- * ported in AUT-147. This exists only so `/projects/<slug>` and admin preview keep working.
+ * with the schema freeze (ADR-0002); a Lab's site renders
+ * its own `/projects` route. This exists only so `/projects/<slug>` and admin preview keep working.
  */
 export const RenderProjectDetailPage: React.FC<{
   project: Project
