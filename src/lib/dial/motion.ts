@@ -11,6 +11,9 @@ export const listStagger = (i: number): CSSProperties => ({
   transitionDelay: `${Math.min(i, 8) * 30}ms`,
 })
 
-/** Row entrance on insert: CSS transitions, so rapid filter clicks retarget. */
-export const listEnter =
-  'transition-[opacity,translate] duration-200 ease-snappy starting:opacity-0 starting:translate-y-1.5 motion-reduce:starting:translate-y-0'
+/**
+ * Row entrance on insert: CSS transitions, so rapid filter clicks retarget.
+ * The utilities are applied once in globals.css (`.list-enter`) rather than
+ * spelled out on every row of a long list.
+ */
+export const listEnter = 'list-enter'

@@ -353,6 +353,57 @@
   outline-offset: 2px;
 }
 
+/* ── List rows ───────────────────────────────────────────────────────────────
+   Class strings that the long lists repeat on every row, named once here. On
+   /publications (about 190 rows) the raw utilities came to roughly 486 KB of
+   the HTML. Each class applies exactly the utilities its markup used to carry.
+   They live in the components layer, below utilities, so a utility passed
+   alongside one (a `className` prop) still wins, as tailwind-merge made it
+   win before. A row's `group` stays in the markup: it is a selector hook. */
+@layer components {
+  /* Row entrance on insert (`listEnter` in src/lib/dial/motion.ts). */
+  .list-enter {
+    @apply ease-snappy transition-[opacity,translate] duration-200 starting:translate-y-1.5 starting:opacity-0 motion-reduce:starting:translate-y-0;
+  }
+
+  /* PublicationRow and its parts (src/components/dial/publications1.tsx). */
+  .pub-row {
+    @apply relative py-6 @2xl:grid @2xl:grid-cols-[7rem_minmax(0,1fr)] @2xl:gap-x-8;
+  }
+  .pub-row-rule {
+    @apply bg-ink ease-snappy pointer-events-none absolute inset-y-6 -left-3 w-0.5 origin-top scale-y-0 rounded-full transition-transform duration-150 group-focus-within:scale-y-100 group-hover:scale-y-100 group-hover:duration-200 motion-reduce:transition-none md:-left-5;
+  }
+  .pub-row-link {
+    @apply outline-none before:absolute before:inset-0 before:rounded-lg focus-visible:before:ring-3 focus-visible:before:ring-ring/50;
+  }
+  .pub-row-title {
+    @apply font-display block max-w-4xl text-xl leading-snug text-pretty md:text-2xl;
+  }
+  .pub-row-facts {
+    @apply flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground;
+  }
+  .pub-row-out {
+    @apply inline-flex items-center gap-0.5 rounded-sm font-medium text-foreground decoration-foreground/40 underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50;
+  }
+  /* CiteButton's own trigger (src/components/dial/publication-cite.tsx). */
+  .cite-trigger {
+    @apply ease-snappy relative z-10 inline-flex items-center gap-1 rounded-sm text-sm font-medium text-foreground decoration-foreground/40 underline-offset-4 transition-transform duration-150 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50 active:scale-[0.97] data-popup-open:underline;
+  }
+
+  /* NewsFeed's archive rows (src/components/dial/news-feed.tsx). */
+  .news-row {
+    @apply grid gap-x-8 gap-y-2 py-6 first:pt-2 lg:grid-cols-[9rem_1fr];
+  }
+  .news-row-kind {
+    @apply inline-flex shrink-0 items-center gap-1.5 rounded-full border border-current/30 px-2 py-0.5 font-mono text-[0.65rem] tracking-[0.14em] uppercase lg:mt-2;
+  }
+
+  /* PeopleRoster's name link (src/components/dial/people-roster.tsx). */
+  .roster-name {
+    @apply font-display relative w-fit text-xl leading-snug before:absolute before:-inset-y-5 before:right-0 before:-left-14;
+  }
+}
+
 /* Out of flow for the whole hero page, so the opening stage gets the full
    viewport under a nav that is visible from the first paint. */
 body:has([data-hero-root]) [data-site-nav] {
