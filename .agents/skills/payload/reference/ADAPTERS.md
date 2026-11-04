@@ -161,6 +161,7 @@ Available storage adapters:
 - **@payloadcms/storage-gcs** - Google Cloud Storage
 - **@payloadcms/storage-r2** - Cloudflare R2
 - **@payloadcms/storage-vercel-blob** - Vercel Blob
+- **@payloadcms/storage-uploadthing** - Uploadthing
 
 ### AWS S3
 
@@ -262,6 +263,26 @@ export default buildConfig({
         media: true,
       },
       token: process.env.BLOB_READ_WRITE_TOKEN,
+    }),
+  ],
+})
+```
+
+### Uploadthing
+
+```ts
+import { uploadthingStorage } from '@payloadcms/storage-uploadthing'
+
+export default buildConfig({
+  plugins: [
+    uploadthingStorage({
+      collections: {
+        media: true,
+      },
+      options: {
+        token: process.env.UPLOADTHING_TOKEN,
+        acl: 'public-read',
+      },
     }),
   ],
 })

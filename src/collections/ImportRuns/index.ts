@@ -127,6 +127,8 @@ const ImportRuns: CollectionConfig = {
       type: 'date',
     },
   ],
+  versions: false,
+  authorship: false,
 }
 
 export default ImportRuns

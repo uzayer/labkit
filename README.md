@@ -13,7 +13,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](#license)
 [![Status: pre-release](https://img.shields.io/badge/Status-pre--release-orange.svg?style=for-the-badge)](#status)
 
-**[Vision](docs/product/VISION.md)** · **[Roadmap](docs/product/ROADMAP.md)** · **[Glossary](CONTEXT.md)** · **[Decision log](LOG.md)** · **[Architecture](CLAUDE.md)** · **[ADRs](docs/adr/)**
+**[Vision](docs/product/VISION.md)** · **[Roadmap](docs/product/ROADMAP.md)** · **[Glossary](CONTEXT.md)** · **[Decision log](LOG.md)** · **[Agent guide](CLAUDE.md)** · **[ADRs](docs/adr/)**
 
 </div>
 
@@ -209,7 +209,7 @@ Full sequencing, including what is explicitly out of scope, is in [`docs/product
 
 Read these before non-trivial work:
 
-- [`CLAUDE.md`](CLAUDE.md) — architecture, commands, and the non-obvious gotchas that cost real debugging time.
+- [`CLAUDE.md`](CLAUDE.md) (also `AGENTS.md`) — scope, verification, and the non-obvious gotchas that cost real debugging time.
 - [`CONTEXT.md`](CONTEXT.md) — the glossary. It is opinionated about which words to avoid; use its terms exactly.
 - [`LOG.md`](LOG.md) — the decision log. Why a rejected approach was rejected, what a prior session confirmed against real data. Append to it when you learn something a diff can't show.
 - [`docs/adr/`](docs/adr/) — standing architectural decisions.

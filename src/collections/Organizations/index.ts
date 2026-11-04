@@ -161,6 +161,8 @@ const Organizations: CollectionConfig = {
     beforeChange: [warnDuplicateOrganization],
   },
   // No versions - simple lookup table
+  versions: false,
+  authorship: false,
 }
 
 export default Organizations

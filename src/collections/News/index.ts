@@ -109,6 +109,8 @@ const News: CollectionConfig = {
     },
     provenanceFields(),
   ],
+  versions: false,
+  authorship: false,
 }
 
 export default News

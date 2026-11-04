@@ -21,6 +21,7 @@ export const populateVenueLabel: CollectionBeforeChangeHook = async ({ data, req
     const venue = await payload.findByID({
       collection: 'venues',
       id: venueId,
+      overrideAccess: true,
     })
 
     if (venue) {

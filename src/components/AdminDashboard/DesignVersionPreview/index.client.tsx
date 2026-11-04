@@ -98,7 +98,7 @@ const DesignVersionPreviewClient: React.FC<DesignVersionPreviewProps> = ({
               className="design-version-preview__button"
               onClick={handleOpenDrawer}
               buttonStyle="secondary"
-              size="small"
+              size="medium"
             >
               <div className="design-version-preview__button-content">
                 <span>Preview All</span>

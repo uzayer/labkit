@@ -48,6 +48,7 @@ export const warnDuplicateOrganization: CollectionBeforeChangeHook = async ({
       or: orConditions,
     },
     limit: 5,
+    overrideAccess: true,
   })
 
   // Filter out the current document if updating

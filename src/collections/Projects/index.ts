@@ -316,4 +316,5 @@ export const Projects: CollectionConfig = {
     drafts: true,
     maxPerDoc: 50,
   },
+  authorship: false,
 }

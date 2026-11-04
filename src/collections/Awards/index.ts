@@ -240,6 +240,8 @@ const Awards: CollectionConfig = {
   hooks: {
     beforeChange: [validateAwards, populateOrganizationLabel],
   },
+  versions: false,
+  authorship: false,
 }
 
 export default Awards

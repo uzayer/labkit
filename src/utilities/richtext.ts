@@ -170,7 +170,7 @@ export interface SideMenuItem {
  * @returns An array of objects containing the headline class, text and anchor id
  */
 export const getSideMenuStructure = (
-  content: RichTextContent | null | undefined,
+  content: RichTextContent<object> | null | undefined,
   options?: { headlineLevels?: ('h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6')[] },
 ): SideMenuItem[] => {
   // Handle the case where options is undefined
@@ -180,7 +180,7 @@ export const getSideMenuStructure = (
     return []
   }
 
-  const children = content.root.children
+  const children = content.root.children as RichTextChild[]
   const menuItems: SideMenuItem[] = []
 
   // Function to recursively search for heading nodes

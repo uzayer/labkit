@@ -27,7 +27,7 @@ Standing architecture decisions live in [`adr/`](./adr/). ADR-0001 records why C
 
 ## Repository operations
 
-The files in [`agents/`](./agents/) document this repository's issue-tracker and triage conventions. They are operational inputs for contributors and coding agents, not Lab Editor guidance.
+[`agents/domain.md`](./agents/domain.md) tells coding-agent skills how to use the glossary and ADRs. It is not Lab Editor guidance.
 
 ## What lives elsewhere
 

@@ -225,6 +225,7 @@ export async function queueImportRun(payload: Payload, runId: string): Promise<v
     queue: IMPORT_QUEUE,
     task: 'import-hydrate',
     input: { runId },
+    overrideAccess: true,
   })
 
   await payload.update({
@@ -564,6 +565,7 @@ export const importHydrateTask: TaskConfig<ImportHydrateTaskIO> = {
         task: 'import-hydrate',
         input: { runId: input.runId },
         waitUntil: new Date(Date.now() + CONTENTION_RETRY_MS),
+        overrideAccess: true,
       })
       return { output: {} }
     }
@@ -577,6 +579,7 @@ export const importHydrateTask: TaskConfig<ImportHydrateTaskIO> = {
       task: 'import-hydrate',
       input: { runId: input.runId },
       waitUntil: new Date(Date.now() + WATCHDOG_DELAY_MS),
+      overrideAccess: true,
     })
 
     const report = new ImportReport()
@@ -629,6 +632,7 @@ export const importHydrateTask: TaskConfig<ImportHydrateTaskIO> = {
         queue: IMPORT_QUEUE,
         task: 'import-hydrate',
         input: { runId: input.runId },
+        overrideAccess: true,
       })
       await releaseRunLock(req.payload, input.runId, lockToken)
       return { output: {} }

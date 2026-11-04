@@ -1,5 +1,5 @@
 import { checkRole } from '@/utilities/checkRole'
-import { Access, ClientUser, FieldAccess } from 'payload'
+import { Access, AuthenticatedUser, FieldAccess } from 'payload'
 import { User } from '@/payload-types'
 
 export const isAdmin: Access = ({ req: { user } }) => {
@@ -11,8 +11,8 @@ export const isAdminFieldLevel: FieldAccess = ({ req: { user } }) => {
 }
 
 // For Payload admin UI and frontend components
-export const isAdminHidden = ({ user }: { user: ClientUser | User | null }): boolean => {
-  // for isAdminHidden, payload suddendly shows a different type (ClientUser), but the
+export const isAdminHidden = ({ user }: { user: AuthenticatedUser | User | null }): boolean => {
+  // for isAdminHidden, payload suddendly shows a different type (AuthenticatedUser), but the
   // data is actually the same..
   const typedUser = user as unknown as User
   return !checkRole(['admin'], typedUser)

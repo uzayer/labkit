@@ -1,5 +1,5 @@
 import type { CollectionSlug } from 'payload'
-import { createLocalReq, getPayload } from 'payload'
+import { createPayloadRequest, getPayload } from 'payload'
 
 import { draftMode } from 'next/headers'
 import { redirect } from 'next/navigation'
@@ -38,7 +38,7 @@ export async function GET(req: NextRequest): Promise<Response> {
 
   try {
     const requestHeaders = new Headers(req.headers)
-    const localReq = await createLocalReq({ req: { headers: requestHeaders } }, payload)
+    const localReq = await createPayloadRequest({ payload, req: { headers: requestHeaders } })
     const authResult = await payload.auth({
       req: localReq,
       headers: requestHeaders,

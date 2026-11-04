@@ -284,4 +284,6 @@ export const LabInfo: GlobalConfig = {
   hooks: {
     afterChange: [revalidateLabInfo],
   },
+  versions: false,
+  authorship: false,
 }

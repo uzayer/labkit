@@ -54,6 +54,9 @@ async function listUsersForAdminChecks(req: any) {
 const Users: CollectionConfig = {
   slug: 'users',
   auth: {
+    // Payload 4 defaults this to 0. hasPermission() needs req.user's roles populated,
+    // so keep 3.x's behaviour of loading the user at the default depth.
+    depth: 2,
     lockTime: 15 * 60 * 1000,
     maxLoginAttempts: 5,
   },
@@ -248,6 +251,8 @@ const Users: CollectionConfig = {
     },
   ],
   timestamps: true,
+  versions: false,
+  authorship: false,
 }
 
 export default Users

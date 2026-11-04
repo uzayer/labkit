@@ -1,3 +1,4 @@
+import type { SharpCollectionConfig } from '@payloadcms/transformer-sharp'
 import type { CollectionConfig } from 'payload'
 
 import {
@@ -15,6 +16,40 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 const webp = { format: 'webp', options: { quality: 80 } } as const
+
+// Sharp settings live on the transformer in payload.config.ts, not on the collection.
+// Store the original as WebP. Each variant needs its own formatOptions: the
+// top-level setting only applies to the original.
+export const mediaSharpConfig: SharpCollectionConfig = {
+  formatOptions: webp,
+  variants: [
+    {
+      name: 'thumbnail',
+      formatOptions: webp,
+      width: 320,
+      height: 320,
+    },
+    {
+      name: 'avatar',
+      formatOptions: webp,
+      width: 400,
+      height: 400,
+      fit: 'cover',
+      position: 'centre',
+    },
+    {
+      name: 'card',
+      formatOptions: webp,
+      width: 800,
+    },
+    {
+      name: 'og',
+      formatOptions: webp,
+      width: 1200,
+      height: 630,
+    },
+  ],
+}
 
 export const Media: CollectionConfig = {
   slug: 'media',
@@ -61,36 +96,8 @@ export const Media: CollectionConfig = {
     ],
     // Explicitly enable focal point selector
     focalPoint: true,
-    // Store the original as WebP. Each image size needs its own formatOptions:
-    // the top-level setting only applies to the original.
-    formatOptions: webp,
     adminThumbnail: 'thumbnail',
-    imageSizes: [
-      {
-        name: 'thumbnail',
-        formatOptions: webp,
-        width: 320,
-        height: 320,
-      },
-      {
-        name: 'avatar',
-        formatOptions: webp,
-        width: 400,
-        height: 400,
-        fit: 'cover',
-        position: 'centre',
-      },
-      {
-        name: 'card',
-        formatOptions: webp,
-        width: 800,
-      },
-      {
-        name: 'og',
-        formatOptions: webp,
-        width: 1200,
-        height: 630,
-      },
-    ],
   },
+  versions: false,
+  authorship: false,
 }

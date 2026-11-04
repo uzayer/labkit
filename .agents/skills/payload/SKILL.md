@@ -11,12 +11,11 @@ Payload is a Next.js native CMS with TypeScript-first architecture, providing ad
 
 | Task                     | Solution                                                                   | Details                                                                                                                          |
 | ------------------------ | -------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| Auto-generate slugs      | `{ type: 'slug', useAsSlug: 'title' }`                                     | [FIELDS.md#slug-field](reference/FIELDS.md#slug-field)                                                                           |
+| Auto-generate slugs      | `slugField()`                                                              | [FIELDS.md#slug-field-helper](reference/FIELDS.md#slug-field-helper)                                                             |
 | Restrict content by user | Access control with query                                                  | [ACCESS-CONTROL.md#row-level-security-with-complex-queries](reference/ACCESS-CONTROL.md#row-level-security-with-complex-queries) |
 | Local API user ops       | `user` + `overrideAccess: false`                                           | [QUERIES.md#access-control-in-local-api](reference/QUERIES.md#access-control-in-local-api)                                       |
 | Draft/publish workflow   | `versions: { drafts: true }`                                               | [COLLECTIONS.md#versioning--drafts](reference/COLLECTIONS.md#versioning--drafts)                                                 |
 | Computed fields          | `virtual: true` with **field-level** `hooks.afterRead` returning the value | [FIELDS.md#virtual-fields](reference/FIELDS.md#virtual-fields)                                                                   |
-| Document titles          | Stored top-level field in `admin.useAsTitle`                               | [COLLECTIONS.md#useastitle](reference/COLLECTIONS.md#useastitle)                                                                 |
 | Conditional fields       | `admin.condition`                                                          | [FIELDS.md#conditional-fields](reference/FIELDS.md#conditional-fields)                                                           |
 | Custom field validation  | `validate` function                                                        | [FIELDS.md#validation](reference/FIELDS.md#validation)                                                                           |
 | Filter relationship list | `filterOptions` on field                                                   | [FIELDS.md#relationship](reference/FIELDS.md#relationship)                                                                       |
@@ -45,7 +44,7 @@ Payload is a Next.js native CMS with TypeScript-first architecture, providing ad
 ```bash
 npx create-payload-app@latest my-app
 cd my-app
-bun run dev
+pnpm dev
 ```
 
 ### Minimal Config
@@ -90,25 +89,21 @@ Apply these defaults when modeling content unless there's a clear reason not to:
   `_status` field (`draft` / `published` / `changed`) — **don't add your own
   `status` field**, it's redundant. Only skip versions for collections that have
   no publish/draft lifecycle (e.g. internal join tables, settings).
-- **Use the native `slug` field type for all slugs** instead of hand-rolling
+- **Use `slugField()` for all slugs** instead of hand-rolling
   `{ name: 'slug', type: 'text', unique: true }`. It auto-generates the slug from
-  a source field, adds a regenerate toggle, and defaults to `required`, `unique`,
-  `index`, and `position: 'sidebar'`. `useAsSlug` is **required** — name the
-  source field to generate from: `{ name: 'slug', type: 'slug', useAsSlug: 'title' }`.
+  the title, adds a regenerate toggle, and handles uniqueness/indexing for you.
+  It defaults to generating from a `title` field — if the collection has no
+  `title`, pass the source field: `slugField({ useAsSlug: 'name' })`.
 - **`position: 'sidebar'` is for short, at-a-glance fields** — status, category,
   author, publish date. Avoid it for long fields that need horizontal space to be
   usable (description, rich text content, long text). Those belong in the main
   document area.
-- **Use a stored top-level field for `admin.useAsTitle`.** Never set
-  `admin.useAsTitle` to a computed field configured with `virtual: true`; these
-  fields are not queryable and Payload rejects the configuration. A
-  relationship-path virtual such as `virtual: 'author.name'` is supported, but
-  use it only when the title must come from a related document.
 
 ### Basic Collection
 
 ```ts
 import type { CollectionConfig } from 'payload'
+import { slugField } from 'payload'
 
 export const Posts: CollectionConfig = {
   slug: 'posts',
@@ -122,7 +117,7 @@ export const Posts: CollectionConfig = {
   },
   fields: [
     { name: 'title', type: 'text', required: true },
-    { name: 'slug', type: 'slug', useAsSlug: 'title' }, // auto-generates from `title`, unique + indexed, sidebar position
+    slugField(), // auto-generates from `title`, unique + indexed, sidebar position
     { name: 'content', type: 'richText' }, // long field — stays in the main area, not the sidebar
     // short, at-a-glance field — good sidebar candidate
     { name: 'author', type: 'relationship', relationTo: 'users', admin: { position: 'sidebar' } },
@@ -145,8 +140,8 @@ For more collection patterns (auth, upload, drafts, live preview), see [COLLECTI
 // Rich text
 { name: 'content', type: 'richText', required: true }
 
-// Slug — use the native field type instead of a hand-rolled text field
-{ name: 'slug', type: 'slug', useAsSlug: 'title' }
+// Slug — use the helper instead of a hand-rolled text field
+slugField()
 
 // Select (for genuine taxonomy — NOT publish state; use versions.drafts + _status for that)
 { name: 'category', type: 'select', options: ['news', 'tutorial', 'opinion'] }
@@ -449,7 +444,6 @@ import type { Post, User } from '@/payload-types'
 8. **MongoDB transactions** require replica set configuration
 9. **SQLite transactions** are disabled by default; enable with `transactionOptions: {}`
 10. **Point fields** are not supported in SQLite
-11. **Computed virtual titles** — fields configured with `virtual: true` cannot be used in `admin.useAsTitle`; use a stored top-level field
 
 ## Best Practices
 
@@ -457,9 +451,7 @@ import type { Post, User } from '@/payload-types'
 
 - Enable `versions: { drafts: true }` by default on content collections; rely on the
   auto-injected `_status` field rather than adding a custom `status` field
-- Use the native `slug` field type for slugs instead of hand-rolling a unique text field
-- Use a stored top-level field for `admin.useAsTitle`; never use a computed
-  `virtual: true` field as the title
+- Use `slugField()` for slugs instead of hand-rolling a unique text field
 - Reserve `position: 'sidebar'` for short, at-a-glance fields (status, category,
   author, date); keep long fields (description, rich text) in the main area
 

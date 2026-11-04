@@ -99,7 +99,7 @@ async function main() {
         overrideAccess: true,
       })
     }
-    await payload.jobs.run({ queue: 'imports', limit: 10 })
+    await payload.jobs.run({ queue: 'imports', limit: 10, overrideAccess: true })
   }
 
   // --- contention: pre-claim the lease, queue + run, expect no processing ---
@@ -112,7 +112,7 @@ async function main() {
   let fresh = await loadRun()
   check('queueImportRun flips staged → running', fresh.status === 'running')
 
-  await payload.jobs.run({ queue: 'imports', limit: 10 })
+  await payload.jobs.run({ queue: 'imports', limit: 10, overrideAccess: true })
   fresh = await loadRun()
   const touched = (fresh.candidates as Record<string, unknown>[]).filter(
     (c) => c.status !== 'pending',

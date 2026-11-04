@@ -296,6 +296,8 @@ const Grants: CollectionConfig = {
     beforeChange: [populateFunderLabel],
     afterChange: [revalidateGrant],
   },
+  versions: false,
+  authorship: false,
 }
 
 export default Grants

@@ -90,6 +90,8 @@ const ReviewItems: CollectionConfig = {
       type: 'date',
     },
   ],
+  versions: false,
+  authorship: false,
 }
 
 export default ReviewItems
