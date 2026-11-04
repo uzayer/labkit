@@ -53,6 +53,7 @@ const KIND_LABELS: Record<ReviewItemKind, string> = {
 
 const KIND_ORDER: ReviewItemKind[] = [
   'person-merge-suggestion',
+  'identifier-name-conflict',
   'unmatched-venue',
   'unmatched-org',
   'no-doi-work',

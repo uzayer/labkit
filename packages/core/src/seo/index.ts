@@ -285,8 +285,15 @@ export function publicationJsonLd(
   })
 }
 
-/** schema.org Person JSON-LD for a Team Member's page. */
-export function personJsonLd(member: Team, options: UrlOptions & { url?: string } = {}): JsonLd {
+/**
+ * schema.org Person JSON-LD for a Team Member's page. The email is left out
+ * unless `includeEmail` is set: machine-readable addresses get harvested, and
+ * whether a person's email is public is the site's decision, not core's.
+ */
+export function personJsonLd(
+  member: Team,
+  options: UrlOptions & { url?: string; includeEmail?: boolean } = {},
+): JsonLd {
   const affiliation = organizationJsonLd(
     populated<Organization>(member.affiliation),
     member.affiliationLabel,
@@ -300,7 +307,7 @@ export function personJsonLd(member: Team, options: UrlOptions & { url?: string 
     familyName: member.lastName,
     jobTitle: member.title,
     image: mediaUrl(member.photo, options.siteUrl),
-    email: member.email,
+    email: options.includeEmail ? member.email : undefined,
     url: options.url,
     affiliation,
     identifier: member.orcid
