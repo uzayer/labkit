@@ -11,6 +11,12 @@ import { getDial } from '@/lib/dial/data/get'
 
 type Props = { params: Promise<{ slug: string }> }
 
+// None at build: each page renders on its first request and is then cached
+// like the rest of the site, until its records change (see ../../layout.tsx).
+export function generateStaticParams() {
+  return []
+}
+
 export async function generateMetadata({ params }: Props) {
   const { getTeamMemberBySlug } = await getDial()
   const { slug } = await params

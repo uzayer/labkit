@@ -35,8 +35,9 @@ import type {
 /**
  * Everything the DIAL site renders, read from Payload in one pass.
  *
- * DIAL's whole corpus is a few hundred small records, so each request loads
- * every public record once (see `getDial` in ./get.ts) and the lookups in
+ * DIAL's whole corpus is a few hundred small records, so it is loaded whole,
+ * once, and cached across requests until a record changes (see `getDial` in
+ * ./get.ts), and the lookups in
  * ./index.ts resolve relationships in memory. Reads are depth 0 for the same
  * reason: every related record is already loaded, so Payload populating them
  * would only repeat work the mappers throw away. Media is the one relation the

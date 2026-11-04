@@ -473,6 +473,7 @@ const PeopleMenu = ({ nav }: MenuProps) => (
               alt={`Dr. ${nav.pi.name}`}
               overlay={<Tape />}
               frameClassName="aspect-3/4 w-full rounded-sm"
+              sizes="(max-width: 1023px) 100vw, 18rem"
               className="h-full w-full object-cover object-center"
               fallback={<RisoArt variant="bloom" className="mx-auto size-40" />}
             />

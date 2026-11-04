@@ -1,3 +1,7 @@
+// Parked with the rest of the template pages. At src/app/(frontend)/ it sat above
+// DIAL's root layout, so every DIAL route bundled its client graph (the
+// template Header, cmdk, zod, Lucide's dynamic icon map) for a 404 that
+// (dial)/not-found.tsx always overrides. DIAL's catch-all owns every unmatched URL.
 import { Geist_Mono, Geist } from 'next/font/google'
 import React from 'react'
 import { cn } from '@/utils'
@@ -10,7 +14,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { ThemeConfig } from '@/globals/ThemeConfig/Component'
 import localization from '@/localization.config'
 import { PublicContextProps } from '@/utilities/publicContextProps'
-import './_template-pages/globals.css'
+import './globals.css'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 

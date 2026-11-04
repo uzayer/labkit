@@ -63,8 +63,14 @@ export const metadata: Metadata = {
     'Human-computer interaction research from the Design Inclusion and Access Lab at North South University, Dhaka.',
 }
 
-// Every DIAL route renders live Payload records.
-export const dynamic = 'force-dynamic'
+// Pages are rendered once and cached (ISR) until the records they read change:
+// Payload's change hooks revalidate the records' cache tag, which expires these
+// pages with it (src/lib/dial/data/get.ts, src/plugins/revalidateDial.ts). The
+// hour is a backstop for writes no hook sees, and bounds how long a value
+// computed from today's date (active grants, years of research, the intake
+// window) can lag. Pages whose first paint depends on the query string opt
+// back into per-request rendering themselves.
+export const revalidate = 3600
 
 export default async function RootLayout({
   children,

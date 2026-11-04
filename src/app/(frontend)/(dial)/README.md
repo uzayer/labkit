@@ -4,7 +4,7 @@ DIAL's public site. It moves to its own `dial-site` repo at roadmap step 3 (ADR-
 
 ## Data
 
-`src/lib/dial/data/index.ts` and `views.ts` are factories over one corpus load per request. Don't split them into per-query fetches without a measured need. Citations (ACM by default, plus APA and BibTeX) are generated server-side with citation-js in `src/lib/dial/cite.ts`, using a vendored ACM CSL. Hand-written `citationText` isn't shown. List rows fetch `/publications/<id>/cite` lazily.
+`src/lib/dial/data/index.ts` and `views.ts` are factories over one corpus load. Don't split them into per-query fetches without a measured need. The load is cached across requests under the `dial` tag, and pages are cached (ISR) with it. Payload hooks in `src/plugins/revalidateDial.ts` expire both when a record changes, so a collection or global the loader starts reading must be added to that plugin's list. Citations (ACM by default, plus APA and BibTeX) are generated server-side with citation-js in `src/lib/dial/cite.ts`, using a vendored ACM CSL. Hand-written `citationText` isn't shown. List rows fetch `/publications/<id>/cite` lazily.
 
 ## Design rules
 

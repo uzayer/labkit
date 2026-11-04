@@ -74,6 +74,7 @@ export function InitialTile({
       src={photo}
       alt=""
       frameClassName={cn('size-10 shrink-0 rounded-[0.6rem]', className)}
+      sizes={40}
       className="h-full w-full object-cover object-top"
       fallback={letter}
     />
