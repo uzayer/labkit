@@ -38,6 +38,7 @@ There is no test framework. Run `bun run tsc` and `bun run lint`.
 - **Admin SCSS** has no `~@payloadcms/ui/scss` and no `--theme-*` tokens in Payload 4. Use literal px (20px is the old `base(1)`) or `--color-*` tokens.
 - **Google login** (`payload-oauth2`) doesn't work on Payload 4. It's only active when `GOOGLE_LOGIN_*` is set, and DIAL doesn't use it.
 - **Production has data.** Every schema change needs a committed migration (core owns all migrations, so Labs never add collections; see ADR-0003). Run `bun run payload migrate:create` with any well-formed `BLOB_READ_WRITE_TOKEN` set, e.g. `vercel_blob_rw_local_x`. Without it, the generated migration drops Media's `_objectKey` column.
+- **Read every generated table rebuild** (`__new_<table>`). Drizzle's `INSERT … SELECT` can name columns the old table lacks, which SQLite silently reads as string literals. `DROP TABLE` also cascades into child tables wherever foreign keys are enforced (Turso), whatever `PRAGMA foreign_keys=OFF` says. `20261104_145319_features_and_lab_content.ts` shows both fixes.
 - **Turnstile** for `form-submissions` is checked in `src/app/(payload)/api/[...slug]/route.ts`, not in a form component. A missing `cf-turnstile-token` header gets a 400.
 - **Tailwind v4 bracket syntax** such as `w-[--x]` compiles to no CSS. Use `w-(--x)`. Grep for `-[--` whenever you import an older shadcn component.
 - **Person matching** in ingestion is Safe Match only: exact ORCID/DBLP ID or exact name, never fuzzy. Anything uncertain becomes a Review Item. See `packages/core/src/ingestion/people.ts`.

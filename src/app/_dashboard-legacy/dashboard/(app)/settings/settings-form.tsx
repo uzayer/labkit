@@ -7,7 +7,7 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import { z } from 'zod'
 
-import type { LabInfo } from '@/payload-types'
+import type { Feature, LabInfo } from '@/payload-types'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Checkbox } from '@/components/ui/checkbox'
@@ -54,9 +54,10 @@ const FEATURE_TOGGLES = [
 
 interface SettingsFormProps {
   labInfo: LabInfo
+  features: Feature
 }
 
-export function SettingsForm({ labInfo }: SettingsFormProps) {
+export function SettingsForm({ labInfo, features }: SettingsFormProps) {
   const router = useRouter()
   const form = useForm<SettingsFormValues>({
     resolver: zodResolver(settingsSchema),
@@ -67,10 +68,10 @@ export function SettingsForm({ labInfo }: SettingsFormProps) {
       parentOrganizationName: labInfo.parentOrganization?.name ?? '',
       email: labInfo.email ?? '',
       url: labInfo.url ?? '',
-      featureProjects: labInfo.features?.projects ?? true,
-      featureGrants: labInfo.features?.grants ?? true,
-      featureAwards: labInfo.features?.awards ?? true,
-      featureResearchThemes: labInfo.features?.researchThemes ?? true,
+      featureProjects: features.projects ?? true,
+      featureGrants: features.grants ?? true,
+      featureAwards: features.awards ?? true,
+      featureResearchThemes: features.researchThemes ?? true,
     },
   })
 
