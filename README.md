@@ -27,7 +27,7 @@ LabKit is a research information system small enough for one lab to run. It mode
 - **Nothing is decided silently.** Every import writes an immutable Import Run, and everything the run could not decide safely lands in a mutable review queue that outlives it.
 - **The domain is modelled the way labs think.** Not blog posts with renamed fields — Publications own their authors, venue, and themes; Projects own the work they group; Grants own their funder and investigators.
 
-> **Status:** pre-release. The first pilot Lab, DIAL, has been live since 2026-09-28 from its own repo built on LabKit. The ingestion engine is built and verified against real data; the default Lab site is next. See [Status](#status).
+> **Status:** pre-release. The first pilot Lab, DIAL, has been live since 2026-09-28; its site now lives in its own repo, built on LabKit. The ingestion engine is built and verified against real data; the default Lab site is next. See [Status](#status).
 
 ## Table of contents
 
