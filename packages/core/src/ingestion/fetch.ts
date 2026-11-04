@@ -2,8 +2,12 @@ import { createHash } from 'node:crypto'
 import fs from 'node:fs'
 import path from 'node:path'
 
-const CONTACT_EMAIL = 'uzayer.masud@dearasianyouth.org'
-const USER_AGENT = `LabKit-Ingestion/0.1 (mailto:${CONTACT_EMAIL})`
+// Crossref and OpenAlex route requests that carry a contact email to their
+// "polite pool" (faster, more reliable). Without LABKIT_CONTACT_EMAIL we send no
+// mailto at all rather than someone else's address, and fall back to the public
+// pool: slower, but every lookup still works.
+// Read per call, not at import, so it doesn't depend on when env files load.
+const contactEmail = (): string | null => process.env.LABKIT_CONTACT_EMAIL?.trim() || null
 const RETRYABLE_STATUS_CODES = new Set([408, 429, 500, 502, 503, 504])
 const MAX_ATTEMPTS = 3
 const INITIAL_RETRY_DELAY_MS = 250
@@ -156,7 +160,11 @@ export async function fetchJsonWithRetry(
 
 export function defaultHeaders(headers?: HeadersInit): Headers {
   const merged = new Headers(headers)
-  merged.set('User-Agent', USER_AGENT)
+  const email = contactEmail()
+  merged.set(
+    'User-Agent',
+    email ? `LabKit-Ingestion/0.1 (mailto:${email})` : 'LabKit-Ingestion/0.1',
+  )
   return merged
 }
 
@@ -167,7 +175,9 @@ export async function fetchCrossrefByDoi(doi: string): Promise<unknown | null> {
 }
 
 export async function fetchOpenAlexByDoi(doi: string): Promise<unknown | null> {
-  const url = `https://api.openalex.org/works/https://doi.org/${encodeURIComponent(doi)}?mailto=${encodeURIComponent(CONTACT_EMAIL)}`
+  const email = contactEmail()
+  const mailto = email ? `?mailto=${encodeURIComponent(email)}` : ''
+  const url = `https://api.openalex.org/works/https://doi.org/${encodeURIComponent(doi)}${mailto}`
   return fetchJsonWithRetry(url, {
     headers: defaultHeaders(),
   })
