@@ -1,0 +1,507 @@
+{
+  "url": "https://api.openalex.org/works/https://doi.org/10.2139%2Fssrn.4190884",
+  "recordedAt": "2026-11-04",
+  "body": {
+    "id": "https://openalex.org/W4380187252",
+    "doi": "https://doi.org/10.1007/978-3-031-34586-9_3",
+    "title": "A Low-Cost Wearable System to Support Upper Limb Rehabilitation in Resource-Constrained Settings",
+    "publication_year": 2022,
+    "type": "conference-paper",
+    "authorships": [
+      {
+        "author_position": "first",
+        "author": {
+          "id": "https://openalex.org/A5052130889",
+          "display_name": "Md. Sabbir Ahmed",
+          "orcid": "https://orcid.org/0000-0001-8668-0120",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-8668-0120",
+            "https://orcid.org/0009-0007-0301-7632"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I157386601",
+            "display_name": "North South University",
+            "ror": "https://ror.org/05wdbfp45",
+            "country_code": "BD",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ],
+        "countries": [
+          "BD"
+        ],
+        "is_corresponding": true,
+        "raw_author_name": "Md. Sabbir Ahmed",
+        "raw_affiliation_strings": [
+          "Design Inclusion and Access Lab (DIAL), North South University, Dhaka, Bangladesh"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Design Inclusion and Access Lab (DIAL), North South University, Dhaka, Bangladesh",
+            "institution_ids": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5007106191",
+          "display_name": "Shajnush Amir",
+          "orcid": "https://orcid.org/0000-0003-4899-4780",
+          "observed_orcids": [
+            "https://orcid.org/0000-0003-4899-4780"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I157386601",
+            "display_name": "North South University",
+            "ror": "https://ror.org/05wdbfp45",
+            "country_code": "BD",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ],
+        "countries": [
+          "BD"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Shajnush Amir",
+        "raw_affiliation_strings": [
+          "Design Inclusion and Access Lab (DIAL), North South University, Dhaka, Bangladesh"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Design Inclusion and Access Lab (DIAL), North South University, Dhaka, Bangladesh",
+            "institution_ids": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5002375719",
+          "display_name": "Samuelson Atiba",
+          "orcid": "https://orcid.org/0000-0001-5913-4503",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-5913-4503"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I79510175",
+            "display_name": "Cardiff University",
+            "ror": "https://ror.org/03kk7td41",
+            "country_code": "GB",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I79510175"
+            ]
+          }
+        ],
+        "countries": [
+          "GB"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Samuelson Atiba",
+        "raw_affiliation_strings": [
+          "School of Computer Science and Informatics, Cardiff University, Cardiff, UK"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "School of Computer Science and Informatics, Cardiff University, Cardiff, UK",
+            "institution_ids": [
+              "https://openalex.org/I79510175"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5051692316",
+          "display_name": "Rahat Jahangir Rony",
+          "orcid": "https://orcid.org/0000-0001-5788-2145",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-5788-2145"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I157386601",
+            "display_name": "North South University",
+            "ror": "https://ror.org/05wdbfp45",
+            "country_code": "BD",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ],
+        "countries": [
+          "BD"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Rahat Jahangir Rony",
+        "raw_affiliation_strings": [
+          "Design Inclusion and Access Lab (DIAL), North South University, Dhaka, Bangladesh"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Design Inclusion and Access Lab (DIAL), North South University, Dhaka, Bangladesh",
+            "institution_ids": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5011948242",
+          "display_name": "Nervo Xavier Verdezoto",
+          "orcid": "https://orcid.org/0000-0001-5006-4262",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-5006-4262"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I79510175",
+            "display_name": "Cardiff University",
+            "ror": "https://ror.org/03kk7td41",
+            "country_code": "GB",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I79510175"
+            ]
+          }
+        ],
+        "countries": [
+          "GB"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Nervo Verdezoto Dias",
+        "raw_affiliation_strings": [
+          "School of Computer Science and Informatics, Cardiff University, Cardiff, UK"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "School of Computer Science and Informatics, Cardiff University, Cardiff, UK",
+            "institution_ids": [
+              "https://openalex.org/I79510175"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5016047388",
+          "display_name": "Valerie Sparkes",
+          "orcid": "https://orcid.org/0000-0003-4500-9327",
+          "observed_orcids": [
+            "https://orcid.org/0000-0003-4500-9327"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I79510175",
+            "display_name": "Cardiff University",
+            "ror": "https://ror.org/03kk7td41",
+            "country_code": "GB",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I79510175"
+            ]
+          }
+        ],
+        "countries": [
+          "GB"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Valerie Sparkes",
+        "raw_affiliation_strings": [
+          "School of Healthcare Sciences, Cardiff University, Cardiff, UK"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "School of Healthcare Sciences, Cardiff University, Cardiff, UK",
+            "institution_ids": [
+              "https://openalex.org/I79510175"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5056992232",
+          "display_name": "Katarzyna Stawarz",
+          "orcid": "https://orcid.org/0000-0001-9021-0615",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-9021-0615"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I79510175",
+            "display_name": "Cardiff University",
+            "ror": "https://ror.org/03kk7td41",
+            "country_code": "GB",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I79510175"
+            ]
+          }
+        ],
+        "countries": [
+          "GB"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Katarzyna Stawarz",
+        "raw_affiliation_strings": [
+          "School of Computer Science and Informatics, Cardiff University, Cardiff, UK"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "School of Computer Science and Informatics, Cardiff University, Cardiff, UK",
+            "institution_ids": [
+              "https://openalex.org/I79510175"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "last",
+        "author": {
+          "id": null,
+          "display_name": "Nova Ahmed",
+          "orcid": null,
+          "observed_orcids": []
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I157386601",
+            "display_name": "North South University",
+            "ror": "https://ror.org/05wdbfp45",
+            "country_code": "BD",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ],
+        "countries": [
+          "BD"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Nova Ahmed",
+        "raw_affiliation_strings": [
+          "Design Inclusion and Access Lab (DIAL), North South University, Dhaka, Bangladesh"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Design Inclusion and Access Lab (DIAL), North South University, Dhaka, Bangladesh",
+            "institution_ids": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ]
+      }
+    ],
+    "primary_location": {
+      "id": "doi:10.1007/978-3-031-34586-9_3",
+      "doi": "https://doi.org/10.1007/978-3-031-34586-9_3",
+      "is_oa": false,
+      "landing_page_url": "https://doi.org/10.1007/978-3-031-34586-9_3",
+      "pdf_url": null,
+      "source": {
+        "id": "https://openalex.org/S4393917809",
+        "display_name": "Lecture notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering",
+        "issn_l": "1867-8211",
+        "issn": [
+          "1867-8211",
+          "1867-822X"
+        ],
+        "is_oa": false,
+        "is_in_doaj": false,
+        "is_core": false,
+        "listed_in": [
+          "jufo-1",
+          "norway-1"
+        ],
+        "host_organization": null,
+        "host_organization_name": null,
+        "host_organization_lineage": [],
+        "host_organization_lineage_names": [],
+        "type": "journal"
+      },
+      "license": null,
+      "license_id": null,
+      "version": "publishedVersion",
+      "is_accepted": true,
+      "is_published": true,
+      "raw_source_name": "Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering",
+      "raw_type": "book-chapter"
+    },
+    "best_oa_location": {
+      "id": "doi:10.2139/ssrn.4190884",
+      "doi": "https://doi.org/10.2139/ssrn.4190884",
+      "is_oa": true,
+      "landing_page_url": "https://doi.org/10.2139/ssrn.4190884",
+      "pdf_url": "https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=4190884",
+      "source": {
+        "id": "https://openalex.org/S4210172589",
+        "display_name": "SSRN Electronic Journal",
+        "issn_l": "1556-5068",
+        "issn": [
+          "1556-5068"
+        ],
+        "is_oa": true,
+        "is_in_doaj": false,
+        "is_core": false,
+        "listed_in": [],
+        "host_organization": "https://openalex.org/I1318003438",
+        "host_organization_name": "RELX Group (Netherlands)",
+        "host_organization_lineage": [
+          "https://openalex.org/I1318003438"
+        ],
+        "host_organization_lineage_names": [],
+        "type": "repository"
+      },
+      "license": null,
+      "license_id": null,
+      "version": "publishedVersion",
+      "is_accepted": true,
+      "is_published": true,
+      "raw_source_name": "SSRN Electronic Journal",
+      "raw_type": "journal-article"
+    },
+    "open_access": {
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=4190884",
+      "any_repository_has_fulltext": true
+    },
+    "locations": [
+      {
+        "id": "doi:10.1007/978-3-031-34586-9_3",
+        "doi": "https://doi.org/10.1007/978-3-031-34586-9_3",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1007/978-3-031-34586-9_3",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4393917809",
+          "display_name": "Lecture notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering",
+          "issn_l": "1867-8211",
+          "issn": [
+            "1867-8211",
+            "1867-822X"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [
+            "jufo-1",
+            "norway-1"
+          ],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering",
+        "raw_type": "book-chapter"
+      },
+      {
+        "id": "doi:10.2139/ssrn.4190884",
+        "doi": "https://doi.org/10.2139/ssrn.4190884",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.2139/ssrn.4190884",
+        "pdf_url": "https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=4190884",
+        "source": {
+          "id": "https://openalex.org/S4210172589",
+          "display_name": "SSRN Electronic Journal",
+          "issn_l": "1556-5068",
+          "issn": [
+            "1556-5068"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I1318003438",
+          "host_organization_name": "RELX Group (Netherlands)",
+          "host_organization_lineage": [
+            "https://openalex.org/I1318003438"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "SSRN Electronic Journal",
+        "raw_type": "journal-article"
+      },
+      {
+        "id": "pmh:oai:https://orca.cardiff.ac.uk:154233",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://orcid.org/0000-0001-5913-4503",
+        "pdf_url": "https://orca.cardiff.ac.uk/id/eprint/154233/1/Low-Cost%20PH22%20Camera-Ready.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306401195",
+          "display_name": "ORCA Online Research @Cardiff (Cardiff University)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I79510175",
+          "host_organization_name": "Cardiff University",
+          "host_organization_lineage": [
+            "https://openalex.org/I79510175"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "PeerReviewed"
+      }
+    ]
+  }
+}

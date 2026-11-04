@@ -120,7 +120,7 @@ function mergeIssn(a?: string[], b?: string[]): string[] | undefined {
   return merged.length > 0 ? merged : undefined
 }
 
-function matchVenueByName(name: string, venueIndex: VenueLookupEntry[]): string | undefined {
+export function matchVenueByName(name: string, venueIndex: VenueLookupEntry[]): string | undefined {
   const key = normalizeVenueName(name)
   if (!key) return undefined
   const ids = new Set<string>()

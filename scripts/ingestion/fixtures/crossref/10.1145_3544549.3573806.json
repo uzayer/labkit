@@ -1,0 +1,464 @@
+{
+  "url": "https://api.crossref.org/works/10.1145%2F3544549.3573806",
+  "recordedAt": "2026-11-04",
+  "body": {
+    "status": "ok",
+    "message-type": "work",
+    "message-version": "1.0.0",
+    "message": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            7,
+            3
+          ]
+        ],
+        "date-time": "2026-07-03T01:09:17Z",
+        "timestamp": 1783040957944,
+        "version": "3.54.6"
+      },
+      "publisher-location": "New York, NY, USA",
+      "reference-count": 24,
+      "publisher": "ACM",
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                2023,
+                4,
+                19
+              ]
+            ],
+            "date-time": "2023-04-19T00:00:00Z",
+            "timestamp": 1681862400000
+          },
+          "content-version": "vor",
+          "delay-in-days": 0,
+          "URL": "https://www.acm.org/publications/policies/copyright_policy#Background"
+        }
+      ],
+      "content-domain": {
+        "domain": [
+          "dl.acm.org"
+        ],
+        "crossmark-restriction": true
+      },
+      "short-container-title": [],
+      "published-print": {
+        "date-parts": [
+          [
+            2023,
+            4,
+            19
+          ]
+        ]
+      },
+      "DOI": "10.1145/3544549.3573806",
+      "type": "proceedings-article",
+      "created": {
+        "date-parts": [
+          [
+            2023,
+            4,
+            20
+          ]
+        ],
+        "date-time": "2023-04-20T07:31:00Z",
+        "timestamp": 1681975860000
+      },
+      "page": "1-5",
+      "update-policy": "https://doi.org/10.1145/crossmark-policy",
+      "source": "Crossref",
+      "is-referenced-by-count": 3,
+      "title": [
+        "HCI Across Borders: Towards Global Solidarity"
+      ],
+      "prefix": "10.1145",
+      "author": [
+        {
+          "ORCID": "https://orcid.org/0000-0002-0944-7074",
+          "authenticated-orcid": false,
+          "given": "Vikram Kamath",
+          "family": "Cannanure",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Human Computer Institute, Carnegie Mellon University, United States"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-7806-1001",
+          "authenticated-orcid": false,
+          "given": "Delvin",
+          "family": "Varghese",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Action Lab, Monash University, Australia"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-6922-4318",
+          "authenticated-orcid": false,
+          "given": "Cuauhtémoc",
+          "family": "Rivera-Loaiza",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Universidad Michoacana, Mexico"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-7923-4384",
+          "authenticated-orcid": false,
+          "given": "Faria",
+          "family": "Noor",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Human Factors in Information Design, Bentley University, United States"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-5704-8804",
+          "authenticated-orcid": false,
+          "given": "Dipto",
+          "family": "Das",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Information Science, University of Colorado Boulder, United States"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-0204-0092",
+          "authenticated-orcid": false,
+          "given": "Pranjal",
+          "family": "Jain",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Computational Foundry, Swansea University, United Kingdom"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-0564-7121",
+          "authenticated-orcid": false,
+          "given": "Meiyin",
+          "family": "Chang",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Computer Science, Escuela Superior Politécnica del Litoral, Ecuador"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-8071-6716",
+          "authenticated-orcid": false,
+          "given": "Marisol",
+          "family": "Wong-Villacres",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Facultad de Ingeniería en Electricidad y Computación, Escuela Superior Politécnica del Litoral, Ecuador"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-0355-3041",
+          "authenticated-orcid": false,
+          "given": "Naveena",
+          "family": "Karusala",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Harvard University, United States"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-7715-1742",
+          "authenticated-orcid": false,
+          "given": "Nova",
+          "family": "Ahmed",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Electrical and Computer Engineering, North South University, Bangladesh"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-3281-1484",
+          "authenticated-orcid": false,
+          "given": "Sarina C",
+          "family": "Till",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Computer Science, University of Cape Town, South Africa"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-0241-4739",
+          "authenticated-orcid": false,
+          "given": "Bernard Ijesunor",
+          "family": "Akhigbe",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "HCI lab, University of Cape Town, South Africa"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-1733-2653",
+          "authenticated-orcid": false,
+          "given": "Melissa",
+          "family": "Densmore",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "HCI Lab, Computer Science, University of Cape Town, South Africa"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-6941-4939",
+          "authenticated-orcid": false,
+          "given": "Susan",
+          "family": "Dray",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Dray &amp; Associate, United States"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-1712-1610",
+          "authenticated-orcid": false,
+          "given": "Christian",
+          "family": "Sturm",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Computer Science, Hamm-Lippstadt University of Applied Sciences, Germany"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-8722-6920",
+          "authenticated-orcid": false,
+          "given": "Neha",
+          "family": "Kumar",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Georgia Tech, United States"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "member": "320",
+      "published-online": {
+        "date-parts": [
+          [
+            2023,
+            4,
+            19
+          ]
+        ]
+      },
+      "event": {
+        "name": "CHI '23: CHI Conference on Human Factors in Computing Systems",
+        "location": "Hamburg Germany",
+        "acronym": "CHI '23",
+        "sponsor": [
+          "SIGCHI ACM Special Interest Group on Computer-Human Interaction"
+        ]
+      },
+      "container-title": [
+        "Extended Abstracts of the 2023 CHI Conference on Human Factors in Computing Systems"
+      ],
+      "original-title": [],
+      "link": [
+        {
+          "URL": "https://dl.acm.org/doi/10.1145/3544549.3573806",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "https://dl.acm.org/doi/pdf/10.1145/3544549.3573806",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2025,
+            6,
+            17
+          ]
+        ],
+        "date-time": "2025-06-17T16:46:57Z",
+        "timestamp": 1750178817000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://dl.acm.org/doi/10.1145/3544549.3573806"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2023,
+            4,
+            19
+          ]
+        ]
+      },
+      "references-count": 24,
+      "alternative-id": [
+        "10.1145/3544549.3573806",
+        "10.1145/3544549"
+      ],
+      "URL": "https://doi.org/10.1145/3544549.3573806",
+      "relation": {},
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2023,
+            4,
+            19
+          ]
+        ]
+      },
+      "assertion": [
+        {
+          "value": "2023-04-19",
+          "order": 2,
+          "name": "published",
+          "label": "Published",
+          "group": {
+            "name": "publication_history",
+            "label": "Publication History"
+          }
+        }
+      ]
+    }
+  }
+}

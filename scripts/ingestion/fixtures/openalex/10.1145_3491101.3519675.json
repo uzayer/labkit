@@ -1,0 +1,160 @@
+{
+  "url": "https://api.openalex.org/works/https://doi.org/10.1145%2F3491101.3519675",
+  "recordedAt": "2026-11-04",
+  "body": {
+    "id": "https://openalex.org/W4225109429",
+    "doi": "https://doi.org/10.1145/3491101.3519675",
+    "title": "Exploring Technology Usage of Southeast Asian Elderly Women for Better Mental Health during COVID-19 Pandemic",
+    "publication_year": 2022,
+    "type": "conference-paper",
+    "authorships": [
+      {
+        "author_position": "first",
+        "author": {
+          "id": "https://openalex.org/A5044631857",
+          "display_name": "Tamanna Motahar",
+          "orcid": "https://orcid.org/0000-0002-0129-3920",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-0129-3920"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I223532165",
+            "display_name": "University of Utah",
+            "ror": "https://ror.org/03r0ha626",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I223532165"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Tamanna Motahar",
+        "raw_affiliation_strings": [
+          "School of Computing, University of Utah, United States"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "School of Computing, University of Utah, United States",
+            "institution_ids": [
+              "https://openalex.org/I223532165"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "last",
+        "author": {
+          "id": "https://openalex.org/A5011009295",
+          "display_name": "Nova Ahmed",
+          "orcid": "https://orcid.org/0000-0002-7715-1742",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-7715-1742"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I157386601",
+            "display_name": "North South University",
+            "ror": "https://ror.org/05wdbfp45",
+            "country_code": "BD",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ],
+        "countries": [
+          "BD"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Nova Ahmed",
+        "raw_affiliation_strings": [
+          "Department of Electrical and Computer Engineering, North South University, Bangladesh"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Bangladesh",
+            "institution_ids": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ]
+      }
+    ],
+    "primary_location": {
+      "id": "doi:10.1145/3491101.3519675",
+      "doi": "https://doi.org/10.1145/3491101.3519675",
+      "is_oa": false,
+      "landing_page_url": "https://doi.org/10.1145/3491101.3519675",
+      "pdf_url": null,
+      "source": {
+        "id": "https://openalex.org/S7407088584",
+        "display_name": "CHI Conference Extended Abstracts on Human Factors in Computing Systems (CHI EA)",
+        "issn_l": null,
+        "issn": null,
+        "is_oa": false,
+        "is_in_doaj": false,
+        "is_core": false,
+        "listed_in": [],
+        "host_organization": null,
+        "host_organization_name": null,
+        "host_organization_lineage": [],
+        "host_organization_lineage_names": [],
+        "type": "conference"
+      },
+      "license": null,
+      "license_id": null,
+      "version": "publishedVersion",
+      "is_accepted": true,
+      "is_published": true,
+      "raw_source_name": "CHI Conference on Human Factors in Computing Systems Extended Abstracts",
+      "raw_type": "proceedings-article"
+    },
+    "best_oa_location": null,
+    "open_access": {
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "any_repository_has_fulltext": false
+    },
+    "locations": [
+      {
+        "id": "doi:10.1145/3491101.3519675",
+        "doi": "https://doi.org/10.1145/3491101.3519675",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1145/3491101.3519675",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S7407088584",
+          "display_name": "CHI Conference Extended Abstracts on Human Factors in Computing Systems (CHI EA)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "conference"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "CHI Conference on Human Factors in Computing Systems Extended Abstracts",
+        "raw_type": "proceedings-article"
+      }
+    ]
+  }
+}

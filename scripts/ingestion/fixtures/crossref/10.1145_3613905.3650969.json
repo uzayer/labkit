@@ -1,0 +1,231 @@
+{
+  "url": "https://api.crossref.org/works/10.1145%2F3613905.3650969",
+  "recordedAt": "2026-11-04",
+  "body": {
+    "status": "ok",
+    "message-type": "work",
+    "message-version": "1.0.0",
+    "message": {
+      "indexed": {
+        "date-parts": [
+          [
+            2025,
+            6,
+            19
+          ]
+        ],
+        "date-time": "2025-06-19T05:00:51Z",
+        "timestamp": 1750309251753,
+        "version": "3.41.0"
+      },
+      "publisher-location": "New York, NY, USA",
+      "reference-count": 36,
+      "publisher": "ACM",
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                2024,
+                5,
+                11
+              ]
+            ],
+            "date-time": "2024-05-11T00:00:00Z",
+            "timestamp": 1715385600000
+          },
+          "content-version": "vor",
+          "delay-in-days": 0,
+          "URL": "https://www.acm.org/publications/policies/copyright_policy#Background"
+        }
+      ],
+      "content-domain": {
+        "domain": [
+          "dl.acm.org"
+        ],
+        "crossmark-restriction": true
+      },
+      "short-container-title": [],
+      "published-print": {
+        "date-parts": [
+          [
+            2024,
+            5,
+            11
+          ]
+        ]
+      },
+      "DOI": "10.1145/3613905.3650969",
+      "type": "proceedings-article",
+      "created": {
+        "date-parts": [
+          [
+            2024,
+            5,
+            11
+          ]
+        ],
+        "date-time": "2024-05-11T08:15:21Z",
+        "timestamp": 1715415321000
+      },
+      "page": "1-8",
+      "update-policy": "https://doi.org/10.1145/crossmark-policy",
+      "source": "Crossref",
+      "is-referenced-by-count": 0,
+      "title": [
+        "Addressing the Technology Learning Divide Using Co-Learning with Familiarization Method"
+      ],
+      "prefix": "10.1145",
+      "author": [
+        {
+          "ORCID": "https://orcid.org/0000-0002-9240-2108",
+          "authenticated-orcid": false,
+          "given": "Anik",
+          "family": "Saha",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Bangladesh"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0009-0005-3685-9241",
+          "authenticated-orcid": false,
+          "given": "Naimur",
+          "family": "Rahman",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Bangladesh"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-7715-1742",
+          "authenticated-orcid": false,
+          "given": "Nova",
+          "family": "Ahmed",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Bangladesh"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        }
+      ],
+      "member": "320",
+      "published-online": {
+        "date-parts": [
+          [
+            2024,
+            5,
+            11
+          ]
+        ]
+      },
+      "event": {
+        "name": "CHI '24: CHI Conference on Human Factors in Computing Systems",
+        "sponsor": [
+          "SIGCHI ACM Special Interest Group on Computer-Human Interaction",
+          "SIGACCESS ACM Special Interest Group on Accessible Computing"
+        ],
+        "location": "Honolulu HI USA",
+        "acronym": "CHI '24"
+      },
+      "container-title": [
+        "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems"
+      ],
+      "original-title": [],
+      "link": [
+        {
+          "URL": "https://dl.acm.org/doi/10.1145/3613905.3650969",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "https://dl.acm.org/doi/pdf/10.1145/3613905.3650969",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2025,
+            6,
+            18
+          ]
+        ],
+        "date-time": "2025-06-18T23:56:52Z",
+        "timestamp": 1750291012000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://dl.acm.org/doi/10.1145/3613905.3650969"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2024,
+            5,
+            11
+          ]
+        ]
+      },
+      "references-count": 36,
+      "alternative-id": [
+        "10.1145/3613905.3650969",
+        "10.1145/3613905"
+      ],
+      "URL": "https://doi.org/10.1145/3613905.3650969",
+      "relation": {},
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2024,
+            5,
+            11
+          ]
+        ]
+      },
+      "assertion": [
+        {
+          "value": "2024-05-11",
+          "order": 3,
+          "name": "published",
+          "label": "Published",
+          "group": {
+            "name": "publication_history",
+            "label": "Publication History"
+          }
+        }
+      ]
+    }
+  }
+}

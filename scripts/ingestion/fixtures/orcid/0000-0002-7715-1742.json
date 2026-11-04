@@ -1,0 +1,819 @@
+{
+  "url": "https://pub.orcid.org/v3.0/0000-0002-7715-1742/works",
+  "recordedAt": "2026-11-04",
+  "note": "Nova Ahmed (DIAL PI). Groups kept: two JMIR preprints with one title, a JMIR preprint/published pair, an upper-case DOI, an SSRN preprint, a group with two work summaries, and a work with no DOI.",
+  "body": {
+    "group": [
+      {
+        "last-modified-date": {
+          "value": 1784053862797
+        },
+        "external-ids": {
+          "external-id": [
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.2196/preprints.105485",
+              "external-id-normalized": {
+                "value": "10.2196/preprints.105485",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": {
+                "value": "https://doi.org/10.2196/preprints.105485"
+              },
+              "external-id-relationship": "self"
+            }
+          ]
+        },
+        "work-summary": [
+          {
+            "put-code": 220677077,
+            "created-date": {
+              "value": 1784053862797
+            },
+            "last-modified-date": {
+              "value": 1784053862797
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0001-9884-1913",
+                "path": "0000-0001-9884-1913",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "Crossref"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "title": {
+              "title": {
+                "value": "Beyond Stigma and Silence: A Multilayered Approach to Uncovering Mental Health Challenges Among People with Disabilities in Bangladesh Through Social Media Behavior and Linguistic Analytics (Preprint)"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.2196/preprints.105485",
+                  "external-id-normalized": {
+                    "value": "10.2196/preprints.105485",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": {
+                    "value": "https://doi.org/10.2196/preprints.105485"
+                  },
+                  "external-id-relationship": "self"
+                }
+              ]
+            },
+            "url": {
+              "value": "https://doi.org/10.2196/preprints.105485"
+            },
+            "type": "preprint",
+            "publication-date": {
+              "year": {
+                "value": "2026"
+              },
+              "month": {
+                "value": "06"
+              },
+              "day": {
+                "value": "24"
+              }
+            },
+            "journal-title": null,
+            "visibility": "public",
+            "path": "/0000-0002-7715-1742/work/220677077",
+            "display-index": "1"
+          }
+        ]
+      },
+      {
+        "last-modified-date": {
+          "value": 1761632848890
+        },
+        "external-ids": {
+          "external-id": [
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.2196/preprints.85023",
+              "external-id-normalized": {
+                "value": "10.2196/preprints.85023",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": {
+                "value": "https://doi.org/10.2196/preprints.85023"
+              },
+              "external-id-relationship": "self"
+            }
+          ]
+        },
+        "work-summary": [
+          {
+            "put-code": 195354151,
+            "created-date": {
+              "value": 1761632848890
+            },
+            "last-modified-date": {
+              "value": 1761632848890
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0001-9884-1913",
+                "path": "0000-0001-9884-1913",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "Crossref"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "title": {
+              "title": {
+                "value": "Beyond Stigma and Silence: A Multilayered Approach to Uncovering Mental Health Challenges Among People with Disabilities in Bangladesh Through Social Media Behavior and Linguistic Analytics (Preprint)"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.2196/preprints.85023",
+                  "external-id-normalized": {
+                    "value": "10.2196/preprints.85023",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": {
+                    "value": "https://doi.org/10.2196/preprints.85023"
+                  },
+                  "external-id-relationship": "self"
+                }
+              ]
+            },
+            "url": {
+              "value": "https://doi.org/10.2196/preprints.85023"
+            },
+            "type": "preprint",
+            "publication-date": {
+              "year": {
+                "value": "2025"
+              },
+              "month": {
+                "value": "09"
+              },
+              "day": {
+                "value": "29"
+              }
+            },
+            "journal-title": null,
+            "visibility": "public",
+            "path": "/0000-0002-7715-1742/work/195354151",
+            "display-index": "1"
+          }
+        ]
+      },
+      {
+        "last-modified-date": {
+          "value": 1758906570575
+        },
+        "external-ids": {
+          "external-id": [
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.2196/76934",
+              "external-id-normalized": {
+                "value": "10.2196/76934",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": {
+                "value": "https://doi.org/10.2196/76934"
+              },
+              "external-id-relationship": "self"
+            }
+          ]
+        },
+        "work-summary": [
+          {
+            "put-code": 187906132,
+            "created-date": {
+              "value": 1752531090325
+            },
+            "last-modified-date": {
+              "value": 1758906570575
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0001-9884-1913",
+                "path": "0000-0001-9884-1913",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "Crossref"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "title": {
+              "title": {
+                "value": "Understanding the Mental and Physical Burdens of Physicians and Identifying Support Interventions in Bangladesh: Qualitative Study"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.2196/76934",
+                  "external-id-normalized": {
+                    "value": "10.2196/76934",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": {
+                    "value": "https://doi.org/10.2196/76934"
+                  },
+                  "external-id-relationship": "self"
+                }
+              ]
+            },
+            "url": {
+              "value": "https://doi.org/10.2196/76934"
+            },
+            "type": "journal-article",
+            "publication-date": {
+              "year": {
+                "value": "2025"
+              },
+              "month": {
+                "value": "09"
+              },
+              "day": {
+                "value": "26"
+              }
+            },
+            "journal-title": {
+              "value": "Interactive Journal of Medical Research"
+            },
+            "visibility": "public",
+            "path": "/0000-0002-7715-1742/work/187906132",
+            "display-index": "1"
+          }
+        ]
+      },
+      {
+        "last-modified-date": {
+          "value": 1758906570150
+        },
+        "external-ids": {
+          "external-id": [
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.2196/preprints.76934",
+              "external-id-normalized": {
+                "value": "10.2196/preprints.76934",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": {
+                "value": "https://doi.org/10.2196/preprints.76934"
+              },
+              "external-id-relationship": "self"
+            }
+          ]
+        },
+        "work-summary": [
+          {
+            "put-code": 183468045,
+            "created-date": {
+              "value": 1746459856982
+            },
+            "last-modified-date": {
+              "value": 1758906570150
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0001-9884-1913",
+                "path": "0000-0001-9884-1913",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "Crossref"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "title": {
+              "title": {
+                "value": "Understanding the Mental and Physical Burdens of Physicians and Identifying Support Interventions in Bangladesh: Qualitative Study (Preprint)"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.2196/preprints.76934",
+                  "external-id-normalized": {
+                    "value": "10.2196/preprints.76934",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": {
+                    "value": "https://doi.org/10.2196/preprints.76934"
+                  },
+                  "external-id-relationship": "self"
+                }
+              ]
+            },
+            "url": {
+              "value": "https://doi.org/10.2196/preprints.76934"
+            },
+            "type": "preprint",
+            "publication-date": {
+              "year": {
+                "value": "2025"
+              },
+              "month": {
+                "value": "05"
+              },
+              "day": {
+                "value": "04"
+              }
+            },
+            "journal-title": null,
+            "visibility": "public",
+            "path": "/0000-0002-7715-1742/work/183468045",
+            "display-index": "1"
+          }
+        ]
+      },
+      {
+        "last-modified-date": {
+          "value": 1738349191505
+        },
+        "external-ids": {
+          "external-id": [
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.1109/MPRV.2024.3520397",
+              "external-id-normalized": {
+                "value": "10.1109/mprv.2024.3520397",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": {
+                "value": "https://doi.org/10.1109/MPRV.2024.3520397"
+              },
+              "external-id-relationship": "self"
+            }
+          ]
+        },
+        "work-summary": [
+          {
+            "put-code": 177081311,
+            "created-date": {
+              "value": 1738349191505
+            },
+            "last-modified-date": {
+              "value": 1738349191505
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0001-9884-1913",
+                "path": "0000-0001-9884-1913",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "Crossref"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "title": {
+              "title": {
+                "value": "Population and Health"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.1109/MPRV.2024.3520397",
+                  "external-id-normalized": {
+                    "value": "10.1109/mprv.2024.3520397",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": {
+                    "value": "https://doi.org/10.1109/MPRV.2024.3520397"
+                  },
+                  "external-id-relationship": "self"
+                }
+              ]
+            },
+            "url": {
+              "value": "https://doi.org/10.1109/MPRV.2024.3520397"
+            },
+            "type": "journal-article",
+            "publication-date": {
+              "year": {
+                "value": "2024"
+              },
+              "month": {
+                "value": "10"
+              },
+              "day": null
+            },
+            "journal-title": {
+              "value": "IEEE Pervasive Computing"
+            },
+            "visibility": "public",
+            "path": "/0000-0002-7715-1742/work/177081311",
+            "display-index": "1"
+          }
+        ]
+      },
+      {
+        "last-modified-date": {
+          "value": 1786742756323
+        },
+        "external-ids": {
+          "external-id": [
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.2139/ssrn.4863970",
+              "external-id-normalized": {
+                "value": "10.2139/ssrn.4863970",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": {
+                "value": "https://doi.org/10.2139/ssrn.4863970"
+              },
+              "external-id-relationship": "self"
+            }
+          ]
+        },
+        "work-summary": [
+          {
+            "put-code": 223865748,
+            "created-date": {
+              "value": 1786742756323
+            },
+            "last-modified-date": {
+              "value": 1786742756323
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0001-9884-1913",
+                "path": "0000-0001-9884-1913",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "Crossref"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "title": {
+              "title": {
+                "value": "Digital Financial Conditions for Low Income Communities of Dhaka City: Exploring Gender Based Differences"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.2139/ssrn.4863970",
+                  "external-id-normalized": {
+                    "value": "10.2139/ssrn.4863970",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": {
+                    "value": "https://doi.org/10.2139/ssrn.4863970"
+                  },
+                  "external-id-relationship": "self"
+                }
+              ]
+            },
+            "url": {
+              "value": "https://doi.org/10.2139/ssrn.4863970"
+            },
+            "type": "preprint",
+            "publication-date": {
+              "year": {
+                "value": "2024"
+              },
+              "month": null,
+              "day": null
+            },
+            "journal-title": null,
+            "visibility": "public",
+            "path": "/0000-0002-7715-1742/work/223865748",
+            "display-index": "1"
+          }
+        ]
+      },
+      {
+        "last-modified-date": {
+          "value": 1676227668868
+        },
+        "external-ids": {
+          "external-id": [
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.17159/sajs.2019/5865",
+              "external-id-normalized": {
+                "value": "10.17159/sajs.2019/5865",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": {
+                "value": "https://doi.org/10.17159/sajs.2019/5865"
+              },
+              "external-id-relationship": "self"
+            },
+            {
+              "external-id-type": "eid",
+              "external-id-value": "2-s2.0-85064344118",
+              "external-id-normalized": {
+                "value": "2-s2.0-85064344118",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "self"
+            }
+          ]
+        },
+        "work-summary": [
+          {
+            "put-code": 57838482,
+            "created-date": {
+              "value": 1558932927899
+            },
+            "last-modified-date": {
+              "value": 1676227668868
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0001-9884-1913",
+                "path": "0000-0001-9884-1913",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "Crossref"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "title": {
+              "title": {
+                "value": "‘Gender shouldn’t matter because we are all scientists here’: A narration of the panel discussion at the 2nd International Women in Science Without Borders conference"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.17159/sajs.2019/5865",
+                  "external-id-normalized": {
+                    "value": "10.17159/sajs.2019/5865",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": {
+                    "value": "https://doi.org/10.17159/sajs.2019/5865"
+                  },
+                  "external-id-relationship": "self"
+                }
+              ]
+            },
+            "url": {
+              "value": "https://doi.org/10.17159/sajs.2019/5865"
+            },
+            "type": "journal-article",
+            "publication-date": {
+              "year": {
+                "value": "2019"
+              },
+              "month": {
+                "value": "03"
+              },
+              "day": {
+                "value": "27"
+              }
+            },
+            "journal-title": {
+              "value": "South African Journal of Science"
+            },
+            "visibility": "public",
+            "path": "/0000-0002-7715-1742/work/57838482",
+            "display-index": "0"
+          },
+          {
+            "put-code": 64703552,
+            "created-date": {
+              "value": 1574013194467
+            },
+            "last-modified-date": {
+              "value": 1653807694344
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0002-5982-8983",
+                "path": "0000-0002-5982-8983",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "Scopus - Elsevier"
+              },
+              "assertion-origin-orcid": {
+                "uri": "https://orcid.org/0000-0002-7715-1742",
+                "path": "0000-0002-7715-1742",
+                "host": "orcid.org"
+              },
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": {
+                "value": "Nova Ahmed"
+              }
+            },
+            "title": {
+              "title": {
+                "value": "‘Gender shouldn’t matter because we are all scientists here’: A narration of the panel discussion at the 2nd International Women in Science without Borders conference"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.17159/sajs.2019/5865",
+                  "external-id-normalized": {
+                    "value": "10.17159/sajs.2019/5865",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                },
+                {
+                  "external-id-type": "eid",
+                  "external-id-value": "2-s2.0-85064344118",
+                  "external-id-normalized": {
+                    "value": "2-s2.0-85064344118",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                }
+              ]
+            },
+            "url": {
+              "value": "http://www.scopus.com/inward/record.url?eid=2-s2.0-85064344118&partnerID=MN8TOARS"
+            },
+            "type": "journal-article",
+            "publication-date": {
+              "year": {
+                "value": "2019"
+              },
+              "month": null,
+              "day": null
+            },
+            "journal-title": {
+              "value": "South African Journal of Science"
+            },
+            "visibility": "public",
+            "path": "/0000-0002-7715-1742/work/64703552",
+            "display-index": "0"
+          }
+        ]
+      },
+      {
+        "last-modified-date": {
+          "value": 1653546419519
+        },
+        "external-ids": {
+          "external-id": [
+            {
+              "external-id-type": "eid",
+              "external-id-value": "2-s2.0-85020252201",
+              "external-id-normalized": {
+                "value": "2-s2.0-85020252201",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "self"
+            }
+          ]
+        },
+        "work-summary": [
+          {
+            "put-code": 37894470,
+            "created-date": {
+              "value": 1508659843909
+            },
+            "last-modified-date": {
+              "value": 1653546419519
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0002-5982-8983",
+                "path": "0000-0002-5982-8983",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "Scopus - Elsevier"
+              },
+              "assertion-origin-orcid": {
+                "uri": "https://orcid.org/0000-0002-7715-1742",
+                "path": "0000-0002-7715-1742",
+                "host": "orcid.org"
+              },
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": {
+                "value": "Nova Ahmed"
+              }
+            },
+            "title": {
+              "title": {
+                "value": "Ifreephony: Minimalistic interface developed for the visually impaired and the elderly community in bangladesh"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "eid",
+                  "external-id-value": "2-s2.0-85020252201",
+                  "external-id-normalized": {
+                    "value": "2-s2.0-85020252201",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                }
+              ]
+            },
+            "url": {
+              "value": "http://www.scopus.com/inward/record.url?eid=2-s2.0-85020252201&partnerID=MN8TOARS"
+            },
+            "type": "journal-article",
+            "publication-date": {
+              "year": {
+                "value": "2017"
+              },
+              "month": null,
+              "day": null
+            },
+            "journal-title": {
+              "value": "Journal of Information and Communication Technology"
+            },
+            "visibility": "public",
+            "path": "/0000-0002-7715-1742/work/37894470",
+            "display-index": "0"
+          }
+        ]
+      }
+    ]
+  }
+}
