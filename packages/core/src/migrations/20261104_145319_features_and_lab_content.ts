@@ -2,8 +2,8 @@ import { MigrateUpArgs, MigrateDownArgs, sql } from '@payloadcms/db-sqlite'
 
 // Roadmap step 4: the Features global, Lab content fields on LabInfo and
 // ResearchThemes, and LabInfo without DIAL's column defaults or its old
-// `features_*` columns (superseded by the Features global). No content is
-// written here; `scripts/seed-lab-content.ts` seeds DIAL's values separately.
+// `features_*` columns, whose values move to the Features global. No new
+// content is written here; `scripts/seed-dial-content.ts` seeds DIAL's separately.
 //
 // Dropping the defaults means rebuilding lab_info, and DROP TABLE cascades into
 // lab_info_socials and lab_info_rels wherever foreign keys are enforced.
@@ -48,6 +48,11 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   	\`created_at\` text
   );
   `)
+  // Carry any toggles saved on LabInfo's old features group over to the global.
+  // News Items had no toggle, so it starts on.
+  await db.run(
+    sql`INSERT INTO \`features\` ("id", "projects", "grants", "awards", "news_items", "research_themes", "updated_at", "created_at") SELECT "id", "features_projects", "features_grants", "features_awards", true, "features_research_themes", "updated_at", "created_at" FROM \`lab_info\`;`,
+  )
   await saveLabInfoChildren(db)
   await db.run(sql`PRAGMA foreign_keys=OFF;`)
   await db.run(sql`CREATE TABLE \`__new_lab_info\` (
@@ -92,7 +97,6 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
 }
 
 export async function down({ db, payload, req }: MigrateDownArgs): Promise<void> {
-  await db.run(sql`DROP TABLE \`features\`;`)
   await saveLabInfoChildren(db)
   await db.run(sql`PRAGMA foreign_keys=OFF;`)
   await db.run(sql`CREATE TABLE \`__new_lab_info\` (
@@ -134,4 +138,8 @@ export async function down({ db, payload, req }: MigrateDownArgs): Promise<void>
   await db.run(sql`CREATE INDEX \`lab_info_logo_idx\` ON \`lab_info\` (\`logo_id\`);`)
   await restoreLabInfoChildren(db)
   await db.run(sql`ALTER TABLE \`research_themes\` DROP COLUMN \`body\`;`)
+  await db.run(
+    sql`UPDATE \`lab_info\` SET "features_projects" = f."projects", "features_grants" = f."grants", "features_awards" = f."awards", "features_research_themes" = f."research_themes" FROM (SELECT * FROM \`features\` LIMIT 1) AS f;`,
+  )
+  await db.run(sql`DROP TABLE \`features\`;`)
 }
