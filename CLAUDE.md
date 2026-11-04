@@ -21,6 +21,8 @@ LabKit is a PayloadCMS content platform for research lab websites. The live publ
 
 There is no test framework. Run `bun run tsc` and `bun run lint`.
 
+- In a fresh worktree, run `bun run generate:importmap` first: the admin `importMap.js` is gitignored, and `tsc` fails without it.
+
 - `tsc` excludes `scripts/`. Check those with `bun run tsc -- -p scripts/tsconfig.json`.
 - When touching the ingestion job path, run `scripts/ingestion/verify-jobs-queue.ts` against a throwaway SQLite database.
 - Scripts run through `bun run payload -- run <script>`. That runner drops flags (pass the bare word `dry-run`, not `--dry-run`) and doesn't await floating promises (use top-level `await main()`).
