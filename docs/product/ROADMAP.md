@@ -10,7 +10,7 @@ DIAL's site has been live since 2026-09-28. The goal now is that a Lab that isn'
 2. **`@labkit/core` package.** Move the research collections, ingestion, migrations and access into `packages/core`, a Payload plugin. Behaviour doesn't change.
 3. **DIAL moves out.** Done 2026-11-04: DIAL's site and its `labs/dial/` workspace live in the `dial-site` repo, which consumes LabKit through a git submodule. Core now owns the whole schema. LabKit goes public so Vercel can clone the submodule.
 4. **Features and Lab content as data.** A `Features` global switches Features (Projects, Grants, Awards, News Items…) on and off. The content DIAL hardcodes (Research Theme routes, about/contact copy, branding) moves into `LabInfo`. This takes one migration; until it lands, the schema stays frozen (ADR-0002).
-5. **Default Lab site.** A generic site built from DIAL's design and driven entirely by data and Features.
+5. **Default Lab site.** Done 2026-11-04: `src/app/(frontend)/(site)/` is a starter in DIAL's design, built entirely from LabInfo, Features and the records, with a fictional demo seed (`scripts/seed-demo.ts`).
 6. **Onboarding.** For Lab Editors: a first-run wizard in `/admin` (Lab info → PI's ORCID → Features → first Import Run). For developers: a README and seed path. A `create-labkit` CLI comes later.
 
 Added after a reference study (lab-site templates such as al-folio, greenelab and Hugo Blox; Crossref matching research; S2AND; Zotero; Manubot; Publish or Perish):
