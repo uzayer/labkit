@@ -57,9 +57,28 @@ const WHO_IS_WRITING = [
  */
 const loadSchema = () => import('@/components/dial/contact-schema')
 
+// The focus preload is best effort; a failed load is retried and reported on submit.
+const preloadSchema = () => {
+  loadSchema().catch(() => {})
+}
+
 const lazyResolver: Resolver<ContactFormData> = async (values, context, options) => {
-  const { contactFormResolver } = await loadSchema()
-  return contactFormResolver(values, context, options)
+  try {
+    const { contactFormResolver } = await loadSchema()
+    return contactFormResolver(values, context, options)
+  } catch {
+    // A chunk that will not load (a stale tab after a deploy, a dropped
+    // connection) would otherwise make submit do nothing at all.
+    return {
+      values: {},
+      errors: {
+        root: {
+          type: 'load',
+          message: 'The form could not load. Please reload the page and try again.',
+        },
+      },
+    }
+  }
 }
 
 interface Contact1Props {
@@ -237,7 +256,7 @@ const Contact1 = ({ email, address, scholarUrl, formId, className, onSubmit }: C
 
         <form
           onSubmit={form.handleSubmit(handleFormSubmit)}
-          onFocus={loadSchema}
+          onFocus={preloadSchema}
           className="enter z-10 w-full"
           style={enterStep(4)}
         >
