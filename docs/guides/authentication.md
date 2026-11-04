@@ -44,4 +44,4 @@ See [Roles and Permissions](./roles-and-permissions.md) and [Architecture: Acces
 ## Related Files
 
 - `packages/core/src/auth/googleLogin.ts` — `OAuth2Plugin` configuration, `googleLoginActive` flag
-- `src/components/AdminDashboard/LoginButton` — renders the Google login button when enabled
+- `packages/core/src/auth/GoogleLoginButton.tsx` — renders the Google login button when enabled
