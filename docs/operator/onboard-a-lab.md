@@ -156,7 +156,7 @@ What DIAL's frontend reads, beyond the imported records:
 
 Check every in-scope route against Payload data rather than fixtures. At minimum:
 
-- the first admin account exists with the Operator's email (a fresh database lets anyone who reaches `/admin/create-first-user` claim it, so create it at the first deploy, before the URL is shared);
+- the first admin account exists with the Operator's email (a fresh database lets anyone who reaches `/admin/create-first-user` claim it, so create it before the first deploy by running the site locally against the production database, as [A Lab's site repo](../guides/lab-site-repo.md) describes);
 - no fabricated or placeholder research content remains;
 - hidden import-created records do not appear publicly;
 - names, publication titles, venues, years, links, and images render correctly;
