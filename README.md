@@ -106,6 +106,8 @@ Two properties are load-bearing:
 
 ## Start a new Lab
 
+This runs LabKit's own repo with its default site, which is the way to try it or work on LabKit itself. A real Lab gets its own site repo with LabKit pinned inside it as a git submodule, so the Lab owns its pages and decides when to take LabKit updates: see [A Lab's site repo](docs/guides/lab-site-repo.md).
+
 Requires **Node ≥ 24** and **Bun 1.4.2**. Local development uses an ignored SQLite file; production uses Turso. Bun installs dependencies; Node runs the application.
 
 ```bash
@@ -139,7 +141,7 @@ Everything it adds is invented: people, publications without DOIs, Research Them
 
 ### Deploy to Vercel
 
-Each Lab gets its own deployment: a Vercel project, a Turso database and a Vercel Blob store for Media. In the Vercel project, set the variables from `.env.example` with `TURSO_DATABASE_URL=libsql://…`, `TURSO_AUTH_TOKEN`, `BLOB_READ_WRITE_TOKEN`, strong secrets and both Turnstile keys, apply the migrations to Turso before the first deploy, and pin the Vercel functions to the region nearest the Turso database (`"regions"` in `vercel.json`). [`docs/operator/turso-cutover.md`](docs/operator/turso-cutover.md) has the full sequence: environment variables, migrations, backups and Media.
+Each Lab deploys its own site repo ([A Lab's site repo](docs/guides/lab-site-repo.md)) and gets its own Vercel project, Turso database and Vercel Blob store for Media. In the Vercel project, set the variables from `.env.example` with `TURSO_DATABASE_URL=libsql://…`, `TURSO_AUTH_TOKEN`, `BLOB_READ_WRITE_TOKEN`, strong secrets and both Turnstile keys, apply the migrations to Turso before the first deploy, create the first admin before the URL is shared (until then anyone can claim it at `/admin/create-first-user`), and pin the Vercel functions to the region nearest the Turso database (`"regions"` in `vercel.json`). [`docs/operator/turso-cutover.md`](docs/operator/turso-cutover.md) has the full sequence: environment variables, migrations, backups and Media.
 
 Vercel has no jobs cron, so the wizard drives its import from the browser, one batch per request. Larger imports can also go through the CLI, which an Operator runs against the Lab's database:
 

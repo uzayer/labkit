@@ -8,7 +8,7 @@ The rule is simple: append each manual step, result, exception, and elapsed time
 
 The **Operator** executes the import, records evidence, and coordinates launch. The **PI** decides what belongs to the Lab. The **Lab Editor** reviews and maintains content in Payload.
 
-Each Lab gets a workspace in its own site repo, not in LabKit (DIAL's is `labs/dial/` in dial-site):
+Each Lab's website is its own repo with LabKit pinned inside it as a git submodule ([A Lab's site repo](../guides/lab-site-repo.md) covers setting one up and updating it). The Lab's workspace lives in that repo, not in LabKit (DIAL's is `labs/dial/` in dial-site):
 
 ```text
 labs/<lab-slug>/
@@ -156,6 +156,7 @@ What DIAL's frontend reads, beyond the imported records:
 
 Check every in-scope route against Payload data rather than fixtures. At minimum:
 
+- the first admin account exists with the Operator's email (a fresh database lets anyone who reaches `/admin/create-first-user` claim it, so create it at the first deploy, before the URL is shared);
 - no fabricated or placeholder research content remains;
 - hidden import-created records do not appear publicly;
 - names, publication titles, venues, years, links, and images render correctly;

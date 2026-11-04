@@ -18,6 +18,7 @@ Keep durable, reusable LabKit knowledge here: product intent, Operator and Lab E
 
 ## Understand the architecture
 
+- [A Lab's site repo](./guides/lab-site-repo.md) — how a Lab's site pulls LabKit in as a git submodule, and how to update it without breaking production
 - [Data schema](./architecture/data-schema.md) — the research-domain collections and their boundaries
 - [Access control](./architecture/access-control.md) — role documents, permission checks, user lifecycle rules, and known gaps
 - [Theming system](./architecture/theming-system.md) — the current theming approach and its limits
