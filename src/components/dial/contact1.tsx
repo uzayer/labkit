@@ -1,11 +1,11 @@
 'use client'
 
-import { zodResolver } from '@hookform/resolvers/zod'
 import { LoaderIcon } from 'lucide-react'
 import { useState } from 'react'
-import { Controller, useForm } from 'react-hook-form'
+import { Controller, useForm, type Resolver } from 'react-hook-form'
 import Turnstile from 'react-turnstile'
-import { z } from 'zod'
+
+import type { ContactFormData } from '@/components/dial/contact-schema'
 
 import { Button } from '@/components/dial/ui/button'
 import { Field, FieldError, FieldGroup, FieldLabel } from '@/components/dial/ui/field'
@@ -49,13 +49,18 @@ const WHO_IS_WRITING = [
   },
 ]
 
-const contactFormSchema = z.object({
-  name: z.string().min(1, 'Name is required'),
-  email: z.string().min(1, 'Email is required').email('Please enter a valid email'),
-  message: z.string().min(1, 'Message is required'),
-})
+/**
+ * zod and its resolver load on demand: the form validates on submit only, so
+ * nothing needs them before then. `loadSchema` runs when the form first takes
+ * focus, which leaves seconds of typing for the chunk to arrive; a submit that
+ * beats it just waits for the same import.
+ */
+const loadSchema = () => import('@/components/dial/contact-schema')
 
-type ContactFormData = z.infer<typeof contactFormSchema>
+const lazyResolver: Resolver<ContactFormData> = async (values, context, options) => {
+  const { contactFormResolver } = await loadSchema()
+  return contactFormResolver(values, context, options)
+}
 
 interface Contact1Props {
   /** Lab contact details, from LabInfo. */
@@ -98,7 +103,7 @@ const Contact1 = ({ email, address, scholarUrl, formId, className, onSubmit }: C
   const [website, setWebsite] = useState('')
 
   const form = useForm<ContactFormData>({
-    resolver: zodResolver(contactFormSchema),
+    resolver: lazyResolver,
     mode: 'onSubmit',
     reValidateMode: 'onSubmit',
     defaultValues: { name: '', email: '', message: '' },
@@ -232,6 +237,7 @@ const Contact1 = ({ email, address, scholarUrl, formId, className, onSubmit }: C
 
         <form
           onSubmit={form.handleSubmit(handleFormSubmit)}
+          onFocus={loadSchema}
           className="enter z-10 w-full"
           style={enterStep(4)}
         >
