@@ -8,7 +8,7 @@ The rule is simple: append each manual step, result, exception, and elapsed time
 
 The **Operator** executes the import, records evidence, and coordinates launch. The **PI** decides what belongs to the Lab. The **Lab Editor** reviews and maintains content in Payload.
 
-Each Lab gets a workspace outside this documentation tree:
+Each Lab gets a workspace in its own site repo, not in LabKit (DIAL's is `labs/dial/` in dial-site):
 
 ```text
 labs/<lab-slug>/
@@ -89,7 +89,7 @@ bun run payload -- run scripts/ingestion/import-bibtex.ts <file.bib> dry-run
 bun run payload -- run scripts/ingestion/import-citations.ts <file.txt> dry-run
 ```
 
-Before the ORCID import: the Lab roster must already be in Team (the ORCID owner with their `orcid` set — a live run refuses otherwise), and recurring Venues should be seeded (`bun run payload -- run scripts/ingestion/seed-venues.ts`). Scope career-spanning ORCID records with a bare `since=YYYY` positional. Each Lab's range is decided with its PI and is separate from `LabInfo.foundingDate`: DIAL is imported with `since=2017` (its NSUHCI lineage) even though its founding date is 2020. To make a selection inventory without database writes, run `bun run payload -- run scripts/ingestion/prepare-orcid-selection.ts <orcid-id> since=2017`; an unselected import dry run also writes one. The `ingestion-previews/orcid-<id>-since-<year>-selection.template.json` inventory starts with all Candidates excluded and is never overwritten by a later run. Move every approved DOI key into `includeKeys`, leave all other keys in `excludeKeys`, and keep the two arrays collectively exhaustive. Use `selection=<reviewed-path.json>` in a second dry run and the live run. The live CLI refuses to run without it. A no-DOI Candidate cannot be included in this CLI; route it through BibTeX or citation review.
+Before the ORCID import: the Lab roster must already be in Team (the ORCID owner with their `orcid` set — a live run refuses otherwise), and recurring Venues should be seeded with their curated `shortName` and the spellings Crossref returns as `alternateNames` (DIAL's seed script, `scripts/seed-venues.ts` in dial-site, is the pattern). Scope career-spanning ORCID records with a bare `since=YYYY` positional. Each Lab's range is decided with its PI and is separate from `LabInfo.foundingDate`: DIAL is imported with `since=2017` (its NSUHCI lineage) even though its founding date is 2020. To make a selection inventory without database writes, run `bun run payload -- run scripts/ingestion/prepare-orcid-selection.ts <orcid-id> since=2017`; an unselected import dry run also writes one. The `ingestion-previews/orcid-<id>-since-<year>-selection.template.json` inventory starts with all Candidates excluded and is never overwritten by a later run. Move every approved DOI key into `includeKeys`, leave all other keys in `excludeKeys`, and keep the two arrays collectively exhaustive. Use `selection=<reviewed-path.json>` in a second dry run and the live run. The live CLI refuses to run without it. A no-DOI Candidate cannot be included in this CLI; route it through BibTeX or citation review.
 
 For each rehearsal, record candidates, selected and deselected works, created/updated/skipped projections, Review Item counts by kind, errors, and elapsed time.
 
@@ -148,7 +148,7 @@ What DIAL's frontend reads, beyond the imported records:
 
 - **Research Themes** with exactly the nine slugs the `/research/<slug>` routes use (`accessibility-inclusion`, `computing-education-community`, `explainable-ai-ml`, `gender-feminist-hci`, `ictd`, `infodemic-misinformation`, `iot-low-cost-hardware`, `mental-health-wellbeing`, `safety-security`). A missing slug makes that route 404.
 - **LabInfo**: email, address, socials, founding date, recruitment window, and `homePartners`, which drives the home page's "In collaboration with" strip. `collaborators` is loaded but no page shows it yet. Partner logos go on each Organization's `logo`. Prefer SVG when the partner has one. Payload rejects an SVG that contains scripts or other active content, so if an upload fails, check the file or rasterise it to PNG at 2×.
-- **Team**: `role`, `emerging`, and `displayInWebsite` place each person on `/people`. Use the slugs in `SCHOLAR_ORDER` (`src/app/(frontend)/(dial)/publications/page.tsx`) for the Scholar links on `/publications`.
+- **Team**: `role`, `emerging`, and `displayInWebsite` place each person on `/people`. The Scholar links on `/publications` use the slugs in `SCHOLAR_ORDER` in dial-site's publications page.
 - **Projects** must be *published* to appear. Drafts stay hidden.
 - **Forms**: create a Form titled exactly `Contact` with `name`, `email`, and `message` fields. `/contact` submits to it; without it, every submission fails with a message pointing people to the Lab's email address. Production also needs both Turnstile keys (`docs/guides/forms.md`).
 

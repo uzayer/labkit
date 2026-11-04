@@ -27,7 +27,7 @@ LabKit is a research information system small enough for one lab to run. It mode
 - **Nothing is decided silently.** Every import writes an immutable Import Run, and everything the run could not decide safely lands in a mutable review queue that outlives it.
 - **The domain is modelled the way labs think.** Not blog posts with renamed fields — Publications own their authors, venue, and themes; Projects own the work they group; Grants own their funder and investigators.
 
-> **Status:** pre-release, in active development against a first pilot lab. The ingestion engine is built and verified against real data; the public frontend is being ported now. See [Status](#status).
+> **Status:** pre-release. The first pilot Lab, DIAL, has been live since 2026-09-28 from its own repo built on LabKit. The ingestion engine is built and verified against real data; the default Lab site is next. See [Status](#status).
 
 ## Table of contents
 
@@ -125,11 +125,11 @@ Open `/admin` and create the first user, who is always an admin. LabKit then ope
 2. **Lab info:** name, short name, headline, description, contact email, location and logo.
 3. **Features:** which modules the site shows. Grants and Awards start off.
 4. **The first Import Run**, from the PI's ORCID record. Nothing is preselected, because an ORCID record covers a career, not a Lab. Filter by year, tick the Lab's works, and the page shows progress while LabKit hydrates them.
-5. **Done:** view the site. The dashboard then keeps a checklist of what's left (Team photos, Research Themes, the review queue), which empties as the work gets done.
+5. **Done:** view the site. Until the default Lab site lands, it's a placeholder showing the Lab's name and description. The dashboard then keeps a checklist of what's left (Team photos, Research Themes, the review queue), which empties as the work gets done.
 
 ### Deploy to Vercel
 
-Each Lab gets its own deployment: a Vercel project, a Turso database and a Vercel Blob store for Media. In the Vercel project, set the variables from `.env.example` with `TURSO_DATABASE_URL=libsql://…`, `TURSO_AUTH_TOKEN`, `BLOB_READ_WRITE_TOKEN`, strong secrets and both Turnstile keys, and apply the migrations to Turso before the first deploy. [`docs/operator/turso-cutover.md`](docs/operator/turso-cutover.md) has the full sequence: environment variables, migrations, backups and Media.
+Each Lab gets its own deployment: a Vercel project, a Turso database and a Vercel Blob store for Media. In the Vercel project, set the variables from `.env.example` with `TURSO_DATABASE_URL=libsql://…`, `TURSO_AUTH_TOKEN`, `BLOB_READ_WRITE_TOKEN`, strong secrets and both Turnstile keys, apply the migrations to Turso before the first deploy, and pin the Vercel functions to the region nearest the Turso database (`"regions"` in `vercel.json`). [`docs/operator/turso-cutover.md`](docs/operator/turso-cutover.md) has the full sequence: environment variables, migrations, backups and Media.
 
 Vercel has no jobs cron, so the wizard drives its import from the browser, one batch per request. Larger imports can also go through the CLI, which an Operator runs against the Lab's database:
 
@@ -187,7 +187,7 @@ src/
                     labkitPlugin() (which brings the whole schema)
   heros/            70+ hero variants, dispatched by RenderHero
   blocks/           richText embeds + post/project detail renderers
-  app/(frontend)/   public site
+  app/(frontend)/   placeholder home (the default Lab site comes next)
   app/(payload)/    Payload admin
 scripts/ingestion/  CLI front doors, run via `bun run payload -- run`
 docs/
@@ -206,7 +206,7 @@ Honest about what is and isn't built:
 | **Ingestion engine**                   | Built and verified end-to-end against a real career-wide ORCID record — a 122-work profile resolved to 108 publications, 261 people, 94 organizations, and 23 venues, with 77 items correctly routed to review |
 | **Data model**                         | Shaped by real data, not designed in the abstract. The schema gaps that mattered were found by pushing an actual lab's corpus through it                                                                       |
 | **Payload admin**                      | The working admin surface, grouped into a deliberate v1 dashboard                                                                                                                                              |
-| **Public frontend**                    | **Built.** DIAL's site renders from Payload in `src/app/(frontend)/(dial)/`, ported from a static prototype; deploy is the remaining launch step                                                               |
+| **Public frontend**                    | DIAL's site is live from its own repo, `dial-site`, which consumes LabKit as a git submodule. This repo's home page is a placeholder until the default Lab site (roadmap step 5)                               |
 | **Custom dashboard**                   | Parked. Two prototypes live in `src/app/_dashboard-kit/` and `src/app/_dashboard-legacy/` as Next.js private folders — they compile and are importable, but generate no routes                                 |
 | **Multi-lab / theming generalization** | Deliberately not started. Lab #2 is what will define it; pre-solving it is the failure mode this project is guarding against                                                                                   |
 
