@@ -1,0 +1,207 @@
+{
+  "url": "https://api.crossref.org/works/10.2139%2Fssrn.4190884",
+  "recordedAt": "2026-11-04",
+  "body": {
+    "status": "ok",
+    "message-type": "work",
+    "message-version": "1.0.0",
+    "message": {
+      "indexed": {
+        "date-parts": [
+          [
+            2024,
+            5,
+            29
+          ]
+        ],
+        "date-time": "2024-05-29T05:57:12Z",
+        "timestamp": 1716962232692
+      },
+      "reference-count": 23,
+      "publisher": "Elsevier BV",
+      "content-domain": {
+        "domain": [],
+        "crossmark-restriction": false
+      },
+      "short-container-title": [
+        "SSRN Journal"
+      ],
+      "DOI": "10.2139/ssrn.4190884",
+      "type": "journal-article",
+      "created": {
+        "date-parts": [
+          [
+            2022,
+            9,
+            9
+          ]
+        ],
+        "date-time": "2022-09-09T03:08:47Z",
+        "timestamp": 1662692927000
+      },
+      "source": "Crossref",
+      "is-referenced-by-count": 1,
+      "title": [
+        "A Low-Cost Wearable System to Support Upper Limb Rehabilitation in Resource-Constrained Settings"
+      ],
+      "prefix": "10.2139",
+      "author": [
+        {
+          "given": "Md. Sabbir",
+          "family": "Ahmed",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Shajnush",
+          "family": "Amir",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Samuelson",
+          "family": "Atiba",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Rahat Jahangir",
+          "family": "Rony",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Nervo",
+          "family": "Verdezoto",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Valerie",
+          "family": "Sparkes",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Katarzyna",
+          "family": "Stawarz",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Nova",
+          "family": "Ahmed",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        }
+      ],
+      "member": "78",
+      "container-title": [
+        "SSRN Electronic Journal"
+      ],
+      "original-title": [],
+      "language": "en",
+      "deposited": {
+        "date-parts": [
+          [
+            2024,
+            2,
+            22
+          ]
+        ],
+        "date-time": "2024-02-22T03:11:24Z",
+        "timestamp": 1708571484000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://www.ssrn.com/abstract=4190884"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2022
+          ]
+        ]
+      },
+      "references-count": 23,
+      "URL": "https://doi.org/10.2139/ssrn.4190884",
+      "relation": {},
+      "ISSN": [
+        "1556-5068"
+      ],
+      "issn-type": [
+        {
+          "value": "1556-5068",
+          "type": "electronic"
+        }
+      ],
+      "subject": [],
+      "published-other": {
+        "date-parts": [
+          [
+            2022
+          ]
+        ]
+      },
+      "published": {
+        "date-parts": [
+          [
+            2022
+          ]
+        ]
+      }
+    }
+  }
+}

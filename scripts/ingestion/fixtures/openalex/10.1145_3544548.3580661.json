@@ -1,0 +1,240 @@
+{
+  "url": "https://api.openalex.org/works/https://doi.org/10.1145%2F3544548.3580661",
+  "recordedAt": "2026-11-04",
+  "body": {
+    "id": "https://openalex.org/W4366549125",
+    "doi": "https://doi.org/10.1145/3544548.3580661",
+    "title": "MFS Design in Appstore-enabled Smart Featurephones for Low-literate, Marginalized Communities",
+    "publication_year": 2023,
+    "type": "conference-paper",
+    "authorships": [
+      {
+        "author_position": "first",
+        "author": {
+          "id": "https://openalex.org/A5082828034",
+          "display_name": "Mohammad Rayed",
+          "orcid": "https://orcid.org/0000-0002-0373-6676",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-0373-6676"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I157386601",
+            "display_name": "North South University",
+            "ror": "https://ror.org/05wdbfp45",
+            "country_code": "BD",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ],
+        "countries": [
+          "BD"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Mohammad Rayed",
+        "raw_affiliation_strings": [
+          "Department of Electrical and Computer Engineering, North South University, Bangladesh"
+        ],
+        "raw_orcid": "https://orcid.org/0000-0002-0373-6676",
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Bangladesh",
+            "institution_ids": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5015203051",
+          "display_name": "Tawfique Elahi",
+          "orcid": "https://orcid.org/0000-0001-9336-9584",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-9336-9584"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I157386601",
+            "display_name": "North South University",
+            "ror": "https://ror.org/05wdbfp45",
+            "country_code": "BD",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ],
+        "countries": [
+          "BD"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Tawfique Elahi",
+        "raw_affiliation_strings": [
+          "Department of Electrical and Computer Engineering, North South University, Bangladesh"
+        ],
+        "raw_orcid": "https://orcid.org/0000-0001-9336-9584",
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Bangladesh",
+            "institution_ids": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5066716564",
+          "display_name": "Shaikh Shawon Arefin Shimon",
+          "orcid": "https://orcid.org/0000-0001-5007-2828",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-5007-2828"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I151746483",
+            "display_name": "University of Waterloo",
+            "ror": "https://ror.org/01aff2v68",
+            "country_code": "CA",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I151746483"
+            ]
+          }
+        ],
+        "countries": [
+          "CA"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Shaikh Shawon Arefin Shimon",
+        "raw_affiliation_strings": [
+          "School of Computer Science, University of Waterloo, Canada"
+        ],
+        "raw_orcid": "https://orcid.org/0000-0001-5007-2828",
+        "affiliations": [
+          {
+            "raw_affiliation_string": "School of Computer Science, University of Waterloo, Canada",
+            "institution_ids": [
+              "https://openalex.org/I151746483"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "last",
+        "author": {
+          "id": "https://openalex.org/A5011009295",
+          "display_name": "Nova Ahmed",
+          "orcid": "https://orcid.org/0000-0002-7715-1742",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-7715-1742"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I157386601",
+            "display_name": "North South University",
+            "ror": "https://ror.org/05wdbfp45",
+            "country_code": "BD",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ],
+        "countries": [
+          "BD"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Nova Ahmed",
+        "raw_affiliation_strings": [
+          "Department of Electrical and Computer Engineering, North South University, Bangladesh"
+        ],
+        "raw_orcid": "https://orcid.org/0000-0002-7715-1742",
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Department of Electrical and Computer Engineering, North South University, Bangladesh",
+            "institution_ids": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ]
+      }
+    ],
+    "primary_location": {
+      "id": "doi:10.1145/3544548.3580661",
+      "doi": "https://doi.org/10.1145/3544548.3580661",
+      "is_oa": false,
+      "landing_page_url": "https://doi.org/10.1145/3544548.3580661",
+      "pdf_url": null,
+      "source": {
+        "id": "https://openalex.org/S4363607743",
+        "display_name": "CHI Conference on Human Factors in Computing Systems",
+        "issn_l": null,
+        "issn": null,
+        "is_oa": false,
+        "is_in_doaj": false,
+        "is_core": false,
+        "listed_in": [],
+        "host_organization": null,
+        "host_organization_name": null,
+        "host_organization_lineage": [],
+        "host_organization_lineage_names": [],
+        "type": "conference"
+      },
+      "license": null,
+      "license_id": null,
+      "version": "publishedVersion",
+      "is_accepted": true,
+      "is_published": true,
+      "raw_source_name": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+      "raw_type": "proceedings-article"
+    },
+    "best_oa_location": null,
+    "open_access": {
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "any_repository_has_fulltext": false
+    },
+    "locations": [
+      {
+        "id": "doi:10.1145/3544548.3580661",
+        "doi": "https://doi.org/10.1145/3544548.3580661",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1145/3544548.3580661",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4363607743",
+          "display_name": "CHI Conference on Human Factors in Computing Systems",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "conference"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+        "raw_type": "proceedings-article"
+      }
+    ]
+  }
+}

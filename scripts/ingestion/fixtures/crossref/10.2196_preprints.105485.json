@@ -1,0 +1,217 @@
+{
+  "url": "https://api.crossref.org/works/10.2196%2Fpreprints.105485",
+  "recordedAt": "2026-11-04",
+  "body": {
+    "status": "ok",
+    "message-type": "work",
+    "message-version": "1.0.0",
+    "message": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            7,
+            14
+          ]
+        ],
+        "date-time": "2026-07-14T17:10:06Z",
+        "timestamp": 1784049006151,
+        "version": "3.55.0"
+      },
+      "posted": {
+        "date-parts": [
+          [
+            2026,
+            6,
+            24
+          ]
+        ]
+      },
+      "group-title": "Interactive Journal of Medical Research",
+      "reference-count": 27,
+      "publisher": "JMIR Publications Inc.",
+      "content-domain": {
+        "domain": [],
+        "crossmark-restriction": false
+      },
+      "short-container-title": [],
+      "abstract": "<sec>\n                  <title>BACKGROUND</title>\n                  <p>In Bangladesh, approximately 4.742 million individuals, or 2.4% of the population, live with physical or mental disabilities [19]. These individuals often face complex challenges that significantly affect their mental health and quality of life. According to the Centers for Disease Control and Prevention (CDC), adults with disabilities are five times more likely to experience frequent mental distress compared to their non-disabled peers [21]. The intersection of physical disability and mental health is multifaceted; navigating an environment not designed for their needs, experiencing societal stigma, managing chronic pain, and facing inaccessible infrastructure often contribute to emotional distress, anxiety, and depressive symptoms [20].\nThe mental health struggles of people with disabilities are often overlooked, especially in South Asian societies where mental illness is still stigmatized [1]. When these issues go unaddressed, they can worsen over time, affecting daily life, relationships, and overall quality of life [1]. Early diagnosis is crucial, but it requires a thoughtful, multi-layered approach to truly understand and support these individuals [2]. In Bangladesh, the social and structural environment is not yet responsive or inclusive enough to address these challenges, leaving many to suffer in silence [3]. Despite the urgent need for action, there is a lack of studies in South Asia that use innovative, scalable methods to understand the mental health of people with disabilities. In addition to physical barriers, persons with disabilities (PWDs) encounter significant societal challenges, including a prevailing culture that offers limited access to conventional employment. Despite the availability of workplace accommodations, many capable and willing PWDs still face restricted opportunities to participate in the workforce [24].\nMental health among PWDs remains an under-researched area, particularly in low- and middle-income countries (LMICs) like Bangladesh, where access to mental health services is limited and stigma remains pervasive [8]. Although mental health awareness has improved in Bangladesh in recent years, large-scale, data-driven studies focusing specifically on the psychological well-being of individuals with disabilities are notably scarce. Moreover, most national surveys and public health initiatives fail to disaggregate mental health data by disability status, resulting in limited visibility and support for this vulnerable group in both research and policy contexts [9].\nWhile individuals with disabilities might feel hesitant to express their emotional distress in face-to-face interactions, they often turn to social media as a safer space for self-expression [4]. Important insights into their mental health can be gained through their online behavior, how they use language, their emotional tone, and how much they engage. Natural language processing (NLP) now offers a unique opportunity to analyze these online markers and detect signs of mental distress, such as depression or anxiety [5]. Different age groups experience depression and stress in distinct ways [14], and they handle these challenges differently. Gender also offers a massive reason for depression expressions [22] because males are found to have more precise forms of depression than females [23]. Furthermore, different situations tend to confront them; thus, the ways these issues are handled are also greatly diverse.\nFor many people with disabilities, especially in resource-limited settings, formal mental health assessments are often inaccessible [6]. However, by analyzing their online traces [7], we can develop a cost-effective and scalable method to identify mental health risks. In this approach, the Patient Health Questionnaire-9 (PHQ-9) will be used as a psychometric scale to provide a validated measure of depression severity. The inclusion of the PHQ-9 will enhance the reliability of the digital mental health assessments, offering a robust validation for the data gathered from social media behavior. This combination improves the accuracy of the assessments and ensures that timely, evidence-based interventions can be implemented to make a meaningful impact on an individual's mental health.\nThis study explores the mental health of individuals with disabilities in Bangladesh by analyzing their social media behavior [26] and qualitative interviews. These analyses are crucial as they offer a multifaceted understanding of mental health, particularly in individuals with disabilities, by combining clinical assessment tools with real-world social media data and thematic analysis of qualitative data. The PHQ-9 helps measure the severity of depression symptoms, providing clear insights into mental health. Emotional analysis, through sentiment analysis, uncovers underlying emotions like sadness or frustration in participants' responses. Linguistic analysis examines how word choices, such as pronouns and negations, reflect self-focus or emotional distance. NLP techniques, like zero-shot and few-shot learning, detect subtle emotional cues from text, even without explicit labels. While we conducted a qualitative interview to deep dive into understanding the problem. We collected direct data from the PWD participants, disability stigma in Bangladesh, and a very hard-to-reach community in this region. As a result, with limited quantitative data, we explored qualitative interviews to enrich the data and better understand the mental health of individuals with disabilities. Together, these methods create a richer understanding of mental health, merging clinical data with real-world emotional experiences. By analyzing language use, posting habits, and emotional tone, we combine computational analysis with psychometric tools to develop accessible and inclusive mental health surveillance methods for marginalized communities. To address these gaps, this study employs a two-phase mixed-methods design, integrating NLP-based computational analysis of social media language and behavior with standardized clinical assessment using the PHQ-9. Phase 1 draws on linguistic and sentiment patterns extracted from social media data to explore how people with disabilities express depression across gender and age groups. Phase 2 extends these insights through a structured survey, capturing symptom severity and behavioral patterns across a larger sample. Together, the two phases offer a layered understanding of depression that neither clinical tools nor computational methods could provide alone. Our goal is to contribute to a better understanding of mental health among people with disabilities, not just in Bangladesh, but across the Global South.</p>\n                </sec>\n                <sec>\n                  <title>OBJECTIVE</title>\n                  <p>The objective of this study is to understand how persons with disabilities (PWDs) in Bangladesh express and experience depression across gender and age groups, using social media behavior, linguistic analysis, and standardized clinical assessment as complementary lenses. The study aims to identify patterns in social media engagement, including usage frequency and emotional expression, and examine how these patterns relate to varying levels of mental distress [26]. In addition, the research will explore linguistic behaviors in the discussion with participants through the use of NLP techniques and sentiment analysis to characterize emotional and psychological states. The research hopes to find out how online behavior can reflect and influence the mental well-being of PWDs.</p>\n                </sec>\n                <sec>\n                  <title>METHODS</title>\n                  <p>This study employed a cross-sectional, non-probability design conducted across two phases of data collection. The first phase took place between October 30, 2024, and January 22, 2025, and the second phase extended from February 1 to June 14, 2025, yielding a combined sample of N=101 participants. Given the differing data modalities across the two phases, each cohort is described separately below, followed by an integrated overview of participant characteristics.\n\nPhase 1: Initial Cohort (N=20) —-  Behavioral and Linguistic Analysis\nThe first phase recruited 20 individuals with physical disabilities through purposive sampling [27], with assistance from key informants affiliated with disability support organizations across three major divisions of Bangladesh: Dhaka, Rajshahi, and Khulna. This phase adopted two complementary analytical approaches: (1) behavioral analysis of participants' social media usage patterns, incorporating PHQ-9 scores to examine associations with online activity; and (2) linguistic analysis employing natural language processing (NLP) techniques integrated with primary clinical measures to identify language-based indicators of depression, blending technical assessments with qualitative clinical insight.\nData were collected through face-to-face semi-structured interviews conducted in the format of focus group discussions (FGDs) at participants' own locations. FGDs were prioritized as the primary qualitative method due to their capacity to encourage open dialogue and facilitate the authentic sharing of lived experiences. A total of five FGDs were conducted, with group sizes of 2, 7, 5, 4, and 4 participants respectively, supplemented by two individual interviews. All sessions were audio-recorded, transcribed in Bengali, and subsequently translated into English for analysis. In parallel, participants completed a structured online survey administered via a designated website linked to a Google Form, following established guidelines for transparent reporting of web-based surveys. This dual-method approach enabled triangulation of behavioral, linguistic, and self-reported clinical data.\nEligible participants were required to be Bengali-speaking adults aged 18 years or older; no additional exclusion criteria were applied. Study objectives, question categories, and researcher affiliations were communicated to all participants prior to data collection, and participation remained entirely voluntary. Ethical protocols were strictly observed to protect participant confidentiality and privacy, and informed consent was obtained from all individuals prior to their involvement.\n\nPhase 2: Extended Cohort (N=81) — Behavioral Analysis\nA second phase of data collection was undertaken between February 1 and June 14, 2025, recruiting an additional 81 participants from the National Institute of Traumatology and Orthopaedic Rehabilitation (NITOR), using the same PHQ-9 adapted survey instrument and eligibility criteria as Phase 1. Due to logistical and resource constraints associated with large-scale fieldwork, this phase relied exclusively on the online survey methodology and therefore encompasses behavioral data only. Qualitative interview data and linguistic analysis were not conducted for this cohort. Accordingly, findings from Phase 2 are reported and analyzed separately from those of Phase 1, and direct comparisons between the two phases are limited to the behavioral and PHQ-9 symptom dimensions common to both.\n\nSurvey responses across both phases were collected via the same Google Form platform, ensuring methodological consistency in the behavioral data collection procedure. The same eligibility criteria applied in both phases: Bengali-speaking adults aged 18 or older, with no additional exclusion criteria. While Phase 1 provided rich multilayered insights through its combined behavioral, linguistic, and qualitative data, a sample of 20 participants limits the statistical robustness and generalizability of the behavioral and PHQ-9 findings. Phase 2 was therefore undertaken to strengthen the quantitative dimensions of the study, enabling more reliable pattern detection across demographic variables such as age, gender, and depression severity. Linguistic and qualitative data were not collected in Phase 2 as conducting FGDs at scale requires substantial time, trained personnel, and logistical coordination that was not feasible within the constraints of this study. Additionally, qualitative analysis is inherently depth-oriented and best preserved in a smaller, carefully facilitated sample such as that of Phase 1; the PHQ-9 behavioral survey, being self-administered and standardized, was better suited for large-scale deployment without compromising data quality. Ethical standards consistent across both phases were maintained throughout, including voluntary participation and informed consent.</p>\n                </sec>\n                <sec>\n                  <title>RESULTS</title>\n                  <p>This study offers valuable insights into the intersection of social media behavior, mental health indicators, and linguistic patterns, with a specific focus on gender- and age-related differences. Drawing from a focused sample of 20 participants in Phase 1 and 81 in Phase 2, the research reveals important demographic, emotional, and behavioral trends that hold across both stages of data collection. Adults aged 26–35 emerged as the most socially and emotionally active demographic, exhibiting higher social media engagement and comfort discussing mental health issues. Conversely, older age groups (45–64) demonstrated more measured social media use but reported more emotional variation, including depression and frustration.</p>\n                </sec>\n                <sec>\n                  <title>CONCLUSIONS</title>\n                  <p>Participants showed varied behavioral patterns in how they interact with social media and express psychological states. Notably, 26–35-year-olds stood out for both high activity levels and moderate to high comfort in mental health discussions, highlighting this group as emotionally expressive and digitally engaged. The 18–25 and 36–44 age groups also exhibited patterns of vulnerability, particularly regarding inconsistent emotional expression and higher reported symptoms of depression. These patterns were particularly evident among males, who reported high levels of frustration and depression but also tended to dominate in representation and help-seeking metrics.</p>\n                </sec>",
+      "DOI": "10.2196/preprints.105485",
+      "type": "posted-content",
+      "created": {
+        "date-parts": [
+          [
+            2026,
+            7,
+            14
+          ]
+        ],
+        "date-time": "2026-07-14T16:35:08Z",
+        "timestamp": 1784046908000
+      },
+      "source": "Crossref",
+      "is-referenced-by-count": 0,
+      "title": [
+        "Beyond Stigma and Silence: A Multilayered Approach to Uncovering Mental Health Challenges Among People with Disabilities in Bangladesh Through Social Media Behavior and Linguistic Analytics (Preprint)"
+      ],
+      "prefix": "10.2196",
+      "author": [
+        {
+          "given": "Manoshi Das",
+          "family": "Turjo",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Md. Jahidul",
+          "family": "Islam",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Zinnat Fowzia",
+          "family": "Ria",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Hussain Md.",
+          "family": "Sahariyar",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Md Hasibur",
+          "family": "Rahman",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Mohammed Arif",
+          "family": "Uddin",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Anik",
+          "family": "Saha",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Salekul",
+          "family": "Islam",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-7715-1742",
+          "authenticated-orcid": false,
+          "given": "Nova",
+          "family": "Ahmed",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "member": "1010",
+      "container-title": [],
+      "original-title": [],
+      "deposited": {
+        "date-parts": [
+          [
+            2026,
+            7,
+            14
+          ]
+        ],
+        "date-time": "2026-07-14T16:35:09Z",
+        "timestamp": 1784046909000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "http://preprints.jmir.org/preprint/105485"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2026,
+            6,
+            24
+          ]
+        ]
+      },
+      "references-count": 27,
+      "URL": "https://doi.org/10.2196/preprints.105485",
+      "relation": {},
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2026,
+            6,
+            24
+          ]
+        ]
+      },
+      "subtype": "preprint"
+    }
+  }
+}

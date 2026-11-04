@@ -8,6 +8,8 @@ interface UnmatchedRelation {
   field: string
   sourceContext: string
   value: string
+  /** Structured payload persisted on the Review Item, e.g. the Crossref candidates a search didn't apply. */
+  data?: Record<string, unknown>
 }
 
 interface DedupeSuggestion {
@@ -23,6 +25,14 @@ interface DedupeSuggestion {
   newTeamId?: string
   existingTeamId?: string
   score?: number
+  /**
+   * Why this was raised. Absent means a fuzzy name similarity. The conflict
+   * reasons mean an ORCID or DBLP pid on the paper matched a Team Member
+   * whose name can't be the printed author's (people.ts matchPersonToTeam).
+   */
+  reason?: 'orcid-name-conflict' | 'dblp-pid-name-conflict'
+  /** The conflicting ORCID or DBLP pid. */
+  identifier?: string
 }
 
 /**

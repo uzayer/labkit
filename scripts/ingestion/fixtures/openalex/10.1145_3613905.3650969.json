@@ -1,0 +1,200 @@
+{
+  "url": "https://api.openalex.org/works/https://doi.org/10.1145%2F3613905.3650969",
+  "recordedAt": "2026-11-04",
+  "body": {
+    "id": "https://openalex.org/W4396831880",
+    "doi": "https://doi.org/10.1145/3613905.3650969",
+    "title": "Addressing the Technology Learning Divide Using Co-Learning with Familiarization Method",
+    "publication_year": 2024,
+    "type": "conference-paper",
+    "authorships": [
+      {
+        "author_position": "first",
+        "author": {
+          "id": "https://openalex.org/A5005530539",
+          "display_name": "Anik Saha",
+          "orcid": "https://orcid.org/0000-0002-9240-2108",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-9240-2108"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I157386601",
+            "display_name": "North South University",
+            "ror": "https://ror.org/05wdbfp45",
+            "country_code": "BD",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ],
+        "countries": [
+          "BD"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Anik Saha",
+        "raw_affiliation_strings": [
+          "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Bangladesh"
+        ],
+        "raw_orcid": "https://orcid.org/0000-0002-9240-2108",
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Bangladesh",
+            "institution_ids": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5004463548",
+          "display_name": "Naimur Rahman",
+          "orcid": "https://orcid.org/0009-0005-3685-9241",
+          "observed_orcids": [
+            "https://orcid.org/0009-0005-3685-9241"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I157386601",
+            "display_name": "North South University",
+            "ror": "https://ror.org/05wdbfp45",
+            "country_code": "BD",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ],
+        "countries": [
+          "BD"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Naimur Rahman",
+        "raw_affiliation_strings": [
+          "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Bangladesh"
+        ],
+        "raw_orcid": "https://orcid.org/0009-0005-3685-9241",
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Bangladesh",
+            "institution_ids": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "last",
+        "author": {
+          "id": "https://openalex.org/A5011009295",
+          "display_name": "Nova Ahmed",
+          "orcid": "https://orcid.org/0000-0002-7715-1742",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-7715-1742"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I157386601",
+            "display_name": "North South University",
+            "ror": "https://ror.org/05wdbfp45",
+            "country_code": "BD",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ],
+        "countries": [
+          "BD"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Nova Ahmed",
+        "raw_affiliation_strings": [
+          "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Bangladesh"
+        ],
+        "raw_orcid": "https://orcid.org/0000-0002-7715-1742",
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Design Inclusion and Access Lab, Department of Electrical and Computer Engineering, North South University, Bangladesh",
+            "institution_ids": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ]
+      }
+    ],
+    "primary_location": {
+      "id": "doi:10.1145/3613905.3650969",
+      "doi": "https://doi.org/10.1145/3613905.3650969",
+      "is_oa": false,
+      "landing_page_url": "https://doi.org/10.1145/3613905.3650969",
+      "pdf_url": null,
+      "source": {
+        "id": "https://openalex.org/S7407088584",
+        "display_name": "CHI Conference Extended Abstracts on Human Factors in Computing Systems (CHI EA)",
+        "issn_l": null,
+        "issn": null,
+        "is_oa": false,
+        "is_in_doaj": false,
+        "is_core": false,
+        "listed_in": [],
+        "host_organization": null,
+        "host_organization_name": null,
+        "host_organization_lineage": [],
+        "host_organization_lineage_names": [],
+        "type": "conference"
+      },
+      "license": null,
+      "license_id": null,
+      "version": "publishedVersion",
+      "is_accepted": true,
+      "is_published": true,
+      "raw_source_name": "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems",
+      "raw_type": "proceedings-article"
+    },
+    "best_oa_location": null,
+    "open_access": {
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "any_repository_has_fulltext": false
+    },
+    "locations": [
+      {
+        "id": "doi:10.1145/3613905.3650969",
+        "doi": "https://doi.org/10.1145/3613905.3650969",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1145/3613905.3650969",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S7407088584",
+          "display_name": "CHI Conference Extended Abstracts on Human Factors in Computing Systems (CHI EA)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "conference"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems",
+        "raw_type": "proceedings-article"
+      }
+    ]
+  }
+}

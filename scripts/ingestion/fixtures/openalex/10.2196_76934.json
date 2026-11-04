@@ -1,0 +1,487 @@
+{
+  "url": "https://api.openalex.org/works/https://doi.org/10.2196%2F76934",
+  "recordedAt": "2026-11-04",
+  "body": {
+    "id": "https://openalex.org/W4412400997",
+    "doi": "https://doi.org/10.2196/76934",
+    "title": "Understanding the Mental and Physical Burdens of Physicians and Identifying Support Interventions in Bangladesh: Qualitative Study",
+    "publication_year": 2025,
+    "type": "article",
+    "authorships": [
+      {
+        "author_position": "first",
+        "author": {
+          "id": "https://openalex.org/A5051692316",
+          "display_name": "Rahat Jahangir Rony",
+          "orcid": "https://orcid.org/0000-0001-5788-2145",
+          "observed_orcids": [
+            "https://orcid.org/0000-0001-5788-2145"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I79510175",
+            "display_name": "Cardiff University",
+            "ror": "https://ror.org/03kk7td41",
+            "country_code": "GB",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I79510175"
+            ]
+          }
+        ],
+        "countries": [
+          "GB"
+        ],
+        "is_corresponding": true,
+        "raw_author_name": "Rahat Jahangir Rony",
+        "raw_affiliation_strings": [
+          "Department of Computer Science and Informatics, School of Computer Science, Cardiff University, Cardiff, United Kingdom"
+        ],
+        "raw_orcid": "https://orcid.org/0000-0001-5788-2145",
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Department of Computer Science and Informatics, School of Computer Science, Cardiff University, Cardiff, United Kingdom",
+            "institution_ids": [
+              "https://openalex.org/I79510175"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5114620314",
+          "display_name": "Shams Akbar Aalok",
+          "orcid": "https://orcid.org/0009-0006-8876-2481",
+          "observed_orcids": [
+            "https://orcid.org/0009-0006-8876-2481"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I157386601",
+            "display_name": "North South University",
+            "ror": "https://ror.org/05wdbfp45",
+            "country_code": "BD",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ],
+        "countries": [
+          "BD"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Shams Akbar Aalok",
+        "raw_affiliation_strings": [
+          "Department of Electrical and Computer Science, North South University, Dhaka, Bangladesh"
+        ],
+        "raw_orcid": "https://orcid.org/0009-0006-8876-2481",
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Department of Electrical and Computer Science, North South University, Dhaka, Bangladesh",
+            "institution_ids": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5117436676",
+          "display_name": "Lamia Amin Tisha",
+          "orcid": "https://orcid.org/0009-0009-4289-9230",
+          "observed_orcids": [
+            "https://orcid.org/0009-0009-4289-9230"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I157386601",
+            "display_name": "North South University",
+            "ror": "https://ror.org/05wdbfp45",
+            "country_code": "BD",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ],
+        "countries": [
+          "BD"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Lamia Amin Tisha",
+        "raw_affiliation_strings": [
+          "Department of Electrical and Computer Science, North South University, Dhaka, Bangladesh"
+        ],
+        "raw_orcid": "https://orcid.org/0009-0009-4289-9230",
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Department of Electrical and Computer Science, North South University, Dhaka, Bangladesh",
+            "institution_ids": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5114620317",
+          "display_name": "Marzan Mahatab",
+          "orcid": "https://orcid.org/0009-0000-0956-7108",
+          "observed_orcids": [
+            "https://orcid.org/0009-0000-0956-7108"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I157386601",
+            "display_name": "North South University",
+            "ror": "https://ror.org/05wdbfp45",
+            "country_code": "BD",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ],
+        "countries": [
+          "BD"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Marzan Mahatab",
+        "raw_affiliation_strings": [
+          "Department of Electrical and Computer Science, North South University, Dhaka, Bangladesh"
+        ],
+        "raw_orcid": "https://orcid.org/0009-0000-0956-7108",
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Department of Electrical and Computer Science, North South University, Dhaka, Bangladesh",
+            "institution_ids": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "last",
+        "author": {
+          "id": "https://openalex.org/A5011009295",
+          "display_name": "Nova Ahmed",
+          "orcid": "https://orcid.org/0000-0002-7715-1742",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-7715-1742"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I157386601",
+            "display_name": "North South University",
+            "ror": "https://ror.org/05wdbfp45",
+            "country_code": "BD",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ],
+        "countries": [
+          "BD"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Nova Ahmed",
+        "raw_affiliation_strings": [
+          "Department of Electrical and Computer Science, North South University, Dhaka, Bangladesh"
+        ],
+        "raw_orcid": "https://orcid.org/0000-0002-7715-1742",
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Department of Electrical and Computer Science, North South University, Dhaka, Bangladesh",
+            "institution_ids": [
+              "https://openalex.org/I157386601"
+            ]
+          }
+        ]
+      }
+    ],
+    "primary_location": {
+      "id": "doi:10.2196/76934",
+      "doi": "https://doi.org/10.2196/76934",
+      "is_oa": true,
+      "landing_page_url": "https://doi.org/10.2196/76934",
+      "pdf_url": null,
+      "source": {
+        "id": "https://openalex.org/S4210209730",
+        "display_name": "Interactive Journal of Medical Research",
+        "issn_l": "1929-073X",
+        "issn": [
+          "1929-073X"
+        ],
+        "is_oa": true,
+        "is_in_doaj": true,
+        "is_core": true,
+        "listed_in": [
+          "cwts-core",
+          "doaj",
+          "jufo-1",
+          "norway-1",
+          "poland-40",
+          "russia-white-list-2",
+          "vabb-shw"
+        ],
+        "host_organization": "https://openalex.org/P4310320608",
+        "host_organization_name": "JMIR Publications",
+        "host_organization_lineage": [
+          "https://openalex.org/P4310320608"
+        ],
+        "host_organization_lineage_names": [
+          "JMIR Publications"
+        ],
+        "type": "journal"
+      },
+      "license": "cc-by",
+      "license_id": "https://openalex.org/licenses/cc-by",
+      "version": "publishedVersion",
+      "is_accepted": true,
+      "is_published": true,
+      "raw_source_name": "Interactive Journal of Medical Research",
+      "raw_type": "journal-article"
+    },
+    "best_oa_location": {
+      "id": "doi:10.2196/76934",
+      "doi": "https://doi.org/10.2196/76934",
+      "is_oa": true,
+      "landing_page_url": "https://doi.org/10.2196/76934",
+      "pdf_url": null,
+      "source": {
+        "id": "https://openalex.org/S4210209730",
+        "display_name": "Interactive Journal of Medical Research",
+        "issn_l": "1929-073X",
+        "issn": [
+          "1929-073X"
+        ],
+        "is_oa": true,
+        "is_in_doaj": true,
+        "is_core": true,
+        "listed_in": [
+          "cwts-core",
+          "doaj",
+          "jufo-1",
+          "norway-1",
+          "poland-40",
+          "russia-white-list-2",
+          "vabb-shw"
+        ],
+        "host_organization": "https://openalex.org/P4310320608",
+        "host_organization_name": "JMIR Publications",
+        "host_organization_lineage": [
+          "https://openalex.org/P4310320608"
+        ],
+        "host_organization_lineage_names": [
+          "JMIR Publications"
+        ],
+        "type": "journal"
+      },
+      "license": "cc-by",
+      "license_id": "https://openalex.org/licenses/cc-by",
+      "version": "publishedVersion",
+      "is_accepted": true,
+      "is_published": true,
+      "raw_source_name": "Interactive Journal of Medical Research",
+      "raw_type": "journal-article"
+    },
+    "open_access": {
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://doi.org/10.2196/76934",
+      "any_repository_has_fulltext": true
+    },
+    "locations": [
+      {
+        "id": "doi:10.2196/76934",
+        "doi": "https://doi.org/10.2196/76934",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.2196/76934",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4210209730",
+          "display_name": "Interactive Journal of Medical Research",
+          "issn_l": "1929-073X",
+          "issn": [
+            "1929-073X"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "jufo-1",
+            "norway-1",
+            "poland-40",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320608",
+          "host_organization_name": "JMIR Publications",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320608"
+          ],
+          "host_organization_lineage_names": [
+            "JMIR Publications"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Interactive Journal of Medical Research",
+        "raw_type": "journal-article"
+      },
+      {
+        "id": "doi:10.2196/preprints.76934",
+        "doi": "https://doi.org/10.2196/preprints.76934",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.2196/preprints.76934",
+        "pdf_url": null,
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "posted-content"
+      },
+      {
+        "id": "pmh:oai:europepmc.org:11322138",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/12514411",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4306400806",
+          "display_name": "Europe PMC (PubMed Central)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I1303153112",
+          "host_organization_name": "European Bioinformatics Institute",
+          "host_organization_lineage": [
+            "https://openalex.org/I1303153112"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": null,
+        "raw_type": "Text"
+      },
+      {
+        "id": "pmid:41004260",
+        "doi": null,
+        "is_oa": false,
+        "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/41004260",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4306525036",
+          "display_name": "PubMed",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I1299303238",
+          "host_organization_name": "National Institutes of Health",
+          "host_organization_lineage": [
+            "https://openalex.org/I1299303238"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Interactive journal of medical research",
+        "raw_type": "Journal Article"
+      },
+      {
+        "id": "pmh:oai:https://orca.cardiff.ac.uk:181371",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://orca.cardiff.ac.uk/id/eprint/181371/1/ijmr-2025-1-e76934.pdf",
+        "pdf_url": "https://orca.cardiff.ac.uk/id/eprint/181371/1/ijmr-2025-1-e76934.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306401195",
+          "display_name": "ORCA Online Research @Cardiff (Cardiff University)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I79510175",
+          "host_organization_name": "Cardiff University",
+          "host_organization_lineage": [
+            "https://openalex.org/I79510175"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "Article"
+      },
+      {
+        "id": "pmh:oai:doaj.org/article:4cb4806a115c4028a9f627376b8c9935",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://doaj.org/article/4cb4806a115c4028a9f627376b8c9935",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4306401280",
+          "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-sa",
+        "license_id": "https://openalex.org/licenses/cc-by-sa",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "Interactive Journal of Medical Research, Vol 14, p e76934 (2025)",
+        "raw_type": "article"
+      }
+    ]
+  }
+}

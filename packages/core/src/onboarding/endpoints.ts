@@ -2,7 +2,8 @@ import type { Endpoint, PayloadRequest } from 'payload'
 import { addDataAndFileToRequest } from 'payload'
 
 import type { ImportRun } from '../types'
-import { queueImportRun } from '../ingestion/jobs/import-hydrate'
+import { MAX_BATCH_SIZE, queueImportRun } from '../ingestion/jobs/import-hydrate'
+import { OrcidUnavailableError } from '../ingestion/orcid'
 import { stageOrcidCandidates } from '../ingestion/staging'
 import { checkRole } from '../utilities/checkRole'
 import { fetchOrcidProfile, parseOrcidId } from './orcidProfile'
@@ -99,7 +100,17 @@ const stage: Endpoint = {
       if (params.orcidId === orcid) return json(runSummary(current))
     }
 
-    const candidates = (await stageOrcidCandidates(orcid)).map((candidate) => ({
+    let staged: Awaited<ReturnType<typeof stageOrcidCandidates>>
+    try {
+      staged = await stageOrcidCandidates(orcid)
+    } catch (error) {
+      // fetchOrcidWorks throws when ORCID can't be reached, rather than
+      // passing off an outage as "no works". Any other error is a bug: rethrow.
+      if (!(error instanceof OrcidUnavailableError)) throw error
+      req.payload.logger.error({ err: error, msg: 'ORCID works fetch failed' })
+      return json({ error: 'ORCID could not be reached. Try again in a minute.' }, 502)
+    }
+    const candidates = staged.map((candidate) => ({
       ...candidate,
       selected: false,
     }))
@@ -143,6 +154,20 @@ const start: Endpoint = {
     const keys = new Set(
       Array.isArray(data.keys) ? data.keys.filter((k) => typeof k === 'string') : [],
     )
+    // Optional; absent means the job's default. Checked before the run is
+    // claimed, so a bad value leaves it `staged`.
+    const batchSize = data.batchSize ?? undefined
+    if (
+      batchSize !== undefined &&
+      !(
+        Number.isInteger(batchSize) &&
+        (batchSize as number) >= 1 &&
+        (batchSize as number) <= MAX_BATCH_SIZE
+      )
+    ) {
+      return json({ error: `batchSize must be a whole number from 1 to ${MAX_BATCH_SIZE}.` }, 400)
+    }
+
     const staged = runSummary(run).candidates
     const selected = staged
       .filter((candidate) => keys.has(candidate.key) && candidate.doi)
@@ -175,7 +200,7 @@ const start: Endpoint = {
     if (!claimed) return json(runSummary((await loadRun(req, run.id))!))
 
     try {
-      await queueImportRun(req.payload, run.id)
+      await queueImportRun(req.payload, run.id, { batchSize: batchSize as number | undefined })
     } catch (error) {
       // No job was queued: put the run back so it isn't left `running` with nothing to run it.
       await req.payload.db.updateOne({

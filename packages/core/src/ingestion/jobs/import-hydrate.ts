@@ -5,7 +5,7 @@ import { NotFound } from 'payload'
 
 import type { ImportRun } from '../../types'
 
-import { resolveCrossrefTitle } from '../fetch'
+import { bibtexSearchInput, resolveCrossrefSearch, searchReviewData } from '../crossref-search'
 import {
   hydratePublicationFromDoi,
   hydratePublicationFromFields,
@@ -17,7 +17,16 @@ import { finalizeRun, type RunProgress } from '../run-persistence'
 import type { StagedCandidate } from '../staging'
 import type { UpsertAction } from '../upsert'
 
-const BATCH_SIZE = 20
+/**
+ * Candidates per job invocation, unless the job's input says otherwise. A
+ * caller whose function has a hard time limit (the onboarding wizard on
+ * Vercel, about 300s) asks for fewer: on slow sources one Candidate can take
+ * several seconds, and DBLP or a Retry-After wait can stretch that. The size
+ * rides in the job input, so every successor and watchdog job keeps it.
+ */
+export const DEFAULT_BATCH_SIZE = 20
+// A sanity cap for scripts, not a time budget: callers with a limit pick their own size.
+export const MAX_BATCH_SIZE = 100
 const THROTTLE_MS = 150
 const IMPORT_QUEUE = 'imports'
 
@@ -36,8 +45,15 @@ const CONTENTION_RETRY_MS = 60_000
 interface ImportHydrateTaskIO {
   input: {
     runId: string
+    batchSize?: number | null
   }
   output: Record<string, never>
+}
+
+function batchSizeOf(input: ImportHydrateTaskIO['input']): number {
+  const size = input.batchSize
+  if (typeof size !== 'number' || !Number.isInteger(size) || size < 1) return DEFAULT_BATCH_SIZE
+  return Math.min(size, MAX_BATCH_SIZE)
 }
 
 type PersistedCandidateStatus =
@@ -220,11 +236,15 @@ function flagSkippedCandidates(report: ImportReport, candidates: PersistedCandid
  * running runs). Dashboard actions and scripts should call this instead of
  * queueing + updating inline.
  */
-export async function queueImportRun(payload: Payload, runId: string): Promise<void> {
+export async function queueImportRun(
+  payload: Payload,
+  runId: string,
+  options: { batchSize?: number } = {},
+): Promise<void> {
   await payload.jobs.queue({
     queue: IMPORT_QUEUE,
     task: 'import-hydrate',
-    input: { runId },
+    input: { runId, batchSize: options.batchSize },
     overrideAccess: true,
   })
 
@@ -271,6 +291,7 @@ function restoreReport(report: ImportReport, summary: ImportRun['reportSummary']
         field: entry.field,
         sourceContext: entry.sourceContext,
         value: entry.value,
+        data: isRecord(entry.data) ? entry.data : undefined,
       })
     }
   }
@@ -299,6 +320,11 @@ function restoreReport(report: ImportReport, summary: ImportRun['reportSummary']
         newTeamId: typeof entry.newTeamId === 'string' ? entry.newTeamId : undefined,
         existingTeamId: typeof entry.existingTeamId === 'string' ? entry.existingTeamId : undefined,
         score: typeof entry.score === 'number' ? entry.score : undefined,
+        reason:
+          entry.reason === 'orcid-name-conflict' || entry.reason === 'dblp-pid-name-conflict'
+            ? entry.reason
+            : undefined,
+        identifier: typeof entry.identifier === 'string' ? entry.identifier : undefined,
       })
     }
   }
@@ -376,14 +402,14 @@ async function processBibtexCandidate(
     return null
   }
 
-  const resolution = await resolveCrossrefTitle(candidate.title)
+  const decision = await resolveCrossrefSearch(bibtexSearchInput(candidate))
   await sleep(THROTTLE_MS)
 
-  if (resolution.method === 'crossref' && resolution.candidate) {
+  if (decision.status === 'accepted') {
     const result = await hydratePublicationFromDoi(
       payload,
       report,
-      resolution.candidate.doi,
+      decision.doi,
       indexes,
       false,
       sourceContext,
@@ -409,6 +435,7 @@ async function processBibtexCandidate(
       title: candidate.title,
       year: candidate.year,
       authors: (candidate.raw.authors as Array<{ fullName: string }> | undefined) ?? [],
+      searchReview: searchReviewData(decision),
     },
     indexes,
     false,
@@ -452,14 +479,14 @@ async function processCitationCandidate(
   }
 
   const chunk = candidate.raw.chunk
-  const resolution = await resolveCrossrefTitle(chunk)
+  const decision = await resolveCrossrefSearch({ chunk })
   await sleep(THROTTLE_MS)
 
-  if (resolution.method === 'crossref' && resolution.candidate) {
+  if (decision.status === 'accepted') {
     const result = await hydratePublicationFromDoi(
       payload,
       report,
-      resolution.candidate.doi,
+      decision.doi,
       indexes,
       false,
       sourceContext,
@@ -473,6 +500,7 @@ async function processCitationCandidate(
     field: 'doi',
     sourceContext,
     value: chunk.length > 200 ? `${chunk.slice(0, 200)}…` : chunk,
+    data: searchReviewData(decision),
   })
   return null
 }
@@ -531,7 +559,10 @@ async function processCandidate(
 
 export const importHydrateTask: TaskConfig<ImportHydrateTaskIO> = {
   slug: 'import-hydrate',
-  inputSchema: [{ name: 'runId', type: 'text', required: true }],
+  inputSchema: [
+    { name: 'runId', type: 'text', required: true },
+    { name: 'batchSize', type: 'number', min: 1, max: MAX_BATCH_SIZE },
+  ],
   retries: 0,
   handler: async ({ input, req }) => {
     let run: ImportRun
@@ -563,7 +594,7 @@ export const importHydrateTask: TaskConfig<ImportHydrateTaskIO> = {
       await req.payload.jobs.queue({
         queue: IMPORT_QUEUE,
         task: 'import-hydrate',
-        input: { runId: input.runId },
+        input: { runId: input.runId, batchSize: input.batchSize },
         waitUntil: new Date(Date.now() + CONTENTION_RETRY_MS),
         overrideAccess: true,
       })
@@ -577,7 +608,7 @@ export const importHydrateTask: TaskConfig<ImportHydrateTaskIO> = {
     await req.payload.jobs.queue({
       queue: IMPORT_QUEUE,
       task: 'import-hydrate',
-      input: { runId: input.runId },
+      input: { runId: input.runId, batchSize: input.batchSize },
       waitUntil: new Date(Date.now() + WATCHDOG_DELAY_MS),
       overrideAccess: true,
     })
@@ -589,7 +620,7 @@ export const importHydrateTask: TaskConfig<ImportHydrateTaskIO> = {
     const candidates = parseCandidates(run.candidates)
     const nextBatch = candidates
       .filter((candidate) => candidate.status === 'pending' && candidate.selected !== false)
-      .slice(0, BATCH_SIZE)
+      .slice(0, batchSizeOf(input))
     const startedAt = run.startedAt ?? new Date().toISOString()
 
     try {
@@ -631,7 +662,7 @@ export const importHydrateTask: TaskConfig<ImportHydrateTaskIO> = {
       await req.payload.jobs.queue({
         queue: IMPORT_QUEUE,
         task: 'import-hydrate',
-        input: { runId: input.runId },
+        input: { runId: input.runId, batchSize: input.batchSize },
         overrideAccess: true,
       })
       await releaseRunLock(req.payload, input.runId, lockToken)

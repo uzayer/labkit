@@ -2,7 +2,7 @@ import type { CollectionSlug, Payload } from 'payload'
 import type { CrossrefAuthor } from './crossref'
 import type { DblpAuthor } from './dblp'
 import { diceCoefficient, type RorLookupEntry } from './match'
-import { normalizeTitle } from './normalize'
+import { exactNameKey, namesCompatible, namesPair, normalizeTitle } from './normalize'
 import { resolveOrCreatePartnerOrg } from './organizations'
 import type { OpenAlexAuthorship } from './openalex'
 import type { ImportReport } from './report'
@@ -44,29 +44,65 @@ export interface TeamLookupEntry {
 
 export interface MergedAuthor {
   fullName: string
+  /** Always asserted on this paper (Crossref `ORCID` or OpenAlex `raw_orcid`), never a profile's. */
   orcid?: string
+  orcidSource?: 'crossref-authenticated' | 'crossref' | 'openalex-raw'
   dblpPid?: string
   institutionName?: string
   institutionRor?: string
 }
 
+/**
+ * An identifier on the paper matched a Team Member whose name cannot be the
+ * printed author's. Either the identifier is on the wrong author (OpenAlex
+ * clustering, a publisher typo) or the Team record holding it is the wrong
+ * person. Ingestion can't tell which, so it links neither way and asks.
+ */
+export interface IdentifierConflict {
+  identifier: 'orcid' | 'dblp-pid'
+  value: string
+  holder: TeamLookupEntry
+}
+
 export interface PersonMatchResult {
   method: 'orcid' | 'dblp-pid' | 'name-exact' | 'none'
   team: TeamLookupEntry | null
+  conflicts: IdentifierConflict[]
+}
+
+function printedNameFits(person: MergedAuthor, member: TeamLookupEntry): boolean {
+  return [member.name, ...(member.alternateNames ?? [])].some((name) =>
+    namesCompatible(person.fullName, name),
+  )
 }
 
 export function matchPersonToTeam(
   person: MergedAuthor,
   team: TeamLookupEntry[],
 ): PersonMatchResult {
+  const conflicts: IdentifierConflict[] = []
+
+  // An identifier match links only when the printed name could be the Team
+  // Member's (namesCompatible: shared family name, no initial conflict). A
+  // conflict never links; resolution continues as if the paper carried no
+  // such identifier, so the remaining tiers are exactly the Safe Match the
+  // author would get without it.
   if (person.orcid) {
     const byOrcid = team.find((member) => member.orcid && member.orcid === person.orcid)
-    if (byOrcid) return { method: 'orcid', team: byOrcid }
+    if (byOrcid && printedNameFits(person, byOrcid)) {
+      return { method: 'orcid', team: byOrcid, conflicts }
+    }
+    if (byOrcid) conflicts.push({ identifier: 'orcid', value: person.orcid, holder: byOrcid })
   }
 
   if (person.dblpPid) {
     const byDblpPid = team.find((member) => member.dblpPid && member.dblpPid === person.dblpPid)
-    if (byDblpPid) return { method: 'dblp-pid', team: byDblpPid }
+    if (byDblpPid && printedNameFits(person, byDblpPid)) {
+      return { method: 'dblp-pid', team: byDblpPid, conflicts }
+    }
+    if (byDblpPid) {
+      conflicts.push({ identifier: 'dblp-pid', value: person.dblpPid, holder: byDblpPid })
+    }
   }
 
   const normalizedName = person.fullName.trim().toLowerCase()
@@ -76,10 +112,35 @@ export function matchPersonToTeam(
     ),
   )
   if (nameMatches.length === 1) {
-    return { method: 'name-exact', team: nameMatches[0] }
+    return { method: 'name-exact', team: nameMatches[0], conflicts }
   }
   // Zero or ambiguous (>1) name matches both fall through to 'none' — never guess.
-  return { method: 'none', team: null }
+  return { method: 'none', team: null, conflicts }
+}
+
+export interface TeamLinkPlan {
+  match: PersonMatchResult
+  /**
+   * The author as a new Team record would be written on a miss: without any
+   * identifier that conflicted, so the record neither inherits a wrong ORCID
+   * nor, through upsertByKey's `where orcid`, overwrites the record that
+   * holds it.
+   */
+  create: MergedAuthor
+}
+
+export function planTeamLink(person: MergedAuthor, team: TeamLookupEntry[]): TeamLinkPlan {
+  const match = matchPersonToTeam(person, team)
+  const conflicted = new Set(match.conflicts.map((conflict) => conflict.identifier))
+  return {
+    match,
+    create: {
+      ...person,
+      orcid: conflicted.has('orcid') ? undefined : person.orcid,
+      orcidSource: conflicted.has('orcid') ? undefined : person.orcidSource,
+      dblpPid: conflicted.has('dblp-pid') ? undefined : person.dblpPid,
+    },
+  }
 }
 
 export interface CustomAuthorIndexEntry {
@@ -246,8 +307,13 @@ export async function resolveOrCreateTeamMember(
   sourceContext: string,
   dryRun: boolean,
 ): Promise<string | null> {
-  const teamMatch = matchPersonToTeam(person, indexes.teamIndex)
-  if (teamMatch.team) return teamMatch.team.id
+  const { match: teamMatch, create } = planTeamLink(person, indexes.teamIndex)
+  if (teamMatch.team) {
+    reportIdentifierConflicts(report, person, teamMatch.conflicts, teamMatch.team.id, sourceContext)
+    return teamMatch.team.id
+  }
+  // From here on the author is written without any conflicting identifier.
+  person = create
 
   const normalizedName = normalizeTitle(person.fullName)
   let fuzzyMatch: TeamLookupEntry | null = null
@@ -343,75 +409,129 @@ export async function resolveOrCreateTeamMember(
       score: bestScore,
     })
   }
+  reportIdentifierConflicts(report, person, teamMatch.conflicts, id, sourceContext)
 
   return id
 }
 
 /**
+ * One Review Item per conflicting identifier, naming both records: the one
+ * the author ended up on and the one holding the identifier. Persisted as
+ * the `identifier-name-conflict` kind (run-persistence.ts).
+ */
+function reportIdentifierConflicts(
+  report: ImportReport,
+  person: MergedAuthor,
+  conflicts: IdentifierConflict[],
+  linkedId: string,
+  sourceContext: string,
+) {
+  for (const conflict of conflicts) {
+    const label = conflict.identifier === 'orcid' ? 'ORCID' : 'DBLP pid'
+    report.suggestDedupe({
+      collection: 'team',
+      field: conflict.identifier === 'orcid' ? 'orcid' : 'dblp_pid',
+      sourceContext,
+      value: `${person.fullName} (paper asserts ${label} ${conflict.value}; linked to id: ${linkedId})`,
+      suggestedMatch: `${conflict.holder.name} (id: ${conflict.holder.id}) holds ${label} ${conflict.value}`,
+      newTeamId: linkedId,
+      existingTeamId: conflict.holder.id,
+      reason: conflict.identifier === 'orcid' ? 'orcid-name-conflict' : 'dblp-pid-name-conflict',
+      identifier: conflict.value,
+    })
+  }
+}
+
+function orcidSource(
+  cr: CrossrefAuthor | undefined,
+  oa: OpenAlexAuthorship | undefined,
+): MergedAuthor['orcidSource'] {
+  if (cr?.orcid) return cr.orcidAuthenticated ? 'crossref-authenticated' : 'crossref'
+  return oa?.orcid ? 'openalex-raw' : undefined
+}
+
+/**
  * Merges Crossref's structured given/family authors with OpenAlex's
- * authorships by array position (both APIs preserve submission order).
- * Name spelling prefers Crossref (cleaner than OpenAlex's single
- * display_name); ORCID/institution enrichment prefers OpenAlex (Crossref's
- * author-level ORCID coverage is sparse in practice).
+ * authorships. Name spelling prefers Crossref (cleaner than OpenAlex's single
+ * display name); ORCID and institution enrichment comes from OpenAlex where
+ * Crossref has none.
+ *
+ * Authors are paired by name, not by array position. The two lists often
+ * differ (a dropped or merged authorship, a group author), and a positional
+ * zip then shifts every later ORCID and institution onto the wrong person.
+ * A Crossref author takes OpenAlex data only when exactly one OpenAlex
+ * authorship is name-compatible with them and that authorship is compatible
+ * with no other Crossref author. Anything that doesn't pair cleanly keeps its
+ * Crossref name and nothing from OpenAlex.
+ *
+ * When Crossref lists authors, its list is the author list. OpenAlex-only
+ * authorships are not appended: an extra entry that failed to pair is more
+ * likely a spelling of someone already listed than a missing author.
  */
 export function mergeAuthors(
   crossrefAuthors: CrossrefAuthor[] | undefined,
   openalexAuthorships: OpenAlexAuthorship[] | undefined,
 ): MergedAuthor[] {
-  const crossref = crossrefAuthors ?? []
+  const crossref = (crossrefAuthors ?? []).filter((cr) => cr.given || cr.family)
   const openalex = openalexAuthorships ?? []
-  const count = Math.max(crossref.length, openalex.length)
-  const merged: MergedAuthor[] = []
+  const openalexName = (oa: OpenAlexAuthorship) => oa.rawAuthorName || oa.displayName
 
-  for (let i = 0; i < count; i++) {
-    const cr = crossref[i]
-    const oa = openalex[i]
-
-    const crossrefName =
-      cr && (cr.given || cr.family) ? [cr.given, cr.family].filter(Boolean).join(' ') : undefined
-    const fullName = crossrefName ?? oa?.displayName
-    if (!fullName) continue
-
+  const fromOpenAlex = (oa: OpenAlexAuthorship | undefined) => {
     const institution = oa?.institutions[0]
-    merged.push({
-      fullName,
-      orcid: cr?.orcid ?? oa?.orcid,
-      institutionName: institution?.name,
-      institutionRor: institution?.ror,
+    return { institutionName: institution?.name, institutionRor: institution?.ror }
+  }
+
+  if (crossref.length === 0) {
+    return openalex.flatMap((oa) => {
+      const fullName = openalexName(oa)
+      if (!fullName) return []
+      return [
+        { fullName, orcid: oa.orcid, orcidSource: orcidSource(undefined, oa), ...fromOpenAlex(oa) },
+      ]
     })
   }
 
-  return merged
+  const names = crossref.map((cr) => [cr.given, cr.family].filter(Boolean).join(' '))
+  const compatible = names.map((name) =>
+    openalex.map((oa) => Boolean(openalexName(oa)) && namesPair(name, openalexName(oa))),
+  )
+
+  return crossref.map((cr, i) => {
+    const matches = openalex.flatMap((_, j) => (compatible[i][j] ? [j] : []))
+    const unique =
+      matches.length === 1 && compatible.filter((row) => row[matches[0]]).length === 1
+        ? openalex[matches[0]]
+        : undefined
+    return {
+      fullName: names[i],
+      orcid: cr.orcid ?? unique?.orcid,
+      orcidSource: orcidSource(cr, unique),
+      ...fromOpenAlex(unique),
+    }
+  })
 }
 
-const DBLP_NAME_MATCH_THRESHOLD = 0.85
+// DBLP disambiguates homonyms with a numeric suffix: "Md. Jahidul Islam 0001".
+const DBLP_HOMONYM_SUFFIX = /\s+\d{4}$/
 
 /**
- * Attaches DBLP's already-disambiguated author pid to each merged author by
- * name similarity within the same paper's (small) author list — DBLP's own
- * author count/order can differ slightly from Crossref/OpenAlex (e.g.
- * middle-initial formatting), so position alone isn't reliable here the way
- * it is between Crossref and OpenAlex.
+ * Attaches DBLP's already-disambiguated author pid to each merged author whose
+ * name is exactly one DBLP author's name on the same paper (after case and
+ * punctuation normalization, minus DBLP's homonym suffix). A pid is an
+ * identifier and identifiers drive Safe Match, so a near-identical name
+ * ("Md Habibur Rahman" for "Md Hasibur Rahman") must not carry one across.
  */
 export function attachDblpPids(merged: MergedAuthor[], dblpAuthors: DblpAuthor[]): MergedAuthor[] {
   if (dblpAuthors.length === 0) return merged
 
+  const byName = new Map<string, DblpAuthor[]>()
+  for (const author of dblpAuthors) {
+    const key = exactNameKey(author.name.replace(DBLP_HOMONYM_SUFFIX, ''))
+    byName.set(key, [...(byName.get(key) ?? []), author])
+  }
+
   return merged.map((person) => {
-    const normalizedName = normalizeTitle(person.fullName)
-    let best: DblpAuthor | null = null
-    let bestScore = 0
-
-    for (const author of dblpAuthors) {
-      const score = diceCoefficient(normalizedName, normalizeTitle(author.name))
-      if (score > bestScore) {
-        bestScore = score
-        best = author
-      }
-    }
-
-    if (best && bestScore >= DBLP_NAME_MATCH_THRESHOLD) {
-      return { ...person, dblpPid: best.pid }
-    }
-    return person
+    const hits = byName.get(exactNameKey(person.fullName)) ?? []
+    return hits.length === 1 ? { ...person, dblpPid: hits[0].pid } : person
   })
 }

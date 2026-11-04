@@ -1,0 +1,2162 @@
+{
+  "url": "https://pub.orcid.org/v3.0/0000-0001-8713-9213/works",
+  "recordedAt": "2026-11-04",
+  "note": "Casey Greene (greenelab), chosen for identifier variety: version-of DOIs, a preprint and its journal DOI in one group, an arXiv DOI, and an ISBN. The last group is derived from group 31 with its header reordered so a version-of DOI comes first; ORCID does not guarantee header order.",
+  "body": {
+    "group": [
+      {
+        "last-modified-date": {
+          "value": 1789490170056
+        },
+        "external-ids": {
+          "external-id": [
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.5281/zenodo.20314127",
+              "external-id-normalized": {
+                "value": "10.5281/zenodo.20314127",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "self"
+            },
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.5281/zenodo.20314128",
+              "external-id-normalized": {
+                "value": "10.5281/zenodo.20314128",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "version-of"
+            }
+          ]
+        },
+        "work-summary": [
+          {
+            "put-code": 226801835,
+            "created-date": {
+              "value": 1789490170056
+            },
+            "last-modified-date": {
+              "value": 1789490170056
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0001-8099-6984",
+                "path": "0000-0001-8099-6984",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "DataCite"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "title": {
+              "title": {
+                "value": "Lifecycle-aware evaluation of biomedical data ecosystems"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.20314127",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.20314127",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                },
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.20314128",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.20314128",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "version-of"
+                }
+              ]
+            },
+            "url": null,
+            "type": "preprint",
+            "publication-date": {
+              "year": {
+                "value": "2026"
+              },
+              "month": {
+                "value": "05"
+              },
+              "day": {
+                "value": "20"
+              }
+            },
+            "journal-title": {
+              "value": "Zenodo"
+            },
+            "visibility": "public",
+            "path": "/0000-0001-8713-9213/work/226801835",
+            "display-index": "1"
+          }
+        ]
+      },
+      {
+        "last-modified-date": {
+          "value": 1787325815954
+        },
+        "external-ids": {
+          "external-id": [
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.5281/zenodo.13733642",
+              "external-id-normalized": {
+                "value": "10.5281/zenodo.13733642",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "self"
+            },
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.5281/zenodo.8431937",
+              "external-id-normalized": {
+                "value": "10.5281/zenodo.8431937",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "version-of"
+            },
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.5281/zenodo.15122187",
+              "external-id-normalized": {
+                "value": "10.5281/zenodo.15122187",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "version-of"
+            },
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.5281/zenodo.8226567",
+              "external-id-normalized": {
+                "value": "10.5281/zenodo.8226567",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "version-of"
+            },
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.5281/zenodo.8226547",
+              "external-id-normalized": {
+                "value": "10.5281/zenodo.8226547",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "version-of"
+            },
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.5281/zenodo.8186994",
+              "external-id-normalized": {
+                "value": "10.5281/zenodo.8186994",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "version-of"
+            },
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.5281/zenodo.8186993",
+              "external-id-normalized": {
+                "value": "10.5281/zenodo.8186993",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "self"
+            },
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.5281/zenodo.10452633",
+              "external-id-normalized": {
+                "value": "10.5281/zenodo.10452633",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "version-of"
+            },
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.5281/zenodo.22035984",
+              "external-id-normalized": {
+                "value": "10.5281/zenodo.22035984",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "version-of"
+            }
+          ]
+        },
+        "work-summary": [
+          {
+            "put-code": 167615114,
+            "created-date": {
+              "value": 1726509436276
+            },
+            "last-modified-date": {
+              "value": 1726777229018
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0001-8099-6984",
+                "path": "0000-0001-8099-6984",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "DataCite"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "title": {
+              "title": {
+                "value": "Human Microbiome Compendium dataset"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.13733642",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.13733642",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                }
+              ]
+            },
+            "url": null,
+            "type": "data-set",
+            "publication-date": {
+              "year": {
+                "value": "2024"
+              },
+              "month": {
+                "value": "09"
+              },
+              "day": {
+                "value": "16"
+              }
+            },
+            "journal-title": {
+              "value": "Zenodo"
+            },
+            "visibility": "public",
+            "path": "/0000-0001-8713-9213/work/167615114",
+            "display-index": "1"
+          },
+          {
+            "put-code": 181374081,
+            "created-date": {
+              "value": 1743540446578
+            },
+            "last-modified-date": {
+              "value": 1743540446578
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0001-8099-6984",
+                "path": "0000-0001-8099-6984",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "DataCite"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "title": {
+              "title": {
+                "value": "Human Microbiome Compendium dataset"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.15122187",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.15122187",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                }
+              ]
+            },
+            "url": null,
+            "type": "data-set",
+            "publication-date": {
+              "year": {
+                "value": "2025"
+              },
+              "month": {
+                "value": "04"
+              },
+              "day": {
+                "value": "01"
+              }
+            },
+            "journal-title": {
+              "value": "Zenodo"
+            },
+            "visibility": "public",
+            "path": "/0000-0001-8713-9213/work/181374081",
+            "display-index": "1"
+          },
+          {
+            "put-code": 181374082,
+            "created-date": {
+              "value": 1743540447419
+            },
+            "last-modified-date": {
+              "value": 1743540447419
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0001-8099-6984",
+                "path": "0000-0001-8099-6984",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "DataCite"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "title": {
+              "title": {
+                "value": "Human Microbiome Compendium dataset"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.15122187",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.15122187",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                }
+              ]
+            },
+            "url": null,
+            "type": "data-set",
+            "publication-date": {
+              "year": {
+                "value": "2025"
+              },
+              "month": {
+                "value": "04"
+              },
+              "day": {
+                "value": "01"
+              }
+            },
+            "journal-title": {
+              "value": "Zenodo"
+            },
+            "visibility": "public",
+            "path": "/0000-0001-8713-9213/work/181374082",
+            "display-index": "1"
+          },
+          {
+            "put-code": 224421620,
+            "created-date": {
+              "value": 1787267884057
+            },
+            "last-modified-date": {
+              "value": 1787267884057
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0001-8099-6984",
+                "path": "0000-0001-8099-6984",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "DataCite"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "title": {
+              "title": {
+                "value": "Human Microbiome Compendium dataset"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.22035984",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.22035984",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                },
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.8186993",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.8186993",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "version-of"
+                }
+              ]
+            },
+            "url": null,
+            "type": "data-set",
+            "publication-date": {
+              "year": {
+                "value": "2026"
+              },
+              "month": {
+                "value": "08"
+              },
+              "day": {
+                "value": "20"
+              }
+            },
+            "journal-title": {
+              "value": "Zenodo"
+            },
+            "visibility": "public",
+            "path": "/0000-0001-8713-9213/work/224421620",
+            "display-index": "1"
+          },
+          {
+            "put-code": 144213071,
+            "created-date": {
+              "value": 1697074721543
+            },
+            "last-modified-date": {
+              "value": 1787325815954
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0001-8099-6984",
+                "path": "0000-0001-8099-6984",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "DataCite"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "title": {
+              "title": {
+                "value": "Human Microbiome Compendium dataset"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.8186993",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.8186993",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                },
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.8226567",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.8226567",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "version-of"
+                },
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.15122187",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.15122187",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "version-of"
+                },
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.8226547",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.8226547",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "version-of"
+                },
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.8431937",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.8431937",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "version-of"
+                },
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.10452633",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.10452633",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "version-of"
+                },
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.13733642",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.13733642",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "version-of"
+                },
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.8186994",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.8186994",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "version-of"
+                },
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.22035984",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.22035984",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "version-of"
+                }
+              ]
+            },
+            "url": null,
+            "type": "data-set",
+            "publication-date": {
+              "year": {
+                "value": "2026"
+              },
+              "month": {
+                "value": "08"
+              },
+              "day": {
+                "value": "20"
+              }
+            },
+            "journal-title": {
+              "value": "Zenodo"
+            },
+            "visibility": "public",
+            "path": "/0000-0001-8713-9213/work/144213071",
+            "display-index": "0"
+          }
+        ]
+      },
+      {
+        "last-modified-date": {
+          "value": 1724326253045
+        },
+        "external-ids": {
+          "external-id": [
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.1093/jamia/ocae139",
+              "external-id-normalized": {
+                "value": "10.1093/jamia/ocae139",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": {
+                "value": "https://doi.org/10.1093/jamia/ocae139"
+              },
+              "external-id-relationship": "self"
+            },
+            {
+              "external-id-type": "eid",
+              "external-id-value": "2-s2.0-85150958539",
+              "external-id-normalized": {
+                "value": "2-s2.0-85150958539",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "self"
+            },
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.1101/2023.01.21.525030",
+              "external-id-normalized": {
+                "value": "10.1101/2023.01.21.525030",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": {
+                "value": "https://doi.org/10.1101/2023.01.21.525030"
+              },
+              "external-id-relationship": "self"
+            }
+          ]
+        },
+        "work-summary": [
+          {
+            "put-code": 161686710,
+            "created-date": {
+              "value": 1718504299704
+            },
+            "last-modified-date": {
+              "value": 1724326253045
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0001-9884-1913",
+                "path": "0000-0001-9884-1913",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "Crossref"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "title": {
+              "title": {
+                "value": "A publishing infrastructure for Artificial Intelligence (AI)-assisted academic authoring"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.1093/jamia/ocae139",
+                  "external-id-normalized": {
+                    "value": "10.1093/jamia/ocae139",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": {
+                    "value": "https://doi.org/10.1093/jamia/ocae139"
+                  },
+                  "external-id-relationship": "self"
+                }
+              ]
+            },
+            "url": {
+              "value": "https://doi.org/10.1093/jamia/ocae139"
+            },
+            "type": "journal-article",
+            "publication-date": {
+              "year": {
+                "value": "2024"
+              },
+              "month": {
+                "value": "09"
+              },
+              "day": {
+                "value": "01"
+              }
+            },
+            "journal-title": {
+              "value": "Journal of the American Medical Informatics Association"
+            },
+            "visibility": "public",
+            "path": "/0000-0001-8713-9213/work/161686710",
+            "display-index": "3"
+          },
+          {
+            "put-code": 165116496,
+            "created-date": {
+              "value": 1723058381801
+            },
+            "last-modified-date": {
+              "value": 1723058381801
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0002-5982-8983",
+                "path": "0000-0002-5982-8983",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "Scopus - Elsevier"
+              },
+              "assertion-origin-orcid": {
+                "uri": "https://orcid.org/0000-0001-8713-9213",
+                "path": "0000-0001-8713-9213",
+                "host": "orcid.org"
+              },
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": {
+                "value": "Casey Greene"
+              }
+            },
+            "title": {
+              "title": {
+                "value": "A publishing infrastructure for AI-assisted academic authoring"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.1101/2023.01.21.525030",
+                  "external-id-normalized": {
+                    "value": "10.1101/2023.01.21.525030",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                },
+                {
+                  "external-id-type": "eid",
+                  "external-id-value": "2-s2.0-85150958539",
+                  "external-id-normalized": {
+                    "value": "2-s2.0-85150958539",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                },
+                {
+                  "external-id-type": "issn",
+                  "external-id-value": "26928205",
+                  "external-id-normalized": {
+                    "value": "2692-8205",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "part-of"
+                }
+              ]
+            },
+            "url": {
+              "value": "http://www.scopus.com/inward/record.url?eid=2-s2.0-85150958539&partnerID=MN8TOARS"
+            },
+            "type": "other",
+            "publication-date": {
+              "year": {
+                "value": "2023"
+              },
+              "month": null,
+              "day": null
+            },
+            "journal-title": {
+              "value": "bioRxiv"
+            },
+            "visibility": "public",
+            "path": "/0000-0001-8713-9213/work/165116496",
+            "display-index": "1"
+          },
+          {
+            "put-code": 127162398,
+            "created-date": {
+              "value": 1674498065329
+            },
+            "last-modified-date": {
+              "value": 1674676953199
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0001-9884-1913",
+                "path": "0000-0001-9884-1913",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "Crossref"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "title": {
+              "title": {
+                "value": "A publishing infrastructure for AI-assisted academic authoring"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.1101/2023.01.21.525030",
+                  "external-id-normalized": {
+                    "value": "10.1101/2023.01.21.525030",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": {
+                    "value": "https://doi.org/10.1101/2023.01.21.525030"
+                  },
+                  "external-id-relationship": "self"
+                }
+              ]
+            },
+            "url": {
+              "value": "https://doi.org/10.1101/2023.01.21.525030"
+            },
+            "type": "preprint",
+            "publication-date": {
+              "year": {
+                "value": "2023"
+              },
+              "month": {
+                "value": "01"
+              },
+              "day": {
+                "value": "23"
+              }
+            },
+            "journal-title": null,
+            "visibility": "public",
+            "path": "/0000-0001-8713-9213/work/127162398",
+            "display-index": "0"
+          },
+          {
+            "put-code": 165116071,
+            "created-date": {
+              "value": 1723057935100
+            },
+            "last-modified-date": {
+              "value": 1723057935100
+            },
+            "source": {
+              "source-orcid": {
+                "uri": "https://orcid.org/0000-0001-8713-9213",
+                "path": "0000-0001-8713-9213",
+                "host": "orcid.org"
+              },
+              "source-client-id": null,
+              "source-name": {
+                "value": "Casey Greene"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "title": {
+              "title": {
+                "value": "A publishing infrastructure for Artificial Intelligence (AI)-assisted academic authoring"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.1093/jamia/ocae139",
+                  "external-id-normalized": {
+                    "value": "10.1093/jamia/ocae139",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": {
+                    "value": "https://doi.org/10.1093/jamia/ocae139"
+                  },
+                  "external-id-relationship": "self"
+                },
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.1101/2023.01.21.525030",
+                  "external-id-normalized": {
+                    "value": "10.1101/2023.01.21.525030",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": {
+                    "value": "https://doi.org/10.1101/2023.01.21.525030"
+                  },
+                  "external-id-relationship": "self"
+                }
+              ]
+            },
+            "url": {
+              "value": "https://doi.org/10.1093/jamia/ocae139"
+            },
+            "type": "journal-article",
+            "publication-date": {
+              "year": {
+                "value": "2024"
+              },
+              "month": {
+                "value": "06"
+              },
+              "day": {
+                "value": "14"
+              }
+            },
+            "journal-title": {
+              "value": "Journal of the American Medical Informatics Association"
+            },
+            "visibility": "public",
+            "path": "/0000-0001-8713-9213/work/165116071",
+            "display-index": "-1"
+          }
+        ]
+      },
+      {
+        "last-modified-date": {
+          "value": 1723058487823
+        },
+        "external-ids": {
+          "external-id": [
+            {
+              "external-id-type": "eid",
+              "external-id-value": "2-s2.0-85160041329",
+              "external-id-normalized": {
+                "value": "2-s2.0-85160041329",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "self"
+            },
+            {
+              "external-id-type": "eid",
+              "external-id-value": "2-s2.0-85147922909",
+              "external-id-normalized": {
+                "value": "2-s2.0-85147922909",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "self"
+            },
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.48550/arXiv.2208.08907",
+              "external-id-normalized": {
+                "value": "10.48550/arxiv.2208.08907",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "self"
+            },
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.1128/msystems.00927-22",
+              "external-id-normalized": {
+                "value": "10.1128/msystems.00927-22",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "self"
+            }
+          ]
+        },
+        "work-summary": [
+          {
+            "put-code": 165116504,
+            "created-date": {
+              "value": 1723058382428
+            },
+            "last-modified-date": {
+              "value": 1723058382428
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0002-5982-8983",
+                "path": "0000-0002-5982-8983",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "Scopus - Elsevier"
+              },
+              "assertion-origin-orcid": {
+                "uri": "https://orcid.org/0000-0001-8713-9213",
+                "path": "0000-0001-8713-9213",
+                "host": "orcid.org"
+              },
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": {
+                "value": "Casey Greene"
+              }
+            },
+            "title": {
+              "title": {
+                "value": "Application of Traditional Vaccine Development Strategies to SARS-CoV-2"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.1128/msystems.00927-22",
+                  "external-id-normalized": {
+                    "value": "10.1128/msystems.00927-22",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                },
+                {
+                  "external-id-type": "eid",
+                  "external-id-value": "2-s2.0-85160041329",
+                  "external-id-normalized": {
+                    "value": "2-s2.0-85160041329",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                },
+                {
+                  "external-id-type": "issn",
+                  "external-id-value": "23795077",
+                  "external-id-normalized": {
+                    "value": "2379-5077",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "part-of"
+                }
+              ]
+            },
+            "url": {
+              "value": "http://www.scopus.com/inward/record.url?eid=2-s2.0-85160041329&partnerID=MN8TOARS"
+            },
+            "type": "journal-article",
+            "publication-date": {
+              "year": {
+                "value": "2023"
+              },
+              "month": null,
+              "day": null
+            },
+            "journal-title": {
+              "value": "mSystems"
+            },
+            "visibility": "public",
+            "path": "/0000-0001-8713-9213/work/165116504",
+            "display-index": "1"
+          },
+          {
+            "put-code": 165116525,
+            "created-date": {
+              "value": 1723058384696
+            },
+            "last-modified-date": {
+              "value": 1723058384696
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0002-5982-8983",
+                "path": "0000-0002-5982-8983",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "Scopus - Elsevier"
+              },
+              "assertion-origin-orcid": {
+                "uri": "https://orcid.org/0000-0001-8713-9213",
+                "path": "0000-0001-8713-9213",
+                "host": "orcid.org"
+              },
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": {
+                "value": "Casey Greene"
+              }
+            },
+            "title": {
+              "title": {
+                "value": "Application of Traditional Vaccine Development Strategies to SARS-CoV-2"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.48550/arXiv.2208.08907",
+                  "external-id-normalized": {
+                    "value": "10.48550/arxiv.2208.08907",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                },
+                {
+                  "external-id-type": "eid",
+                  "external-id-value": "2-s2.0-85147922909",
+                  "external-id-normalized": {
+                    "value": "2-s2.0-85147922909",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                },
+                {
+                  "external-id-type": "issn",
+                  "external-id-value": "23318422",
+                  "external-id-normalized": {
+                    "value": "2331-8422",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "part-of"
+                }
+              ]
+            },
+            "url": {
+              "value": "http://www.scopus.com/inward/record.url?eid=2-s2.0-85147922909&partnerID=MN8TOARS"
+            },
+            "type": "other",
+            "publication-date": {
+              "year": {
+                "value": "2022"
+              },
+              "month": null,
+              "day": null
+            },
+            "journal-title": {
+              "value": "arXiv"
+            },
+            "visibility": "public",
+            "path": "/0000-0001-8713-9213/work/165116525",
+            "display-index": "1"
+          },
+          {
+            "put-code": 130035510,
+            "created-date": {
+              "value": 1677766781362
+            },
+            "last-modified-date": {
+              "value": 1682604801529
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0001-9884-1913",
+                "path": "0000-0001-9884-1913",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "Crossref"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "title": {
+              "title": {
+                "value": "Application of Traditional Vaccine Development Strategies to SARS-CoV-2"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.1128/msystems.00927-22",
+                  "external-id-normalized": {
+                    "value": "10.1128/msystems.00927-22",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": {
+                    "value": "https://doi.org/10.1128/msystems.00927-22"
+                  },
+                  "external-id-relationship": "self"
+                }
+              ]
+            },
+            "url": {
+              "value": "https://doi.org/10.1128/msystems.00927-22"
+            },
+            "type": "journal-article",
+            "publication-date": {
+              "year": {
+                "value": "2023"
+              },
+              "month": {
+                "value": "04"
+              },
+              "day": {
+                "value": "27"
+              }
+            },
+            "journal-title": {
+              "value": "mSystems"
+            },
+            "visibility": "public",
+            "path": "/0000-0001-8713-9213/work/130035510",
+            "display-index": "0"
+          },
+          {
+            "put-code": 165116683,
+            "created-date": {
+              "value": 1723058487823
+            },
+            "last-modified-date": {
+              "value": 1723058487823
+            },
+            "source": {
+              "source-orcid": {
+                "uri": "https://orcid.org/0000-0001-8713-9213",
+                "path": "0000-0001-8713-9213",
+                "host": "orcid.org"
+              },
+              "source-client-id": null,
+              "source-name": {
+                "value": "Casey Greene"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "title": {
+              "title": {
+                "value": "Application of Traditional Vaccine Development Strategies to SARS-CoV-2"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.1128/msystems.00927-22",
+                  "external-id-normalized": {
+                    "value": "10.1128/msystems.00927-22",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": {
+                    "value": "https://doi.org/10.1128/msystems.00927-22"
+                  },
+                  "external-id-relationship": "self"
+                },
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.48550/arXiv.2208.08907",
+                  "external-id-normalized": {
+                    "value": "10.48550/arxiv.2208.08907",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                },
+                {
+                  "external-id-type": "eid",
+                  "external-id-value": "2-s2.0-85147922909",
+                  "external-id-normalized": {
+                    "value": "2-s2.0-85147922909",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                },
+                {
+                  "external-id-type": "issn",
+                  "external-id-value": "23318422",
+                  "external-id-normalized": {
+                    "value": "2331-8422",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "part-of"
+                },
+                {
+                  "external-id-type": "eid",
+                  "external-id-value": "2-s2.0-85160041329",
+                  "external-id-normalized": {
+                    "value": "2-s2.0-85160041329",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                },
+                {
+                  "external-id-type": "issn",
+                  "external-id-value": "23795077",
+                  "external-id-normalized": {
+                    "value": "2379-5077",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "part-of"
+                }
+              ]
+            },
+            "url": {
+              "value": "https://doi.org/10.1128/msystems.00927-22"
+            },
+            "type": "journal-article",
+            "publication-date": {
+              "year": {
+                "value": "2023"
+              },
+              "month": {
+                "value": "04"
+              },
+              "day": {
+                "value": "27"
+              }
+            },
+            "journal-title": {
+              "value": "mSystems"
+            },
+            "visibility": "public",
+            "path": "/0000-0001-8713-9213/work/165116683",
+            "display-index": "-1"
+          }
+        ]
+      },
+      {
+        "last-modified-date": {
+          "value": 1723058487824
+        },
+        "external-ids": {
+          "external-id": [
+            {
+              "external-id-type": "isbn",
+              "external-id-value": "9781605667058",
+              "external-id-normalized": {
+                "value": "9781605667058",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "self"
+            },
+            {
+              "external-id-type": "eid",
+              "external-id-value": "2-s2.0-77953389352",
+              "external-id-normalized": {
+                "value": "2-s2.0-77953389352",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "self"
+            }
+          ]
+        },
+        "work-summary": [
+          {
+            "put-code": 19471915,
+            "created-date": {
+              "value": 1445449693678
+            },
+            "last-modified-date": {
+              "value": 1723058366982
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0002-5982-8983",
+                "path": "0000-0002-5982-8983",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "Scopus - Elsevier"
+              },
+              "assertion-origin-orcid": {
+                "uri": "https://orcid.org/0000-0001-8713-9213",
+                "path": "0000-0001-8713-9213",
+                "host": "orcid.org"
+              },
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": {
+                "value": "Casey Greene"
+              }
+            },
+            "title": {
+              "title": {
+                "value": "Solving complex problems in human genetics using nature-inspired algorithms requires strategies which exploit domain-specific knowledge"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.4018/978-1-60566-705-8.ch007",
+                  "external-id-normalized": {
+                    "value": "10.4018/978-1-60566-705-8.ch007",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "part-of"
+                },
+                {
+                  "external-id-type": "eid",
+                  "external-id-value": "2-s2.0-77953389352",
+                  "external-id-normalized": {
+                    "value": "2-s2.0-77953389352",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                },
+                {
+                  "external-id-type": "isbn",
+                  "external-id-value": "9781605667058",
+                  "external-id-normalized": {
+                    "value": "9781605667058",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                }
+              ]
+            },
+            "url": {
+              "value": "http://www.scopus.com/inward/record.url?eid=2-s2.0-77953389352&partnerID=MN8TOARS"
+            },
+            "type": "book-chapter",
+            "publication-date": {
+              "year": {
+                "value": "2009"
+              },
+              "month": null,
+              "day": null
+            },
+            "journal-title": {
+              "value": "Nature-Inspired Informatics for Intelligent Applications and Knowledge Discovery: Implications in Business, Science, and Engineering"
+            },
+            "visibility": "public",
+            "path": "/0000-0001-8713-9213/work/19471915",
+            "display-index": "0"
+          },
+          {
+            "put-code": 165116684,
+            "created-date": {
+              "value": 1723058487824
+            },
+            "last-modified-date": {
+              "value": 1723058487824
+            },
+            "source": {
+              "source-orcid": {
+                "uri": "https://orcid.org/0000-0001-8713-9213",
+                "path": "0000-0001-8713-9213",
+                "host": "orcid.org"
+              },
+              "source-client-id": null,
+              "source-name": {
+                "value": "Casey Greene"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "title": {
+              "title": {
+                "value": "Solving complex problems in human genetics using nature-inspired algorithms requires strategies which exploit domain-specific knowledge"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.4018/978-1-60566-705-8.ch007",
+                  "external-id-normalized": {
+                    "value": "10.4018/978-1-60566-705-8.ch007",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "part-of"
+                },
+                {
+                  "external-id-type": "eid",
+                  "external-id-value": "2-s2.0-77953389352",
+                  "external-id-normalized": {
+                    "value": "2-s2.0-77953389352",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                },
+                {
+                  "external-id-type": "isbn",
+                  "external-id-value": "9781605667058",
+                  "external-id-normalized": {
+                    "value": "9781605667058",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                }
+              ]
+            },
+            "url": {
+              "value": "http://www.scopus.com/inward/record.url?eid=2-s2.0-77953389352&partnerID=MN8TOARS"
+            },
+            "type": "book-chapter",
+            "publication-date": {
+              "year": {
+                "value": "2009"
+              },
+              "month": null,
+              "day": null
+            },
+            "journal-title": {
+              "value": "Nature-Inspired Informatics for Intelligent Applications and Knowledge Discovery: Implications in Business, Science, and Engineering"
+            },
+            "visibility": "public",
+            "path": "/0000-0001-8713-9213/work/165116684",
+            "display-index": "-1"
+          }
+        ]
+      },
+      {
+        "last-modified-date": {
+          "value": 1787325815954
+        },
+        "external-ids": {
+          "external-id": [
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.5281/zenodo.8431937",
+              "external-id-normalized": {
+                "value": "10.5281/zenodo.8431937",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "version-of"
+            },
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.5281/zenodo.15122187",
+              "external-id-normalized": {
+                "value": "10.5281/zenodo.15122187",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "version-of"
+            },
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.5281/zenodo.8226567",
+              "external-id-normalized": {
+                "value": "10.5281/zenodo.8226567",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "version-of"
+            },
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.5281/zenodo.8226547",
+              "external-id-normalized": {
+                "value": "10.5281/zenodo.8226547",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "version-of"
+            },
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.5281/zenodo.8186994",
+              "external-id-normalized": {
+                "value": "10.5281/zenodo.8186994",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "version-of"
+            },
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.5281/zenodo.10452633",
+              "external-id-normalized": {
+                "value": "10.5281/zenodo.10452633",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "version-of"
+            },
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.5281/zenodo.22035984",
+              "external-id-normalized": {
+                "value": "10.5281/zenodo.22035984",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "version-of"
+            },
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.5281/zenodo.13733642",
+              "external-id-normalized": {
+                "value": "10.5281/zenodo.13733642",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "self"
+            },
+            {
+              "external-id-type": "doi",
+              "external-id-value": "10.5281/zenodo.8186993",
+              "external-id-normalized": {
+                "value": "10.5281/zenodo.8186993",
+                "transient": true
+              },
+              "external-id-normalized-error": null,
+              "external-id-url": null,
+              "external-id-relationship": "self"
+            }
+          ]
+        },
+        "work-summary": [
+          {
+            "put-code": 167615114,
+            "created-date": {
+              "value": 1726509436276
+            },
+            "last-modified-date": {
+              "value": 1726777229018
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0001-8099-6984",
+                "path": "0000-0001-8099-6984",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "DataCite"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "title": {
+              "title": {
+                "value": "Human Microbiome Compendium dataset"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.13733642",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.13733642",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                }
+              ]
+            },
+            "url": null,
+            "type": "data-set",
+            "publication-date": {
+              "year": {
+                "value": "2024"
+              },
+              "month": {
+                "value": "09"
+              },
+              "day": {
+                "value": "16"
+              }
+            },
+            "journal-title": {
+              "value": "Zenodo"
+            },
+            "visibility": "public",
+            "path": "/0000-0001-8713-9213/work/167615114",
+            "display-index": "1"
+          },
+          {
+            "put-code": 181374081,
+            "created-date": {
+              "value": 1743540446578
+            },
+            "last-modified-date": {
+              "value": 1743540446578
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0001-8099-6984",
+                "path": "0000-0001-8099-6984",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "DataCite"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "title": {
+              "title": {
+                "value": "Human Microbiome Compendium dataset"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.15122187",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.15122187",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                }
+              ]
+            },
+            "url": null,
+            "type": "data-set",
+            "publication-date": {
+              "year": {
+                "value": "2025"
+              },
+              "month": {
+                "value": "04"
+              },
+              "day": {
+                "value": "01"
+              }
+            },
+            "journal-title": {
+              "value": "Zenodo"
+            },
+            "visibility": "public",
+            "path": "/0000-0001-8713-9213/work/181374081",
+            "display-index": "1"
+          },
+          {
+            "put-code": 181374082,
+            "created-date": {
+              "value": 1743540447419
+            },
+            "last-modified-date": {
+              "value": 1743540447419
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0001-8099-6984",
+                "path": "0000-0001-8099-6984",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "DataCite"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "title": {
+              "title": {
+                "value": "Human Microbiome Compendium dataset"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.15122187",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.15122187",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                }
+              ]
+            },
+            "url": null,
+            "type": "data-set",
+            "publication-date": {
+              "year": {
+                "value": "2025"
+              },
+              "month": {
+                "value": "04"
+              },
+              "day": {
+                "value": "01"
+              }
+            },
+            "journal-title": {
+              "value": "Zenodo"
+            },
+            "visibility": "public",
+            "path": "/0000-0001-8713-9213/work/181374082",
+            "display-index": "1"
+          },
+          {
+            "put-code": 224421620,
+            "created-date": {
+              "value": 1787267884057
+            },
+            "last-modified-date": {
+              "value": 1787267884057
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0001-8099-6984",
+                "path": "0000-0001-8099-6984",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "DataCite"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "title": {
+              "title": {
+                "value": "Human Microbiome Compendium dataset"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.22035984",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.22035984",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                },
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.8186993",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.8186993",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "version-of"
+                }
+              ]
+            },
+            "url": null,
+            "type": "data-set",
+            "publication-date": {
+              "year": {
+                "value": "2026"
+              },
+              "month": {
+                "value": "08"
+              },
+              "day": {
+                "value": "20"
+              }
+            },
+            "journal-title": {
+              "value": "Zenodo"
+            },
+            "visibility": "public",
+            "path": "/0000-0001-8713-9213/work/224421620",
+            "display-index": "1"
+          },
+          {
+            "put-code": 144213071,
+            "created-date": {
+              "value": 1697074721543
+            },
+            "last-modified-date": {
+              "value": 1787325815954
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/0000-0001-8099-6984",
+                "path": "0000-0001-8099-6984",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "DataCite"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "title": {
+              "title": {
+                "value": "Human Microbiome Compendium dataset"
+              },
+              "subtitle": null,
+              "translated-title": null
+            },
+            "external-ids": {
+              "external-id": [
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.8186993",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.8186993",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "self"
+                },
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.8226567",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.8226567",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "version-of"
+                },
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.15122187",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.15122187",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "version-of"
+                },
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.8226547",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.8226547",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "version-of"
+                },
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.8431937",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.8431937",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "version-of"
+                },
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.10452633",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.10452633",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "version-of"
+                },
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.13733642",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.13733642",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "version-of"
+                },
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.8186994",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.8186994",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "version-of"
+                },
+                {
+                  "external-id-type": "doi",
+                  "external-id-value": "10.5281/zenodo.22035984",
+                  "external-id-normalized": {
+                    "value": "10.5281/zenodo.22035984",
+                    "transient": true
+                  },
+                  "external-id-normalized-error": null,
+                  "external-id-url": null,
+                  "external-id-relationship": "version-of"
+                }
+              ]
+            },
+            "url": null,
+            "type": "data-set",
+            "publication-date": {
+              "year": {
+                "value": "2026"
+              },
+              "month": {
+                "value": "08"
+              },
+              "day": {
+                "value": "20"
+              }
+            },
+            "journal-title": {
+              "value": "Zenodo"
+            },
+            "visibility": "public",
+            "path": "/0000-0001-8713-9213/work/144213071",
+            "display-index": "0"
+          }
+        ],
+        "derived": true
+      }
+    ]
+  }
+}

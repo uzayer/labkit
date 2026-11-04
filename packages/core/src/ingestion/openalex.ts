@@ -28,8 +28,11 @@ export interface OpenAlexInstitution {
 
 export interface OpenAlexAuthorship {
   authorId?: string
+  /** The ORCID asserted on this work (`raw_orcid`), never the clustered profile's. */
   orcid?: string
   displayName: string
+  /** The name as printed on this work, before OpenAlex's disambiguation. */
+  rawAuthorName?: string
   position: 'first' | 'middle' | 'last'
   institutions: OpenAlexInstitution[]
 }
@@ -57,6 +60,8 @@ interface OpenAlexWork {
   open_access?: { is_oa?: boolean }
   authorships?: Array<{
     author_position?: 'first' | 'middle' | 'last'
+    raw_author_name?: string | null
+    raw_orcid?: string | null
     author?: { id?: string; orcid?: string; display_name?: string }
     institutions?: Array<{ display_name?: string; ror?: string; country_code?: string }>
   }>
@@ -96,8 +101,14 @@ export function mapOpenAlexToPublicationFields(json: unknown): OpenAlexPublicati
   if (Array.isArray(work.authorships)) {
     fields.authorships = work.authorships.map((authorship) => ({
       authorId: authorship.author?.id,
-      orcid: normalizeOrcid(authorship.author?.orcid),
+      // `author.orcid` belongs to the disambiguated *profile* this authorship
+      // was clustered into, not to the work. One mis-clustered profile stamps
+      // its ORCID on every paper in the cluster: in DIAL's import that put
+      // Anik Saha's ORCID on a co-author and spread to 17 papers. Only the
+      // ORCID asserted on this work (`raw_orcid`) is identity evidence.
+      orcid: normalizeOrcid(authorship.raw_orcid),
       displayName: authorship.author?.display_name ?? '',
+      rawAuthorName: authorship.raw_author_name ?? undefined,
       position: authorship.author_position ?? 'middle',
       institutions: (authorship.institutions ?? []).flatMap((institution) =>
         institution.display_name

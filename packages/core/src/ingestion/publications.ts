@@ -120,7 +120,7 @@ function mergeIssn(a?: string[], b?: string[]): string[] | undefined {
   return merged.length > 0 ? merged : undefined
 }
 
-function matchVenueByName(name: string, venueIndex: VenueLookupEntry[]): string | undefined {
+export function matchVenueByName(name: string, venueIndex: VenueLookupEntry[]): string | undefined {
   const key = normalizeVenueName(name)
   if (!key) return undefined
   const ids = new Set<string>()
@@ -237,7 +237,7 @@ export async function prefetchDoiSources(
       const openalex = openalexJson ? mapOpenAlexToPublicationFields(openalexJson) : {}
       const title = crossref.title ?? openalex.title
       const year = crossref.year ?? openalex.year
-      if (title && year) await fetchDblpRecordByTitle(title, year)
+      if (title && year) await fetchDblpRecordByTitle(title, year, doi)
       onProgress?.(++done)
     }
   }
@@ -314,7 +314,7 @@ export async function hydratePublicationFromDoi(
   // DBLP enrichment is CS-venue only — a miss is the expected common case,
   // not an error, so no flagUnmatched call here (unlike the Crossref/OpenAlex
   // title/year check above).
-  const dblpMatch = await fetchDblpRecordByTitle(title, year)
+  const dblpMatch = await fetchDblpRecordByTitle(title, year, normalizedDoi)
   if (dblpMatch) {
     merged = attachDblpPids(merged, dblpMatch.authors)
   }
@@ -397,6 +397,8 @@ export interface BibtexOnlyFields {
   title: string
   year: number
   authors: Array<{ fullName: string }>
+  /** Crossref candidates a validated search found but didn't apply (crossref-search.ts), for the Review Item. */
+  searchReview?: Record<string, unknown>
 }
 
 /**
@@ -469,7 +471,10 @@ export async function hydratePublicationFromFields(
     collection: 'publications',
     field: 'enrichment',
     sourceContext,
-    value: 'no Crossref/OpenAlex match — bibtex-only, needs manual review',
+    value: fields.searchReview
+      ? 'no validated Crossref match — bibtex-only; candidate DOIs in data, needs manual review'
+      : 'no Crossref/OpenAlex match — bibtex-only, needs manual review',
+    data: fields.searchReview,
   })
 
   return id ? { id, action } : null

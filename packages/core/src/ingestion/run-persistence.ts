@@ -12,6 +12,7 @@ type ReviewItemKind =
   | 'unparsed-citation'
   | 'unmapped-type'
   | 'failed-doi'
+  | 'identifier-name-conflict'
 
 export interface RunProgress {
   total: number
@@ -114,7 +115,7 @@ export async function finalizeRun(
         run: runId,
         value: entry.value,
         sourceContext: entry.sourceContext,
-        data: null,
+        data: entry.data ?? null,
       },
       overrideAccess: true,
       context: { disableRevalidate: true },
@@ -125,7 +126,10 @@ export async function finalizeRun(
     await payload.create({
       collection: 'review-items',
       data: {
-        kind: 'person-merge-suggestion',
+        // A `reason` means an ORCID or DBLP pid matched a Team Member whose
+        // name conflicts with the printed author's (people.ts); without one
+        // this is a fuzzy name-similarity suggestion.
+        kind: entry.reason ? 'identifier-name-conflict' : 'person-merge-suggestion',
         status: 'open',
         run: runId,
         value: entry.value,
@@ -138,6 +142,8 @@ export async function finalizeRun(
           newTeamId: entry.newTeamId ?? null,
           existingTeamId: entry.existingTeamId ?? null,
           score: entry.score ?? null,
+          reason: entry.reason ?? 'name-similarity',
+          identifier: entry.identifier ?? null,
         },
       },
       overrideAccess: true,

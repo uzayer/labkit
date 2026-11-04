@@ -1,0 +1,484 @@
+{
+  "url": "https://api.crossref.org/works/10.1007%2F978-3-031-34586-9_3",
+  "recordedAt": "2026-11-04",
+  "body": {
+    "status": "ok",
+    "message-type": "work",
+    "message-version": "1.0.0",
+    "message": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            7,
+            8
+          ]
+        ],
+        "date-time": "2026-07-08T15:56:00Z",
+        "timestamp": 1783526160333,
+        "version": "3.55.0"
+      },
+      "publisher-location": "Cham",
+      "reference-count": 25,
+      "publisher": "Springer Nature Switzerland",
+      "isbn-type": [
+        {
+          "value": "9783031345852",
+          "type": "print"
+        },
+        {
+          "value": "9783031345869",
+          "type": "electronic"
+        }
+      ],
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                2023,
+                1,
+                1
+              ]
+            ],
+            "date-time": "2023-01-01T00:00:00Z",
+            "timestamp": 1672531200000
+          },
+          "content-version": "tdm",
+          "delay-in-days": 0,
+          "URL": "https://www.springernature.com/gp/researchers/text-and-data-mining"
+        },
+        {
+          "start": {
+            "date-parts": [
+              [
+                2023,
+                1,
+                1
+              ]
+            ],
+            "date-time": "2023-01-01T00:00:00Z",
+            "timestamp": 1672531200000
+          },
+          "content-version": "vor",
+          "delay-in-days": 0,
+          "URL": "https://www.springernature.com/gp/researchers/text-and-data-mining"
+        }
+      ],
+      "content-domain": {
+        "domain": [
+          "link.springer.com"
+        ],
+        "crossmark-restriction": false
+      },
+      "short-container-title": [],
+      "published-print": {
+        "date-parts": [
+          [
+            2023
+          ]
+        ]
+      },
+      "DOI": "10.1007/978-3-031-34586-9_3",
+      "type": "book-chapter",
+      "created": {
+        "date-parts": [
+          [
+            2023,
+            6,
+            10
+          ]
+        ],
+        "date-time": "2023-06-10T03:27:04Z",
+        "timestamp": 1686367624000
+      },
+      "page": "33-45",
+      "update-policy": "https://doi.org/10.1007/springer_crossmark_policy",
+      "source": "Crossref",
+      "is-referenced-by-count": 3,
+      "title": [
+        "A Low-Cost Wearable System to Support Upper Limb Rehabilitation in Resource-Constrained Settings"
+      ],
+      "prefix": "10.1007",
+      "author": [
+        {
+          "given": "Md. Sabbir",
+          "family": "Ahmed",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Shajnush",
+          "family": "Amir",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Samuelson",
+          "family": "Atiba",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Rahat Jahangir",
+          "family": "Rony",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Nervo Verdezoto",
+          "family": "Dias",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Valerie",
+          "family": "Sparkes",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Katarzyna",
+          "family": "Stawarz",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Nova",
+          "family": "Ahmed",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "member": "297",
+      "published-online": {
+        "date-parts": [
+          [
+            2023,
+            6,
+            11
+          ]
+        ]
+      },
+      "container-title": [
+        "Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering",
+        "Pervasive Computing Technologies for Healthcare"
+      ],
+      "original-title": [],
+      "language": "en",
+      "link": [
+        {
+          "URL": "https://link.springer.com/content/pdf/10.1007/978-3-031-34586-9_3",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2023,
+            6,
+            10
+          ]
+        ],
+        "date-time": "2023-06-10T03:30:44Z",
+        "timestamp": 1686367844000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://link.springer.com/10.1007/978-3-031-34586-9_3"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2023
+          ]
+        ]
+      },
+      "ISBN": [
+        "9783031345852",
+        "9783031345869"
+      ],
+      "references-count": 25,
+      "URL": "https://doi.org/10.1007/978-3-031-34586-9_3",
+      "relation": {},
+      "ISSN": [
+        "1867-8211",
+        "1867-822X"
+      ],
+      "issn-type": [
+        {
+          "value": "1867-8211",
+          "type": "print"
+        },
+        {
+          "value": "1867-822X",
+          "type": "electronic"
+        }
+      ],
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2023
+          ]
+        ]
+      },
+      "assertion": [
+        {
+          "value": "11 June 2023",
+          "order": 1,
+          "name": "first_online",
+          "label": "First Online",
+          "group": {
+            "name": "ChapterHistory",
+            "label": "Chapter History"
+          }
+        },
+        {
+          "value": "PH",
+          "order": 1,
+          "name": "conference_acronym",
+          "label": "Conference Acronym",
+          "group": {
+            "name": "ConferenceInfo",
+            "label": "Conference Information"
+          }
+        },
+        {
+          "value": "International Conference on Pervasive Computing Technologies for Healthcare",
+          "order": 2,
+          "name": "conference_name",
+          "label": "Conference Name",
+          "group": {
+            "name": "ConferenceInfo",
+            "label": "Conference Information"
+          }
+        },
+        {
+          "value": "Thessaloniki",
+          "order": 3,
+          "name": "conference_city",
+          "label": "Conference City",
+          "group": {
+            "name": "ConferenceInfo",
+            "label": "Conference Information"
+          }
+        },
+        {
+          "value": "Greece",
+          "order": 4,
+          "name": "conference_country",
+          "label": "Conference Country",
+          "group": {
+            "name": "ConferenceInfo",
+            "label": "Conference Information"
+          }
+        },
+        {
+          "value": "2022",
+          "order": 5,
+          "name": "conference_year",
+          "label": "Conference Year",
+          "group": {
+            "name": "ConferenceInfo",
+            "label": "Conference Information"
+          }
+        },
+        {
+          "value": "12 December 2022",
+          "order": 7,
+          "name": "conference_start_date",
+          "label": "Conference Start Date",
+          "group": {
+            "name": "ConferenceInfo",
+            "label": "Conference Information"
+          }
+        },
+        {
+          "value": "14 December 2022",
+          "order": 8,
+          "name": "conference_end_date",
+          "label": "Conference End Date",
+          "group": {
+            "name": "ConferenceInfo",
+            "label": "Conference Information"
+          }
+        },
+        {
+          "value": "16",
+          "order": 9,
+          "name": "conference_number",
+          "label": "Conference Number",
+          "group": {
+            "name": "ConferenceInfo",
+            "label": "Conference Information"
+          }
+        },
+        {
+          "value": "ph2022",
+          "order": 10,
+          "name": "conference_id",
+          "label": "Conference ID",
+          "group": {
+            "name": "ConferenceInfo",
+            "label": "Conference Information"
+          }
+        },
+        {
+          "value": "https://pervasivehealth.eai-conferences.org/2022/",
+          "order": 11,
+          "name": "conference_url",
+          "label": "Conference URL",
+          "group": {
+            "name": "ConferenceInfo",
+            "label": "Conference Information"
+          }
+        },
+        {
+          "value": "Double-blind",
+          "order": 1,
+          "name": "type",
+          "label": "Type",
+          "group": {
+            "name": "ConfEventPeerReviewInformation",
+            "label": "Peer Review Information (provided by the conference organizers)"
+          }
+        },
+        {
+          "value": "Confy Plus",
+          "order": 2,
+          "name": "conference_management_system",
+          "label": "Conference Management System",
+          "group": {
+            "name": "ConfEventPeerReviewInformation",
+            "label": "Peer Review Information (provided by the conference organizers)"
+          }
+        },
+        {
+          "value": "120",
+          "order": 3,
+          "name": "number_of_submissions_sent_for_review",
+          "label": "Number of Submissions Sent for Review",
+          "group": {
+            "name": "ConfEventPeerReviewInformation",
+            "label": "Peer Review Information (provided by the conference organizers)"
+          }
+        },
+        {
+          "value": "45",
+          "order": 4,
+          "name": "number_of_full_papers_accepted",
+          "label": "Number of Full Papers Accepted",
+          "group": {
+            "name": "ConfEventPeerReviewInformation",
+            "label": "Peer Review Information (provided by the conference organizers)"
+          }
+        },
+        {
+          "value": "0",
+          "order": 5,
+          "name": "number_of_short_papers_accepted",
+          "label": "Number of Short Papers Accepted",
+          "group": {
+            "name": "ConfEventPeerReviewInformation",
+            "label": "Peer Review Information (provided by the conference organizers)"
+          }
+        },
+        {
+          "value": "38% - The value is computed by the equation \"Number of Full Papers Accepted / Number of Submissions Sent for Review * 100\" and then rounded to a whole number.",
+          "order": 6,
+          "name": "acceptance_rate_of_full_papers",
+          "label": "Acceptance Rate of Full Papers",
+          "group": {
+            "name": "ConfEventPeerReviewInformation",
+            "label": "Peer Review Information (provided by the conference organizers)"
+          }
+        },
+        {
+          "value": "2.5",
+          "order": 7,
+          "name": "average_number_of_reviews_per_paper",
+          "label": "Average Number of Reviews per Paper",
+          "group": {
+            "name": "ConfEventPeerReviewInformation",
+            "label": "Peer Review Information (provided by the conference organizers)"
+          }
+        },
+        {
+          "value": "3",
+          "order": 8,
+          "name": "average_number_of_papers_per_reviewer",
+          "label": "Average Number of Papers per Reviewer",
+          "group": {
+            "name": "ConfEventPeerReviewInformation",
+            "label": "Peer Review Information (provided by the conference organizers)"
+          }
+        },
+        {
+          "value": "Yes",
+          "order": 9,
+          "name": "external_reviewers_involved",
+          "label": "External Reviewers Involved",
+          "group": {
+            "name": "ConfEventPeerReviewInformation",
+            "label": "Peer Review Information (provided by the conference organizers)"
+          }
+        }
+      ]
+    }
+  }
+}

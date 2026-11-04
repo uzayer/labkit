@@ -728,6 +728,9 @@ function ImportStep({
             runId: current.id,
             keys: chosen.map((candidate) => candidate.key),
             since: Number.isFinite(sinceYear) ? sinceYear : null,
+            // Each tick runs one batch inside one serverless function (about
+            // 300s on Vercel); 5 Candidates leaves room for slow sources.
+            batchSize: 5,
           }),
         }),
       )
