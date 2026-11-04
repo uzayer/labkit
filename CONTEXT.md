@@ -39,8 +39,8 @@ _Avoid_: external author, unmatched author
 ## Records
 
 **Publication**:
-A single research output — paper, article, or proceedings entry. The only record type with a reliable external source of truth (a DOI).
-_Avoid_: paper, article, work
+A single citable research output — a paper, article or proceedings entry, but also a thesis, book, report, poster, presentation, dataset or software release. The only record type with a reliable external source of truth (a DOI), though the long tail often has none. A preprint and its published version are two Publications, linked rather than merged.
+_Avoid_: paper, article, work, output
 
 **Venue**:
 The journal, conference, or proceedings a Publication appeared in.

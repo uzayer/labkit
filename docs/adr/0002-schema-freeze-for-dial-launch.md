@@ -10,7 +10,8 @@ The schema was frozen for DIAL's launch against real ORCID → Crossref + OpenAl
 
 - **Hide, don't delete.** Publications and Team carry `displayInWebsite`. The DOI path skips existing DOIs, so a *deleted* paper is re-created by the next import, while a *hidden* one stays hidden. The frontend filters on `displayInWebsite !== false`.
 - **Publications own `awards`** (the filing-cabinet rule). Awards have no `linkedPublication`, and `Award.title` is only the award's name. The frontend reads an Award's paper through the `publications` join.
-- **`role` alone decides a Team Member's group on the site.** There's no stored roster section, so the two can't disagree.
+- **`role` alone decides a Team Member's group on the site.** There's no stored roster section, so the two can't disagree. `alumniRole` (what an alum was) only qualifies `role = alumni` and is cleared on any other role, so it never picks a group.
+- **Stored select values are never renamed.** Add options and relabel freely. Mapping to standards (CSL, DataCite, ORCID, schema.org) lives in code (`publicationTypes.ts`), not in the stored values.
 - **`datePrecision`** (day | month | year) on News Items. The site never prints a day it doesn't know.
 - **Labels next to relationships.** `venueLabel`, `funderLabel`, `organizationLabel`, `affiliationLabel` and `amountLabel` render when there's no linked record or exact value. A free-text label renders the same way a linked record does.
 - **Custom people** (Publication `customAuthor`, Grant `customInvestigator`, Award `customRecipient`) are structured free text with name, ORCID and `affiliationLabel`, not Team Members.
