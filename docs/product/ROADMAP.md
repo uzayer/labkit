@@ -13,6 +13,19 @@ DIAL's site has been live since 2026-09-28. The goal now is that a Lab that isn'
 5. **Default Lab site.** A generic site built from DIAL's design and driven entirely by data and Features.
 6. **Onboarding.** For Lab Editors: a first-run wizard in `/admin` (Lab info → PI's ORCID → Features → first Import Run). For developers: a README and seed path. A `create-labkit` CLI comes later.
 
+Added after a reference study (lab-site templates such as al-folio, greenelab and Hugo Blox; Crossref matching research; S2AND; Zotero; Manubot; Publish or Perish):
+
+7. **Schema batch.** Done 2026-11-04: Team roles and alumni, typed links on Publications, wider Publication types mapped to CSL and DataCite in code, a preprint `versionOf` link, ISO currencies, Google Scholar meta tags and JSON-LD helpers.
+8. **Ingestion identity hardening.**
+   - Per-paper ORCIDs only: never OpenAlex's clustered `author.orcid`, which caused the 17-paper swap.
+   - Crossref and OpenAlex authors paired by name, not position.
+   - A name check after an ID match.
+   - Title searches validated Crossref-style.
+   - A fixture corpus to test against.
+9. **Ingestion, second pass.** Link preprints to their published version, map the wider types, add a DataCite fallback, flag duplicates across Front Doors (Review Items only), and fill Organization types from ROR.
+
+Deferred until Lab #2 shows the gap: a multi-source search Front Door modelled on Publish or Perish.
+
 Out of scope: the dashboard port, CERIF and compliance work ([ADR-0001](../adr/0001-defer-cerif-alignment.md)), scrape-to-demo automation, OpenAlex sync, extra enrichment sources, and one hosted deployment serving many Labs. Each Lab gets its own deployment and database.
 
 ## Next: Lab #2
