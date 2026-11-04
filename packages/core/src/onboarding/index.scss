@@ -1,0 +1,252 @@
+// Payload 4 admin tokens only (`--color-*`, `--radius-*`); there is no `--theme-*`.
+
+.labkit-onboarding {
+  max-width: 960px;
+  padding-top: 24px;
+  padding-bottom: 48px;
+
+  h1 {
+    margin: 0;
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+
+  p {
+    color: var(--color-text-secondary);
+    max-width: 70ch;
+  }
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+
+    a {
+      color: var(--color-text-secondary);
+    }
+  }
+
+  &__steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    margin: 0 0 24px;
+    padding: 0;
+
+    button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      background: var(--color-bg);
+      color: var(--color-text-secondary);
+      font: inherit;
+      cursor: pointer;
+
+      &:disabled {
+        cursor: default;
+        color: var(--color-text-disabled);
+      }
+
+      span {
+        font-variant-numeric: tabular-nums;
+      }
+    }
+
+    .is-current button {
+      border-color: var(--color-border-selected);
+      background: var(--color-bg-selected);
+      color: var(--color-text);
+    }
+
+    .is-done button {
+      color: var(--color-text);
+    }
+  }
+
+  &__panel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-large);
+    background: var(--color-bg);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  &__inline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px;
+
+    > .field-type {
+      flex: 0 1 280px;
+    }
+
+    > span {
+      color: var(--color-text-secondary);
+      padding-bottom: 10px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  &__choices {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    legend {
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    label {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 10px 12px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-medium);
+      cursor: pointer;
+    }
+
+    small {
+      display: block;
+      color: var(--color-text-secondary);
+    }
+  }
+
+  &__features {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    label {
+      display: flex;
+      flex-direction: column;
+    }
+
+    small {
+      color: var(--color-text-secondary);
+    }
+  }
+
+  &__label {
+    font-weight: 600;
+  }
+
+  &__logo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+
+    img {
+      max-height: 48px;
+      max-width: 160px;
+      object-fit: contain;
+    }
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+      padding: 8px;
+      border-bottom: 1px solid var(--color-border);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--color-text-secondary);
+      font-weight: 500;
+    }
+
+    .is-disabled td {
+      color: var(--color-text-tertiary);
+    }
+
+    small {
+      color: var(--color-text-tertiary);
+    }
+  }
+
+  &__progress progress {
+    width: 100%;
+    height: 8px;
+    accent-color: var(--color-bg-brand);
+  }
+
+  &__links {
+    margin: 0;
+    padding-left: 20px;
+
+    a {
+      color: var(--color-text-brand);
+    }
+  }
+}
+
+.labkit-setup {
+  margin-bottom: 24px;
+  padding: 20px 24px;
+  border: 1px solid var(--color-border-brand);
+  border-radius: var(--radius-large);
+  background: var(--color-bg-brand-tertiary);
+
+  h2 {
+    margin: 0 0 8px;
+    font-size: 1.25rem;
+  }
+
+  p {
+    margin: 0 0 12px;
+    color: var(--color-text-secondary);
+  }
+
+  &__cta {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: var(--radius-medium);
+    background: var(--color-bg-brand);
+    color: var(--color-text-onbrand);
+    text-decoration: none;
+  }
+
+  &__list {
+    margin: 0;
+    padding-left: 20px;
+
+    a {
+      color: var(--color-text-brand);
+    }
+  }
+}

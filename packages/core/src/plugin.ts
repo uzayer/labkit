@@ -20,6 +20,8 @@ import { Features } from './globals/Features/config'
 import { type FeatureName, hiddenUnlessFeature } from './globals/Features/features'
 import { LabInfo } from './globals/LabInfo/config'
 import { importHydrateTask } from './ingestion/jobs/import-hydrate'
+import { onboardingEndpoints } from './onboarding/endpoints'
+import { ONBOARDING_PATH } from './onboarding/status'
 import { assertStrongCronSecret } from './utilities/assertCronSecret'
 import { checkRole } from './utilities/checkRole'
 import { initializeRoles } from './utilities/initRoles'
@@ -55,7 +57,8 @@ const behindFeature = (collection: CollectionConfig, feature: FeatureName): Coll
 
 /**
  * Adds LabKit's research collections, the LabInfo and Features globals, users and roles, Media
- * (with its WebP variants), the ingestion job, and default-role seeding.
+ * (with its WebP variants), the ingestion job, default-role seeding, and the
+ * first-run setup wizard (`/admin/onboarding`) with its dashboard checklist.
  * Put it first in `plugins`, so plugins that target `projects` or `users` find them.
  */
 export const labkitPlugin =
@@ -65,6 +68,22 @@ export const labkitPlugin =
     admin: {
       ...config.admin,
       user: config.admin?.user ?? Users.slug,
+      components: {
+        ...config.admin?.components,
+        // The setup link before the wizard is done, the leftover checklist after.
+        beforeDashboard: [
+          '@labkit/core/rsc#DashboardSetup',
+          ...(config.admin?.components?.beforeDashboard ?? []),
+        ],
+        views: {
+          ...config.admin?.components?.views,
+          labkitOnboarding: {
+            Component: '@labkit/core/rsc#OnboardingView',
+            path: ONBOARDING_PATH,
+            exact: true,
+          },
+        },
+      },
     },
     // Order is nav order: Payload renders groups in the order their first collection
     // appears. Research first (what a Lab Editor came to do), then Reference Data,
@@ -87,6 +106,7 @@ export const labkitPlugin =
       Roles,
     ],
     globals: [...(config.globals ?? []), LabInfo, Features],
+    endpoints: [...(config.endpoints ?? []), ...onboardingEndpoints],
     jobs: {
       ...config.jobs,
       tasks: [...(config.jobs?.tasks ?? []), importHydrateTask],
