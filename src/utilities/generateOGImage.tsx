@@ -4,7 +4,7 @@ import { getCachedGlobal } from './getGlobals'
 import { DataFromGlobalSlug } from 'payload'
 import { Media } from '@/payload-types'
 import { serverUrl as NEXT_PUBLIC_SERVER_URL } from '@/config/server'
-import localization from '@/localization.config'
+import localization from '@labkit/core/localization'
 
 /**
  * Type guard to check if a value is a Media object

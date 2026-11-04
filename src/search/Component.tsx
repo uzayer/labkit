@@ -20,7 +20,7 @@ import { useSearch } from '@/utilities/useSearch'
 import { Sheet, SheetContent, SheetTitle } from '@/components/ui/sheet'
 import { VisuallyHidden } from '@/components/ui/visually-hidden'
 import { PublicContextProps } from '@/utilities/publicContextProps'
-import { Locale, localization } from '@/localization.config'
+import { Locale, localization } from '@labkit/core/localization'
 
 type SearchTranslations = {
   placeholder: string

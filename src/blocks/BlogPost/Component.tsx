@@ -1,5 +1,5 @@
 import { Post } from '@/payload-types'
-import { allPostDesignVersions } from '@/collections/Posts/index'
+import { allPostDesignVersions } from '@labkit/core/template'
 import { BlogPost5 } from './blogpost5'
 import { BlogPost4 } from './blogpost4'
 import { CaseStudy3 } from '@/blocks/CaseStudy/casestudy3'

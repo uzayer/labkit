@@ -6,7 +6,7 @@ import React from 'react'
 
 import type { Page, Post } from '@/payload-types'
 import { Icon } from '@/components/Icon'
-import localization from '@/localization.config'
+import localization from '@labkit/core/localization'
 import { PublicContextProps } from '@/utilities/publicContextProps'
 
 type ButtonVariantProps = VariantProps<typeof buttonVariants>

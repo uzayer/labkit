@@ -14,7 +14,7 @@ import {
   FaYoutube,
 } from 'react-icons/fa'
 
-import { SocialIconType } from './config'
+import type { SocialIconType } from '@labkit/core/template'
 
 const iconMap = {
   facebook: FaFacebook,

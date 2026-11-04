@@ -10,7 +10,7 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb'
 import { PublicContextProps } from '@/utilities/publicContextProps'
-import localization from '@/localization.config'
+import localization from '@labkit/core/localization'
 import Link from 'next/link'
 
 interface BreadcrumbProps {

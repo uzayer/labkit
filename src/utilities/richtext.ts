@@ -204,33 +204,3 @@ export const getSideMenuStructure = (
   processNodes(children)
   return menuItems
 }
-
-/**
- * Extract plain text from rich text content
- */
-export function extractPlainText(
-  content: RichTextContent | null | undefined,
-  maxLength: number = 200,
-): string {
-  if (!content || !content.root || !content.root.children) return ''
-
-  let text = ''
-  const traverse = (nodes: RichTextChild[]) => {
-    for (const node of nodes) {
-      if (node.type === 'text' && typeof node.text === 'string') {
-        text += node.text
-      } else if (node.children && Array.isArray(node.children)) {
-        traverse(node.children)
-      }
-    }
-  }
-
-  try {
-    traverse(content.root.children)
-  } catch (error) {
-    console.error('Error parsing rich text content:', error)
-    return ''
-  }
-
-  return text.length > maxLength ? text.substring(0, maxLength) + '...' : text
-}

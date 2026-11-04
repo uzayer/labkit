@@ -1,4 +1,4 @@
-import localization, { locales, localeLabels } from '@/localization.config'
+import localization, { locales, localeLabels } from '@labkit/core/localization'
 import { Check, Globe } from 'lucide-react'
 import {
   NavigationMenu,

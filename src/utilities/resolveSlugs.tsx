@@ -1,4 +1,4 @@
-import localization, { Locale, locales } from '@/localization.config'
+import localization, { Locale, locales } from '@labkit/core/localization'
 
 /**
  * Resolves URL slugs for the multi-language routing system, handling both localized and non-localized routes.
