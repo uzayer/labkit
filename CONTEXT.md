@@ -2,7 +2,7 @@
 
 A content platform for research lab websites: the lab's publications, people, grants, projects, awards, and collaborators modelled as structured records, with the public site as one output of that data.
 
-This file is the project's glossary — the canonical name for each domain concept and the words to avoid. It is not a spec and holds no implementation detail. For those, read `src/collections/`, `src/lib/ingestion/`, and `LOG.md`. For strategy and sequencing, read `docs/product/ROADMAP.md`.
+This file is the project's glossary — the canonical name for each domain concept and the words to avoid. It is not a spec and holds no implementation detail. For those, read `src/collections/` and `src/lib/ingestion/`. For strategy and sequencing, read `docs/product/ROADMAP.md`.
 
 ## Scale
 

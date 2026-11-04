@@ -48,7 +48,7 @@ It is not seeded from code: the reviewed database file is the artifact. After
 launch, production is the source of truth and data only flows down
 (`turso db export`), never up again.
 
-1. Set `BLOB_READ_WRITE_TOKEN` in the local `.env` **before** writing any
+1. Set `BLOB_READ_WRITE_TOKEN` in `.env.production.local`, not `.env.local` (`vercel link` writes there), **before** writing any
    records, so Media uploads land in Vercel Blob. Without it Media is stored in
    `public/media/`, which the deployment cannot serve. If that already
    happened (DIAL's did), `node --env-file=.env scripts/media-to-blob.mjs
@@ -95,3 +95,11 @@ Operator should inspect its Import Run and Review Items before retrying.
 
 DIAL's production database is `dial-prod` (created 2026-09-28 from the reviewed
 `labkit.db`); `dial-prod-launch-20260928` is its launch-day copy.
+
+## Production (DIAL)
+
+- `dial-prod` on Turso (`aws-ap-south-1`) serves `dial-research.vercel.app`. Vercel functions are pinned to `bom1` in `vercel.json`, because every request loads the whole corpus and the default `iad1` region would add an ocean round trip per query. The Blob store is in `bom1` too.
+- There's no jobs cron. Hobby rejects sub-daily crons, and only the parked dashboard enqueues `imports` jobs. Restore the cron if the dashboard comes back.
+- Rollback points:
+  - `dial-prod-launch-20260928`: launch day
+  - `dial-prod-pre-v4-20261104`: before the Payload 4 migrations; pair it with a deploy of commit `04ad2f6`

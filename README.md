@@ -13,7 +13,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](#license)
 [![Status: pre-release](https://img.shields.io/badge/Status-pre--release-orange.svg?style=for-the-badge)](#status)
 
-**[Vision](docs/product/VISION.md)** · **[Roadmap](docs/product/ROADMAP.md)** · **[Glossary](CONTEXT.md)** · **[Decision log](LOG.md)** · **[Agent guide](CLAUDE.md)** · **[ADRs](docs/adr/)**
+**[Vision](docs/product/VISION.md)** · **[Roadmap](docs/product/ROADMAP.md)** · **[Glossary](CONTEXT.md)** · **[Agent guide](CLAUDE.md)** · **[ADRs](docs/adr/)**
 
 </div>
 
@@ -70,7 +70,7 @@ Ingestion is two phases, deliberately separated. **Staging** turns a front door'
 
 Re-running an import never overwrites an existing Publication. These scripts are meant to be run repeatedly as a lab publishes, so a second run must not clobber a human's edits.
 
-The async path runs as a Payload job with a lease-lock and a watchdog rather than Payload's default retry, because a crashed job otherwise stays `processing` forever and is never re-picked. Progress is checkpointed after every candidate, so a worker dying mid-batch loses nothing. See [`LOG.md`](LOG.md) (2026-07-05) for the full reasoning.
+The async path runs as a Payload job with a lease-lock and a watchdog rather than Payload's default retry, because a crashed job otherwise stays `processing` forever and is never re-picked. Progress is checkpointed after every candidate, so a worker dying mid-batch loses nothing.
 
 ## Front doors
 
@@ -187,7 +187,7 @@ Honest about what is and isn't built:
 | Area                                   | State                                                                                                                                                                                                          |
 | -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Ingestion engine**                   | Built and verified end-to-end against a real career-wide ORCID record — a 122-work profile resolved to 108 publications, 261 people, 94 organizations, and 23 venues, with 77 items correctly routed to review |
-| **Data model**                         | Frozen against real data, not designed in the abstract. The schema gaps that mattered were found by pushing an actual lab's corpus through it                                                                  |
+| **Data model**                         | Shaped by real data, not designed in the abstract. The schema gaps that mattered were found by pushing an actual lab's corpus through it                                                                       |
 | **Payload admin**                      | The working admin surface, grouped into a deliberate v1 dashboard                                                                                                                                              |
 | **Public frontend**                    | **Built.** DIAL's site renders from Payload in `src/app/(frontend)/(dial)/`, ported from a static prototype; deploy is the remaining launch step                                                               |
 | **Custom dashboard**                   | Parked. Two prototypes live in `src/app/_dashboard-kit/` and `src/app/_dashboard-legacy/` as Next.js private folders — they compile and are importable, but generate no routes                                 |
@@ -211,7 +211,6 @@ Read these before non-trivial work:
 
 - [`CLAUDE.md`](CLAUDE.md) (also `AGENTS.md`) — scope, verification, and the non-obvious gotchas that cost real debugging time.
 - [`CONTEXT.md`](CONTEXT.md) — the glossary. It is opinionated about which words to avoid; use its terms exactly.
-- [`LOG.md`](LOG.md) — the decision log. Why a rejected approach was rejected, what a prior session confirmed against real data. Append to it when you learn something a diff can't show.
 - [`docs/adr/`](docs/adr/) — standing architectural decisions.
 
 Conventions: `@/` maps to `src/*`. Functional components, named exports, server components by default. ES modules throughout. A Husky pre-commit hook runs `oxlint --fix` and `oxfmt` on staged files, and `commit-msg` enforces Conventional Commits — a non-conforming message is rejected, not warned about.

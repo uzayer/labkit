@@ -7,7 +7,7 @@ LabKit is a PayloadCMS content platform for research lab websites. The live publ
 ## Read first
 
 - **Scope:** the current phase is "LabKit for any Lab": the numbered list at the top of `docs/product/ROADMAP.md`, with the architecture in ADR-0003. Scope creep is this project's main failure mode. If a task isn't on that list, it's out of scope. DIAL's frontend moves to its own repo at step 3.
-- **`LOG.md`** records the reasoning behind decisions. Entries are newest-first, so read from the top and stop once you have enough. Add new decisions at the top, under today's date. `docs/LOG-ARCHIVE.md` is rarely worth opening.
+- **Decisions** live in `docs/adr/` (standing architecture) and the roadmap (scope). There is no decision log. Record a non-obvious _why_ as a code comment next to the code, or in an ADR. Overwrite stale docs instead of appending history; git is the archive.
 - **`CONTEXT.md`** is the domain glossary. Use its terms exactly and avoid the words it lists. Standing decisions live in `docs/adr/`.
 
 @CONTEXT.md
@@ -29,7 +29,11 @@ There is no test framework. Run `bun run tsc` and `bun run lint`.
 ## Gotchas
 
 - **`overrideAccess` defaults to `false`** in Payload 4's Local API, including `payload.jobs.*`. Trusted server work (hooks, scripts, ingestion, jobs) must pass `overrideAccess: true` explicitly.
-- **Roles must be populated**, not string IDs, for `hasPermission()` (`src/utilities/checkPermission.ts`) to work.
+- **Roles must be populated**, not string IDs, for `hasPermission()` (`src/utilities/checkPermission.ts`) to work. That's why Users set `auth.depth: 2`: Payload 4 defaults it to 0.
+- **Production** is `dial-research.vercel.app` on Turso `dial-prod` (URL and token in the ignored `.env.production.local`). Merging to main deploys, and the build doesn't migrate. So take a Turso branch, rehearse the migration on a `turso db export` copy, apply it to prod, then merge straight away. A Vercel rollback alone can't undo a migration, so rolling back means pointing at the branch. Preview deploys fail the Turso guard on purpose. See `docs/operator/turso-cutover.md`.
+- **SQLite transactions are off on purpose.** Payload's multi-operation transactions caused `SQLITE_BUSY_SNAPSHOT` in the overlapping-watchdog check. Keep WAL plus a busy timeout, and don't enable transactions to fix a lock error.
+- **Admin SCSS** has no `~@payloadcms/ui/scss` and no `--theme-*` tokens in Payload 4. Use literal px (20px is the old `base(1)`) or `--color-*` tokens.
+- **Google login** (`payload-oauth2`) doesn't work on Payload 4. It's only active when `GOOGLE_LOGIN_*` is set, and DIAL doesn't use it.
 - **Production has data.** Every schema change needs a committed migration (core owns all migrations, so Labs never add collections; see ADR-0003). Run `bun run payload migrate:create` with any well-formed `BLOB_READ_WRITE_TOKEN` set, e.g. `vercel_blob_rw_local_x`. Without it, the generated migration drops Media's `_objectKey` column.
 - **Turnstile** for `form-submissions` is checked in `src/app/(payload)/api/[...slug]/route.ts`, not in a form component. A missing `cf-turnstile-token` header gets a 400.
 - **Tailwind v4 bracket syntax** such as `w-[--x]` compiles to no CSS. Use `w-(--x)`. Grep for `-[--` whenever you import an older shadcn component.
