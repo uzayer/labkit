@@ -35,12 +35,28 @@ export interface Person {
 type Size = 'xs' | 'sm' | 'md' | 'lg'
 
 const SIZES = {
-  xs: { pill: 'gap-1 py-0.5 pr-2 pl-0.5 text-xs', portrait: 'size-5', letter: 'text-[0.6rem]' },
-  sm: { pill: 'gap-1.5 py-0.5 pr-2.5 pl-0.5 text-sm', portrait: 'size-6', letter: 'text-[0.7rem]' },
-  md: { pill: 'gap-2 py-1 pr-3.5 pl-1 text-base', portrait: 'size-8', letter: 'text-sm' },
+  xs: {
+    pill: 'gap-1 py-0.5 pr-2 pl-0.5 text-xs',
+    portrait: 'size-5',
+    px: 20,
+    letter: 'text-[0.6rem]',
+  },
+  sm: {
+    pill: 'gap-1.5 py-0.5 pr-2.5 pl-0.5 text-sm',
+    portrait: 'size-6',
+    px: 24,
+    letter: 'text-[0.7rem]',
+  },
+  md: {
+    pill: 'gap-2 py-1 pr-3.5 pl-1 text-base',
+    portrait: 'size-8',
+    px: 32,
+    letter: 'text-sm',
+  },
   lg: {
     pill: 'gap-2.5 py-1.5 pr-5 pl-1.5 text-xl md:text-2xl',
     portrait: 'size-11',
+    px: 44,
     letter: 'text-lg',
   },
 } as const
@@ -100,6 +116,7 @@ export function PersonFace({
         s.portrait,
         className,
       )}
+      sizes={s.px}
       className="h-full w-full object-cover object-top"
       fallback={letter}
     />

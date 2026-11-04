@@ -57,6 +57,7 @@ export function MountedPortrait({
           alt={alt}
           priority={priority}
           overlay={<Tape />}
+          sizes="(max-width: 767px) 100vw, 280px"
           frameClassName="aspect-[4/5] w-full rounded-sm shadow-[0_1px_0_0_var(--paper-line),0_12px_28px_-18px_rgba(0,0,0,0.55)]"
           className="h-full w-full object-cover object-top"
           fallback={tile}

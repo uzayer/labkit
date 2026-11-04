@@ -59,7 +59,8 @@ const nextConfig: NextConfig = {
     staticGenerationMinPagesPerWorker: 25,
   },
   images: {
-    qualities: [100, 90],
+    // 80 is the DIAL frontend's resized Media (OptionalImage), matching the originals.
+    qualities: [100, 90, 80],
     remotePatterns: [
       (() => {
         const url = new URL(serverUrl)
