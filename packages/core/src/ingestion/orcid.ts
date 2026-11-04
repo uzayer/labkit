@@ -88,6 +88,14 @@ export function parseOrcidWorkGroup(group: OrcidWorkGroup): OrcidWork | null {
   }
 }
 
+/** ORCID couldn't be reached or refused the request, as opposed to a record with no works. */
+export class OrcidUnavailableError extends Error {
+  constructor(orcidId: string) {
+    super(`ORCID works for ${orcidId} could not be fetched`)
+    this.name = 'OrcidUnavailableError'
+  }
+}
+
 export async function fetchOrcidWorks(orcidId: string): Promise<OrcidWork[]> {
   const json = await fetchJsonWithRetry(
     `https://pub.orcid.org/v3.0/${encodeURIComponent(orcidId)}/works`,
@@ -99,7 +107,7 @@ export async function fetchOrcidWorks(orcidId: string): Promise<OrcidWork[]> {
   )
   // Throw rather than return []: an empty list reads as "this person has no
   // works" and would produce an empty run instead of an error.
-  if (json === null) throw new Error(`ORCID works for ${orcidId} could not be fetched`)
+  if (json === null) throw new OrcidUnavailableError(orcidId)
 
   const groups = (json as { group?: OrcidWorkGroup[] }).group ?? []
   return groups.flatMap((group) => {

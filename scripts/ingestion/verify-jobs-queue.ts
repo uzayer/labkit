@@ -19,6 +19,9 @@ import {
 import { ImportReport } from '@labkit/core/ingestion/report'
 
 const SELECTED_COUNT = 45
+// Not the job default (20), so the checks below prove the input is honoured
+// and inherited by the replacement job queued under lease contention.
+const TEST_BATCH_SIZE = 7
 
 async function main() {
   const payload = await getPayload({ config })
@@ -111,7 +114,7 @@ async function main() {
     id: runId,
     data: { lock: { token: 'external-holder', heartbeatAt: new Date().toISOString() } },
   })
-  await queueImportRun(payload, runId)
+  await queueImportRun(payload, runId, { batchSize: TEST_BATCH_SIZE })
   let fresh = await loadRun()
   check('queueImportRun flips staged → running', fresh.status === 'running')
 
@@ -153,6 +156,11 @@ async function main() {
     'stale lease was taken over and first batch processed + checkpointed',
     (progressMid?.processed ?? 0) > 0 && fresh.status === 'running',
     `processed=${progressMid?.processed}`,
+  )
+  check(
+    'batchSize input honoured, and kept by the contention replacement job',
+    progressMid?.processed === TEST_BATCH_SIZE,
+    `processed=${progressMid?.processed}, batchSize=${TEST_BATCH_SIZE}`,
   )
 
   let iterations = 0
