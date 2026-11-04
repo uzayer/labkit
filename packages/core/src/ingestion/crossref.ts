@@ -46,6 +46,12 @@ export interface CrossrefAuthor {
   given?: string
   family?: string
   orcid?: string
+  /**
+   * Crossref's `authenticated-orcid`: true when the author confirmed the
+   * ORCID through the publisher's ORCID sign-in rather than the publisher
+   * typing it in. Both are per-paper assertions; this records how strong.
+   */
+  orcidAuthenticated?: boolean
   sequence?: 'first' | 'additional'
   affiliationName?: string
 }
@@ -134,6 +140,8 @@ export function mapCrossrefToPublicationFields(json: unknown): CrossrefPublicati
         given: typeof author.given === 'string' ? author.given : undefined,
         family: typeof author.family === 'string' ? author.family : undefined,
         orcid: normalizeOrcid(typeof author.ORCID === 'string' ? author.ORCID : undefined),
+        orcidAuthenticated:
+          typeof author.ORCID === 'string' ? author['authenticated-orcid'] === true : undefined,
         sequence: author.sequence === 'first' ? 'first' : 'additional',
         affiliationName,
       } satisfies CrossrefAuthor

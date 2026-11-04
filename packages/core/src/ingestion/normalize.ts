@@ -124,3 +124,86 @@ export function normalizeVenueName(raw: string): string {
       .trim()
   )
 }
+
+/**
+ * Lowercased, accent-folded name tokens with periods, commas and hyphens
+ * removed. Only for *compatibility* checks (namesCompatible), which can
+ * withhold a link but never make one, so folding accents is safe here. It
+ * would not be safe in an identity key.
+ */
+export function nameTokens(name: string): string[] {
+  return name
+    .normalize('NFKD')
+    .replace(/\p{M}/gu, '')
+    .toLowerCase()
+    .replace(/[.,]/g, ' ')
+    .replace(/[-‐‑–]/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean)
+}
+
+// Given-name prefixes so common in Bangladesh and the wider region ("Md." is
+// Mohammad) that sharing one says nothing about identity. They are skipped
+// when comparing initials, but never dropped from a name: "Md." is part of
+// the person's name, not an honorific.
+const NON_DISCRIMINATING_GIVEN = new Set([
+  'md',
+  'mohd',
+  'mohammad',
+  'mohammed',
+  'muhammad',
+  'muhammed',
+  'mohamed',
+  'mst',
+  'most',
+  'mosammat',
+  'sk',
+  'sheikh',
+])
+
+/**
+ * Deterministic "cannot be the same person" test, after S2AND's cannot-link
+ * constraints. Two printed names are compatible when they share a family
+ * name (either side's last token appears in the other, which tolerates
+ * family-first order) and their other given-name initials overlap.
+ *
+ * Only ever used to withhold a link (identifier matches, author pairing). A
+ * false "incompatible" costs a Review Item; a false "compatible" changes
+ * nothing compared with not checking at all.
+ */
+export function namesCompatible(a: string, b: string): boolean {
+  const tokensA = nameTokens(a)
+  const tokensB = nameTokens(b)
+  if (tokensA.length === 0 || tokensB.length === 0) return false
+
+  const familyA = tokensA[tokensA.length - 1]
+  const familyB = tokensB[tokensB.length - 1]
+  const shared = tokensB.includes(familyA) ? familyA : tokensA.includes(familyB) ? familyB : null
+  if (!shared) return false
+
+  const initials = (tokens: string[]) => {
+    const given = tokens.filter((token) => token !== shared)
+    const meaningful = given.filter((token) => !NON_DISCRIMINATING_GIVEN.has(token))
+    return new Set((meaningful.length > 0 ? meaningful : given).map((token) => token[0]))
+  }
+  const initialsA = initials(tokensA)
+  const initialsB = initials(tokensB)
+  // A family-name-only form or a mononym has no initials to conflict on.
+  if (initialsA.size === 0 || initialsB.size === 0) return true
+  return [...initialsA].some((initial) => initialsB.has(initial))
+}
+
+/**
+ * Typography-only key for names that must be *equal*: Unicode form, case,
+ * periods, commas, hyphens and spacing. Diacritics are kept, because folding
+ * them can merge genuinely different names.
+ */
+export function exactNameKey(name: string): string {
+  return name
+    .normalize('NFKC')
+    .toLowerCase()
+    .replace(/[.,]/g, ' ')
+    .replace(/[-‐‑–]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+}

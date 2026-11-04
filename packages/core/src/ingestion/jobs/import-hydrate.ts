@@ -299,6 +299,11 @@ function restoreReport(report: ImportReport, summary: ImportRun['reportSummary']
         newTeamId: typeof entry.newTeamId === 'string' ? entry.newTeamId : undefined,
         existingTeamId: typeof entry.existingTeamId === 'string' ? entry.existingTeamId : undefined,
         score: typeof entry.score === 'number' ? entry.score : undefined,
+        reason:
+          entry.reason === 'orcid-name-conflict' || entry.reason === 'dblp-pid-name-conflict'
+            ? entry.reason
+            : undefined,
+        identifier: typeof entry.identifier === 'string' ? entry.identifier : undefined,
       })
     }
   }

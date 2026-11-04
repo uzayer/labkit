@@ -33,6 +33,7 @@ import {
   attachDblpPids,
   matchPersonToTeam,
   mergeAuthors,
+  planTeamLink,
   type MergedAuthor,
   type TeamLookupEntry,
 } from '@labkit/core/ingestion/people'
@@ -157,16 +158,19 @@ function merged(doi: string, openalexVariant = ''): MergedAuthor[] {
  */
 function importPaper(authors: MergedAuthor[], team: TeamLookupEntry[]) {
   return authors.map((person) => {
-    const match = matchPersonToTeam(person, team)
-    if (match.team) return { printed: person.fullName, linked: match.team, method: match.method }
+    const { match, create } = planTeamLink(person, team)
+    const conflicts = match.conflicts
+    if (match.team) {
+      return { printed: person.fullName, linked: match.team, method: match.method, conflicts }
+    }
     const created: TeamLookupEntry = {
-      id: `new:${person.fullName}`,
-      name: person.fullName,
-      orcid: person.orcid,
-      dblpPid: person.dblpPid,
+      id: `new:${create.fullName}`,
+      name: create.fullName,
+      orcid: create.orcid,
+      dblpPid: create.dblpPid,
     }
     team.push(created)
-    return { printed: person.fullName, linked: created, method: 'created' as const }
+    return { printed: person.fullName, linked: created, method: 'created' as const, conflicts }
   })
 }
 
@@ -223,13 +227,30 @@ check(
       ...dialRoster(),
       { id: 'hidden:sahariyar', name: 'Hussain Md. Sahariyar', orcid: ANIK_ORCID },
     ]
-    const result = matchPersonToTeam(
-      merged('10.1145/3613905.3650969').find((a) => a.fullName === 'Anik Saha')!,
+    const [anik] = importPaper(
+      merged('10.1145/3613905.3650969').filter((a) => a.fullName === 'Anik Saha'),
       team,
     )
-    assert.notEqual(result.team?.id, 'hidden:sahariyar', `linked by ${result.method}`)
+    assert.notEqual(anik.linked.id, 'hidden:sahariyar', `linked by ${anik.method}`)
+    // The conflict is raised for review, and the author still lands on the
+    // roster record through the exact-name Safe Match.
+    assert.deepEqual(
+      anik.conflicts.map((c) => `${c.identifier}:${c.holder.id}`),
+      ['orcid:hidden:sahariyar'],
+    )
+    assert.equal(anik.linked.id, 'roster:anik-saha')
   },
 )
+
+check(SWAP, 'conflict with no name match: the new record is created without the ORCID', () => {
+  const team = [{ id: 'hidden:sahariyar', name: 'Hussain Md. Sahariyar', orcid: ANIK_ORCID }]
+  const { match, create } = planTeamLink(
+    merged('10.1145/3613905.3650969').find((a) => a.fullName === 'Anik Saha')!,
+    team,
+  )
+  assert.equal(match.team, null)
+  assert.equal(create.orcid, undefined)
+})
 
 check(SWAP, 'CHI EA 2023: per-paper ORCID wins over a disagreeing OpenAlex profile ORCID', () => {
   const neha = merged('10.1145/3544549.3573806').find((a) => a.fullName === 'Neha Kumar')!
